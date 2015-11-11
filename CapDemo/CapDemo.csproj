@@ -44,9 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL\CatalogueBL.cs" />
-    <Compile Include="BL\QuestionBL.cs" />
-    <Compile Include="BL\UserBL.cs" />
+    <Compile Include="GUI\GameShowControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameShowControl.Designer.cs">
+      <DependentUpon>GameShowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BL\CatalogueBL.cs" />
+    <Compile Include="Service References\BL\QuestionBL.cs" />
+    <Compile Include="Service References\BL\UserBL.cs" />
     <Compile Include="DA\DatabaseAccess.cs" />
     <Compile Include="DA\FileAccess.cs" />
     <Compile Include="DO\Answer.cs" />
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\GameShowControl.resx">
+      <DependentUpon>GameShowControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\The_Weightless_World.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\BatDau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\CaiDat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\HuongDan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Thoat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
