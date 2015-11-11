@@ -38,7 +38,7 @@ namespace CapDemo.BL
             return CatalogueList;
         }
 
-        //Insert catalogue
+        //Insert Catalogue
         public bool AddCatalogue(Catalogue Catalogue)
         {
             string query = "INSERT INTO Catalogue (Catalogue_Name)"
@@ -53,6 +53,7 @@ namespace CapDemo.BL
                 return DA.InsertDatabase(query);
             }
         }
+        //Check Catalogue Exist
         public bool ExistCatalogue(Catalogue Catalogue)
         {
             string query = "SELECT Catalogue_ID, Catalogue_Name FROM Catalogue"
@@ -68,7 +69,7 @@ namespace CapDemo.BL
             }
         }
 
-        //edit catalogue
+        //Edit catalogue
         public bool EditCataloguebyID(Catalogue Catalogue)
         {
             string query = "UPDATE Catalogue SET Catalogue_Name ='" + Catalogue.NameCatalogue + "'"
@@ -81,12 +82,19 @@ namespace CapDemo.BL
                           + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.DeleteDatabase(query);
         }
-
+        //Delete question by catalogue ID
         public bool DeleteQuestionbyIDCatalogue(Catalogue Catalogue)
         {
             string query = "DELETE FROM Question"
                          + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.DeleteDatabase(query);
+        }
+        //DELETE ANSWER
+        public bool DeleteAnswerByIDQuestion(Question Question)
+        {
+            string query = "DELETE FROM Answer"
+                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+            return DA.UpdateDatabase(query);
         }
 
         

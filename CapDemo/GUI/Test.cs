@@ -21,12 +21,17 @@ namespace CapDemo.GUI
 
         private void Test_Load(object sender, EventArgs e)
         {
-            //Load catalogue
-            //loadCatalogue();
-            
+            loadCatalogue();
+            //loadQuestion();
 
-            //load question
-            loadQuestion();
+            CatalogueBL CatBL = new CatalogueBL();
+            List<DO.Catalogue> CatList;
+            CatList = CatBL.GetCatalogue();
+            if (CatList != null)
+                for (int i = 0; i < CatList.Count; i++)
+                {
+                        comboBox1.Items.Add(CatList.ElementAt(i).NameCatalogue);
+                }
             
         }
 
@@ -37,7 +42,7 @@ namespace CapDemo.GUI
             CatList = CatBL.GetCatalogue();
             if (CatList != null)
                 dataGridView1.DataSource = CatList;
-            int s = CatList.ElementAt(0).IDCatalogue;
+           // int s = CatList.ElementAt(0).IDCatalogue;
         }
 
         public void loadQuestion()
@@ -145,6 +150,35 @@ namespace CapDemo.GUI
                     
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Catalogue catalogue = new Catalogue();
+            CatalogueBL CatBL = new CatalogueBL();
+
+            List<DO.Catalogue> CatList;
+            CatList = CatBL.GetCatalogue();
+            if (CatList != null)
+                for (int i = 0; i < CatList.Count; i++)
+                {
+                    if (comboBox1.SelectedItem.ToString() == CatList.ElementAt(i).NameCatalogue)
+                    {
+                        catalogue.IDCatalogue = CatList.ElementAt(i).IDCatalogue;
+                    }
+                }
+
+            QuestionBL QuestionBL = new QuestionBL();
+            List<DO.Question> QuestionList;
+            QuestionList = QuestionBL.GetQuestionByCatalogue(catalogue);
+            if (QuestionList != null)
+            {
+                dataGridView1.DataSource = QuestionList;
+            }
+
+            dataGridView1.Columns["IDCatalogue"].Visible = false;
+            dataGridView1.Columns["Sequence"].Visible = false;
+            dataGridView1.Columns["AnswerContent"].Visible = false;
         }
 
 

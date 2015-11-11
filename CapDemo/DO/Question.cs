@@ -11,7 +11,7 @@ namespace CapDemo.DO
         int questionID;
         string questionName;
         string typeQuestion;
-        Catalogue catalogue;
+        //Catalogue catalogue;
         List<Answer> answerList;
         string nameCatalogue;
         int iDCatalogue;

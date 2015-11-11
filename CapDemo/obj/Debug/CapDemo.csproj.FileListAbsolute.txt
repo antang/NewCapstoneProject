@@ -10,3 +10,9 @@ C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.csprojResolveA
 D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe.config
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.exe
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.pdb
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.pdb
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.cache
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache

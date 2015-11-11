@@ -18,6 +18,7 @@ namespace CapDemo.BL
             DA = new DatabaseAccess();
             FA = new FileAccess();
         }
+//SELECT QUESTION
         //SELECT All QUESTION
         public List<Question> GetQuestion()
         {
@@ -43,7 +44,7 @@ namespace CapDemo.BL
             return QuestionList;
         }
 
-        //Select question by ID question
+        //Select question by ID catalogue
         public List<Question> GetQuestionByCatalogue(Catalogue Catalogue)
         {
             List<Question> QuestionList = new List<Question>();
@@ -66,7 +67,7 @@ namespace CapDemo.BL
             }
             return QuestionList;
         }
-
+//INSERT QUESTION AND CATALOGUE
         //INSERT QUESTION
         public bool AddQuestion(Question Question)
         {
@@ -82,12 +83,12 @@ namespace CapDemo.BL
                         + " VALUES ('" + Answer.ContentAnswer + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "')";
             return DA.InsertDatabase(query);
         }
-
+//EDIT QUESTION AND ANSWER
         //EDIT QUESTION
         public bool EditQuestionbyID(Question Question)
         {
             string query = "UPDATE Question"
-                         + " SET Catalogue_Name ='" + Question.NameQuestion + "'"
+                         + " SET Question_Name ='" + Question.NameQuestion + "'"
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -100,7 +101,7 @@ namespace CapDemo.BL
                          + " WHERE Question_ID = '" + Answer.IDQuestion + "' AND Answer_ID='" + Answer.IDAnswer + "'";
             return DA.UpdateDatabase(query);
         }
-
+//DELETE QUESTION
         //DELETE QUESTION
         public bool DeleteQuestionByID(Question Question)
         {
@@ -109,14 +110,14 @@ namespace CapDemo.BL
             return DA.UpdateDatabase(query);
         }
         //DELETE ANSWER
-        public bool DeleteQuestionByIDQuestion(Answer Answer)
+        public bool DeleteAnswerByIDQuestion(Question Question)
         {
             string query = "DELETE FROM Answer"
-                          + " WHERE Question_ID = '" + Answer.IDQuestion + "'";
+                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
 
-        // load file content
+        // LOAD QUESTION FILE
         public List<Question> GetFile(string file)
         {
             string content= FA.FileContent(file);
@@ -153,12 +154,13 @@ namespace CapDemo.BL
             return QuestionList;
         }
 
-        //Get Max Question
+        //GET MAXIMUM ID QUESTION
         public int MaxIDQuestion()
         {
             string query = "SELECT MAX(Question_ID) FROM Question";
             return DA.MaxID(query);
         }
+
 
 
     }
