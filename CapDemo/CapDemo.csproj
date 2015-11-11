@@ -50,6 +50,12 @@
     <Compile Include="GUI\GameShowControl.Designer.cs">
       <DependentUpon>GameShowControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service References\BL\CatalogueBL.cs" />
     <Compile Include="Service References\BL\QuestionBL.cs" />
     <Compile Include="Service References\BL\UserBL.cs" />
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,6 +135,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\Thoat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\backgroud_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\quan_ly_du_lieu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\thiet_lap_game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\quan_ly_tai_khoan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Thoat_setting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

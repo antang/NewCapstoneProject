@@ -21,3 +21,4 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Login.resources
 >>>>>>> 7d7d4df21f9f5314e4b1a324a7340fc4652686b3
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.GameShowControl.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Setting.resources
