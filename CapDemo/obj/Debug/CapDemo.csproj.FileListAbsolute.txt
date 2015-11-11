@@ -7,3 +7,6 @@ C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.exe
 C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.pdb
 C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
 C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.cache
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe.config
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.exe
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.pdb
