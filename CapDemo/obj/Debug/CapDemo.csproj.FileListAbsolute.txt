@@ -16,3 +16,4 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.c
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Login.resources
