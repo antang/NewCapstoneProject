@@ -50,6 +50,12 @@
     <Compile Include="GUI\GameShowControl.Designer.cs">
       <DependentUpon>GameShowControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\GameMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\GameMenu.Designer.cs">
+      <DependentUpon>GameMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\GameMenu.resx">
+      <DependentUpon>GameMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>

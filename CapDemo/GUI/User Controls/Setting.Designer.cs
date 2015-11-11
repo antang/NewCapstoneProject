@@ -90,18 +90,19 @@
             this.btn_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Thoat_setting;
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(17, 565);
+            this.btn_Exit.Location = new System.Drawing.Point(17, 555);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(203, 48);
             this.btn_Exit.TabIndex = 4;
             this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // pnl_Setting
             // 
             this.pnl_Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_Setting.Location = new System.Drawing.Point(238, 19);
             this.pnl_Setting.Name = "pnl_Setting";
-            this.pnl_Setting.Size = new System.Drawing.Size(719, 628);
+            this.pnl_Setting.Size = new System.Drawing.Size(719, 584);
             this.pnl_Setting.TabIndex = 5;
             // 
             // Setting
@@ -118,7 +119,8 @@
             this.Controls.Add(this.ptb_logo);
             this.DoubleBuffered = true;
             this.Name = "Setting";
-            this.Size = new System.Drawing.Size(960, 650);
+            this.Size = new System.Drawing.Size(960, 612);
+            this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -130,7 +132,7 @@
         private System.Windows.Forms.Button btn_DataManagement;
         private System.Windows.Forms.Button btn_GameSetting;
         private System.Windows.Forms.Button btn_UserManagement;
-        private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Panel pnl_Setting;
+        public System.Windows.Forms.Button btn_Exit;
     }
 }
