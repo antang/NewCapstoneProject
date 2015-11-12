@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapDemo.BL;
+using CapDemo.DO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,21 @@ namespace CapDemo.GUI
         public CreateCatalogueNew()
         {
             InitializeComponent();
+        }
+
+        private void btn_SaveCatalogue_Click(object sender, EventArgs e)
+        {
+            CatalogueBL CatBL = new CatalogueBL();
+            Catalogue Cat = new Catalogue();
+            Cat.NameCatalogue = txt_NameCatalogue.Text;
+            CatBL.AddCatalogue(Cat);
+            this.Close();
+
+        }
+
+        private void btn_CancelCatalogue_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

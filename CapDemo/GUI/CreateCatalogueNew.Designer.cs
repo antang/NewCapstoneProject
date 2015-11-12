@@ -53,6 +53,7 @@
             this.btn_SaveCatalogue.Text = "Lưu";
             this.btn_SaveCatalogue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveCatalogue.UseVisualStyleBackColor = false;
+            this.btn_SaveCatalogue.Click += new System.EventHandler(this.btn_SaveCatalogue_Click);
             // 
             // imageList1
             // 
@@ -77,6 +78,7 @@
             this.btn_CancelCatalogue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CancelCatalogue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelCatalogue.UseVisualStyleBackColor = false;
+            this.btn_CancelCatalogue.Click += new System.EventHandler(this.btn_CancelCatalogue_Click);
             // 
             // txt_NameCatalogue
             // 
