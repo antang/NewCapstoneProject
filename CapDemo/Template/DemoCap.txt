@@ -1,0 +1,20 @@
+What is requeirement
+---ONE CHOICE---
+	[T]a: a1
+	[F]b: a2
+	[F]c: a3
+	[F]d: a4
+/**/
+What is testing
+---ONE CHOICE---
+	[F]a: a1
+	[T]b: a2
+	[F]c: a3
+	[F]d: a4
+/**/
+What is architect
+---ONE CHOICE---
+	[F]a: a1
+	[F]b: a2
+	[T]c: a3
+	[F]d: a4

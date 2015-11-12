@@ -107,8 +107,6 @@ namespace CapDemo.GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //int count=0;
-           // bool check = false;
             Question question = new Question();
             Answer answer = new Answer();
             QuestionBL questionBL = new QuestionBL();
@@ -132,7 +130,6 @@ namespace CapDemo.GUI
                         {
                             answer.IsCorrect = true;
                             answer.ContentAnswer = AnswerItem[i].Replace("[T]", "").ToString();
-                            
                             answer.IDQuestion = questionBL.MaxIDQuestion();
                             questionBL.AddAnswer(answer);
                         }
@@ -154,6 +151,7 @@ namespace CapDemo.GUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridView1.Columns.Clear();
             Catalogue catalogue = new Catalogue();
             CatalogueBL CatBL = new CatalogueBL();
 
@@ -179,6 +177,47 @@ namespace CapDemo.GUI
             dataGridView1.Columns["IDCatalogue"].Visible = false;
             dataGridView1.Columns["Sequence"].Visible = false;
             dataGridView1.Columns["AnswerContent"].Visible = false;
+
+            DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
+            CheckColumn.Name = "check";
+            dataGridView1.Columns.Add(CheckColumn);
+        }
+
+        public void saveQuestion()
+        {
+           Question question = new Question();
+           Answer answer = new Answer();
+           QuestionBL questionBL = new QuestionBL();
+           foreach (DataGridViewRow row in dataGridView1.Rows)
+           {
+               if (row.Cells["check"].Value != null)
+               {
+                   
+                   question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
+                   question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
+                   question.IDCatalogue = Convert.ToInt32(textBox2.Text);
+                   questionBL.AddQuestion(question);
+
+                   question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                   List<DO.Answer> AnswerList;
+                   AnswerList = questionBL.GetAnswerByQuestionID(question);
+                   if (AnswerList != null)
+                   {
+                       for (int i = 0; i < AnswerList.Count; i++)
+                       {
+                           answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
+                           answer.IsCorrect = AnswerList.ElementAt(i).IsCorrect;
+                           answer.IDQuestion = questionBL.MaxIDQuestion();
+                           questionBL.AddAnswer(answer);
+                       }
+                   }
+               }
+           }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            saveQuestion();
         }
 
 

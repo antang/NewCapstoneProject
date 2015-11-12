@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\AES.cs" />
     <Compile Include="BL\CatalogueBL.cs" />
     <Compile Include="BL\QuestionBL.cs" />
     <Compile Include="BL\UserBL.cs" />
@@ -53,11 +54,36 @@
     <Compile Include="DO\Catalogue.cs" />
     <Compile Include="DO\Question.cs" />
     <Compile Include="DO\User.cs" />
+    <Compile Include="GUI\ImportQuestioncs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ImportQuestioncs.Designer.cs">
+      <DependentUpon>ImportQuestioncs.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MyEventArgs.cs" />
+    <Compile Include="GUI\OncChoiceContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OncChoiceContent.Designer.cs">
+      <DependentUpon>OncChoiceContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\OneChoiceAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\OneChoiceAnswer.Designer.cs">
+      <DependentUpon>OneChoiceAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuestionType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\QuestionType.Designer.cs">
+      <DependentUpon>QuestionType.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Test.cs">
       <SubType>Form</SubType>
@@ -67,8 +93,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ImportQuestioncs.resx">
+      <DependentUpon>ImportQuestioncs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OncChoiceContent.resx">
+      <DependentUpon>OncChoiceContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OneChoiceAnswer.resx">
+      <DependentUpon>OneChoiceAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuestionType.resx">
+      <DependentUpon>QuestionType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
@@ -102,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\DemoCap.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -43,7 +43,6 @@ namespace CapDemo.BL
             }
             return QuestionList;
         }
-
         //Select question by ID catalogue
         public List<Question> GetQuestionByCatalogue(Catalogue Catalogue)
         {
@@ -67,6 +66,27 @@ namespace CapDemo.BL
             }
             return QuestionList;
         }
+        //SELECT ANSWER BY ID QUESTION
+        public List<Answer> GetAnswerByQuestionID(Question Question)
+        {
+            List<Answer> AnswerList = new List<Answer>();
+            string query = "SELECT a.Answer_Name, a.Correct_Answer"
+                         + " FROM Answer a "
+                         + " WHERE a.Question_ID='" + Question.IDQuestion + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Answer Answer = new Answer();
+                    Answer.ContentAnswer = item["Answer_Name"].ToString();
+                    Answer.IsCorrect = (bool)item["Correct_Answer"];
+                    AnswerList.Add(Answer);
+                }
+            }
+            return AnswerList;
+        }
+
 //INSERT QUESTION AND CATALOGUE
         //INSERT QUESTION
         public bool AddQuestion(Question Question)
@@ -160,6 +180,7 @@ namespace CapDemo.BL
             string query = "SELECT MAX(Question_ID) FROM Question";
             return DA.MaxID(query);
         }
+
 
 
 
