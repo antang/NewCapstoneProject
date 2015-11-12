@@ -59,6 +59,7 @@
             this.btn_DataManagement.Size = new System.Drawing.Size(203, 48);
             this.btn_DataManagement.TabIndex = 1;
             this.btn_DataManagement.UseVisualStyleBackColor = false;
+            this.btn_DataManagement.Click += new System.EventHandler(this.btn_DataManagement_Click);
             // 
             // btn_GameSetting
             // 
@@ -71,6 +72,7 @@
             this.btn_GameSetting.Size = new System.Drawing.Size(203, 48);
             this.btn_GameSetting.TabIndex = 2;
             this.btn_GameSetting.UseVisualStyleBackColor = false;
+            this.btn_GameSetting.Click += new System.EventHandler(this.btn_GameSetting_Click);
             // 
             // btn_UserManagement
             // 
@@ -86,6 +88,7 @@
             // 
             // btn_Exit
             // 
+            this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Thoat_setting;
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -99,10 +102,13 @@
             // 
             // pnl_Setting
             // 
+            this.pnl_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_Setting.Location = new System.Drawing.Point(238, 19);
             this.pnl_Setting.Name = "pnl_Setting";
-            this.pnl_Setting.Size = new System.Drawing.Size(719, 584);
+            this.pnl_Setting.Size = new System.Drawing.Size(710, 584);
             this.pnl_Setting.TabIndex = 5;
             // 
             // Setting
@@ -129,10 +135,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox ptb_logo;
-        private System.Windows.Forms.Button btn_DataManagement;
         private System.Windows.Forms.Button btn_GameSetting;
         private System.Windows.Forms.Button btn_UserManagement;
         private System.Windows.Forms.Panel pnl_Setting;
         public System.Windows.Forms.Button btn_Exit;
+        public System.Windows.Forms.Button btn_DataManagement;
     }
 }

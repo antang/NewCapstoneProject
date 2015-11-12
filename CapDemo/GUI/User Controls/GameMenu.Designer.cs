@@ -100,6 +100,7 @@
             this.DoubleBuffered = true;
             this.Name = "GameMenu";
             this.Size = new System.Drawing.Size(960, 612);
+            this.Load += new System.EventHandler(this.GameMenu_Load);
             this.ResumeLayout(false);
 
         }

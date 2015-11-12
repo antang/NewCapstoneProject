@@ -27,5 +27,16 @@ namespace CapDemo.GUI.User_Controls
             if (this.onClick != null)
                 this.onClick(this, e); 
         }
+
+        private void btn_DataManagement_Click(object sender, EventArgs e)
+        {
+            DataManagement dm = new DataManagement();
+            pnl_Setting.Controls.Add(dm);
+        }
+
+        private void btn_GameSetting_Click(object sender, EventArgs e)
+        {
+            pnl_Setting.Controls.Clear();
+        }
     }
 }
