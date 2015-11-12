@@ -30,26 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteCatalogue));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Ok = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
+            this.rad_DelCatQuest = new System.Windows.Forms.RadioButton();
+            this.rad_DelCat = new System.Windows.Forms.RadioButton();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Ok
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.ImageIndex = 1;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(146, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 40);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Đồng ý";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Ok.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Ok.ImageIndex = 1;
+            this.btn_Ok.ImageList = this.imageList1;
+            this.btn_Ok.Location = new System.Drawing.Point(146, 106);
+            this.btn_Ok.Name = "btn_Ok";
+            this.btn_Ok.Size = new System.Drawing.Size(99, 40);
+            this.btn_Ok.TabIndex = 6;
+            this.btn_Ok.Text = "Đồng ý";
+            this.btn_Ok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Ok.UseVisualStyleBackColor = true;
+            this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
             // imageList1
             // 
@@ -58,47 +59,48 @@
             this.imageList1.Images.SetKeyName(0, "Cancel.png");
             this.imageList1.Images.SetKeyName(1, "ok.png");
             // 
-            // radioButton2
+            // rad_DelCatQuest
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(22, 44);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(329, 23);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.Text = "Xóa chủ đề và những câu hỏi thuộc chủ đề";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rad_DelCatQuest.AutoSize = true;
+            this.rad_DelCatQuest.BackColor = System.Drawing.Color.Transparent;
+            this.rad_DelCatQuest.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_DelCatQuest.ForeColor = System.Drawing.Color.White;
+            this.rad_DelCatQuest.Location = new System.Drawing.Point(22, 44);
+            this.rad_DelCatQuest.Name = "rad_DelCatQuest";
+            this.rad_DelCatQuest.Size = new System.Drawing.Size(329, 23);
+            this.rad_DelCatQuest.TabIndex = 5;
+            this.rad_DelCatQuest.Text = "Xóa chủ đề và những câu hỏi thuộc chủ đề";
+            this.rad_DelCatQuest.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // rad_DelCat
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(22, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(105, 23);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Xóa chủ đề";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rad_DelCat.AutoSize = true;
+            this.rad_DelCat.BackColor = System.Drawing.Color.Transparent;
+            this.rad_DelCat.Checked = true;
+            this.rad_DelCat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_DelCat.ForeColor = System.Drawing.Color.White;
+            this.rad_DelCat.Location = new System.Drawing.Point(22, 14);
+            this.rad_DelCat.Name = "rad_DelCat";
+            this.rad_DelCat.Size = new System.Drawing.Size(105, 23);
+            this.rad_DelCat.TabIndex = 4;
+            this.rad_DelCat.TabStop = true;
+            this.rad_DelCat.Text = "Xóa chủ đề";
+            this.rad_DelCat.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_Cancel
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button2.ImageIndex = 0;
-            this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(251, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 40);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Hủy";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Cancel.ImageIndex = 0;
+            this.btn_Cancel.ImageList = this.imageList1;
+            this.btn_Cancel.Location = new System.Drawing.Point(251, 106);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(99, 40);
+            this.btn_Cancel.TabIndex = 7;
+            this.btn_Cancel.Text = "Hủy";
+            this.btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // DeleteCatalogue
             // 
@@ -107,10 +109,10 @@
             this.BackgroundImage = global::CapDemo.Properties.Resources.KhungPanner4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(363, 161);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Ok);
+            this.Controls.Add(this.rad_DelCatQuest);
+            this.Controls.Add(this.rad_DelCat);
+            this.Controls.Add(this.btn_Cancel);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -124,10 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Ok;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton rad_DelCatQuest;
+        private System.Windows.Forms.RadioButton rad_DelCat;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }

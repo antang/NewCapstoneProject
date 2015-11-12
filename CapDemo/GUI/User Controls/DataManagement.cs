@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapDemo.BL;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -19,15 +20,31 @@ namespace CapDemo.GUI.User_Controls
 
         private void lbl_CreateCatalogue_Click(object sender, EventArgs e)
         {
-            CreateCatalogueNew ccl = new CreateCatalogueNew();
-            ccl.ShowDialog();
+            CreateCatalogueNew CreateCat = new CreateCatalogueNew();
+            CreateCat.ShowDialog();
+            LoadCat();
         }
 
+        //LOAD Form
         private void DataManagement_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+            LoadCat();
         }
-
+        //LOAD Catalogue table from database
+        public void LoadCat()
+        {
+            CatalogueBL CatBL = new CatalogueBL();
+            List<DO.Catalogue> CatList;
+            CatList = CatBL.GetCatalogue();
+            if (CatList != null)
+                dgv_Catalogue.DataSource = CatList;
+            dgv_Catalogue.Columns["IDCatalogue"].HeaderText = "Mã Chủ Đề";
+            dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
+            dgv_Catalogue.Columns["IDCatalogue"].Width = 185;
+            dgv_Catalogue.Columns["NameCatalogue"].Width = 400;
+        }
+        //ADD Catalogue
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)
         {
             CreateQuestionNew cqn = new CreateQuestionNew();
@@ -64,22 +81,31 @@ namespace CapDemo.GUI.User_Controls
             iqc.ShowDialog();
         }
 
+        //VIEW Question
         private void btn_ViewQuestion_Click(object sender, EventArgs e)
         {
-            ViewQuestionInCatalogue vqic = new ViewQuestionInCatalogue();
-            vqic.ShowDialog();
+            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+            ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat,NameCat);
+            ViewQuestion.ShowDialog();
         }
-
+        //EDIT Catalogue
         private void btn_EditCatalogue_Click(object sender, EventArgs e)
         {
-            EditCatalogue ec = new EditCatalogue();
-            ec.ShowDialog();
+            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+            EditCatalogue EditCat = new EditCatalogue(IDCat,NameCat);
+            EditCat.ShowDialog();
+            LoadCat();
         }
-
+        //DELETE Catalogue
         private void btn_DeleteCatalogue_Click(object sender, EventArgs e)
         {
-            DeleteCatalogue dc = new DeleteCatalogue();
-            dc.ShowDialog();
+            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+            DeleteCatalogue DelCat = new DeleteCatalogue(IDCat, NameCat);
+            DelCat.ShowDialog();
+            LoadCat();
         }
     }
 }

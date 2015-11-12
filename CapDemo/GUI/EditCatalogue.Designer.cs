@@ -53,6 +53,7 @@
             this.btn_SaveEditCatalogue.Text = "Lưu";
             this.btn_SaveEditCatalogue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveEditCatalogue.UseVisualStyleBackColor = false;
+            this.btn_SaveEditCatalogue.Click += new System.EventHandler(this.btn_SaveEditCatalogue_Click);
             // 
             // imageList1
             // 
@@ -89,6 +90,7 @@
             this.btn_CancelEditCatalogue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CancelEditCatalogue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelEditCatalogue.UseVisualStyleBackColor = false;
+            this.btn_CancelEditCatalogue.Click += new System.EventHandler(this.btn_CancelEditCatalogue_Click);
             // 
             // txt_NameCatalogue
             // 
@@ -130,6 +132,7 @@
             this.Name = "EditCatalogue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa chủ đề";
+            this.Load += new System.EventHandler(this.EditCatalogue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

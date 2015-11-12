@@ -219,6 +219,7 @@
             // 
             // dgv_Catalogue
             // 
+            this.dgv_Catalogue.AllowUserToAddRows = false;
             this.dgv_Catalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -226,6 +227,9 @@
             this.dgv_Catalogue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Catalogue.Location = new System.Drawing.Point(63, 138);
             this.dgv_Catalogue.Name = "dgv_Catalogue";
+            this.dgv_Catalogue.ReadOnly = true;
+            this.dgv_Catalogue.RowHeadersVisible = false;
+            this.dgv_Catalogue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Catalogue.Size = new System.Drawing.Size(590, 284);
             this.dgv_Catalogue.TabIndex = 11;
             // 

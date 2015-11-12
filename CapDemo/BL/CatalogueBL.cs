@@ -76,6 +76,7 @@ namespace CapDemo.BL
                          + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.UpdateDatabase(query);
         }
+//Delete CATALOGUE
         //Delete catalogue
         public bool DeleteCataloguebyID(Catalogue Catalogue){
              string query = "DELETE FROM Catalogue"
@@ -90,13 +91,28 @@ namespace CapDemo.BL
             return DA.DeleteDatabase(query);
         }
         //DELETE ANSWER
-        public bool DeleteAnswerByIDQuestion(Question Question)
+        public bool DeleteAnswerByIDCatalogue(Catalogue Catalogue)
         {
             string query = "DELETE FROM Answer"
-                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+                          + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.UpdateDatabase(query);
         }
-
+        //EDIT CATALOGUE ID IN QUESTION
+        public bool MoveQuestionToUnknow(Catalogue Catalogue)
+        {
+            string query = "UPDATE Question"
+                         + " SET Catalogue_ID ='" + 0 + "'"
+                         + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
+            return DA.UpdateDatabase(query);
+        }
+        //EDIT CATALOGUE ID IN ANSWER
+        public bool MoveAnserToUnknow(Catalogue Catalogue)
+        {
+            string query = "UPDATE Answer"
+                         + " SET Catalogue_ID ='" + 0 + "'"
+                         + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
+            return DA.UpdateDatabase(query);
+        }
         
     }
 }

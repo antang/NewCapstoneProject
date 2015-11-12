@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewQuestionInCatalogue));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
+            this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
             this.txt_SearchCatalogue = new System.Windows.Forms.TextBox();
             this.btn_CancelViewQuestione = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,22 +65,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Chủ đề";
             // 
-            // textBox1
+            // txt_NameCatalogue
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(81, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(335, 26);
-            this.textBox1.TabIndex = 2;
+            this.txt_NameCatalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NameCatalogue.Location = new System.Drawing.Point(81, 64);
+            this.txt_NameCatalogue.Name = "txt_NameCatalogue";
+            this.txt_NameCatalogue.ReadOnly = true;
+            this.txt_NameCatalogue.Size = new System.Drawing.Size(335, 26);
+            this.txt_NameCatalogue.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgv_Question
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 306);
-            this.dataGridView1.TabIndex = 3;
+            this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Question.Location = new System.Drawing.Point(19, 96);
+            this.dgv_Question.Name = "dgv_Question";
+            this.dgv_Question.Size = new System.Drawing.Size(753, 306);
+            this.dgv_Question.TabIndex = 3;
             // 
             // btn_SearchCatalogue
             // 
@@ -122,6 +122,7 @@
             this.btn_CancelViewQuestione.Text = "Thoát";
             this.btn_CancelViewQuestione.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelViewQuestione.UseVisualStyleBackColor = false;
+            this.btn_CancelViewQuestione.Click += new System.EventHandler(this.btn_CancelViewQuestione_Click);
             // 
             // imageList1
             // 
@@ -139,15 +140,16 @@
             this.Controls.Add(this.btn_CancelViewQuestione);
             this.Controls.Add(this.btn_SearchCatalogue);
             this.Controls.Add(this.txt_SearchCatalogue);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgv_Question);
+            this.Controls.Add(this.txt_NameCatalogue);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "ViewQuestionInCatalogue";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xem câu hỏi có trong chủ đề";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ViewQuestionInCatalogue_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,8 +159,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txt_NameCatalogue;
+        private System.Windows.Forms.DataGridView dgv_Question;
         private System.Windows.Forms.Button btn_SearchCatalogue;
         private System.Windows.Forms.TextBox txt_SearchCatalogue;
         private System.Windows.Forms.Button btn_CancelViewQuestione;
