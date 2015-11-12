@@ -194,9 +194,9 @@
     <Compile Include="GUI\ViewQuestionInCatalogue.Designer.cs">
       <DependentUpon>ViewQuestionInCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service References\BL\CatalogueBL.cs" />
-    <Compile Include="Service References\BL\QuestionBL.cs" />
-    <Compile Include="Service References\BL\UserBL.cs" />
+    <Compile Include="BL\CatalogueBL.cs" />
+    <Compile Include="BL\QuestionBL.cs" />
+    <Compile Include="BL\UserBL.cs" />
     <Compile Include="DA\DatabaseAccess.cs" />
     <Compile Include="DA\FileAccess.cs" />
     <Compile Include="DO\Answer.cs" />
@@ -321,9 +321,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login 6.png" />
