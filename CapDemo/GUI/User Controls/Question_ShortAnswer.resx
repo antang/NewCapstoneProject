@@ -117,50 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="quan_ly_tai_khoan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\quan_ly_tai_khoan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thiet_lap_game" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\thiet_lap_game.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KhungPanner4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\KhungPanner4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quan_ly_du_lieu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\quan_ly_du_lieu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BatDau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\BatDau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="backgroud_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\backgroud_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login 6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CaiDat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\CaiDat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icon\search2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HuongDan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\HuongDan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="The_Weightless_World" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\The_Weightless_World.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Thoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\Thoat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Thoat_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\Thoat_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\icon\Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
+        DAAAAk1TRnQBSQFMAgEBAwEAASABAAEgAQABGwEAARsBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABbAMAARsDAAEBAQABCAUAAWQBCxgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
+        AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
+        AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
+        AwABZgMAAZkDAAHMAgABMwMAAjMCAAEzAWYCAAEzAZkCAAEzAcwCAAEzAf8CAAFmAwABZgEzAgACZgIA
+        AWYBmQIAAWYBzAIAAWYB/wIAAZkDAAGZATMCAAGZAWYCAAKZAgABmQHMAgABmQH/AgABzAMAAcwBMwIA
+        AcwBZgIAAcwBmQIAAswCAAHMAf8CAAH/AWYCAAH/AZkCAAH/AcwBAAEzAf8CAAH/AQABMwEAATMBAAFm
+        AQABMwEAAZkBAAEzAQABzAEAATMBAAH/AQAB/wEzAgADMwEAAjMBZgEAAjMBmQEAAjMBzAEAAjMB/wEA
+        ATMBZgIAATMBZgEzAQABMwJmAQABMwFmAZkBAAEzAWYBzAEAATMBZgH/AQABMwGZAgABMwGZATMBAAEz
+        AZkBZgEAATMCmQEAATMBmQHMAQABMwGZAf8BAAEzAcwCAAEzAcwBMwEAATMBzAFmAQABMwHMAZkBAAEz
+        AswBAAEzAcwB/wEAATMB/wEzAQABMwH/AWYBAAEzAf8BmQEAATMB/wHMAQABMwL/AQABZgMAAWYBAAEz
+        AQABZgEAAWYBAAFmAQABmQEAAWYBAAHMAQABZgEAAf8BAAFmATMCAAFmAjMBAAFmATMBZgEAAWYBMwGZ
+        AQABZgEzAcwBAAFmATMB/wEAAmYCAAJmATMBAANmAQACZgGZAQACZgHMAQABZgGZAgABZgGZATMBAAFm
+        AZkBZgEAAWYCmQEAAWYBmQHMAQABZgGZAf8BAAFmAcwCAAFmAcwBMwEAAWYBzAGZAQABZgLMAQABZgHM
+        Af8BAAFmAf8CAAFmAf8BMwEAAWYB/wGZAQABZgH/AcwBAAHMAQAB/wEAAf8BAAHMAQACmQIAAZkBMwGZ
+        AQABmQEAAZkBAAGZAQABzAEAAZkDAAGZAjMBAAGZAQABZgEAAZkBMwHMAQABmQEAAf8BAAGZAWYCAAGZ
+        AWYBMwEAAZkBMwFmAQABmQFmAZkBAAGZAWYBzAEAAZkBMwH/AQACmQEzAQACmQFmAQADmQEAApkBzAEA
+        ApkB/wEAAZkBzAIAAZkBzAEzAQABZgHMAWYBAAGZAcwBmQEAAZkCzAEAAZkBzAH/AQABmQH/AgABmQH/
+        ATMBAAGZAcwBZgEAAZkB/wGZAQABmQH/AcwBAAGZAv8BAAHMAwABmQEAATMBAAHMAQABZgEAAcwBAAGZ
+        AQABzAEAAcwBAAGZATMCAAHMAjMBAAHMATMBZgEAAcwBMwGZAQABzAEzAcwBAAHMATMB/wEAAcwBZgIA
+        AcwBZgEzAQABmQJmAQABzAFmAZkBAAHMAWYBzAEAAZkBZgH/AQABzAGZAgABzAGZATMBAAHMAZkBZgEA
+        AcwCmQEAAcwBmQHMAQABzAGZAf8BAALMAgACzAEzAQACzAFmAQACzAGZAQADzAEAAswB/wEAAcwB/wIA
+        AcwB/wEzAQABmQH/AWYBAAHMAf8BmQEAAcwB/wHMAQABzAL/AQABzAEAATMBAAH/AQABZgEAAf8BAAGZ
+        AQABzAEzAgAB/wIzAQAB/wEzAWYBAAH/ATMBmQEAAf8BMwHMAQAB/wEzAf8BAAH/AWYCAAH/AWYBMwEA
+        AcwCZgEAAf8BZgGZAQAB/wFmAcwBAAHMAWYB/wEAAf8BmQIAAf8BmQEzAQAB/wGZAWYBAAH/ApkBAAH/
+        AZkBzAEAAf8BmQH/AQAB/wHMAgAB/wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/
+        ATMBAAHMAf8BZgEAAv8BmQEAAv8BzAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/
+        AWYBAAEhAQABpQEAA18BAAN3AQADhgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEA
+        AfAB+wH/AQABpAKgAQADgAMAAf8CAAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP/AQABIBr5AQABsgLT
+        ARQK8wEABfMBvAIOAtMBbAHyAosBbBPsAWwBiwGuAfIbAAEgGvkBBwPTARQK8wEABfMB8AIOA9MBrgLT
+        AbMBBxHzAQcBswLTAa4bAAEgGvkBBwPTARQJ8wGSBvMB8AIOA9MBiwLTAbMBBxHzAQcBswLTAYsbAAEg
+        GvkBBwPTARQB9AESBxQBAAMUCQ4BiwLTAbMBvAHyD20B8gG8AbMC0wGLGwABIBr5AQcD0wEUCfQBAAP0
+        CQ4BiwLTAbMBvAH0D/EB9AG8AbMC0wGLGwABIAT5ARYG8wT5B/ME+QEHA9MBFAH0CBQBAAMUBBUCDgOy
+        AYsC0wGtAbwB8w/vAfMBvAGtAtMBixsAASAF+QHyAfME/wG9AvkBRwT/AfQB8gX5AQcD0wEUCfQB8gb0
+        AfACDgPTAYsC0wGtAbwB8wGSDe0BkgHzAbwBrQLTAYsbAAEgBvkB8wH0A/8B9AL5AfQE/wH0AfMF+QEH
+        A9MBFAH0Af8I8gEABfIB8QIOA9MBiwLTAa0BvBH0AbwBrQLTAYsbAAEgBvkB/wH0Cv8B9AHyBvkBBwPT
+        ARQC/wjxARIG8QIOA9MBiwLTAa0BvAHzAeoNEgHqAfMBvAGtAtMBixsAASAH+QHzAfQI/wH0AfMBRwb5
+        AQcD0wEUC/8BAAb/ARQD0wGLAtMBrQHwEf8B8AGtAtMBixsAASAH+QH/AfQI/wL0B/kBBwPTARQB/wEV
+        ChQBAAEOAhQBEwH/ARQB0wEOAQABiwLTAa0B8AH0Ae0N7AHtAfQB8AGtAtMBixsAASAI+QHyAfQG/wH0
+        AfMI+QEHA9MBFA7/BgAC0wGLAtMBrQHwAf8PBwH/AfABrQLTAYsbAAEgCPkB4wH0CP8I+QEHA9MBFBL/
+        ARQD0wGLAtMBrQHwEf8B8AGtAtMBixsAASAJ+Qj/AZQI+QEHGtMBiwLTAbIBrhHsAa4BsgLTAYsbAAEg
+        CPkB9Aj/AfQI+QEHGtMBixnTAYsbAAEgB/kBRwT/AvQF/wf5AQca0wGLGdMBixsAASAH+QH0BP8D9AT/
+        B/kBBxrTAYsZ0wGLGwABIAb5Bf8B9AHyAb0C9AT/BvkBBwXTELIF0wGLGdMBixsAASAG+QHzBPQB8wL5
+        AfIB8wP0AfMG+QEHBNMBFAT/A/QJ8wEUBNMBiwTTAa4B7Q7sAa4E0wGLGwABIAX5Af8B8wT0Af8D+QHz
+        A/QB8wHyBfkBBwTTARQF/wP0CPMBFATTAYsD0wGyAe8E/wP0CPMB9wGyA9MBixsAASAF+QbzBPkG8wGU
+        BPkBBwTTARQG/wP0AfMEFAHqAfMBFATTAYsD0wGyAe8F/wP0AfMB8gTsAfIB9wGyA9MBixsAASAa+QEH
+        BNMBFAf/A/QEFAHqAfMBFATTAYsD0wGyAe8G/wP0AfEEFAHxAfcBsgPTAYsbAAEgGvkBBwTTARQH/wP0
+        BBQB6gHzARQE0wGLA9MBsgHvB/8C9AHxBBQB8QH3AbID0wGLGwABIBr5AQcE0wEUCP8C9AQUAeoB8wEU
+        A9MBEwGLA9MBsgHvB/8C9AHxBBQB8QH3AbID0wGLGwABIBr5AQcE0wEUCf8B9AQUAeoB8wEUAtMBFAEA
+        AYsD0wGyAe8I/wH0AfIEFAHxAfcBsgLTAYsB8hsAASABFxjjAUcBAATTARQK/wQUAeoB8wEUAdMBEwIA
+        AYsD0wGsAe8J/wHyBBQB8QH3AawB0wGLAfIcAAHpGiACAAMHAe8QkgIHAwAB8gSLAesK7AQTAewBbQKL
+        AfIdAAFCAU0BPgcAAT4DAAEoAwABbAMAARsDAAEBAQABAQUAAbABARYAA/8EAAEQ/wCDAAEEDAABEAIA
+        AQwDAAGACAABGAIAARwCAAEBAYAFAAs=
+</value>
   </data>
 </root>

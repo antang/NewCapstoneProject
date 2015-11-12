@@ -17,7 +17,11 @@ namespace CapDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new Login());
+=======
+            Application.Run(new GameShowControl());
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
         }
     }
 }
