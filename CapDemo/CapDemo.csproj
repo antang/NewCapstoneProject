@@ -45,11 +45,14 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="BL\AES.cs" />
     <Compile Include="BL\CatalogueBL.cs" />
     <Compile Include="BL\QuestionBL.cs" />
     <Compile Include="BL\UserBL.cs" />
 =======
+=======
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
     <Compile Include="GUI\CopyQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +206,9 @@
     <Compile Include="Service References\BL\CatalogueBL.cs" />
     <Compile Include="Service References\BL\QuestionBL.cs" />
     <Compile Include="Service References\BL\UserBL.cs" />
+<<<<<<< HEAD
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
+=======
 >>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
     <Compile Include="DA\DatabaseAccess.cs" />
     <Compile Include="DA\FileAccess.cs" />
@@ -250,9 +256,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="GUI\ImportQuestioncs.resx">
       <DependentUpon>ImportQuestioncs.cs</DependentUpon>
 =======
+=======
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
     <EmbeddedResource Include="GUI\CopyQuestion.resx">
       <DependentUpon>CopyQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ImportQuestionForCatalogue.resx">
       <DependentUpon>ImportQuestionForCatalogue.cs</DependentUpon>
+<<<<<<< HEAD
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
+=======
 >>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
@@ -376,8 +388,11 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Template\DemoCap.txt" />
 =======
+=======
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
     <None Include="image\The_Weightless_World.png" />
   </ItemGroup>
   <ItemGroup>
@@ -418,6 +433,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icon\Cancel.png" />
+<<<<<<< HEAD
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
+=======
 >>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

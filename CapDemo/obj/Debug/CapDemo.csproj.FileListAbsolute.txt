@@ -21,11 +21,14 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Login.resources
 >>>>>>> 7d7d4df21f9f5314e4b1a324a7340fc4652686b3
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ImportQuestioncs.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.OncChoiceContent.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.OneChoiceAnswer.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.QuestionType.resources
 =======
+=======
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.GameShowControl.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Setting.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.GameMenu.resources
@@ -52,4 +55,7 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.ImportQuestion
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionInCatalogue.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditCatalogue.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.DeleteCatalogue.resources
+<<<<<<< HEAD
+>>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
+=======
 >>>>>>> 85477b59fc6ba4c28335e8d05821ce9c4852401e
