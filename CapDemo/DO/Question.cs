@@ -17,6 +17,7 @@ namespace CapDemo.DO
         int iDCatalogue;
         int sequence;
         string answerContent;
+        DateTime date;
 
        
         public string AnswerContent
@@ -68,8 +69,13 @@ namespace CapDemo.DO
             get { return iDCatalogue; }
             set { iDCatalogue = value; }
         }
-       
 
+
+        public DateTime Date
+        {
+            get { return date; }
+            set { date = value; }
+        }
         public List<Answer> AnswerList
         {
             get { return answerList; }

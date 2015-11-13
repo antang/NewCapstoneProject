@@ -35,7 +35,6 @@ namespace CapDemo.BL
                     cat.Sequence = i;
                     CatalogueList.Add(cat);
                     i++;
- 
                 }
             }
             return CatalogueList;

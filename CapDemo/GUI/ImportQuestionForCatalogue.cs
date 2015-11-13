@@ -14,9 +14,6 @@ namespace CapDemo.GUI
 {
     public partial class ImportQuestionForCatalogue : Form
     {
-        
-        ImportQuestions iq = new ImportQuestions();
-        CreateQuestion cq = new CreateQuestion();
         private int iDCat;
         private string nameCat;
         public int IDCat
@@ -52,12 +49,14 @@ namespace CapDemo.GUI
 
         private void rdb_ImportToFile_CheckedChanged(object sender, EventArgs e)
         {
+            ImportQuestions iq = new ImportQuestions(IDCat, NameCat);
             pnl_ImportQuestion.Controls.Clear();
             pnl_ImportQuestion.Controls.Add(iq);
         }
 
         private void rdb_ImportCreateNew_CheckedChanged(object sender, EventArgs e)
         {
+            CreateQuestion cq = new CreateQuestion(IDCat, NameCat);
             pnl_ImportQuestion.Controls.Clear();
             pnl_ImportQuestion.Controls.Add(cq);
         }

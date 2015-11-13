@@ -30,6 +30,7 @@ namespace CapDemo.GUI.User_Controls
         {
             this.Dock = DockStyle.Fill;
             LoadCat();
+            loadQuestion();
         }
         //LOAD Catalogue table from database
         public void LoadCat()
@@ -45,7 +46,36 @@ namespace CapDemo.GUI.User_Controls
             dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
             dgv_Catalogue.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
-        
+        //LOAD QUESTION TABLE FROM DATABASE
+        public void loadQuestion()
+        {
+            QuestionBL QuestionBL = new QuestionBL();
+            List<DO.Question> QuestionList;
+            QuestionList = QuestionBL.GetQuestion();
+            if (QuestionList != null)
+                dgv_Question.DataSource = QuestionList;
+
+            dgv_Question.Columns["IDCatalogue"].Visible = false;
+            dgv_Question.Columns["IDQuestion"].Visible = false;
+            dgv_Question.Columns["AnswerContent"].Visible = false;
+            dgv_Question.Columns["Date"].Visible = false;
+
+            dgv_Question.Columns["Sequence"].HeaderText= "STT";
+            dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên chủ Đề";
+            dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
+
+            dgv_Question.Columns["Sequence"].ReadOnly = true;
+            dgv_Question.Columns["NameQuestion"].ReadOnly = true;
+            dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
+            dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+
+            dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+
+        }
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)
         {
             CreateQuestionNew cqn = new CreateQuestionNew();

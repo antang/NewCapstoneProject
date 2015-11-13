@@ -28,6 +28,7 @@ namespace CapDemo.BL
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
                          
             DataTable dt = DA.SelectDatabase(query);
+            int i = 1;
             if (dt != null)
             {
                 foreach (DataRow item in dt.Rows)
@@ -37,8 +38,10 @@ namespace CapDemo.BL
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.NameCatalogue = item["Catalogue_Name"].ToString();
+                    Question.Sequence = i;
                     //Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     QuestionList.Add(Question);
+                    i++;
                 }
             }
             return QuestionList;
@@ -97,16 +100,16 @@ namespace CapDemo.BL
         //INSERT QUESTION
         public bool AddQuestion(Question Question)
         {
-            string query = "INSERT INTO Question (Question_Name, Question_Type, Catalogue_ID)"
-                        + " VALUES ('" + Question.NameQuestion + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "')";
+            string query = "INSERT INTO Question (Question_Name, Question_Type, Catalogue_ID, Date_Create)"
+                        + " VALUES ('" + Question.NameQuestion + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
 
             return DA.InsertDatabase(query);
         }
         //INSERT ANSWER
         public bool AddAnswer( Answer Answer)
         {
-            string query= " INSERT INTO Answer (Answer_Name, Correct_Answer, Question_ID)"
-                        + " VALUES ('" + Answer.ContentAnswer + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "')";
+            string query= " INSERT INTO Answer (Answer_Name, Correct_Answer, Question_ID, Catalogue_ID)"
+                        + " VALUES ('" + Answer.ContentAnswer + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
             return DA.InsertDatabase(query);
         }
 //EDIT QUESTION AND ANSWER
@@ -142,7 +145,7 @@ namespace CapDemo.BL
                           + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
-
+//LOAD FILE QUESTION
         // LOAD QUESTION FILE
         public List<Question> GetFile(string file)
         {
@@ -153,7 +156,7 @@ namespace CapDemo.BL
             dtb.Columns.Add("Sequence", typeof(string));
             dtb.Columns.Add("NameQuestion", typeof(string));
             dtb.Columns.Add("TypeQuestion", typeof(string));
-            dtb.Columns.Add("Answer", typeof(string));
+            dtb.Columns.Add("AnswerContent", typeof(string));
 
             string[] QuestionContent = content.Split(new string[] { "/**/" }, StringSplitOptions.None);
 
@@ -173,7 +176,7 @@ namespace CapDemo.BL
                     Question.Sequence = Convert.ToInt32(item["Sequence"]);
                     Question.NameQuestion = item["NameQuestion"].ToString();
                     Question.TypeQuestion = item["TypeQuestion"].ToString();
-                    Question.AnswerContent = item["Answer"].ToString();
+                    Question.AnswerContent = item["AnswerContent"].ToString();
                     QuestionList.Add(Question);
                 }
             }

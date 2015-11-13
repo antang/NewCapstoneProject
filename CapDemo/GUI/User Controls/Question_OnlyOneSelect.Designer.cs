@@ -40,7 +40,6 @@
             this.btn_CancelQuestion = new System.Windows.Forms.Button();
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_TimeAnswer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_ScoreCong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_Date = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -183,7 +183,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.txt_Date);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txt_TimeAnswer);
             this.groupBox2.Controls.Add(this.label5);
@@ -198,18 +198,6 @@
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết đặt câu hỏi";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(424, 58);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.maskedTextBox1.TabIndex = 24;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
@@ -276,6 +264,13 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Thời gian";
             // 
+            // txt_Date
+            // 
+            this.txt_Date.Location = new System.Drawing.Point(424, 62);
+            this.txt_Date.Name = "txt_Date";
+            this.txt_Date.Size = new System.Drawing.Size(100, 20);
+            this.txt_Date.TabIndex = 23;
+            // 
             // Question_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +303,6 @@
         private System.Windows.Forms.Button btn_CancelQuestion;
         private System.Windows.Forms.Button btn_SaveQuestion;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_TimeAnswer;
         private System.Windows.Forms.Label label5;
@@ -317,5 +311,6 @@
         private System.Windows.Forms.TextBox txt_ScoreCong;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.TextBox txt_Date;
     }
 }
