@@ -36,9 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_LoadFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_FilePath = new System.Windows.Forms.TextBox();
             this.btn_SaveImport = new System.Windows.Forms.Button();
             this.btn_ExitImport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -68,7 +68,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 30);
             this.button4.TabIndex = 34;
-            this.button4.Text = "Download";
+            this.button4.Text = "Tải Về";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
@@ -100,30 +100,62 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_LoadFile);
             this.groupBox2.Controls.Add(this.label2);
+<<<<<<< HEAD
+            this.groupBox2.Controls.Add(this.txt_FilePath);
+            this.groupBox2.Location = new System.Drawing.Point(3, 94);
+=======
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
+>>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(784, 475);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 125);
             this.dataGridView1.Name = "dataGridView1";
+<<<<<<< HEAD
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(751, 315);
+=======
             this.dataGridView1.Size = new System.Drawing.Size(751, 336);
+>>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             this.dataGridView1.TabIndex = 4;
             // 
-            // button1
+            // btn_LoadFile
             // 
+<<<<<<< HEAD
+            this.btn_LoadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_LoadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_LoadFile.ImageIndex = 3;
+            this.btn_LoadFile.ImageList = this.imageList1;
+            this.btn_LoadFile.Location = new System.Drawing.Point(453, 16);
+            this.btn_LoadFile.Name = "btn_LoadFile";
+            this.btn_LoadFile.Size = new System.Drawing.Size(110, 30);
+            this.btn_LoadFile.TabIndex = 3;
+            this.btn_LoadFile.Text = "Chọn File";
+            this.btn_LoadFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_LoadFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_LoadFile.UseVisualStyleBackColor = false;
+            this.btn_LoadFile.Click += new System.EventHandler(this.btn_LoadFile_Click);
+=======
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,6 +170,7 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
+>>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             // 
             // label2
             // 
@@ -146,17 +179,26 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Chọn file";
+            this.label2.Text = "Tên File";
             // 
-            // textBox1
+            // txt_FilePath
             // 
+<<<<<<< HEAD
+            this.txt_FilePath.Location = new System.Drawing.Point(89, 16);
+            this.txt_FilePath.Multiline = true;
+            this.txt_FilePath.Name = "txt_FilePath";
+            this.txt_FilePath.ReadOnly = true;
+            this.txt_FilePath.Size = new System.Drawing.Size(358, 30);
+            this.txt_FilePath.TabIndex = 0;
+=======
             this.textBox1.Location = new System.Drawing.Point(92, 77);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(358, 30);
             this.textBox1.TabIndex = 0;
+>>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             // 
             // btn_SaveImport
             // 
@@ -173,6 +215,7 @@
             this.btn_SaveImport.Text = "Lưu";
             this.btn_SaveImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveImport.UseVisualStyleBackColor = false;
+            this.btn_SaveImport.Click += new System.EventHandler(this.btn_SaveImport_Click);
             // 
             // btn_ExitImport
             // 
@@ -190,6 +233,7 @@
             this.btn_ExitImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ExitImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ExitImport.UseVisualStyleBackColor = false;
+            this.btn_ExitImport.Click += new System.EventHandler(this.btn_ExitImport_Click);
             // 
             // ImportQuestions
             // 
@@ -219,9 +263,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_LoadFile;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_FilePath;
         private System.Windows.Forms.Button btn_SaveImport;
         private System.Windows.Forms.Button btn_ExitImport;
     }

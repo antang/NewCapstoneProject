@@ -21,12 +21,29 @@ namespace CapDemo.GUI
 
         private void btn_SaveCatalogue_Click(object sender, EventArgs e)
         {
-            CatalogueBL CatBL = new CatalogueBL();
-            Catalogue Cat = new Catalogue();
-            Cat.NameCatalogue = txt_NameCatalogue.Text;
-            CatBL.AddCatalogue(Cat);
-            this.Close();
+            if (txt_NameCatalogue.Text=="")
+            {
+                MessageBox.Show("Vui lòng nhập tên chủ đề!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CatalogueBL CatBL = new CatalogueBL();
+                Catalogue Cat = new Catalogue();
+                Cat.NameCatalogue = txt_NameCatalogue.Text;
+                if (CatBL.AddCatalogue(Cat) ==true)
+                {
+                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+                    notifyIcon1.BalloonTipText = "I am a NotifyIcon Balloon";
+                    notifyIcon1.BalloonTipTitle = "Welcome Message";
+                    notifyIcon1.ShowBalloonTip(1000);
+                    this.Close();
+                }
+                else
+                {
 
+                } 
+                
+            }
         }
 
         private void btn_CancelCatalogue_Click(object sender, EventArgs e)

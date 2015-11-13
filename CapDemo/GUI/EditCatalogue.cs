@@ -32,11 +32,29 @@ namespace CapDemo.GUI
 
         private void btn_SaveEditCatalogue_Click(object sender, EventArgs e)
         {
-            CatalogueBL CatBL = new CatalogueBL();
-            Catalogue Cat = new Catalogue();
-            Cat.IDCatalogue = IDCat;
-            Cat.NameCatalogue = txt_NameCatalogue.Text;
-            CatBL.EditCataloguebyID(Cat);
+            
+            if (txt_NameCatalogue.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên chủ đề!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                CatalogueBL CatBL = new CatalogueBL();
+                Catalogue Cat = new Catalogue();
+                Cat.IDCatalogue = IDCat;
+                Cat.NameCatalogue = txt_NameCatalogue.Text;
+                if (CatBL.EditCataloguebyID(Cat) == true)
+                {
+                    
+                    this.Close();
+                }
+                else
+                {
+
+                }
+            }
+            
+            
             this.Close();
         }
 
@@ -48,6 +66,12 @@ namespace CapDemo.GUI
         private void EditCatalogue_Load(object sender, EventArgs e)
         {
             txt_NameCatalogue.Text = NameCat;
+            //notifyIcon1.Text = "My applicaiton";
+            //notifyIcon1.Visible = true;
+            //notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            //notifyIcon1.BalloonTipText = "I am a NotifyIcon Balloon";
+            //notifyIcon1.BalloonTipTitle = "Welcome Message";
+            //notifyIcon1.ShowBalloonTip(1000);
         }
     }
 }

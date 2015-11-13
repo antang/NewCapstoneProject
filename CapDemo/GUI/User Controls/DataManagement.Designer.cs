@@ -332,13 +332,19 @@
             // 
             // dgv_Question
             // 
+            this.dgv_Question.AllowUserToAddRows = false;
+            this.dgv_Question.AllowUserToDeleteRows = false;
+            this.dgv_Question.AllowUserToResizeColumns = false;
+            this.dgv_Question.AllowUserToResizeRows = false;
             this.dgv_Question.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Question.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Question.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Question.Location = new System.Drawing.Point(63, 138);
             this.dgv_Question.Name = "dgv_Question";
+            this.dgv_Question.RowHeadersVisible = false;
             this.dgv_Question.Size = new System.Drawing.Size(590, 284);
             this.dgv_Question.TabIndex = 17;
             // 

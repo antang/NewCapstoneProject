@@ -36,6 +36,7 @@
             this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // btn_SaveCatalogue
@@ -113,6 +114,11 @@
             this.lbl1.TabIndex = 34;
             this.lbl1.Text = "Tạo Chủ Đề Mới";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // CreateCatalogueNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,5 +151,6 @@
         private System.Windows.Forms.TextBox txt_NameCatalogue;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

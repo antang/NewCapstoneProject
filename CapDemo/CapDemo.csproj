@@ -158,6 +158,7 @@
     <Compile Include="GUI\User Controls\ImportQuestionToQuestionStore.Designer.cs">
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\MyEventArgs.cs" />
     <Compile Include="GUI\User Controls\Question_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>

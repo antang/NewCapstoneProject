@@ -121,6 +121,7 @@
             // 
             this.rad_Copy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rad_Copy.AutoSize = true;
+            this.rad_Copy.Checked = true;
             this.rad_Copy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_Copy.ForeColor = System.Drawing.Color.White;
             this.rad_Copy.Location = new System.Drawing.Point(540, 353);
@@ -146,7 +147,6 @@
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Question.Location = new System.Drawing.Point(12, 40);
             this.dgv_Question.Name = "dgv_Question";
-            this.dgv_Question.ReadOnly = true;
             this.dgv_Question.RowHeadersVisible = false;
             this.dgv_Question.Size = new System.Drawing.Size(722, 307);
             this.dgv_Question.TabIndex = 10;

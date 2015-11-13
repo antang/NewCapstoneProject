@@ -16,11 +16,35 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        Question_OnlyOneSelect qoos = new Question_OnlyOneSelect();
+        //Declare parameter
+        private int iDCat;
+        private string nameCat;
+        //GET SET ID CAT
+        public int IDCat
+        {
+            get { return iDCat; }
+            set { iDCat = value; }
+        }
+        //GET SET NAME CAT
+        public string NameCat
+        {
+            get { return nameCat; }
+            set { nameCat = value; }
+        }
+        //Constructor
+        public CreateQuestion(int IDCat, string NameCat)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.IDCat = IDCat;
+            this.NameCat = NameCat;
+        }
         Question_MultiSelect qms = new Question_MultiSelect();
         Question_ShortAnswer qsa = new Question_ShortAnswer();
+       
         private void rdo_OnlyOneAnswer_CheckedChanged(object sender, EventArgs e)
         {
+            Question_OnlyOneSelect qoos = new Question_OnlyOneSelect(IDCat,NameCat);
             pnl_LoadQuestion.Controls.Clear();
             pnl_LoadQuestion.Controls.Add(qoos);
         }
@@ -40,6 +64,8 @@ namespace CapDemo.GUI.User_Controls
         private void CreateQuestion_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+            Question_OnlyOneSelect qoos = new Question_OnlyOneSelect(IDCat, NameCat);
+            pnl_LoadQuestion.Controls.Clear();
             pnl_LoadQuestion.Controls.Add(qoos);
         }
     }

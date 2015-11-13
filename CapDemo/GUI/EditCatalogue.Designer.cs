@@ -36,6 +36,7 @@
             this.btn_CancelEditCatalogue = new System.Windows.Forms.Button();
             this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // btn_SaveEditCatalogue
@@ -113,6 +114,11 @@
             this.lbl2.TabIndex = 41;
             this.lbl2.Text = "Tên chủ đề";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // EditCatalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,5 +152,6 @@
         private System.Windows.Forms.Button btn_CancelEditCatalogue;
         private System.Windows.Forms.TextBox txt_NameCatalogue;
         private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

@@ -46,7 +46,7 @@ namespace CapDemo.GUI.User_Controls
                     }
                 }
         }
-
+        //Copy Question
         public void CopyQuestion()
         {
             Question question = new Question();
@@ -54,12 +54,12 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBL = new QuestionBL();
             foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                if (row.Cells["check"].Value != null)
+                if (row.Cells["Check"].Value != null)
                 {
-
                     question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
                     question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
                     question.IDCatalogue = IDCat;
+                    question.Date = DateTime.Now;
                     questionBL.AddQuestion(question);
 
                     question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
@@ -72,9 +72,47 @@ namespace CapDemo.GUI.User_Controls
                             answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
                             answer.IsCorrect = AnswerList.ElementAt(i).IsCorrect;
                             answer.IDQuestion = questionBL.MaxIDQuestion();
+                            answer.IDCatalogue = IDCat;
                             questionBL.AddAnswer(answer);
                         }
                     }
+                }
+            }
+        }
+        //MOVE Question
+        public void MoveQuestion()
+        {
+            Question question = new Question();
+            Answer answer = new Answer();
+            QuestionBL questionBL = new QuestionBL();
+            foreach (DataGridViewRow row in dgv_Question.Rows)
+            {
+                if (row.Cells["Check"].Value != null)
+                {
+                    //add question
+                    question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
+                    question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
+                    question.IDCatalogue = IDCat;
+                    question.Date = DateTime.Now;
+                    questionBL.AddQuestion(question);
+                    //add answer
+                    question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                    List<DO.Answer> AnswerList;
+                    AnswerList = questionBL.GetAnswerByQuestionID(question);
+                    if (AnswerList != null)
+                    {
+                        for (int i = 0; i < AnswerList.Count; i++)
+                        {
+                            answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
+                            answer.IsCorrect = AnswerList.ElementAt(i).IsCorrect;
+                            answer.IDQuestion = questionBL.MaxIDQuestion();
+                            answer.IDCatalogue = IDCat;
+                            questionBL.AddAnswer(answer);
+                        }
+                    }
+                    //Delete answer and question
+                    questionBL.DeleteAnswerByIDQuestion(question);
+                    questionBL.DeleteQuestionByID(question);
                 }
             }
         }
@@ -94,6 +132,12 @@ namespace CapDemo.GUI.User_Controls
             {
                 CopyQuestion();
             }
+            if (rad_Move.Checked == true)
+            {
+                MoveQuestion();
+            }
+            Form FindForm = this.FindForm();
+            FindForm.Close();
         }
         //SELECT ITEM IN COMMOBOX
         private void cmb_Catalogue_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,6 +168,7 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["IDCatalogue"].Visible = false;
             dgv_Question.Columns["IDQuestion"].Visible = false;
             dgv_Question.Columns["AnswerContent"].Visible = false;
+            dgv_Question.Columns["Date"].Visible = false;
 
             dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -134,6 +179,10 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
             dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
             dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
+            dgv_Question.Columns["Sequence"].ReadOnly = true;
+            dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+            dgv_Question.Columns["NameQuestion"].ReadOnly = true;
+            dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
 
             DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
             CheckColumn.Name = "Check";       
