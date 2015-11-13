@@ -27,5 +27,10 @@ namespace CapDemo.GUI.User_Controls
         {
             this.Dock = DockStyle.Fill;
         }
+
+        private void lbl_Name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

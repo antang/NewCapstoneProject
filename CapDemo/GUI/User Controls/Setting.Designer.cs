@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
             this.ptb_logo = new System.Windows.Forms.PictureBox();
             this.btn_DataManagement = new System.Windows.Forms.Button();
             this.btn_GameSetting = new System.Windows.Forms.Button();
             this.btn_UserManagement = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.pnl_Setting = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).BeginInit();
+            this.pnl_Setting.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptb_logo
@@ -106,10 +109,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_Setting.Controls.Add(this.richTextBox1);
             this.pnl_Setting.Location = new System.Drawing.Point(238, 19);
             this.pnl_Setting.Name = "pnl_Setting";
             this.pnl_Setting.Size = new System.Drawing.Size(710, 584);
             this.pnl_Setting.TabIndex = 5;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(33, 16);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBox1.Size = new System.Drawing.Size(662, 552);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // Setting
             // 
@@ -128,6 +148,7 @@
             this.Size = new System.Drawing.Size(960, 612);
             this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).EndInit();
+            this.pnl_Setting.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -140,5 +161,6 @@
         private System.Windows.Forms.Panel pnl_Setting;
         public System.Windows.Forms.Button btn_Exit;
         public System.Windows.Forms.Button btn_DataManagement;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

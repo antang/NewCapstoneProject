@@ -212,6 +212,7 @@
             // 
             this.txt_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_SearchCatalogue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SearchCatalogue.Location = new System.Drawing.Point(436, 75);
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
             this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 27);
@@ -323,6 +324,7 @@
             // 
             this.txt_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_SearchQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_SearchQuestion.Location = new System.Drawing.Point(436, 75);
             this.txt_SearchQuestion.Name = "txt_SearchQuestion";
             this.txt_SearchQuestion.Size = new System.Drawing.Size(217, 27);
@@ -368,9 +370,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(57, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(251, 33);
+            this.label2.Size = new System.Drawing.Size(259, 33);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Danh sách chủ đề";
+            this.label2.Text = "Danh sách câu hỏi";
             // 
             // grb_FunctionQuestion
             // 

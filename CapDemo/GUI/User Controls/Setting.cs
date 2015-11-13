@@ -30,6 +30,7 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_DataManagement_Click(object sender, EventArgs e)
         {
+            pnl_Setting.Controls.Clear();
             DataManagement dm = new DataManagement();
             pnl_Setting.Controls.Add(dm);
         }
