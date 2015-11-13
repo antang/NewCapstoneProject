@@ -24,6 +24,7 @@ namespace CapDemo.BL
             string query = "SELECT [Catalogue_ID],[Catalogue_Name]"
                         + " FROM [Capstone].[dbo].[Catalogue]";
             DataTable dt = DA.SelectDatabase(query);
+            int i = 1;
             if (dt!= null)
             {
                 foreach (DataRow item in dt.Rows)
@@ -31,7 +32,9 @@ namespace CapDemo.BL
                     Catalogue cat = new Catalogue();
                     cat.IDCatalogue=Convert.ToInt32(item["Catalogue_ID"]);
                     cat.NameCatalogue = item["Catalogue_Name"].ToString();
+                    cat.Sequence = i;
                     CatalogueList.Add(cat);
+                    i++;
  
                 }
             }

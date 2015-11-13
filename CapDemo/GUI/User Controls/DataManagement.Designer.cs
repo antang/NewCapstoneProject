@@ -220,9 +220,12 @@
             // dgv_Catalogue
             // 
             this.dgv_Catalogue.AllowUserToAddRows = false;
+            this.dgv_Catalogue.AllowUserToResizeColumns = false;
+            this.dgv_Catalogue.AllowUserToResizeRows = false;
             this.dgv_Catalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_Catalogue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Catalogue.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Catalogue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Catalogue.Location = new System.Drawing.Point(63, 138);

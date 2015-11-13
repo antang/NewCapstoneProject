@@ -17,7 +17,7 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-
+        //ADD Catalogue
         private void lbl_CreateCatalogue_Click(object sender, EventArgs e)
         {
             CreateCatalogueNew CreateCat = new CreateCatalogueNew();
@@ -39,12 +39,13 @@ namespace CapDemo.GUI.User_Controls
             CatList = CatBL.GetCatalogue();
             if (CatList != null)
                 dgv_Catalogue.DataSource = CatList;
-            dgv_Catalogue.Columns["IDCatalogue"].HeaderText = "Mã Chủ Đề";
+
+            dgv_Catalogue.Columns["IDCatalogue"].Visible = false;
+            dgv_Catalogue.Columns["Sequence"].HeaderText = "STT";
             dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
-            dgv_Catalogue.Columns["IDCatalogue"].Width = 185;
-            dgv_Catalogue.Columns["NameCatalogue"].Width = 400;
+            dgv_Catalogue.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
-        //ADD Catalogue
+        
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)
         {
             CreateQuestionNew cqn = new CreateQuestionNew();
@@ -77,7 +78,9 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_ImportQuestion_Click(object sender, EventArgs e)
         {
-            ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue();
+            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+            ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue(IDCat, NameCat);
             iqc.ShowDialog();
         }
 

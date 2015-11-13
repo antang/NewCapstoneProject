@@ -1,4 +1,5 @@
-﻿using CapDemo.GUI.User_Controls;
+﻿using CapDemo.BL;
+using CapDemo.GUI.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,38 @@ namespace CapDemo.GUI
 {
     public partial class ImportQuestionForCatalogue : Form
     {
-        ImportQuestionToQuestionStore iqqs = new ImportQuestionToQuestionStore();
+        
         ImportQuestions iq = new ImportQuestions();
         CreateQuestion cq = new CreateQuestion();
+        private int iDCat;
+        private string nameCat;
+        public int IDCat
+        {
+            get { return iDCat; }
+            set { iDCat = value; }
+        }
+        
+        public string NameCat
+        {
+            get { return nameCat; }
+            set { nameCat = value; }
+        }
         public ImportQuestionForCatalogue()
         {
             InitializeComponent();
         }
 
+        public ImportQuestionForCatalogue(int IDCat, string NameCat)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.iDCat = IDCat;
+            this.nameCat = NameCat;
+        }
+
         private void rdb_ImportToCatalogue_CheckedChanged(object sender, EventArgs e)
         {
+            ImportQuestionToQuestionStore iqqs = new ImportQuestionToQuestionStore(IDCat,NameCat);
             pnl_ImportQuestion.Controls.Clear();
             pnl_ImportQuestion.Controls.Add(iqqs);
         }
@@ -41,7 +64,10 @@ namespace CapDemo.GUI
 
         private void ImportQuestionForCatalogue_Load(object sender, EventArgs e)
         {
-            
+            txt_Catalogue.Text = NameCat;
+            ImportQuestionToQuestionStore iqqs = new ImportQuestionToQuestionStore(IDCat, NameCat);
+            pnl_ImportQuestion.Controls.Clear();
+            pnl_ImportQuestion.Controls.Add(iqqs);
         }
 
     }

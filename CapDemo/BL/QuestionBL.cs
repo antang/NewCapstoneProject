@@ -53,6 +53,7 @@ namespace CapDemo.BL
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID"
                          + " WHERE q.Catalogue_ID='"+Catalogue.IDCatalogue+"'";
             DataTable dt = DA.SelectDatabase(query);
+            int i=1;
             if (dt != null)
             {
                 foreach (DataRow item in dt.Rows)
@@ -62,11 +63,36 @@ namespace CapDemo.BL
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.NameCatalogue = item["Catalogue_Name"].ToString();
+                    Question.Sequence = i;
                     QuestionList.Add(Question);
+                    i++;
                 }
             }
             return QuestionList;
         }
+        //Select Answer by Question ID
+        public List<Answer> GetAnswerByQuestionID(Question Question)
+        {
+            List<Answer> AnswerList = new List<Answer>();
+            string query = "SELECT a.Answer_ID, a.Answer_Name, a.Question_ID, a.Correct_Answer"
+                         + " FROM Answer a "
+                         + " WHERE a.Question_ID='" + Question.IDQuestion + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Answer Answer = new Answer();
+                    Answer.IDAnswer = Convert.ToInt32(item["Answer_ID"]);
+                    Answer.ContentAnswer = item["Answer_Name"].ToString();
+                    Answer.IDQuestion = Convert.ToInt32(item["Question_ID"].ToString());
+                    Answer.IsCorrect = (bool)item["Correct_Answer"];
+                    AnswerList.Add(Answer);
+                }
+            }
+            return AnswerList;
+        }
+
 //INSERT QUESTION AND CATALOGUE
         //INSERT QUESTION
         public bool AddQuestion(Question Question)

@@ -32,13 +32,11 @@
             this.txt_Catalogue = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pnl_ImportQuestion = new System.Windows.Forms.Panel();
-            this.importQuestionToQuestionStore1 = new CapDemo.GUI.User_Controls.ImportQuestionToQuestionStore();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdb_ImportCreateNew = new System.Windows.Forms.RadioButton();
             this.rdb_ImportToFile = new System.Windows.Forms.RadioButton();
             this.rdb_ImportToCatalogue = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
-            this.pnl_ImportQuestion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,21 +79,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_ImportQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_ImportQuestion.Controls.Add(this.importQuestionToQuestionStore1);
             this.pnl_ImportQuestion.Location = new System.Drawing.Point(7, 13);
             this.pnl_ImportQuestion.Name = "pnl_ImportQuestion";
             this.pnl_ImportQuestion.Size = new System.Drawing.Size(793, 529);
             this.pnl_ImportQuestion.TabIndex = 0;
-            // 
-            // importQuestionToQuestionStore1
-            // 
-            this.importQuestionToQuestionStore1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.importQuestionToQuestionStore1.Location = new System.Drawing.Point(3, 3);
-            this.importQuestionToQuestionStore1.Name = "importQuestionToQuestionStore1";
-            this.importQuestionToQuestionStore1.Size = new System.Drawing.Size(787, 497);
-            this.importQuestionToQuestionStore1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -166,7 +153,6 @@
             this.Text = "Nhập câu hỏi cho chủ đề";
             this.Load += new System.EventHandler(this.ImportQuestionForCatalogue_Load);
             this.groupBox2.ResumeLayout(false);
-            this.pnl_ImportQuestion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -184,6 +170,5 @@
         private System.Windows.Forms.RadioButton rdb_ImportCreateNew;
         private System.Windows.Forms.RadioButton rdb_ImportToFile;
         private System.Windows.Forms.RadioButton rdb_ImportToCatalogue;
-        private User_Controls.ImportQuestionToQuestionStore importQuestionToQuestionStore1;
     }
 }
