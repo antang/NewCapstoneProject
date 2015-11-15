@@ -33,7 +33,7 @@
             this.tbc_DataManagement = new System.Windows.Forms.TabControl();
             this.tbp_CatalogueManagement = new System.Windows.Forms.TabPage();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gb_CatalogueFunction = new System.Windows.Forms.GroupBox();
             this.btn_ViewQuestion = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_ImportQuestion = new System.Windows.Forms.Button();
@@ -51,18 +51,19 @@
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.lbl_CreateQuestion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.grb_FunctionQuestion = new System.Windows.Forms.GroupBox();
+            this.gb_QuestionFunction = new System.Windows.Forms.GroupBox();
             this.btn_CopyQuestion = new System.Windows.Forms.Button();
             this.btn_MoveQuestion = new System.Windows.Forms.Button();
             this.btn_EditQuestion = new System.Windows.Forms.Button();
             this.btn_DeleteQuestion = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tbc_DataManagement.SuspendLayout();
             this.tbp_CatalogueManagement.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gb_CatalogueFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Catalogue)).BeginInit();
             this.tbp_QuestionManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
-            this.grb_FunctionQuestion.SuspendLayout();
+            this.gb_QuestionFunction.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbc_DataManagement
@@ -78,12 +79,13 @@
             this.tbc_DataManagement.SelectedIndex = 0;
             this.tbc_DataManagement.Size = new System.Drawing.Size(719, 584);
             this.tbc_DataManagement.TabIndex = 0;
+            this.tbc_DataManagement.Click += new System.EventHandler(this.tbc_DataManagement_Click);
             // 
             // tbp_CatalogueManagement
             // 
             this.tbp_CatalogueManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbp_CatalogueManagement.Controls.Add(this.btn_SearchCatalogue);
-            this.tbp_CatalogueManagement.Controls.Add(this.groupBox1);
+            this.tbp_CatalogueManagement.Controls.Add(this.gb_CatalogueFunction);
             this.tbp_CatalogueManagement.Controls.Add(this.txt_SearchCatalogue);
             this.tbp_CatalogueManagement.Controls.Add(this.dgv_Catalogue);
             this.tbp_CatalogueManagement.Controls.Add(this.lbl_CreateCatalogue);
@@ -95,6 +97,7 @@
             this.tbp_CatalogueManagement.Size = new System.Drawing.Size(711, 551);
             this.tbp_CatalogueManagement.TabIndex = 0;
             this.tbp_CatalogueManagement.Text = "Quản lý chủ đề";
+            this.tbp_CatalogueManagement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbp_CatalogueManagement_MouseClick);
             // 
             // btn_SearchCatalogue
             // 
@@ -109,22 +112,23 @@
             this.btn_SearchCatalogue.TabIndex = 14;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gb_CatalogueFunction
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.gb_CatalogueFunction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btn_ViewQuestion);
-            this.groupBox1.Controls.Add(this.btn_ImportQuestion);
-            this.groupBox1.Controls.Add(this.btn_EditCatalogue);
-            this.groupBox1.Controls.Add(this.btn_DeleteCatalogue);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(63, 431);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(590, 88);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chọn chức năng cho chủ đề";
+            this.gb_CatalogueFunction.Controls.Add(this.btn_ViewQuestion);
+            this.gb_CatalogueFunction.Controls.Add(this.btn_ImportQuestion);
+            this.gb_CatalogueFunction.Controls.Add(this.btn_EditCatalogue);
+            this.gb_CatalogueFunction.Controls.Add(this.btn_DeleteCatalogue);
+            this.gb_CatalogueFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_CatalogueFunction.ForeColor = System.Drawing.Color.White;
+            this.gb_CatalogueFunction.Location = new System.Drawing.Point(63, 431);
+            this.gb_CatalogueFunction.Name = "gb_CatalogueFunction";
+            this.gb_CatalogueFunction.Size = new System.Drawing.Size(590, 88);
+            this.gb_CatalogueFunction.TabIndex = 13;
+            this.gb_CatalogueFunction.TabStop = false;
+            this.gb_CatalogueFunction.Text = "Chọn chức năng cho chủ đề";
+            this.gb_CatalogueFunction.Visible = false;
             // 
             // btn_ViewQuestion
             // 
@@ -236,6 +240,7 @@
             this.dgv_Catalogue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Catalogue.Size = new System.Drawing.Size(590, 284);
             this.dgv_Catalogue.TabIndex = 11;
+            this.dgv_Catalogue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Catalogue_CellClick);
             // 
             // lbl_CreateCatalogue
             // 
@@ -273,7 +278,7 @@
             this.tbp_QuestionManagement.Controls.Add(this.dgv_Question);
             this.tbp_QuestionManagement.Controls.Add(this.lbl_CreateQuestion);
             this.tbp_QuestionManagement.Controls.Add(this.label2);
-            this.tbp_QuestionManagement.Controls.Add(this.grb_FunctionQuestion);
+            this.tbp_QuestionManagement.Controls.Add(this.gb_QuestionFunction);
             this.tbp_QuestionManagement.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbp_QuestionManagement.Location = new System.Drawing.Point(4, 29);
             this.tbp_QuestionManagement.Name = "tbp_QuestionManagement";
@@ -281,6 +286,7 @@
             this.tbp_QuestionManagement.Size = new System.Drawing.Size(711, 551);
             this.tbp_QuestionManagement.TabIndex = 1;
             this.tbp_QuestionManagement.Text = "Quản lý câu hỏi";
+            this.tbp_QuestionManagement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbp_QuestionManagement_MouseClick);
             // 
             // lbl_ImportQuestion
             // 
@@ -347,6 +353,7 @@
             this.dgv_Question.RowHeadersVisible = false;
             this.dgv_Question.Size = new System.Drawing.Size(590, 284);
             this.dgv_Question.TabIndex = 17;
+            this.dgv_Question.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Question_CellClick);
             // 
             // lbl_CreateQuestion
             // 
@@ -374,22 +381,23 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Danh sách câu hỏi";
             // 
-            // grb_FunctionQuestion
+            // gb_QuestionFunction
             // 
-            this.grb_FunctionQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.gb_QuestionFunction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grb_FunctionQuestion.Controls.Add(this.btn_CopyQuestion);
-            this.grb_FunctionQuestion.Controls.Add(this.btn_MoveQuestion);
-            this.grb_FunctionQuestion.Controls.Add(this.btn_EditQuestion);
-            this.grb_FunctionQuestion.Controls.Add(this.btn_DeleteQuestion);
-            this.grb_FunctionQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_FunctionQuestion.ForeColor = System.Drawing.Color.White;
-            this.grb_FunctionQuestion.Location = new System.Drawing.Point(63, 431);
-            this.grb_FunctionQuestion.Name = "grb_FunctionQuestion";
-            this.grb_FunctionQuestion.Size = new System.Drawing.Size(590, 88);
-            this.grb_FunctionQuestion.TabIndex = 19;
-            this.grb_FunctionQuestion.TabStop = false;
-            this.grb_FunctionQuestion.Text = "Chọn chức năng cho chủ đề";
+            this.gb_QuestionFunction.Controls.Add(this.btn_CopyQuestion);
+            this.gb_QuestionFunction.Controls.Add(this.btn_MoveQuestion);
+            this.gb_QuestionFunction.Controls.Add(this.btn_EditQuestion);
+            this.gb_QuestionFunction.Controls.Add(this.btn_DeleteQuestion);
+            this.gb_QuestionFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_QuestionFunction.ForeColor = System.Drawing.Color.White;
+            this.gb_QuestionFunction.Location = new System.Drawing.Point(63, 431);
+            this.gb_QuestionFunction.Name = "gb_QuestionFunction";
+            this.gb_QuestionFunction.Size = new System.Drawing.Size(590, 88);
+            this.gb_QuestionFunction.TabIndex = 19;
+            this.gb_QuestionFunction.TabStop = false;
+            this.gb_QuestionFunction.Text = "Chọn chức năng cho chủ đề";
+            this.gb_QuestionFunction.Visible = false;
             // 
             // btn_CopyQuestion
             // 
@@ -461,6 +469,12 @@
             this.btn_DeleteQuestion.Text = "Xóa";
             this.btn_DeleteQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_DeleteQuestion.UseVisualStyleBackColor = false;
+            this.btn_DeleteQuestion.Click += new System.EventHandler(this.btn_DeleteQuestion_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // DataManagement
             // 
@@ -473,12 +487,12 @@
             this.tbc_DataManagement.ResumeLayout(false);
             this.tbp_CatalogueManagement.ResumeLayout(false);
             this.tbp_CatalogueManagement.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gb_CatalogueFunction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Catalogue)).EndInit();
             this.tbp_QuestionManagement.ResumeLayout(false);
             this.tbp_QuestionManagement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).EndInit();
-            this.grb_FunctionQuestion.ResumeLayout(false);
+            this.gb_QuestionFunction.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -487,7 +501,7 @@
 
         private System.Windows.Forms.TabControl tbc_DataManagement;
         private System.Windows.Forms.TabPage tbp_CatalogueManagement;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gb_CatalogueFunction;
         private System.Windows.Forms.Button btn_ViewQuestion;
         private System.Windows.Forms.Button btn_ImportQuestion;
         private System.Windows.Forms.Button btn_EditCatalogue;
@@ -506,10 +520,11 @@
         private System.Windows.Forms.DataGridView dgv_Question;
         private System.Windows.Forms.Label lbl_CreateQuestion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox grb_FunctionQuestion;
+        private System.Windows.Forms.GroupBox gb_QuestionFunction;
         private System.Windows.Forms.Button btn_CopyQuestion;
         private System.Windows.Forms.Button btn_MoveQuestion;
         private System.Windows.Forms.Button btn_EditQuestion;
         private System.Windows.Forms.Button btn_DeleteQuestion;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

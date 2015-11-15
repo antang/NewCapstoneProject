@@ -32,15 +32,14 @@ namespace CapDemo.GUI
                 Cat.NameCatalogue = txt_NameCatalogue.Text;
                 if (CatBL.AddCatalogue(Cat) ==true)
                 {
-                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
-                    notifyIcon1.BalloonTipText = "I am a NotifyIcon Balloon";
-                    notifyIcon1.BalloonTipTitle = "Welcome Message";
-                    notifyIcon1.ShowBalloonTip(1000);
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text + "\" thành công";
+                    notifyIcon1.ShowBalloonTip(5000);
                     this.Close();
                 }
                 else
                 {
-
+                    MessageBox.Show("Chủ đề này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } 
                 
             }

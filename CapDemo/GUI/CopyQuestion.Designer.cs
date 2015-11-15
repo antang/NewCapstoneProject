@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CopyQuestion));
             this.label1 = new System.Windows.Forms.Label();
-            this.cbb_Catalogue = new System.Windows.Forms.ComboBox();
+            this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.btn_SaveCopy = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_CancelCopy = new System.Windows.Forms.Button();
@@ -49,13 +49,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn chủ đề sao chép đến";
             // 
-            // cbb_Catalogue
+            // cmb_Catalogue
             // 
-            this.cbb_Catalogue.FormattingEnabled = true;
-            this.cbb_Catalogue.Location = new System.Drawing.Point(17, 36);
-            this.cbb_Catalogue.Name = "cbb_Catalogue";
-            this.cbb_Catalogue.Size = new System.Drawing.Size(328, 21);
-            this.cbb_Catalogue.TabIndex = 1;
+            this.cmb_Catalogue.FormattingEnabled = true;
+            this.cmb_Catalogue.Location = new System.Drawing.Point(17, 36);
+            this.cmb_Catalogue.Name = "cmb_Catalogue";
+            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 21);
+            this.cmb_Catalogue.TabIndex = 1;
             // 
             // btn_SaveCopy
             // 
@@ -72,6 +72,7 @@
             this.btn_SaveCopy.Text = "Lưu";
             this.btn_SaveCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveCopy.UseVisualStyleBackColor = false;
+            this.btn_SaveCopy.Click += new System.EventHandler(this.btn_SaveCopy_Click);
             // 
             // imageList1
             // 
@@ -96,6 +97,7 @@
             this.btn_CancelCopy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CancelCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelCopy.UseVisualStyleBackColor = false;
+            this.btn_CancelCopy.Click += new System.EventHandler(this.btn_CancelCopy_Click);
             // 
             // CopyQuestion
             // 
@@ -106,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(358, 141);
             this.Controls.Add(this.btn_SaveCopy);
             this.Controls.Add(this.btn_CancelCopy);
-            this.Controls.Add(this.cbb_Catalogue);
+            this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
@@ -114,6 +116,7 @@
             this.Name = "CopyQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sao chép câu hỏi";
+            this.Load += new System.EventHandler(this.CopyQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbb_Catalogue;
+        private System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Button btn_SaveCopy;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_CancelCopy;

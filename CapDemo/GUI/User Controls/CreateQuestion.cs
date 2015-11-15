@@ -39,34 +39,35 @@ namespace CapDemo.GUI.User_Controls
             this.IDCat = IDCat;
             this.NameCat = NameCat;
         }
-        Question_MultiSelect qms = new Question_MultiSelect();
-        Question_ShortAnswer qsa = new Question_ShortAnswer();
-       
-        private void rdo_OnlyOneAnswer_CheckedChanged(object sender, EventArgs e)
-        {
-            Question_OnlyOneSelect qoos = new Question_OnlyOneSelect(IDCat,NameCat);
-            pnl_LoadQuestion.Controls.Clear();
-            pnl_LoadQuestion.Controls.Add(qoos);
-        }
-
-        private void rdo_MultiSelect_CheckedChanged(object sender, EventArgs e)
-        {
-            pnl_LoadQuestion.Controls.Clear();
-            pnl_LoadQuestion.Controls.Add(qms);
-        }
-
-        private void rdo_ShortAnswer_CheckedChanged(object sender, EventArgs e)
-        {
-            pnl_LoadQuestion.Controls.Clear();
-            pnl_LoadQuestion.Controls.Add(qsa);
-        }
 
         private void CreateQuestion_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
-            Question_OnlyOneSelect qoos = new Question_OnlyOneSelect(IDCat, NameCat);
+            Question_OnlyOneSelect QuestionOneSelect = new Question_OnlyOneSelect(IDCat, NameCat);
             pnl_LoadQuestion.Controls.Clear();
-            pnl_LoadQuestion.Controls.Add(qoos);
+            pnl_LoadQuestion.Controls.Add(QuestionOneSelect);
         }
+        //CHECK ONLY ONE SELECT QUESTION
+        private void rad_OnlyOneAnswer_CheckedChanged(object sender, EventArgs e)
+        {
+            Question_OnlyOneSelect QuestionOneSelect = new Question_OnlyOneSelect(IDCat, NameCat);
+            pnl_LoadQuestion.Controls.Clear();
+            pnl_LoadQuestion.Controls.Add(QuestionOneSelect);
+        }
+        //CHECK MULTYPLE SELECT QUESTION
+        private void rad_MultiSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            Question_MultiSelect QuestionMultiSelect = new Question_MultiSelect(IDCat, NameCat);
+            pnl_LoadQuestion.Controls.Clear();
+            pnl_LoadQuestion.Controls.Add(QuestionMultiSelect);
+        }
+        //CHECK SHORT ANSWER QUESTION
+        private void rad_ShortAnswer_CheckedChanged(object sender, EventArgs e)
+        {
+            Question_ShortAnswer QuestionShortAnswer = new Question_ShortAnswer(IDCat, NameCat);
+            pnl_LoadQuestion.Controls.Clear();
+            pnl_LoadQuestion.Controls.Add(QuestionShortAnswer);
+        }
+
     }
 }

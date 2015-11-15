@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoveQuestion));
             this.btn_SaveMove = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cbb_Catalogue = new System.Windows.Forms.ComboBox();
+            this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_CancelMove = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,6 +52,7 @@
             this.btn_SaveMove.Text = "Lưu";
             this.btn_SaveMove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveMove.UseVisualStyleBackColor = false;
+            this.btn_SaveMove.Click += new System.EventHandler(this.btn_SaveMove_Click);
             // 
             // imageList1
             // 
@@ -60,13 +61,13 @@
             this.imageList1.Images.SetKeyName(0, "Cancel.png");
             this.imageList1.Images.SetKeyName(1, "save-512.png");
             // 
-            // cbb_Catalogue
+            // cmb_Catalogue
             // 
-            this.cbb_Catalogue.FormattingEnabled = true;
-            this.cbb_Catalogue.Location = new System.Drawing.Point(12, 35);
-            this.cbb_Catalogue.Name = "cbb_Catalogue";
-            this.cbb_Catalogue.Size = new System.Drawing.Size(328, 21);
-            this.cbb_Catalogue.TabIndex = 42;
+            this.cmb_Catalogue.FormattingEnabled = true;
+            this.cmb_Catalogue.Location = new System.Drawing.Point(12, 35);
+            this.cmb_Catalogue.Name = "cmb_Catalogue";
+            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 21);
+            this.cmb_Catalogue.TabIndex = 42;
             // 
             // label1
             // 
@@ -96,6 +97,7 @@
             this.btn_CancelMove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CancelMove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelMove.UseVisualStyleBackColor = false;
+            this.btn_CancelMove.Click += new System.EventHandler(this.btn_CancelMove_Click);
             // 
             // MoveQuestion
             // 
@@ -105,7 +107,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(352, 138);
             this.Controls.Add(this.btn_SaveMove);
-            this.Controls.Add(this.cbb_Catalogue);
+            this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_CancelMove);
             this.DoubleBuffered = true;
@@ -114,6 +116,7 @@
             this.Name = "MoveQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Di chuyển câu hỏi";
+            this.Load += new System.EventHandler(this.MoveQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +126,7 @@
 
         private System.Windows.Forms.Button btn_SaveMove;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ComboBox cbb_Catalogue;
+        private System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_CancelMove;
     }

@@ -28,52 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btn_DelAnswer = new System.Windows.Forms.Button();
+            this.txt_AnswerContent = new System.Windows.Forms.TextBox();
+            this.chk_Check = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // btnXoa
+            // btn_DelAnswer
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(313, 1);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(23, 23);
-            this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "X";
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btn_DelAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_DelAnswer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_DelAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DelAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DelAnswer.ForeColor = System.Drawing.Color.White;
+            this.btn_DelAnswer.Location = new System.Drawing.Point(313, 1);
+            this.btn_DelAnswer.Name = "btn_DelAnswer";
+            this.btn_DelAnswer.Size = new System.Drawing.Size(23, 23);
+            this.btn_DelAnswer.TabIndex = 5;
+            this.btn_DelAnswer.Text = "X";
+            this.btn_DelAnswer.UseVisualStyleBackColor = false;
+            this.btn_DelAnswer.Click += new System.EventHandler(this.btn_DelAnswer_Click);
             // 
-            // textBox1
+            // txt_AnswerContent
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(262, 50);
-            this.textBox1.TabIndex = 4;
+            this.txt_AnswerContent.Location = new System.Drawing.Point(40, 5);
+            this.txt_AnswerContent.Multiline = true;
+            this.txt_AnswerContent.Name = "txt_AnswerContent";
+            this.txt_AnswerContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_AnswerContent.Size = new System.Drawing.Size(262, 50);
+            this.txt_AnswerContent.TabIndex = 4;
             // 
-            // checkBox1
+            // chk_Check
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 5);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(33, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "A";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_Check.AutoSize = true;
+            this.chk_Check.Location = new System.Drawing.Point(3, 5);
+            this.chk_Check.Name = "chk_Check";
+            this.chk_Check.Size = new System.Drawing.Size(33, 17);
+            this.chk_Check.TabIndex = 3;
+            this.chk_Check.Text = "A";
+            this.chk_Check.UseVisualStyleBackColor = true;
+            this.chk_Check.CheckedChanged += new System.EventHandler(this.rad_Check_CheckedChanged);
             // 
             // Answer_MultiSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btn_DelAnswer);
+            this.Controls.Add(this.txt_AnswerContent);
+            this.Controls.Add(this.chk_Check);
             this.Name = "Answer_MultiSelect";
             this.Size = new System.Drawing.Size(338, 58);
             this.ResumeLayout(false);
@@ -83,9 +85,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btn_DelAnswer;
+        public System.Windows.Forms.CheckBox chk_Check;
+        public System.Windows.Forms.TextBox txt_AnswerContent;
 
     }
 }

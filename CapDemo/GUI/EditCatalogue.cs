@@ -39,25 +39,27 @@ namespace CapDemo.GUI
             }
             else
             {
-                CatalogueBL CatBL = new CatalogueBL();
-                Catalogue Cat = new Catalogue();
-                Cat.IDCatalogue = IDCat;
-                Cat.NameCatalogue = txt_NameCatalogue.Text;
-                if (CatBL.EditCataloguebyID(Cat) == true)
-                {
-                    
-                    this.Close();
-                }
-                else
-                {
-
-                }
+                    CatalogueBL CatBL = new CatalogueBL();
+                    Catalogue Cat = new Catalogue();
+                    Cat.IDCatalogue = IDCat;
+                    Cat.NameCatalogue = txt_NameCatalogue.Text;
+                    if (CatBL.EditCataloguebyID(Cat) == true)
+                    {
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề thành công";
+                        notifyIcon1.ShowBalloonTip(5000);
+                        this.Close();
+                    }
+                    else
+                    {
+                        notifyIcon1.Icon = SystemIcons.Warning;
+                        notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề không thành công";
+                        notifyIcon1.ShowBalloonTip(5000);
+                        this.Close();
+                    }
             }
-            
-            
-            this.Close();
         }
-
+        //EXIT FORM
         private void btn_CancelEditCatalogue_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -1,48 +1,38 @@
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\bin\Debug\CapDemo.exe.config
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\bin\Debug\CapDemo.exe
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\bin\Debug\CapDemo.pdb
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.exe
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.pdb
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
-C:\Users\TNA\Desktop\New folder\CapDemo\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.cache
-D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe.config
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.exe
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.pdb
-D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe
-D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.pdb
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.cache
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
-<<<<<<< HEAD
-=======
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Login.resources
->>>>>>> 7d7d4df21f9f5314e4b1a324a7340fc4652686b3
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.GameShowControl.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Setting.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.GameMenu.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.DataManagement.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.CopyQuestion.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.CreateCatalogueNew.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.CreateQuestionNew.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.CreateQuestion.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_MultiSelect.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_OnlyOneSelect.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_ShortAnswer.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Answer_MultiSelect.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Answer_OnlyOneSelect.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ImportQuestion.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.ImportQuestions.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.CopyQuestion.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.DeleteCatalogue.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditCatalogue.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditQuestion_MultiSelect.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditQuestion_OnlyOneSelect.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditQuestion_ShortAnswer.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.MoveQuestion.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestion.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.GameShowControl.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ImportQuestion.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ImportQuestionForCatalogue.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.ImportQuestionToFile.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Login.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Test.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Answer_MultiSelect.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Answer_OnlyOneSelect.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.CreateQuestion.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.DataManagement.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.GameMenu.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.ImportQuestions.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.MoveQuestion.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.ImportQuestionToQuestionStore.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_MultiSelect.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_OnlyOneSelect.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_ShortAnswer.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Setting.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestion.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionInCatalogue.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.EditCatalogue.resources
-D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.DeleteCatalogue.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe.config
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.exe
+D:\NewCapstoneProject\CapDemo\bin\Debug\CapDemo.pdb
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.exe
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.pdb
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.cache
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_MultiSelect_1.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_OnlyOneSelect_1.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_ShortAnswer_1.resources

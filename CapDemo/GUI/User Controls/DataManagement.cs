@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapDemo.BL;
+using CapDemo.DO;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -57,6 +58,7 @@ namespace CapDemo.GUI.User_Controls
 
             dgv_Question.Columns["IDCatalogue"].Visible = false;
             dgv_Question.Columns["IDQuestion"].Visible = false;
+            dgv_Question.Columns["IDCatalogue"].Visible = false;
             dgv_Question.Columns["AnswerContent"].Visible = false;
             dgv_Question.Columns["Date"].Visible = false;
 
@@ -73,13 +75,12 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-
-
         }
+        //ADD NEW QUESTION
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)
         {
-            CreateQuestionNew cqn = new CreateQuestionNew();
-            cqn.ShowDialog();
+            CreateQuestionNew CreateNewQuestion = new CreateQuestionNew();
+            CreateNewQuestion.ShowDialog();
         }
 
         private void lbl_ImportQuestion_Click(object sender, EventArgs e)
@@ -90,20 +91,46 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_CopyQuestion_Click(object sender, EventArgs e)
         {
-            CopyQuestion cq = new CopyQuestion();
+            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value)
+            CopyQuestion cq = new CopyQuestion(IDQuestion,IDCatalogue);
             cq.ShowDialog();
+            loadQuestion();
         }
-
+        //MOVE QUESTION
         private void btn_MoveQuestion_Click(object sender, EventArgs e)
         {
-            MoveQuestion mq = new MoveQuestion();
+            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+            MoveQuestion mq = new MoveQuestion(IDQuestion, IDCatalogue);
             mq.ShowDialog();
+            loadQuestion();
         }
-
+        //EDIT QUESTION INFORMATION
         private void btn_EditQuestion_Click(object sender, EventArgs e)
         {
-            EditQuestion_MultiSelect eqms = new EditQuestion_MultiSelect();
-            eqms.ShowDialog();
+            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+            string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
+            string OneSelect = "one select";
+            string MultiSelect = "multi select";
+            string ShortAnswer = "short answer";
+            if (TypeQuestion.ToLower()==OneSelect)
+            {
+                EditQuestion_OnlyOneSelect eqms = new EditQuestion_OnlyOneSelect(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower()==MultiSelect)
+            {
+                    EditQuestion_MultiSelect eqms = new EditQuestion_MultiSelect(IDQuestion, IDCatalogue);
+                    eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower() == ShortAnswer)
+            {
+                EditQuestion_ShortAnswer eqms = new EditQuestion_ShortAnswer(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            loadQuestion();
         }
 
         private void btn_ImportQuestion_Click(object sender, EventArgs e)
@@ -112,6 +139,7 @@ namespace CapDemo.GUI.User_Controls
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
             ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue(IDCat, NameCat);
             iqc.ShowDialog();
+            loadQuestion();
         }
 
         //VIEW Question
@@ -127,18 +155,77 @@ namespace CapDemo.GUI.User_Controls
         {
             int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            EditCatalogue EditCat = new EditCatalogue(IDCat,NameCat);
-            EditCat.ShowDialog();
-            LoadCat();
+            if (NameCat == "Unknow")
+            {
+                MessageBox.Show("Không được chỉnh sửa chủ đề "+"\"" + NameCat+"\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                EditCatalogue EditCat = new EditCatalogue(IDCat, NameCat);
+                EditCat.ShowDialog();
+                LoadCat();
+                loadQuestion();
+            }        
         }
         //DELETE Catalogue
         private void btn_DeleteCatalogue_Click(object sender, EventArgs e)
         {
             int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            DeleteCatalogue DelCat = new DeleteCatalogue(IDCat, NameCat);
-            DelCat.ShowDialog();
-            LoadCat();
+            
+            if (NameCat == "Unknow")
+            {
+                MessageBox.Show("Không được xóa chủ đề " + "\"" + NameCat + "\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DeleteCatalogue DelCat = new DeleteCatalogue(IDCat, NameCat);
+                DelCat.ShowDialog();
+                LoadCat();
+                loadQuestion();
+            }
         }
+        //CLICK CELL IN DATAGRIDVIEW TO SHOW GROUP CATALOGUE FUNCTION
+        private void dgv_Catalogue_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            gb_CatalogueFunction.Visible = true;
+        }
+        //CLICK FORM TO HIDE GROUP CATALOGUE FUNCTION
+        private void tbp_CatalogueManagement_MouseClick(object sender, MouseEventArgs e)
+        {
+            gb_CatalogueFunction.Visible = false;
+        }
+        //CLICK CELL IN DATAGRIDVIEW TO SHOW GROUP QUESTION FUNCTION
+        private void dgv_Question_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            gb_QuestionFunction.Visible = true;
+        }
+        //CLICK FORM TO HIDE GROUP QUESTION FUNCTION
+        private void tbp_QuestionManagement_MouseClick(object sender, MouseEventArgs e)
+        {
+            gb_QuestionFunction.Visible = false;
+        }
+        //DELETE Question
+        private void btn_DeleteQuestion_Click(object sender, EventArgs e)
+        {
+            Question Question = new Question();
+            QuestionBL QuestionBL = new QuestionBL();
+            Question.IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            QuestionBL.DeleteAnswerByIDQuestion(Question);
+            QuestionBL.DeleteQuestionByID(Question);
+            //Show notify
+            notifyIcon1.Icon = SystemIcons.Information;
+            notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
+            notifyIcon1.ShowBalloonTip(1000);
+            //Load question table
+            loadQuestion();
+        }
+        //SWITCH TAB TO HIDE GROUP FUNCTION
+        private void tbc_DataManagement_Click(object sender, EventArgs e)
+        {
+            gb_QuestionFunction.Visible = false;
+            gb_CatalogueFunction.Visible = false;
+        }
+
     }
 }

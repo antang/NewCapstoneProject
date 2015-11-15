@@ -30,6 +30,7 @@ namespace CapDemo.GUI
             this.NameCat = pNamecat;
         }
         //Confirm Delete
+        int IDCatUnknow;
         private void btn_Ok_Click(object sender, EventArgs e)
         {
             //Delete Catalogue and Delete Question
@@ -38,10 +39,20 @@ namespace CapDemo.GUI
                 Catalogue Cat = new Catalogue();
                 CatalogueBL CatBL = new CatalogueBL();
                 Cat.IDCatalogue = IDCat;
-                CatBL.DeleteAnswerByIDCatalogue(Cat);
-                CatBL.DeleteQuestionbyIDCatalogue(Cat);
-                CatBL.DeleteCataloguebyID(Cat);
-                this.Close();
+                if (CatBL.DeleteAnswerByIDCatalogue(Cat) || CatBL.DeleteQuestionbyIDCatalogue(Cat) || CatBL.DeleteCataloguebyID(Cat))
+                {
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    this.Close();
+                }
+                else
+                {
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    this.Close();
+                }
             }
             //Delete Catalogue and Move Question in this Catalogue to Catalogue Unknow
             if (rad_DelCat.Checked == true)
@@ -49,10 +60,32 @@ namespace CapDemo.GUI
                 Catalogue Cat = new Catalogue();
                 CatalogueBL CatBL = new CatalogueBL();
                 Cat.IDCatalogue = IDCat;
-                CatBL.MoveAnserToUnknow(Cat);
-                CatBL.MoveQuestionToUnknow(Cat);
-                CatBL.DeleteCataloguebyID(Cat);
-                this.Close();
+
+                List<DO.Catalogue> CatList;
+                CatList = CatBL.GetCatalogue();
+                if (CatList != null)
+                    for (int i = 0; i < CatList.Count; i++)
+                    {
+                        if (CatList.ElementAt(i).NameCatalogue.ToLower() == "unknow")
+                        {
+                            IDCatUnknow = Convert.ToInt32(CatList.ElementAt(i).IDCatalogue);
+                        }
+                    }
+                if (CatBL.MoveAnswerToUnknow(Cat, IDCatUnknow) || CatBL.MoveQuestionToUnknow(Cat, IDCatUnknow) || CatBL.DeleteCataloguebyID(Cat))
+                {
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    this.Close();
+                }
+                else
+                {
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    this.Close();
+                }
+                
             }
         }
         //Cancel Delete

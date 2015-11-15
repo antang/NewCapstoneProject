@@ -102,13 +102,8 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btn_LoadFile);
             this.groupBox2.Controls.Add(this.label2);
-<<<<<<< HEAD
             this.groupBox2.Controls.Add(this.txt_FilePath);
-            this.groupBox2.Location = new System.Drawing.Point(3, 94);
-=======
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
->>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
+            this.groupBox2.Location = new System.Drawing.Point(3, 8);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(784, 475);
             this.groupBox2.TabIndex = 35;
@@ -129,17 +124,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 125);
             this.dataGridView1.Name = "dataGridView1";
-<<<<<<< HEAD
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(751, 315);
-=======
-            this.dataGridView1.Size = new System.Drawing.Size(751, 336);
->>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             this.dataGridView1.TabIndex = 4;
             // 
             // btn_LoadFile
             // 
-<<<<<<< HEAD
             this.btn_LoadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_LoadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,22 +145,6 @@
             this.btn_LoadFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_LoadFile.UseVisualStyleBackColor = false;
             this.btn_LoadFile.Click += new System.EventHandler(this.btn_LoadFile_Click);
-=======
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.ImageIndex = 3;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(456, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Import";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
->>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             // 
             // label2
             // 
@@ -185,20 +159,12 @@
             // 
             // txt_FilePath
             // 
-<<<<<<< HEAD
             this.txt_FilePath.Location = new System.Drawing.Point(89, 16);
             this.txt_FilePath.Multiline = true;
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
             this.txt_FilePath.Size = new System.Drawing.Size(358, 30);
             this.txt_FilePath.TabIndex = 0;
-=======
-            this.textBox1.Location = new System.Drawing.Point(92, 77);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(358, 30);
-            this.textBox1.TabIndex = 0;
->>>>>>> eb8bc2f7fb186ff2cd1159a6f9cf82efc6de6999
             // 
             // btn_SaveImport
             // 

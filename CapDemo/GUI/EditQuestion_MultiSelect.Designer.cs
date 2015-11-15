@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditQuestion_MultiSelect));
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
             this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_TimeAnswer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,25 +46,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_CancelEditQuestion = new System.Windows.Forms.Button();
             this.btn_SaveEditQuestion = new System.Windows.Forms.Button();
+            this.txt_Date = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Chủ đề ";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(273, 21);
-            this.comboBox1.TabIndex = 3;
             // 
             // lbl_Question
             // 
@@ -101,19 +82,6 @@
             this.flp_addAnswer.Name = "flp_addAnswer";
             this.flp_addAnswer.Size = new System.Drawing.Size(400, 189);
             this.flp_addAnswer.TabIndex = 24;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(434, 379);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.maskedTextBox1.TabIndex = 32;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
@@ -202,7 +170,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(270, 9);
+            this.label3.Location = new System.Drawing.Point(245, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(247, 31);
             this.label3.TabIndex = 34;
@@ -224,6 +192,7 @@
             this.btn_addAnswer.Text = "Thêm đáp án";
             this.btn_addAnswer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_addAnswer.UseVisualStyleBackColor = false;
+            this.btn_addAnswer.Click += new System.EventHandler(this.btn_addAnswer_Click);
             // 
             // imageList1
             // 
@@ -248,6 +217,7 @@
             this.btn_CancelEditQuestion.Text = "Hủy";
             this.btn_CancelEditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelEditQuestion.UseVisualStyleBackColor = false;
+            this.btn_CancelEditQuestion.Click += new System.EventHandler(this.btn_CancelEditQuestion_Click);
             // 
             // btn_SaveEditQuestion
             // 
@@ -265,18 +235,32 @@
             this.btn_SaveEditQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SaveEditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveEditQuestion.UseVisualStyleBackColor = false;
+            this.btn_SaveEditQuestion.Click += new System.EventHandler(this.btn_SaveEditQuestion_Click);
+            // 
+            // txt_Date
+            // 
+            this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Date.Location = new System.Drawing.Point(434, 388);
+            this.txt_Date.Name = "txt_Date";
+            this.txt_Date.Size = new System.Drawing.Size(100, 20);
+            this.txt_Date.TabIndex = 37;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // EditQuestion_MultiSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 515);
+            this.Controls.Add(this.txt_Date);
             this.Controls.Add(this.btn_CancelEditQuestion);
             this.Controls.Add(this.btn_addAnswer);
             this.Controls.Add(this.btn_SaveEditQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_TimeAnswer);
             this.Controls.Add(this.label5);
@@ -287,11 +271,10 @@
             this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
             this.Name = "EditQuestion_MultiSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa câu hỏi Mul-Select";
+            this.Load += new System.EventHandler(this.EditQuestion_MultiSelect_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,12 +282,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl_Question;
         private System.Windows.Forms.TextBox txt_ContentQuestion;
         private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_TimeAnswer;
         private System.Windows.Forms.Label label5;
@@ -318,5 +298,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_CancelEditQuestion;
         private System.Windows.Forms.Button btn_SaveEditQuestion;
+        private System.Windows.Forms.TextBox txt_Date;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

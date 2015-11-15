@@ -30,7 +30,7 @@
         {
             this.rad_check = new System.Windows.Forms.RadioButton();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Answercontent = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // rad_check
@@ -60,14 +60,14 @@
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // textBox1
+            // txt_Answercontent
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(262, 50);
-            this.textBox1.TabIndex = 10;
+            this.txt_Answercontent.Location = new System.Drawing.Point(41, 5);
+            this.txt_Answercontent.Multiline = true;
+            this.txt_Answercontent.Name = "txt_Answercontent";
+            this.txt_Answercontent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_Answercontent.Size = new System.Drawing.Size(262, 50);
+            this.txt_Answercontent.TabIndex = 10;
             // 
             // Answer_OnlyOneSelect
             // 
@@ -76,7 +76,7 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.rad_check);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Answercontent);
             this.Name = "Answer_OnlyOneSelect";
             this.Size = new System.Drawing.Size(338, 57);
             this.ResumeLayout(false);
@@ -87,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.RadioButton rad_check;
+        public System.Windows.Forms.TextBox txt_Answercontent;
     }
 }

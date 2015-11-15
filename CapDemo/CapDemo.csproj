@@ -165,17 +165,35 @@
     <Compile Include="GUI\User Controls\Question_MultiSelect.Designer.cs">
       <DependentUpon>Question_MultiSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Question_MultiSelect_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Question_MultiSelect_1.Designer.cs">
+      <DependentUpon>Question_MultiSelect_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Question_OnlyOneSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\User Controls\Question_OnlyOneSelect.Designer.cs">
       <DependentUpon>Question_OnlyOneSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Question_OnlyOneSelect_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Question_OnlyOneSelect_1.Designer.cs">
+      <DependentUpon>Question_OnlyOneSelect_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Question_ShortAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\User Controls\Question_ShortAnswer.Designer.cs">
       <DependentUpon>Question_ShortAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\Question_ShortAnswer_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Question_ShortAnswer_1.Designer.cs">
+      <DependentUpon>Question_ShortAnswer_1.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\Setting.cs">
       <SubType>UserControl</SubType>
@@ -268,12 +286,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\DataManagement.resx">
       <DependentUpon>DataManagement.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\GameMenu.resx">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\ImportQuestions.resx">
       <DependentUpon>ImportQuestions.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MoveQuestion.resx">
       <DependentUpon>MoveQuestion.cs</DependentUpon>
@@ -284,11 +304,20 @@
     <EmbeddedResource Include="GUI\User Controls\Question_MultiSelect.resx">
       <DependentUpon>Question_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Question_MultiSelect_1.resx">
+      <DependentUpon>Question_MultiSelect_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Question_OnlyOneSelect.resx">
       <DependentUpon>Question_OnlyOneSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Question_OnlyOneSelect_1.resx">
+      <DependentUpon>Question_OnlyOneSelect_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Question_ShortAnswer.resx">
       <DependentUpon>Question_ShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Question_ShortAnswer_1.resx">
+      <DependentUpon>Question_ShortAnswer_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>

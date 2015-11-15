@@ -96,23 +96,23 @@ namespace CapDemo.BL
         public bool DeleteAnswerByIDCatalogue(Catalogue Catalogue)
         {
             string query = "DELETE FROM Answer"
-                          + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
+                          + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.UpdateDatabase(query);
         }
         //EDIT CATALOGUE ID IN QUESTION
-        public bool MoveQuestionToUnknow(Catalogue Catalogue)
+        public bool MoveQuestionToUnknow(Catalogue Catalogue, int IDCatUnknow)
         {
             string query = "UPDATE Question"
-                         + " SET Catalogue_ID ='" + 0 + "'"
-                         + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
+                         + " SET Catalogue_ID ='" + IDCatUnknow + "'"
+                         + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.UpdateDatabase(query);
         }
         //EDIT CATALOGUE ID IN ANSWER
-        public bool MoveAnserToUnknow(Catalogue Catalogue)
+        public bool MoveAnswerToUnknow(Catalogue Catalogue, int IDCatUnknow)
         {
             string query = "UPDATE Answer"
-                         + " SET Catalogue_ID ='" + 0 + "'"
-                         + " WHERE Catalouge_ID = '" + Catalogue.IDCatalogue + "'";
+                         + " SET Catalogue_ID ='" + IDCatUnknow + "'"
+                         + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             return DA.UpdateDatabase(query);
         }
         

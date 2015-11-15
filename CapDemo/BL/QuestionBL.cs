@@ -23,7 +23,7 @@ namespace CapDemo.BL
         public List<Question> GetQuestion()
         {
             List<Question> QuestionList = new List<Question>();
-            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, c.Catalogue_Name"
+            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Date_Create"
                          + " FROM Question q"
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
                          
@@ -37,7 +37,9 @@ namespace CapDemo.BL
                     Question.IDQuestion = Convert.ToInt32(item["Question_ID"]);
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
+                    Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
                     Question.NameCatalogue = item["Catalogue_Name"].ToString();
+                    Question.Date = (DateTime)item["Date_Create"];
                     Question.Sequence = i;
                     //Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     QuestionList.Add(Question);
