@@ -74,10 +74,10 @@
             this.tbc_DataManagement.Controls.Add(this.tbp_CatalogueManagement);
             this.tbc_DataManagement.Controls.Add(this.tbp_QuestionManagement);
             this.tbc_DataManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbc_DataManagement.Location = new System.Drawing.Point(0, 0);
+            this.tbc_DataManagement.Location = new System.Drawing.Point(0, 3);
             this.tbc_DataManagement.Name = "tbc_DataManagement";
             this.tbc_DataManagement.SelectedIndex = 0;
-            this.tbc_DataManagement.Size = new System.Drawing.Size(719, 584);
+            this.tbc_DataManagement.Size = new System.Drawing.Size(719, 581);
             this.tbc_DataManagement.TabIndex = 0;
             this.tbc_DataManagement.Click += new System.EventHandler(this.tbc_DataManagement_Click);
             // 
@@ -94,7 +94,7 @@
             this.tbp_CatalogueManagement.Location = new System.Drawing.Point(4, 29);
             this.tbp_CatalogueManagement.Name = "tbp_CatalogueManagement";
             this.tbp_CatalogueManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_CatalogueManagement.Size = new System.Drawing.Size(711, 551);
+            this.tbp_CatalogueManagement.Size = new System.Drawing.Size(711, 548);
             this.tbp_CatalogueManagement.TabIndex = 0;
             this.tbp_CatalogueManagement.Text = "Quản lý chủ đề";
             this.tbp_CatalogueManagement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbp_CatalogueManagement_MouseClick);
@@ -122,7 +122,7 @@
             this.gb_CatalogueFunction.Controls.Add(this.btn_DeleteCatalogue);
             this.gb_CatalogueFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_CatalogueFunction.ForeColor = System.Drawing.Color.White;
-            this.gb_CatalogueFunction.Location = new System.Drawing.Point(63, 431);
+            this.gb_CatalogueFunction.Location = new System.Drawing.Point(63, 428);
             this.gb_CatalogueFunction.Name = "gb_CatalogueFunction";
             this.gb_CatalogueFunction.Size = new System.Drawing.Size(590, 88);
             this.gb_CatalogueFunction.TabIndex = 13;
@@ -238,7 +238,7 @@
             this.dgv_Catalogue.ReadOnly = true;
             this.dgv_Catalogue.RowHeadersVisible = false;
             this.dgv_Catalogue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_Catalogue.Size = new System.Drawing.Size(590, 284);
+            this.dgv_Catalogue.Size = new System.Drawing.Size(590, 281);
             this.dgv_Catalogue.TabIndex = 11;
             this.dgv_Catalogue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Catalogue_CellClick);
             // 

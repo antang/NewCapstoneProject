@@ -131,6 +131,7 @@
             this.Controls.Add(this.gb_CreateQuestion);
             this.Controls.Add(this.gb_QuestionType);
             this.Name = "CreateQuestionNew";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo câu hỏi mới";
             this.Load += new System.EventHandler(this.CreateQuestionNew_Load);

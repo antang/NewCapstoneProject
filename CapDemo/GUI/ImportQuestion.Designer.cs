@@ -240,6 +240,7 @@
             this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.lbl_Catalogue);
             this.Name = "ImportQuestion";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập câu hỏi";
             this.Load += new System.EventHandler(this.ImportQuestion_Load);
