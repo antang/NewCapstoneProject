@@ -48,6 +48,7 @@
             // 
             // dgv_UserManagement
             // 
+            this.dgv_UserManagement.BackgroundColor = System.Drawing.Color.White;
             this.dgv_UserManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserManagement.Location = new System.Drawing.Point(33, 135);
             this.dgv_UserManagement.Name = "dgv_UserManagement";
@@ -66,6 +67,7 @@
             this.lbl_Create.Size = new System.Drawing.Size(180, 23);
             this.lbl_Create.TabIndex = 12;
             this.lbl_Create.Text = "+ Tạo tài khoản mới";
+            this.lbl_Create.Click += new System.EventHandler(this.lbl_Create_Click);
             // 
             // UserManagement
             // 

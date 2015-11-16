@@ -38,3 +38,4 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_OnlyO
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_ShortAnswer_1.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Start_Game.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.UserManagement.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Create_AccountManagement.resources

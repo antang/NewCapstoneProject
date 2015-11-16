@@ -169,7 +169,7 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(552, 340);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(171, 413);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(61, 22);
@@ -189,7 +189,7 @@
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreTru.Location = new System.Drawing.Point(123, 376);
+            this.txt_ScoreTru.Location = new System.Drawing.Point(132, 376);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 22);
@@ -209,7 +209,7 @@
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreCong.Location = new System.Drawing.Point(123, 341);
+            this.txt_ScoreCong.Location = new System.Drawing.Point(132, 341);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 22);
@@ -220,7 +220,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(411, 341);
+            this.label9.Location = new System.Drawing.Point(30, 414);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 19);
             this.label9.TabIndex = 27;
@@ -293,8 +293,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ViewQuestion";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewQuestion";
             this.ResumeLayout(false);

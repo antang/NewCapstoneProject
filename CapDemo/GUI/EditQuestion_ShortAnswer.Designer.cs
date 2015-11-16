@@ -272,6 +272,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Name = "EditQuestion_ShortAnswer";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa câu hỏi Short-Answer";
             this.ResumeLayout(false);

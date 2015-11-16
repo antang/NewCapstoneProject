@@ -62,6 +62,12 @@
     <Compile Include="GUI\CreateQuestionNew.Designer.cs">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Create_AccountManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Create_AccountManagement.Designer.cs">
+      <DependentUpon>Create_AccountManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DeleteCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateQuestionNew.resx">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Create_AccountManagement.resx">
+      <DependentUpon>Create_AccountManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DeleteCatalogue.resx">
       <DependentUpon>DeleteCatalogue.cs</DependentUpon>

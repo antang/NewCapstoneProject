@@ -120,6 +120,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoveQuestion";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Di chuyển câu hỏi";
             this.Load += new System.EventHandler(this.MoveQuestion_Load);

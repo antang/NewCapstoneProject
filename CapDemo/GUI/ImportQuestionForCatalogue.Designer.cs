@@ -149,6 +149,7 @@
             this.Controls.Add(this.txt_Catalogue);
             this.Controls.Add(this.lbl_Catalogue);
             this.Name = "ImportQuestionForCatalogue";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập câu hỏi cho chủ đề";
             this.Load += new System.EventHandler(this.ImportQuestionForCatalogue_Load);

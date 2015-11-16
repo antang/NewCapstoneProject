@@ -80,7 +80,7 @@
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flp_addAnswer.Location = new System.Drawing.Point(356, 142);
             this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 189);
+            this.flp_addAnswer.Size = new System.Drawing.Size(400, 308);
             this.flp_addAnswer.TabIndex = 24;
             // 
             // label8
@@ -89,7 +89,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(352, 386);
+            this.label8.Location = new System.Drawing.Point(7, 466);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 19);
             this.label8.TabIndex = 31;
@@ -98,7 +98,7 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(434, 350);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(108, 430);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 30;
@@ -149,7 +149,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(352, 351);
+            this.label7.Location = new System.Drawing.Point(7, 431);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 19);
             this.label7.TabIndex = 27;
@@ -240,7 +240,7 @@
             // txt_Date
             // 
             this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Date.Location = new System.Drawing.Point(434, 388);
+            this.txt_Date.Location = new System.Drawing.Point(108, 468);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.Size = new System.Drawing.Size(100, 20);
             this.txt_Date.TabIndex = 37;
@@ -272,6 +272,7 @@
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
             this.Name = "EditQuestion_MultiSelect";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa câu hỏi Mul-Select";
             this.Load += new System.EventHandler(this.EditQuestion_MultiSelect_Load);
