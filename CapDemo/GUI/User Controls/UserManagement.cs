@@ -16,11 +16,15 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-
         private void lbl_Create_Click(object sender, EventArgs e)
         {
             Create_AccountManagement cam = new Create_AccountManagement();
             cam.ShowDialog();
+        }
+
+        private void UserManagement_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
         }
     }
 }

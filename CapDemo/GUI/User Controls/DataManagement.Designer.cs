@@ -106,7 +106,7 @@
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchCatalogue.ImageIndex = 3;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 74);
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 77);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
             this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 30);
             this.btn_SearchCatalogue.TabIndex = 14;
@@ -217,7 +217,7 @@
             this.txt_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_SearchCatalogue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SearchCatalogue.Location = new System.Drawing.Point(436, 75);
+            this.txt_SearchCatalogue.Location = new System.Drawing.Point(436, 78);
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
             this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 27);
             this.txt_SearchCatalogue.TabIndex = 12;
@@ -233,12 +233,12 @@
             this.dgv_Catalogue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Catalogue.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Catalogue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Catalogue.Location = new System.Drawing.Point(63, 138);
+            this.dgv_Catalogue.Location = new System.Drawing.Point(63, 111);
             this.dgv_Catalogue.Name = "dgv_Catalogue";
             this.dgv_Catalogue.ReadOnly = true;
             this.dgv_Catalogue.RowHeadersVisible = false;
             this.dgv_Catalogue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_Catalogue.Size = new System.Drawing.Size(590, 281);
+            this.dgv_Catalogue.Size = new System.Drawing.Size(590, 311);
             this.dgv_Catalogue.TabIndex = 11;
             this.dgv_Catalogue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Catalogue_CellClick);
             // 
@@ -249,7 +249,7 @@
             this.lbl_CreateCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_CreateCatalogue.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CreateCatalogue.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_CreateCatalogue.Location = new System.Drawing.Point(59, 111);
+            this.lbl_CreateCatalogue.Location = new System.Drawing.Point(59, 84);
             this.lbl_CreateCatalogue.Name = "lbl_CreateCatalogue";
             this.lbl_CreateCatalogue.Size = new System.Drawing.Size(161, 23);
             this.lbl_CreateCatalogue.TabIndex = 10;
@@ -262,7 +262,7 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.White;
-            this.lbl1.Location = new System.Drawing.Point(57, 31);
+            this.lbl1.Location = new System.Drawing.Point(57, 22);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(251, 33);
             this.lbl1.TabIndex = 9;
@@ -283,7 +283,7 @@
             this.tbp_QuestionManagement.Location = new System.Drawing.Point(4, 29);
             this.tbp_QuestionManagement.Name = "tbp_QuestionManagement";
             this.tbp_QuestionManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tbp_QuestionManagement.Size = new System.Drawing.Size(711, 551);
+            this.tbp_QuestionManagement.Size = new System.Drawing.Size(711, 548);
             this.tbp_QuestionManagement.TabIndex = 1;
             this.tbp_QuestionManagement.Text = "Quản lý câu hỏi";
             this.tbp_QuestionManagement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbp_QuestionManagement_MouseClick);
@@ -295,7 +295,7 @@
             this.lbl_ImportQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_ImportQuestion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ImportQuestion.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_ImportQuestion.Location = new System.Drawing.Point(215, 111);
+            this.lbl_ImportQuestion.Location = new System.Drawing.Point(215, 90);
             this.lbl_ImportQuestion.Name = "lbl_ImportQuestion";
             this.lbl_ImportQuestion.Size = new System.Drawing.Size(122, 23);
             this.lbl_ImportQuestion.TabIndex = 22;
@@ -307,7 +307,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(184, 117);
+            this.label3.Location = new System.Drawing.Point(184, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 21;
@@ -320,7 +320,7 @@
             this.btn_SearchQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchQuestion.ImageIndex = 3;
-            this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 74);
+            this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 83);
             this.btn_SearchQuestion.Name = "btn_SearchQuestion";
             this.btn_SearchQuestion.Size = new System.Drawing.Size(35, 30);
             this.btn_SearchQuestion.TabIndex = 20;
@@ -331,7 +331,7 @@
             this.txt_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_SearchQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_SearchQuestion.Location = new System.Drawing.Point(436, 75);
+            this.txt_SearchQuestion.Location = new System.Drawing.Point(436, 84);
             this.txt_SearchQuestion.Name = "txt_SearchQuestion";
             this.txt_SearchQuestion.Size = new System.Drawing.Size(217, 27);
             this.txt_SearchQuestion.TabIndex = 18;
@@ -348,10 +348,10 @@
             this.dgv_Question.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Question.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Question.Location = new System.Drawing.Point(63, 138);
+            this.dgv_Question.Location = new System.Drawing.Point(63, 117);
             this.dgv_Question.Name = "dgv_Question";
             this.dgv_Question.RowHeadersVisible = false;
-            this.dgv_Question.Size = new System.Drawing.Size(590, 284);
+            this.dgv_Question.Size = new System.Drawing.Size(590, 308);
             this.dgv_Question.TabIndex = 17;
             this.dgv_Question.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Question_CellClick);
             // 
@@ -362,7 +362,7 @@
             this.lbl_CreateQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_CreateQuestion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CreateQuestion.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbl_CreateQuestion.Location = new System.Drawing.Point(59, 111);
+            this.lbl_CreateQuestion.Location = new System.Drawing.Point(59, 90);
             this.lbl_CreateQuestion.Name = "lbl_CreateQuestion";
             this.lbl_CreateQuestion.Size = new System.Drawing.Size(128, 23);
             this.lbl_CreateQuestion.TabIndex = 16;
@@ -375,7 +375,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(57, 31);
+            this.label2.Location = new System.Drawing.Point(57, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 33);
             this.label2.TabIndex = 15;

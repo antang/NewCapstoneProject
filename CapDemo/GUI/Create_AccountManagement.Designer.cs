@@ -104,6 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "Create_AccountManagement";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo tài khoản người dùng";
             this.ResumeLayout(false);
             this.PerformLayout();

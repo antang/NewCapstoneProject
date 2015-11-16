@@ -48,11 +48,14 @@
             // 
             // dgv_UserManagement
             // 
+            this.dgv_UserManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_UserManagement.BackgroundColor = System.Drawing.Color.White;
             this.dgv_UserManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserManagement.Location = new System.Drawing.Point(33, 135);
             this.dgv_UserManagement.Name = "dgv_UserManagement";
-            this.dgv_UserManagement.Size = new System.Drawing.Size(606, 328);
+            this.dgv_UserManagement.Size = new System.Drawing.Size(606, 414);
             this.dgv_UserManagement.TabIndex = 11;
             // 
             // lbl_Create
@@ -73,11 +76,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.lbl_Create);
             this.Controls.Add(this.dgv_UserManagement);
             this.Controls.Add(this.lbl1);
             this.Name = "UserManagement";
             this.Size = new System.Drawing.Size(710, 584);
+            this.Load += new System.EventHandler(this.UserManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UserManagement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,6 +93,6 @@
 
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.DataGridView dgv_UserManagement;
-        private System.Windows.Forms.Label lbl_Create;
+        public System.Windows.Forms.Label lbl_Create;
     }
 }
