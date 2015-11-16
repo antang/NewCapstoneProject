@@ -35,6 +35,7 @@
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_CancelMove = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // btn_SaveMove
@@ -99,6 +100,11 @@
             this.btn_CancelMove.UseVisualStyleBackColor = false;
             this.btn_CancelMove.Click += new System.EventHandler(this.btn_CancelMove_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // MoveQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,5 +135,6 @@
         private System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_CancelMove;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

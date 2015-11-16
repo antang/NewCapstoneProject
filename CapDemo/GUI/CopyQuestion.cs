@@ -106,7 +106,7 @@ namespace CapDemo.GUI
         //EXIT FORM
         private void btn_CancelCopy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

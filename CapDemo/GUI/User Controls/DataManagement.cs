@@ -92,7 +92,7 @@ namespace CapDemo.GUI.User_Controls
         private void btn_CopyQuestion_Click(object sender, EventArgs e)
         {
             int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
-            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value)
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             CopyQuestion cq = new CopyQuestion(IDQuestion,IDCatalogue);
             cq.ShowDialog();
             loadQuestion();

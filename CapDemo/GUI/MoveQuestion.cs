@@ -64,7 +64,7 @@ namespace CapDemo.GUI.User_Controls
                             IDCatSelected = Convert.ToInt32(CatList.ElementAt(i).IDCatalogue);
                         }
                     }
-                //SAVE QUESTION
+                //ADD QUESTION
 		        QuestionBL QuestionBL = new QuestionBL();
                 List<DO.Question> QuestionList;
                 QuestionList = QuestionBL.GetQuestion();
@@ -81,7 +81,7 @@ namespace CapDemo.GUI.User_Controls
                             QuestionBL.AddQuestion(question);
                         }
                     }
-
+                //ADD ANSWER
                 Question Question = new Question();
                 Question.IDQuestion = IDQuestion;
                 List<DO.Answer> AnswerList;
@@ -100,6 +100,16 @@ namespace CapDemo.GUI.User_Controls
 
                         }
                     }
+                //DELETE QUESTION
+                QuestionBL.DeleteAnswerByIDQuestion(Question);
+                QuestionBL.DeleteQuestionByID(Question);
+
+                //Notify
+                notifyIcon1.Icon = SystemIcons.Information;
+                notifyIcon1.BalloonTipText = "Chuyển câu hỏi sang chủ đề " + cmb_Catalogue.SelectedItem.ToString();
+                notifyIcon1.ShowBalloonTip(1000);
+                this.Close();
+
 	        }else
 	        {
                 MessageBox.Show("Vui lòng chọn chủ đề!","Cảnh Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
