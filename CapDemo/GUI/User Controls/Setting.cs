@@ -39,5 +39,12 @@ namespace CapDemo.GUI.User_Controls
         {
             pnl_Setting.Controls.Clear();
         }
+
+        private void btn_UserManagement_Click(object sender, EventArgs e)
+        {
+            pnl_Setting.Controls.Clear();
+            UserManagement um = new UserManagement();
+            pnl_Setting.Controls.Add(um);
+        }
     }
 }

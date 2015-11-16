@@ -201,6 +201,18 @@
     <Compile Include="GUI\User Controls\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Start_Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Start_Game.Designer.cs">
+      <DependentUpon>Start_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\UserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ViewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Start_Game.resx">
+      <DependentUpon>Start_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViewQuestion.resx">
       <DependentUpon>ViewQuestion.cs</DependentUpon>

@@ -36,3 +36,5 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.csprojResolveAssemblyReference.c
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_MultiSelect_1.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_OnlyOneSelect_1.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_ShortAnswer_1.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Start_Game.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.UserManagement.resources

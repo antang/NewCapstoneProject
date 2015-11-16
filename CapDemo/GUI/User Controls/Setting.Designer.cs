@@ -88,6 +88,7 @@
             this.btn_UserManagement.Size = new System.Drawing.Size(203, 48);
             this.btn_UserManagement.TabIndex = 3;
             this.btn_UserManagement.UseVisualStyleBackColor = false;
+            this.btn_UserManagement.Click += new System.EventHandler(this.btn_UserManagement_Click);
             // 
             // btn_Exit
             // 
