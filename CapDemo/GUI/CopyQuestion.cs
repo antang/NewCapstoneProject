@@ -22,6 +22,7 @@ namespace CapDemo.GUI
         public CopyQuestion(int IDQuestion, int IDCatalogue)
         {
             // TODO: Complete member initialization
+            InitializeComponent();
             this.IDQuestion = IDQuestion;
             this.IDCatalogue = IDCatalogue;
         }

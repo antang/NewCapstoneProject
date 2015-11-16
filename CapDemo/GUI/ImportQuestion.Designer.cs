@@ -36,13 +36,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.btn_LoadFile = new System.Windows.Forms.Button();
             this.txt_FilePath = new System.Windows.Forms.TextBox();
             this.btn_SaveImport = new System.Windows.Forms.Button();
             this.btn_ExitImport = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -112,7 +112,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button4.ImageIndex = 0;
+            this.button4.ImageIndex = 2;
             this.button4.ImageList = this.imageList1;
             this.button4.Location = new System.Drawing.Point(42, 22);
             this.button4.Name = "button4";
@@ -122,6 +122,15 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "import.png");
+            this.imageList1.Images.SetKeyName(1, "save-512.png");
+            this.imageList1.Images.SetKeyName(2, "Down.png");
+            this.imageList1.Images.SetKeyName(3, "Cancel.png");
             // 
             // label3
             // 
@@ -158,7 +167,7 @@
             this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_LoadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_LoadFile.ImageIndex = 3;
+            this.btn_LoadFile.ImageIndex = 0;
             this.btn_LoadFile.ImageList = this.imageList1;
             this.btn_LoadFile.Location = new System.Drawing.Point(453, 16);
             this.btn_LoadFile.Name = "btn_LoadFile";
@@ -185,7 +194,7 @@
             this.btn_SaveImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_SaveImport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_SaveImport.ImageIndex = 2;
+            this.btn_SaveImport.ImageIndex = 1;
             this.btn_SaveImport.ImageList = this.imageList1;
             this.btn_SaveImport.Location = new System.Drawing.Point(593, 527);
             this.btn_SaveImport.Name = "btn_SaveImport";
@@ -202,7 +211,7 @@
             this.btn_ExitImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_ExitImport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ExitImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_ExitImport.ImageIndex = 1;
+            this.btn_ExitImport.ImageIndex = 3;
             this.btn_ExitImport.ImageList = this.imageList1;
             this.btn_ExitImport.Location = new System.Drawing.Point(698, 527);
             this.btn_ExitImport.Name = "btn_ExitImport";
@@ -213,15 +222,6 @@
             this.btn_ExitImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ExitImport.UseVisualStyleBackColor = false;
             this.btn_ExitImport.Click += new System.EventHandler(this.btn_ExitImport_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Down.png");
-            this.imageList1.Images.SetKeyName(1, "Cancel.png");
-            this.imageList1.Images.SetKeyName(2, "save-512.png");
-            this.imageList1.Images.SetKeyName(3, "import.png");
             // 
             // notifyIcon1
             // 
