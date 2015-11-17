@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Add_New_Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Add_New_Game.Designer.cs">
+      <DependentUpon>Add_New_Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CopyQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     <Compile Include="GUI\User Controls\Answer_OnlyOneSelect.Designer.cs">
       <DependentUpon>Answer_OnlyOneSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Competition_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Competition_Setting.Designer.cs">
+      <DependentUpon>Competition_Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\CreateQuestion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +157,12 @@
     </Compile>
     <Compile Include="GUI\User Controls\GameMenu.Designer.cs">
       <DependentUpon>GameMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\General_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\General_Setting.Designer.cs">
+      <DependentUpon>General_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\ImportQuestions.cs">
       <SubType>UserControl</SubType>
@@ -165,6 +183,12 @@
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\MyEventArgs.cs" />
+    <Compile Include="GUI\User Controls\Phase_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Phase_Setting.Designer.cs">
+      <DependentUpon>Phase_Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Question_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,11 +231,23 @@
     <Compile Include="GUI\User Controls\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Setting_Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Setting_Game.Designer.cs">
+      <DependentUpon>Setting_Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Start_Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\User Controls\Start_Game.Designer.cs">
       <DependentUpon>Start_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\Team_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Team_Setting.Designer.cs">
+      <DependentUpon>Team_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\UserManagement.cs">
       <SubType>UserControl</SubType>
@@ -254,6 +290,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Add_New_Game.resx">
+      <DependentUpon>Add_New_Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\CopyQuestion.resx">
       <DependentUpon>CopyQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +344,9 @@
     <EmbeddedResource Include="GUI\User Controls\Answer_OnlyOneSelect.resx">
       <DependentUpon>Answer_OnlyOneSelect.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Competition_Setting.resx">
+      <DependentUpon>Competition_Setting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +357,9 @@
     <EmbeddedResource Include="GUI\User Controls\GameMenu.resx">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\General_Setting.resx">
+      <DependentUpon>General_Setting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\ImportQuestions.resx">
       <DependentUpon>ImportQuestions.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -324,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\ImportQuestionToQuestionStore.resx">
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Phase_Setting.resx">
+      <DependentUpon>Phase_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Question_MultiSelect.resx">
       <DependentUpon>Question_MultiSelect.cs</DependentUpon>
@@ -346,8 +394,14 @@
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Setting_Game.resx">
+      <DependentUpon>Setting_Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Start_Game.resx">
       <DependentUpon>Start_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Team_Setting.resx">
+      <DependentUpon>Team_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>

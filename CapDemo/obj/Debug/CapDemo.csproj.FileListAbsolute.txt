@@ -39,3 +39,9 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Question_Short
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Start_Game.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.UserManagement.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Create_AccountManagement.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.Add_New_Game.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Setting_Game.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.General_Setting.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Phase_Setting.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Team_Setting.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Competition_Setting.resources

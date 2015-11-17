@@ -38,6 +38,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_GameSetting_Click(object sender, EventArgs e)
         {
             pnl_Setting.Controls.Clear();
+            Setting_Game sg = new Setting_Game();
+            pnl_Setting.Controls.Add(sg);
         }
 
         private void btn_UserManagement_Click(object sender, EventArgs e)
