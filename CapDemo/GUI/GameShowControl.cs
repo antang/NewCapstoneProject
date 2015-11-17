@@ -15,6 +15,7 @@ namespace CapDemo.GUI
     {
         Setting st = new Setting();
         GameMenu gm = new GameMenu();
+        Start_Game sg = new Start_Game();
         public GameShowControl()
         {
             InitializeComponent();
@@ -24,9 +25,23 @@ namespace CapDemo.GUI
             this.Controls.Add(gm);
             this.gm.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
             this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
+            this.gm.btn_Start.Click += new EventHandler(btn_Start_onClick);
+            this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
         }
 
-        private void btn_Setting_onClick(object sender, EventArgs e)
+        void btn_Exit_onlick(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            this.Controls.Add(gm);
+        }
+
+        void btn_Start_onClick(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            this.Controls.Add(sg);
+        }
+
+        void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
             this.Controls.Add(st);

@@ -43,11 +43,12 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
-            this.cmb_Catalogue.Location = new System.Drawing.Point(125, 10);
+            this.cmb_Catalogue.Location = new System.Drawing.Point(112, 3);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
             this.cmb_Catalogue.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmb_Catalogue.Size = new System.Drawing.Size(268, 21);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(333, 28);
             this.cmb_Catalogue.TabIndex = 9;
             this.cmb_Catalogue.SelectedIndexChanged += new System.EventHandler(this.cmb_Catalogue_SelectedIndexChanged);
             // 

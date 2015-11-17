@@ -34,9 +34,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_CancelCatalogue = new System.Windows.Forms.Button();
             this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
-            this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lbl2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_SaveCatalogue
@@ -90,18 +90,6 @@
             this.txt_NameCatalogue.Size = new System.Drawing.Size(326, 30);
             this.txt_NameCatalogue.TabIndex = 36;
             // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.ForeColor = System.Drawing.Color.White;
-            this.lbl2.Location = new System.Drawing.Point(19, 71);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(88, 19);
-            this.lbl2.TabIndex = 35;
-            this.lbl2.Text = "Tên chủ đề";
-            // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
@@ -118,6 +106,18 @@
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.ForeColor = System.Drawing.Color.White;
+            this.lbl2.Location = new System.Drawing.Point(19, 71);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(88, 19);
+            this.lbl2.TabIndex = 35;
+            this.lbl2.Text = "Tên chủ đề";
             // 
             // CreateCatalogueNew
             // 
@@ -136,6 +136,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateCatalogueNew";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo mới chủ đề";
             this.ResumeLayout(false);
@@ -149,8 +150,8 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_CancelCatalogue;
         private System.Windows.Forms.TextBox txt_NameCatalogue;
-        private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label lbl2;
     }
 }

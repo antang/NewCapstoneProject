@@ -62,6 +62,12 @@
     <Compile Include="GUI\CreateQuestionNew.Designer.cs">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Create_AccountManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Create_AccountManagement.Designer.cs">
+      <DependentUpon>Create_AccountManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DeleteCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
     <Compile Include="GUI\User Controls\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="GUI\User Controls\View_Answer_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,6 +225,19 @@
     </Compile>
     <Compile Include="GUI\User Controls\View_Answer_ShortAnswer.Designer.cs">
       <DependentUpon>View_Answer_ShortAnswer.cs</DependentUpon>
+=======
+    <Compile Include="GUI\User Controls\Start_Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Start_Game.Designer.cs">
+      <DependentUpon>Start_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\UserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+>>>>>>> 1a1972f7df2a43ac3e44f5f9166eaa30f57341ed
     </Compile>
     <Compile Include="GUI\ViewQuestion.cs">
       <SubType>Form</SubType>
@@ -262,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CreateQuestionNew.resx">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Create_AccountManagement.resx">
+      <DependentUpon>Create_AccountManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DeleteCatalogue.resx">
       <DependentUpon>DeleteCatalogue.cs</DependentUpon>
@@ -340,6 +363,7 @@
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="GUI\User Controls\View_Answer_MultiSelect.resx">
       <DependentUpon>View_Answer_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +372,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\View_Answer_ShortAnswer.resx">
       <DependentUpon>View_Answer_ShortAnswer.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="GUI\User Controls\Start_Game.resx">
+      <DependentUpon>Start_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+>>>>>>> 1a1972f7df2a43ac3e44f5f9166eaa30f57341ed
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViewQuestion.resx">
       <DependentUpon>ViewQuestion.cs</DependentUpon>

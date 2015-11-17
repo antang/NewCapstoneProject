@@ -10,34 +10,22 @@ using System.Windows.Forms;
 
 namespace CapDemo.GUI.User_Controls
 {
-    public partial class GameMenu : UserControl
+    public partial class Start_Game : UserControl
     {
-        public GameMenu()
+        public Start_Game()
         {
             InitializeComponent();
         }
         public event EventHandler onClick;
-        public event EventHandler onClick_Start;
-        private void btn_Setting_Click(object sender, EventArgs e)
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
             if (this.onClick != null)
                 this.onClick(this, e);
         }
 
-        private void GameMenu_Load(object sender, EventArgs e)
+        private void Start_Game_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
-        }
-
-        private void lbl_Name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Start_Click(object sender, EventArgs e)
-        {
-            if (this.onClick_Start != null)
-                this.onClick_Start(this, e);
         }
     }
 }

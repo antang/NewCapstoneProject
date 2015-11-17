@@ -40,7 +40,7 @@
             this.btn_DelAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DelAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DelAnswer.ForeColor = System.Drawing.Color.White;
-            this.btn_DelAnswer.Location = new System.Drawing.Point(313, 1);
+            this.btn_DelAnswer.Location = new System.Drawing.Point(338, 1);
             this.btn_DelAnswer.Name = "btn_DelAnswer";
             this.btn_DelAnswer.Size = new System.Drawing.Size(23, 23);
             this.btn_DelAnswer.TabIndex = 5;
@@ -50,16 +50,17 @@
             // 
             // txt_AnswerContent
             // 
-            this.txt_AnswerContent.Location = new System.Drawing.Point(40, 5);
+            this.txt_AnswerContent.Location = new System.Drawing.Point(40, 3);
             this.txt_AnswerContent.Multiline = true;
             this.txt_AnswerContent.Name = "txt_AnswerContent";
             this.txt_AnswerContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_AnswerContent.Size = new System.Drawing.Size(262, 50);
+            this.txt_AnswerContent.Size = new System.Drawing.Size(292, 50);
             this.txt_AnswerContent.TabIndex = 4;
             // 
             // chk_Check
             // 
             this.chk_Check.AutoSize = true;
+            this.chk_Check.ForeColor = System.Drawing.Color.Black;
             this.chk_Check.Location = new System.Drawing.Point(3, 5);
             this.chk_Check.Name = "chk_Check";
             this.chk_Check.Size = new System.Drawing.Size(33, 17);
@@ -72,12 +73,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.btn_DelAnswer);
             this.Controls.Add(this.txt_AnswerContent);
             this.Controls.Add(this.chk_Check);
             this.Name = "Answer_MultiSelect";
-            this.Size = new System.Drawing.Size(338, 58);
+            this.Size = new System.Drawing.Size(364, 58);
             this.ResumeLayout(false);
             this.PerformLayout();
 

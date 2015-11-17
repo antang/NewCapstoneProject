@@ -88,9 +88,11 @@
             this.btn_Start.Size = new System.Drawing.Size(319, 62);
             this.btn_Start.TabIndex = 4;
             this.btn_Start.UseVisualStyleBackColor = false;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +105,7 @@
             // 
             // lbl_Name
             // 
+            this.lbl_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -138,11 +141,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_ExitMenu;
-        private System.Windows.Forms.Button btn_Help;
-        private System.Windows.Forms.Button btn_Start;
         public System.Windows.Forms.Button btn_Setting;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_Name;
+        public System.Windows.Forms.Button btn_ExitMenu;
+        public System.Windows.Forms.Button btn_Help;
+        public System.Windows.Forms.Button btn_Start;
     }
 }

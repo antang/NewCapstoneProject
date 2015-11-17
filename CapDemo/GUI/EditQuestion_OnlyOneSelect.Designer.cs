@@ -138,7 +138,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(355, 387);
+            this.label8.Location = new System.Drawing.Point(10, 460);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 19);
             this.label8.TabIndex = 49;
@@ -147,7 +147,7 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(437, 351);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(111, 424);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 48;
@@ -198,7 +198,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(355, 352);
+            this.label7.Location = new System.Drawing.Point(10, 425);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 19);
             this.label7.TabIndex = 45;
@@ -212,7 +212,7 @@
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flp_addAnswer.Location = new System.Drawing.Point(359, 143);
             this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 189);
+            this.flp_addAnswer.Size = new System.Drawing.Size(400, 301);
             this.flp_addAnswer.TabIndex = 42;
             // 
             // lbl_Question
@@ -240,7 +240,7 @@
             // txt_Date
             // 
             this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Date.Location = new System.Drawing.Point(437, 389);
+            this.txt_Date.Location = new System.Drawing.Point(111, 462);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.Size = new System.Drawing.Size(100, 20);
             this.txt_Date.TabIndex = 55;
@@ -272,6 +272,7 @@
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
             this.Name = "EditQuestion_OnlyOneSelect";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa câu hỏi Only-Select";
             this.Load += new System.EventHandler(this.EditQuestion_OnlyOneSelect_Load);

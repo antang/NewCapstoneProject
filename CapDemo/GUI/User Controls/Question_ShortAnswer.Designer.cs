@@ -190,15 +190,16 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(14, 271);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(726, 104);
+            this.groupBox2.Size = new System.Drawing.Size(283, 178);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết đặt câu hỏi";
             // 
             // txt_Date
             // 
-            this.txt_Date.Location = new System.Drawing.Point(424, 64);
+            this.txt_Date.Location = new System.Drawing.Point(112, 133);
             this.txt_Date.Name = "txt_Date";
+            this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 20);
             this.txt_Date.TabIndex = 23;
             // 
@@ -207,7 +208,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(332, 60);
+            this.label8.Location = new System.Drawing.Point(20, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 19);
             this.label8.TabIndex = 22;
@@ -215,8 +216,9 @@
             // 
             // txt_TimeAnswer
             // 
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(424, 29);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(112, 98);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
+            this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 21;
             // 
@@ -235,6 +237,7 @@
             // 
             this.txt_ScoreTru.Location = new System.Drawing.Point(112, 62);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
+            this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreTru.TabIndex = 20;
             // 
@@ -253,6 +256,7 @@
             // 
             this.txt_ScoreCong.Location = new System.Drawing.Point(112, 27);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
+            this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreCong.TabIndex = 19;
             // 
@@ -261,7 +265,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(329, 27);
+            this.label7.Location = new System.Drawing.Point(17, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 19);
             this.label7.TabIndex = 18;

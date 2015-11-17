@@ -57,8 +57,9 @@
             // 
             // txt_Date
             // 
-            this.txt_Date.Location = new System.Drawing.Point(424, 64);
+            this.txt_Date.Location = new System.Drawing.Point(112, 132);
             this.txt_Date.Name = "txt_Date";
+            this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 20);
             this.txt_Date.TabIndex = 23;
             // 
@@ -67,7 +68,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(332, 60);
+            this.label8.Location = new System.Drawing.Point(20, 128);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 19);
             this.label8.TabIndex = 22;
@@ -75,8 +76,9 @@
             // 
             // txt_TimeAnswer
             // 
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(424, 29);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(112, 97);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
+            this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 21;
             // 
@@ -95,6 +97,7 @@
             // 
             this.txt_ScoreTru.Location = new System.Drawing.Point(112, 62);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
+            this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreTru.TabIndex = 20;
             // 
@@ -113,6 +116,7 @@
             // 
             this.txt_ScoreCong.Location = new System.Drawing.Point(112, 27);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
+            this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreCong.TabIndex = 19;
             // 
@@ -121,7 +125,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(329, 27);
+            this.label7.Location = new System.Drawing.Point(17, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 19);
             this.label7.TabIndex = 18;
@@ -166,9 +170,9 @@
             this.groupBox2.Controls.Add(this.txt_ScoreCong);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(12, 312);
+            this.groupBox2.Location = new System.Drawing.Point(12, 289);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(726, 93);
+            this.groupBox2.Size = new System.Drawing.Size(337, 167);
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết đặt câu hỏi";
@@ -177,11 +181,11 @@
             // 
             this.txt_AnswerContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_AnswerContent.Location = new System.Drawing.Point(412, 60);
+            this.txt_AnswerContent.Location = new System.Drawing.Point(412, 51);
             this.txt_AnswerContent.Multiline = true;
             this.txt_AnswerContent.Name = "txt_AnswerContent";
             this.txt_AnswerContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_AnswerContent.Size = new System.Drawing.Size(308, 189);
+            this.txt_AnswerContent.Size = new System.Drawing.Size(308, 181);
             this.txt_AnswerContent.TabIndex = 23;
             // 
             // label1
@@ -189,7 +193,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(408, 30);
+            this.label1.Location = new System.Drawing.Point(409, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 22;
@@ -199,7 +203,7 @@
             // 
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Question.Location = new System.Drawing.Point(6, 30);
+            this.lbl_Question.Location = new System.Drawing.Point(6, 29);
             this.lbl_Question.Name = "lbl_Question";
             this.lbl_Question.Size = new System.Drawing.Size(63, 19);
             this.lbl_Question.TabIndex = 21;
@@ -210,11 +214,11 @@
             this.txt_ContentQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ContentQuestion.Location = new System.Drawing.Point(6, 60);
+            this.txt_ContentQuestion.Location = new System.Drawing.Point(6, 51);
             this.txt_ContentQuestion.Multiline = true;
             this.txt_ContentQuestion.Name = "txt_ContentQuestion";
             this.txt_ContentQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_ContentQuestion.Size = new System.Drawing.Size(398, 189);
+            this.txt_ContentQuestion.Size = new System.Drawing.Size(398, 181);
             this.txt_ContentQuestion.TabIndex = 19;
             // 
             // groupBox1
@@ -229,7 +233,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(13, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(726, 262);
+            this.groupBox1.Size = new System.Drawing.Size(726, 241);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nội dung câu hỏi - dạng câu hỏi tự luận";
@@ -271,10 +275,11 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
-            this.cmb_Catalogue.Location = new System.Drawing.Point(99, 12);
+            this.cmb_Catalogue.Location = new System.Drawing.Point(85, 3);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
-            this.cmb_Catalogue.Size = new System.Drawing.Size(347, 21);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(347, 28);
             this.cmb_Catalogue.TabIndex = 48;
             // 
             // lbl_Catalogue

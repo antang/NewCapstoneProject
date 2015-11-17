@@ -36,6 +36,7 @@
             // rad_check
             // 
             this.rad_check.AutoSize = true;
+            this.rad_check.ForeColor = System.Drawing.Color.Black;
             this.rad_check.Location = new System.Drawing.Point(2, 6);
             this.rad_check.Name = "rad_check";
             this.rad_check.Size = new System.Drawing.Size(32, 17);
@@ -52,7 +53,7 @@
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(313, 1);
+            this.btn_Delete.Location = new System.Drawing.Point(339, 0);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(23, 23);
             this.btn_Delete.TabIndex = 11;
@@ -62,23 +63,24 @@
             // 
             // txt_Answercontent
             // 
-            this.txt_Answercontent.Location = new System.Drawing.Point(41, 5);
+            this.txt_Answercontent.Location = new System.Drawing.Point(41, 3);
             this.txt_Answercontent.Multiline = true;
             this.txt_Answercontent.Name = "txt_Answercontent";
             this.txt_Answercontent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Answercontent.Size = new System.Drawing.Size(262, 50);
+            this.txt_Answercontent.Size = new System.Drawing.Size(294, 50);
             this.txt_Answercontent.TabIndex = 10;
             // 
             // Answer_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.rad_check);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.txt_Answercontent);
             this.Name = "Answer_OnlyOneSelect";
-            this.Size = new System.Drawing.Size(338, 57);
+            this.Size = new System.Drawing.Size(364, 57);
             this.ResumeLayout(false);
             this.PerformLayout();
 
