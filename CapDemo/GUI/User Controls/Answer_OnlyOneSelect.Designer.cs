@@ -36,6 +36,7 @@
             // rad_check
             // 
             this.rad_check.AutoSize = true;
+            this.rad_check.ForeColor = System.Drawing.Color.Black;
             this.rad_check.Location = new System.Drawing.Point(2, 6);
             this.rad_check.Name = "rad_check";
             this.rad_check.Size = new System.Drawing.Size(32, 17);

@@ -50,8 +50,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_SaveAndCreateNewQuestion
@@ -62,7 +67,7 @@
             this.btn_SaveAndCreateNewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveAndCreateNewQuestion.ImageIndex = 2;
             this.btn_SaveAndCreateNewQuestion.ImageList = this.imageList1;
-            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(374, 409);
+            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(26, 14);
             this.btn_SaveAndCreateNewQuestion.Name = "btn_SaveAndCreateNewQuestion";
             this.btn_SaveAndCreateNewQuestion.Size = new System.Drawing.Size(171, 40);
             this.btn_SaveAndCreateNewQuestion.TabIndex = 41;
@@ -125,11 +130,11 @@
             this.btn_addAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_addAnswer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_addAnswer.ImageIndex = 1;
-            this.btn_addAnswer.ImageList = this.imageList1;
-            this.btn_addAnswer.Location = new System.Drawing.Point(601, 5);
+            this.btn_addAnswer.ImageIndex = 0;
+            this.btn_addAnswer.ImageList = this.imageList2;
+            this.btn_addAnswer.Location = new System.Drawing.Point(263, 12);
             this.btn_addAnswer.Name = "btn_addAnswer";
-            this.btn_addAnswer.Size = new System.Drawing.Size(141, 35);
+            this.btn_addAnswer.Size = new System.Drawing.Size(141, 27);
             this.btn_addAnswer.TabIndex = 22;
             this.btn_addAnswer.Text = "Thêm đáp án";
             this.btn_addAnswer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,9 +147,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_addAnswer.AutoScroll = true;
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp_addAnswer.Location = new System.Drawing.Point(342, 46);
+            this.flp_addAnswer.Location = new System.Drawing.Point(6, 44);
             this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 338);
+            this.flp_addAnswer.Size = new System.Drawing.Size(400, 332);
             this.flp_addAnswer.TabIndex = 20;
             // 
             // btn_CancelQuestion
@@ -155,7 +160,7 @@
             this.btn_CancelQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelQuestion.ImageIndex = 0;
             this.btn_CancelQuestion.ImageList = this.imageList1;
-            this.btn_CancelQuestion.Location = new System.Drawing.Point(647, 409);
+            this.btn_CancelQuestion.Location = new System.Drawing.Point(203, 14);
             this.btn_CancelQuestion.Name = "btn_CancelQuestion";
             this.btn_CancelQuestion.Size = new System.Drawing.Size(90, 40);
             this.btn_CancelQuestion.TabIndex = 39;
@@ -172,7 +177,7 @@
             this.btn_SaveQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveQuestion.ImageIndex = 3;
             this.btn_SaveQuestion.ImageList = this.imageList1;
-            this.btn_SaveQuestion.Location = new System.Drawing.Point(551, 409);
+            this.btn_SaveQuestion.Location = new System.Drawing.Point(299, 14);
             this.btn_SaveQuestion.Name = "btn_SaveQuestion";
             this.btn_SaveQuestion.Size = new System.Drawing.Size(90, 40);
             this.btn_SaveQuestion.TabIndex = 38;
@@ -206,6 +211,7 @@
             // 
             this.txt_Date.Location = new System.Drawing.Point(112, 130);
             this.txt_Date.Name = "txt_Date";
+            this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 20);
             this.txt_Date.TabIndex = 23;
             // 
@@ -224,6 +230,7 @@
             // 
             this.txt_TimeAnswer.Location = new System.Drawing.Point(112, 97);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
+            this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 21;
             // 
@@ -242,6 +249,7 @@
             // 
             this.txt_ScoreTru.Location = new System.Drawing.Point(112, 62);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
+            this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreTru.TabIndex = 20;
             // 
@@ -260,6 +268,7 @@
             // 
             this.txt_ScoreCong.Location = new System.Drawing.Point(112, 27);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
+            this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreCong.TabIndex = 19;
             // 
@@ -285,25 +294,54 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(342, 23);
+            this.label1.Location = new System.Drawing.Point(0, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 45;
             this.label1.Text = "Đáp án";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btn_addAnswer);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.flp_addAnswer);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(342, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(410, 382);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Đáp án câu hỏi";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.btn_SaveAndCreateNewQuestion);
+            this.groupBox4.Controls.Add(this.btn_CancelQuestion);
+            this.groupBox4.Controls.Add(this.btn_SaveQuestion);
+            this.groupBox4.Location = new System.Drawing.Point(342, 385);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(410, 64);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "create.png");
             // 
             // Question_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_addAnswer);
-            this.Controls.Add(this.btn_SaveAndCreateNewQuestion);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.flp_addAnswer);
-            this.Controls.Add(this.btn_CancelQuestion);
-            this.Controls.Add(this.btn_SaveQuestion);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox4);
             this.Name = "Question_OnlyOneSelect";
             this.Size = new System.Drawing.Size(755, 465);
             this.Load += new System.EventHandler(this.Question_OnlyOneSelect_Load);
@@ -311,8 +349,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,5 +378,8 @@
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

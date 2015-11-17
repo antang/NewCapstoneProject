@@ -60,6 +60,7 @@
             // chk_Check
             // 
             this.chk_Check.AutoSize = true;
+            this.chk_Check.ForeColor = System.Drawing.Color.Black;
             this.chk_Check.Location = new System.Drawing.Point(3, 5);
             this.chk_Check.Name = "chk_Check";
             this.chk_Check.Size = new System.Drawing.Size(33, 17);

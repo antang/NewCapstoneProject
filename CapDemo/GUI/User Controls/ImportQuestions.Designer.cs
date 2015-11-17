@@ -51,7 +51,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(577, 14);
+            this.panel1.Location = new System.Drawing.Point(577, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 58);
             this.panel1.TabIndex = 3;
@@ -105,7 +105,7 @@
             this.groupBox2.Controls.Add(this.txt_FilePath);
             this.groupBox2.Location = new System.Drawing.Point(3, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(784, 475);
+            this.groupBox2.Size = new System.Drawing.Size(784, 464);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             // 
@@ -125,7 +125,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(16, 125);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(751, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(751, 333);
             this.dataGridView1.TabIndex = 4;
             // 
             // btn_LoadFile
@@ -136,7 +136,7 @@
             this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_LoadFile.ImageIndex = 3;
             this.btn_LoadFile.ImageList = this.imageList1;
-            this.btn_LoadFile.Location = new System.Drawing.Point(453, 16);
+            this.btn_LoadFile.Location = new System.Drawing.Point(454, 89);
             this.btn_LoadFile.Name = "btn_LoadFile";
             this.btn_LoadFile.Size = new System.Drawing.Size(110, 30);
             this.btn_LoadFile.TabIndex = 3;
@@ -151,7 +151,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 22);
+            this.label2.Location = new System.Drawing.Point(13, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 2;
@@ -159,7 +159,7 @@
             // 
             // txt_FilePath
             // 
-            this.txt_FilePath.Location = new System.Drawing.Point(89, 16);
+            this.txt_FilePath.Location = new System.Drawing.Point(90, 89);
             this.txt_FilePath.Multiline = true;
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
@@ -174,9 +174,9 @@
             this.btn_SaveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveImport.ImageIndex = 2;
             this.btn_SaveImport.ImageList = this.imageList1;
-            this.btn_SaveImport.Location = new System.Drawing.Point(592, 489);
+            this.btn_SaveImport.Location = new System.Drawing.Point(580, 489);
             this.btn_SaveImport.Name = "btn_SaveImport";
-            this.btn_SaveImport.Size = new System.Drawing.Size(90, 40);
+            this.btn_SaveImport.Size = new System.Drawing.Size(102, 40);
             this.btn_SaveImport.TabIndex = 37;
             this.btn_SaveImport.Text = "Lưu";
             this.btn_SaveImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,9 +191,9 @@
             this.btn_ExitImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_ExitImport.ImageIndex = 1;
             this.btn_ExitImport.ImageList = this.imageList1;
-            this.btn_ExitImport.Location = new System.Drawing.Point(697, 489);
+            this.btn_ExitImport.Location = new System.Drawing.Point(688, 489);
             this.btn_ExitImport.Name = "btn_ExitImport";
-            this.btn_ExitImport.Size = new System.Drawing.Size(90, 40);
+            this.btn_ExitImport.Size = new System.Drawing.Size(99, 40);
             this.btn_ExitImport.TabIndex = 36;
             this.btn_ExitImport.Text = "Hủy";
             this.btn_ExitImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

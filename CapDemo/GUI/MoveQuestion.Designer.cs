@@ -64,10 +64,11 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(12, 35);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
-            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 21);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 28);
             this.cmb_Catalogue.TabIndex = 42;
             // 
             // label1

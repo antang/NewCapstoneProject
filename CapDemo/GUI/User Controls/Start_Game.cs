@@ -16,5 +16,16 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+        public event EventHandler onClick;
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            if (this.onClick != null)
+                this.onClick(this, e);
+        }
+
+        private void Start_Game_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

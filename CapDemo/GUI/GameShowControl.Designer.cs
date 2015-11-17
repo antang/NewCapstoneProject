@@ -39,7 +39,7 @@
             this.DoubleBuffered = true;
             this.Name = "GameShowControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GameShowControl";
+            this.Text = "GAME HIT YOUR GOALS";
             this.Load += new System.EventHandler(this.GameShowControl_Load);
             this.ResumeLayout(false);
 

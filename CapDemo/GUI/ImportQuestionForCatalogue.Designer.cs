@@ -54,7 +54,7 @@
             // txt_Catalogue
             // 
             this.txt_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Catalogue.Location = new System.Drawing.Point(96, 12);
+            this.txt_Catalogue.Location = new System.Drawing.Point(83, 12);
             this.txt_Catalogue.Name = "txt_Catalogue";
             this.txt_Catalogue.ReadOnly = true;
             this.txt_Catalogue.Size = new System.Drawing.Size(357, 26);

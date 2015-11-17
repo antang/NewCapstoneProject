@@ -50,8 +50,12 @@
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -100,7 +104,7 @@
             this.btn_addAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_addAnswer.ImageIndex = 1;
             this.btn_addAnswer.ImageList = this.imageList1;
-            this.btn_addAnswer.Location = new System.Drawing.Point(602, 24);
+            this.btn_addAnswer.Location = new System.Drawing.Point(271, 10);
             this.btn_addAnswer.Name = "btn_addAnswer";
             this.btn_addAnswer.Size = new System.Drawing.Size(141, 35);
             this.btn_addAnswer.TabIndex = 22;
@@ -124,9 +128,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_addAnswer.AutoScroll = true;
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp_addAnswer.Location = new System.Drawing.Point(343, 65);
+            this.flp_addAnswer.Location = new System.Drawing.Point(6, 48);
             this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 323);
+            this.flp_addAnswer.Size = new System.Drawing.Size(406, 317);
             this.flp_addAnswer.TabIndex = 20;
             // 
             // groupBox2
@@ -144,7 +148,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(14, 271);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(314, 167);
+            this.groupBox2.Size = new System.Drawing.Size(314, 178);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết đặt câu hỏi";
@@ -172,6 +176,7 @@
             // 
             this.txt_TimeAnswer.Location = new System.Drawing.Point(112, 97);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
+            this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
             this.txt_TimeAnswer.TabIndex = 21;
             // 
@@ -190,6 +195,7 @@
             // 
             this.txt_ScoreTru.Location = new System.Drawing.Point(112, 62);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
+            this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreTru.TabIndex = 20;
             // 
@@ -208,6 +214,7 @@
             // 
             this.txt_ScoreCong.Location = new System.Drawing.Point(112, 27);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
+            this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
             this.txt_ScoreCong.TabIndex = 19;
             // 
@@ -230,7 +237,7 @@
             this.btn_SaveAndCreateNewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveAndCreateNewQuestion.ImageIndex = 2;
             this.btn_SaveAndCreateNewQuestion.ImageList = this.imageList1;
-            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(374, 409);
+            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(28, 14);
             this.btn_SaveAndCreateNewQuestion.Name = "btn_SaveAndCreateNewQuestion";
             this.btn_SaveAndCreateNewQuestion.Size = new System.Drawing.Size(171, 40);
             this.btn_SaveAndCreateNewQuestion.TabIndex = 36;
@@ -248,7 +255,7 @@
             this.btn_CancelQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelQuestion.ImageIndex = 0;
             this.btn_CancelQuestion.ImageList = this.imageList1;
-            this.btn_CancelQuestion.Location = new System.Drawing.Point(647, 409);
+            this.btn_CancelQuestion.Location = new System.Drawing.Point(301, 14);
             this.btn_CancelQuestion.Name = "btn_CancelQuestion";
             this.btn_CancelQuestion.Size = new System.Drawing.Size(90, 40);
             this.btn_CancelQuestion.TabIndex = 34;
@@ -265,7 +272,7 @@
             this.btn_SaveQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveQuestion.ImageIndex = 3;
             this.btn_SaveQuestion.ImageList = this.imageList1;
-            this.btn_SaveQuestion.Location = new System.Drawing.Point(551, 409);
+            this.btn_SaveQuestion.Location = new System.Drawing.Point(205, 14);
             this.btn_SaveQuestion.Name = "btn_SaveQuestion";
             this.btn_SaveQuestion.Size = new System.Drawing.Size(90, 40);
             this.btn_SaveQuestion.TabIndex = 33;
@@ -286,24 +293,47 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(339, 43);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 37;
             this.label1.Text = "Đáp án";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btn_addAnswer);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.flp_addAnswer);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(334, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(418, 371);
+            this.groupBox3.TabIndex = 38;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Đáp án câu hỏi";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.btn_SaveAndCreateNewQuestion);
+            this.groupBox4.Controls.Add(this.btn_SaveQuestion);
+            this.groupBox4.Controls.Add(this.btn_CancelQuestion);
+            this.groupBox4.Location = new System.Drawing.Point(335, 388);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(417, 61);
+            this.groupBox4.TabIndex = 39;
+            this.groupBox4.TabStop = false;
             // 
             // Question_MultiSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_addAnswer);
-            this.Controls.Add(this.btn_SaveAndCreateNewQuestion);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.flp_addAnswer);
-            this.Controls.Add(this.btn_CancelQuestion);
-            this.Controls.Add(this.btn_SaveQuestion);
             this.Controls.Add(this.groupBox2);
             this.Name = "Question_MultiSelect";
             this.Size = new System.Drawing.Size(755, 465);
@@ -312,8 +342,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -339,5 +371,7 @@
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
