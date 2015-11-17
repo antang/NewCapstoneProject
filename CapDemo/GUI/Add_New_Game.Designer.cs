@@ -102,6 +102,7 @@
             this.btn_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Visible = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Back
             // 
