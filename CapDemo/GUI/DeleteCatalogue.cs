@@ -39,7 +39,7 @@ namespace CapDemo.GUI
                 Catalogue Cat = new Catalogue();
                 CatalogueBL CatBL = new CatalogueBL();
                 Cat.IDCatalogue = IDCat;
-                if (CatBL.DeleteAnswerByIDCatalogue(Cat) || CatBL.DeleteQuestionbyIDCatalogue(Cat) || CatBL.DeleteCataloguebyID(Cat))
+                if (CatBL.DeleteAnswerByIDCatalogue(Cat) && CatBL.DeleteQuestionbyIDCatalogue(Cat) && CatBL.DeleteCataloguebyID(Cat))
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
                     notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
@@ -71,7 +71,7 @@ namespace CapDemo.GUI
                             IDCatUnknow = Convert.ToInt32(CatList.ElementAt(i).IDCatalogue);
                         }
                     }
-                if (CatBL.MoveAnswerToUnknow(Cat, IDCatUnknow) || CatBL.MoveQuestionToUnknow(Cat, IDCatUnknow) || CatBL.DeleteCataloguebyID(Cat))
+                if (CatBL.MoveAnswerToUnknow(Cat, IDCatUnknow) && CatBL.MoveQuestionToUnknow(Cat, IDCatUnknow) && CatBL.DeleteCataloguebyID(Cat))
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
                     notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
@@ -85,7 +85,7 @@ namespace CapDemo.GUI
                     notifyIcon1.ShowBalloonTip(2000);
                     this.Close();
                 }
-                
+
             }
         }
         //Cancel Delete

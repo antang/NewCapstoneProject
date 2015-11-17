@@ -97,7 +97,7 @@ namespace CapDemo.BL
         {
             string query = "DELETE FROM Answer"
                           + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
-            return DA.UpdateDatabase(query);
+            return DA.DeleteDatabase(query);
         }
         //EDIT CATALOGUE ID IN QUESTION
         public bool MoveQuestionToUnknow(Catalogue Catalogue, int IDCatUnknow)
