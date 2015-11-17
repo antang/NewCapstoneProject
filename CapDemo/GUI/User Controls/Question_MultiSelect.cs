@@ -34,6 +34,18 @@ namespace CapDemo.GUI.User_Controls
         {
             this.Dock = DockStyle.Fill;
             txt_Date.Text = DateTime.Now.ToString("d");
+            //AUTO ADD 4 ANSWER
+            for (int j = 0; j <4; j++)
+            {
+                Answer_MultiSelect MultiSelectAnswer = new Answer_MultiSelect();
+                i++;
+                MultiSelectAnswer.Tag = i;
+                MultiSelectAnswer.ID_Answer = i;
+                MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
+                MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
+                MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a+j).ToString();
+                flp_addAnswer.Controls.Add(MultiSelectAnswer);
+            }
         }
 
         int i = 0;
@@ -48,7 +60,11 @@ namespace CapDemo.GUI.User_Controls
             MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
             MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(MultiSelectAnswer);
-            a++;
+
+            for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
+            {
+                MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
+            }
         }
         //Eventhanlder check radio button
         void MultiSelectAnswer_onCheck(object sender, EventArgs e)
@@ -60,7 +76,6 @@ namespace CapDemo.GUI.User_Controls
                 {
                     item.chk_Check.Checked = false;
                 }
-
             }
         }
         //Eventhanlder click Del button
@@ -73,7 +88,6 @@ namespace CapDemo.GUI.User_Controls
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
-
             }
         }
         //SAVE QUESTION AND ANSWER
@@ -89,7 +103,7 @@ namespace CapDemo.GUI.User_Controls
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "Multi Select";
+                question.TypeQuestion = "multiplechoice";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -107,7 +121,7 @@ namespace CapDemo.GUI.User_Controls
                 }
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
+                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công!";
                 notifyIcon1.ShowBalloonTip(1000);
                 //Close form
                 Form FindForm = this.FindForm();
@@ -133,7 +147,7 @@ namespace CapDemo.GUI.User_Controls
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "Multi Select";
+                question.TypeQuestion = "multiplechoice";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -151,13 +165,11 @@ namespace CapDemo.GUI.User_Controls
                 }
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
+                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công!";
                 notifyIcon1.ShowBalloonTip(1000);
                 //Refesh form
                 this.txt_ContentQuestion.Text = "";
                 flp_addAnswer.Controls.Clear();
-                a = 65;
-
             }
         }
     }

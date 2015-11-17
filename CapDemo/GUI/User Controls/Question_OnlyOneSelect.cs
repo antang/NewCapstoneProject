@@ -34,6 +34,19 @@ namespace CapDemo.GUI.User_Controls
         {
             this.Dock = DockStyle.Fill;
             txt_Date.Text = DateTime.Now.ToString("d");
+            //AUTO ADD 4 ANSWER
+            for (int j = 0; j < 4; j++)
+            {
+                Answer_OnlyOneSelect OneChoiceAnswer = new Answer_OnlyOneSelect();
+                i++;
+                OneChoiceAnswer.Tag = i;
+                OneChoiceAnswer.ID_Answer = i;
+                OneChoiceAnswer.onDelete += OneChoiceAnswer_onDelete;
+                OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
+                OneChoiceAnswer.rad_check.Text = Convert.ToChar(a+j).ToString();
+                flp_addAnswer.Controls.Add(OneChoiceAnswer);
+            }
+            
         }
 
         int i = 0;
@@ -49,7 +62,11 @@ namespace CapDemo.GUI.User_Controls
             OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
             OneChoiceAnswer.rad_check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(OneChoiceAnswer);
-            a++;
+
+            for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
+            {
+                OneChoiceAnswer.rad_check.Text = Convert.ToChar(a+j).ToString();
+            }
         }
         //Eventhanlder check radio button
         void OneChoiceAnswer_onCheck(object sender, EventArgs e)
@@ -67,6 +84,7 @@ namespace CapDemo.GUI.User_Controls
         //Eventhanlder click Del button
         void OneChoiceAnswer_onDelete(object sender, EventArgs e)
         {
+            Answer_OnlyOneSelect OneChoiceAnswer = new Answer_OnlyOneSelect();
             int answerID = (e as MyEventArgs).IDAnswer;
             foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
             {
@@ -74,8 +92,7 @@ namespace CapDemo.GUI.User_Controls
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
-
-            }
+            }   
         }
         //SAVE QUESTION AND ANSWER
         private void btn_SaveQuestion_Click(object sender, EventArgs e)
@@ -90,7 +107,7 @@ namespace CapDemo.GUI.User_Controls
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "One Select";
+                question.TypeQuestion = "onechoice";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -134,7 +151,7 @@ namespace CapDemo.GUI.User_Controls
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "One Select";
+                question.TypeQuestion = "onechoice";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -153,11 +170,11 @@ namespace CapDemo.GUI.User_Controls
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.ShowBalloonTip(2000);
+
                 //Refesh form
                 this.txt_ContentQuestion.Text = "";
                 flp_addAnswer.Controls.Clear();
-                a = 65;
             }
         }
 

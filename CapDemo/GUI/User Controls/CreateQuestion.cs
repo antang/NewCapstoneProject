@@ -39,7 +39,7 @@ namespace CapDemo.GUI.User_Controls
             this.IDCat = IDCat;
             this.NameCat = NameCat;
         }
-
+        //FORM LOAD
         private void CreateQuestion_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;

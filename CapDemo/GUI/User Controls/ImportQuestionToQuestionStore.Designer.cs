@@ -38,6 +38,7 @@
             this.rad_Move = new System.Windows.Forms.RadioButton();
             this.rad_Copy = new System.Windows.Forms.RadioButton();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,6 +153,11 @@
             this.dgv_Question.Size = new System.Drawing.Size(722, 307);
             this.dgv_Question.TabIndex = 10;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // ImportQuestionToQuestionStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +188,6 @@
         private System.Windows.Forms.RadioButton rad_Copy;
         private System.Windows.Forms.DataGridView dgv_Question;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

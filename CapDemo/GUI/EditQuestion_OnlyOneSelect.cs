@@ -15,6 +15,11 @@ namespace CapDemo.GUI
 {
     public partial class EditQuestion_OnlyOneSelect : Form
     {
+
+        int i = 0;
+        int a = 65;
+        private int IDQuestion;
+        private int IDCatalogue;
         public EditQuestion_OnlyOneSelect()
         {
             InitializeComponent();
@@ -61,12 +66,11 @@ namespace CapDemo.GUI
                         OneChoiceAnswer.ID_Answer = i;
                         OneChoiceAnswer.onDelete += OneChoiceAnswer_onDelete;
                         OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
-                        OneChoiceAnswer.rad_check.Text = Convert.ToChar(a).ToString();
+                        OneChoiceAnswer.rad_check.Text = Convert.ToChar(a+j).ToString();
 
                         OneChoiceAnswer.txt_Answercontent.Text = AnswerList.ElementAt(j).ContentAnswer;
                         OneChoiceAnswer.rad_check.Checked = AnswerList.ElementAt(j).IsCorrect;
                         flp_addAnswer.Controls.Add(OneChoiceAnswer);
-                        a++;
                     }
                 }
             }
@@ -83,12 +87,14 @@ namespace CapDemo.GUI
             }
             else
             {
-                //ADD QUESTION AND ANSWER
+                //Update question
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "One Select";
-                question.IDCatalogue = IDCatalogue;
-                question.Date = DateTime.Now;
-                questionBl.AddQuestion(question);
+                question.IDQuestion = IDQuestion;
+                questionBl.EditQuestionbyID(question);
+
+                //DELETE ANSWER
+                question.IDQuestion = IDQuestion;
+                questionBl.DeleteAnswerByIDQuestion(question);
 
                 foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
                 {
@@ -96,28 +102,19 @@ namespace CapDemo.GUI
                     {
                         answer.ContentAnswer = item.txt_Answercontent.Text;
                         answer.IsCorrect = item.rad_check.Checked;
-                        answer.IDQuestion = questionBl.MaxIDQuestion();
+                        answer.IDQuestion = IDQuestion;
                         answer.IDCatalogue = IDCatalogue;
                         questionBl.AddAnswer(answer);
                     }
                 }
-                //DELETE QUESTION AND ANSWER
-                question.IDQuestion = IDQuestion;
-                questionBl.DeleteAnswerByIDQuestion(question);
-                questionBl.DeleteQuestionByID(question);
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = " Chỉnh sửa câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.ShowBalloonTip(2000);
                 //Close form
                 this.Close();
             }
         }
-
-        int i = 0;
-        int a = 65;
-        private int IDQuestion;
-        private int IDCatalogue;
         //ADD ANSWER
         private void btn_addAnswer_Click(object sender, EventArgs e)
         {
@@ -129,7 +126,11 @@ namespace CapDemo.GUI
             OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
             OneChoiceAnswer.rad_check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(OneChoiceAnswer);
-            a++;
+
+            for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
+            {
+                OneChoiceAnswer.rad_check.Text = Convert.ToChar(a + j).ToString();
+            }
         }
         //Eventhanlder check radio button
         void OneChoiceAnswer_onCheck(object sender, EventArgs e)
@@ -141,7 +142,6 @@ namespace CapDemo.GUI
                 {
                     item.rad_check.Checked = false;
                 }
-
             }
         }
         //Eventhanlder click Del button
@@ -154,7 +154,6 @@ namespace CapDemo.GUI
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
-
             }
         }
         //EXIT FORM

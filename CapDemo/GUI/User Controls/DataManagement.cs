@@ -81,6 +81,7 @@ namespace CapDemo.GUI.User_Controls
         {
             CreateQuestionNew CreateNewQuestion = new CreateQuestionNew();
             CreateNewQuestion.ShowDialog();
+            loadQuestion();
         }
 
         private void lbl_ImportQuestion_Click(object sender, EventArgs e)
@@ -112,9 +113,9 @@ namespace CapDemo.GUI.User_Controls
             int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
             int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
-            string OneSelect = "one select";
-            string MultiSelect = "multi select";
-            string ShortAnswer = "short answer";
+            string OneSelect = "onechoice";
+            string MultiSelect = "multiplechoice";
+            string ShortAnswer = "shortanswer";
             if (TypeQuestion.ToLower()==OneSelect)
             {
                 EditQuestion_OnlyOneSelect eqms = new EditQuestion_OnlyOneSelect(IDQuestion, IDCatalogue);
@@ -155,7 +156,7 @@ namespace CapDemo.GUI.User_Controls
         {
             int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            if (NameCat == "Unknow")
+            if (NameCat.ToLower() == "unknow")
             {
                 MessageBox.Show("Không được chỉnh sửa chủ đề "+"\"" + NameCat+"\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -173,7 +174,7 @@ namespace CapDemo.GUI.User_Controls
             int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
             
-            if (NameCat == "Unknow")
+            if (NameCat.ToLower() == "unknow")
             {
                 MessageBox.Show("Không được xóa chủ đề " + "\"" + NameCat + "\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -216,7 +217,7 @@ namespace CapDemo.GUI.User_Controls
             //Show notify
             notifyIcon1.Icon = SystemIcons.Information;
             notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
-            notifyIcon1.ShowBalloonTip(1000);
+            notifyIcon1.ShowBalloonTip(2000);
             //Load question table
             loadQuestion();
         }
@@ -225,6 +226,14 @@ namespace CapDemo.GUI.User_Controls
         {
             gb_QuestionFunction.Visible = false;
             gb_CatalogueFunction.Visible = false;
+        }
+        //DOUBLE CLICK IN CATALOGUE DATAGRIDVIEW TO VIEW QUESTION
+        private void dgv_Catalogue_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+            ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
+            ViewQuestion.ShowDialog();
         }
 
     }

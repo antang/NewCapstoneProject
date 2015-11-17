@@ -33,7 +33,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_TimeAnswer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,11 +42,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btn_SaveEditQuestion = new System.Windows.Forms.Button();
             this.btn_CancelEditQuestion = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_ContentAnswer = new System.Windows.Forms.TextBox();
+            this.txt_Date = new System.Windows.Forms.TextBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // imageList1
@@ -62,7 +61,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(273, 10);
+            this.label3.Location = new System.Drawing.Point(245, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(247, 31);
             this.label3.TabIndex = 52;
@@ -78,19 +77,6 @@
             this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 51;
             this.label1.Text = "Đáp án";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(502, 383);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.maskedTextBox1.TabIndex = 50;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
@@ -186,24 +172,6 @@
             this.txt_ContentQuestion.Size = new System.Drawing.Size(397, 189);
             this.txt_ContentQuestion.TabIndex = 39;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(80, 77);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(332, 21);
-            this.comboBox1.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Chủ đề ";
-            // 
             // btn_SaveEditQuestion
             // 
             this.btn_SaveEditQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -220,6 +188,7 @@
             this.btn_SaveEditQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SaveEditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_SaveEditQuestion.UseVisualStyleBackColor = false;
+            this.btn_SaveEditQuestion.Click += new System.EventHandler(this.btn_SaveEditQuestion_Click);
             // 
             // btn_CancelEditQuestion
             // 
@@ -236,30 +205,44 @@
             this.btn_CancelEditQuestion.Text = "Hủy";
             this.btn_CancelEditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelEditQuestion.UseVisualStyleBackColor = false;
+            this.btn_CancelEditQuestion.Click += new System.EventHandler(this.btn_CancelEditQuestion_Click);
             // 
-            // textBox1
+            // txt_ContentAnswer
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_ContentAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(418, 143);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(338, 189);
-            this.textBox1.TabIndex = 55;
+            this.txt_ContentAnswer.Location = new System.Drawing.Point(418, 143);
+            this.txt_ContentAnswer.Multiline = true;
+            this.txt_ContentAnswer.Name = "txt_ContentAnswer";
+            this.txt_ContentAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_ContentAnswer.Size = new System.Drawing.Size(338, 189);
+            this.txt_ContentAnswer.TabIndex = 55;
+            // 
+            // txt_Date
+            // 
+            this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Date.Location = new System.Drawing.Point(502, 392);
+            this.txt_Date.Name = "txt_Date";
+            this.txt_Date.Size = new System.Drawing.Size(100, 20);
+            this.txt_Date.TabIndex = 56;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // EditQuestion_ShortAnswer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 515);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Date);
+            this.Controls.Add(this.txt_ContentAnswer);
             this.Controls.Add(this.btn_SaveEditQuestion);
             this.Controls.Add(this.btn_CancelEditQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_TimeAnswer);
             this.Controls.Add(this.label5);
@@ -269,12 +252,11 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
             this.Name = "EditQuestion_ShortAnswer";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa câu hỏi Short-Answer";
+            this.Load += new System.EventHandler(this.EditQuestion_ShortAnswer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,7 +269,6 @@
         private System.Windows.Forms.Button btn_CancelEditQuestion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_TimeAnswer;
         private System.Windows.Forms.Label label5;
@@ -297,8 +278,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_Question;
         private System.Windows.Forms.TextBox txt_ContentQuestion;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_ContentAnswer;
+        private System.Windows.Forms.TextBox txt_Date;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

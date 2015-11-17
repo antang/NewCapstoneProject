@@ -29,7 +29,7 @@ namespace CapDemo.GUI
             this.IDCat = pIDCat;
             this.NameCat = pNameCat;
         }
-
+        //LOAD FORM
         private void ViewQuestionInCatalogue_Load(object sender, EventArgs e)
         {
             this.txt_NameCatalogue.Text = NameCat;
@@ -45,18 +45,18 @@ namespace CapDemo.GUI
             dgv_Question.Columns["IDCatalogue"].Visible = false;
             dgv_Question.Columns["IDQuestion"].Visible = false;
             dgv_Question.Columns["AnswerContent"].Visible = false;
+            dgv_Question.Columns["Date"].Visible = false;
 
             dgv_Question.Columns["Sequence"].HeaderText = "STT";
             dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
             dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
 
-            dgv_Question.Columns["Sequence"].Width = 50;
-            dgv_Question.Columns["NameQuestion"].Width = 400;
-            dgv_Question.Columns["TypeQuestion"].Width = 150;
-            dgv_Question.Columns["NameCatalogue"].Width = 150;
+            dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
-
+        //EXIT FORM
         private void btn_CancelViewQuestione_Click(object sender, EventArgs e)
         {
             this.Close();

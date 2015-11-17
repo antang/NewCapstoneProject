@@ -43,7 +43,7 @@ namespace CapDemo.GUI
                 QuestionBL QuestionBL = new QuestionBL();
 
                 List<DO.Question> QuestionList;
-                QuestionList = QuestionBL.GetFile(OpenFile.FileName);
+                QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
                 txt_FilePath.Text = OpenFile.FileName;
                 if (QuestionList != null)
                     dgv_Question.DataSource = QuestionList;

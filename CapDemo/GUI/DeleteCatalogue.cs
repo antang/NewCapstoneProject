@@ -29,7 +29,7 @@ namespace CapDemo.GUI
             this.IDCat = pIDCat;
             this.NameCat = pNamecat;
         }
-        //Confirm Delete
+        //Confirm Delete catalogue
         int IDCatUnknow;
         private void btn_Ok_Click(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace CapDemo.GUI
                 if (CatBL.DeleteAnswerByIDCatalogue(Cat) && CatBL.DeleteQuestionbyIDCatalogue(Cat) && CatBL.DeleteCataloguebyID(Cat))
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề và các câu hỏi thuộc chủ đề này thành công";
                     notifyIcon1.ShowBalloonTip(2000);
                     this.Close();
                 }
@@ -60,7 +60,6 @@ namespace CapDemo.GUI
                 Catalogue Cat = new Catalogue();
                 CatalogueBL CatBL = new CatalogueBL();
                 Cat.IDCatalogue = IDCat;
-
                 List<DO.Catalogue> CatList;
                 CatList = CatBL.GetCatalogue();
                 if (CatList != null)
@@ -74,7 +73,7 @@ namespace CapDemo.GUI
                 if (CatBL.MoveAnswerToUnknow(Cat, IDCatUnknow) && CatBL.MoveQuestionToUnknow(Cat, IDCatUnknow) && CatBL.DeleteCataloguebyID(Cat))
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công";
+                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công. Các câu hỏi trong chủ đề đã xóa sẽ chuyển đến chủ đề \"Unknow\"";
                     notifyIcon1.ShowBalloonTip(2000);
                     this.Close();
                 }
@@ -85,7 +84,6 @@ namespace CapDemo.GUI
                     notifyIcon1.ShowBalloonTip(2000);
                     this.Close();
                 }
-
             }
         }
         //Cancel Delete

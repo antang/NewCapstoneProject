@@ -41,14 +41,14 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBl = new QuestionBL();
             Question question = new Question();
             Answer answer = new Answer();
-            if (txt_ContentQuestion.Text == "")
+            if (txt_ContentQuestion.Text == "" || txt_AnswerContent.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "Short Answer";
+                question.TypeQuestion = "shortanswer";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -64,7 +64,7 @@ namespace CapDemo.GUI.User_Controls
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.ShowBalloonTip(2000);
                 //Close form
                 Form FindForm = this.FindForm();
                 FindForm.Close();
@@ -89,7 +89,7 @@ namespace CapDemo.GUI.User_Controls
             else
             {
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "Short Answer";
+                question.TypeQuestion = "shortanswer";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
@@ -104,8 +104,8 @@ namespace CapDemo.GUI.User_Controls
                 }
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                notifyIcon1.ShowBalloonTip(2000);
                 //Refesh form
                 txt_ContentQuestion.Text = "";
                 txt_AnswerContent.Text = "";

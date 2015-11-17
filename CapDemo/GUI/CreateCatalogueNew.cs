@@ -18,7 +18,7 @@ namespace CapDemo.GUI
         {
             InitializeComponent();
         }
-
+        //ADD NEW CATALOGUE
         private void btn_SaveCatalogue_Click(object sender, EventArgs e)
         {
             if (txt_NameCatalogue.Text=="")
@@ -44,7 +44,7 @@ namespace CapDemo.GUI
                 
             }
         }
-
+        //EXIT FORM
         private void btn_CancelCatalogue_Click(object sender, EventArgs e)
         {
             this.Close();

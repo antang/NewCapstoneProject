@@ -42,6 +42,18 @@ namespace CapDemo.GUI.User_Controls
                     this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
                 }
             txt_Date.Text = DateTime.Now.ToString("d");
+            //AUTO ADD 4 ANSWER
+            for (int j = 0; j < 4; j++)
+            {
+                Answer_OnlyOneSelect OneChoiceAnswer = new Answer_OnlyOneSelect();
+                i++;
+                OneChoiceAnswer.Tag = i;
+                OneChoiceAnswer.ID_Answer = i;
+                OneChoiceAnswer.onDelete += OneChoiceAnswer_onDelete;
+                OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
+                OneChoiceAnswer.rad_check.Text = Convert.ToChar(a + j).ToString();
+                flp_addAnswer.Controls.Add(OneChoiceAnswer);
+            }
         }
         //EXIT FORM
         private void btn_CancelQuestion_Click(object sender, EventArgs e)
@@ -80,7 +92,7 @@ namespace CapDemo.GUI.User_Controls
                 else
                 {
                     question.NameQuestion = txt_ContentQuestion.Text;
-                    question.TypeQuestion = "One Select";
+                    question.TypeQuestion = "onechoice";
                     question.IDCatalogue = IDCat;
                     questionBl.AddQuestion(question);
 
@@ -96,8 +108,8 @@ namespace CapDemo.GUI.User_Controls
                         }
                     }
                     notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                    notifyIcon1.ShowBalloonTip(1000);
+                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                    notifyIcon1.ShowBalloonTip(2000);
                     Form FindForm = this.FindForm();
                     FindForm.Close();
                 }
@@ -121,7 +133,10 @@ namespace CapDemo.GUI.User_Controls
             OneChoiceAnswer.onCheck += OneChoiceAnswer_onCheck;
             OneChoiceAnswer.rad_check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(OneChoiceAnswer);
-            a++;
+            for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
+            {
+                OneChoiceAnswer.rad_check.Text = Convert.ToChar(a + j).ToString();
+            }
         }
         //Eventhanlder check radio button
         void OneChoiceAnswer_onCheck(object sender, EventArgs e)
@@ -133,7 +148,6 @@ namespace CapDemo.GUI.User_Controls
                 {
                     item.rad_check.Checked = false;
                 }
-
             }
         }
         //Eventhanlder click Del button
@@ -178,7 +192,7 @@ namespace CapDemo.GUI.User_Controls
                 else
                 {
                     question.NameQuestion = txt_ContentQuestion.Text;
-                    question.TypeQuestion = "One Select";
+                    question.TypeQuestion = "onechoice";
                     question.IDCatalogue = IDCat;
                     questionBl.AddQuestion(question);
 
@@ -195,12 +209,11 @@ namespace CapDemo.GUI.User_Controls
                     }
                     //Show notify
                     notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                    notifyIcon1.ShowBalloonTip(1000);
+                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                    notifyIcon1.ShowBalloonTip(2000);
                     //Refesh form
                     this.txt_ContentQuestion.Text = "";
                     flp_addAnswer.Controls.Clear();
-                    a = 65;
                 }
             }
             else

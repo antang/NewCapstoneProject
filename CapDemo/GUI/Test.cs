@@ -89,7 +89,7 @@ namespace CapDemo.GUI
                   QuestionBL QuestionBL = new QuestionBL();
 
                   List<DO.Question> QuestionList;
-                  QuestionList = QuestionBL.GetFile(OpenFile.FileName);
+                  QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
                   if (QuestionList != null)
                     dataGridView1.DataSource = QuestionList;
 

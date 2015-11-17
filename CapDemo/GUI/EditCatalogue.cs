@@ -29,7 +29,7 @@ namespace CapDemo.GUI
             this.IDCat = pIDCat;
             this.NameCat = pNameCat;
         }
-
+        //SAVE EDIT CATALOGUE
         private void btn_SaveEditCatalogue_Click(object sender, EventArgs e)
         {
             
@@ -64,16 +64,10 @@ namespace CapDemo.GUI
         {
             this.Close();
         }
-
+        //LOAD FORM
         private void EditCatalogue_Load(object sender, EventArgs e)
         {
             txt_NameCatalogue.Text = NameCat;
-            //notifyIcon1.Text = "My applicaiton";
-            //notifyIcon1.Visible = true;
-            //notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
-            //notifyIcon1.BalloonTipText = "I am a NotifyIcon Balloon";
-            //notifyIcon1.BalloonTipTitle = "Welcome Message";
-            //notifyIcon1.ShowBalloonTip(1000);
         }
     }
 }

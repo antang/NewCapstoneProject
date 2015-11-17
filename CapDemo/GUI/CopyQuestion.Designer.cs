@@ -35,6 +35,7 @@
             this.btn_SaveCopy = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_CancelCopy = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +101,11 @@
             this.btn_CancelCopy.UseVisualStyleBackColor = false;
             this.btn_CancelCopy.Click += new System.EventHandler(this.btn_CancelCopy_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
             // CopyQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,5 +137,6 @@
         private System.Windows.Forms.Button btn_SaveCopy;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_CancelCopy;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

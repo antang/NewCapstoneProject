@@ -36,6 +36,7 @@
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
             this.btn_addAnswer = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_CancelQuestion = new System.Windows.Forms.Button();
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -140,6 +140,12 @@
             this.btn_addAnswer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_addAnswer.UseVisualStyleBackColor = false;
             this.btn_addAnswer.Click += new System.EventHandler(this.btn_addAnswer_Click);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "create.png");
             // 
             // flp_addAnswer
             // 
@@ -327,12 +333,6 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "create.png");
-            // 
             // Question_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,7 +363,6 @@
         public System.Windows.Forms.Button btn_addAnswer;
         private System.Windows.Forms.Label lbl_Question;
         private System.Windows.Forms.TextBox txt_ContentQuestion;
-        private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
         private System.Windows.Forms.Button btn_CancelQuestion;
         private System.Windows.Forms.Button btn_SaveQuestion;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -381,5 +380,6 @@
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
     }
 }

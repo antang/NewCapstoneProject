@@ -241,6 +241,7 @@
             this.dgv_Catalogue.Size = new System.Drawing.Size(590, 312);
             this.dgv_Catalogue.TabIndex = 11;
             this.dgv_Catalogue.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Catalogue_CellClick);
+            this.dgv_Catalogue.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Catalogue_CellDoubleClick);
             // 
             // lbl_CreateCatalogue
             // 

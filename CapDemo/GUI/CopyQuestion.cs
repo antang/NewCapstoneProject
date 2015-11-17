@@ -14,6 +14,9 @@ namespace CapDemo.GUI
 {
     public partial class CopyQuestion : Form
     {
+        int IDCatSelected;
+        private int IDQuestion;
+        private int IDCatalogue;
         public CopyQuestion()
         {
             InitializeComponent();
@@ -42,9 +45,7 @@ namespace CapDemo.GUI
                     }
                 }
         }
-        int IDCatSelected;
-        private int IDQuestion;
-        private int IDCatalogue;
+        
         //SAVE QUESTION
         private void btn_SaveCopy_Click(object sender, EventArgs e)
         {
@@ -98,6 +99,10 @@ namespace CapDemo.GUI
 
                         }
                     }
+                //Notify
+                notifyIcon1.Icon = SystemIcons.Information;
+                notifyIcon1.BalloonTipText = "Sao chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công";
+                notifyIcon1.ShowBalloonTip(2000);
                 this.Close();
             }
             else

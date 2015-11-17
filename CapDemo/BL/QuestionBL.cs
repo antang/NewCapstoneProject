@@ -123,13 +123,21 @@ namespace CapDemo.BL
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
+        //Update Question Type
+        public bool EditQuestionTypebyID(Question Question)
+        {
+            string query = "UPDATE Question"
+                         + " SET Question_Type ='" + Question.TypeQuestion + "'"
+                         + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+            return DA.UpdateDatabase(query);
+        }
 
         //EDIT ANSWER
         public bool EditAnswerbyID(Answer Answer)
         {
             string query = "UPDATE Answer"
                          + " SET Answer_Name ='" + Answer.ContentAnswer + "', Correct_Answer='" + Answer.IsCorrect + "'"
-                         + " WHERE Question_ID = '" + Answer.IDQuestion + "' AND Answer_ID='" + Answer.IDAnswer + "'";
+                         + " WHERE Question_ID = '" + Answer.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
 //DELETE QUESTION
@@ -149,40 +157,54 @@ namespace CapDemo.BL
         }
 //LOAD FILE QUESTION
         // LOAD QUESTION FILE
-        public List<Question> GetFile(string file)
+        public List<Question> GetFileXML(string file)
         {
-            string content= FA.FileContent(file);
-
-            int stt = 1;
-            DataTable dtb = new DataTable();
-            dtb.Columns.Add("Sequence", typeof(string));
-            dtb.Columns.Add("NameQuestion", typeof(string));
-            dtb.Columns.Add("TypeQuestion", typeof(string));
-            dtb.Columns.Add("AnswerContent", typeof(string));
-
-            string[] QuestionContent = content.Split(new string[] { "/**/" }, StringSplitOptions.None);
-
-            for (int i = 0; i < QuestionContent.Length; i++)
+            if (FA.FileContent(file) == null)
             {
-                string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-                dtb.Rows.Add(stt.ToString(), QuestionItem[0], QuestionItem[1], QuestionItem[2]);
-                stt++;
+                return null;
             }
-
-            List<Question> QuestionList = new List<Question>();
-            if (dtb != null)
+            else
             {
-                foreach (DataRow item in dtb.Rows)
+                string content = FA.FileContent(file);
+                int stt = 1;
+                DataTable dtb = new DataTable();
+                dtb.Columns.Add("Sequence", typeof(string));
+                dtb.Columns.Add("NameQuestion", typeof(string));
+                dtb.Columns.Add("TypeQuestion", typeof(string));
+                dtb.Columns.Add("AnswerContent", typeof(string));
+
+                content = content.Replace("<question type='", "");
+                content = content.Replace("'><name><text>", "---");
+                content = content.Replace("</text></name>", "---");
+                string[] QuestionContent = content.Split(new string[] { "</question>" }, StringSplitOptions.None);
+
+                for (int i = 0; i < QuestionContent.Length - 1; i++)
                 {
-                    Question Question = new Question();
-                    Question.Sequence = Convert.ToInt32(item["Sequence"]);
-                    Question.NameQuestion = item["NameQuestion"].ToString();
-                    Question.TypeQuestion = item["TypeQuestion"].ToString();
-                    Question.AnswerContent = item["AnswerContent"].ToString();
-                    QuestionList.Add(Question);
+                    string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+                    dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2]);
+                    stt++;
                 }
+
+                List<Question> QuestionList = new List<Question>();
+                if (dtb != null)
+                {
+                    foreach (DataRow item in dtb.Rows)
+                    {
+                        Question Question = new Question();
+                        Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                        Question.NameQuestion = item["NameQuestion"].ToString();
+                        Question.TypeQuestion = item["TypeQuestion"].ToString();
+
+                        string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("<answer fraction='", "");
+                        AnswerContent = AnswerContent.Replace("'><text>", "---");
+                        AnswerContent = AnswerContent.Replace("</text>", "---");
+                        Question.AnswerContent = AnswerContent;
+                        QuestionList.Add(Question);
+                    }
+                }
+                return QuestionList;
             }
-            return QuestionList;
+            
         }
 
         //GET MAXIMUM ID QUESTION

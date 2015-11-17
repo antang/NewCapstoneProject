@@ -97,7 +97,6 @@ namespace CapDemo.GUI.User_Controls
                             answer.IDQuestion = QuestionBL.MaxIDQuestion();
                             answer.IDCatalogue = IDCatSelected;
                             QuestionBL.AddAnswer(answer);
-
                         }
                     }
                 //DELETE QUESTION
@@ -106,10 +105,9 @@ namespace CapDemo.GUI.User_Controls
 
                 //Notify
                 notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Chuyển câu hỏi sang chủ đề " + cmb_Catalogue.SelectedItem.ToString();
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.BalloonTipText = "Chuyển câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString()+"\" thành công";
+                notifyIcon1.ShowBalloonTip(2000);
                 this.Close();
-
 	        }else
 	        {
                 MessageBox.Show("Vui lòng chọn chủ đề!","Cảnh Báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -16,7 +16,7 @@ namespace CapDemo.GUI
     public partial class EditQuestion_MultiSelect : Form
     {
         private int IDQuestion;
-        private   int IDCatalogue;
+        private int IDCatalogue;
 
         public EditQuestion_MultiSelect()
         {
@@ -58,10 +58,18 @@ namespace CapDemo.GUI
                 {
                     for (int j = 0; j < AnswerList.Count; j++)
                     {
-                        Answer_MultiSelect AnswerMultiSelect = new Answer_MultiSelect();
-                        AnswerMultiSelect.txt_AnswerContent.Text = AnswerList.ElementAt(j).ContentAnswer;
-                        AnswerMultiSelect.chk_Check.Checked = AnswerList.ElementAt(j).IsCorrect;
-                        flp_addAnswer.Controls.Add(AnswerMultiSelect);
+                        Answer_MultiSelect MultiSelectAnswer = new Answer_MultiSelect();
+                        i++;
+                        MultiSelectAnswer.Tag = i;
+                        MultiSelectAnswer.ID_Answer = i;
+                        MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
+                        MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
+                        MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
+                        flp_addAnswer.Controls.Add(MultiSelectAnswer);
+
+                        MultiSelectAnswer.txt_AnswerContent.Text = AnswerList.ElementAt(j).ContentAnswer;
+                        MultiSelectAnswer.chk_Check.Checked = AnswerList.ElementAt(j).IsCorrect;
+                        flp_addAnswer.Controls.Add(MultiSelectAnswer);
                     }
                 }
             }
@@ -84,12 +92,14 @@ namespace CapDemo.GUI
             }
             else
             {
-                //ADD QUESTION AND ANSWER
+                //Update question
                 question.NameQuestion = txt_ContentQuestion.Text;
-                question.TypeQuestion = "Multi Select";
-                question.IDCatalogue = IDCatalogue;
-                question.Date = DateTime.Now;
-                questionBl.AddQuestion(question);
+                question.IDQuestion = IDQuestion;
+                questionBl.EditQuestionbyID(question);
+
+                //DELETE Answer
+                question.IDQuestion = IDQuestion;
+                questionBl.DeleteAnswerByIDQuestion(question);
 
                 foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
                 {
@@ -97,27 +107,21 @@ namespace CapDemo.GUI
                     {
                         answer.ContentAnswer = item.txt_AnswerContent.Text;
                         answer.IsCorrect = item.chk_Check.Checked;
-                        answer.IDQuestion = questionBl.MaxIDQuestion();
+                        answer.IDQuestion = IDQuestion;
                         answer.IDCatalogue = IDCatalogue;
                         questionBl.AddAnswer(answer);
                     }
                 }
-
-                //DELETE QUESTION
-                question.IDQuestion=IDQuestion;
-                questionBl.DeleteAnswerByIDQuestion(question);
-                questionBl.DeleteQuestionByID(question);
-
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                notifyIcon1.ShowBalloonTip(2000);
                 //Close form
                 Form FindForm = this.FindForm();
                 FindForm.Close();
             }
         }
-
+        //Add Answer
         int i = 0;
         int a = 65;
         private void btn_addAnswer_Click(object sender, EventArgs e)
@@ -130,8 +134,10 @@ namespace CapDemo.GUI
             MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
             MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(MultiSelectAnswer);
-            a++;
-
+            for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
+            {
+                MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
+            }
         }
         //Eventhanlder check radio button
         void MultiSelectAnswer_onCheck(object sender, EventArgs e)
@@ -156,7 +162,6 @@ namespace CapDemo.GUI
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
-
             }
         }
     }
