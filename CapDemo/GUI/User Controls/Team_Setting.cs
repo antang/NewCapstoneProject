@@ -16,5 +16,16 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+
+        private void btn_AddPhase_Click(object sender, EventArgs e)
+        {
+            Team t = new Team();
+            flp_Team.Controls.Add(t);
+        }
+
+        private void Team_Setting_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

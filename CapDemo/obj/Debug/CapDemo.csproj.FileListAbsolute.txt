@@ -89,3 +89,6 @@ C:\Users\TNA\Downloads\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341
 C:\Users\TNA\Downloads\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341ed\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341ed\CapDemo\obj\Debug\CapDemo.Properties.Resources.resources
 C:\Users\TNA\Downloads\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341ed\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341ed\CapDemo\obj\Debug\CapDemo.csproj.GenerateResource.Cache
 >>>>>>> 25fc086c6da49390b845e789704d5ce221007200
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Phase.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Team.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.New_Game.resources

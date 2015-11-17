@@ -183,6 +183,18 @@
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\MyEventArgs.cs" />
+    <Compile Include="GUI\User Controls\New_Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\New_Game.Designer.cs">
+      <DependentUpon>New_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\Phase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Phase.Designer.cs">
+      <DependentUpon>Phase.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Phase_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -242,6 +254,12 @@
     </Compile>
     <Compile Include="GUI\User Controls\Start_Game.Designer.cs">
       <DependentUpon>Start_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Team.Designer.cs">
+      <DependentUpon>Team.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\Team_Setting.cs">
       <SubType>UserControl</SubType>
@@ -370,6 +388,12 @@
     <EmbeddedResource Include="GUI\User Controls\ImportQuestionToQuestionStore.resx">
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\New_Game.resx">
+      <DependentUpon>New_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Phase.resx">
+      <DependentUpon>Phase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Phase_Setting.resx">
       <DependentUpon>Phase_Setting.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Start_Game.resx">
       <DependentUpon>Start_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Team.resx">
+      <DependentUpon>Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Team_Setting.resx">
       <DependentUpon>Team_Setting.cs</DependentUpon>
@@ -481,6 +508,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icon\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\KhungTao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\KhungDoiChoi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\MauAo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\icon\paint_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\newGame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Untitled-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Phase_Setting));
             this.btn_AddPhase = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_Phase = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btn_AddPhase
@@ -49,6 +49,7 @@
             this.btn_AddPhase.Text = "+ Thêm giai đoạn";
             this.btn_AddPhase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_AddPhase.UseVisualStyleBackColor = false;
+            this.btn_AddPhase.Click += new System.EventHandler(this.btn_AddPhase_Click);
             // 
             // imageList1
             // 
@@ -56,22 +57,27 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "add.png");
             // 
-            // flowLayoutPanel1
+            // flp_Phase
             // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 60);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(707, 401);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flp_Phase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp_Phase.AutoScroll = true;
+            this.flp_Phase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flp_Phase.Location = new System.Drawing.Point(20, 60);
+            this.flp_Phase.Name = "flp_Phase";
+            this.flp_Phase.Size = new System.Drawing.Size(707, 401);
+            this.flp_Phase.TabIndex = 1;
             // 
             // Phase_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flp_Phase);
             this.Controls.Add(this.btn_AddPhase);
             this.Name = "Phase_Setting";
             this.Size = new System.Drawing.Size(748, 480);
+            this.Load += new System.EventHandler(this.Phase_Setting_Load);
             this.ResumeLayout(false);
 
         }
@@ -80,6 +86,6 @@
 
         private System.Windows.Forms.Button btn_AddPhase;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flp_Phase;
     }
 }
