@@ -36,13 +36,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.btn_LoadFile = new System.Windows.Forms.Button();
             this.txt_FilePath = new System.Windows.Forms.TextBox();
             this.btn_SaveImport = new System.Windows.Forms.Button();
             this.btn_ExitImport = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 22);
+            this.label2.Location = new System.Drawing.Point(11, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 2;
@@ -101,7 +101,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(568, 14);
+            this.panel1.Location = new System.Drawing.Point(568, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 58);
             this.panel1.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button4.ImageIndex = 0;
             this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(42, 22);
+            this.button4.Location = new System.Drawing.Point(43, 22);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 30);
             this.button4.TabIndex = 34;
@@ -122,6 +122,15 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Down.png");
+            this.imageList1.Images.SetKeyName(1, "Cancel.png");
+            this.imageList1.Images.SetKeyName(2, "save-512.png");
+            this.imageList1.Images.SetKeyName(3, "import.png");
             // 
             // label3
             // 
@@ -160,7 +169,7 @@
             this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_LoadFile.ImageIndex = 3;
             this.btn_LoadFile.ImageList = this.imageList1;
-            this.btn_LoadFile.Location = new System.Drawing.Point(453, 16);
+            this.btn_LoadFile.Location = new System.Drawing.Point(446, 72);
             this.btn_LoadFile.Name = "btn_LoadFile";
             this.btn_LoadFile.Size = new System.Drawing.Size(110, 30);
             this.btn_LoadFile.TabIndex = 3;
@@ -172,7 +181,7 @@
             // 
             // txt_FilePath
             // 
-            this.txt_FilePath.Location = new System.Drawing.Point(89, 16);
+            this.txt_FilePath.Location = new System.Drawing.Point(82, 72);
             this.txt_FilePath.Multiline = true;
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
@@ -213,15 +222,6 @@
             this.btn_ExitImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ExitImport.UseVisualStyleBackColor = false;
             this.btn_ExitImport.Click += new System.EventHandler(this.btn_ExitImport_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Down.png");
-            this.imageList1.Images.SetKeyName(1, "Cancel.png");
-            this.imageList1.Images.SetKeyName(2, "save-512.png");
-            this.imageList1.Images.SetKeyName(3, "import.png");
             // 
             // notifyIcon1
             // 

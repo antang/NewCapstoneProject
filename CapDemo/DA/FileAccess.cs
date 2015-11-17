@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace CapDemo.DA
 {
@@ -13,12 +15,41 @@ namespace CapDemo.DA
         public string FileContent(string NameFile)
         {
             string QuestionContent = "";
-
-            foreach (var line in File.ReadAllLines(NameFile))
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.ConformanceLevel = ConformanceLevel.Fragment;
+            try
             {
-                QuestionContent += line;
+                using (XmlReader reader = XmlReader.Create(NameFile,settings))
+                {
+                    while (reader.Read())
+                    {
+                        switch (reader.NodeType)
+                        {
+                            case XmlNodeType.Element: // The node is an element.
+                                QuestionContent += ("<" + reader.Name);
+
+                                while (reader.MoveToNextAttribute()) // Read the attributes.
+                                    QuestionContent += (" " + reader.Name + "='" + reader.Value + "'");
+                                QuestionContent += (">");
+                                break;
+                            case XmlNodeType.Text: //Display the text in each element.
+                                QuestionContent += (reader.Value);
+                                break;
+                            case XmlNodeType.EndElement: //Display the end of the element.
+                                QuestionContent += ("</" + reader.Name);
+                                QuestionContent += (">");
+                                break;
+                        }
+                    }
+                }
+                return QuestionContent;
             }
-            return QuestionContent;
+            catch (Exception)
+            {
+                MessageBox.Show("error");
+                return null;
+            }
+            
         }
         
     }

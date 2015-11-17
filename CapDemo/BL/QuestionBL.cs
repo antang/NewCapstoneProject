@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapDemo.BL
 {
@@ -123,7 +124,14 @@ namespace CapDemo.BL
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
-
+        //Update Question Type
+        public bool EditQuestionTypebyID(Question Question)
+        {
+            string query = "UPDATE Question"
+                         + " SET Question_Type ='" + Question.TypeQuestion + "'"
+                         + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+            return DA.UpdateDatabase(query);
+        }
         //EDIT ANSWER
         public bool EditAnswerbyID(Answer Answer)
         {
@@ -149,6 +157,7 @@ namespace CapDemo.BL
         }
 //LOAD FILE QUESTION
         // LOAD QUESTION FILE
+        //List<Question>
         public List<Question> GetFile(string file)
         {
             string content= FA.FileContent(file);
@@ -160,12 +169,16 @@ namespace CapDemo.BL
             dtb.Columns.Add("TypeQuestion", typeof(string));
             dtb.Columns.Add("AnswerContent", typeof(string));
 
-            string[] QuestionContent = content.Split(new string[] { "/**/" }, StringSplitOptions.None);
+            content = content.Replace("<question type='", "");
+            content = content.Replace("'><name><text>", "---");
+            content = content.Replace("</text></name>", "---");
+            //MessageBox.Show(content + "");
+            string[] QuestionContent = content.Split(new string[] { "</question>" }, StringSplitOptions.None);
 
-            for (int i = 0; i < QuestionContent.Length; i++)
+            for (int i = 0; i < QuestionContent.Length-1; i++)
             {
                 string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-                dtb.Rows.Add(stt.ToString(), QuestionItem[0], QuestionItem[1], QuestionItem[2]);
+                dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2]);
                 stt++;
             }
 
@@ -178,11 +191,17 @@ namespace CapDemo.BL
                     Question.Sequence = Convert.ToInt32(item["Sequence"]);
                     Question.NameQuestion = item["NameQuestion"].ToString();
                     Question.TypeQuestion = item["TypeQuestion"].ToString();
-                    Question.AnswerContent = item["AnswerContent"].ToString();
+
+                    string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("<answer fraction='", "");
+                    AnswerContent = AnswerContent.Replace("'><text>", "---");
+                    AnswerContent = AnswerContent.Replace("</text>", "---");
+                    MessageBox.Show(AnswerContent + "");
+                    Question.AnswerContent = AnswerContent;
                     QuestionList.Add(Question);
                 }
             }
             return QuestionList;
+            //return content;
         }
 
         //GET MAXIMUM ID QUESTION

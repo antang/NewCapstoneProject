@@ -39,38 +39,38 @@ namespace CapDemo.GUI
             DialogResult Result = OpenFile.ShowDialog();
             if (Result == DialogResult.OK)
             {
-                dgv_Question.Columns.Clear();
-                QuestionBL QuestionBL = new QuestionBL();
+                //dgv_Question.Columns.Clear();
+                //QuestionBL QuestionBL = new QuestionBL();
 
-                List<DO.Question> QuestionList;
-                QuestionList = QuestionBL.GetFile(OpenFile.FileName);
-                txt_FilePath.Text = OpenFile.FileName;
-                if (QuestionList != null)
-                    dgv_Question.DataSource = QuestionList;
+                //List<DO.Question> QuestionList;
+                ////QuestionList = QuestionBL.GetFile(OpenFile.FileName);
+                //txt_FilePath.Text = OpenFile.FileName;
+                //if (QuestionList != null)
+                //    dgv_Question.DataSource = QuestionList;
 
 
-                dgv_Question.Columns["IDCatalogue"].Visible = false;
-                dgv_Question.Columns["IDQuestion"].Visible = false;
-                dgv_Question.Columns["NameCatalogue"].Visible = false;
-                dgv_Question.Columns["AnswerContent"].Visible = false;
-                dgv_Question.Columns["Date"].Visible = false;
+                //dgv_Question.Columns["IDCatalogue"].Visible = false;
+                //dgv_Question.Columns["IDQuestion"].Visible = false;
+                //dgv_Question.Columns["NameCatalogue"].Visible = false;
+                //dgv_Question.Columns["AnswerContent"].Visible = false;
+                //dgv_Question.Columns["Date"].Visible = false;
 
-                dgv_Question.Columns["Sequence"].HeaderText = "STT";
-                dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
-                dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
+                //dgv_Question.Columns["Sequence"].HeaderText = "STT";
+                //dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+                //dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
 
-                dgv_Question.Columns["Sequence"].ReadOnly = true;
-                dgv_Question.Columns["NameQuestion"].ReadOnly = true;
-                dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+                //dgv_Question.Columns["Sequence"].ReadOnly = true;
+                //dgv_Question.Columns["NameQuestion"].ReadOnly = true;
+                //dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
 
-                dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                //dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                //dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
-                DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
-                CheckColumn.Name = "Check";
-                dgv_Question.Columns.Add(CheckColumn);
-                dgv_Question.Columns["Check"].HeaderText = "Chọn";
-                dgv_Question.Columns["Check"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                //DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
+                //CheckColumn.Name = "Check";
+                //dgv_Question.Columns.Add(CheckColumn);
+                //dgv_Question.Columns["Check"].HeaderText = "Chọn";
+                //dgv_Question.Columns["Check"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
         }
         //SAVE QUESTION

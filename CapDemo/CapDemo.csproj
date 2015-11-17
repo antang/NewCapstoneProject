@@ -201,6 +201,24 @@
     <Compile Include="GUI\User Controls\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_MultiSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_MultiSelect.Designer.cs">
+      <DependentUpon>View_Answer_MultiSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_OnlyOneSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_OnlyOneSelect.Designer.cs">
+      <DependentUpon>View_Answer_OnlyOneSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_ShortAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\View_Answer_ShortAnswer.Designer.cs">
+      <DependentUpon>View_Answer_ShortAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ViewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,9 +290,6 @@
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SequenceDiagram1.sequencediagram.layout">
-      <DependentUpon>SequenceDiagram1.sequencediagram</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +340,15 @@
     <EmbeddedResource Include="GUI\User Controls\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\View_Answer_MultiSelect.resx">
+      <DependentUpon>View_Answer_MultiSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\View_Answer_OnlyOneSelect.resx">
+      <DependentUpon>View_Answer_OnlyOneSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\View_Answer_ShortAnswer.resx">
+      <DependentUpon>View_Answer_ShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViewQuestion.resx">
       <DependentUpon>ViewQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,7 +366,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
-    <None Include="GUI\SequenceDiagram1.sequencediagram" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -401,6 +425,7 @@
   <ItemGroup>
     <None Include="image\icon\Cancel.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

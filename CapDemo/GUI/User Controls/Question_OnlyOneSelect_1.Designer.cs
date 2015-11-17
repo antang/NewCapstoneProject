@@ -51,7 +51,9 @@
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.lbl_Catalogue = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.answer_OnlyOneSelect1 = new CapDemo.GUI.User_Controls.Answer_OnlyOneSelect();
             this.groupBox2.SuspendLayout();
+            this.flp_addAnswer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,6 +222,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_addAnswer.AutoScroll = true;
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flp_addAnswer.Controls.Add(this.answer_OnlyOneSelect1);
             this.flp_addAnswer.Location = new System.Drawing.Point(319, 60);
             this.flp_addAnswer.Name = "flp_addAnswer";
             this.flp_addAnswer.Size = new System.Drawing.Size(400, 189);
@@ -301,6 +304,15 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // answer_OnlyOneSelect1
+            // 
+            this.answer_OnlyOneSelect1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.answer_OnlyOneSelect1.ID_Answer = 0;
+            this.answer_OnlyOneSelect1.Location = new System.Drawing.Point(3, 3);
+            this.answer_OnlyOneSelect1.Name = "answer_OnlyOneSelect1";
+            this.answer_OnlyOneSelect1.Size = new System.Drawing.Size(338, 57);
+            this.answer_OnlyOneSelect1.TabIndex = 0;
+            // 
             // Question_OnlyOneSelect_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +330,7 @@
             this.Load += new System.EventHandler(this.Question_OnlyOneSelect_1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.flp_addAnswer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -348,5 +361,6 @@
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label lbl_Catalogue;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private Answer_OnlyOneSelect answer_OnlyOneSelect1;
     }
 }

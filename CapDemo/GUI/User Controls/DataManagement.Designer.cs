@@ -354,6 +354,7 @@
             this.dgv_Question.Size = new System.Drawing.Size(590, 284);
             this.dgv_Question.TabIndex = 17;
             this.dgv_Question.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Question_CellClick);
+            this.dgv_Question.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Question_CellDoubleClick);
             // 
             // lbl_CreateQuestion
             // 

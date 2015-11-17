@@ -112,9 +112,9 @@ namespace CapDemo.GUI.User_Controls
             int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
             int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
-            string OneSelect = "one select";
-            string MultiSelect = "multi select";
-            string ShortAnswer = "short answer";
+            string OneSelect = "onechoice";
+            string MultiSelect = "multiplechoice";
+            string ShortAnswer = "shortanswer";
             if (TypeQuestion.ToLower()==OneSelect)
             {
                 EditQuestion_OnlyOneSelect eqms = new EditQuestion_OnlyOneSelect(IDQuestion, IDCatalogue);
@@ -225,6 +225,32 @@ namespace CapDemo.GUI.User_Controls
         {
             gb_QuestionFunction.Visible = false;
             gb_CatalogueFunction.Visible = false;
+        }
+        //VIEW DETAIL QUESTION BY DOUBLE CLICK CELL
+        private void dgv_Question_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+            string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
+            string OneSelect = "one select";
+            string MultiSelect = "multi select";
+            string ShortAnswer = "short answer";
+            if (TypeQuestion.ToLower() == OneSelect)
+            {
+                ViewQuestion eqms = new ViewQuestion(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower() == MultiSelect)
+            {
+                ViewQuestion eqms = new ViewQuestion(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower() == ShortAnswer)
+            {
+                ViewQuestion eqms = new ViewQuestion(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            loadQuestion();
         }
 
     }

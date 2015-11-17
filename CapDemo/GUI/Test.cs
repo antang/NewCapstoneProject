@@ -86,21 +86,21 @@ namespace CapDemo.GUI
             DialogResult Result = OpenFile.ShowDialog();
             if (Result == DialogResult.OK)
             {
-                  QuestionBL QuestionBL = new QuestionBL();
+                QuestionBL QuestionBL = new QuestionBL();
 
-                  List<DO.Question> QuestionList;
-                  QuestionList = QuestionBL.GetFile(OpenFile.FileName);
-                  if (QuestionList != null)
-                    dataGridView1.DataSource = QuestionList;
+                //List<DO.Question> QuestionList;
+                //QuestionList = QuestionBL.GetFile(OpenFile.FileName);
+                //if (QuestionList != null)
+                //    dataGridView1.DataSource = QuestionList;
 
 
-                  dataGridView1.Columns["IDCatalogue"].Visible = false;
-                  dataGridView1.Columns["IDQuestion"].Visible = false;
-                  dataGridView1.Columns["NameCatalogue"].Visible = false;
-                  dataGridView1.Columns["AnswerContent"].Visible = false;
-                  DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
-                  CheckColumn.Name="check";
-                  dataGridView1.Columns.Add(CheckColumn);
+                dataGridView1.Columns["IDCatalogue"].Visible = false;
+                dataGridView1.Columns["IDQuestion"].Visible = false;
+                dataGridView1.Columns["NameCatalogue"].Visible = false;
+                dataGridView1.Columns["AnswerContent"].Visible = false;
+                DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
+                CheckColumn.Name = "check";
+                dataGridView1.Columns.Add(CheckColumn);
                   
             }
         }
