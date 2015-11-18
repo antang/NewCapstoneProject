@@ -1,6 +1,6 @@
 ﻿namespace CapDemo.GUI.User_Controls
 {
-    partial class Phase
+    partial class Add_Phase
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,10 +48,10 @@
             this.lbl_Number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_Number.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Number.ForeColor = System.Drawing.Color.White;
-            this.lbl_Number.Location = new System.Drawing.Point(61, 11);
+            this.lbl_Number.Location = new System.Drawing.Point(60, 15);
             this.lbl_Number.Name = "lbl_Number";
             this.lbl_Number.Size = new System.Drawing.Size(31, 21);
-            this.lbl_Number.TabIndex = 30;
+            this.lbl_Number.TabIndex = 41;
             this.lbl_Number.Text = "Số";
             // 
             // lblVong
@@ -60,10 +60,10 @@
             this.lblVong.BackColor = System.Drawing.Color.Transparent;
             this.lblVong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVong.ForeColor = System.Drawing.Color.White;
-            this.lblVong.Location = new System.Drawing.Point(6, 11);
+            this.lblVong.Location = new System.Drawing.Point(5, 15);
             this.lblVong.Name = "lblVong";
             this.lblVong.Size = new System.Drawing.Size(50, 19);
-            this.lblVong.TabIndex = 29;
+            this.lblVong.TabIndex = 40;
             this.lblVong.Text = "Vòng";
             // 
             // button2
@@ -71,10 +71,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(286, 3);
+            this.button2.Location = new System.Drawing.Point(285, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 28;
+            this.button2.TabIndex = 39;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -84,20 +84,20 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(219, 124);
+            this.label5.Location = new System.Drawing.Point(218, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 19);
-            this.label5.TabIndex = 27;
+            this.label5.TabIndex = 38;
             this.label5.Text = "Điểm";
             // 
             // txt_Score
             // 
             this.txt_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Score.Location = new System.Drawing.Point(163, 114);
+            this.txt_Score.Location = new System.Drawing.Point(162, 118);
             this.txt_Score.Multiline = true;
             this.txt_Score.Name = "txt_Score";
             this.txt_Score.Size = new System.Drawing.Size(50, 30);
-            this.txt_Score.TabIndex = 26;
+            this.txt_Score.TabIndex = 37;
             // 
             // label4
             // 
@@ -105,10 +105,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(14, 124);
+            this.label4.Location = new System.Drawing.Point(13, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 19);
-            this.label4.TabIndex = 25;
+            this.label4.TabIndex = 36;
             this.label4.Text = "Điểm câu hỏi";
             // 
             // label3
@@ -117,20 +117,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(219, 86);
+            this.label3.Location = new System.Drawing.Point(218, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 19);
-            this.label3.TabIndex = 24;
+            this.label3.TabIndex = 35;
             this.label3.Text = "Giây";
             // 
             // txt_Time
             // 
             this.txt_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Time.Location = new System.Drawing.Point(163, 76);
+            this.txt_Time.Location = new System.Drawing.Point(162, 80);
             this.txt_Time.Multiline = true;
             this.txt_Time.Name = "txt_Time";
             this.txt_Time.Size = new System.Drawing.Size(50, 30);
-            this.txt_Time.TabIndex = 23;
+            this.txt_Time.TabIndex = 34;
             // 
             // label2
             // 
@@ -138,20 +138,20 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 86);
+            this.label2.Location = new System.Drawing.Point(13, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 19);
-            this.label2.TabIndex = 22;
+            this.label2.TabIndex = 33;
             this.label2.Text = "Thời gian câu hỏi";
             // 
             // ccb_Catelogue
             // 
             this.ccb_Catelogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ccb_Catelogue.FormattingEnabled = true;
-            this.ccb_Catelogue.Location = new System.Drawing.Point(79, 36);
+            this.ccb_Catelogue.Location = new System.Drawing.Point(78, 40);
             this.ccb_Catelogue.Name = "ccb_Catelogue";
             this.ccb_Catelogue.Size = new System.Drawing.Size(218, 28);
-            this.ccb_Catelogue.TabIndex = 21;
+            this.ccb_Catelogue.TabIndex = 32;
             // 
             // label1
             // 
@@ -159,13 +159,13 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 45);
+            this.label1.Location = new System.Drawing.Point(13, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 19);
-            this.label1.TabIndex = 20;
+            this.label1.TabIndex = 31;
             this.label1.Text = "Chủ đề";
             // 
-            // Phase
+            // Add_Phase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,9 +182,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ccb_Catelogue);
             this.Controls.Add(this.label1);
-            this.DoubleBuffered = true;
-            this.Name = "Phase";
-            this.Size = new System.Drawing.Size(310, 154);
+            this.Name = "Add_Phase";
+            this.Size = new System.Drawing.Size(310, 155);
             this.ResumeLayout(false);
             this.PerformLayout();
 

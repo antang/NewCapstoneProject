@@ -38,7 +38,6 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         //DELETE ANSWER
-        int a = 65;
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             EventHandler delete = onDelete;

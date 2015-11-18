@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chk_Question = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.grbCauHoi = new System.Windows.Forms.GroupBox();
+            this.chk_Answer = new System.Windows.Forms.CheckBox();
+            this.grb_Question = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,24 +44,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.grbTraLoi = new System.Windows.Forms.GroupBox();
-            this.grbCauHoi.SuspendLayout();
+            this.grb_Answer = new System.Windows.Forms.GroupBox();
+            this.grb_Question.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.grbTraLoi.SuspendLayout();
+            this.grb_Answer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // chk_Question
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(18, 91);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(271, 23);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Thiết lập thời gian hiển thị câu hỏi";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chk_Question.AutoSize = true;
+            this.chk_Question.BackColor = System.Drawing.Color.Transparent;
+            this.chk_Question.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Question.ForeColor = System.Drawing.Color.White;
+            this.chk_Question.Location = new System.Drawing.Point(18, 91);
+            this.chk_Question.Name = "chk_Question";
+            this.chk_Question.Size = new System.Drawing.Size(271, 23);
+            this.chk_Question.TabIndex = 16;
+            this.chk_Question.Text = "Thiết lập thời gian hiển thị câu hỏi";
+            this.chk_Question.UseVisualStyleBackColor = false;
+            this.chk_Question.CheckedChanged += new System.EventHandler(this.chk_Question_CheckedChanged);
             // 
             // label1
             // 
@@ -96,29 +97,30 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Thời gian hiển thị câu hỏi";
             // 
-            // checkBox2
+            // chk_Answer
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(18, 200);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(351, 23);
-            this.checkBox2.TabIndex = 18;
-            this.checkBox2.Text = "Thiết lập thời gian hiển thị câu trả lời tự động\r\n";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.chk_Answer.AutoSize = true;
+            this.chk_Answer.BackColor = System.Drawing.Color.Transparent;
+            this.chk_Answer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Answer.ForeColor = System.Drawing.Color.White;
+            this.chk_Answer.Location = new System.Drawing.Point(18, 200);
+            this.chk_Answer.Name = "chk_Answer";
+            this.chk_Answer.Size = new System.Drawing.Size(351, 23);
+            this.chk_Answer.TabIndex = 18;
+            this.chk_Answer.Text = "Thiết lập thời gian hiển thị câu trả lời tự động\r\n";
+            this.chk_Answer.UseVisualStyleBackColor = false;
+            this.chk_Answer.CheckedChanged += new System.EventHandler(this.chk_Answer_CheckedChanged);
             // 
-            // grbCauHoi
+            // grb_Question
             // 
-            this.grbCauHoi.Controls.Add(this.textBox2);
-            this.grbCauHoi.Controls.Add(this.label2);
-            this.grbCauHoi.Enabled = false;
-            this.grbCauHoi.Location = new System.Drawing.Point(18, 122);
-            this.grbCauHoi.Name = "grbCauHoi";
-            this.grbCauHoi.Size = new System.Drawing.Size(302, 57);
-            this.grbCauHoi.TabIndex = 17;
-            this.grbCauHoi.TabStop = false;
+            this.grb_Question.Controls.Add(this.textBox2);
+            this.grb_Question.Controls.Add(this.label2);
+            this.grb_Question.Enabled = false;
+            this.grb_Question.Location = new System.Drawing.Point(18, 122);
+            this.grb_Question.Name = "grb_Question";
+            this.grb_Question.Size = new System.Drawing.Size(302, 57);
+            this.grb_Question.TabIndex = 17;
+            this.grb_Question.TabStop = false;
             // 
             // textBox1
             // 
@@ -226,36 +228,36 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thiết đặt các thông số cuộc thi";
             // 
-            // grbTraLoi
+            // grb_Answer
             // 
-            this.grbTraLoi.Controls.Add(this.textBox3);
-            this.grbTraLoi.Controls.Add(this.label3);
-            this.grbTraLoi.Enabled = false;
-            this.grbTraLoi.Location = new System.Drawing.Point(18, 231);
-            this.grbTraLoi.Name = "grbTraLoi";
-            this.grbTraLoi.Size = new System.Drawing.Size(302, 57);
-            this.grbTraLoi.TabIndex = 19;
-            this.grbTraLoi.TabStop = false;
+            this.grb_Answer.Controls.Add(this.textBox3);
+            this.grb_Answer.Controls.Add(this.label3);
+            this.grb_Answer.Enabled = false;
+            this.grb_Answer.Location = new System.Drawing.Point(18, 231);
+            this.grb_Answer.Name = "grb_Answer";
+            this.grb_Answer.Size = new System.Drawing.Size(302, 57);
+            this.grb_Answer.TabIndex = 19;
+            this.grb_Answer.TabStop = false;
             // 
             // General_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chk_Question);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.grbCauHoi);
+            this.Controls.Add(this.chk_Answer);
+            this.Controls.Add(this.grb_Question);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.grbTraLoi);
+            this.Controls.Add(this.grb_Answer);
             this.Name = "General_Setting";
             this.Size = new System.Drawing.Size(748, 480);
-            this.grbCauHoi.ResumeLayout(false);
-            this.grbCauHoi.PerformLayout();
+            this.grb_Question.ResumeLayout(false);
+            this.grb_Question.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.grbTraLoi.ResumeLayout(false);
-            this.grbTraLoi.PerformLayout();
+            this.grb_Answer.ResumeLayout(false);
+            this.grb_Answer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,12 +265,12 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chk_Question;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.GroupBox grbCauHoi;
+        private System.Windows.Forms.CheckBox chk_Answer;
+        private System.Windows.Forms.GroupBox grb_Question;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
@@ -279,6 +281,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox grbTraLoi;
+        private System.Windows.Forms.GroupBox grb_Answer;
     }
 }

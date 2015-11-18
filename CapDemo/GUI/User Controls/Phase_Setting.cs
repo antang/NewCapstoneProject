@@ -19,8 +19,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_AddPhase_Click(object sender, EventArgs e)
         {
-            Phase p = new Phase();
-            flp_Phase.Controls.Add(p);
+            Add_Phase ap = new Add_Phase();
+            flp_Phase.Controls.Add(ap);
         }
 
         private void Phase_Setting_Load(object sender, EventArgs e)

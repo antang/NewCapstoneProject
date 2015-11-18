@@ -122,6 +122,18 @@
     <Compile Include="GUI\ImportQuestionForCatalogue.Designer.cs">
       <DependentUpon>ImportQuestionForCatalogue.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\User Controls\Add_Phase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Add_Phase.Designer.cs">
+      <DependentUpon>Add_Phase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\User Controls\Add_Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\User Controls\Add_Team.Designer.cs">
+      <DependentUpon>Add_Team.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\User Controls\Answer_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,12 +201,6 @@
     <Compile Include="GUI\User Controls\New_Game.Designer.cs">
       <DependentUpon>New_Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\User Controls\Phase.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\User Controls\Phase.Designer.cs">
-      <DependentUpon>Phase.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\User Controls\Phase_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,12 +260,6 @@
     </Compile>
     <Compile Include="GUI\User Controls\Start_Game.Designer.cs">
       <DependentUpon>Start_Game.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\User Controls\Team.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\User Controls\Team.Designer.cs">
-      <DependentUpon>Team.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\User Controls\Team_Setting.cs">
       <SubType>UserControl</SubType>
@@ -356,6 +356,12 @@
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Add_Phase.resx">
+      <DependentUpon>Add_Phase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\User Controls\Add_Team.resx">
+      <DependentUpon>Add_Team.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Answer_MultiSelect.resx">
       <DependentUpon>Answer_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,9 +397,6 @@
     <EmbeddedResource Include="GUI\User Controls\New_Game.resx">
       <DependentUpon>New_Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\User Controls\Phase.resx">
-      <DependentUpon>Phase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Phase_Setting.resx">
       <DependentUpon>Phase_Setting.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,9 +426,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Start_Game.resx">
       <DependentUpon>Start_Game.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\User Controls\Team.resx">
-      <DependentUpon>Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\User Controls\Team_Setting.resx">
       <DependentUpon>Team_Setting.cs</DependentUpon>

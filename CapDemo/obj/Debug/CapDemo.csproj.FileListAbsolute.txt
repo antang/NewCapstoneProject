@@ -92,3 +92,5 @@ C:\Users\TNA\Downloads\NewCapstoneProject-1a1972f7df2a43ac3e44f5f9166eaa30f57341
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Phase.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Team.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.New_Game.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Phase.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Team.resources

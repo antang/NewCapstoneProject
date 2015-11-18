@@ -93,9 +93,6 @@ namespace CapDemo.GUI
         
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            //New_Game ng = new New_Game();
-            //Setting_Game sg = new Setting_Game();
-            //sg.flp_Game.Controls.Add(ng);
             this.Close();
         }
 

@@ -91,6 +91,7 @@
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "New_Game";
             this.Size = new System.Drawing.Size(248, 166);
             this.ResumeLayout(false);

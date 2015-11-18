@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapDemo.GUI.User_Controls
 {
-    public partial class Phase : UserControl
+    public partial class Add_Phase : UserControl
     {
-        public Phase()
+        public Add_Phase()
         {
             InitializeComponent();
         }

@@ -19,8 +19,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_AddPhase_Click(object sender, EventArgs e)
         {
-            Team t = new Team();
-            flp_Team.Controls.Add(t);
+            Add_Team at = new Add_Team();
+            flp_Team.Controls.Add(at);
         }
 
         private void Team_Setting_Load(object sender, EventArgs e)

@@ -21,6 +21,8 @@ namespace CapDemo.GUI.User_Controls
         {
             Add_New_Game ang = new Add_New_Game();
             ang.ShowDialog();
+            New_Game game= new New_Game();
+            flp_Game.Controls.Add(game);
         }
     }
 }

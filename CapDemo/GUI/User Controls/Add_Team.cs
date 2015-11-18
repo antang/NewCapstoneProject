@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapDemo.GUI.User_Controls
 {
-    public partial class Team : UserControl
+    public partial class Add_Team : UserControl
     {
-        public Team()
+        public Add_Team()
         {
             InitializeComponent();
         }
