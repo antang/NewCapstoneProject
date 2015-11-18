@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\ListtoDataTableConverter.cs" />
     <Compile Include="GUI\Add_New_Game.cs">
       <SubType>Form</SubType>
     </Compile>

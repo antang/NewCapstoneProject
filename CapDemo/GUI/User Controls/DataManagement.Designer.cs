@@ -104,6 +104,7 @@
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchCatalogue.Enabled = false;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchCatalogue.ImageIndex = 3;
             this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 77);
@@ -221,6 +222,7 @@
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
             this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 27);
             this.txt_SearchCatalogue.TabIndex = 12;
+            this.txt_SearchCatalogue.TextChanged += new System.EventHandler(this.txt_SearchCatalogue_TextChanged);
             // 
             // dgv_Catalogue
             // 
@@ -319,6 +321,7 @@
             this.btn_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchQuestion.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchQuestion.Enabled = false;
             this.btn_SearchQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchQuestion.ImageIndex = 3;
             this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 77);
@@ -336,6 +339,7 @@
             this.txt_SearchQuestion.Name = "txt_SearchQuestion";
             this.txt_SearchQuestion.Size = new System.Drawing.Size(217, 27);
             this.txt_SearchQuestion.TabIndex = 18;
+            this.txt_SearchQuestion.TextChanged += new System.EventHandler(this.txt_SearchQuestion_TextChanged);
             // 
             // dgv_Question
             // 
