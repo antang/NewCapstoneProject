@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapDemo.BL;
 using CapDemo.DO;
+using System.Reflection;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -68,7 +69,7 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
 
             dgv_Question.Columns["Sequence"].ReadOnly = true;
-            dgv_Question.Columns["NameQuestion"].ReadOnly = true;
+            dgv_Question.Columns["NameQuestion"].ReadOnly = false;
             dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
             dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
 
@@ -235,6 +236,55 @@ namespace CapDemo.GUI.User_Controls
             ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
             ViewQuestion.ShowDialog();
         }
+        //Search Question
+        private void txt_SearchQuestion_TextChanged(object sender, EventArgs e)
+        {
+            QuestionBL questionBL = new QuestionBL();
+            List<DO.Question> ListQuestion = questionBL.GetQuestion();
+            //loadQuestion();
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable dt = converter.ToDataTable(ListQuestion);
 
+            dgv_Question.DataSource = dt;
+            dt.DefaultView.RowFilter = string.Format("NameQuestion LIKE '%{0}%' or TypeQuestion LIKE '%{0}%' or NameCatalogue LIKE '%{0}%' or Sequence LIKE '%{0}%'", txt_SearchQuestion.Text);
+
+            dgv_Question.Columns["IDCatalogue"].Visible = false;
+            dgv_Question.Columns["IDQuestion"].Visible = false;
+            dgv_Question.Columns["IDCatalogue"].Visible = false;
+            dgv_Question.Columns["AnswerContent"].Visible = false;
+            dgv_Question.Columns["AnswerList"].Visible = false;
+            dgv_Question.Columns["Date"].Visible = false;
+
+            dgv_Question.Columns["Sequence"].HeaderText = "STT";
+            dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên chủ Đề";
+            dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
+
+            dgv_Question.Columns["Sequence"].ReadOnly = true;
+            dgv_Question.Columns["NameQuestion"].ReadOnly = false;
+            dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
+            dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+
+            dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
+        }
+        //Search Catalogue
+        private void txt_SearchCatalogue_TextChanged(object sender, EventArgs e)
+        {
+            CatalogueBL catalogueBL = new CatalogueBL();
+            List<DO.Catalogue> ListCatalogue = catalogueBL.GetCatalogue();
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable dt = converter.ToDataTable(ListCatalogue);
+
+            dgv_Catalogue.DataSource = dt;
+            dt.DefaultView.RowFilter = string.Format("NameCatalogue LIKE '%{0}%' or Sequence LIKE '%{0}%'", txt_SearchCatalogue.Text);
+
+            dgv_Catalogue.Columns["IDCatalogue"].Visible = false;
+            dgv_Catalogue.Columns["Sequence"].HeaderText = "STT";
+            dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
+            dgv_Catalogue.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        } 
     }
 }

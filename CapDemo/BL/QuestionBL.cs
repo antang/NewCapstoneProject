@@ -213,7 +213,16 @@ namespace CapDemo.BL
             string query = "SELECT MAX(Question_ID) FROM Question";
             return DA.MaxID(query);
         }
+//LOAD DATA TABLE QUESTION
+        public DataTable DatatableQuestion()
+        {
+            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Date_Create"
+                         + " FROM Question q"
+                         + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
 
+            DataTable dt = DA.SelectDatabase(query);
+            return dt;
+        }
 
 
     }
