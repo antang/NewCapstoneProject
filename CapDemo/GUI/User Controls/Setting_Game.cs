@@ -24,5 +24,10 @@ namespace CapDemo.GUI.User_Controls
             New_Game game= new New_Game();
             flp_Game.Controls.Add(game);
         }
+
+        private void Setting_Game_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

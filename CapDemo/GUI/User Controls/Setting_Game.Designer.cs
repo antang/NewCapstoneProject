@@ -134,6 +134,7 @@
             this.Controls.Add(this.lbl1);
             this.Name = "Setting_Game";
             this.Size = new System.Drawing.Size(710, 548);
+            this.Load += new System.EventHandler(this.Setting_Game_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

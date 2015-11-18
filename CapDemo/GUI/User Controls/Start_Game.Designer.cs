@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start_Game));
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_StartGame = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
@@ -49,17 +49,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn Cuộc Thi";
             // 
-            // flowLayoutPanel1
+            // flp_StartGame
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flp_StartGame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(169, 126);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(624, 376);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flp_StartGame.AutoScroll = true;
+            this.flp_StartGame.BackColor = System.Drawing.Color.White;
+            this.flp_StartGame.Location = new System.Drawing.Point(169, 126);
+            this.flp_StartGame.Name = "flp_StartGame";
+            this.flp_StartGame.Size = new System.Drawing.Size(624, 376);
+            this.flp_StartGame.TabIndex = 1;
             // 
             // btn_Exit
             // 
@@ -91,7 +91,7 @@
             this.BackgroundImage = global::CapDemo.Properties.Resources.KhungPanner4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flp_StartGame);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "Start_Game";
@@ -105,8 +105,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Button btn_Exit;
+        public System.Windows.Forms.FlowLayoutPanel flp_StartGame;
     }
 }
