@@ -39,10 +39,9 @@
             this.rad_check.ForeColor = System.Drawing.Color.Black;
             this.rad_check.Location = new System.Drawing.Point(2, 6);
             this.rad_check.Name = "rad_check";
-            this.rad_check.Size = new System.Drawing.Size(32, 17);
+            this.rad_check.Size = new System.Drawing.Size(14, 13);
             this.rad_check.TabIndex = 12;
             this.rad_check.TabStop = true;
-            this.rad_check.Text = "A";
             this.rad_check.UseVisualStyleBackColor = true;
             this.rad_check.CheckedChanged += new System.EventHandler(this.rad_check_CheckedChanged);
             // 
@@ -88,8 +87,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Delete;
         public System.Windows.Forms.RadioButton rad_check;
         public System.Windows.Forms.TextBox txt_Answercontent;
+        public System.Windows.Forms.Button btn_Delete;
     }
 }

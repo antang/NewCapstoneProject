@@ -21,7 +21,7 @@ namespace CapDemo.GUI
         //ADD NEW CATALOGUE
         private void btn_SaveCatalogue_Click(object sender, EventArgs e)
         {
-            if (txt_NameCatalogue.Text=="")
+            if (txt_NameCatalogue.Text.Trim()=="")
             {
                 MessageBox.Show("Vui lòng nhập tên chủ đề!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -29,11 +29,11 @@ namespace CapDemo.GUI
             {
                 CatalogueBL CatBL = new CatalogueBL();
                 Catalogue Cat = new Catalogue();
-                Cat.NameCatalogue = txt_NameCatalogue.Text;
+                Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
                 if (CatBL.AddCatalogue(Cat) ==true)
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text + "\" thành công";
+                    notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";
                     notifyIcon1.ShowBalloonTip(5000);
                     this.Close();
                 }

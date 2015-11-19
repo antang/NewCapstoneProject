@@ -17,6 +17,8 @@ namespace CapDemo.GUI
     {
         private int IDQuestion;
         private int IDCatalogue;
+        int i = 0;
+        int a = 65;
 
         public EditQuestion_MultiSelect()
         {
@@ -63,7 +65,6 @@ namespace CapDemo.GUI
                         MultiSelectAnswer.Tag = i;
                         MultiSelectAnswer.ID_Answer = i;
                         MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
-                        MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
                         MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
                         flp_addAnswer.Controls.Add(MultiSelectAnswer);
 
@@ -79,51 +80,84 @@ namespace CapDemo.GUI
         {
             this.Close();
         }
-        //SAVE QUESTION
-        private void btn_SaveEditQuestion_Click(object sender, EventArgs e)
+        //check answer null
+        public bool checkAnswerEmpty()
         {
-
-            QuestionBL questionBl = new QuestionBL();
-            Question question = new Question();
-            Answer answer = new Answer();
-            if (txt_ContentQuestion.Text == "")
+            int i = 0;
+            foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
             {
-                MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (item.txt_AnswerContent.Text.Trim() == "")
+                {
+                    i++;
+                }
+            }
+            if (i > 0)
+            {
+                return true;
             }
             else
             {
-                //Update question
-                question.NameQuestion = txt_ContentQuestion.Text;
-                question.IDQuestion = IDQuestion;
-                questionBl.EditQuestionbyID(question);
-
-                //DELETE Answer
-                question.IDQuestion = IDQuestion;
-                questionBl.DeleteAnswerByIDQuestion(question);
-
-                foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+                return false;
+            }
+        }
+        //SAVE QUESTION
+        private void btn_SaveEditQuestion_Click(object sender, EventArgs e)
+        {
+            int NumAnswer = flp_addAnswer.Controls.Count;
+            if (txt_ContentQuestion.Text.Trim() == "" || NumAnswer < 2)
+            {
+                if (txt_ContentQuestion.Text.Trim() == "")
                 {
-                    if (item.txt_AnswerContent.Text != "")
-                    {
-                        answer.ContentAnswer = item.txt_AnswerContent.Text;
-                        answer.IsCorrect = item.chk_Check.Checked;
-                        answer.IDQuestion = IDQuestion;
-                        answer.IDCatalogue = IDCatalogue;
-                        questionBl.AddAnswer(answer);
-                    }
+
+                    MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //Show notify
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(2000);
-                //Close form
-                Form FindForm = this.FindForm();
-                FindForm.Close();
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập hơn một đáp án!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if (checkAnswerEmpty() == true)
+                {
+                    MessageBox.Show("Không lưu câu hỏi vì tồn tại đáp án rỗng!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    QuestionBL questionBl = new QuestionBL();
+                    Question question = new Question();
+                    Answer answer = new Answer();
+                    //Update question
+                    question.NameQuestion = txt_ContentQuestion.Text.Trim();
+                    question.IDQuestion = IDQuestion;
+                    questionBl.EditQuestionbyID(question);
+
+                    //DELETE Answer
+                    question.IDQuestion = IDQuestion;
+                    questionBl.DeleteAnswerByIDQuestion(question);
+
+                    foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+                    {
+                        if (item.txt_AnswerContent.Text.Trim() != "")
+                        {
+                            answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
+                            answer.IsCorrect = item.chk_Check.Checked;
+                            answer.IDQuestion = IDQuestion;
+                            answer.IDCatalogue = IDCatalogue;
+                            questionBl.AddAnswer(answer);
+                        }
+                    }
+                    //Show notify
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Chỉnh sửa câu hỏi thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    //Close form
+                    Form FindForm = this.FindForm();
+                    FindForm.Close();
+                }
             }
         }
         //Add Answer
-        int i = 0;
-        int a = 65;
         private void btn_addAnswer_Click(object sender, EventArgs e)
         {
             Answer_MultiSelect MultiSelectAnswer = new Answer_MultiSelect();
@@ -131,25 +165,11 @@ namespace CapDemo.GUI
             MultiSelectAnswer.Tag = i;
             MultiSelectAnswer.ID_Answer = i;
             MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
-            MultiSelectAnswer.onCheck += MultiSelectAnswer_onCheck;
             MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a).ToString();
             flp_addAnswer.Controls.Add(MultiSelectAnswer);
             for (int j = 0; j < flp_addAnswer.Controls.Count; j++)
             {
                 MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
-            }
-        }
-        //Eventhanlder check radio button
-        void MultiSelectAnswer_onCheck(object sender, EventArgs e)
-        {
-            int answerID = (e as MyEventArgs).IDAnswer;
-            foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
-            {
-                if (item.ID_Answer != answerID)
-                {
-                    item.chk_Check.Checked = false;
-                }
-
             }
         }
         //Eventhanlder click Del button

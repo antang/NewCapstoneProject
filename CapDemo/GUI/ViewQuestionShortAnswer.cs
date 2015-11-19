@@ -12,25 +12,25 @@ using System.Windows.Forms;
 
 namespace CapDemo.GUI
 {
-    public partial class EditQuestion_ShortAnswer : Form
+    public partial class ViewQuestionShortAnswer : Form
     {
         private int IDQuestion;
         private int IDCatalogue;
 
-        public EditQuestion_ShortAnswer()
+        public ViewQuestionShortAnswer()
         {
             InitializeComponent();
         }
 
-        public EditQuestion_ShortAnswer(int IDQuestion, int IDCatalogue)
+        public ViewQuestionShortAnswer(int IDQuestion, int IDCatalogue)
         {
             // TODO: Complete member initialization
             InitializeComponent();
             this.IDQuestion = IDQuestion;
             this.IDCatalogue = IDCatalogue;
         }
-        //LOAD FORM
-        private void EditQuestion_ShortAnswer_Load(object sender, EventArgs e)
+        //Load Form
+        private void ViewQuestionShortAnswer_Load(object sender, EventArgs e)
         {
             //GET QUESTION BY ID Question
             QuestionBL QuestionBL = new QuestionBL();
@@ -43,7 +43,9 @@ namespace CapDemo.GUI
                 {
                     if (QuestionList.ElementAt(i).IDQuestion == IDQuestion)
                     {
+                        txt_Catalogue.Text = QuestionList.ElementAt(i).NameCatalogue;
                         txt_ContentQuestion.Text = QuestionList.ElementAt(i).NameQuestion;
+                        txt_QuestionType.Text = QuestionList.ElementAt(i).TypeQuestion;
                         txt_Date.Text = QuestionList.ElementAt(i).Date.ToString("d");
                     }
 
@@ -62,13 +64,21 @@ namespace CapDemo.GUI
                 }
             }
         }
-        //Save Question
-        private void btn_SaveEditQuestion_Click(object sender, EventArgs e)
+        //EDIT QUESTION
+        private void btn_EditQuestion_Click(object sender, EventArgs e)
         {
-            QuestionBL questionBl = new QuestionBL();
+            btn_EditQuestion.Visible = false;
+            btn_Save.Visible = true;
+            txt_ContentQuestion.ReadOnly = false;
+            txt_ContentAnswer.ReadOnly = false;
+        }
+        //SAVE QUESTION
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+           QuestionBL questionBl = new QuestionBL();
             Question question = new Question();
             Answer answer = new Answer();
-            if (txt_ContentQuestion.Text.Trim() == ""|| txt_ContentAnswer.Text.Trim() == "")
+            if (txt_ContentQuestion.Text.Trim() == "" || txt_ContentAnswer.Text.Trim() == "")
             {
                 if (txt_ContentQuestion.Text.Trim() == "")
                 {
@@ -100,8 +110,8 @@ namespace CapDemo.GUI
                 FindForm.Close();
             }
         }
-        //Exit Form
-        private void btn_CancelEditQuestion_Click(object sender, EventArgs e)
+        //EXIT FORM
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

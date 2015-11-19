@@ -94,3 +94,5 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Team.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.New_Game.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Phase.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Team.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionMultiple.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionShortAnswer.resources

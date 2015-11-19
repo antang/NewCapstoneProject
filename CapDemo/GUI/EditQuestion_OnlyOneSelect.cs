@@ -75,44 +75,81 @@ namespace CapDemo.GUI
                 }
             }
         }
-        //SAVE QUESTION
-        private void btn_SaveEditQuestion_Click(object sender, EventArgs e)
+        //check answer null
+        public bool checkAnswerEmpty()
         {
-            QuestionBL questionBl = new QuestionBL();
-            Question question = new Question();
-            Answer answer = new Answer();
-            if (txt_ContentQuestion.Text == "")
+            int i = 0;
+            foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
             {
-                MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (item.txt_Answercontent.Text.Trim() == "")
+                {
+                    i++;
+                }
+            }
+            if (i > 0)
+            {
+                return true;
             }
             else
             {
-                //Update question
-                question.NameQuestion = txt_ContentQuestion.Text;
-                question.IDQuestion = IDQuestion;
-                questionBl.EditQuestionbyID(question);
+                return false;
+            }
+        }
+        //SAVE QUESTION
+        private void btn_SaveEditQuestion_Click(object sender, EventArgs e)
+        {
+            int NumAnswer = flp_addAnswer.Controls.Count;
 
-                //DELETE ANSWER
-                question.IDQuestion = IDQuestion;
-                questionBl.DeleteAnswerByIDQuestion(question);
-
-                foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
+            if (txt_ContentQuestion.Text.Trim() == "" || NumAnswer < 2)
+            {
+                if (txt_ContentQuestion.Text.Trim() == "")
                 {
-                    if (item.txt_Answercontent.Text != "")
-                    {
-                        answer.ContentAnswer = item.txt_Answercontent.Text;
-                        answer.IsCorrect = item.rad_check.Checked;
-                        answer.IDQuestion = IDQuestion;
-                        answer.IDCatalogue = IDCatalogue;
-                        questionBl.AddAnswer(answer);
-                    }
+                    MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //Show notify
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = " Chỉnh sửa câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(2000);
-                //Close form
-                this.Close();
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập hơn một đáp án!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if (checkAnswerEmpty() == true)
+                {
+                    MessageBox.Show("Không lưu câu hỏi vì tồn tại đáp án rỗng!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    QuestionBL questionBl = new QuestionBL();
+                    Question question = new Question();
+                    Answer answer = new Answer();
+
+                    //Update question
+                    question.NameQuestion = txt_ContentQuestion.Text.Trim();
+                    question.IDQuestion = IDQuestion;
+                    questionBl.EditQuestionbyID(question);
+
+                    //DELETE ANSWER
+                    question.IDQuestion = IDQuestion;
+                    questionBl.DeleteAnswerByIDQuestion(question);
+
+                    foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
+                    {
+                        if (item.txt_Answercontent.Text.Trim() != "")
+                        {
+                            answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
+                            answer.IsCorrect = item.rad_check.Checked;
+                            answer.IDQuestion = IDQuestion;
+                            answer.IDCatalogue = IDCatalogue;
+                            questionBl.AddAnswer(answer);
+                        }
+                    }
+                    //Show notify
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = " Chỉnh sửa câu hỏi thành công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    //Close form
+                    this.Close();
+                }
             }
         }
         //ADD ANSWER

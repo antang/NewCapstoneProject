@@ -89,6 +89,7 @@ namespace CapDemo.GUI.User_Controls
         {
             ImportQuestion iq = new ImportQuestion();
             iq.ShowDialog();
+            loadQuestion();
         }
 
         private void btn_CopyQuestion_Click(object sender, EventArgs e)
@@ -235,6 +236,7 @@ namespace CapDemo.GUI.User_Controls
             string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
             ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
             ViewQuestion.ShowDialog();
+            loadQuestion();
         }
         //Search Question
         private void txt_SearchQuestion_TextChanged(object sender, EventArgs e)
@@ -285,6 +287,32 @@ namespace CapDemo.GUI.User_Controls
             dgv_Catalogue.Columns["Sequence"].HeaderText = "STT";
             dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
             dgv_Catalogue.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+        //VIEW DETAIL QUESTION BY DOUBLE CLICK CELL
+        private void dgv_Question_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+            string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
+            string OneSelect = "onechoice";
+            string MultiSelect = "multiplechoice";
+            string ShortAnswer = "shortanswer";
+            if (TypeQuestion.ToLower() == OneSelect)
+            {
+                ViewQuestion eqms = new ViewQuestion(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower() == MultiSelect)
+            {
+                ViewQuestionMultiple eqms = new ViewQuestionMultiple(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            if (TypeQuestion.ToLower() == ShortAnswer)
+            {
+                ViewQuestionShortAnswer eqms = new ViewQuestionShortAnswer(IDQuestion, IDCatalogue);
+                eqms.ShowDialog();
+            }
+            loadQuestion();
         } 
     }
 }

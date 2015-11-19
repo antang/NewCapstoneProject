@@ -42,14 +42,16 @@ namespace CapDemo.GUI.User_Controls
             DialogResult Result = OpenFile.ShowDialog();
             if (Result == DialogResult.OK)
             {
-                dataGridView1.Columns.Clear();
-                QuestionBL QuestionBL = new QuestionBL();
+                try
+                {
+                    dataGridView1.Columns.Clear();
+                    QuestionBL QuestionBL = new QuestionBL();
 
-                List<DO.Question> QuestionList;
-                QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
-                txt_FilePath.Text = OpenFile.FileName;
-                if (QuestionList != null){
-                    dataGridView1.DataSource = QuestionList;
+                    List<DO.Question> QuestionList;
+                    QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
+                    txt_FilePath.Text = OpenFile.FileName;
+                    if (QuestionList != null)
+                        dataGridView1.DataSource = QuestionList;
 
                     dataGridView1.Columns["IDCatalogue"].Visible = false;
                     dataGridView1.Columns["IDQuestion"].Visible = false;
@@ -75,11 +77,11 @@ namespace CapDemo.GUI.User_Controls
                     dataGridView1.Columns["Check"].HeaderText = "Chọn";
                     dataGridView1.Columns["Check"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 }
-                    
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Tải file không thành công. Bạn phải chọn File .XML", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    txt_FilePath.Text = "";
+                    MessageBox.Show("Tải file không thành công. Bạn phải chọn File .XML", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }  
             }
         }
         //EXIT FORM
@@ -89,112 +91,156 @@ namespace CapDemo.GUI.User_Controls
             FindForm.Close();
         }
         //SAVE QUESTION
-        int countShortAnswer = 0;
-        int countMultipleChoice = 0;
-        int CheckQuestion;
+        
         private void btn_SaveImport_Click(object sender, EventArgs e)
         {
-            Question question = new Question();
-            Answer answer = new Answer();
-            QuestionBL questionBL = new QuestionBL();
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            if (txt_FilePath.Text == "")
             {
-                if (row.Cells["NameQuestion"].Value != null && row.Cells["Check"].Value != null)
+                notifyIcon1.Icon = SystemIcons.Warning;
+                notifyIcon1.BalloonTipText = "Vui lòng chọn đường dẫn đến tập tin.";
+                notifyIcon1.ShowBalloonTip(2000);
+            }
+            else
+            {
+                int CheckQuestion = 0;
+                Question question = new Question();
+                Answer answer = new Answer();
+                QuestionBL questionBL = new QuestionBL();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    if (row.Cells["TypeQuestion"].Value.ToString() == "shortanswer")
+                    if (row.Cells["Check"].Value != null)
                     {
-                        question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
-                        question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
-                        question.IDCatalogue = IDCat;
-                        question.Date = DateTime.Now;
-                        questionBL.AddQuestion(question);
-
-                        string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
-                        for (int i = 0; i < AnswerContent.Length - 1; i++)
+                        if (row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "")
                         {
-                            string[] AnswerItem = AnswerContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-
-                            if (Convert.ToInt32(AnswerItem[0].ToString()) > 0)
+                            if (row.Cells["TypeQuestion"].Value.ToString().Trim() == "shortanswer")
                             {
-                                answer.IsCorrect = true;
-                                answer.ContentAnswer = AnswerItem[1].ToString();
-                                answer.IDQuestion = questionBL.MaxIDQuestion();
-                                answer.IDCatalogue = IDCat;
-                                countShortAnswer++;
-                                if (countShortAnswer <= 1)
+                                string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
+                                int NumAnswer = AnswerContent.Length - 1;
+                                if (NumAnswer == 1)
                                 {
-                                    questionBL.AddAnswer(answer);
+                                    string[] AnswerItem = AnswerContent[0].Split(new string[] { "---" }, StringSplitOptions.None);
+
+                                    if (AnswerItem[1].ToString().Trim() != "")
+                                    {
+                                        question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
+                                        question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString().Trim();
+                                        question.IDCatalogue = IDCat;
+                                        question.Date = DateTime.Now;
+                                        questionBL.AddQuestion(question);
+
+                                        answer.IsCorrect = true;
+                                        answer.ContentAnswer = AnswerItem[1].ToString().Trim();
+                                        answer.IDQuestion = questionBL.MaxIDQuestion();
+                                        answer.IDCatalogue = IDCat;
+                                        questionBL.AddAnswer(answer);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Vì đáp án là rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Không lưu đáp án (" + AnswerItem[1].ToString() + "). Vì Câu hỏi dạng trả lời ngắn không được hơn 1 đáp án!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Vì dạng câu hỏi trả lời ngắn chỉ cho phép 1 đáp án!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
-                            }
-                        }//end for
-                        countShortAnswer = 0;
-                    }
-                    else
-                    {
-                        //ADD QUESTION MULTIPLE CHOICE
-                        question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
-                        question.TypeQuestion = "";
-                        question.IDCatalogue = IDCat;
-                        question.Date = DateTime.Now;
-                        questionBL.AddQuestion(question);
 
-                        string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
-                        for (int i = 0; i < AnswerContent.Length - 1; i++)
-                        {
-                            string[] AnswerItem = AnswerContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-
-                            if (Convert.ToInt32(AnswerItem[0].ToString()) > 0)
-                            {
-                                answer.IsCorrect = true;
-                                answer.ContentAnswer = AnswerItem[1].ToString();
-                                answer.IDQuestion = questionBL.MaxIDQuestion();
-                                answer.IDCatalogue = IDCat;
-                                questionBL.AddAnswer(answer);
-                                countMultipleChoice++;
                             }
                             else
                             {
-                                answer.IsCorrect = false;
-                                answer.ContentAnswer = AnswerItem[1].ToString();
-                                answer.IDQuestion = questionBL.MaxIDQuestion();
-                                answer.IDCatalogue = IDCat;
-                                questionBL.AddAnswer(answer);
-                            }//end if
-                        }//end for
-                        //UPDATE QUESTION TYPE
-                        if (countMultipleChoice == 1)
-                        {
-                            question.TypeQuestion = "onechoice";
-                            question.IDQuestion = questionBL.MaxIDQuestion();
-                            questionBL.EditQuestionTypebyID(question);
+                                string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
+                                int Numanswer = AnswerContent.Length - 1;
+                                if (Numanswer < 2)
+                                {
+                                    MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Câu trắc nghiệm phải có 2 đáp án trở lên.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else
+                                {
+                                    int empty = 0;
+                                    for (int i = 0; i < AnswerContent.Length - 1; i++)
+                                    {
+                                        string[] AnswerItem = AnswerContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+                                        if (AnswerItem[1].ToString().Trim() == "")
+                                        {
+                                            empty++;
+                                        }
+                                    }
+
+                                    if (empty > 0)
+                                    {
+                                        MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Vì đáp án là rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
+                                    else
+                                    {
+                                        //ADD QUESTION MULTIPLE CHOICE
+                                        question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
+                                        question.TypeQuestion = "";
+                                        question.IDCatalogue = IDCat;
+                                        question.Date = DateTime.Now;
+                                        questionBL.AddQuestion(question);
+
+                                        int countMultipleChoice = 0;
+
+                                        for (int i = 0; i < AnswerContent.Length - 1; i++)
+                                        {
+                                            string[] AnswerItem = AnswerContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+
+                                            if (Convert.ToInt32(AnswerItem[0].ToString().Trim()) > 0)
+                                            {
+                                                answer.IsCorrect = true;
+                                                answer.ContentAnswer = AnswerItem[1].ToString().Trim();
+                                                answer.IDQuestion = questionBL.MaxIDQuestion();
+                                                answer.IDCatalogue = IDCat;
+                                                questionBL.AddAnswer(answer);
+                                                countMultipleChoice++;
+                                            }
+                                            else
+                                            {
+                                                answer.IsCorrect = false;
+                                                answer.ContentAnswer = AnswerItem[1].ToString().Trim();
+                                                answer.IDQuestion = questionBL.MaxIDQuestion();
+                                                answer.IDCatalogue = IDCat;
+                                                questionBL.AddAnswer(answer);
+                                            }//end if
+                                        }//end for
+                                        //UPDATE QUESTION TYPE
+                                        if (countMultipleChoice == 1)
+                                        {
+                                            question.TypeQuestion = "onechoice";
+                                            question.IDQuestion = questionBL.MaxIDQuestion();
+                                            questionBL.EditQuestionTypebyID(question);
+                                        }
+                                        else
+                                        {
+                                            question.TypeQuestion = "multiplechoice";
+                                            question.IDQuestion = questionBL.MaxIDQuestion();
+                                            questionBL.EditQuestionTypebyID(question);
+                                        }
+                                    }
+                                }
+                            }//end else  
+                            CheckQuestion++;
                         }
                         else
                         {
-                            question.TypeQuestion = "multiplechoice";
-                            question.IDQuestion = questionBL.MaxIDQuestion();
-                            questionBL.EditQuestionTypebyID(question);
+                            MessageBox.Show("Hệ thống không lưu câu hỏi rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        countMultipleChoice = 0;
-                    }//end else  
-                    CheckQuestion++;
-                }//end if
-            }//end foreach
+                    }
 
-            //CLOSE FORM
-            if (CheckQuestion > 0)
-            {
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Nhập câu hỏi từ file thành công.";
-                notifyIcon1.ShowBalloonTip(2000);
-                CheckQuestion = 0;
+                }//end foreach
+
+                //CLOSE FORM
+                if (CheckQuestion > 0)
+                {
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Nhập câu hỏi từ file thành công.";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    CheckQuestion = 0;
+                }
+                Form FindForm = this.FindForm();
+                FindForm.Close();
             }
-            Form FindForm = this.FindForm();
-            FindForm.Close();
+            
         }
     }
 }

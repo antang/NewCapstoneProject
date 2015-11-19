@@ -33,7 +33,7 @@ namespace CapDemo.GUI
         private void btn_SaveEditCatalogue_Click(object sender, EventArgs e)
         {
             
-            if (txt_NameCatalogue.Text == "")
+            if (txt_NameCatalogue.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng nhập tên chủ đề!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -42,7 +42,7 @@ namespace CapDemo.GUI
                     CatalogueBL CatBL = new CatalogueBL();
                     Catalogue Cat = new Catalogue();
                     Cat.IDCatalogue = IDCat;
-                    Cat.NameCatalogue = txt_NameCatalogue.Text;
+                    Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
                     if (CatBL.EditCataloguebyID(Cat) == true)
                     {
                         notifyIcon1.Icon = SystemIcons.Information;

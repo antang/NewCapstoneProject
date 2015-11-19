@@ -307,6 +307,18 @@
     <Compile Include="GUI\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ViewQuestionMultiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ViewQuestionMultiple.Designer.cs">
+      <DependentUpon>ViewQuestionMultiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ViewQuestionShortAnswer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ViewQuestionShortAnswer.Designer.cs">
+      <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Add_New_Game.resx">
@@ -439,6 +451,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViewQuestionInCatalogue.resx">
       <DependentUpon>ViewQuestionInCatalogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ViewQuestionMultiple.resx">
+      <DependentUpon>ViewQuestionMultiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ViewQuestionShortAnswer.resx">
+      <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

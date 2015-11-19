@@ -63,9 +63,8 @@
             this.chk_Check.ForeColor = System.Drawing.Color.Black;
             this.chk_Check.Location = new System.Drawing.Point(3, 5);
             this.chk_Check.Name = "chk_Check";
-            this.chk_Check.Size = new System.Drawing.Size(33, 17);
+            this.chk_Check.Size = new System.Drawing.Size(15, 14);
             this.chk_Check.TabIndex = 3;
-            this.chk_Check.Text = "A";
             this.chk_Check.UseVisualStyleBackColor = true;
             this.chk_Check.CheckedChanged += new System.EventHandler(this.rad_Check_CheckedChanged);
             // 
@@ -87,9 +86,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_DelAnswer;
         public System.Windows.Forms.CheckBox chk_Check;
         public System.Windows.Forms.TextBox txt_AnswerContent;
+        public System.Windows.Forms.Button btn_DelAnswer;
 
     }
 }

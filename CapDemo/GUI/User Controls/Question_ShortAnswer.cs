@@ -41,26 +41,31 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBl = new QuestionBL();
             Question question = new Question();
             Answer answer = new Answer();
-            if (txt_ContentQuestion.Text == "" || txt_AnswerContent.Text == "")
+            if (txt_ContentQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (txt_ContentQuestion.Text.Trim() == "")
+                {
+                    MessageBox.Show("Câu hỏi không được rỗng. Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Đáp án không được rỗng. Vui lòng nhập thông tin đáp án trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }  
             }
             else
             {
-                question.NameQuestion = txt_ContentQuestion.Text;
+                question.NameQuestion = txt_ContentQuestion.Text.Trim();
                 question.TypeQuestion = "shortanswer";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
 
-                if (txt_AnswerContent.Text != "")
-	            {
-		            answer.ContentAnswer = txt_AnswerContent.Text;
-                    answer.IsCorrect = true;
-                    answer.IDQuestion = questionBl.MaxIDQuestion();
-                    answer.IDCatalogue = IDCat;
-                    questionBl.AddAnswer(answer);
-	            }
+                answer.ContentAnswer = txt_AnswerContent.Text.Trim();
+                answer.IsCorrect = true;
+                answer.IDQuestion = questionBl.MaxIDQuestion();
+                answer.IDCatalogue = IDCat;
+                questionBl.AddAnswer(answer);
+
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
@@ -82,26 +87,31 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBl = new QuestionBL();
             Question question = new Question();
             Answer answer = new Answer();
-            if (txt_ContentQuestion.Text == "")
+            if (txt_ContentQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (txt_ContentQuestion.Text.Trim() == "")
+                {
+                    MessageBox.Show("Câu hỏi không được rỗng. Vui lòng nhập thông tin câu hỏi trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Đáp án không được rỗng. Vui lòng nhập thông tin đáp án trước khi lưu", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } 
             }
             else
             {
-                question.NameQuestion = txt_ContentQuestion.Text;
+                question.NameQuestion = txt_ContentQuestion.Text.Trim();
                 question.TypeQuestion = "shortanswer";
                 question.IDCatalogue = IDCat;
                 question.Date = DateTime.Now;
                 questionBl.AddQuestion(question);
 
-                if (txt_AnswerContent.Text != "")
-                {
-                    answer.ContentAnswer = txt_AnswerContent.Text;
-                    answer.IsCorrect = true;
-                    answer.IDQuestion = questionBl.MaxIDQuestion();
-                    answer.IDCatalogue = IDCat;
-                    questionBl.AddAnswer(answer);
-                }
+                answer.ContentAnswer = txt_AnswerContent.Text.Trim();
+                answer.IsCorrect = true;
+                answer.IDQuestion = questionBl.MaxIDQuestion();
+                answer.IDCatalogue = IDCat;
+                questionBl.AddAnswer(answer);
+
                 //Show notify
                 notifyIcon1.Icon = SystemIcons.Information;
                 notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";

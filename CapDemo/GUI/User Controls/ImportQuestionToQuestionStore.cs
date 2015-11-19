@@ -80,6 +80,7 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         //MOVE Question
+        int countcheck = 0;
         public void MoveQuestion()
         {
             Question question = new Question();
@@ -113,6 +114,7 @@ namespace CapDemo.GUI.User_Controls
                     //Delete answer and question
                     questionBL.DeleteAnswerByIDQuestion(question);
                     questionBL.DeleteQuestionByID(question);
+                    countcheck++;
                 }
             }
         }
@@ -128,22 +130,38 @@ namespace CapDemo.GUI.User_Controls
         //SAVE QUESTION
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (rad_Copy.Checked ==true)
+            if (cmb_Catalogue.SelectedItem != null)
             {
-                CopyQuestion();
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
+                if (rad_Copy.Checked == true)
+                {
+                    if (countcheck > 0)
+                    {
+                        CopyQuestion();
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
+                        notifyIcon1.ShowBalloonTip(2000);
+                    }
+                }
+                if (rad_Move.Checked == true)
+                {
+                    if (countcheck > 0)
+                    {
+                        MoveQuestion();
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
+                        notifyIcon1.ShowBalloonTip(2000);
+                    }   
+                }
+                Form FindForm = this.FindForm();
+                FindForm.Close();
+            }
+            else
+            {
+                notifyIcon1.Icon = SystemIcons.Warning;
+                notifyIcon1.BalloonTipText = "Vui lòng chọn chủ đề!";
                 notifyIcon1.ShowBalloonTip(2000);
             }
-            if (rad_Move.Checked == true)
-            {
-                MoveQuestion();
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
-                notifyIcon1.ShowBalloonTip(2000);
-            }
-            Form FindForm = this.FindForm();
-            FindForm.Close();
+            
         }
         //SELECT ITEM IN COMMOBOX
         private void cmb_Catalogue_SelectedIndexChanged(object sender, EventArgs e)
