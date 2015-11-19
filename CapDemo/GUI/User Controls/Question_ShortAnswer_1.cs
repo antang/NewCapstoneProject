@@ -31,6 +31,8 @@ namespace CapDemo.GUI.User_Controls
         //Load Form
         private void Question_ShortAnswer_1_Load(object sender, EventArgs e)
         {
+            txt_ContentQuestion.Text = "";
+            txt_AnswerContent.Text = "";
             this.Dock = DockStyle.Fill;
             CatalogueBL CatBL = new CatalogueBL();
             List<DO.Catalogue> CatList;

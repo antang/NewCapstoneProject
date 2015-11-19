@@ -16,34 +16,53 @@ namespace CapDemo.GUI
     {
         int IDCatSelected;
         private int IDQuestion;
-        private int IDCatalogue;
+        private string IDCatIDQuestion;
         public CopyQuestion()
         {
             InitializeComponent();
         }
 
-        public CopyQuestion(int IDQuestion, int IDCatalogue)
+        public CopyQuestion(string IDCatIDQuestion)
         {
             // TODO: Complete member initialization
             InitializeComponent();
-            this.IDQuestion = IDQuestion;
-            this.IDCatalogue = IDCatalogue;
+            this.IDCatIDQuestion = IDCatIDQuestion;
         }
         //LOAD FORM
+        string[] IdQ;
         private void CopyQuestion_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
             CatalogueBL CatBL = new CatalogueBL();
             List<DO.Catalogue> CatList;
             CatList = CatBL.GetCatalogue();
+
+            string[] BothID = IDCatIDQuestion.Trim().Split(' ');
+            string[] IdC = new string[BothID.Length];
+            IdQ = new string[BothID.Length];
+            for (int i = 0; i < BothID.Length; i++)
+            {
+                string[] ID = BothID[i].Trim().Split('+');
+                IdC[i] = ID[0].ToString();
+                IdQ[i] = ID[1].ToString();
+            }
+
             if (CatList != null)
-                for (int i = 0; i < CatList.Count; i++)
+                for (int j = 0; j < CatList.Count; j++)
                 {
-                    if (CatList.ElementAt(i).IDCatalogue != IDCatalogue)
+                    int count = 0;
+                    for (int i = 0; i < IdC.Length; i++)
                     {
-                        this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
+                        if (CatList.ElementAt(j).IDCatalogue != Convert.ToInt32(IdC[i].ToString()))
+                        {
+                            count++;
+                        }
                     }
-                }
+                    if (count == IdC.Length)
+                    {
+                        cmb_Catalogue.Items.Add(CatList.ElementAt(j).NameCatalogue);
+                    }
+                }   
         }
         
         //SAVE QUESTION
@@ -63,47 +82,58 @@ namespace CapDemo.GUI
                             IDCatSelected = Convert.ToInt32(CatList.ElementAt(i).IDCatalogue);
                         }
                     }
-                //SAVE QUESTION
+                //ADD QUESTION
                 QuestionBL QuestionBL = new QuestionBL();
                 List<DO.Question> QuestionList;
                 QuestionList = QuestionBL.GetQuestion();
                 if (QuestionList != null)
+                {
                     for (int i = 0; i < QuestionList.Count; i++)
                     {
-                        if (QuestionList.ElementAt(i).IDQuestion == IDQuestion)
+                        int count = 0;
+                        for (int j = 0; j < IdQ.Length; j++)
+                        {
+                            if (QuestionList.ElementAt(i).IDQuestion == Convert.ToInt32(IdQ[j]))
+                            {
+                                count++;
+                            }
+                        }
+                        if (count > 0)
                         {
                             Question question = new Question();
                             question.NameQuestion = QuestionList.ElementAt(i).NameQuestion;
                             question.TypeQuestion = QuestionList.ElementAt(i).TypeQuestion;
                             question.IDCatalogue = IDCatSelected;
+                            IDQuestion = QuestionList.ElementAt(i).IDQuestion;
                             question.Date = DateTime.Now;
                             QuestionBL.AddQuestion(question);
+
+                            //ADD ANSWER
+                            Question Question = new Question();
+                            Question.IDQuestion = IDQuestion;
+                            List<DO.Answer> AnswerList;
+                            AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
+                            if (AnswerList != null)
+                                for (int ii = 0; ii < AnswerList.Count; ii++)
+                                {
+                                    if (AnswerList.ElementAt(ii).IDQuestion == IDQuestion)
+                                    {
+                                        Answer answer = new Answer();
+                                        answer.ContentAnswer = AnswerList.ElementAt(ii).ContentAnswer;
+                                        answer.IsCorrect = (bool)AnswerList.ElementAt(ii).IsCorrect;
+                                        answer.IDQuestion = QuestionBL.MaxIDQuestion();
+                                        answer.IDCatalogue = IDCatSelected;
+                                        QuestionBL.AddAnswer(answer);
+                                    }
+                                }
                         }
                     }
-
-                Question Question = new Question();
-                Question.IDQuestion = IDQuestion;
-                List<DO.Answer> AnswerList;
-                AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
-                if (AnswerList != null)
-                    for (int i = 0; i < AnswerList.Count; i++)
-                    {
-                        if (AnswerList.ElementAt(i).IDQuestion == IDQuestion)
-                        {
-                            Answer answer = new Answer();
-                            answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
-                            answer.IsCorrect = (bool)AnswerList.ElementAt(i).IsCorrect;
-                            answer.IDQuestion = QuestionBL.MaxIDQuestion();
-                            answer.IDCatalogue = IDCatSelected;
-                            QuestionBL.AddAnswer(answer);
-
-                        }
-                    }
-                //Notify
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Sao chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công";
-                notifyIcon1.ShowBalloonTip(2000);
-                this.Close();
+                    //Notify
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Sao Chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công.";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    this.Close();
+                }
             }
             else
             {

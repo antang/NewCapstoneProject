@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lblServer = new System.Windows.Forms.Label();
-            this.txtUser_Name = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.txt_UserName = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.btn_Login = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -48,39 +48,38 @@
             this.lblServer.TabIndex = 0;
             this.lblServer.Text = "Server";
             // 
-            // txtUser_Name
+            // txt_UserName
             // 
-            this.txtUser_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser_Name.Location = new System.Drawing.Point(50, 233);
-            this.txtUser_Name.Multiline = true;
-            this.txtUser_Name.Name = "txtUser_Name";
-            this.txtUser_Name.Size = new System.Drawing.Size(217, 24);
-            this.txtUser_Name.TabIndex = 2;
+            this.txt_UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_UserName.Location = new System.Drawing.Point(50, 233);
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.Size = new System.Drawing.Size(217, 19);
+            this.txt_UserName.TabIndex = 2;
             // 
-            // txtPassword
+            // txt_Password
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(50, 296);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 24);
-            this.txtPassword.TabIndex = 3;
+            this.txt_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Location = new System.Drawing.Point(50, 296);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '*';
+            this.txt_Password.Size = new System.Drawing.Size(217, 19);
+            this.txt_Password.TabIndex = 3;
             // 
-            // btnLogin
+            // btn_Login
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Blue;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(103, 355);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(113, 30);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Đăng Nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btn_Login.BackColor = System.Drawing.Color.Blue;
+            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.ForeColor = System.Drawing.Color.White;
+            this.btn_Login.Location = new System.Drawing.Point(103, 355);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.Size = new System.Drawing.Size(113, 30);
+            this.btn_Login.TabIndex = 4;
+            this.btn_Login.Text = "Đăng Nhập";
+            this.btn_Login.UseVisualStyleBackColor = false;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btnClose
             // 
@@ -100,9 +99,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(317, 399);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUser_Name);
+            this.Controls.Add(this.btn_Login);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_UserName);
             this.Controls.Add(this.lblServer);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Red;
@@ -118,9 +117,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblServer;
-        private System.Windows.Forms.TextBox txtUser_Name;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox txt_UserName;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.Button btnClose;
     }
 }

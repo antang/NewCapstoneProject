@@ -34,6 +34,8 @@ namespace CapDemo.GUI.User_Controls
         //LOAD CATALOGUE INTO COMMOBOX
         private void Question_MultiSelect_1_Load(object sender, EventArgs e)
         {
+            txt_ContentQuestion.Text = "";
+            flp_addAnswer.Controls.Clear();
             this.Dock = DockStyle.Fill;
             CatalogueBL CatBL = new CatalogueBL();
             List<DO.Catalogue> CatList;

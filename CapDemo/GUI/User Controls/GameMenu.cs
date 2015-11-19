@@ -12,12 +12,21 @@ namespace CapDemo.GUI.User_Controls
 {
     public partial class GameMenu : UserControl
     {
-        public GameMenu()
-        {
-            InitializeComponent();
-        }
+        private string UserName;
         public event EventHandler onClick;
         public event EventHandler onClick_Start;
+        //public GameMenu()
+        //{
+        //    InitializeComponent();
+        //}
+
+        public GameMenu(string pUserName)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.UserName = pUserName;
+        }
+
         private void btn_Setting_Click(object sender, EventArgs e)
         {
             if (this.onClick != null)
@@ -27,6 +36,7 @@ namespace CapDemo.GUI.User_Controls
         private void GameMenu_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+            lbl_Name.Text = UserName;
         }
 
         private void lbl_Name_Click(object sender, EventArgs e)

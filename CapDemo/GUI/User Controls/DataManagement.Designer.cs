@@ -321,7 +321,6 @@
             this.btn_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchQuestion.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_SearchQuestion.Enabled = false;
             this.btn_SearchQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchQuestion.ImageIndex = 3;
             this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 77);
@@ -329,6 +328,7 @@
             this.btn_SearchQuestion.Size = new System.Drawing.Size(35, 30);
             this.btn_SearchQuestion.TabIndex = 20;
             this.btn_SearchQuestion.UseVisualStyleBackColor = true;
+            this.btn_SearchQuestion.Click += new System.EventHandler(this.btn_SearchQuestion_Click);
             // 
             // txt_SearchQuestion
             // 
@@ -355,7 +355,6 @@
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Question.Location = new System.Drawing.Point(63, 110);
             this.dgv_Question.Name = "dgv_Question";
-            this.dgv_Question.RowHeadersVisible = false;
             this.dgv_Question.Size = new System.Drawing.Size(590, 315);
             this.dgv_Question.TabIndex = 17;
             this.dgv_Question.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Question_CellClick);

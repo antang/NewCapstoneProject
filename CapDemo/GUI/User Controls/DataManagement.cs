@@ -94,20 +94,34 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_CopyQuestion_Click(object sender, EventArgs e)
         {
-            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
-            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
-            CopyQuestion cq = new CopyQuestion(IDQuestion,IDCatalogue);
-            cq.ShowDialog();
-            loadQuestion();
+            if (dgv_Question.SelectedRows.Count > 0)
+            {
+                string IDCatIDQuestion = "";
+                foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
+                {
+                    IDCatIDQuestion += (item.Cells["IDCatalogue"].Value.ToString()) + "+" + (item.Cells["IDQuestion"].Value.ToString()) + " ";
+
+                }
+                CopyQuestion cq = new CopyQuestion(IDCatIDQuestion);
+                cq.ShowDialog();
+                loadQuestion();
+            }
         }
         //MOVE QUESTION
         private void btn_MoveQuestion_Click(object sender, EventArgs e)
         {
-            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
-            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
-            MoveQuestion mq = new MoveQuestion(IDQuestion, IDCatalogue);
-            mq.ShowDialog();
-            loadQuestion();
+            if (dgv_Question.SelectedRows.Count > 0)
+            {
+                string IDCatIDQuestion="";
+                foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
+                {
+                    IDCatIDQuestion += (item.Cells["IDCatalogue"].Value.ToString())+"+"+(item.Cells["IDQuestion"].Value.ToString()) + " ";
+
+                }
+                MoveQuestion mq = new MoveQuestion(IDCatIDQuestion);
+                mq.ShowDialog();
+                loadQuestion();
+            }
         }
         //EDIT QUESTION INFORMATION
         private void btn_EditQuestion_Click(object sender, EventArgs e)
@@ -211,17 +225,29 @@ namespace CapDemo.GUI.User_Controls
         //DELETE Question
         private void btn_DeleteQuestion_Click(object sender, EventArgs e)
         {
-            Question Question = new Question();
-            QuestionBL QuestionBL = new QuestionBL();
-            Question.IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
-            QuestionBL.DeleteAnswerByIDQuestion(Question);
-            QuestionBL.DeleteQuestionByID(Question);
-            //Show notify
-            notifyIcon1.Icon = SystemIcons.Information;
-            notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
-            notifyIcon1.ShowBalloonTip(2000);
-            //Load question table
-            loadQuestion();
+            int RowSelect = dgv_Question.SelectedRows.Count;
+            if (RowSelect>0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn muôn xóa câu hỏi này không?", "Xóa câu hỏi", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
+                    {
+                        Question Question = new Question();
+                        QuestionBL QuestionBL = new QuestionBL();
+                        Question.IDQuestion = Convert.ToInt32(item.Cells["IDQuestion"].Value.ToString());
+                        QuestionBL.DeleteAnswerByIDQuestion(Question);
+                        QuestionBL.DeleteQuestionByID(Question);
+                    }
+                    //Show notify
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
+                    notifyIcon1.ShowBalloonTip(2000);
+                    //Load question table
+                    loadQuestion();
+                }
+            }
+            
         }
         //SWITCH TAB TO HIDE GROUP FUNCTION
         private void tbc_DataManagement_Click(object sender, EventArgs e)
@@ -313,6 +339,26 @@ namespace CapDemo.GUI.User_Controls
                 eqms.ShowDialog();
             }
             loadQuestion();
+        }
+        //Click search
+        private void btn_SearchQuestion_Click(object sender, EventArgs e)
+        {
+            if (dgv_Question.SelectedRows.Count >0)
+            {
+                int[] RowSelected = new int[dgv_Question.SelectedRows.Count];
+                int i = 0;
+                foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
+                {
+                    RowSelected[i] = Convert.ToInt32(item.Cells["IDQuestion"].Value.ToString());
+                    i++;
+                }
+
+                for (int j = 0; j < RowSelected.Length; j++)
+                {
+                    MessageBox.Show("" + RowSelected[j]);
+                }
+            }
+            
         } 
     }
 }
