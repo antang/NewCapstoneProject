@@ -10,8 +10,8 @@ namespace CapDemo.DA
 {
     class FileAccess
     {
-        //Read file
-        public string FileContent(string NameFile)
+        //Read file XML
+        public string FileContentXML(string NameFile)
         {
             string QuestionContent = "";
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -47,6 +47,18 @@ namespace CapDemo.DA
             {
                 return null;
             }
+        }
+
+        //Read File TXT
+        public string FileContentTXT(string NameFile)
+        {
+            string QuestionContent = "";
+
+            foreach (var line in File.ReadAllLines(NameFile))
+            {
+                QuestionContent += line;
+            }
+            return QuestionContent.Trim();
         }
         
     }

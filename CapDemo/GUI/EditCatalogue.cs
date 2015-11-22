@@ -52,10 +52,7 @@ namespace CapDemo.GUI
                     }
                     else
                     {
-                        notifyIcon1.Icon = SystemIcons.Warning;
-                        notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề không thành công";
-                        notifyIcon1.ShowBalloonTip(5000);
-                        this.Close();
+                        MessageBox.Show("Chủ đề này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
             }
         }

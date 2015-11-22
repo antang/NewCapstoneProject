@@ -156,16 +156,16 @@ namespace CapDemo.BL
             return DA.UpdateDatabase(query);
         }
 //LOAD FILE QUESTION
-        // LOAD QUESTION FILE
+        // LOAD QUESTION FILE XML
         public List<Question> GetFileXML(string file)
         {
-            if (FA.FileContent(file) == null)
+            if (FA.FileContentXML(file) == null)
             {
                 return null;
             }
             else
             {
-                string content = FA.FileContent(file);
+                string content = FA.FileContentXML(file);
                 int stt = 1;
                 DataTable dtb = new DataTable();
                 dtb.Columns.Add("Sequence", typeof(string));
@@ -205,6 +205,52 @@ namespace CapDemo.BL
                 return QuestionList;
             }
             
+        }
+
+        //LOAD QUESTION FILE TEXT
+        public List<Question> GetFileTXT(string file)
+        {
+            string content = FA.FileContentTXT(file);
+
+            int stt = 1;
+            DataTable dtb = new DataTable();
+            dtb.Columns.Add("Sequence", typeof(string));
+            dtb.Columns.Add("NameQuestion", typeof(string));
+            dtb.Columns.Add("TypeQuestion", typeof(string));
+            dtb.Columns.Add("AnswerContent", typeof(string));
+
+            content = content.Replace("[Q]", "");
+            content = content.Replace("[TQ]", "---");
+            content = content.Replace("[/TQ]", "---");
+
+            string[] QuestionContent = content.Split(new string[] { "[/Q]" }, StringSplitOptions.None);
+
+            for (int i = 0; i < QuestionContent.Length-1; i++)
+            {
+                string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+                dtb.Rows.Add(stt.ToString(), QuestionItem[0], QuestionItem[1], QuestionItem[2]);
+                stt++;
+            }
+
+            List<Question> QuestionList = new List<Question>();
+            if (dtb != null)
+            {
+                foreach (DataRow item in dtb.Rows)
+                {
+                    Question Question = new Question();
+                    Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                    Question.NameQuestion = item["NameQuestion"].ToString();
+                    Question.TypeQuestion = item["TypeQuestion"].ToString();
+
+                    string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("[A][P]", "");
+                    AnswerContent = AnswerContent.Replace("[/P]", "---");
+                    AnswerContent = AnswerContent.Replace("[/A]", "</answer>");
+                    Question.AnswerContent = AnswerContent;
+
+                    QuestionList.Add(Question);
+                }
+            }
+            return QuestionList;
         }
 
         //GET MAXIMUM ID QUESTION

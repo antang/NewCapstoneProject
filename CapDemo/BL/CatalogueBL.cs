@@ -70,13 +70,37 @@ namespace CapDemo.BL
                 return false;
             }
         }
+        //Edit catalogue exist in catalogue table
+        public bool EditExistCatalogue(Catalogue Catalogue)
+        {
+            string query = "SELECT Catalogue_ID, Catalogue_Name FROM Catalogue"
+                         + " WHERE Catalogue_Name = '" + Catalogue.NameCatalogue.ToUpper() + "'"
+                         +" AND Catalogue_ID <> '" + Catalogue.IDCatalogue + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt.Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         //Edit catalogue
         public bool EditCataloguebyID(Catalogue Catalogue)
         {
             string query = "UPDATE Catalogue SET Catalogue_Name ='" + Catalogue.NameCatalogue + "'"
                          + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
-            return DA.UpdateDatabase(query);
+            if (EditExistCatalogue(Catalogue) == true)
+            {
+                return false;
+            }
+            else
+            {
+                return DA.UpdateDatabase(query);
+            }
+            
         }
 //Delete CATALOGUE
         //Delete catalogue

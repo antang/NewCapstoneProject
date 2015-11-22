@@ -16,7 +16,7 @@ namespace CapDemo.BL
         {
             DA = new DatabaseAccess();
         }
-        //select catalogue table
+        //select User table
         public List<User> GetUser()
         {
             List<User> UserList = new List<User>();
@@ -37,6 +37,52 @@ namespace CapDemo.BL
                 }
             }
             return UserList;
+        }
+
+        //Insert user
+        public bool AddUser(User User)
+        {
+            string query = "INSERT INTO User (Username, Password)"
+                        + " VALUES ('" + User.UserName + "','" + User.PassWord+ "')";
+
+            if (ExistUser(User) == true)
+            {
+                return false;
+            }
+            else
+            {
+                return DA.InsertDatabase(query);
+            }
+        }
+        //Check User Exist
+        public bool ExistUser(User User)
+        {
+            string query = "SELECT User_ID, Username FROM User"
+                         + " WHERE Username = '" + User.UserName.ToUpper() + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt.Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Edit catalogue
+        public bool EditUserbyID(User User)
+        {
+            string query = "UPDATE User SET Username ='" + User.UserName + "', Password ='" + User.PassWord + "'"
+                         + " WHERE Catalogue_ID = '" + User.UserID + "'";
+            return DA.UpdateDatabase(query);
+        }
+        //Delete User
+        public bool DeleteUserbyID(User User)
+        {
+            string query = "DELETE FROM User"
+                         + " WHERE User_ID = '" + User.UserID + "'";
+            return DA.DeleteDatabase(query);
         }
     }
 }

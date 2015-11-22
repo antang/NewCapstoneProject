@@ -130,7 +130,7 @@ namespace CapDemo.GUI.User_Controls
             int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
             string OneSelect = "onechoice";
-            string MultiSelect = "multiplechoice";
+            string MultiSelect = "multichoice";
             string ShortAnswer = "shortanswer";
             if (TypeQuestion.ToLower()==OneSelect)
             {
@@ -321,7 +321,7 @@ namespace CapDemo.GUI.User_Controls
             int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
             string OneSelect = "onechoice";
-            string MultiSelect = "multiplechoice";
+            string MultiSelect = "multichoice";
             string ShortAnswer = "shortanswer";
             if (TypeQuestion.ToLower() == OneSelect)
             {

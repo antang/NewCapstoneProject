@@ -45,7 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\AES.cs" />
+    <Compile Include="BL\CompetitionBL.cs" />
     <Compile Include="BL\ListtoDataTableConverter.cs" />
+    <Compile Include="DO\Competition.cs" />
+    <Compile Include="DO\Contest.cs" />
+    <Compile Include="DO\Phase.cs" />
+    <Compile Include="DO\Player.cs" />
+    <Compile Include="DO\Round.cs" />
     <Compile Include="GUI\Add_New_Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,6 +549,10 @@
   <ItemGroup>
     <None Include="image\Untitled-1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template.txt" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

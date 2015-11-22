@@ -78,7 +78,7 @@ namespace CapDemo.GUI
             //int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
             string TypeQuestion = dgv_Question1.CurrentRow.Cells["TypeQuestion"].Value.ToString();
             string OneSelect = "onechoice";
-            string MultiSelect = "multiplechoice";
+            string MultiSelect = "multichoice";
             string ShortAnswer = "shortanswer";
             if (TypeQuestion.ToLower() == OneSelect)
             {
