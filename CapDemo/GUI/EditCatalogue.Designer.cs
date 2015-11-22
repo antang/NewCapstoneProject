@@ -97,10 +97,10 @@
             // 
             this.txt_NameCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_NameCatalogue.Location = new System.Drawing.Point(31, 105);
-            this.txt_NameCatalogue.Multiline = true;
             this.txt_NameCatalogue.Name = "txt_NameCatalogue";
-            this.txt_NameCatalogue.Size = new System.Drawing.Size(326, 30);
+            this.txt_NameCatalogue.Size = new System.Drawing.Size(326, 20);
             this.txt_NameCatalogue.TabIndex = 42;
+            this.txt_NameCatalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_NameCatalogue_KeyDown);
             // 
             // lbl2
             // 

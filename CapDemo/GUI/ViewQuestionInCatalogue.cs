@@ -74,30 +74,37 @@ namespace CapDemo.GUI
         //DOUBLE CLICK CELL TO OPEN DETAIL QUESTION
         private void dgv_Question_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IDQuestion = Convert.ToInt32(dgv_Question1.CurrentRow.Cells["IDQuestion"].Value);
-            //int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
-            string TypeQuestion = dgv_Question1.CurrentRow.Cells["TypeQuestion"].Value.ToString();
-            string OneSelect = "onechoice";
-            string MultiSelect = "multichoice";
-            string ShortAnswer = "shortanswer";
-            if (TypeQuestion.ToLower() == OneSelect)
+            try
             {
-                ViewQuestion eqms = new ViewQuestion(IDQuestion, iDCat);
-                eqms.ShowDialog();
-                LoadQuestion();
+                int IDQuestion = Convert.ToInt32(dgv_Question1.CurrentRow.Cells["IDQuestion"].Value);
+                //int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+                string TypeQuestion = dgv_Question1.CurrentRow.Cells["TypeQuestion"].Value.ToString();
+                string OneSelect = "onechoice";
+                string MultiSelect = "multichoice";
+                string ShortAnswer = "shortanswer";
+                if (TypeQuestion.ToLower() == OneSelect)
+                {
+                    ViewQuestion eqms = new ViewQuestion(IDQuestion, iDCat);
+                    eqms.ShowDialog();
+                    LoadQuestion();
+                }
+                if (TypeQuestion.ToLower() == MultiSelect)
+                {
+                    ViewQuestionMultiple eqms = new ViewQuestionMultiple(IDQuestion, iDCat);
+                    eqms.ShowDialog();
+                    LoadQuestion();
+                }
+                if (TypeQuestion.ToLower() == ShortAnswer)
+                {
+                    ViewQuestionShortAnswer eqms = new ViewQuestionShortAnswer(IDQuestion, iDCat);
+                    eqms.ShowDialog();
+                    LoadQuestion();
+                }
             }
-            if (TypeQuestion.ToLower() == MultiSelect)
+            catch (Exception)
             {
-                ViewQuestionMultiple eqms = new ViewQuestionMultiple(IDQuestion, iDCat);
-                eqms.ShowDialog();
-                LoadQuestion();
             }
-            if (TypeQuestion.ToLower() == ShortAnswer)
-            {
-                ViewQuestionShortAnswer eqms = new ViewQuestionShortAnswer(IDQuestion, iDCat);
-                eqms.ShowDialog();
-                LoadQuestion();
-            }
+            
         }
     }
 }

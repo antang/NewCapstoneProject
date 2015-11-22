@@ -70,6 +70,7 @@
             this.cmb_Catalogue.Name = "cmb_Catalogue";
             this.cmb_Catalogue.Size = new System.Drawing.Size(328, 28);
             this.cmb_Catalogue.TabIndex = 42;
+            this.cmb_Catalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Catalogue_KeyDown);
             // 
             // label1
             // 

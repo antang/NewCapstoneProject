@@ -24,7 +24,7 @@ namespace CapDemo.DO
             set { iDContest = value; }
         }
 
-
+        public int Sequence { get; set; }
         public string NameContest
         {
             get { return nameContest; }
@@ -78,6 +78,8 @@ namespace CapDemo.DO
             get { return timesFalse; }
             set { timesFalse = value; }
         }
+
+
 
     }
 }

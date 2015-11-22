@@ -20,8 +20,10 @@ namespace CapDemo.BL
         public List<User> GetUser()
         {
             List<User> UserList = new List<User>();
-            string query = "SELECT [User_ID],[Username],[Password]"
-                        + " FROM [Capstone].[dbo].[User]";
+            string query = "SELECT u.[User_ID],u.[Username],u.[Password]"
+                        + " FROM [Capstone].[dbo].[User] u";
+            //string query = "SELECT u.User_ID,u.Username,u.Password"
+            //            + " FROM User u";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
             if (dt!= null)
@@ -32,6 +34,7 @@ namespace CapDemo.BL
                     User.UserID = Convert.ToInt32(item["User_ID"]);
                     User.UserName = item["Username"].ToString();
                     User.PassWord = item["Password"].ToString();
+                    User.Sequence = i;
                     UserList.Add(User);
                     i++;
                 }
@@ -42,9 +45,8 @@ namespace CapDemo.BL
         //Insert user
         public bool AddUser(User User)
         {
-            string query = "INSERT INTO User (Username, Password)"
-                        + " VALUES ('" + User.UserName + "','" + User.PassWord+ "')";
-
+            string query = "INSERT INTO [Capstone].[dbo].[User]([Username],[Password])"
+                           + "VALUES ('" + User.UserName + "','" + User.PassWord + "')";
             if (ExistUser(User) == true)
             {
                 return false;
@@ -54,11 +56,13 @@ namespace CapDemo.BL
                 return DA.InsertDatabase(query);
             }
         }
+
         //Check User Exist
         public bool ExistUser(User User)
         {
-            string query = "SELECT User_ID, Username FROM User"
-                         + " WHERE Username = '" + User.UserName.ToUpper() + "'";
+            string query = "SELECT [User_ID],[Username],[Password]"
+                       + " FROM [Capstone].[dbo].[User]"
+                       + " WHERE [Username] = '" + User.UserName.ToUpper() + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
             {
@@ -70,11 +74,11 @@ namespace CapDemo.BL
             }
         }
 
-        //Edit catalogue
+        //Edit User
         public bool EditUserbyID(User User)
         {
             string query = "UPDATE User SET Username ='" + User.UserName + "', Password ='" + User.PassWord + "'"
-                         + " WHERE Catalogue_ID = '" + User.UserID + "'";
+                         + " WHERE User_ID = '" + User.UserID + "'";
             return DA.UpdateDatabase(query);
         }
         //Delete User

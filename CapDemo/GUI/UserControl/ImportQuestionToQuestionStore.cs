@@ -80,7 +80,18 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         //MOVE Question
-        int countcheck = 0;
+        public int countcheck()
+        {
+            int count = 0;
+            foreach (DataGridViewRow row in dgv_Question.Rows)
+            {
+                if (row.Cells["Check"].Value != null)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
         public void MoveQuestion()
         {
             Question question = new Question();
@@ -114,7 +125,6 @@ namespace CapDemo.GUI.User_Controls
                     //Delete answer and question
                     questionBL.DeleteAnswerByIDQuestion(question);
                     questionBL.DeleteQuestionByID(question);
-                    countcheck++;
                 }
             }
         }
@@ -134,26 +144,41 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (rad_Copy.Checked == true)
                 {
-                    if (countcheck > 0)
+                    if (countcheck() > 0)
                     {
                         CopyQuestion();
                         notifyIcon1.Icon = SystemIcons.Information;
                         notifyIcon1.BalloonTipText = "Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
                         notifyIcon1.ShowBalloonTip(2000);
+                        Form FindForm = this.FindForm();
+                        FindForm.Close();
+                    }
+                    else
+                    {
+                        notifyIcon1.Icon = SystemIcons.Warning;
+                        notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để sao chép đến chủ đề.";
+                        notifyIcon1.ShowBalloonTip(2000);
                     }
                 }
                 if (rad_Move.Checked == true)
                 {
-                    if (countcheck > 0)
+                    if (countcheck() > 0)
                     {
                         MoveQuestion();
                         notifyIcon1.Icon = SystemIcons.Information;
                         notifyIcon1.BalloonTipText = "Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
                         notifyIcon1.ShowBalloonTip(2000);
-                    }   
+                        Form FindForm = this.FindForm();
+                        FindForm.Close();
+                    }
+                    else
+                    {
+                        notifyIcon1.Icon = SystemIcons.Warning;
+                        notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để di chuyển đến chủ đề.";
+                        notifyIcon1.ShowBalloonTip(2000);
+                    }  
                 }
-                Form FindForm = this.FindForm();
-                FindForm.Close();
+                
             }
             else
             {
@@ -212,6 +237,26 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns.Add(CheckColumn);
             dgv_Question.Columns["Check"].HeaderText = "Chọn";
             dgv_Question.Columns["Check"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            chk_CheckAll.Checked = false;
+        }
+        //Select all item
+        private void chk_CheckAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_CheckAll.Checked == true)
+            {
+                foreach (DataGridViewRow row in dgv_Question.Rows)
+                {
+                    row.Cells["Check"].Value = true;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgv_Question.Rows)
+                {
+                    row.Cells["Check"].Value = null;
+                }
+            }
         }
     }
 }

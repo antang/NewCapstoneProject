@@ -131,7 +131,8 @@ namespace CapDemo.GUI.User_Controls
                 {
                     txt_FilePath.Text = "";
                     MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }  
+                }
+                chk_CheckAll.Checked = false;
             }
         }
         //EXIT FORM
@@ -316,32 +317,53 @@ namespace CapDemo.GUI.User_Controls
             catch (Exception)
             {
                 MessageBox.Show("Hệ thống lưu không thành công vì do định dạng file không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-            
+            }     
         }
 
         private void btn_DownloadFile_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.FileName = "Template.txt";
-            save.Filter = "Text File | *.txt";
-            if (save.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamWriter writer = new StreamWriter(save.OpenFile());
-                string text = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Template.txt";
-
-                foreach (var line in File.ReadAllLines(text))
+                SaveFileDialog save = new SaveFileDialog();
+                save.FileName = "Template.txt";
+                save.Filter = "Text File | *.txt";
+                if (save.ShowDialog() == DialogResult.OK)
                 {
-                    writer.WriteLine(line);
+                    StreamWriter writer = new StreamWriter(save.OpenFile());
+                    string text = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Template.txt";
+
+                    foreach (var line in File.ReadAllLines(text))
+                    {
+                        writer.WriteLine(line);
+                    }
+                    writer.Dispose();
+                    writer.Close();
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Tải tập tin mẫu thành công: " + save.FileName + "";
+                    notifyIcon1.ShowBalloonTip(2000);
                 }
-                writer.Dispose();
-                writer.Close();
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText= "Tải tập tin mẫu thành công: "+save.FileName+"";
-                notifyIcon1.ShowBalloonTip(2000);
+            }
+            catch (Exception)
+            {
+            }    
+        }
+        //Check all row
+        private void chk_CheckAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_CheckAll.Checked == true)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["Check"].Value = true;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["Check"].Value = null;
+                }
             }
         }
-
     }
 }

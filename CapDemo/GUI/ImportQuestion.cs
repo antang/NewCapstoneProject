@@ -126,6 +126,7 @@ namespace CapDemo.GUI
                     txt_FilePath.Text = "";
                     MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                chk_CheckAll.Checked = false;
             }
         }
         //SAVE QUESTION
@@ -133,9 +134,7 @@ namespace CapDemo.GUI
         private void btn_SaveImport_Click(object sender, EventArgs e)
         {
             if (cmb_Catalogue.SelectedItem != null)
-            {
-               
-                    
+            {   
                 try
                 {
                     if (txt_FilePath.Text == "")
@@ -331,6 +330,52 @@ namespace CapDemo.GUI
         private void btn_ExitImport_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        //Download File TXT
+        private void btn_DownloadFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog save = new SaveFileDialog();
+                save.FileName = "Template.txt";
+                save.Filter = "Text File | *.txt";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter writer = new StreamWriter(save.OpenFile());
+                    string text = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Template.txt";
+
+                    foreach (var line in File.ReadAllLines(text))
+                    {
+                        writer.WriteLine(line);
+                    }
+                    writer.Dispose();
+                    writer.Close();
+                    notifyIcon1.Icon = SystemIcons.Information;
+                    notifyIcon1.BalloonTipText = "Tải tập tin mẫu thành công: " + save.FileName + "";
+                    notifyIcon1.ShowBalloonTip(2000);
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void chk_CheckAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_CheckAll.Checked == true)
+            {
+                foreach (DataGridViewRow row in dgv_Question.Rows)
+                {
+                    row.Cells["Check"].Value = true;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgv_Question.Rows)
+                {
+                    row.Cells["Check"].Value = null;
+                }
+            }
         }
     }
 }

@@ -29,5 +29,7 @@ namespace CapDemo.DO
             get { return iDCompetition; }
             set { iDCompetition = value; }
         }
+
+        public int Sequence { get; set; }
     }
 }

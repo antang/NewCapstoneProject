@@ -34,8 +34,9 @@
             this.lbl_Catalogue = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_DownloadFile = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
@@ -86,6 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.chk_CheckAll);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.dgv_Question);
             this.groupBox2.Controls.Add(this.btn_LoadFile);
@@ -97,32 +99,45 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             // 
+            // chk_CheckAll
+            // 
+            this.chk_CheckAll.AutoSize = true;
+            this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_CheckAll.Location = new System.Drawing.Point(665, 97);
+            this.chk_CheckAll.Name = "chk_CheckAll";
+            this.chk_CheckAll.Size = new System.Drawing.Size(92, 20);
+            this.chk_CheckAll.TabIndex = 5;
+            this.chk_CheckAll.Text = "Chọn tất cả";
+            this.chk_CheckAll.UseVisualStyleBackColor = true;
+            this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btn_DownloadFile);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(568, 14);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 58);
             this.panel1.TabIndex = 3;
             // 
-            // button4
+            // btn_DownloadFile
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button4.ImageIndex = 2;
-            this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(42, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 30);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Tải Về";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_DownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_DownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DownloadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_DownloadFile.ImageIndex = 2;
+            this.btn_DownloadFile.ImageList = this.imageList1;
+            this.btn_DownloadFile.Location = new System.Drawing.Point(42, 22);
+            this.btn_DownloadFile.Name = "btn_DownloadFile";
+            this.btn_DownloadFile.Size = new System.Drawing.Size(110, 30);
+            this.btn_DownloadFile.TabIndex = 34;
+            this.btn_DownloadFile.Text = "Tải Về";
+            this.btn_DownloadFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DownloadFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_DownloadFile.UseVisualStyleBackColor = false;
+            this.btn_DownloadFile.Click += new System.EventHandler(this.btn_DownloadFile_Click);
             // 
             // imageList1
             // 
@@ -182,11 +197,10 @@
             // 
             // txt_FilePath
             // 
-            this.txt_FilePath.Location = new System.Drawing.Point(91, 89);
-            this.txt_FilePath.Multiline = true;
+            this.txt_FilePath.Location = new System.Drawing.Point(85, 94);
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
-            this.txt_FilePath.Size = new System.Drawing.Size(358, 30);
+            this.txt_FilePath.Size = new System.Drawing.Size(358, 20);
             this.txt_FilePath.TabIndex = 0;
             // 
             // btn_SaveImport
@@ -262,7 +276,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_DownloadFile;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_Question;
         private System.Windows.Forms.Button btn_LoadFile;
@@ -271,5 +285,6 @@
         private System.Windows.Forms.Button btn_ExitImport;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.CheckBox chk_CheckAll;
     }
 }

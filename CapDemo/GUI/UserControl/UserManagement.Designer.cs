@@ -53,10 +53,12 @@
             this.dgv_UserManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_UserManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_UserManagement.BackgroundColor = System.Drawing.Color.White;
             this.dgv_UserManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_UserManagement.Location = new System.Drawing.Point(33, 126);
             this.dgv_UserManagement.Name = "dgv_UserManagement";
+            this.dgv_UserManagement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_UserManagement.Size = new System.Drawing.Size(632, 414);
             this.dgv_UserManagement.TabIndex = 11;
             // 

@@ -57,8 +57,8 @@ namespace CapDemo.BL
         //Check Competition Exist
         public bool ExistCompetition(Competition Competition)
         {
-            string query = "SELECT Catalogue_ID, Catalogue_Name FROM Catalogue"
-                         + " WHERE Catalogue_Name = '" + Competition.NameCompetition.ToUpper() + "'";
+            string query = "SELECT Competition_ID, Competition_Name FROM Competition"
+                         + " WHERE Competition_Name = '" + Competition.NameCompetition.ToUpper() + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
             {
@@ -70,7 +70,7 @@ namespace CapDemo.BL
             }
         }
 
-        //Edit catalogue
+        //Edit Competition
         public bool EditCompetitionbyID(Competition Competition)
         {
             string query = "UPDATE Competition SET Competition_Name ='" + Competition.NameCompetition + "'"

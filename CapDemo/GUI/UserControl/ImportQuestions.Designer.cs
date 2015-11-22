@@ -35,6 +35,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_LoadFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,6 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.chk_CheckAll);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btn_LoadFile);
@@ -110,6 +112,18 @@
             this.groupBox2.Size = new System.Drawing.Size(784, 464);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
+            // 
+            // chk_CheckAll
+            // 
+            this.chk_CheckAll.AutoSize = true;
+            this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_CheckAll.Location = new System.Drawing.Point(675, 99);
+            this.chk_CheckAll.Name = "chk_CheckAll";
+            this.chk_CheckAll.Size = new System.Drawing.Size(92, 20);
+            this.chk_CheckAll.TabIndex = 5;
+            this.chk_CheckAll.Text = "Chọn tất cả";
+            this.chk_CheckAll.UseVisualStyleBackColor = true;
+            this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
             // 
             // dataGridView1
             // 
@@ -242,5 +256,6 @@
         private System.Windows.Forms.Button btn_SaveImport;
         private System.Windows.Forms.Button btn_ExitImport;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.CheckBox chk_CheckAll;
     }
 }

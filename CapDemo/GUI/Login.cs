@@ -32,30 +32,41 @@ namespace CapDemo.GUI
             List<DO.User> UserList;
             UserList = userbl.GetUser();
             AES aes = new AES();
-            if (UserList != null)
-                for (int i = 0; i < UserList.Count; i++)
+            if (txt_UserName.Text.Trim()=="" || txt_Password.Text.Trim()=="")
+            {
+                if (txt_UserName.Text.Trim()=="")
                 {
-                    if (txt_UserName.Text == UserList.ElementAt(i).UserName)
-                    {
-                        if (aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
-                        {
-                            UserName = txt_UserName.Text;
-                            this.Close();
-                            th = new Thread(openComposing);
-                            th.SetApartmentState(ApartmentState.STA);
-                            th.Start();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sai mật khẩu. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sai tài khoản. Vui lòng đăng nhập lại.","Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Tên đăng nhập không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    MessageBox.Show("Mật khẩu không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);  
+                }
+            }   
+            else
+            {
+                bool check = false;
+                if (UserList != null)
+                    for (int i = 0; i < UserList.Count; i++)
+                    {
+                        if (txt_UserName.Text == UserList.ElementAt(i).UserName && aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
+                        {
+                            check = true;
+                        }
+                    }
+                if (check == true)
+                {
+                    UserName = txt_UserName.Text;
+                    this.Close();
+                    th = new Thread(openComposing);
+                    th.SetApartmentState(ApartmentState.STA);
+                    th.Start();
+                }
+                else
+                {
+                    MessageBox.Show("Sai mật tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void openComposing(object obj)
@@ -72,30 +83,41 @@ namespace CapDemo.GUI
                 List<DO.User> UserList;
                 UserList = userbl.GetUser();
                 AES aes = new AES();
-                if (UserList != null)
-                    for (int i = 0; i < UserList.Count; i++)
+                if (txt_UserName.Text.Trim() == "" || txt_Password.Text.Trim() == "")
+                {
+                    if (txt_UserName.Text.Trim() == "")
                     {
-                        if (txt_UserName.Text == UserList.ElementAt(i).UserName)
-                        {
-                            if (aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
-                            {
-                                UserName = txt_UserName.Text;
-                                this.Close();
-                                th = new Thread(openComposing);
-                                th.SetApartmentState(ApartmentState.STA);
-                                th.Start();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Sai mật khẩu. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sai tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
+                        MessageBox.Show("Tên đăng nhập không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                    else
+                    {
+                        MessageBox.Show("Mật khẩu không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    bool check = false;
+                    if (UserList != null)
+                        for (int i = 0; i < UserList.Count; i++)
+                        {
+                            if (txt_UserName.Text == UserList.ElementAt(i).UserName && aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
+                            {
+                                check = true;
+                            }
+                        }
+                    if (check == true)
+                    {
+                        UserName = txt_UserName.Text;
+                        this.Close();
+                        th = new Thread(openComposing);
+                        th.SetApartmentState(ApartmentState.STA);
+                        th.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai mật tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
         }
         //Press enter key
@@ -107,30 +129,41 @@ namespace CapDemo.GUI
                 List<DO.User> UserList;
                 UserList = userbl.GetUser();
                 AES aes = new AES();
-                if (UserList != null)
-                    for (int i = 0; i < UserList.Count; i++)
+                if (txt_UserName.Text.Trim() == "" || txt_Password.Text.Trim() == "")
+                {
+                    if (txt_UserName.Text.Trim() == "")
                     {
-                        if (txt_UserName.Text == UserList.ElementAt(i).UserName)
-                        {
-                            if (aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
-                            {
-                                UserName = txt_UserName.Text;
-                                this.Close();
-                                th = new Thread(openComposing);
-                                th.SetApartmentState(ApartmentState.STA);
-                                th.Start();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Sai mật khẩu. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sai tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
+                        MessageBox.Show("Tên đăng nhập không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                    else
+                    {
+                        MessageBox.Show("Mật khẩu không được rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    bool check = false;
+                    if (UserList != null)
+                        for (int i = 0; i < UserList.Count; i++)
+                        {
+                            if (txt_UserName.Text == UserList.ElementAt(i).UserName && aes.EncryptText(txt_Password.Text, "") == UserList.ElementAt(i).PassWord)
+                            {
+                                check = true;
+                            }
+                        }
+                    if (check == true)
+                    {
+                        UserName = txt_UserName.Text;
+                        this.Close();
+                        th = new Thread(openComposing);
+                        th.SetApartmentState(ApartmentState.STA);
+                        th.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai mật tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
         }
     }

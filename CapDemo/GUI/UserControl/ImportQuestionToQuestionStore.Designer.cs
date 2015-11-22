@@ -39,6 +39,7 @@
             this.rad_Copy = new System.Windows.Forms.RadioButton();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,10 +159,24 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // chk_CheckAll
+            // 
+            this.chk_CheckAll.AutoSize = true;
+            this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_CheckAll.ForeColor = System.Drawing.Color.White;
+            this.chk_CheckAll.Location = new System.Drawing.Point(642, 14);
+            this.chk_CheckAll.Name = "chk_CheckAll";
+            this.chk_CheckAll.Size = new System.Drawing.Size(92, 20);
+            this.chk_CheckAll.TabIndex = 15;
+            this.chk_CheckAll.Text = "Chọn tất cả";
+            this.chk_CheckAll.UseVisualStyleBackColor = true;
+            this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
+            // 
             // ImportQuestionToQuestionStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chk_CheckAll);
             this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Save);
@@ -189,5 +204,6 @@
         private System.Windows.Forms.DataGridView dgv_Question;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.CheckBox chk_CheckAll;
     }
 }

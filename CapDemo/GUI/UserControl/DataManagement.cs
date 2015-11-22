@@ -106,6 +106,12 @@ namespace CapDemo.GUI.User_Controls
                 cq.ShowDialog();
                 loadQuestion();
             }
+            else
+            {
+                notifyIcon1.Icon = SystemIcons.Warning;
+                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để di chuyển.";
+                notifyIcon1.ShowBalloonTip(2000);
+            }
         }
         //MOVE QUESTION
         private void btn_MoveQuestion_Click(object sender, EventArgs e)
@@ -122,85 +128,128 @@ namespace CapDemo.GUI.User_Controls
                 mq.ShowDialog();
                 loadQuestion();
             }
+            else
+            {
+                notifyIcon1.Icon = SystemIcons.Warning;
+                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để sao chép.";
+                notifyIcon1.ShowBalloonTip(2000);
+            }
         }
         //EDIT QUESTION INFORMATION
         private void btn_EditQuestion_Click(object sender, EventArgs e)
         {
-            int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
-            int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
-            string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
-            string OneSelect = "onechoice";
-            string MultiSelect = "multichoice";
-            string ShortAnswer = "shortanswer";
-            if (TypeQuestion.ToLower()==OneSelect)
+            try
             {
-                EditQuestion_OnlyOneSelect eqms = new EditQuestion_OnlyOneSelect(IDQuestion, IDCatalogue);
-                eqms.ShowDialog();
-            }
-            if (TypeQuestion.ToLower()==MultiSelect)
-            {
+                int IDQuestion = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDQuestion"].Value);
+                int IDCatalogue = Convert.ToInt32(dgv_Question.CurrentRow.Cells["IDCatalogue"].Value);
+                string TypeQuestion = dgv_Question.CurrentRow.Cells["TypeQuestion"].Value.ToString();
+                string OneSelect = "onechoice";
+                string MultiSelect = "multichoice";
+                string ShortAnswer = "shortanswer";
+                if (TypeQuestion.ToLower() == OneSelect)
+                {
+                    EditQuestion_OnlyOneSelect eqms = new EditQuestion_OnlyOneSelect(IDQuestion, IDCatalogue);
+                    eqms.ShowDialog();
+                }
+                if (TypeQuestion.ToLower() == MultiSelect)
+                {
                     EditQuestion_MultiSelect eqms = new EditQuestion_MultiSelect(IDQuestion, IDCatalogue);
                     eqms.ShowDialog();
+                }
+                if (TypeQuestion.ToLower() == ShortAnswer)
+                {
+                    EditQuestion_ShortAnswer eqms = new EditQuestion_ShortAnswer(IDQuestion, IDCatalogue);
+                    eqms.ShowDialog();
+                }
+                loadQuestion();
             }
-            if (TypeQuestion.ToLower() == ShortAnswer)
+            catch (Exception)
             {
-                EditQuestion_ShortAnswer eqms = new EditQuestion_ShortAnswer(IDQuestion, IDCatalogue);
-                eqms.ShowDialog();
             }
-            loadQuestion();
+            
         }
 
         private void btn_ImportQuestion_Click(object sender, EventArgs e)
         {
-            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
-            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue(IDCat, NameCat);
-            iqc.ShowDialog();
-            loadQuestion();
+            try
+            {
+                int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+                string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+                ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue(IDCat, NameCat);
+                iqc.ShowDialog();
+                loadQuestion();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         //VIEW Question
         private void btn_ViewQuestion_Click(object sender, EventArgs e)
         {
-            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
-            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat,NameCat);
-            ViewQuestion.ShowDialog();
+            try
+            {
+                int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+                string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+                ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
+                ViewQuestion.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
         //EDIT Catalogue
         private void btn_EditCatalogue_Click(object sender, EventArgs e)
         {
-            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
-            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            if (NameCat.ToLower() == "unknow")
+            try
             {
-                MessageBox.Show("Không được chỉnh sửa chủ đề "+"\"" + NameCat+"\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+                string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+                if (NameCat.ToLower() == "unknow")
+                {
+                    MessageBox.Show("Không được chỉnh sửa chủ đề " + "\"" + NameCat + "\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    EditCatalogue EditCat = new EditCatalogue(IDCat, NameCat);
+                    EditCat.ShowDialog();
+                    LoadCat();
+                    loadQuestion();
+                }      
             }
-            else
+            catch (Exception)
             {
-                EditCatalogue EditCat = new EditCatalogue(IDCat, NameCat);
-                EditCat.ShowDialog();
-                LoadCat();
-                loadQuestion();
-            }        
+                
+            }
         }
         //DELETE Catalogue
         private void btn_DeleteCatalogue_Click(object sender, EventArgs e)
         {
-            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
-            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            
-            if (NameCat.ToLower() == "unknow")
+            try
             {
-                MessageBox.Show("Không được xóa chủ đề " + "\"" + NameCat + "\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+                string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+
+                if (NameCat.ToLower() == "unknow")
+                {
+                    MessageBox.Show("Không được xóa chủ đề " + "\"" + NameCat + "\"", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DeleteCatalogue DelCat = new DeleteCatalogue(IDCat, NameCat);
+                    DelCat.ShowDialog();
+                    LoadCat();
+                    loadQuestion();
+                }
             }
-            else
+            catch (Exception)
             {
-                DeleteCatalogue DelCat = new DeleteCatalogue(IDCat, NameCat);
-                DelCat.ShowDialog();
-                LoadCat();
-                loadQuestion();
             }
+           
         }
         //CLICK CELL IN DATAGRIDVIEW TO SHOW GROUP CATALOGUE FUNCTION
         private void dgv_Catalogue_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -247,6 +296,12 @@ namespace CapDemo.GUI.User_Controls
                     loadQuestion();
                 }
             }
+            else
+            {
+                notifyIcon1.Icon = SystemIcons.Warning;
+                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để xóa.";
+                notifyIcon1.ShowBalloonTip(2000);
+            }
             
         }
         //SWITCH TAB TO HIDE GROUP FUNCTION
@@ -258,11 +313,18 @@ namespace CapDemo.GUI.User_Controls
         //DOUBLE CLICK IN CATALOGUE DATAGRIDVIEW TO VIEW QUESTION
         private void dgv_Catalogue_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
-            string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
-            ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
-            ViewQuestion.ShowDialog();
-            loadQuestion();
+            try
+            {
+                int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
+                string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
+                ViewQuestionInCatalogue ViewQuestion = new ViewQuestionInCatalogue(IDCat, NameCat);
+                ViewQuestion.ShowDialog();
+                loadQuestion();
+            }
+            catch (Exception)
+            {
+            }
+            
         }
         //Search Question
         private void txt_SearchQuestion_TextChanged(object sender, EventArgs e)
