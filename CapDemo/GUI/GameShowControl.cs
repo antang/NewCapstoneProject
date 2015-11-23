@@ -14,28 +14,43 @@ namespace CapDemo.GUI
     public partial class GameShowControl : Form
     {
         private string userName;
+        private int userID;
+        private string pass;
+
         Setting st = new Setting();
         Start_Game sg = new Start_Game();
         //GameMenu gm = new GameMenu();
+        public int UserID
+        {
+            get { return userID; }
+            set { userID = value; }
+        }
         public string UserName
         {
             get { return userName; }
             set { userName = value; }
+        }
+        public string Pass
+        {
+            get { return pass; }
+            set { pass = value; }
         }
         public GameShowControl()
         {
             InitializeComponent();
         }
 
-        public GameShowControl(string pUserName)
+        public GameShowControl(int pUserID, string pUserName, String pPass)
         {
             // TODO: Complete member initialization
             InitializeComponent();
             this.userName = pUserName;
+            this.userID = pUserID;
+            this.pass = pPass;
         }
         private void GameShowControl_Load(object sender, EventArgs e)
         {
-            GameMenu gm1 = new GameMenu(UserName);
+            GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             this.Controls.Add(gm1);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
             this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
@@ -45,7 +60,7 @@ namespace CapDemo.GUI
         //Exit Start Game GUI
         void btn_Exit_onlick(object sender, EventArgs e)
         {
-            GameMenu gm1 = new GameMenu(userName);
+            GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
             this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
             gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
@@ -70,7 +85,7 @@ namespace CapDemo.GUI
         //Exit Setting GUI
         void Exit_Setting(object sender, EventArgs e)
         {
-            GameMenu gm1 = new GameMenu(userName);
+            GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
             //this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
             gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);

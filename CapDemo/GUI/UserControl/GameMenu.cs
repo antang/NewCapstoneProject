@@ -12,7 +12,27 @@ namespace CapDemo.GUI.User_Controls
 {
     public partial class GameMenu : UserControl
     {
-        private string UserName;
+        private string userName;
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
+        }
+        private int userID;
+
+        public int UserID
+        {
+            get { return userID; }
+            set { userID = value; }
+        }
+        private string pass;
+
+        public string Pass
+        {
+            get { return pass; }
+            set { pass = value; }
+        }
         public event EventHandler onClick;
         public event EventHandler onClick_Start;
         //public GameMenu()
@@ -20,11 +40,13 @@ namespace CapDemo.GUI.User_Controls
         //    InitializeComponent();
         //}
 
-        public GameMenu(string pUserName)
+        public GameMenu(int pUserID, string pUserName,string pPass)
         {
             // TODO: Complete member initialization
             InitializeComponent();
-            this.UserName = pUserName;
+            this.userName = pUserName;
+            this.userID = pUserID;
+            this.pass = pPass;
         }
 
         private void btn_Setting_Click(object sender, EventArgs e)
@@ -39,15 +61,16 @@ namespace CapDemo.GUI.User_Controls
             lbl_Name.Text = UserName;
         }
 
-        private void lbl_Name_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Start_Click(object sender, EventArgs e)
         {
             if (this.onClick_Start != null)
                 this.onClick_Start(this, e);
+        }
+        //Change Pass
+        private void lbl_ChangePass_Click(object sender, EventArgs e)
+        {
+            ChangePassword ChangePass = new ChangePassword(userID,userName,pass);
+            ChangePass.ShowDialog();
         }
     }
 }

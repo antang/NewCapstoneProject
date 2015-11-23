@@ -96,3 +96,4 @@ D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Phase.reso
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.User_Controls.Add_Team.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionMultiple.resources
 D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ViewQuestionShortAnswer.resources
+D:\NewCapstoneProject\CapDemo\obj\Debug\CapDemo.GUI.ChangePassword.resources

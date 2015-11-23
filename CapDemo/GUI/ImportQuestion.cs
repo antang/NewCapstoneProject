@@ -164,12 +164,13 @@ namespace CapDemo.GUI
 
                         foreach (DataGridViewRow row in dgv_Question.Rows)
                         {
-                            if (row.Cells["Check"].Value != null)
+                            if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value==true)
                             {
                                 if (row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "" && row.Cells["TypeQuestion"].Value.ToString().Trim() != "")
                                 {
                                     if (row.Cells["TypeQuestion"].Value.ToString().Trim() == "shortanswer" || row.Cells["TypeQuestion"].Value.ToString().Trim() == "multichoice")
                                     {
+                                        //Add question short answer
                                         if (row.Cells["TypeQuestion"].Value.ToString().Trim() == "shortanswer")
                                         {
                                             string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
@@ -195,12 +196,13 @@ namespace CapDemo.GUI
                                                         answer.IDQuestion = questionBL.MaxIDQuestion();
                                                         answer.IDCatalogue = IDCat;
                                                         questionBL.AddAnswer(answer);
+
+                                                        CheckQuestion++;
                                                     }
                                                     else
                                                     {
                                                         MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Vì đáp án không hợp lệ.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                                     }
-
                                                 }
                                                 else
                                                 {
@@ -213,7 +215,7 @@ namespace CapDemo.GUI
                                             }
                                         }
                                         else
-                                        {
+                                        { //Add question Multichoice
                                             string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
                                             int Numanswer = AnswerContent.Length - 1;
                                             if (Numanswer < 2)
@@ -248,6 +250,8 @@ namespace CapDemo.GUI
                                                     question.IDCatalogue = IDCat;
                                                     question.Date = DateTime.Now;
                                                     questionBL.AddQuestion(question);
+
+                                                    CheckQuestion++;
 
                                                     int countMultipleChoice = 0;
 
@@ -294,7 +298,7 @@ namespace CapDemo.GUI
                                     {
                                         MessageBox.Show("Hệ thống không lưu câu hỏi \"" + row.Cells["NameQuestion"].Value.ToString() + "\". Vì chủ đề không tồn tại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }//end else  
-                                    CheckQuestion++;
+                                    //CheckQuestion++;
                                 }
                                 else
                                 {
@@ -308,12 +312,21 @@ namespace CapDemo.GUI
                         if (CheckQuestion > 0)
                         {
                             notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Nhập câu hỏi từ file thành công.";
+                            notifyIcon1.BalloonTipText = "Nhập " + CheckQuestion + " câu hỏi từ file thành công.";
                             notifyIcon1.ShowBalloonTip(2000);
                             CheckQuestion = 0;
+                            Form FindForm = this.FindForm();
+                            FindForm.Close();
                         }
-                        Form FindForm = this.FindForm();
-                        FindForm.Close();
+                        else
+                        {
+                            notifyIcon1.Icon = SystemIcons.Information;
+                            notifyIcon1.BalloonTipText = "Không có câu hỏi nào được lưu.";
+                            notifyIcon1.ShowBalloonTip(2000);
+                            Form FindForm = this.FindForm();
+                            FindForm.Close();
+                        }
+                        
                     }
                 }
                 catch (Exception)

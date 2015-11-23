@@ -77,8 +77,9 @@ namespace CapDemo.BL
         //Edit User
         public bool EditUserbyID(User User)
         {
-            string query = "UPDATE User SET Username ='" + User.UserName + "', Password ='" + User.PassWord + "'"
-                         + " WHERE User_ID = '" + User.UserID + "'";
+            string query= " UPDATE [Capstone].[dbo].[User]"
+                        + " SET [Username] = '" + User.UserName + "',[Password] = '" + User.PassWord + "'"
+                        + " WHERE [User_ID] = '" + User.UserID + "'";
             return DA.UpdateDatabase(query);
         }
         //Delete User

@@ -34,6 +34,7 @@
             this.btn_Start = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
+            this.lbl_ChangePass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_ExitMenu
@@ -97,7 +98,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(776, 82);
+            this.label1.Location = new System.Drawing.Point(782, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 8;
@@ -111,12 +112,26 @@
             this.lbl_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.ForeColor = System.Drawing.Color.White;
-            this.lbl_Name.Location = new System.Drawing.Point(830, 76);
+            this.lbl_Name.Location = new System.Drawing.Point(836, 52);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(121, 22);
             this.lbl_Name.TabIndex = 9;
             this.lbl_Name.Text = "Ten nguoi dung";
-            this.lbl_Name.Click += new System.EventHandler(this.lbl_Name_Click);
+            // 
+            // lbl_ChangePass
+            // 
+            this.lbl_ChangePass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_ChangePass.AutoSize = true;
+            this.lbl_ChangePass.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_ChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ChangePass.ForeColor = System.Drawing.Color.White;
+            this.lbl_ChangePass.Location = new System.Drawing.Point(782, 84);
+            this.lbl_ChangePass.Name = "lbl_ChangePass";
+            this.lbl_ChangePass.Size = new System.Drawing.Size(135, 16);
+            this.lbl_ChangePass.TabIndex = 10;
+            this.lbl_ChangePass.Text = "Thay đổi mật khẩu";
+            this.lbl_ChangePass.Click += new System.EventHandler(this.lbl_ChangePass_Click);
             // 
             // GameMenu
             // 
@@ -124,6 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapDemo.Properties.Resources.The_Weightless_World;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lbl_ChangePass);
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_ExitMenu);
@@ -147,5 +163,6 @@
         public System.Windows.Forms.Button btn_ExitMenu;
         public System.Windows.Forms.Button btn_Help;
         public System.Windows.Forms.Button btn_Start;
+        private System.Windows.Forms.Label lbl_ChangePass;
     }
 }

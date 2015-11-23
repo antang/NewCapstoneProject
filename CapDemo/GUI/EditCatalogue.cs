@@ -32,29 +32,7 @@ namespace CapDemo.GUI
         //SAVE EDIT CATALOGUE
         private void btn_SaveEditCatalogue_Click(object sender, EventArgs e)
         {
-            
-            if (txt_NameCatalogue.Text.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên chủ đề!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                    CatalogueBL CatBL = new CatalogueBL();
-                    Catalogue Cat = new Catalogue();
-                    Cat.IDCatalogue = IDCat;
-                    Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
-                    if (CatBL.EditCataloguebyID(Cat) == true)
-                    {
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề thành công";
-                        notifyIcon1.ShowBalloonTip(5000);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Chủ đề này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-            }
+            Editcatalogue();
         }
         //EXIT FORM
         private void btn_CancelEditCatalogue_Click(object sender, EventArgs e)
@@ -68,6 +46,14 @@ namespace CapDemo.GUI
         }
         //CLICK Enter
         private void txt_NameCatalogue_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Editcatalogue();
+            }
+        }
+        //Edit catalouge
+        public void Editcatalogue()
         {
             if (txt_NameCatalogue.Text.Trim() == "")
             {

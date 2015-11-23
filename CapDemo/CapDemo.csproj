@@ -62,6 +62,12 @@
     <Compile Include="GUI\Add_New_Game.Designer.cs">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CopyQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\Add_New_Game.resx">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CopyQuestion.resx">
       <DependentUpon>CopyQuestion.cs</DependentUpon>
