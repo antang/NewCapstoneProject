@@ -56,251 +56,251 @@
     <Compile Include="DO\Phase.cs" />
     <Compile Include="DO\Player.cs" />
     <Compile Include="DO\Round.cs" />
-    <Compile Include="GUI\Add_New_Game.cs">
+    <Compile Include="GUI\MainInterface\Form\Add_New_Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Add_New_Game.Designer.cs">
+    <Compile Include="GUI\MainInterface\Form\Add_New_Game.Designer.cs">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ChangePassword.cs">
+    <Compile Include="GUI\MainInterface\Form\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ChangePassword.Designer.cs">
+    <Compile Include="GUI\MainInterface\Form\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CopyQuestion.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CopyQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\CopyQuestion.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CopyQuestion.Designer.cs">
       <DependentUpon>CopyQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CreateCatalogueNew.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CreateCatalogueNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\CreateCatalogueNew.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CreateCatalogueNew.Designer.cs">
       <DependentUpon>CreateCatalogueNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CreateQuestionNew.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CreateQuestionNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\CreateQuestionNew.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\CreateQuestionNew.Designer.cs">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Create_AccountManagement.cs">
+    <Compile Include="GUI\MainInterface\Form\Create_AccountManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Create_AccountManagement.Designer.cs">
+    <Compile Include="GUI\MainInterface\Form\Create_AccountManagement.Designer.cs">
       <DependentUpon>Create_AccountManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DeleteCatalogue.cs">
+    <Compile Include="GUI\QuestionManagement\Form\DeleteCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DeleteCatalogue.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\DeleteCatalogue.Designer.cs">
       <DependentUpon>DeleteCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EditCatalogue.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EditCatalogue.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditCatalogue.Designer.cs">
       <DependentUpon>EditCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EditQuestion_MultiSelect.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_MultiSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EditQuestion_MultiSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_MultiSelect.Designer.cs">
       <DependentUpon>EditQuestion_MultiSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EditQuestion_OnlyOneSelect.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_OnlyOneSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EditQuestion_OnlyOneSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_OnlyOneSelect.Designer.cs">
       <DependentUpon>EditQuestion_OnlyOneSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EditQuestion_ShortAnswer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_ShortAnswer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EditQuestion_ShortAnswer.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\EditQuestion_ShortAnswer.Designer.cs">
       <DependentUpon>EditQuestion_ShortAnswer.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GameShowControl.cs">
+    <Compile Include="GUI\MainInterface\Form\GameShowControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\GameShowControl.Designer.cs">
+    <Compile Include="GUI\MainInterface\Form\GameShowControl.Designer.cs">
       <DependentUpon>GameShowControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ImportQuestion.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ImportQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ImportQuestion.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ImportQuestion.Designer.cs">
       <DependentUpon>ImportQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ImportQuestionForCatalogue.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ImportQuestionForCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ImportQuestionForCatalogue.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ImportQuestionForCatalogue.Designer.cs">
       <DependentUpon>ImportQuestionForCatalogue.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Add_Phase.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Add_Phase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Add_Phase.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Add_Phase.Designer.cs">
       <DependentUpon>Add_Phase.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Add_Team.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Add_Team.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Add_Team.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Add_Team.Designer.cs">
       <DependentUpon>Add_Team.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Answer_MultiSelect.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Answer_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Answer_MultiSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Answer_MultiSelect.Designer.cs">
       <DependentUpon>Answer_MultiSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Answer_OnlyOneSelect.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Answer_OnlyOneSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Answer_OnlyOneSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Answer_OnlyOneSelect.Designer.cs">
       <DependentUpon>Answer_OnlyOneSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Competition_Setting.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Competition_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Competition_Setting.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Competition_Setting.Designer.cs">
       <DependentUpon>Competition_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\CreateQuestion.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\CreateQuestion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\CreateQuestion.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\CreateQuestion.Designer.cs">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\DataManagement.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\DataManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\DataManagement.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\DataManagement.Designer.cs">
       <DependentUpon>DataManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\GameMenu.cs">
+    <Compile Include="GUI\MainInterface\UserControl\GameMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\GameMenu.Designer.cs">
+    <Compile Include="GUI\MainInterface\UserControl\GameMenu.Designer.cs">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\General_Setting.cs">
+    <Compile Include="GUI\GameSetup\UserControl\General_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\General_Setting.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\General_Setting.Designer.cs">
       <DependentUpon>General_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\ImportQuestions.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\ImportQuestions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\ImportQuestions.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\ImportQuestions.Designer.cs">
       <DependentUpon>ImportQuestions.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MoveQuestion.cs">
+    <Compile Include="GUI\QuestionManagement\Form\MoveQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MoveQuestion.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\MoveQuestion.Designer.cs">
       <DependentUpon>MoveQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\ImportQuestionToQuestionStore.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\ImportQuestionToQuestionStore.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\ImportQuestionToQuestionStore.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\ImportQuestionToQuestionStore.Designer.cs">
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\MyEventArgs.cs" />
-    <Compile Include="GUI\UserControl\New_Game.cs">
+    <Compile Include="BL\MyEventArgs.cs" />
+    <Compile Include="GUI\GameSetup\UserControl\New_Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\New_Game.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\New_Game.Designer.cs">
       <DependentUpon>New_Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Phase_Setting.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Phase_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Phase_Setting.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Phase_Setting.Designer.cs">
       <DependentUpon>Phase_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_MultiSelect.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_MultiSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_MultiSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_MultiSelect.Designer.cs">
       <DependentUpon>Question_MultiSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_MultiSelect_1.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_MultiSelect_1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_MultiSelect_1.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_MultiSelect_1.Designer.cs">
       <DependentUpon>Question_MultiSelect_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_OnlyOneSelect.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_OnlyOneSelect.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect.Designer.cs">
       <DependentUpon>Question_OnlyOneSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_OnlyOneSelect_1.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect_1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_OnlyOneSelect_1.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect_1.Designer.cs">
       <DependentUpon>Question_OnlyOneSelect_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_ShortAnswer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_ShortAnswer.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer.Designer.cs">
       <DependentUpon>Question_ShortAnswer.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_ShortAnswer_1.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer_1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Question_ShortAnswer_1.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer_1.Designer.cs">
       <DependentUpon>Question_ShortAnswer_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Setting.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Setting.Designer.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Setting.Designer.cs">
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Setting_Game.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Setting_Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Setting_Game.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Setting_Game.Designer.cs">
       <DependentUpon>Setting_Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Start_Game.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Start_Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Start_Game.Designer.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Start_Game.Designer.cs">
       <DependentUpon>Start_Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\Team_Setting.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Team_Setting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\Team_Setting.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\Team_Setting.Designer.cs">
       <DependentUpon>Team_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl\UserManagement.cs">
+    <Compile Include="GUI\MainInterface\UserControl\UserManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl\UserManagement.Designer.cs">
+    <Compile Include="GUI\MainInterface\UserControl\UserManagement.Designer.cs">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ViewQuestion.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ViewQuestion.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestion.Designer.cs">
       <DependentUpon>ViewQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ViewQuestionInCatalogue.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionInCatalogue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ViewQuestionInCatalogue.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionInCatalogue.Designer.cs">
       <DependentUpon>ViewQuestionInCatalogue.cs</DependentUpon>
     </Compile>
     <Compile Include="BL\CatalogueBL.cs" />
@@ -312,10 +312,10 @@
     <Compile Include="DO\Catalogue.cs" />
     <Compile Include="DO\Question.cs" />
     <Compile Include="DO\User.cs" />
-    <Compile Include="GUI\Login.cs">
+    <Compile Include="GUI\MainInterface\Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Login.Designer.cs">
+    <Compile Include="GUI\MainInterface\Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Test.cs">
@@ -324,155 +324,155 @@
     <Compile Include="GUI\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ViewQuestionMultiple.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionMultiple.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ViewQuestionMultiple.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionMultiple.Designer.cs">
       <DependentUpon>ViewQuestionMultiple.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ViewQuestionShortAnswer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ViewQuestionShortAnswer.Designer.cs">
+    <Compile Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.Designer.cs">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\Add_New_Game.resx">
+    <EmbeddedResource Include="GUI\MainInterface\Form\Add_New_Game.resx">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ChangePassword.resx">
+    <EmbeddedResource Include="GUI\MainInterface\Form\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\CopyQuestion.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\CopyQuestion.resx">
       <DependentUpon>CopyQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\CreateCatalogueNew.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\CreateCatalogueNew.resx">
       <DependentUpon>CreateCatalogueNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\CreateQuestionNew.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\CreateQuestionNew.resx">
       <DependentUpon>CreateQuestionNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Create_AccountManagement.resx">
+    <EmbeddedResource Include="GUI\MainInterface\Form\Create_AccountManagement.resx">
       <DependentUpon>Create_AccountManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DeleteCatalogue.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\DeleteCatalogue.resx">
       <DependentUpon>DeleteCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EditCatalogue.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\EditCatalogue.resx">
       <DependentUpon>EditCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EditQuestion_MultiSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\EditQuestion_MultiSelect.resx">
       <DependentUpon>EditQuestion_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EditQuestion_OnlyOneSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\EditQuestion_OnlyOneSelect.resx">
       <DependentUpon>EditQuestion_OnlyOneSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EditQuestion_ShortAnswer.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\EditQuestion_ShortAnswer.resx">
       <DependentUpon>EditQuestion_ShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GameShowControl.resx">
+    <EmbeddedResource Include="GUI\MainInterface\Form\GameShowControl.resx">
       <DependentUpon>GameShowControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ImportQuestion.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ImportQuestion.resx">
       <DependentUpon>ImportQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ImportQuestionForCatalogue.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ImportQuestionForCatalogue.resx">
       <DependentUpon>ImportQuestionForCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Login.resx">
+    <EmbeddedResource Include="GUI\MainInterface\Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Add_Phase.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Add_Phase.resx">
       <DependentUpon>Add_Phase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Add_Team.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Add_Team.resx">
       <DependentUpon>Add_Team.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Answer_MultiSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Answer_MultiSelect.resx">
       <DependentUpon>Answer_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Answer_OnlyOneSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Answer_OnlyOneSelect.resx">
       <DependentUpon>Answer_OnlyOneSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Competition_Setting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Competition_Setting.resx">
       <DependentUpon>Competition_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\CreateQuestion.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\CreateQuestion.resx">
       <DependentUpon>CreateQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\DataManagement.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\DataManagement.resx">
       <DependentUpon>DataManagement.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\GameMenu.resx">
+    <EmbeddedResource Include="GUI\MainInterface\UserControl\GameMenu.resx">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\General_Setting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\General_Setting.resx">
       <DependentUpon>General_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\ImportQuestions.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\ImportQuestions.resx">
       <DependentUpon>ImportQuestions.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MoveQuestion.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\MoveQuestion.resx">
       <DependentUpon>MoveQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\ImportQuestionToQuestionStore.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\ImportQuestionToQuestionStore.resx">
       <DependentUpon>ImportQuestionToQuestionStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\New_Game.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\New_Game.resx">
       <DependentUpon>New_Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Phase_Setting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Phase_Setting.resx">
       <DependentUpon>Phase_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_MultiSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_MultiSelect.resx">
       <DependentUpon>Question_MultiSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_MultiSelect_1.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_MultiSelect_1.resx">
       <DependentUpon>Question_MultiSelect_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_OnlyOneSelect.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect.resx">
       <DependentUpon>Question_OnlyOneSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_OnlyOneSelect_1.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_OnlyOneSelect_1.resx">
       <DependentUpon>Question_OnlyOneSelect_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_ShortAnswer.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer.resx">
       <DependentUpon>Question_ShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Question_ShortAnswer_1.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\UserControl\Question_ShortAnswer_1.resx">
       <DependentUpon>Question_ShortAnswer_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Setting.resx">
+    <EmbeddedResource Include="GUI\MainInterface\UserControl\Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Setting_Game.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Setting_Game.resx">
       <DependentUpon>Setting_Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Start_Game.resx">
+    <EmbeddedResource Include="GUI\MainInterface\UserControl\Start_Game.resx">
       <DependentUpon>Start_Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\Team_Setting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\Team_Setting.resx">
       <DependentUpon>Team_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl\UserManagement.resx">
+    <EmbeddedResource Include="GUI\MainInterface\UserControl\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ViewQuestion.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestion.resx">
       <DependentUpon>ViewQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ViewQuestionInCatalogue.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionInCatalogue.resx">
       <DependentUpon>ViewQuestionInCatalogue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ViewQuestionMultiple.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionMultiple.resx">
       <DependentUpon>ViewQuestionMultiple.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ViewQuestionShortAnswer.resx">
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.resx">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -565,7 +565,9 @@
   <ItemGroup>
     <Content Include="Template.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\GameSetup\Form\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

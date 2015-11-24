@@ -46,7 +46,7 @@ namespace CapDemo.BL
         public bool AddUser(User User)
         {
             string query = "INSERT INTO [Capstone].[dbo].[User]([Username],[Password])"
-                           + "VALUES ('" + User.UserName + "','" + User.PassWord + "')";
+                           + "VALUES ('" + User.UserName.Replace("'", "''") + "','" + User.PassWord + "')";
             if (ExistUser(User) == true)
             {
                 return false;
@@ -78,7 +78,7 @@ namespace CapDemo.BL
         public bool EditUserbyID(User User)
         {
             string query= " UPDATE [Capstone].[dbo].[User]"
-                        + " SET [Username] = '" + User.UserName + "',[Password] = '" + User.PassWord + "'"
+                        + " SET [Username] = '" + User.UserName.Replace("'", "''") + "',[Password] = '" + User.PassWord + "'"
                         + " WHERE [User_ID] = '" + User.UserID + "'";
             return DA.UpdateDatabase(query);
         }

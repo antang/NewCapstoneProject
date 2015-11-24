@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace CapDemo.DA
 {
@@ -14,39 +17,36 @@ namespace CapDemo.DA
         public string FileContentXML(string NameFile)
         {
             string QuestionContent = "";
-            XmlReaderSettings settings = new XmlReaderSettings();
-            settings.ConformanceLevel = ConformanceLevel.Fragment;
             try
             {
-                using (XmlReader reader = XmlReader.Create(NameFile, settings))
+                XmlDocument doc = new XmlDocument();
+                doc.Load(NameFile);
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList NodeQuestionType = root.SelectNodes("//quiz/question");
+                foreach (XmlNode node in NodeQuestionType)
                 {
-                    while (reader.Read())
+                    QuestionContent += node.Attributes["type"].Value + "---";
+                    QuestionContent += node["questiontext"].InnerText.ToString() + "---";
+                    foreach (XmlNode item in node.SelectNodes("answer"))
                     {
-                        switch (reader.NodeType)
-                        {
-                            case XmlNodeType.Element: // The node is an element.
-                                QuestionContent += ("<" + reader.Name);
-
-                                while (reader.MoveToNextAttribute()) // Read the attributes.
-                                    QuestionContent += (" " + reader.Name + "='" + reader.Value + "'");
-                                QuestionContent += (">");
-                                break;
-                            case XmlNodeType.Text: //Display the text in each element.
-                                QuestionContent += (reader.Value);
-                                break;
-                            case XmlNodeType.EndElement: //Display the end of the element.
-                                QuestionContent += ("</" + reader.Name);
-                                QuestionContent += (">");
-                                break;
-                        }
+                        QuestionContent +=  (item.Attributes["fraction"].Value).ToString() + "+++";
+                        QuestionContent +=  (item["text"].InnerText);
+                        QuestionContent += "</" + item.Name + ">";
                     }
+                    QuestionContent += "</" + node.Name + ">";
                 }
+                QuestionContent = QuestionContent.Replace("<p>", "");
+                QuestionContent = QuestionContent.Replace("</p>", "");
+                QuestionContent = QuestionContent.Replace("<br>", "");
+                QuestionContent = QuestionContent.Replace("</br>", "");
+                QuestionContent = QuestionContent.Replace("'", "''");
                 return QuestionContent;
             }
             catch (Exception)
             {
                 return null;
             }
+                
         }
 
         //Read File TXT
@@ -57,7 +57,9 @@ namespace CapDemo.DA
             foreach (var line in File.ReadAllLines(NameFile))
             {
                 QuestionContent += line;
+
             }
+            QuestionContent = QuestionContent.Replace("'", "''");
             return QuestionContent.Trim();
         }
         

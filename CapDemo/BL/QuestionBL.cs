@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapDemo.BL
 {
@@ -103,7 +104,7 @@ namespace CapDemo.BL
         public bool AddQuestion(Question Question)
         {
             string query = "INSERT INTO Question (Question_Name, Question_Type, Catalogue_ID, Date_Create)"
-                        + " VALUES ('" + Question.NameQuestion + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
+                        + " VALUES ('" + Question.NameQuestion.Replace("'","''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
 
             return DA.InsertDatabase(query);
         }
@@ -111,7 +112,7 @@ namespace CapDemo.BL
         public bool AddAnswer( Answer Answer)
         {
             string query= " INSERT INTO Answer (Answer_Name, Correct_Answer, Question_ID, Catalogue_ID)"
-                        + " VALUES ('" + Answer.ContentAnswer + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
+                        + " VALUES ('" + Answer.ContentAnswer.Replace("'", "''") + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
             return DA.InsertDatabase(query);
         }
 //EDIT QUESTION AND ANSWER
@@ -119,7 +120,7 @@ namespace CapDemo.BL
         public bool EditQuestionbyID(Question Question)
         {
             string query = "UPDATE Question"
-                         + " SET Question_Name ='" + Question.NameQuestion + "'"
+                         + " SET Question_Name ='" + Question.NameQuestion.Replace("'", "''") + "'"
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -136,7 +137,7 @@ namespace CapDemo.BL
         public bool EditAnswerbyID(Answer Answer)
         {
             string query = "UPDATE Answer"
-                         + " SET Answer_Name ='" + Answer.ContentAnswer + "', Correct_Answer='" + Answer.IsCorrect + "'"
+                         + " SET Answer_Name ='" + Answer.ContentAnswer.Replace("'", "''") + "', Correct_Answer='" + Answer.IsCorrect + "'"
                          + " WHERE Question_ID = '" + Answer.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -157,6 +158,7 @@ namespace CapDemo.BL
         }
 //LOAD FILE QUESTION
         // LOAD QUESTION FILE XML
+
         public List<Question> GetFileXML(string file)
         {
             if (FA.FileContentXML(file) == null)
@@ -173,9 +175,6 @@ namespace CapDemo.BL
                 dtb.Columns.Add("TypeQuestion", typeof(string));
                 dtb.Columns.Add("AnswerContent", typeof(string));
 
-                content = content.Replace("<question type='", "");
-                content = content.Replace("'><name><text>", "---");
-                content = content.Replace("</text></name>", "---");
                 string[] QuestionContent = content.Split(new string[] { "</question>" }, StringSplitOptions.None);
 
                 for (int i = 0; i < QuestionContent.Length - 1; i++)
@@ -186,7 +185,7 @@ namespace CapDemo.BL
                 }
 
                 List<Question> QuestionList = new List<Question>();
-                if (dtb != null)
+                if (dtb != null && dtb.Rows.Count > 0)
                 {
                     foreach (DataRow item in dtb.Rows)
                     {
@@ -195,14 +194,17 @@ namespace CapDemo.BL
                         Question.NameQuestion = item["NameQuestion"].ToString();
                         Question.TypeQuestion = item["TypeQuestion"].ToString();
 
-                        string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("<answer fraction='", "");
-                        AnswerContent = AnswerContent.Replace("'><text>", "---");
-                        AnswerContent = AnswerContent.Replace("</text>", "---");
+                        string AnswerContent = item["AnswerContent"].ToString().Trim();
+                        AnswerContent = AnswerContent.Replace("+++", "---");
                         Question.AnswerContent = AnswerContent;
                         QuestionList.Add(Question);
                     }
+                    return QuestionList;
                 }
-                return QuestionList;
+                else
+                {
+                    return null;
+                } 
             }
             
         }
@@ -233,7 +235,7 @@ namespace CapDemo.BL
             }
 
             List<Question> QuestionList = new List<Question>();
-            if (dtb != null)
+            if (dtb != null && dtb.Rows.Count>0)
             {
                 foreach (DataRow item in dtb.Rows)
                 {
@@ -249,8 +251,12 @@ namespace CapDemo.BL
 
                     QuestionList.Add(Question);
                 }
+                return QuestionList;
             }
-            return QuestionList;
+            else
+            {
+                return null;
+            }  
         }
 
         //GET MAXIMUM ID QUESTION

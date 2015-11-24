@@ -44,7 +44,7 @@ namespace CapDemo.BL
         public bool AddCatalogue(Catalogue Catalogue)
         {
             string query = "INSERT INTO Catalogue (Catalogue_Name)"
-                        + " VALUES ('" + Catalogue.NameCatalogue + "')";
+                        + " VALUES ('" + Catalogue.NameCatalogue.Replace("'", "''") + "')";
 
             if(ExistCatalogue(Catalogue) == true)
             {
@@ -90,7 +90,7 @@ namespace CapDemo.BL
         //Edit catalogue
         public bool EditCataloguebyID(Catalogue Catalogue)
         {
-            string query = "UPDATE Catalogue SET Catalogue_Name ='" + Catalogue.NameCatalogue + "'"
+            string query = "UPDATE Catalogue SET Catalogue_Name ='" + Catalogue.NameCatalogue.Replace("'", "''") + "'"
                          + " WHERE Catalogue_ID = '" + Catalogue.IDCatalogue + "'";
             if (EditExistCatalogue(Catalogue) == true)
             {
