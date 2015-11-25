@@ -37,6 +37,7 @@ namespace CapDemo.GUI.User_Controls
             txt_ContentQuestion.Text = "";
             flp_addAnswer.Controls.Clear();
             cmb_Catalogue.Items.Clear();
+            cmb_Catalogue.Text = "";
             this.Dock = DockStyle.Fill;
             CatalogueBL CatBL = new CatalogueBL();
             List<DO.Catalogue> CatList;

@@ -30,14 +30,14 @@
         {
             this.lbl_Number = new System.Windows.Forms.Label();
             this.lblVong = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Score = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Time = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.ccb_Catelogue = new System.Windows.Forms.ComboBox();
+            this.ccb_Catalogue = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -66,17 +66,18 @@
             this.lblVong.TabIndex = 40;
             this.lblVong.Text = "Vòng";
             // 
-            // button2
+            // btn_Delete
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(285, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Delete.Location = new System.Drawing.Point(287, 3);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(20, 20);
+            this.btn_Delete.TabIndex = 39;
+            this.btn_Delete.Text = "X";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // label5
             // 
@@ -98,6 +99,8 @@
             this.txt_Score.Name = "txt_Score";
             this.txt_Score.Size = new System.Drawing.Size(50, 30);
             this.txt_Score.TabIndex = 37;
+            this.txt_Score.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Score_KeyDown);
+            this.txt_Score.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Score_KeyPress);
             // 
             // label4
             // 
@@ -131,6 +134,8 @@
             this.txt_Time.Name = "txt_Time";
             this.txt_Time.Size = new System.Drawing.Size(50, 30);
             this.txt_Time.TabIndex = 34;
+            this.txt_Time.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Time_KeyDown);
+            this.txt_Time.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Time_KeyPress);
             // 
             // label2
             // 
@@ -144,14 +149,14 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Thời gian câu hỏi";
             // 
-            // ccb_Catelogue
+            // ccb_Catalogue
             // 
-            this.ccb_Catelogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ccb_Catelogue.FormattingEnabled = true;
-            this.ccb_Catelogue.Location = new System.Drawing.Point(78, 40);
-            this.ccb_Catelogue.Name = "ccb_Catelogue";
-            this.ccb_Catelogue.Size = new System.Drawing.Size(218, 28);
-            this.ccb_Catelogue.TabIndex = 32;
+            this.ccb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccb_Catalogue.FormattingEnabled = true;
+            this.ccb_Catalogue.Location = new System.Drawing.Point(78, 40);
+            this.ccb_Catalogue.Name = "ccb_Catalogue";
+            this.ccb_Catalogue.Size = new System.Drawing.Size(218, 28);
+            this.ccb_Catalogue.TabIndex = 32;
             // 
             // label1
             // 
@@ -169,19 +174,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.KhungTao;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lbl_Number);
             this.Controls.Add(this.lblVong);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_Score);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Time);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ccb_Catelogue);
+            this.Controls.Add(this.ccb_Catalogue);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "Add_Phase";
             this.Size = new System.Drawing.Size(310, 155);
             this.ResumeLayout(false);
@@ -191,16 +197,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_Number;
         private System.Windows.Forms.Label lblVong;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_Score;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_Time;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox ccb_Catelogue;
+        private System.Windows.Forms.ComboBox ccb_Catalogue;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lbl_Number;
+        public System.Windows.Forms.TextBox txt_Score;
+        public System.Windows.Forms.TextBox txt_Time;
+        public System.Windows.Forms.Button btn_Delete;
     }
 }

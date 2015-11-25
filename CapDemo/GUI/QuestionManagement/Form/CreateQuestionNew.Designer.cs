@@ -29,42 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gb_CreateQuestion = new System.Windows.Forms.GroupBox();
-            this.pnl_LoadQuestion = new System.Windows.Forms.Panel();
             this.gb_QuestionType = new System.Windows.Forms.GroupBox();
             this.rad_ShortAnswer = new System.Windows.Forms.RadioButton();
             this.rad_MultiSelect = new System.Windows.Forms.RadioButton();
             this.rad_OnlyOneAnswer = new System.Windows.Forms.RadioButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.gb_CreateQuestion.SuspendLayout();
+            this.pnl_LoadQuestion = new System.Windows.Forms.Panel();
             this.gb_QuestionType.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gb_CreateQuestion
-            // 
-            this.gb_CreateQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_CreateQuestion.Controls.Add(this.pnl_LoadQuestion);
-            this.gb_CreateQuestion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb_CreateQuestion.ForeColor = System.Drawing.Color.White;
-            this.gb_CreateQuestion.Location = new System.Drawing.Point(19, 109);
-            this.gb_CreateQuestion.Name = "gb_CreateQuestion";
-            this.gb_CreateQuestion.Size = new System.Drawing.Size(801, 491);
-            this.gb_CreateQuestion.TabIndex = 26;
-            this.gb_CreateQuestion.TabStop = false;
-            this.gb_CreateQuestion.Text = "Tạo câu hỏi";
-            // 
-            // pnl_LoadQuestion
-            // 
-            this.pnl_LoadQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_LoadQuestion.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_LoadQuestion.Location = new System.Drawing.Point(7, 20);
-            this.pnl_LoadQuestion.Name = "pnl_LoadQuestion";
-            this.pnl_LoadQuestion.Size = new System.Drawing.Size(788, 465);
-            this.pnl_LoadQuestion.TabIndex = 0;
             // 
             // gb_QuestionType
             // 
@@ -124,20 +96,29 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // pnl_LoadQuestion
+            // 
+            this.pnl_LoadQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_LoadQuestion.Location = new System.Drawing.Point(19, 99);
+            this.pnl_LoadQuestion.Name = "pnl_LoadQuestion";
+            this.pnl_LoadQuestion.Size = new System.Drawing.Size(801, 465);
+            this.pnl_LoadQuestion.TabIndex = 26;
+            // 
             // CreateQuestionNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(834, 612);
-            this.Controls.Add(this.gb_CreateQuestion);
+            this.Controls.Add(this.pnl_LoadQuestion);
             this.Controls.Add(this.gb_QuestionType);
             this.Name = "CreateQuestionNew";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo câu hỏi mới";
             this.Load += new System.EventHandler(this.CreateQuestionNew_Load);
-            this.gb_CreateQuestion.ResumeLayout(false);
             this.gb_QuestionType.ResumeLayout(false);
             this.gb_QuestionType.PerformLayout();
             this.ResumeLayout(false);
@@ -146,12 +127,11 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gb_CreateQuestion;
-        private System.Windows.Forms.Panel pnl_LoadQuestion;
         private System.Windows.Forms.GroupBox gb_QuestionType;
         private System.Windows.Forms.RadioButton rad_ShortAnswer;
         private System.Windows.Forms.RadioButton rad_MultiSelect;
         private System.Windows.Forms.RadioButton rad_OnlyOneAnswer;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Panel pnl_LoadQuestion;
     }
 }
