@@ -43,7 +43,7 @@ namespace CapDemo.BL
         public bool AddCompetition(Competition Competition)
         {
             string query = "INSERT INTO Competition (Competition_Name)"
-                        + " VALUES ('" + Competition.NameCompetition + "')";
+                        + " VALUES ('" + Competition.NameCompetition.Replace("'", "''") + "')";
 
             if (ExistCompetition(Competition) == true)
             {

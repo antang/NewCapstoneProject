@@ -31,9 +31,9 @@ namespace CapDemo.BL
                     Contest Contest = new Contest();
                     Contest.IDContest = Convert.ToInt32(item["Contest_ID"]);
                     Contest.NameContest = item["Contest_Name"].ToString();
-                    Contest.Sequence = i;
+                    //Contest.Sequence = i;
                     ContestList.Add(Contest);
-                    i++;
+                    //i++;
                 }
             }
             return ContestList;
@@ -43,7 +43,7 @@ namespace CapDemo.BL
         public bool AddContest(Contest Contest)
         {
             string query = "INSERT INTO [Capstone].[dbo].[Contest]([Contest_Name])"
-                           + "VALUES ('" + Contest.NameContest + "')";
+                           + "VALUES ('" + Contest.NameContest.Replace("'","''") + "')";
             if (ExistContest(Contest) == true)
             {
                 return false;
