@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.btn_Change = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
@@ -39,27 +40,37 @@
             this.lbl_NewPass = new System.Windows.Forms.Label();
             this.txt_ConfirmPass = new System.Windows.Forms.TextBox();
             this.lbl_CònirmPass = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // btn_Change
             // 
-            this.btn_Change.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Change.Location = new System.Drawing.Point(373, 203);
+            this.btn_Change.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Change.ForeColor = System.Drawing.Color.Blue;
+            this.btn_Change.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Change.ImageKey = "save-512.png";
+            this.btn_Change.ImageList = this.imageList1;
+            this.btn_Change.Location = new System.Drawing.Point(354, 203);
             this.btn_Change.Name = "btn_Change";
-            this.btn_Change.Size = new System.Drawing.Size(81, 27);
+            this.btn_Change.Size = new System.Drawing.Size(100, 30);
             this.btn_Change.TabIndex = 49;
             this.btn_Change.Text = "Thay đổi";
+            this.btn_Change.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Change.UseVisualStyleBackColor = true;
             this.btn_Change.Click += new System.EventHandler(this.btn_Change_Click);
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(255, 203);
+            this.btn_Cancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.Blue;
+            this.btn_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Cancel.ImageIndex = 0;
+            this.btn_Cancel.ImageList = this.imageList1;
+            this.btn_Cancel.Location = new System.Drawing.Point(238, 203);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(81, 27);
+            this.btn_Cancel.Size = new System.Drawing.Size(100, 30);
             this.btn_Cancel.TabIndex = 48;
-            this.btn_Cancel.Text = "Hủy Bỏ";
+            this.btn_Cancel.Text = "Hủy";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
@@ -77,11 +88,11 @@
             // 
             this.lbl_Pass.AutoSize = true;
             this.lbl_Pass.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Pass.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Pass.ForeColor = System.Drawing.Color.White;
             this.lbl_Pass.Location = new System.Drawing.Point(73, 63);
             this.lbl_Pass.Name = "lbl_Pass";
-            this.lbl_Pass.Size = new System.Drawing.Size(73, 19);
+            this.lbl_Pass.Size = new System.Drawing.Size(74, 16);
             this.lbl_Pass.TabIndex = 45;
             this.lbl_Pass.Text = "Mật khẩu";
             // 
@@ -89,11 +100,11 @@
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.White;
             this.lbl1.Location = new System.Drawing.Point(16, 8);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(336, 33);
+            this.lbl1.Size = new System.Drawing.Size(322, 25);
             this.lbl1.TabIndex = 43;
             this.lbl1.Text = "Tạo Tài Khoản Người Dùng";
             // 
@@ -116,11 +127,11 @@
             // 
             this.lbl_NewPass.AutoSize = true;
             this.lbl_NewPass.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_NewPass.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NewPass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NewPass.ForeColor = System.Drawing.Color.White;
             this.lbl_NewPass.Location = new System.Drawing.Point(43, 104);
             this.lbl_NewPass.Name = "lbl_NewPass";
-            this.lbl_NewPass.Size = new System.Drawing.Size(103, 19);
+            this.lbl_NewPass.Size = new System.Drawing.Size(103, 16);
             this.lbl_NewPass.TabIndex = 50;
             this.lbl_NewPass.Text = "Mật khẩu Mới";
             // 
@@ -138,19 +149,28 @@
             // 
             this.lbl_CònirmPass.AutoSize = true;
             this.lbl_CònirmPass.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_CònirmPass.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CònirmPass.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CònirmPass.ForeColor = System.Drawing.Color.White;
             this.lbl_CònirmPass.Location = new System.Drawing.Point(2, 145);
             this.lbl_CònirmPass.Name = "lbl_CònirmPass";
-            this.lbl_CònirmPass.Size = new System.Drawing.Size(144, 19);
+            this.lbl_CònirmPass.Size = new System.Drawing.Size(146, 16);
             this.lbl_CònirmPass.TabIndex = 52;
             this.lbl_CònirmPass.Text = "Xác Nhận Mật khẩu";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Cancel.png");
+            this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
+            this.imageList1.Images.SetKeyName(2, "add.png");
+            this.imageList1.Images.SetKeyName(3, "save-512.png");
             // 
             // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(466, 242);
             this.Controls.Add(this.txt_ConfirmPass);
             this.Controls.Add(this.lbl_CònirmPass);
@@ -162,7 +182,8 @@
             this.Controls.Add(this.lbl_Pass);
             this.Controls.Add(this.lbl1);
             this.Name = "ChangePassword";
-            this.Text = "ChangePassword";
+            this.ShowInTaskbar = false;
+            this.Text = "Thay đổi mật khẩu";
             this.Load += new System.EventHandler(this.ChangePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,5 +202,6 @@
         private System.Windows.Forms.Label lbl_NewPass;
         private System.Windows.Forms.TextBox txt_ConfirmPass;
         private System.Windows.Forms.Label lbl_CònirmPass;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

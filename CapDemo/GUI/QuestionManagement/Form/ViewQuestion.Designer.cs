@@ -224,9 +224,9 @@
             this.btn_Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Exit.ImageIndex = 0;
             this.btn_Exit.ImageList = this.imageList1;
-            this.btn_Exit.Location = new System.Drawing.Point(698, 451);
+            this.btn_Exit.Location = new System.Drawing.Point(678, 451);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(90, 30);
+            this.btn_Exit.Size = new System.Drawing.Size(110, 30);
             this.btn_Exit.TabIndex = 34;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +251,7 @@
             this.btn_EditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_EditQuestion.ImageIndex = 1;
             this.btn_EditQuestion.ImageList = this.imageList1;
-            this.btn_EditQuestion.Location = new System.Drawing.Point(569, 451);
+            this.btn_EditQuestion.Location = new System.Drawing.Point(553, 451);
             this.btn_EditQuestion.Name = "btn_EditQuestion";
             this.btn_EditQuestion.Size = new System.Drawing.Size(110, 30);
             this.btn_EditQuestion.TabIndex = 35;
@@ -269,9 +269,9 @@
             this.btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Save.ImageIndex = 3;
             this.btn_Save.ImageList = this.imageList1;
-            this.btn_Save.Location = new System.Drawing.Point(589, 451);
+            this.btn_Save.Location = new System.Drawing.Point(553, 451);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(90, 30);
+            this.btn_Save.Size = new System.Drawing.Size(110, 30);
             this.btn_Save.TabIndex = 36;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

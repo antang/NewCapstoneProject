@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.rdb_ImportCreateNew);
             this.groupBox1.Controls.Add(this.rdb_ImportToFile);
             this.groupBox1.Controls.Add(this.rdb_ImportToCatalogue);
-            this.groupBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(16, 44);
             this.groupBox1.Name = "groupBox1";
