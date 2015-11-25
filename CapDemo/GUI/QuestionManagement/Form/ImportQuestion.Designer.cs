@@ -101,6 +101,7 @@
             // 
             // chk_CheckAll
             // 
+            this.chk_CheckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chk_CheckAll.AutoSize = true;
             this.chk_CheckAll.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk_CheckAll.ForeColor = System.Drawing.Color.White;
@@ -114,7 +115,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btn_DownloadFile);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(568, 14);
@@ -177,6 +178,7 @@
             this.dgv_Question.Location = new System.Drawing.Point(15, 125);
             this.dgv_Question.Name = "dgv_Question";
             this.dgv_Question.RowHeadersVisible = false;
+            this.dgv_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Question.Size = new System.Drawing.Size(742, 315);
             this.dgv_Question.TabIndex = 4;
             // 

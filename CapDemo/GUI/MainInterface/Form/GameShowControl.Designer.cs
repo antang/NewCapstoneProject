@@ -40,7 +40,6 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameShowControl";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GAME HIT YOUR GOALS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

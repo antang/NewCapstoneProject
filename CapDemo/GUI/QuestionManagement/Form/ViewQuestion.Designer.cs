@@ -51,8 +51,8 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.btn_addAnswer = new System.Windows.Forms.Button();
-            this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +136,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(411, 105);
+            this.label5.Location = new System.Drawing.Point(406, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 16);
             this.label5.TabIndex = 8;
@@ -314,20 +314,19 @@
             this.btn_addAnswer.Visible = false;
             this.btn_addAnswer.Click += new System.EventHandler(this.btn_addAnswer_Click);
             // 
-            // flp_Answer
-            // 
-            this.flp_Answer.AutoScroll = true;
-            this.flp_Answer.BackColor = System.Drawing.Color.White;
-            this.flp_Answer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flp_Answer.Location = new System.Drawing.Point(415, 131);
-            this.flp_Answer.Name = "flp_Answer";
-            this.flp_Answer.Size = new System.Drawing.Size(373, 267);
-            this.flp_Answer.TabIndex = 43;
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
+            // 
+            // flp_Answer
+            // 
+            this.flp_Answer.BackColor = System.Drawing.Color.White;
+            this.flp_Answer.ForeColor = System.Drawing.Color.Black;
+            this.flp_Answer.Location = new System.Drawing.Point(409, 130);
+            this.flp_Answer.Name = "flp_Answer";
+            this.flp_Answer.Size = new System.Drawing.Size(373, 267);
+            this.flp_Answer.TabIndex = 43;
             // 
             // ViewQuestion
             // 
@@ -390,7 +389,7 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txt_Date;
         public System.Windows.Forms.Button btn_addAnswer;
-        private System.Windows.Forms.FlowLayoutPanel flp_Answer;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.FlowLayoutPanel flp_Answer;
     }
 }

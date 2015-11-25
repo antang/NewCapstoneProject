@@ -91,6 +91,7 @@
             this.tbp_CatalogueManagement.Controls.Add(this.lbl_CreateCatalogue);
             this.tbp_CatalogueManagement.Controls.Add(this.lbl1);
             this.tbp_CatalogueManagement.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbp_CatalogueManagement.ForeColor = System.Drawing.Color.Black;
             this.tbp_CatalogueManagement.Location = new System.Drawing.Point(4, 29);
             this.tbp_CatalogueManagement.Name = "tbp_CatalogueManagement";
             this.tbp_CatalogueManagement.Padding = new System.Windows.Forms.Padding(3);
@@ -102,17 +103,19 @@
             // btn_SearchCatalogue
             // 
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_SearchCatalogue.BackColor = System.Drawing.Color.Transparent;
             this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
-            this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SearchCatalogue.ImageIndex = 3;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 77);
+            this.btn_SearchCatalogue.ForeColor = System.Drawing.Color.White;
+            this.btn_SearchCatalogue.ImageIndex = 5;
+            this.btn_SearchCatalogue.ImageList = this.imageList1;
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(400, 74);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
-            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 24);
+            this.btn_SearchCatalogue.Size = new System.Drawing.Size(30, 30);
             this.btn_SearchCatalogue.TabIndex = 14;
-            this.btn_SearchCatalogue.UseVisualStyleBackColor = true;
+            this.btn_SearchCatalogue.UseVisualStyleBackColor = false;
             // 
             // gb_CatalogueFunction
             // 
@@ -161,6 +164,7 @@
             this.imageList1.Images.SetKeyName(2, "review.png");
             this.imageList1.Images.SetKeyName(3, "copy.png");
             this.imageList1.Images.SetKeyName(4, "move.png");
+            this.imageList1.Images.SetKeyName(5, "search.png");
             // 
             // btn_ImportQuestion
             // 

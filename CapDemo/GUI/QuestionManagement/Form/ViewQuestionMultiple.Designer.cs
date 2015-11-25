@@ -67,7 +67,7 @@
             this.btn_addAnswer.ImageList = this.imageList1;
             this.btn_addAnswer.Location = new System.Drawing.Point(641, 78);
             this.btn_addAnswer.Name = "btn_addAnswer";
-            this.btn_addAnswer.Size = new System.Drawing.Size(141, 35);
+            this.btn_addAnswer.Size = new System.Drawing.Size(141, 30);
             this.btn_addAnswer.TabIndex = 63;
             this.btn_addAnswer.Text = "Thêm đáp án";
             this.btn_addAnswer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -94,9 +94,9 @@
             this.btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Save.ImageIndex = 3;
             this.btn_Save.ImageList = this.imageList1;
-            this.btn_Save.Location = new System.Drawing.Point(534, 450);
+            this.btn_Save.Location = new System.Drawing.Point(519, 441);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(132, 40);
+            this.btn_Save.Size = new System.Drawing.Size(120, 30);
             this.btn_Save.TabIndex = 61;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,9 +115,9 @@
             this.btn_Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Exit.ImageIndex = 0;
             this.btn_Exit.ImageList = this.imageList1;
-            this.btn_Exit.Location = new System.Drawing.Point(683, 450);
+            this.btn_Exit.Location = new System.Drawing.Point(662, 441);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(99, 40);
+            this.btn_Exit.Size = new System.Drawing.Size(120, 30);
             this.btn_Exit.TabIndex = 59;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,6 +133,7 @@
             // flp_Answer
             // 
             this.flp_Answer.AutoScroll = true;
+            this.flp_Answer.BackColor = System.Drawing.Color.White;
             this.flp_Answer.Location = new System.Drawing.Point(409, 130);
             this.flp_Answer.Name = "flp_Answer";
             this.flp_Answer.Size = new System.Drawing.Size(373, 267);
@@ -157,9 +158,9 @@
             this.btn_EditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_EditQuestion.ImageIndex = 1;
             this.btn_EditQuestion.ImageList = this.imageList1;
-            this.btn_EditQuestion.Location = new System.Drawing.Point(534, 450);
+            this.btn_EditQuestion.Location = new System.Drawing.Point(519, 441);
             this.btn_EditQuestion.Name = "btn_EditQuestion";
-            this.btn_EditQuestion.Size = new System.Drawing.Size(132, 40);
+            this.btn_EditQuestion.Size = new System.Drawing.Size(120, 30);
             this.btn_EditQuestion.TabIndex = 60;
             this.btn_EditQuestion.Text = "Chỉnh sửa";
             this.btn_EditQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,11 +171,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(22, 450);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 19);
+            this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 58;
             this.label8.Text = "Ngày tạo";
             // 
@@ -190,11 +191,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(22, 340);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 19);
+            this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 52;
             this.label6.Text = "Điểm +";
             // 
@@ -210,11 +211,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(22, 375);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 19);
+            this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 53;
             this.label7.Text = "Điểm -";
             // 
@@ -230,21 +231,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(22, 415);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 19);
+            this.label9.Size = new System.Drawing.Size(119, 16);
             this.label9.TabIndex = 54;
             this.label9.Text = "Thời gian trả lời";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(405, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.Size = new System.Drawing.Size(63, 16);
             this.label5.TabIndex = 51;
             this.label5.Text = "Đáp án:";
             // 
@@ -262,10 +264,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(18, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 20);
+            this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 49;
             this.label4.Text = "Nội dung câu hỏi:";
             // 
@@ -281,10 +284,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(18, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 47;
             this.label3.Text = "Dạng câu hỏi";
             // 
@@ -300,20 +304,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(18, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 45;
             this.label2.Text = "Chủ đề ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(208, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 31);
+            this.label1.Size = new System.Drawing.Size(304, 25);
             this.label1.TabIndex = 44;
             this.label1.Text = "Thông tin chi tiết câu hỏi";
             // 
@@ -321,6 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 499);
             this.Controls.Add(this.btn_addAnswer);
             this.Controls.Add(this.btn_Save);

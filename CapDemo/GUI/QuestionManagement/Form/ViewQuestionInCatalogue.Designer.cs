@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewQuestionInCatalogue));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -88,15 +88,15 @@
             this.dgv_Question1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Question1.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Question1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Question1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Question1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Question1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Question1.Location = new System.Drawing.Point(19, 96);
             this.dgv_Question1.Name = "dgv_Question1";
@@ -115,9 +115,10 @@
             this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SearchCatalogue.ForeColor = System.Drawing.Color.Transparent;
             this.btn_SearchCatalogue.ImageIndex = 1;
             this.btn_SearchCatalogue.ImageList = this.imageList1;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(530, 66);
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(530, 64);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
             this.btn_SearchCatalogue.Size = new System.Drawing.Size(19, 19);
             this.btn_SearchCatalogue.TabIndex = 16;

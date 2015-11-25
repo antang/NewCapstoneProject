@@ -92,7 +92,12 @@ namespace CapDemo.GUI.User_Controls
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
-            }   
+            }
+            int alp = 0;
+            foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
+            {
+                item.rad_check.Text = Convert.ToChar(a + alp++).ToString();
+            }
         }
         //check answer null
         public bool checkAnswerEmpty()

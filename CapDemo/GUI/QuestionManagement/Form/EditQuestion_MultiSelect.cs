@@ -144,7 +144,7 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    if (true)
+                    if (checkBlankCorrectAnswer()==true)
                     {
                         MessageBox.Show("Vui lòng chọn đáp án cho câu hỏi!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -209,6 +209,11 @@ namespace CapDemo.GUI
                 {
                     flp_addAnswer.Controls.Remove(item);
                 }
+            }
+            int alp = 0;
+            foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+            {
+                item.chk_Check.Text = Convert.ToChar(a + alp++).ToString();
             }
         }
     }

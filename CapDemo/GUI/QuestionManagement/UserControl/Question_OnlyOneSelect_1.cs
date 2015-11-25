@@ -228,6 +228,11 @@ namespace CapDemo.GUI.User_Controls
                     flp_addAnswer.Controls.Remove(item);
                 }
             }
+            int alp = 0;
+            foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
+            {
+                item.rad_check.Text = Convert.ToChar(a + alp++).ToString();
+            }
         }
         //SAVE QUESTION AND CONTINUE ADD QUESTION
         private void btn_SaveAndCreateNewQuestion_Click(object sender, EventArgs e)

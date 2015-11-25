@@ -155,6 +155,7 @@
             this.dgv_Question.Location = new System.Drawing.Point(12, 40);
             this.dgv_Question.Name = "dgv_Question";
             this.dgv_Question.RowHeadersVisible = false;
+            this.dgv_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Question.Size = new System.Drawing.Size(722, 307);
             this.dgv_Question.TabIndex = 10;
             // 

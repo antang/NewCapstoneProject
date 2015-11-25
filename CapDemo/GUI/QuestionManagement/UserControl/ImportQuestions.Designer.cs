@@ -50,7 +50,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btn_DownloadFile);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(577, 8);
@@ -116,6 +116,7 @@
             // 
             // chk_CheckAll
             // 
+            this.chk_CheckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chk_CheckAll.AutoSize = true;
             this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk_CheckAll.ForeColor = System.Drawing.Color.White;

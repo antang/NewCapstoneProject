@@ -219,6 +219,11 @@ namespace CapDemo.GUI
                     flp_addAnswer.Controls.Remove(item);
                 }
             }
+            int alp = 0;
+            foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
+            {
+                item.rad_check.Text = Convert.ToChar(a + alp++).ToString();
+            }
         }
         //EXIT FORM
         private void btn_CancelEditQuestion_Click(object sender, EventArgs e)

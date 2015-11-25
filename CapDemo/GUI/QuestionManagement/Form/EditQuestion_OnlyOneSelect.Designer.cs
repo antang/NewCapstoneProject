@@ -43,11 +43,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_ScoreCong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btn_SaveEditQuestion
@@ -107,7 +107,7 @@
             this.btn_addAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_addAnswer.ImageIndex = 0;
             this.btn_addAnswer.ImageList = this.imageList1;
-            this.btn_addAnswer.Location = new System.Drawing.Point(619, 107);
+            this.btn_addAnswer.Location = new System.Drawing.Point(618, 107);
             this.btn_addAnswer.Name = "btn_addAnswer";
             this.btn_addAnswer.Size = new System.Drawing.Size(140, 30);
             this.btn_addAnswer.TabIndex = 40;
@@ -220,19 +220,6 @@
             this.label7.TabIndex = 45;
             this.label7.Text = "Thời gian";
             // 
-            // flp_addAnswer
-            // 
-            this.flp_addAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flp_addAnswer.AutoScroll = true;
-            this.flp_addAnswer.BackColor = System.Drawing.Color.White;
-            this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp_addAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flp_addAnswer.Location = new System.Drawing.Point(359, 143);
-            this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 301);
-            this.flp_addAnswer.TabIndex = 42;
-            // 
             // lbl_Question
             // 
             this.lbl_Question.AutoSize = true;
@@ -273,12 +260,21 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // flp_addAnswer
+            // 
+            this.flp_addAnswer.BackColor = System.Drawing.Color.White;
+            this.flp_addAnswer.Location = new System.Drawing.Point(358, 143);
+            this.flp_addAnswer.Name = "flp_addAnswer";
+            this.flp_addAnswer.Size = new System.Drawing.Size(400, 308);
+            this.flp_addAnswer.TabIndex = 56;
+            // 
             // EditQuestion_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(768, 515);
+            this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.txt_Date);
             this.Controls.Add(this.btn_SaveEditQuestion);
             this.Controls.Add(this.btn_CancelEditQuestion);
@@ -292,7 +288,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_ScoreCong);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -321,10 +316,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_ScoreCong;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
         private System.Windows.Forms.Label lbl_Question;
         private System.Windows.Forms.TextBox txt_ContentQuestion;
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
     }
 }

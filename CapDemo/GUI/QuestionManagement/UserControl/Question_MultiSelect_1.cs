@@ -87,6 +87,11 @@ namespace CapDemo.GUI.User_Controls
                     flp_addAnswer.Controls.Remove(item);
                 }
             }
+            int alp = 0;
+            foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+            {
+                item.chk_Check.Text = Convert.ToChar(a + alp++).ToString();
+            }
         }
         //check answer null
         public bool checkAnswerEmpty()

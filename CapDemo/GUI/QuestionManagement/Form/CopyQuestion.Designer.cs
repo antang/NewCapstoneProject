@@ -58,7 +58,6 @@
             this.cmb_Catalogue.Name = "cmb_Catalogue";
             this.cmb_Catalogue.Size = new System.Drawing.Size(328, 24);
             this.cmb_Catalogue.TabIndex = 1;
-            this.cmb_Catalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Catalogue_KeyDown);
             // 
             // btn_SaveCopy
             // 

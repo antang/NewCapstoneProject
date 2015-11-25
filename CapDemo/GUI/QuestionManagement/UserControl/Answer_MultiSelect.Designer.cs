@@ -62,7 +62,7 @@
             // 
             this.chk_Check.AutoSize = true;
             this.chk_Check.ForeColor = System.Drawing.Color.Black;
-            this.chk_Check.Location = new System.Drawing.Point(3, 5);
+            this.chk_Check.Location = new System.Drawing.Point(3, 22);
             this.chk_Check.Name = "chk_Check";
             this.chk_Check.Size = new System.Drawing.Size(15, 14);
             this.chk_Check.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.txt_AnswerContent);
             this.Controls.Add(this.chk_Check);
             this.Name = "Answer_MultiSelect";
-            this.Size = new System.Drawing.Size(364, 58);
+            this.Size = new System.Drawing.Size(364, 57);
             this.ResumeLayout(false);
             this.PerformLayout();
 

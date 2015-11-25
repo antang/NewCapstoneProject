@@ -120,6 +120,11 @@ namespace CapDemo.GUI
                     flp_Answer.Controls.Remove(item);
                 }
             }
+            int alp = 0;
+            foreach (Answer_OnlyOneSelect item in flp_Answer.Controls)
+            {
+                item.rad_check.Text = Convert.ToChar(a + alp++).ToString();
+            }
         }
         //check answer null
         public bool checkAnswerEmpty()

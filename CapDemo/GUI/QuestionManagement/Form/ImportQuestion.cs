@@ -259,9 +259,10 @@ namespace CapDemo.GUI
                 {
                     if (txt_FilePath.Text == "")
                     {
-                        notifyIcon1.Icon = SystemIcons.Warning;
-                        notifyIcon1.BalloonTipText = "Vui lòng chọn đường dẫn đến tập tin.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Warning;
+                        //notifyIcon1.BalloonTipText = "Vui lòng chọn đường dẫn đến tập tin.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Vui lòng chọn đường dẫn đến tập tin trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {

@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditQuestion_MultiSelect));
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
-            this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_TimeAnswer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.btn_SaveEditQuestion = new System.Windows.Forms.Button();
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lbl_Question
@@ -72,19 +72,6 @@
             this.txt_ContentQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_ContentQuestion.Size = new System.Drawing.Size(338, 189);
             this.txt_ContentQuestion.TabIndex = 22;
-            // 
-            // flp_addAnswer
-            // 
-            this.flp_addAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flp_addAnswer.AutoScroll = true;
-            this.flp_addAnswer.BackColor = System.Drawing.Color.White;
-            this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp_addAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flp_addAnswer.Location = new System.Drawing.Point(356, 142);
-            this.flp_addAnswer.Name = "flp_addAnswer";
-            this.flp_addAnswer.Size = new System.Drawing.Size(400, 308);
-            this.flp_addAnswer.TabIndex = 24;
             // 
             // label8
             // 
@@ -266,12 +253,21 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // flp_addAnswer
+            // 
+            this.flp_addAnswer.BackColor = System.Drawing.Color.White;
+            this.flp_addAnswer.Location = new System.Drawing.Point(356, 142);
+            this.flp_addAnswer.Name = "flp_addAnswer";
+            this.flp_addAnswer.Size = new System.Drawing.Size(400, 308);
+            this.flp_addAnswer.TabIndex = 38;
+            // 
             // EditQuestion_MultiSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(768, 515);
+            this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.txt_Date);
             this.Controls.Add(this.btn_CancelEditQuestion);
             this.Controls.Add(this.btn_addAnswer);
@@ -285,7 +281,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_ScoreCong);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
             this.ForeColor = System.Drawing.Color.White;
@@ -304,7 +299,6 @@
 
         private System.Windows.Forms.Label lbl_Question;
         private System.Windows.Forms.TextBox txt_ContentQuestion;
-        private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_TimeAnswer;
         private System.Windows.Forms.Label label5;
@@ -320,5 +314,6 @@
         private System.Windows.Forms.Button btn_SaveEditQuestion;
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
     }
 }
