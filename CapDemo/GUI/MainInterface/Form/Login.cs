@@ -45,6 +45,11 @@ namespace CapDemo.GUI
             {
                 login();
             }
+            SpaceEntered = false;
+            if (e.KeyCode == Keys.Space)
+            {
+                SpaceEntered = true;
+            }
         }
         //Press enter key
         private void txt_UserName_KeyDown(object sender, KeyEventArgs e)
@@ -52,6 +57,11 @@ namespace CapDemo.GUI
             if (e.KeyCode == Keys.Enter)
             {
                 login();
+            }
+            SpaceEntered = false;
+            if (e.KeyCode == Keys.Space)
+            {
+                SpaceEntered = true;
             }
         }
         //Login Method
@@ -98,6 +108,22 @@ namespace CapDemo.GUI
                     MessageBox.Show("Sai mật tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+        private bool SpaceEntered = false;
+        private void txt_UserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (SpaceEntered == true)
+            {
+                e.Handled = true;
+            } 
+        }
+
+        private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (SpaceEntered == true)
+            {
+                e.Handled = true;
+            } 
         }
     }
 }

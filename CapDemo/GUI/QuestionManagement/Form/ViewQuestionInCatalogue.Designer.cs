@@ -36,9 +36,9 @@
             this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
             this.dgv_Question1 = new System.Windows.Forms.DataGridView();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_SearchCatalogue = new System.Windows.Forms.TextBox();
             this.btn_CancelViewQuestione = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             // 
             // txt_NameCatalogue
             // 
-            this.txt_NameCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NameCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NameCatalogue.Location = new System.Drawing.Point(81, 64);
             this.txt_NameCatalogue.Name = "txt_NameCatalogue";
             this.txt_NameCatalogue.ReadOnly = true;
@@ -111,26 +111,34 @@
             // 
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchCatalogue.BackColor = System.Drawing.Color.White;
-            this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SearchCatalogue.ImageIndex = 3;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(514, 62);
+            this.btn_SearchCatalogue.ImageIndex = 1;
+            this.btn_SearchCatalogue.ImageList = this.imageList1;
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(530, 66);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
-            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 25);
+            this.btn_SearchCatalogue.Size = new System.Drawing.Size(19, 19);
             this.btn_SearchCatalogue.TabIndex = 16;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Cancel.png");
+            this.imageList1.Images.SetKeyName(1, "search.png");
             // 
             // txt_SearchCatalogue
             // 
             this.txt_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_SearchCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SearchCatalogue.Location = new System.Drawing.Point(555, 62);
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
             this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 23);
             this.txt_SearchCatalogue.TabIndex = 15;
+            this.txt_SearchCatalogue.TextChanged += new System.EventHandler(this.txt_SearchCatalogue_TextChanged);
             // 
             // btn_CancelViewQuestione
             // 
@@ -150,12 +158,6 @@
             this.btn_CancelViewQuestione.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_CancelViewQuestione.UseVisualStyleBackColor = false;
             this.btn_CancelViewQuestione.Click += new System.EventHandler(this.btn_CancelViewQuestione_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Cancel.png");
             // 
             // ViewQuestionInCatalogue
             // 

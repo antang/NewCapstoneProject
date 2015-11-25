@@ -106,5 +106,46 @@ namespace CapDemo.GUI
             }
             
         }
+
+        private void txt_SearchCatalogue_TextChanged(object sender, EventArgs e)
+        {
+            //QuestionBL questionBL = new QuestionBL();
+            //List<DO.Question> ListQuestion = questionBL.GetQuestion();
+
+            QuestionBL QuestionBL = new QuestionBL();
+            Catalogue Cat = new Catalogue();
+            Cat.IDCatalogue = IDCat;
+            List<DO.Question> QuestionList;
+            QuestionList = QuestionBL.GetQuestionByCatalogue(Cat);
+            //if (QuestionList != null)
+                //dgv_Question1.DataSource = QuestionList;
+            //loadQuestion();
+            ListtoDataTableConverter converter = new ListtoDataTableConverter();
+            DataTable dt = converter.ToDataTable(QuestionList);
+
+            dgv_Question1.DataSource = dt;
+            dt.DefaultView.RowFilter = string.Format("NameQuestion LIKE '%{0}%' or TypeQuestion LIKE '%{0}%' or NameCatalogue LIKE '%{0}%' or Sequence LIKE '%{0}%'", txt_SearchCatalogue.Text);
+
+            dgv_Question1.Columns["IDCatalogue"].Visible = false;
+            dgv_Question1.Columns["IDQuestion"].Visible = false;
+            dgv_Question1.Columns["IDCatalogue"].Visible = false;
+            dgv_Question1.Columns["AnswerContent"].Visible = false;
+            dgv_Question1.Columns["AnswerList"].Visible = false;
+            dgv_Question1.Columns["Date"].Visible = false;
+
+            dgv_Question1.Columns["Sequence"].HeaderText = "STT";
+            dgv_Question1.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question1.Columns["NameCatalogue"].HeaderText = "Tên chủ Đề";
+            dgv_Question1.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
+
+            dgv_Question1.Columns["Sequence"].ReadOnly = true;
+            dgv_Question1.Columns["NameQuestion"].ReadOnly = false;
+            dgv_Question1.Columns["NameCatalogue"].ReadOnly = true;
+            dgv_Question1.Columns["TypeQuestion"].ReadOnly = true;
+
+            dgv_Question1.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question1.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question1.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
     }
 }

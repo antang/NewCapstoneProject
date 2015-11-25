@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Sever" Type="System.String" Scope="User">
-      <Value Profile="(Default)">WUOCDO-PC\SQLEXPRESS</Value>
+      <Value Profile="(Default)">TNA-PC\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="DB" Type="System.String" Scope="User">
       <Value Profile="(Default)">Capstone</Value>

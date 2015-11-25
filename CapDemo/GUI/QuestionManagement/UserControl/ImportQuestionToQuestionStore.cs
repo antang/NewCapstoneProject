@@ -54,7 +54,7 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBL = new QuestionBL();
             foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                if (row.Cells["Check"].Value != null)
+                if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
                     question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
                     question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
@@ -85,7 +85,7 @@ namespace CapDemo.GUI.User_Controls
             int count = 0;
             foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                if (row.Cells["Check"].Value != null)
+                if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
                     count++;
                 }
@@ -99,7 +99,7 @@ namespace CapDemo.GUI.User_Controls
             QuestionBL questionBL = new QuestionBL();
             foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                if (row.Cells["Check"].Value != null)
+                if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
                     //add question
                     question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
@@ -155,9 +155,10 @@ namespace CapDemo.GUI.User_Controls
                     }
                     else
                     {
-                        notifyIcon1.Icon = SystemIcons.Warning;
-                        notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để sao chép đến chủ đề.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Warning;
+                        //notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để sao chép đến chủ đề.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 if (rad_Move.Checked == true)
@@ -173,18 +174,20 @@ namespace CapDemo.GUI.User_Controls
                     }
                     else
                     {
-                        notifyIcon1.Icon = SystemIcons.Warning;
-                        notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để di chuyển đến chủ đề.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Warning;
+                        //notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để di chuyển đến chủ đề.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }  
                 }
                 
             }
             else
             {
-                notifyIcon1.Icon = SystemIcons.Warning;
-                notifyIcon1.BalloonTipText = "Vui lòng chọn chủ đề!";
-                notifyIcon1.ShowBalloonTip(2000);
+                //notifyIcon1.Icon = SystemIcons.Warning;
+                //notifyIcon1.BalloonTipText = "Vui lòng chọn chủ đề!";
+                //notifyIcon1.ShowBalloonTip(2000);
+                MessageBox.Show("Vui lòng chọn chủ đề trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
