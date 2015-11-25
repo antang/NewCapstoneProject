@@ -83,7 +83,7 @@
             // 
             // tbp_CatalogueManagement
             // 
-            this.tbp_CatalogueManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbp_CatalogueManagement.BackColor = System.Drawing.Color.SteelBlue;
             this.tbp_CatalogueManagement.Controls.Add(this.btn_SearchCatalogue);
             this.tbp_CatalogueManagement.Controls.Add(this.gb_CatalogueFunction);
             this.tbp_CatalogueManagement.Controls.Add(this.txt_SearchCatalogue);
@@ -104,12 +104,13 @@
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchCatalogue.ImageIndex = 3;
             this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 77);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
-            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 30);
+            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 24);
             this.btn_SearchCatalogue.TabIndex = 14;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = true;
             // 
@@ -135,8 +136,10 @@
             // 
             this.btn_ViewQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_ViewQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_ViewQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_ViewQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ViewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ViewQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ViewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_ViewQuestion.ImageIndex = 2;
             this.btn_ViewQuestion.ImageList = this.imageList1;
@@ -163,8 +166,10 @@
             // 
             this.btn_ImportQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_ImportQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_ImportQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ImportQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_ImportQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ImportQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ImportQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ImportQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_ImportQuestion.ImageIndex = 4;
             this.btn_ImportQuestion.ImageList = this.imageList1;
@@ -181,8 +186,10 @@
             // 
             this.btn_EditCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_EditCatalogue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_EditCatalogue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_EditCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EditCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EditCatalogue.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_EditCatalogue.ImageIndex = 1;
             this.btn_EditCatalogue.ImageList = this.imageList1;
@@ -199,8 +206,10 @@
             // 
             this.btn_DeleteCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_DeleteCatalogue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_DeleteCatalogue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteCatalogue.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DeleteCatalogue.ImageIndex = 0;
             this.btn_DeleteCatalogue.ImageList = this.imageList1;
@@ -218,9 +227,10 @@
             this.txt_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_SearchCatalogue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SearchCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SearchCatalogue.Location = new System.Drawing.Point(436, 78);
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
-            this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 27);
+            this.txt_SearchCatalogue.Size = new System.Drawing.Size(217, 23);
             this.txt_SearchCatalogue.TabIndex = 12;
             this.txt_SearchCatalogue.TextChanged += new System.EventHandler(this.txt_SearchCatalogue_TextChanged);
             // 
@@ -254,7 +264,7 @@
             this.lbl_CreateCatalogue.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CreateCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_CreateCatalogue.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CreateCatalogue.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl_CreateCatalogue.ForeColor = System.Drawing.Color.Navy;
             this.lbl_CreateCatalogue.Location = new System.Drawing.Point(59, 84);
             this.lbl_CreateCatalogue.Name = "lbl_CreateCatalogue";
             this.lbl_CreateCatalogue.Size = new System.Drawing.Size(161, 23);
@@ -276,7 +286,7 @@
             // 
             // tbp_QuestionManagement
             // 
-            this.tbp_QuestionManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbp_QuestionManagement.BackColor = System.Drawing.Color.SteelBlue;
             this.tbp_QuestionManagement.Controls.Add(this.lbl_ImportQuestion);
             this.tbp_QuestionManagement.Controls.Add(this.label3);
             this.tbp_QuestionManagement.Controls.Add(this.btn_SearchQuestion);
@@ -300,7 +310,7 @@
             this.lbl_ImportQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ImportQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_ImportQuestion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ImportQuestion.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl_ImportQuestion.ForeColor = System.Drawing.Color.Navy;
             this.lbl_ImportQuestion.Location = new System.Drawing.Point(215, 84);
             this.lbl_ImportQuestion.Name = "lbl_ImportQuestion";
             this.lbl_ImportQuestion.Size = new System.Drawing.Size(122, 23);
@@ -328,7 +338,7 @@
             this.btn_SearchQuestion.ImageIndex = 3;
             this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 77);
             this.btn_SearchQuestion.Name = "btn_SearchQuestion";
-            this.btn_SearchQuestion.Size = new System.Drawing.Size(35, 30);
+            this.btn_SearchQuestion.Size = new System.Drawing.Size(35, 24);
             this.btn_SearchQuestion.TabIndex = 20;
             this.btn_SearchQuestion.UseVisualStyleBackColor = true;
             this.btn_SearchQuestion.Click += new System.EventHandler(this.btn_SearchQuestion_Click);
@@ -338,9 +348,10 @@
             this.txt_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_SearchQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SearchQuestion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SearchQuestion.Location = new System.Drawing.Point(436, 78);
             this.txt_SearchQuestion.Name = "txt_SearchQuestion";
-            this.txt_SearchQuestion.Size = new System.Drawing.Size(217, 27);
+            this.txt_SearchQuestion.Size = new System.Drawing.Size(217, 23);
             this.txt_SearchQuestion.TabIndex = 18;
             this.txt_SearchQuestion.TextChanged += new System.EventHandler(this.txt_SearchQuestion_TextChanged);
             // 
@@ -370,7 +381,7 @@
             this.lbl_CreateQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CreateQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_CreateQuestion.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CreateQuestion.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl_CreateQuestion.ForeColor = System.Drawing.Color.Navy;
             this.lbl_CreateQuestion.Location = new System.Drawing.Point(59, 84);
             this.lbl_CreateQuestion.Name = "lbl_CreateQuestion";
             this.lbl_CreateQuestion.Size = new System.Drawing.Size(128, 23);
@@ -412,8 +423,10 @@
             // 
             this.btn_CopyQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_CopyQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_CopyQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CopyQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_CopyQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CopyQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CopyQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CopyQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CopyQuestion.ImageIndex = 3;
             this.btn_CopyQuestion.ImageList = this.imageList1;
@@ -430,8 +443,10 @@
             // 
             this.btn_MoveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_MoveQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_MoveQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MoveQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_MoveQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_MoveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MoveQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MoveQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_MoveQuestion.ImageIndex = 4;
             this.btn_MoveQuestion.ImageList = this.imageList1;
@@ -448,8 +463,10 @@
             // 
             this.btn_EditQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_EditQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_EditQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_EditQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EditQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_EditQuestion.ImageIndex = 1;
             this.btn_EditQuestion.ImageList = this.imageList1;
@@ -466,8 +483,10 @@
             // 
             this.btn_DeleteQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_DeleteQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_DeleteQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_DeleteQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DeleteQuestion.ImageIndex = 0;
             this.btn_DeleteQuestion.ImageList = this.imageList1;
@@ -489,6 +508,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.tbc_DataManagement);
             this.Name = "DataManagement";
             this.Size = new System.Drawing.Size(719, 584);

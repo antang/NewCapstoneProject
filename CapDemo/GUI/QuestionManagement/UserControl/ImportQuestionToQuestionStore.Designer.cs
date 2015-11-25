@@ -45,12 +45,12 @@
             // 
             // cmb_Catalogue
             // 
-            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
-            this.cmb_Catalogue.Location = new System.Drawing.Point(112, 3);
+            this.cmb_Catalogue.Location = new System.Drawing.Point(112, 7);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
             this.cmb_Catalogue.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmb_Catalogue.Size = new System.Drawing.Size(333, 28);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(333, 24);
             this.cmb_Catalogue.TabIndex = 9;
             this.cmb_Catalogue.SelectedIndexChanged += new System.EventHandler(this.cmb_Catalogue_SelectedIndexChanged);
             // 
@@ -75,8 +75,10 @@
             // btn_Save
             // 
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.BackColor = System.Drawing.Color.White;
+            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Save.ImageIndex = 1;
             this.btn_Save.ImageList = this.imageList1;
@@ -92,8 +94,10 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_Cancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Cancel.ImageIndex = 0;
             this.btn_Cancel.ImageList = this.imageList1;
@@ -110,11 +114,11 @@
             // 
             this.rad_Move.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rad_Move.AutoSize = true;
-            this.rad_Move.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_Move.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_Move.ForeColor = System.Drawing.Color.White;
-            this.rad_Move.Location = new System.Drawing.Point(637, 353);
+            this.rad_Move.Location = new System.Drawing.Point(628, 354);
             this.rad_Move.Name = "rad_Move";
-            this.rad_Move.Size = new System.Drawing.Size(97, 23);
+            this.rad_Move.Size = new System.Drawing.Size(106, 22);
             this.rad_Move.TabIndex = 12;
             this.rad_Move.TabStop = true;
             this.rad_Move.Text = "Di chuyển";
@@ -125,11 +129,11 @@
             this.rad_Copy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rad_Copy.AutoSize = true;
             this.rad_Copy.Checked = true;
-            this.rad_Copy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_Copy.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_Copy.ForeColor = System.Drawing.Color.White;
-            this.rad_Copy.Location = new System.Drawing.Point(540, 353);
+            this.rad_Copy.Location = new System.Drawing.Point(531, 354);
             this.rad_Copy.Name = "rad_Copy";
-            this.rad_Copy.Size = new System.Drawing.Size(91, 23);
+            this.rad_Copy.Size = new System.Drawing.Size(100, 22);
             this.rad_Copy.TabIndex = 11;
             this.rad_Copy.TabStop = true;
             this.rad_Copy.Text = "Sao chép";
@@ -176,6 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.chk_CheckAll);
             this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.label1);

@@ -14,13 +14,5 @@ namespace CapDemo.GUI.User_Controls
             get { return iDAnswer; }
             set { iDAnswer = value; }
         }
-
-        int iDPhase;
-
-        public int IDPhase
-        {
-            get { return iDPhase; }
-            set { iDPhase = value; }
-        }
     }
 }

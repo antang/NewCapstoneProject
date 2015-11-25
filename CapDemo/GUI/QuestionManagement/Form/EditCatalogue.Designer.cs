@@ -43,6 +43,8 @@
             // 
             this.btn_SaveEditCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_SaveEditCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_SaveEditCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveEditCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveEditCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveEditCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveEditCatalogue.ImageIndex = 0;
@@ -79,6 +81,8 @@
             // 
             this.btn_CancelEditCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_CancelEditCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_CancelEditCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelEditCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelEditCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelEditCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelEditCatalogue.ImageIndex = 1;
@@ -96,9 +100,10 @@
             // txt_NameCatalogue
             // 
             this.txt_NameCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_NameCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NameCatalogue.Location = new System.Drawing.Point(21, 90);
             this.txt_NameCatalogue.Name = "txt_NameCatalogue";
-            this.txt_NameCatalogue.Size = new System.Drawing.Size(336, 20);
+            this.txt_NameCatalogue.Size = new System.Drawing.Size(336, 23);
             this.txt_NameCatalogue.TabIndex = 42;
             this.txt_NameCatalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_NameCatalogue_KeyDown);
             // 
@@ -132,11 +137,11 @@
             this.Controls.Add(this.txt_NameCatalogue);
             this.Controls.Add(this.lbl2);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditCatalogue";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chỉnh sửa chủ đề";
             this.Load += new System.EventHandler(this.EditCatalogue_Load);

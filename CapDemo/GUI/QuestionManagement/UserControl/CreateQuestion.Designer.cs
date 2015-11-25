@@ -67,7 +67,7 @@
             // 
             this.gb_QuestionType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_QuestionType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gb_QuestionType.BackColor = System.Drawing.Color.SteelBlue;
             this.gb_QuestionType.Controls.Add(this.rad_ShortAnswer);
             this.gb_QuestionType.Controls.Add(this.rad_MultiSelect);
             this.gb_QuestionType.Controls.Add(this.rad_OnlyOneAnswer);
@@ -82,10 +82,10 @@
             // rad_ShortAnswer
             // 
             this.rad_ShortAnswer.AutoSize = true;
-            this.rad_ShortAnswer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_ShortAnswer.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_ShortAnswer.Location = new System.Drawing.Point(511, 19);
             this.rad_ShortAnswer.Name = "rad_ShortAnswer";
-            this.rad_ShortAnswer.Size = new System.Drawing.Size(113, 23);
+            this.rad_ShortAnswer.Size = new System.Drawing.Size(124, 22);
             this.rad_ShortAnswer.TabIndex = 1;
             this.rad_ShortAnswer.Text = "Trả lời ngắn";
             this.rad_ShortAnswer.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // rad_MultiSelect
             // 
             this.rad_MultiSelect.AutoSize = true;
-            this.rad_MultiSelect.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_MultiSelect.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_MultiSelect.Location = new System.Drawing.Point(342, 19);
             this.rad_MultiSelect.Name = "rad_MultiSelect";
-            this.rad_MultiSelect.Size = new System.Drawing.Size(137, 23);
+            this.rad_MultiSelect.Size = new System.Drawing.Size(150, 22);
             this.rad_MultiSelect.TabIndex = 1;
             this.rad_MultiSelect.Text = "Tùy chọn nhiều";
             this.rad_MultiSelect.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@
             // 
             this.rad_OnlyOneAnswer.AutoSize = true;
             this.rad_OnlyOneAnswer.Checked = true;
-            this.rad_OnlyOneAnswer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_OnlyOneAnswer.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_OnlyOneAnswer.Location = new System.Drawing.Point(181, 19);
             this.rad_OnlyOneAnswer.Name = "rad_OnlyOneAnswer";
-            this.rad_OnlyOneAnswer.Size = new System.Drawing.Size(126, 23);
+            this.rad_OnlyOneAnswer.Size = new System.Drawing.Size(137, 22);
             this.rad_OnlyOneAnswer.TabIndex = 0;
             this.rad_OnlyOneAnswer.TabStop = true;
             this.rad_OnlyOneAnswer.Text = "Tùy chọn một";
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.gb_CreateQuestion);
             this.Controls.Add(this.gb_QuestionType);
             this.Name = "CreateQuestion";

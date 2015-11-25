@@ -42,28 +42,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 18);
+            this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn chủ đề sao chép đến";
             // 
             // cmb_Catalogue
             // 
-            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(16, 46);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
-            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 28);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 24);
             this.cmb_Catalogue.TabIndex = 1;
             this.cmb_Catalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Catalogue_KeyDown);
             // 
             // btn_SaveCopy
             // 
             this.btn_SaveCopy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_SaveCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_SaveCopy.BackColor = System.Drawing.Color.White;
+            this.btn_SaveCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveCopy.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveCopy.ImageIndex = 1;
@@ -87,7 +89,9 @@
             // btn_CancelCopy
             // 
             this.btn_CancelCopy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_CancelCopy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_CancelCopy.BackColor = System.Drawing.Color.White;
+            this.btn_CancelCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelCopy.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelCopy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelCopy.ImageIndex = 0;
@@ -119,6 +123,7 @@
             this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CopyQuestion";

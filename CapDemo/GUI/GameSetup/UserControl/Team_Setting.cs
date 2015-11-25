@@ -16,17 +16,7 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        //LOAD USER CONTROL
-        private static Team_Setting _instance;
-        public static Team_Setting instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new Team_Setting();
-                return _instance;
-            }
-        }
+
         private void btn_AddPhase_Click(object sender, EventArgs e)
         {
             Add_Team at = new Add_Team();

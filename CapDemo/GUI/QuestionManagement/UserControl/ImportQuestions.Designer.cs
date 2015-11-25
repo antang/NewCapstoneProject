@@ -60,8 +60,9 @@
             // 
             // btn_DownloadFile
             // 
-            this.btn_DownloadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_DownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DownloadFile.BackColor = System.Drawing.Color.White;
+            this.btn_DownloadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DownloadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DownloadFile.ImageIndex = 0;
@@ -148,15 +149,16 @@
             // 
             // btn_LoadFile
             // 
-            this.btn_LoadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_LoadFile.BackColor = System.Drawing.Color.White;
+            this.btn_LoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LoadFile.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_LoadFile.ImageIndex = 3;
             this.btn_LoadFile.ImageList = this.imageList1;
-            this.btn_LoadFile.Location = new System.Drawing.Point(454, 89);
+            this.btn_LoadFile.Location = new System.Drawing.Point(454, 88);
             this.btn_LoadFile.Name = "btn_LoadFile";
-            this.btn_LoadFile.Size = new System.Drawing.Size(110, 30);
+            this.btn_LoadFile.Size = new System.Drawing.Size(110, 31);
             this.btn_LoadFile.TabIndex = 3;
             this.btn_LoadFile.Text = "Chọn File";
             this.btn_LoadFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -177,21 +179,24 @@
             // 
             // txt_FilePath
             // 
+            this.txt_FilePath.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FilePath.Location = new System.Drawing.Point(90, 95);
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
-            this.txt_FilePath.Size = new System.Drawing.Size(358, 20);
+            this.txt_FilePath.Size = new System.Drawing.Size(358, 23);
             this.txt_FilePath.TabIndex = 0;
             // 
             // btn_SaveImport
             // 
             this.btn_SaveImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_SaveImport.BackColor = System.Drawing.Color.White;
+            this.btn_SaveImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveImport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveImport.ImageIndex = 2;
             this.btn_SaveImport.ImageList = this.imageList1;
-            this.btn_SaveImport.Location = new System.Drawing.Point(580, 489);
+            this.btn_SaveImport.Location = new System.Drawing.Point(563, 489);
             this.btn_SaveImport.Name = "btn_SaveImport";
             this.btn_SaveImport.Size = new System.Drawing.Size(102, 40);
             this.btn_SaveImport.TabIndex = 37;
@@ -203,12 +208,14 @@
             // btn_ExitImport
             // 
             this.btn_ExitImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ExitImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_ExitImport.BackColor = System.Drawing.Color.White;
+            this.btn_ExitImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ExitImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ExitImport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ExitImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_ExitImport.ImageIndex = 1;
             this.btn_ExitImport.ImageList = this.imageList1;
-            this.btn_ExitImport.Location = new System.Drawing.Point(688, 489);
+            this.btn_ExitImport.Location = new System.Drawing.Point(671, 489);
             this.btn_ExitImport.Name = "btn_ExitImport";
             this.btn_ExitImport.Size = new System.Drawing.Size(99, 40);
             this.btn_ExitImport.TabIndex = 36;
@@ -227,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_SaveImport);
             this.Controls.Add(this.btn_ExitImport);

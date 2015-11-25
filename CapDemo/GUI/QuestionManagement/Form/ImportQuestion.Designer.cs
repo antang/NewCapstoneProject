@@ -52,11 +52,11 @@
             // 
             // cmb_Catalogue
             // 
-            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
-            this.cmb_Catalogue.Location = new System.Drawing.Point(95, 12);
+            this.cmb_Catalogue.Location = new System.Drawing.Point(89, 13);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
-            this.cmb_Catalogue.Size = new System.Drawing.Size(358, 28);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(358, 24);
             this.cmb_Catalogue.TabIndex = 23;
             // 
             // lbl_Catalogue
@@ -75,7 +75,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 95);
+            this.label2.Location = new System.Drawing.Point(15, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 2;
@@ -125,7 +125,8 @@
             // btn_DownloadFile
             // 
             this.btn_DownloadFile.BackColor = System.Drawing.Color.White;
-            this.btn_DownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DownloadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DownloadFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DownloadFile.ImageIndex = 2;
@@ -182,14 +183,15 @@
             // btn_LoadFile
             // 
             this.btn_LoadFile.BackColor = System.Drawing.Color.White;
-            this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_LoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LoadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LoadFile.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LoadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_LoadFile.ImageIndex = 0;
             this.btn_LoadFile.ImageList = this.imageList1;
-            this.btn_LoadFile.Location = new System.Drawing.Point(455, 89);
+            this.btn_LoadFile.Location = new System.Drawing.Point(449, 82);
             this.btn_LoadFile.Name = "btn_LoadFile";
-            this.btn_LoadFile.Size = new System.Drawing.Size(110, 30);
+            this.btn_LoadFile.Size = new System.Drawing.Size(110, 29);
             this.btn_LoadFile.TabIndex = 3;
             this.btn_LoadFile.Text = "Chọn File";
             this.btn_LoadFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,16 +201,19 @@
             // 
             // txt_FilePath
             // 
-            this.txt_FilePath.Location = new System.Drawing.Point(85, 94);
+            this.txt_FilePath.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_FilePath.Location = new System.Drawing.Point(85, 88);
             this.txt_FilePath.Name = "txt_FilePath";
             this.txt_FilePath.ReadOnly = true;
-            this.txt_FilePath.Size = new System.Drawing.Size(358, 20);
+            this.txt_FilePath.Size = new System.Drawing.Size(358, 23);
             this.txt_FilePath.TabIndex = 0;
             // 
             // btn_SaveImport
             // 
             this.btn_SaveImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SaveImport.BackColor = System.Drawing.Color.White;
+            this.btn_SaveImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveImport.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveImport.ImageIndex = 1;
@@ -226,6 +231,8 @@
             // 
             this.btn_ExitImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ExitImport.BackColor = System.Drawing.Color.White;
+            this.btn_ExitImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ExitImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ExitImport.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ExitImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_ExitImport.ImageIndex = 3;
@@ -256,6 +263,7 @@
             this.Controls.Add(this.btn_ExitImport);
             this.Controls.Add(this.cmb_Catalogue);
             this.Controls.Add(this.lbl_Catalogue);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImportQuestion";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

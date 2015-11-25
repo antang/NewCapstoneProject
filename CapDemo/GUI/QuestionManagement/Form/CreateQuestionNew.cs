@@ -20,8 +20,8 @@ namespace CapDemo.GUI
         }
 
         private void CreateQuestionNew_Load(object sender, EventArgs e)
-        {     
-            this.Dock = DockStyle.Fill;
+        {
+       
         }
         //CHECK QUESTION TYPE ONLY ONE SELECT ANSWER
         private void rad_OnlyOneAnswer_CheckedChanged_1(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace CapDemo.GUI
             if(!pnl_LoadQuestion.Controls.Contains(Question_OnlyOneSelect_1.instance))
             {
                 pnl_LoadQuestion.Controls.Add(Question_OnlyOneSelect_1.instance);
-                Question_OnlyOneSelect_1.instance.Dock= DockStyle.Fill;
+                //Question_OnlyOneSelect_1.instance.Dock= DockStyle.Fill;
                 Question_OnlyOneSelect_1.instance.BringToFront();
             }else
                 Question_OnlyOneSelect_1.instance.BringToFront();
@@ -40,7 +40,7 @@ namespace CapDemo.GUI
             if (!pnl_LoadQuestion.Controls.Contains(Question_MultiSelect_1.instance))
             {
                 pnl_LoadQuestion.Controls.Add(Question_MultiSelect_1.instance);
-                Question_MultiSelect_1.instance.Dock = DockStyle.Fill;
+                //Question_MultiSelect_1.instance.Dock = DockStyle.Fill;
                 Question_MultiSelect_1.instance.BringToFront();
             }
             else
@@ -52,7 +52,7 @@ namespace CapDemo.GUI
             if (!pnl_LoadQuestion.Controls.Contains(Question_ShortAnswer_1.instance))
             {
                 pnl_LoadQuestion.Controls.Add(Question_ShortAnswer_1.instance);
-                Question_ShortAnswer_1.instance.Dock = DockStyle.Fill;
+                //Question_ShortAnswer_1.instance.Dock = DockStyle.Fill;
                 Question_ShortAnswer_1.instance.BringToFront();
             }
             else

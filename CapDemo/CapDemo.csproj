@@ -318,12 +318,6 @@
     <Compile Include="GUI\MainInterface\Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\QuestionManagement\Form\ViewQuestionMultiple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,9 +376,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainInterface\Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\UserControl\Add_Phase.resx">
       <DependentUpon>Add_Phase.cs</DependentUpon>
@@ -477,20 +468,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="ClassDiagram\ClassDiagram_IC1.cd" />
-    <None Include="ClassDiagram\ClassDiagram_IC2.cd" />
+    <None Include="ClassDiagram_IC1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -507,34 +497,13 @@
     <None Include="image\The_Weightless_World.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\BatDau.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\CaiDat.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="image\HuongDan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\Thoat.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\backgroud_setting.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\quan_ly_du_lieu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\thiet_lap_game.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\quan_ly_tai_khoan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="image\Thoat_setting.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="image\icon\search2.png" />
@@ -564,6 +533,15 @@
     <None Include="image\Untitled-1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\menu.jpg" />
+    <None Include="image\QLDL_Setting.png" />
+    <None Include="image\TLG_Setting.png" />
+    <None Include="image\QLTK_Setting.png" />
+    <None Include="image\Thoat_Setting.png" />
+    <None Include="image\BD_menu.png" />
+    <None Include="image\CD_menu.png" />
+    <None Include="image\HD_menu.png" />
+    <None Include="image\T_menu.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -50,6 +50,7 @@
             // 
             // txt_AnswerContent
             // 
+            this.txt_AnswerContent.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AnswerContent.Location = new System.Drawing.Point(40, 3);
             this.txt_AnswerContent.Multiline = true;
             this.txt_AnswerContent.Name = "txt_AnswerContent";

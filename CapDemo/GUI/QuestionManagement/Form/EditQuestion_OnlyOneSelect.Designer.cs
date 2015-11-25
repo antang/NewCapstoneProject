@@ -54,6 +54,8 @@
             // 
             this.btn_SaveEditQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SaveEditQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_SaveEditQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveEditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveEditQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveEditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveEditQuestion.ImageIndex = 2;
@@ -80,6 +82,8 @@
             // 
             this.btn_CancelEditQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_CancelEditQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_CancelEditQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelEditQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelEditQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelEditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelEditQuestion.ImageIndex = 1;
@@ -97,7 +101,8 @@
             // 
             this.btn_addAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addAnswer.BackColor = System.Drawing.Color.White;
-            this.btn_addAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_addAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_addAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_addAnswer.ImageIndex = 0;
@@ -149,11 +154,12 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_TimeAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TimeAnswer.Location = new System.Drawing.Point(111, 424);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
+            this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 23);
             this.txt_TimeAnswer.TabIndex = 48;
             // 
             // label5
@@ -171,11 +177,12 @@
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_ScoreTru.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreTru.Location = new System.Drawing.Point(111, 389);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
+            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreTru.TabIndex = 47;
             // 
             // label6
@@ -193,11 +200,12 @@
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_ScoreCong.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreCong.Location = new System.Drawing.Point(111, 354);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
+            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreCong.TabIndex = 46;
             // 
             // label7
@@ -219,6 +227,7 @@
             this.flp_addAnswer.AutoScroll = true;
             this.flp_addAnswer.BackColor = System.Drawing.Color.White;
             this.flp_addAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flp_addAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flp_addAnswer.Location = new System.Drawing.Point(359, 143);
             this.flp_addAnswer.Name = "flp_addAnswer";
             this.flp_addAnswer.Size = new System.Drawing.Size(400, 301);
@@ -240,6 +249,7 @@
             this.txt_ContentQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ContentQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ContentQuestion.Location = new System.Drawing.Point(15, 143);
             this.txt_ContentQuestion.Multiline = true;
             this.txt_ContentQuestion.Name = "txt_ContentQuestion";
@@ -250,11 +260,12 @@
             // txt_Date
             // 
             this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Date.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(111, 462);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
             this.txt_Date.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_Date.Size = new System.Drawing.Size(100, 20);
+            this.txt_Date.Size = new System.Drawing.Size(100, 23);
             this.txt_Date.TabIndex = 55;
             // 
             // notifyIcon1
@@ -284,6 +295,7 @@
             this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.lbl_Question);
             this.Controls.Add(this.txt_ContentQuestion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuestion_OnlyOneSelect";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

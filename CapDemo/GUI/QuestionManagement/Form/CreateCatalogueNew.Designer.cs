@@ -41,8 +41,9 @@
             // 
             // btn_SaveCatalogue
             // 
-            this.btn_SaveCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_SaveCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_SaveCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveCatalogue.ImageIndex = 0;
@@ -65,8 +66,9 @@
             // 
             // btn_CancelCatalogue
             // 
-            this.btn_CancelCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_CancelCatalogue.BackColor = System.Drawing.Color.White;
+            this.btn_CancelCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelCatalogue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelCatalogue.ImageIndex = 1;
@@ -83,10 +85,10 @@
             // 
             // txt_NameCatalogue
             // 
-            this.txt_NameCatalogue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_NameCatalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NameCatalogue.Location = new System.Drawing.Point(24, 96);
             this.txt_NameCatalogue.Name = "txt_NameCatalogue";
-            this.txt_NameCatalogue.Size = new System.Drawing.Size(326, 20);
+            this.txt_NameCatalogue.Size = new System.Drawing.Size(326, 23);
             this.txt_NameCatalogue.TabIndex = 36;
             this.txt_NameCatalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_NameCatalogue_KeyDown);
             // 
@@ -123,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(371, 176);
@@ -132,7 +135,7 @@
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateCatalogueNew";

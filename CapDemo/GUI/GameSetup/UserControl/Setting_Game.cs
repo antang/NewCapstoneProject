@@ -19,10 +19,10 @@ namespace CapDemo.GUI.User_Controls
 
         private void lbl_AddGame_Click(object sender, EventArgs e)
         {
-            Add_New_Game AddNewGame = new Add_New_Game();
-            AddNewGame.ShowDialog();
-            //New_Game game= new New_Game();
-            //flp_Game.Controls.Add(game);
+            Add_New_Game ang = new Add_New_Game();
+            ang.ShowDialog();
+            New_Game game= new New_Game();
+            flp_Game.Controls.Add(game);
         }
 
         private void Setting_Game_Load(object sender, EventArgs e)

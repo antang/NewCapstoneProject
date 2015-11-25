@@ -80,11 +80,11 @@
             // txt_Catalogue
             // 
             this.txt_Catalogue.BackColor = System.Drawing.Color.White;
-            this.txt_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Catalogue.Location = new System.Drawing.Point(149, 53);
             this.txt_Catalogue.Name = "txt_Catalogue";
             this.txt_Catalogue.ReadOnly = true;
-            this.txt_Catalogue.Size = new System.Drawing.Size(252, 22);
+            this.txt_Catalogue.Size = new System.Drawing.Size(252, 23);
             this.txt_Catalogue.TabIndex = 2;
             // 
             // label3
@@ -101,11 +101,11 @@
             // txt_QuestionType
             // 
             this.txt_QuestionType.BackColor = System.Drawing.Color.White;
-            this.txt_QuestionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_QuestionType.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_QuestionType.Location = new System.Drawing.Point(149, 79);
             this.txt_QuestionType.Name = "txt_QuestionType";
             this.txt_QuestionType.ReadOnly = true;
-            this.txt_QuestionType.Size = new System.Drawing.Size(252, 22);
+            this.txt_QuestionType.Size = new System.Drawing.Size(252, 23);
             this.txt_QuestionType.TabIndex = 4;
             // 
             // label4
@@ -122,7 +122,7 @@
             // txt_ContentQuestion
             // 
             this.txt_ContentQuestion.BackColor = System.Drawing.Color.White;
-            this.txt_ContentQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ContentQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ContentQuestion.Location = new System.Drawing.Point(28, 131);
             this.txt_ContentQuestion.Multiline = true;
             this.txt_ContentQuestion.Name = "txt_ContentQuestion";
@@ -156,11 +156,11 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.BackColor = System.Drawing.Color.White;
-            this.txt_TimeAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TimeAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TimeAnswer.Location = new System.Drawing.Point(171, 413);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
-            this.txt_TimeAnswer.Size = new System.Drawing.Size(61, 22);
+            this.txt_TimeAnswer.Size = new System.Drawing.Size(61, 23);
             this.txt_TimeAnswer.TabIndex = 30;
             // 
             // label6
@@ -177,11 +177,11 @@
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.BackColor = System.Drawing.Color.White;
-            this.txt_ScoreTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ScoreTru.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreTru.Location = new System.Drawing.Point(132, 376);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
-            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 22);
+            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreTru.TabIndex = 29;
             // 
             // label7
@@ -198,11 +198,11 @@
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.BackColor = System.Drawing.Color.White;
-            this.txt_ScoreCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ScoreCong.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreCong.Location = new System.Drawing.Point(132, 341);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
-            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 22);
+            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreCong.TabIndex = 28;
             // 
             // label9
@@ -220,6 +220,8 @@
             // 
             this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Exit.BackColor = System.Drawing.Color.White;
+            this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Exit.ImageIndex = 0;
@@ -265,6 +267,8 @@
             // 
             this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Save.BackColor = System.Drawing.Color.White;
+            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Save.ImageIndex = 3;
@@ -283,18 +287,19 @@
             // txt_Date
             // 
             this.txt_Date.BackColor = System.Drawing.Color.White;
-            this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Date.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(132, 451);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
-            this.txt_Date.Size = new System.Drawing.Size(100, 22);
+            this.txt_Date.Size = new System.Drawing.Size(100, 23);
             this.txt_Date.TabIndex = 37;
             // 
             // btn_addAnswer
             // 
             this.btn_addAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_addAnswer.BackColor = System.Drawing.Color.White;
-            this.btn_addAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_addAnswer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_addAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_addAnswer.ImageIndex = 2;
@@ -313,6 +318,7 @@
             // 
             this.flp_Answer.AutoScroll = true;
             this.flp_Answer.BackColor = System.Drawing.Color.White;
+            this.flp_Answer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flp_Answer.Location = new System.Drawing.Point(415, 131);
             this.flp_Answer.Name = "flp_Answer";
             this.flp_Answer.Size = new System.Drawing.Size(373, 267);
@@ -355,7 +361,6 @@
             this.Name = "ViewQuestion";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewQuestion";
             this.Load += new System.EventHandler(this.ViewQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

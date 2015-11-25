@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateQuestionNew));
             this.gb_QuestionType = new System.Windows.Forms.GroupBox();
             this.rad_ShortAnswer = new System.Windows.Forms.RadioButton();
             this.rad_MultiSelect = new System.Windows.Forms.RadioButton();
@@ -48,7 +49,7 @@
             this.gb_QuestionType.Controls.Add(this.rad_OnlyOneAnswer);
             this.gb_QuestionType.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_QuestionType.ForeColor = System.Drawing.Color.White;
-            this.gb_QuestionType.Location = new System.Drawing.Point(19, 26);
+            this.gb_QuestionType.Location = new System.Drawing.Point(12, 12);
             this.gb_QuestionType.Name = "gb_QuestionType";
             this.gb_QuestionType.Size = new System.Drawing.Size(801, 57);
             this.gb_QuestionType.TabIndex = 25;
@@ -98,12 +99,10 @@
             // 
             // pnl_LoadQuestion
             // 
-            this.pnl_LoadQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_LoadQuestion.Location = new System.Drawing.Point(19, 99);
+            this.pnl_LoadQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_LoadQuestion.Location = new System.Drawing.Point(12, 76);
             this.pnl_LoadQuestion.Name = "pnl_LoadQuestion";
-            this.pnl_LoadQuestion.Size = new System.Drawing.Size(801, 465);
+            this.pnl_LoadQuestion.Size = new System.Drawing.Size(801, 524);
             this.pnl_LoadQuestion.TabIndex = 26;
             // 
             // CreateQuestionNew
@@ -114,6 +113,7 @@
             this.ClientSize = new System.Drawing.Size(834, 612);
             this.Controls.Add(this.pnl_LoadQuestion);
             this.Controls.Add(this.gb_QuestionType);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateQuestionNew";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

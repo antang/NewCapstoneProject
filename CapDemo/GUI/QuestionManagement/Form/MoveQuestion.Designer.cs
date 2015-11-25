@@ -42,6 +42,8 @@
             // 
             this.btn_SaveMove.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_SaveMove.BackColor = System.Drawing.Color.White;
+            this.btn_SaveMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SaveMove.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveMove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveMove.ImageIndex = 1;
@@ -64,11 +66,11 @@
             // 
             // cmb_Catalogue
             // 
-            this.cmb_Catalogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(12, 35);
             this.cmb_Catalogue.Name = "cmb_Catalogue";
-            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 28);
+            this.cmb_Catalogue.Size = new System.Drawing.Size(328, 24);
             this.cmb_Catalogue.TabIndex = 42;
             this.cmb_Catalogue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmb_Catalogue_KeyDown);
             // 
@@ -88,6 +90,8 @@
             // 
             this.btn_CancelMove.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_CancelMove.BackColor = System.Drawing.Color.White;
+            this.btn_CancelMove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelMove.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelMove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelMove.ImageIndex = 0;
@@ -119,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_CancelMove);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MoveQuestion";

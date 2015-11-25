@@ -56,14 +56,16 @@
             // btn_SaveAndCreateNewQuestion
             // 
             this.btn_SaveAndCreateNewQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveAndCreateNewQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_SaveAndCreateNewQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveAndCreateNewQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_SaveAndCreateNewQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveAndCreateNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SaveAndCreateNewQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveAndCreateNewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveAndCreateNewQuestion.ImageIndex = 1;
             this.btn_SaveAndCreateNewQuestion.ImageList = this.imageList1;
-            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(374, 409);
+            this.btn_SaveAndCreateNewQuestion.Location = new System.Drawing.Point(363, 409);
             this.btn_SaveAndCreateNewQuestion.Name = "btn_SaveAndCreateNewQuestion";
-            this.btn_SaveAndCreateNewQuestion.Size = new System.Drawing.Size(171, 40);
+            this.btn_SaveAndCreateNewQuestion.Size = new System.Drawing.Size(182, 40);
             this.btn_SaveAndCreateNewQuestion.TabIndex = 41;
             this.btn_SaveAndCreateNewQuestion.Text = "Lưu và Tạo mới";
             this.btn_SaveAndCreateNewQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,6 +102,7 @@
             // 
             this.txt_AnswerContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_AnswerContent.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AnswerContent.Location = new System.Drawing.Point(412, 60);
             this.txt_AnswerContent.Multiline = true;
             this.txt_AnswerContent.Name = "txt_AnswerContent";
@@ -133,6 +136,7 @@
             this.txt_ContentQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_ContentQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ContentQuestion.Location = new System.Drawing.Point(6, 60);
             this.txt_ContentQuestion.Multiline = true;
             this.txt_ContentQuestion.Name = "txt_ContentQuestion";
@@ -143,8 +147,10 @@
             // btn_CancelQuestion
             // 
             this.btn_CancelQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CancelQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_CancelQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_CancelQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CancelQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelQuestion.ImageIndex = 0;
             this.btn_CancelQuestion.ImageList = this.imageList1;
@@ -160,8 +166,10 @@
             // btn_SaveQuestion
             // 
             this.btn_SaveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SaveQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_SaveQuestion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_SaveQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SaveQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SaveQuestion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveQuestion.ImageIndex = 2;
             this.btn_SaveQuestion.ImageList = this.imageList1;
@@ -197,10 +205,11 @@
             // 
             // txt_Date
             // 
+            this.txt_Date.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(112, 133);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
-            this.txt_Date.Size = new System.Drawing.Size(100, 20);
+            this.txt_Date.Size = new System.Drawing.Size(100, 23);
             this.txt_Date.TabIndex = 23;
             // 
             // label8
@@ -216,10 +225,11 @@
             // 
             // txt_TimeAnswer
             // 
+            this.txt_TimeAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TimeAnswer.Location = new System.Drawing.Point(112, 98);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
-            this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 20);
+            this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 23);
             this.txt_TimeAnswer.TabIndex = 21;
             // 
             // label5
@@ -235,10 +245,11 @@
             // 
             // txt_ScoreTru
             // 
+            this.txt_ScoreTru.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreTru.Location = new System.Drawing.Point(112, 62);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
-            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 20);
+            this.txt_ScoreTru.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreTru.TabIndex = 20;
             // 
             // label6
@@ -254,10 +265,11 @@
             // 
             // txt_ScoreCong
             // 
+            this.txt_ScoreCong.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScoreCong.Location = new System.Drawing.Point(112, 27);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
-            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 20);
+            this.txt_ScoreCong.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreCong.TabIndex = 19;
             // 
             // label7
@@ -280,7 +292,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.btn_SaveAndCreateNewQuestion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_CancelQuestion);

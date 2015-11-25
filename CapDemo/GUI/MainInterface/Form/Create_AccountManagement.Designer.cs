@@ -36,9 +36,9 @@
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_OK = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // lbl1
@@ -47,7 +47,9 @@
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.Color.White;
-            this.lbl1.Location = new System.Drawing.Point(12, 9);
+            this.lbl1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl1.ImageIndex = 0;
+            this.lbl1.Location = new System.Drawing.Point(17, 9);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(322, 25);
             this.lbl1.TabIndex = 35;
@@ -98,38 +100,21 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.Blue;
             this.btn_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Cancel.ImageIndex = 3;
             this.btn_Cancel.ImageList = this.imageList1;
-            this.btn_Cancel.Location = new System.Drawing.Point(364, 141);
+            this.btn_Cancel.Location = new System.Drawing.Point(354, 141);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(81, 27);
+            this.btn_Cancel.Size = new System.Drawing.Size(91, 27);
             this.btn_Cancel.TabIndex = 41;
             this.btn_Cancel.Text = "Hủy";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
-            // btn_OK
-            // 
-            this.btn_OK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_OK.ForeColor = System.Drawing.Color.Blue;
-            this.btn_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_OK.ImageIndex = 2;
-            this.btn_OK.ImageList = this.imageList1;
-            this.btn_OK.Location = new System.Drawing.Point(267, 141);
-            this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(81, 27);
-            this.btn_OK.TabIndex = 42;
-            this.btn_OK.Text = "Tạo";
-            this.btn_OK.UseVisualStyleBackColor = true;
-            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // imageList1
             // 
@@ -139,6 +124,29 @@
             this.imageList1.Images.SetKeyName(1, "Cancel.png");
             this.imageList1.Images.SetKeyName(2, "add.png");
             this.imageList1.Images.SetKeyName(3, "Cancel.png");
+            // 
+            // btn_OK
+            // 
+            this.btn_OK.BackColor = System.Drawing.Color.White;
+            this.btn_OK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_OK.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_OK.ForeColor = System.Drawing.Color.Blue;
+            this.btn_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_OK.ImageIndex = 2;
+            this.btn_OK.ImageList = this.imageList1;
+            this.btn_OK.Location = new System.Drawing.Point(257, 141);
+            this.btn_OK.Name = "btn_OK";
+            this.btn_OK.Size = new System.Drawing.Size(91, 27);
+            this.btn_OK.TabIndex = 42;
+            this.btn_OK.Text = "Tạo";
+            this.btn_OK.UseVisualStyleBackColor = false;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // Create_AccountManagement
             // 
@@ -155,12 +163,11 @@
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Create_AccountManagement";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tạo tài khoản người dùng";
             this.ResumeLayout(false);
             this.PerformLayout();
 

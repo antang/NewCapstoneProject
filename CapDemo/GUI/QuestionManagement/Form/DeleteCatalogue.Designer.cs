@@ -40,6 +40,9 @@
             // 
             // btn_Ok
             // 
+            this.btn_Ok.BackColor = System.Drawing.Color.White;
+            this.btn_Ok.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ok.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Ok.ImageIndex = 1;
@@ -50,7 +53,7 @@
             this.btn_Ok.TabIndex = 6;
             this.btn_Ok.Text = "Đồng ý";
             this.btn_Ok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Ok.UseVisualStyleBackColor = true;
+            this.btn_Ok.UseVisualStyleBackColor = false;
             this.btn_Ok.Click += new System.EventHandler(this.btn_Ok_Click);
             // 
             // imageList1
@@ -90,6 +93,9 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.White;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Cancel.ImageIndex = 0;
@@ -100,7 +106,7 @@
             this.btn_Cancel.TabIndex = 7;
             this.btn_Cancel.Text = "Hủy";
             this.btn_Cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // notifyIcon1
@@ -120,6 +126,7 @@
             this.Controls.Add(this.rad_DelCat);
             this.Controls.Add(this.btn_Cancel);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeleteCatalogue";

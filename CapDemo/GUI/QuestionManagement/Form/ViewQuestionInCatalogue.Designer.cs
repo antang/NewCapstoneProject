@@ -110,15 +110,16 @@
             // btn_SearchCatalogue
             // 
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SearchCatalogue.BackColor = System.Drawing.Color.Navy;
+            this.btn_SearchCatalogue.BackColor = System.Drawing.Color.White;
             this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
             this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchCatalogue.ImageIndex = 3;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(514, 61);
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(514, 62);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
-            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 29);
+            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 25);
             this.btn_SearchCatalogue.TabIndex = 16;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = false;
             // 
@@ -134,7 +135,9 @@
             // btn_CancelViewQuestione
             // 
             this.btn_CancelViewQuestione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CancelViewQuestione.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_CancelViewQuestione.BackColor = System.Drawing.Color.White;
+            this.btn_CancelViewQuestione.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CancelViewQuestione.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CancelViewQuestione.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelViewQuestione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelViewQuestione.ImageIndex = 0;
@@ -169,6 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewQuestionInCatalogue";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
