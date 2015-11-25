@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CapDemo.BL.CompetitionBL">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AACAAAAIAAAAAAAAQAAAAAEAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>BL\CompetitionBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.BL.ContestBL">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAATAAAAgAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>BL\ContestBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.BL.PhaseBL">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAAABIAAAAAAAAAAAAAAAAAAAEAAAgQAAAAAAAAAA=</HashCode>
+      <FileName>BL\PhaseBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.BL.PlayerBL">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAgQgAAAABA=</HashCode>
+      <FileName>BL\PlayerBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.BL.RoundBL">
+    <Position X="2.5" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAACAAAgAAAAAAEABAAAAAAAA=</HashCode>
+      <FileName>BL\RoundBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DO.Competition">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>DO\Competition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DO.Contest">
+    <Position X="11.75" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAAAABAAAAAEAgAABCIAIABgAChQQAAIUAAAGAAAE=</HashCode>
+      <FileName>DO\Contest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DO.Phase">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQQAAAAEAAAAAABAAAIAQAACAAAAAAAAA=</HashCode>
+      <FileName>DO\Phase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DO.Player">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAgACAAIEAgAAAAAAACACAAAgAgAAAAIA=</HashCode>
+      <FileName>DO\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DO.Round">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAIAAAAAAAAAACAAAACgAAAEgAAA=</HashCode>
+      <FileName>DO\Round.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.DA.DatabaseAccess">
+    <Position X="2.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAASAAAADAQAAAEQAEAAAAAQAAAAAAAA=</HashCode>
+      <FileName>DA\DatabaseAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.GUI.Add_New_Game" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAABAQhCAAABAAAADAAAECAAAAAAAgIhADAAAAAAA=</HashCode>
+      <FileName>GUI\MainInterface\Form\Add_New_Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapDemo.GUI.GameShowControl" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACQAAAAECQCBAAgCAAEAACAABQAAAQEAAAA=</HashCode>
+      <FileName>GUI\MainInterface\Form\GameShowControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

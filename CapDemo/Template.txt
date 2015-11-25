@@ -1,0 +1,18 @@
+[Q]what is requeirement?
+[TQ]multichoice[/TQ]
+[A][P]1[/P]answer 1[/A]
+[A][P]1[/P]answer 2[/A]
+[A][P]0[/P]answer 3[/A]
+[A][P]0[/P]answer 4[/A]
+[/Q]
+[Q]what is testing?
+[TQ]multichoice[/TQ]
+[A][P]1[/P]answer 1[/A]
+[A][P]0[/P]answer 2[/A]
+[A][P]0[/P]answer 3[/A]
+[A][P]0[/P]answer 4[/A]
+[/Q]
+[Q]what is architecture?
+[TQ]shortanswer[/TQ]
+[A][P]1[/P]answer 1[/A]
+[/Q]
