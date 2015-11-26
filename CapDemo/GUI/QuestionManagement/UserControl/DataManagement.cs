@@ -405,21 +405,21 @@ namespace CapDemo.GUI.User_Controls
         //Click search
         private void btn_SearchQuestion_Click(object sender, EventArgs e)
         {
-            if (dgv_Question.SelectedRows.Count >0)
-            {
-                int[] RowSelected = new int[dgv_Question.SelectedRows.Count];
-                int i = 0;
-                foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
-                {
-                    RowSelected[i] = Convert.ToInt32(item.Cells["IDQuestion"].Value.ToString());
-                    i++;
-                }
+            //if (dgv_Question.SelectedRows.Count >0)
+            //{
+            //    int[] RowSelected = new int[dgv_Question.SelectedRows.Count];
+            //    int i = 0;
+            //    foreach (DataGridViewRow item in this.dgv_Question.SelectedRows)
+            //    {
+            //        RowSelected[i] = Convert.ToInt32(item.Cells["IDQuestion"].Value.ToString());
+            //        i++;
+            //    }
 
-                for (int j = 0; j < RowSelected.Length; j++)
-                {
-                    MessageBox.Show("" + RowSelected[j]);
-                }
-            }
+            //    for (int j = 0; j < RowSelected.Length; j++)
+            //    {
+            //        MessageBox.Show("" + RowSelected[j]);
+            //    }
+            //}
             
         } 
     }

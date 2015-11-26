@@ -33,9 +33,9 @@
             this.tbc_DataManagement = new System.Windows.Forms.TabControl();
             this.tbp_CatalogueManagement = new System.Windows.Forms.TabPage();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.gb_CatalogueFunction = new System.Windows.Forms.GroupBox();
             this.btn_ViewQuestion = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_ImportQuestion = new System.Windows.Forms.Button();
             this.btn_EditCatalogue = new System.Windows.Forms.Button();
             this.btn_DeleteCatalogue = new System.Windows.Forms.Button();
@@ -103,19 +103,31 @@
             // btn_SearchCatalogue
             // 
             this.btn_SearchCatalogue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SearchCatalogue.BackColor = System.Drawing.Color.Transparent;
+            this.btn_SearchCatalogue.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_SearchCatalogue.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchCatalogue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SearchCatalogue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SearchCatalogue.Enabled = false;
+            this.btn_SearchCatalogue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchCatalogue.ForeColor = System.Drawing.Color.White;
-            this.btn_SearchCatalogue.ImageIndex = 5;
-            this.btn_SearchCatalogue.ImageList = this.imageList1;
-            this.btn_SearchCatalogue.Location = new System.Drawing.Point(400, 74);
+            this.btn_SearchCatalogue.ImageIndex = 6;
+            this.btn_SearchCatalogue.Location = new System.Drawing.Point(395, 77);
             this.btn_SearchCatalogue.Name = "btn_SearchCatalogue";
-            this.btn_SearchCatalogue.Size = new System.Drawing.Size(30, 30);
+            this.btn_SearchCatalogue.Size = new System.Drawing.Size(35, 24);
             this.btn_SearchCatalogue.TabIndex = 14;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Cancel.png");
+            this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
+            this.imageList1.Images.SetKeyName(2, "review.png");
+            this.imageList1.Images.SetKeyName(3, "copy.png");
+            this.imageList1.Images.SetKeyName(4, "move.png");
+            this.imageList1.Images.SetKeyName(5, "search.png");
+            this.imageList1.Images.SetKeyName(6, "search2.png");
             // 
             // gb_CatalogueFunction
             // 
@@ -154,17 +166,6 @@
             this.btn_ViewQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ViewQuestion.UseVisualStyleBackColor = false;
             this.btn_ViewQuestion.Click += new System.EventHandler(this.btn_ViewQuestion_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Cancel.png");
-            this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
-            this.imageList1.Images.SetKeyName(2, "review.png");
-            this.imageList1.Images.SetKeyName(3, "copy.png");
-            this.imageList1.Images.SetKeyName(4, "move.png");
-            this.imageList1.Images.SetKeyName(5, "search.png");
             // 
             // btn_ImportQuestion
             // 
@@ -338,6 +339,7 @@
             this.btn_SearchQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_SearchQuestion.BackgroundImage = global::CapDemo.Properties.Resources.search2;
             this.btn_SearchQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_SearchQuestion.Enabled = false;
             this.btn_SearchQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SearchQuestion.ImageIndex = 3;
             this.btn_SearchQuestion.Location = new System.Drawing.Point(395, 77);
