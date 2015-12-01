@@ -20,20 +20,69 @@ namespace CapDemo.BL
         public List<Contest> GetContest()
         {
             List<Contest> ContestList = new List<Contest>();
-            string query = "SELECT r.[Contest_ID],r.[Contest_Name]"
-                        + " FROM [Capstone].[dbo].[Contest] r";
+            string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
+                        + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
+                        + " FROM [Capstone].[dbo].[Contest]";
             DataTable dt = DA.SelectDatabase(query);
-            int i = 1;
+            //int i = 1;
             if (dt!= null)
             {
                 foreach (DataRow item in dt.Rows)
                 {
                     Contest Contest = new Contest();
-                    Contest.IDContest = Convert.ToInt32(item["Contest_ID"]);
-                    Contest.NameContest = item["Contest_Name"].ToString();
-                    Contest.Sequence = i;
+                    Contest.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
+                    Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
+                    Contest.NameContest = (item["Contest_Name"]).ToString();
+                    Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
+                    Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
+                    Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
+                    Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
+                    Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
+                    Contest.TimesFalse= Convert.ToInt32(item["Time_of_False"].ToString());
+
                     ContestList.Add(Contest);
-                    i++;
+                    //i++;
+                }
+            }
+            return ContestList;
+        }
+        //Get competition/round/contest
+
+        public List<Contest> GetAllSetup()
+        {
+            List<Contest> ContestList = new List<Contest>();
+            string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
+                        + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
+                        + ",r.[Round_Name],r.[Round_ID],n.[Competition_Name],r.[Competition_ID]"
+                        + " FROM [Capstone].[dbo].[Contest] c"
+                        + " INNER JOIN [Capstone].[dbo].[Round] r ON r.[Round_ID] = c.[Round_ID]"
+                        + " INNER JOIN [Capstone].[dbo].[Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
+            DataTable dt = DA.SelectDatabase(query);
+            //int i = 1;
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Contest Contest = new Contest();
+                    Contest.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
+                    Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
+                    Contest.NameContest = (item["Contest_Name"]).ToString();
+                    Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
+                    Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
+                    Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
+                    Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
+                    Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
+                    //round
+                    Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
+                    Contest.Round.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
+                    Contest.Round.IDCompetition = Convert.ToInt32(item["Competition_ID"].ToString());
+                    Contest.Round.NameRound = (item["Round_Name"]).ToString();
+                    Contest.Competition.NameCompetition = (item["Competition_Name"]).ToString();
+
+                    ContestList.Add(Contest);
+                    //i++;
                 }
             }
             return ContestList;
@@ -42,8 +91,12 @@ namespace CapDemo.BL
         //Insert Contest
         public bool AddContest(Contest Contest)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Contest]([Contest_Name])"
-                           + "VALUES ('" + Contest.NameContest + "')";
+            string query = "INSERT INTO [Capstone].[dbo].[Contest]"
+                +"([Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge],"
+                +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False])"
+                + " VALUES ('" + Contest.IDRound + "','" + Contest.NameContest.Replace("'", "''") + "','" + Contest.Bonus + "',"
+                            +"'" + Contest.RequestTime + "','" + Contest.ChallengceScore + "','" + Contest.NumberChallenge + "',"
+                            + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "')";
             if (ExistContest(Contest) == true)
             {
                 return false;
@@ -57,9 +110,10 @@ namespace CapDemo.BL
         //Check Contest Exist
         public bool ExistContest(Contest Contest)
         {
-            string query = "SELECT [Contest_ID],[Contest_Name]"
-                       + " FROM [Capstone].[dbo].[Contest]"
-                       + " WHERE [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'";
+            string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
+                        + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
+                        + " FROM [Capstone].[dbo].[Contest]"
+                        + " WHERE [Round_ID]= '"+Contest.IDRound+"' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
             {
@@ -74,16 +128,53 @@ namespace CapDemo.BL
         //Edit Contest
         public bool EditContestbyID(Contest Contest)
         {
-            string query = "UPDATE Contest SET Contest_Name ='" + Contest.NameContest + "'"
+            string query = "UPDATE [Capstone].[dbo].[Contest]"
+                         + " SET [Round_ID]= '" + Contest.IDRound + "',[Contest_Name]='" + Contest.NameContest.Replace("'", "''") + "'"
+                         + ", [Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
+                         + ",[Challenge_Score]='" + Contest.ChallengceScore + "',[Number_Challenge]='" + Contest.NumberChallenge + "'"
+                         + ",[Time_show_Anwer]='" + Contest.TimeShowAnswer + "',[Time_show_Question]='" + Contest.TimeShowQuestion + "'"
+                         + ",[Time_of_True]='" + Contest.TimesTrue + "',[Time_of_False]='" + Contest.TimesFalse + "'"
                          + " WHERE Contest_ID = '" + Contest.IDContest + "'";
-            return DA.UpdateDatabase(query);
+            if (EditExistContest(Contest) == true)
+            {
+                return false;
+            }
+            else
+            {
+                return DA.UpdateDatabase(query);
+            }
         }
+        //Check Edit Contest Exist
+        public bool EditExistContest(Contest Contest)
+        {
+            string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
+                        + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
+                        + " FROM [Capstone].[dbo].[Contest]"
+                        + " WHERE [Round_ID]= '" + Contest.IDRound + "' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'"
+                        + " AND [Contest_ID]<> '" + Contest.IDContest + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt.Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Delete Contest
         public bool DeleteContestbyID(Contest Contest)
         {
-            string query = "DELETE FROM Contest"
-                         + " WHERE Contest_ID = '" + Contest.IDContest + "'";
+            string query = "DELETE FROM [Capstone].[dbo].[Contest]"
+                         + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
             return DA.DeleteDatabase(query);
+        }
+        //GET MAXIMUM ID QUESTION
+        public int MaxIDContest()
+        {
+            string query = "SELECT MAX(Contest_ID) FROM Contest";
+            return DA.MaxID(query);
         }
     }
 }

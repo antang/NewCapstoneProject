@@ -42,7 +42,7 @@ namespace CapDemo.BL
                     Question.NameCatalogue = item["Catalogue_Name"].ToString();
                     Question.Date = (DateTime)item["Date_Create"];
                     Question.Sequence = i;
-                    //Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
+                    ///Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     QuestionList.Add(Question);
                     i++;
                 }

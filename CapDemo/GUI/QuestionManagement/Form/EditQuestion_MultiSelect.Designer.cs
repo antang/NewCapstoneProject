@@ -255,6 +255,7 @@
             // 
             // flp_addAnswer
             // 
+            this.flp_addAnswer.AutoScroll = true;
             this.flp_addAnswer.BackColor = System.Drawing.Color.White;
             this.flp_addAnswer.Location = new System.Drawing.Point(356, 142);
             this.flp_addAnswer.Name = "flp_addAnswer";

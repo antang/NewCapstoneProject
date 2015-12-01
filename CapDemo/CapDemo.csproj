@@ -56,6 +56,12 @@
     <Compile Include="DO\Phase.cs" />
     <Compile Include="DO\Player.cs" />
     <Compile Include="DO\Round.cs" />
+    <Compile Include="GUI\GameSetup\Form\EditGameSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameSetup\Form\EditGameSetting.Designer.cs">
+      <DependentUpon>EditGameSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainInterface\Form\Add_New_Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionSetting.Designer.cs">
+      <DependentUpon>QuestionSetting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\GameSetup\Form\EditGameSetting.resx">
+      <DependentUpon>EditGameSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainInterface\Form\Add_New_Game.resx">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,6 +486,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuestionSetting.resx">
+      <DependentUpon>QuestionSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram_IC1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -545,7 +563,10 @@
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\GameSetup\Form\" />
+    <ProjectReference Include="C:\Users\TNA\Dropbox\GSC-Team\2. Team\2.4. Khanh Nguyen\Reference\GSC_SendMessage\NetcomLibrary\NetcomLibrary.csproj">
+      <Project>{e000475a-9937-469e-8c17-02ae94ba6e9c}</Project>
+      <Name>NetcomLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

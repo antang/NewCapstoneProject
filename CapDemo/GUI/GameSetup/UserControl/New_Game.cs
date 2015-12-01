@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapDemo.BL;
+using CapDemo.DO;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -16,5 +18,17 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+
+        private void New_Game_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void New_Game_DoubleClick(object sender, EventArgs e)
+        {
+            EditGameSetting EditGameSetting = new EditGameSetting(Convert.ToInt32(label2.Text));
+            EditGameSetting.ShowDialog();
+        }
+
+        
     }
 }

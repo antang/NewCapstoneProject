@@ -66,7 +66,7 @@ namespace CapDemo.GUI
                         MultiSelectAnswer.ID_Answer = i;
                         MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
                         MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
-                        flp_addAnswer.Controls.Add(MultiSelectAnswer);
+                        //flp_addAnswer.Controls.Add(MultiSelectAnswer);
 
                         MultiSelectAnswer.txt_AnswerContent.Text = AnswerList.ElementAt(j).ContentAnswer;
                         MultiSelectAnswer.chk_Check.Checked = AnswerList.ElementAt(j).IsCorrect;

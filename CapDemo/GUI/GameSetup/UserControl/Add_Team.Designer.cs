@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnTat = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_TeamScore = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,17 +42,18 @@
             this.btn_Color = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnTat
+            // btn_Delete
             // 
-            this.btnTat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTat.ForeColor = System.Drawing.Color.White;
-            this.btnTat.Location = new System.Drawing.Point(285, 4);
-            this.btnTat.Name = "btnTat";
-            this.btnTat.Size = new System.Drawing.Size(20, 20);
-            this.btnTat.TabIndex = 39;
-            this.btnTat.Text = "X";
-            this.btnTat.UseVisualStyleBackColor = false;
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Delete.Location = new System.Drawing.Point(285, 4);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(20, 20);
+            this.btn_Delete.TabIndex = 39;
+            this.btn_Delete.Text = "X";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click_1);
             // 
             // label3
             // 
@@ -74,6 +75,8 @@
             this.txt_TeamScore.Name = "txt_TeamScore";
             this.txt_TeamScore.Size = new System.Drawing.Size(54, 30);
             this.txt_TeamScore.TabIndex = 36;
+            this.txt_TeamScore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TeamScore_KeyDown);
+            this.txt_TeamScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TeamScore_KeyPress);
             // 
             // label2
             // 
@@ -95,6 +98,7 @@
             this.txt_TeamName.Name = "txt_TeamName";
             this.txt_TeamName.Size = new System.Drawing.Size(220, 30);
             this.txt_TeamName.TabIndex = 34;
+            this.txt_TeamName.TextChanged += new System.EventHandler(this.txt_TeamName_TextChanged);
             // 
             // label1
             // 
@@ -135,7 +139,8 @@
             // 
             // btn_Paint
             // 
-            this.btn_Paint.BackColor = System.Drawing.Color.Maroon;
+            this.btn_Paint.BackColor = System.Drawing.Color.White;
+            this.btn_Paint.Enabled = false;
             this.btn_Paint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Paint.Location = new System.Drawing.Point(106, 131);
             this.btn_Paint.Name = "btn_Paint";
@@ -145,7 +150,7 @@
             // 
             // pnl_ColorCoat
             // 
-            this.pnl_ColorCoat.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_ColorCoat.BackColor = System.Drawing.Color.White;
             this.pnl_ColorCoat.BackgroundImage = global::CapDemo.Properties.Resources.MauAo;
             this.pnl_ColorCoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_ColorCoat.Location = new System.Drawing.Point(176, 74);
@@ -170,10 +175,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.KhungDoiChoi;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pnl_ColorCoat);
-            this.Controls.Add(this.btnTat);
+            this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Color);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_TeamScore);
@@ -183,6 +188,7 @@
             this.Controls.Add(this.lbl_Number);
             this.Controls.Add(this.lblVong);
             this.Controls.Add(this.btn_Paint);
+            this.DoubleBuffered = true;
             this.Name = "Add_Team";
             this.Size = new System.Drawing.Size(310, 150);
             this.ResumeLayout(false);
@@ -192,17 +198,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnl_ColorCoat;
-        private System.Windows.Forms.Button btnTat;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Color;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_TeamScore;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_TeamName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Label lbl_Number;
         private System.Windows.Forms.Label lblVong;
-        private System.Windows.Forms.Button btn_Paint;
+        public System.Windows.Forms.Panel pnl_ColorCoat;
+        public System.Windows.Forms.TextBox txt_TeamScore;
+        public System.Windows.Forms.TextBox txt_TeamName;
+        public System.Windows.Forms.Label lbl_Number;
+        public System.Windows.Forms.Button btn_Paint;
     }
 }

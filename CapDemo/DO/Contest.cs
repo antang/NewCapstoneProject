@@ -18,12 +18,52 @@ namespace CapDemo.DO
         int timeShowQuestion;
         int timesTrue;
         int timesFalse;
+        int idRound;
+        Round round;
+        Competition competition;
+        Phase phase;
+        Player player;
+
+        public Player Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
+
+        public Phase Phase
+        {
+            get { return phase; }
+            set { phase = value; }
+        }
+
+        public Competition Competition
+        {
+            get { return competition; }
+            set { competition = value; }
+        }
+        public Contest()
+        {
+            round = new Round();
+            competition = new Competition();
+            phase = new Phase();
+            player = new Player();
+        }
+        public Round Round
+        {
+            get { return round; }
+            set { round = value; }
+        }
         public int IDContest
         {
             get { return iDContest; }
             set { iDContest = value; }
         }
 
+        public int IDRound
+        {
+            get { return idRound; }
+            set { idRound = value; }
+        }
         public int Sequence { get; set; }
         public string NameContest
         {

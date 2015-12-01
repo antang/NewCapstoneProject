@@ -19,7 +19,7 @@ namespace CapDemo.DO
         string answerContent;
         DateTime date;
 
-       
+        
         public string AnswerContent
         {
             get { return answerContent; }

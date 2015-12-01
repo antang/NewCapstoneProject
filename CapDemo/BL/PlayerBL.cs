@@ -20,19 +20,23 @@ namespace CapDemo.BL
         public List<Player> GetPlayer()
         {
             List<Player> PlayerList = new List<Player>();
-            string query = "SELECT r.[Player_ID],r.[Player_Name]"
-                        + " FROM [Capstone].[dbo].[Player] r";
+            string query = "SELECT [Player_ID],[Contest_ID],[Player_Name],[Player_Score],[Color]"
+                        +  " FROM [Capstone].[dbo].[Player]";
             DataTable dt = DA.SelectDatabase(query);
-            int i = 1;
+            //int i = 1;
             if (dt!= null)
             {
                 foreach (DataRow item in dt.Rows)
                 {
                     Player Player = new Player();
-                    Player.IDPlayer = Convert.ToInt32(item["Player_ID"]);
+                    Player.IDPlayer = Convert.ToInt32(item["Player_ID"].ToString());
+                    Player.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
                     Player.PlayerName = item["Player_Name"].ToString();
+                    Player.PlayerScore = Convert.ToInt32(item["Player_Score"].ToString());
+                    Player.Color = item["Color"].ToString();
+
                     PlayerList.Add(Player);
-                    i++;
+                    //i++;
                 }
             }
             return PlayerList;
@@ -41,26 +45,11 @@ namespace CapDemo.BL
         //Insert Player
         public bool AddPlayer(Player Player)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Player]([Player_Name])"
-                           + "VALUES ('" + Player.PlayerName + "')";
-            if (ExistPlayer(Player) == true)
-            {
-                return false;
-            }
-            else
-            {
-                return DA.InsertDatabase(query);
-            }
-        }
+            string query = "INSERT INTO [Capstone].[dbo].[Player]([Contest_ID],[Player_Name],[Player_Score],[Color])"
+                           + " VALUES ('" + Player.IDContest + "','" + Player.PlayerName + "',"
+                           + "'" + Player.PlayerScore + "','" + Player.Color + "')";
 
-        //Check Player Exist
-        public bool ExistPlayer(Player Player)
-        {
-            string query = "SELECT [Player_ID],[Player_Name]"
-                       + " FROM [Capstone].[dbo].[Player]"
-                       + " WHERE [Player_Name] = '" + Player.PlayerName.ToUpper() + "'";
-            DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            if (DA.InsertDatabase(query))
             {
                 return true;
             }
@@ -69,6 +58,23 @@ namespace CapDemo.BL
                 return false;
             }
         }
+
+        //Check Player Exist
+        //public bool ExistPlayer(Player Player)
+        //{
+        //    string query = "SELECT [Player_ID],[Player_Name]"
+        //               + " FROM [Capstone].[dbo].[Player]"
+        //               + " WHERE [Player_Name] = '" + Player.PlayerName.ToUpper() + "'";
+        //    DataTable dt = DA.SelectDatabase(query);
+        //    if (dt.Rows.Count != 0)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         //Edit Player
         public bool EditPlayerbyID(Player Player)

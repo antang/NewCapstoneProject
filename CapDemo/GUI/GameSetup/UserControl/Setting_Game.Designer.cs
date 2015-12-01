@@ -33,10 +33,11 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl_AddGame = new System.Windows.Forms.Label();
             this.flp_Game = new System.Windows.Forms.FlowLayoutPanel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,38 +79,18 @@
             this.flp_Game.Size = new System.Drawing.Size(586, 384);
             this.flp_Game.TabIndex = 5;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Location = new System.Drawing.Point(400, 488);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 44);
-            this.panel1.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.ImageIndex = 0;
-            this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(7, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Chỉnh sữa";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Cancel.png");
             this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // btn_Delete
             // 
@@ -127,6 +108,34 @@
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Delete);
+            this.panel1.Location = new System.Drawing.Point(400, 488);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 44);
+            this.panel1.TabIndex = 6;
+            this.panel1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.ImageIndex = 0;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(7, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Chỉnh sữa";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Setting_Game
             // 
@@ -150,11 +159,12 @@
 
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl_AddGame;
+        private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.FlowLayoutPanel flp_Game;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button btn_Delete;
-        public System.Windows.Forms.FlowLayoutPanel flp_Game;
 
     }
 }

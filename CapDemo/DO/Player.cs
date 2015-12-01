@@ -9,8 +9,8 @@ namespace CapDemo.DO
     class Player
     {
         int iDPlayer;
-        int iDCompetition;
-        int iDRound;
+        int iDContest;
+        //int iDRound;
         string playerName;
         int playerScore;
         string color;
@@ -21,17 +21,17 @@ namespace CapDemo.DO
             set { iDPlayer = value; }
         }
 
-        public int IDCompetition
+        public int IDContest
         {
-            get { return iDCompetition; }
-            set { iDCompetition = value; }
+            get { return iDContest; }
+            set { iDContest = value; }
         }
 
-        public int IDRound
-        {
-            get { return iDRound; }
-            set { iDRound = value; }
-        }
+        //public int IDRound
+        //{
+        //    get { return iDRound; }
+        //    set { iDRound = value; }
+        //}
 
         public string PlayerName
         {

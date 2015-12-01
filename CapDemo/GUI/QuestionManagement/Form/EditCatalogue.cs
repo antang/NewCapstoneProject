@@ -69,7 +69,7 @@ namespace CapDemo.GUI
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
                     notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề thành công";
-                    notifyIcon1.ShowBalloonTip(5000);
+                    //notifyIcon1.ShowBalloonTip(1000);
                     this.Close();
                 }
                 else
@@ -78,5 +78,6 @@ namespace CapDemo.GUI
                 }
             }
         }
+
     }
 }

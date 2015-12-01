@@ -9,9 +9,11 @@ namespace CapDemo.DO
     class Phase
     {
         int iDContest;
-        int iDQuestion;
+        int iDCatalogue;
         string namePhase;
-        string scorePhase;
+        int scorePhase;
+        int minusPhase;
+        int timePhase;
 
         public int IDContest
         {
@@ -19,10 +21,10 @@ namespace CapDemo.DO
             set { iDContest = value; }
         }
 
-        public int IDQuestion
+        public int IDCatalogue
         {
-            get { return iDQuestion; }
-            set { iDQuestion = value; }
+            get { return iDCatalogue; }
+            set { iDCatalogue = value; }
         }
 
         public string NamePhase
@@ -31,10 +33,21 @@ namespace CapDemo.DO
             set { namePhase = value; }
         }
 
-        public string ScorePhase
+        public int ScorePhase
         {
             get { return scorePhase; }
             set { scorePhase = value; }
         }
+        public int MinusPhase
+        {
+            get { return minusPhase; }
+            set { minusPhase = value; }
+        }
+        public int TimePhase
+        {
+            get { return timePhase; }
+            set { timePhase = value; }
+        }
+
     }
 }
