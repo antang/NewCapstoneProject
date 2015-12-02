@@ -79,7 +79,7 @@
             this.btn_Next.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Next.ImageIndex = 1;
             this.btn_Next.ImageList = this.imageList1;
-            this.btn_Next.Location = new System.Drawing.Point(669, 554);
+            this.btn_Next.Location = new System.Drawing.Point(563, 554);
             this.btn_Next.Name = "btn_Next";
             this.btn_Next.Size = new System.Drawing.Size(100, 35);
             this.btn_Next.TabIndex = 7;
@@ -118,7 +118,7 @@
             this.btn_Back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Back.ImageIndex = 0;
             this.btn_Back.ImageList = this.imageList1;
-            this.btn_Back.Location = new System.Drawing.Point(541, 554);
+            this.btn_Back.Location = new System.Drawing.Point(448, 554);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(100, 35);
             this.btn_Back.TabIndex = 8;

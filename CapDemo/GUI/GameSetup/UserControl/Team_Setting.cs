@@ -101,7 +101,7 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         //check item in team is empty
-        public bool checkPhaseEmpty()
+        public bool checkTeamEmpty()
         {
             int j = 0;
             foreach (Add_Team item in flp_Team.Controls)

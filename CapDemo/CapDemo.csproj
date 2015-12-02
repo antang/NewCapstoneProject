@@ -562,12 +562,6 @@
     <None Include="image\T_menu.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="C:\Users\TNA\Dropbox\GSC-Team\2. Team\2.4. Khanh Nguyen\Reference\GSC_SendMessage\NetcomLibrary\NetcomLibrary.csproj">
-      <Project>{e000475a-9937-469e-8c17-02ae94ba6e9c}</Project>
-      <Name>NetcomLibrary</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

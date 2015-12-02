@@ -27,7 +27,7 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         int i = 0;
-        //add phase
+        //add new phase
         private void btn_AddPhase_Click(object sender, EventArgs e)
         {
             int count=0;
@@ -95,7 +95,15 @@ namespace CapDemo.GUI.User_Controls
             }
             else
             {
-                return true ;
+                if (j <= 5)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
         }
         //check item in phase is empty
@@ -104,7 +112,7 @@ namespace CapDemo.GUI.User_Controls
             int j = 0;
             foreach (Add_Phase item in flp_Phase.Controls)
             {
-                if (item.txt_Time.Text.Trim() == ""||item.txt_Score.Text.Trim() == ""||item.txt_Minus.Text.Trim()==""||item.txt_PhaseName.Text.Trim()=="")
+                if (item.txt_Time.Text.Trim() == ""||item.txt_Score.Text.Trim() == ""||item.txt_Minus.Text.Trim()==""||item.txt_PhaseName.Text.Trim()==""||item.txt_Sequence.Text == "")
                 {
                     j++;
                 }
@@ -118,18 +126,52 @@ namespace CapDemo.GUI.User_Controls
                 return false;
             }
         }
-        //Get all phase
-        public string getPhase()
+
+        //Check name phase duplicate
+        public bool PhaseDuplicate()
         {
-            string Phase = "";
+            int j = 0;
+            int a = flp_Phase.Controls.Count;
             foreach (Add_Phase item in flp_Phase.Controls)
             {
-                Phase += item.txt_PhaseName.Text.Trim()
-                    + "</ItemPhase>" + item.txt_Score.Text 
-                    + "</ItemPhase>" + item.txt_Minus.Text
-                    + "</ItemPhase>" + item.txt_Time.Text + "</Phase!@>";
+                foreach (Add_Phase item1 in flp_Phase.Controls)
+                {
+                    if (item.txt_Sequence.Text == item1.txt_Sequence.Text || item.txt_PhaseName.Text.Trim() == item1.txt_PhaseName.Text.Trim())
+                    {
+                        j++;
+                    }
+                }
+
             }
-            return Phase;
+            if (j > a)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Get all phase
+        public bool InvalidSequence()
+        {
+            int sequence;
+            int j = 0;
+            foreach (Add_Phase item in flp_Phase.Controls)
+	        {
+		        if (int.TryParse(item.txt_Sequence.Text.Trim(), out sequence) == false)
+                {
+                    j++;
+                }
+	        }
+            if (j>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

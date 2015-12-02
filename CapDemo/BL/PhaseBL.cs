@@ -20,7 +20,7 @@ namespace CapDemo.BL
         public List<Phase> GetPhase()
         {
             List<Phase> PhaseList = new List<Phase>();
-            string query = "SELECT [Contest_ID],[Catalogue_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time]"
+            string query = "SELECT [Contest_ID],[Phase_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
                             +" FROM [Capstone].[dbo].[Phase]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
@@ -30,11 +30,12 @@ namespace CapDemo.BL
                 {
                     Phase Phase = new Phase();
                     Phase.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
-                    Phase.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"].ToString());
+                    Phase.IDPhase = Convert.ToInt32(item["Phase_ID"].ToString());
                     Phase.NamePhase = item["Phase_Name"].ToString();
                     Phase.ScorePhase = Convert.ToInt32(item["Phase_Score"].ToString());
                     Phase.MinusPhase = Convert.ToInt32(item["Phase_Minus"].ToString());
                     Phase.TimePhase = Convert.ToInt32(item["Phase_Time"].ToString());
+                    Phase.Sequence = Convert.ToInt32(item["Sequence"].ToString());
 
                     PhaseList.Add(Phase);
                     //i++;
@@ -46,7 +47,7 @@ namespace CapDemo.BL
         public List<Phase> GetPhaseByIDContest(Phase phase)
         {
             List<Phase> PhaseList = new List<Phase>();
-            string query = "SELECT [Contest_ID],[Catalogue_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time]"
+            string query = "SELECT [Phase_ID],[Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
                             + " FROM [Capstone].[dbo].[Phase]"
                             + " WHERE [Contest_ID] = '" + phase.IDContest + "'";
             DataTable dt = DA.SelectDatabase(query);
@@ -57,11 +58,12 @@ namespace CapDemo.BL
                 {
                     Phase Phase = new Phase();
                     Phase.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
-                    Phase.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"].ToString());
+                    Phase.IDPhase = Convert.ToInt32(item["Phase_ID"].ToString());
                     Phase.NamePhase = item["Phase_Name"].ToString();
                     Phase.ScorePhase = Convert.ToInt32(item["Phase_Score"].ToString());
                     Phase.MinusPhase = Convert.ToInt32(item["Phase_Minus"].ToString());
                     Phase.TimePhase = Convert.ToInt32(item["Phase_Time"].ToString());
+                    Phase.Sequence = Convert.ToInt32(item["Sequence"].ToString());
 
                     PhaseList.Add(Phase);
                     //i++;
@@ -73,9 +75,9 @@ namespace CapDemo.BL
         public bool AddPhase(Phase Phase)
         {
             string query = "INSERT INTO [Capstone].[dbo].[Phase]"
-                +"([Contest_ID],[Catalogue_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time])"
-                +" VALUES ('" + Phase.IDContest + "','" + Phase.IDCatalogue + "','" + Phase.NamePhase + "',"
-                            +"'" + Phase.ScorePhase + "','" + Phase.MinusPhase + "','" + Phase.TimePhase + "')";
+                + "([Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence])"
+                +" VALUES ('" + Phase.IDContest + "','" + Phase.NamePhase + "',"
+                + "'" + Phase.ScorePhase + "','" + Phase.MinusPhase + "','" + Phase.TimePhase + "','" + Phase.Sequence + "')";
             if (DA.InsertDatabase(query))
             {
                 return true;
@@ -86,35 +88,20 @@ namespace CapDemo.BL
             }
         }
 
-        ////Check Phase Exist
-        //public bool ExistPhase(Phase Phase)
-        //{
-        //    string query = "SELECT [Contest_ID],[Phase_Name]"
-        //               + " FROM [Capstone].[dbo].[Phase]"
-        //               + " WHERE [Contest_ID] = '" + Phase.NamePhase.ToUpper() + "'";
-        //    DataTable dt = DA.SelectDatabase(query);
-        //    if (dt.Rows.Count != 0)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
         //Edit Phase
         public bool EditPhasebyID(Phase Phase)
         {
-            string query = "UPDATE Phase SET Phase_Name ='" + Phase.NamePhase + "'"
-                         + " WHERE Contest_ID = '" + Phase.IDContest + "'";
+            string query = "UPDATE [Capstone].[dbo].[Phase]"
+                         + " SET [Phase_Name] ='" + Phase.NamePhase + "', [Phase_Score]= ='" + Phase.ScorePhase + "'"
+                         + ",[Phase_Minus] ='" + Phase.MinusPhase + "', [Phase_Time]='" + Phase.TimePhase + "', [Sequence]='" + Phase.Sequence + "'"
+                         + " WHERE [Phase_ID] = '" + Phase.IDPhase + "'";
             return DA.UpdateDatabase(query);
         }
         //Delete Phase
         public bool DeletePhasebyID(Phase Phase)
         {
-            string query = "DELETE FROM Phase"
-                         + " WHERE Contest_ID = '" + Phase.IDContest + "'";
+            string query = "DELETE FROM [Capstone].[dbo].[Phase]"
+                         + " WHERE [Contest_ID] = '" + Phase.IDContest + "'";
             return DA.DeleteDatabase(query);
         }
     }

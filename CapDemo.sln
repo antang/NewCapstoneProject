@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapDemo", "CapDemo\CapDemo.csproj", "{8EEB579D-B61D-4AB0-8618-97163A7E4B7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetcomLibrary", "C:\Users\TNA\Dropbox\GSC-Team\2. Team\2.4. Khanh Nguyen\Reference\GSC_SendMessage\NetcomLibrary\NetcomLibrary.csproj", "{E000475A-9937-469E-8C17-02AE94BA6E9C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,14 +19,6 @@ Global
 		{8EEB579D-B61D-4AB0-8618-97163A7E4B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EEB579D-B61D-4AB0-8618-97163A7E4B7B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EEB579D-B61D-4AB0-8618-97163A7E4B7B}.Release|x64.ActiveCfg = Release|Any CPU
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Debug|x64.ActiveCfg = Debug|x64
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Debug|x64.Build.0 = Debug|x64
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Release|x64.ActiveCfg = Release|x64
-		{E000475A-9937-469E-8C17-02AE94BA6E9C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

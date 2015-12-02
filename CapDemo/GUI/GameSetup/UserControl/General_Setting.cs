@@ -292,9 +292,9 @@ namespace CapDemo.GUI.User_Controls
         //limit input bonus
         private void txt_Bonus_TextChanged(object sender, EventArgs e)
         {
-            if (txt_Bonus.Text!= "")
+            if (txt_Bonus.Text != "")
             {
-                if (Convert.ToInt32(txt_Bonus.Text) == 0 )
+                if (Convert.ToInt32(txt_Bonus.Text) == 0)
                 {
                     MessageBox.Show("Vui lòng nhập điểm thưởng cho đội về đích đầu tiên lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_Bonus.Text = "";

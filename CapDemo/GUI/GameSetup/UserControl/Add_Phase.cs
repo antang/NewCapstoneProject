@@ -77,7 +77,7 @@ namespace CapDemo.GUI.User_Controls
             //        this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
             //    }
         }
-        //Input minus score
+        //Only Input number for minus score
         private void txt_Minus_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (nonNumberEntered == true)
@@ -105,7 +105,7 @@ namespace CapDemo.GUI.User_Controls
                 nonNumberEntered = true;
             }
         }
-
+        //Limit input score
         private void txt_Score_TextChanged(object sender, EventArgs e)
         {
             if (txt_Score.Text!="")
@@ -157,6 +157,35 @@ namespace CapDemo.GUI.User_Controls
                 nonNumberEntered = true;
             }
         }
+        //Sequence only input number
+        private void txt_Sequence_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (nonNumberEntered == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Sequence_KeyDown(object sender, KeyEventArgs e)
+        {
+            nonNumberEntered = false;
+
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9 && e.KeyData != Keys.OemMinus)
+            {
+                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
+                {
+                    if (e.KeyCode != Keys.Back)
+                    {
+                        nonNumberEntered = true;
+                    }
+                }
+            }
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                nonNumberEntered = true;
+            }
+        }
+
 
     }
 }
