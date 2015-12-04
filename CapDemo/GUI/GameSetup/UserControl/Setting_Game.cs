@@ -25,9 +25,9 @@ namespace CapDemo.GUI.User_Controls
             DialogResult result = ang.ShowDialog();
             if (result== DialogResult.OK)
             {
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Thiết lập trò chơi thành công";
-                notifyIcon1.ShowBalloonTip(1000);
+                //notifyIcon1.Icon = SystemIcons.Information;
+                //notifyIcon1.BalloonTipText = "Thiết lập trò chơi thành công";
+                //notifyIcon1.ShowBalloonTip(1000);
                 load();
             } 
         }
@@ -35,14 +35,15 @@ namespace CapDemo.GUI.User_Controls
         private void Setting_Game_Load(object sender, EventArgs e)
         {
             load();
-            notifyIcon1.Icon = SystemIcons.Information;
-            notifyIcon1.BalloonTipText = "Thiết lập trò chơi thành công";
-            notifyIcon1.ShowBalloonTip(1000);
+            //notifyIcon1.Icon = SystemIcons.Information;
+            //notifyIcon1.BalloonTipText = "Thiết lập trò chơi thành công";
+            //notifyIcon1.ShowBalloonTip(1000);
             this.Dock = DockStyle.Fill;
         }
 
         public void load()
         {
+            flp_Game.Controls.Clear();
             ContestBL ContestBL = new ContestBL();
             List<Contest> ListContest;
             ListContest = ContestBL.GetAllSetup();
@@ -57,6 +58,17 @@ namespace CapDemo.GUI.User_Controls
                     game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
                     game.label2.Text = ListContest.ElementAt(i).IDContest.ToString();
                     game.lbl_Number.Text = (i+1).ToString();
+                    if (ListContest.ElementAt(i).NumberChallenge.ToString() == "")
+                    {
+                        game.lbl_Status.Text = "Chưa hoàn Tất";
+                        game.lbl_Status.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        game.lbl_Status.Text = "Hoàn tất";
+                        game.lbl_Status.ForeColor = Color.LightGreen;
+                    }
+                    
 
                     flp_Game.Controls.Add(game);
                 }

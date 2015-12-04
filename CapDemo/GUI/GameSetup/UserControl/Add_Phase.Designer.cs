@@ -42,6 +42,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_PhaseName = new System.Windows.Forms.TextBox();
             this.txt_Sequence = new System.Windows.Forms.TextBox();
+            this.lbl_IDPhase = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblVong
@@ -206,12 +207,23 @@
             this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
             this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
             // 
+            // lbl_IDPhase
+            // 
+            this.lbl_IDPhase.AutoSize = true;
+            this.lbl_IDPhase.Location = new System.Drawing.Point(270, 166);
+            this.lbl_IDPhase.Name = "lbl_IDPhase";
+            this.lbl_IDPhase.Size = new System.Drawing.Size(15, 13);
+            this.lbl_IDPhase.TabIndex = 49;
+            this.lbl_IDPhase.Text = "id";
+            this.lbl_IDPhase.Visible = false;
+            // 
             // Add_Phase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lbl_IDPhase);
             this.Controls.Add(this.txt_Sequence);
             this.Controls.Add(this.txt_PhaseName);
             this.Controls.Add(this.txt_Time);
@@ -251,5 +263,6 @@
         public System.Windows.Forms.Button btn_Delete;
         public System.Windows.Forms.TextBox txt_PhaseName;
         public System.Windows.Forms.TextBox txt_Sequence;
+        public System.Windows.Forms.Label lbl_IDPhase;
     }
 }

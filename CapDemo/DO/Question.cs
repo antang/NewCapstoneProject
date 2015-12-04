@@ -19,6 +19,10 @@ namespace CapDemo.DO
         string answerContent;
         DateTime date;
 
+        //public Question()
+        //{
+        //    catalogue = new Catalogue();
+        //}
         
         public string AnswerContent
         {

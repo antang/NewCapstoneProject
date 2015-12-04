@@ -84,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_AddPhase;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.FlowLayoutPanel flp_Phase;
+        public System.Windows.Forms.Button btn_AddPhase;
     }
 }

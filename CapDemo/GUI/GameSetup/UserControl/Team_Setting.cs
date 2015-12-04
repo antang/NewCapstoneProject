@@ -36,7 +36,7 @@ namespace CapDemo.GUI.User_Controls
             {
                 count++;
             }
-            if (count < 6)
+            if (count < 4)
             {
                 Add_Team AddPhase = new Add_Team();
                 i++;
@@ -48,12 +48,12 @@ namespace CapDemo.GUI.User_Controls
 
                 for (int j = 0; j < flp_Team.Controls.Count; j++)
                 {
-                    AddPhase.lbl_Number.Text = (j + 1).ToString();
+                    AddPhase.txt_Sequence.Text = (j + 1).ToString();
                 }
             }
             else
             {
-                MessageBox.Show("Hệ thống cho phép nhập tối đa là 6 đội.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Hệ thống cho phép nhập tối đa là 4 đội.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }
@@ -74,7 +74,7 @@ namespace CapDemo.GUI.User_Controls
             }
             foreach (Add_Team item in flp_Team.Controls)
             {
-                item.lbl_Number.Text = (i++).ToString();
+                item.txt_Sequence.Text = (i++).ToString();
             }
         }
         //Load
@@ -106,7 +106,7 @@ namespace CapDemo.GUI.User_Controls
             int j = 0;
             foreach (Add_Team item in flp_Team.Controls)
             {
-                if (item.txt_TeamName.Text.Trim() == "" || item.txt_TeamScore.Text.Trim() == "" || item.btn_Paint.BackColor.Name == "")
+                if (item.txt_TeamName.Text.Trim() == "" || item.txt_TeamScore.Text.Trim() == "" || item.btn_Paint.BackColor.Name == "" || item.txt_Sequence.Text.Trim() == "")
                 {
                     j++;
                 }
@@ -129,7 +129,7 @@ namespace CapDemo.GUI.User_Controls
             {
                 foreach (Add_Team item1 in flp_Team.Controls)
                 {
-                    if (item.btn_Paint.BackColor.Name == item1.btn_Paint.BackColor.Name || item.txt_TeamName.Text.Trim() == item1.txt_TeamName.Text.Trim())
+                    if (item.btn_Paint.BackColor.Name == item1.btn_Paint.BackColor.Name || item.txt_TeamName.Text.Trim() == item1.txt_TeamName.Text.Trim()||item.txt_Sequence.Text.Trim() == item1.txt_Sequence.Text.Trim())
                     {
                         j++;
                     }
@@ -145,28 +145,16 @@ namespace CapDemo.GUI.User_Controls
                 return false;
             }
         }
-        //Count number of team
+
+        //Check Number of team
         public int CountTeam()
         {
-            int numTeam=0;
+            int j = 0;
             foreach (Add_Team item in flp_Team.Controls)
             {
-                numTeam++;
+                j++;
             }
-            return numTeam;
-        }
-
-        //get all team
-        public string getPlayer()
-        {
-            string team = "";
-            foreach (Add_Team item in flp_Team.Controls)
-            {
-                team += item.txt_TeamName.Text.Trim() + "</ItemPlayer>"
-                    + item.txt_TeamScore.Text.Trim() + "</ItemPlayer>"
-                    + item.btn_Paint.BackColor.Name + "</Player!@>";
-            }
-            return team;
+            return j;
         }
     }
 }

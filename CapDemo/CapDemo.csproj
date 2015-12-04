@@ -49,13 +49,26 @@
     <Compile Include="BL\ContestBL.cs" />
     <Compile Include="BL\ListtoDataTableConverter.cs" />
     <Compile Include="BL\PhaseBL.cs" />
+    <Compile Include="BL\PhaseQuestionBL.cs" />
     <Compile Include="BL\PlayerBL.cs" />
     <Compile Include="BL\RoundBL.cs" />
+    <Compile Include="ContinueSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContinueSetting.Designer.cs">
+      <DependentUpon>ContinueSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="DO\Competition.cs" />
     <Compile Include="DO\Contest.cs" />
     <Compile Include="DO\Phase.cs" />
     <Compile Include="DO\Player.cs" />
     <Compile Include="DO\Round.cs" />
+    <Compile Include="GUI\GameSetup\Form\GetQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameSetup\Form\GetQuestion.Designer.cs">
+      <DependentUpon>GetQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GameSetup\Form\EditGameSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,12 +351,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuestionSetting.cs">
+    <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuestionSetting.Designer.cs">
+    <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ContinueSetting.resx">
+      <DependentUpon>ContinueSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameSetup\Form\GetQuestion.resx">
+      <DependentUpon>GetQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\Form\EditGameSetting.resx">
       <DependentUpon>EditGameSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,7 +505,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuestionSetting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\UserControl\QuestionSetting.resx">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram_IC1.cd" />

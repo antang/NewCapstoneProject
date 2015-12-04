@@ -37,6 +37,8 @@
             this.lbl_RoundName = new System.Windows.Forms.Label();
             this.lbl_ContestName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +57,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(4, 82);
+            this.label1.Location = new System.Drawing.Point(4, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 1;
@@ -67,7 +69,7 @@
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Name.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_Name.Location = new System.Drawing.Point(5, 110);
+            this.lbl_Name.Location = new System.Drawing.Point(5, 135);
             this.lbl_Name.Name = "lbl_Name";
             this.lbl_Name.Size = new System.Drawing.Size(73, 16);
             this.lbl_Name.TabIndex = 2;
@@ -91,7 +93,7 @@
             this.lbl_CompetitionName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CompetitionName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CompetitionName.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_CompetitionName.Location = new System.Drawing.Point(84, 82);
+            this.lbl_CompetitionName.Location = new System.Drawing.Point(84, 107);
             this.lbl_CompetitionName.Name = "lbl_CompetitionName";
             this.lbl_CompetitionName.Size = new System.Drawing.Size(93, 16);
             this.lbl_CompetitionName.TabIndex = 5;
@@ -103,7 +105,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(4, 137);
+            this.label3.Location = new System.Drawing.Point(4, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 4;
@@ -115,7 +117,7 @@
             this.lbl_RoundName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_RoundName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RoundName.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_RoundName.Location = new System.Drawing.Point(84, 110);
+            this.lbl_RoundName.Location = new System.Drawing.Point(84, 135);
             this.lbl_RoundName.Name = "lbl_RoundName";
             this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
             this.lbl_RoundName.TabIndex = 6;
@@ -127,7 +129,7 @@
             this.lbl_ContestName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ContestName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ContestName.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_ContestName.Location = new System.Drawing.Point(84, 137);
+            this.lbl_ContestName.Location = new System.Drawing.Point(84, 162);
             this.lbl_ContestName.Name = "lbl_ContestName";
             this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
             this.lbl_ContestName.TabIndex = 7;
@@ -143,12 +145,36 @@
             this.label2.Text = "label2";
             this.label2.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(3, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Trạng thái Thiết Đặt:";
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_Status.Location = new System.Drawing.Point(155, 76);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(54, 16);
+            this.lbl_Status.TabIndex = 10;
+            this.lbl_Status.Text = "status";
+            // 
             // New_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.MediumPurple;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lbl_Status);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_ContestName);
             this.Controls.Add(this.lbl_RoundName);
@@ -160,9 +186,12 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "New_Game";
-            this.Size = new System.Drawing.Size(294, 172);
+            this.Size = new System.Drawing.Size(294, 181);
             this.Load += new System.EventHandler(this.New_Game_Load);
             this.DoubleClick += new System.EventHandler(this.New_Game_DoubleClick);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseClick);
+            this.MouseLeave += new System.EventHandler(this.New_Game_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.New_Game_MouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +208,7 @@
         public System.Windows.Forms.Label lbl_ContestName;
         public System.Windows.Forms.Label lbl_Number;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lbl_Status;
     }
 }

@@ -15,13 +15,46 @@ namespace CapDemo.DO
         int minusPhase;
         int timePhase;
         int sequence;
+       // Question question;
+
+        //public Phase()
+        //{
+        //    question = new Question();
+        //}
+
+        //public Question Question
+        //{
+        //    get { return question; }
+        //    set { question = value; }
+        //}
         int iDQuestion;
+        string nameQuestion;
+        string typeQuestion;
+        private int sequenceQuestion;
 
         public int IDQuestion
         {
             get { return iDQuestion; }
             set { iDQuestion = value; }
         }
+        public int SequenceQuestion
+        {
+            get { return sequenceQuestion; }
+            set { sequenceQuestion = value; }
+        }
+        public string NameQuestion
+        {
+            get { return nameQuestion; }
+            set { nameQuestion = value; }
+        }
+        
+
+        public string TypeQuestion
+        {
+            get { return typeQuestion; }
+            set { typeQuestion = value; }
+        }
+
 
         public int Sequence
         {

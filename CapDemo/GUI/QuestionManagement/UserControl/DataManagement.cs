@@ -73,6 +73,7 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
             dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
 
+
             dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;

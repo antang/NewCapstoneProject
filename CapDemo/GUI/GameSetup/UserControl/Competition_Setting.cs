@@ -16,6 +16,13 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+
+        public Competition_Setting(int p)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.p = p;
+        }
         //LOAD USER CONTROL
         private static Competition_Setting _instance;
         public static Competition_Setting instance
@@ -41,6 +48,7 @@ namespace CapDemo.GUI.User_Controls
             }
         }
         private bool nonNumberEntered = false;
+        private int p;
         //Input time for request support choice
         private void txt_TimeForSupport_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -130,9 +138,9 @@ namespace CapDemo.GUI.User_Controls
         {
             if (txt_NumTeam.Text != "")
             {
-                if (Convert.ToInt32(txt_NumTeam.Text) == 0)
+                if (Convert.ToInt32(txt_NumTeam.Text) == 0 || Convert.ToInt32(txt_NumTeam.Text) > (p-1))
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng đội  bị thách đấu lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số lượng đội thách đấu tối thiểu là 1 và tối đa là " + (p- 1).ToString() + ".", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_NumTeam.Text = "";
                 }
             }

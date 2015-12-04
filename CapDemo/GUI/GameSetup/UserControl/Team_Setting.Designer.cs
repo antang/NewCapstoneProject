@@ -84,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flp_Team;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button btn_AddTeam;
+        public System.Windows.Forms.FlowLayoutPanel flp_Team;
+        public System.Windows.Forms.Button btn_AddTeam;
     }
 }

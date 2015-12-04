@@ -14,6 +14,13 @@ namespace CapDemo.DO
         string playerName;
         int playerScore;
         string color;
+        int sequence;
+
+        public int Sequence
+        {
+            get { return sequence; }
+            set { sequence = value; }
+        }
 
         public int IDPlayer
         {

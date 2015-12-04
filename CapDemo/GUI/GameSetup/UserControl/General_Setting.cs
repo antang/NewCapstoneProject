@@ -108,7 +108,7 @@ namespace CapDemo.GUI.User_Controls
         {
             nonNumberEntered = false;
 
-            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
+            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9 )
             {
                 if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
                 {
@@ -276,15 +276,13 @@ namespace CapDemo.GUI.User_Controls
         //limit input time show question
         private void txt_TimeQuestion_TextChanged(object sender, EventArgs e)
         {
-            if (txt_TimeQuestion.Text=="")
+            if (txt_TimeQuestion.Text!="")
             {
                 //MessageBox.Show("Vui lòng nhập lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
+
                 if (Convert.ToInt32(txt_TimeQuestion.Text) == 0 )
                 {
-                    MessageBox.Show("Vui lòng nhập thời gian hiển thị  câu hỏi lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập thời gian hiển thị câu hỏi lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_TimeQuestion.Text = "";
                 }
             }
@@ -358,15 +356,11 @@ namespace CapDemo.GUI.User_Controls
 
         private void txt_TimeAnswer_TextChanged(object sender, EventArgs e)
         {
-            if (txt_TimeAnswer.Text == "")
-            {
-                //MessageBox.Show("Vui lòng nhập lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
+            if (txt_TimeAnswer.Text != "")
             {
                 if (Convert.ToInt32(txt_TimeAnswer.Text) == 0)
                 {
-                    MessageBox.Show("Vui lòng nhập thời gian hiển thị  câu hỏi lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập thời gian hiển thị đáp án lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_TimeAnswer.Text = "";
                 }
             }

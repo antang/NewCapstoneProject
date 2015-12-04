@@ -129,12 +129,18 @@ namespace CapDemo.BL
         public bool EditContestbyID(Contest Contest)
         {
             string query = "UPDATE [Capstone].[dbo].[Contest]"
-                         + " SET [Round_ID]= '" + Contest.IDRound + "',[Contest_Name]='" + Contest.NameContest.Replace("'", "''") + "'"
-                         + ", [Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
-                         + ",[Challenge_Score]='" + Contest.ChallengceScore + "',[Number_Challenge]='" + Contest.NumberChallenge + "'"
-                         + ",[Time_show_Anwer]='" + Contest.TimeShowAnswer + "',[Time_show_Question]='" + Contest.TimeShowQuestion + "'"
-                         + ",[Time_of_True]='" + Contest.TimesTrue + "',[Time_of_False]='" + Contest.TimesFalse + "'"
-                         + " WHERE Contest_ID = '" + Contest.IDContest + "'";
+                         + " SET [Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
+                         + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
+                         + ",[Challenge_Score] = '" + Contest.ChallengceScore + "', [Number_Challenge] = '" + Contest.NumberChallenge + "'"
+                         + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
+                         + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
+                         + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
+            //string query = "UPDATE [Capstone].[dbo].[Contest]"
+            //             + " SET"
+            //             + " [Bonus]='" + Contest.Bonus + "'"
+            //             + ",[Time_show_Anwer]='" + Contest.TimeShowAnswer + "',[Time_show_Question]='" + Contest.TimeShowQuestion + "'"
+            //             + ",[Time_of_True]='" + Contest.TimesTrue + "',[Time_of_False]='" + Contest.TimesFalse + "'"
+            //             + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
             if (EditExistContest(Contest) == true)
             {
                 return false;

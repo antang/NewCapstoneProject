@@ -35,11 +35,12 @@
             this.txt_TeamName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.lbl_Number = new System.Windows.Forms.Label();
             this.lblVong = new System.Windows.Forms.Label();
             this.btn_Paint = new System.Windows.Forms.Button();
             this.pnl_ColorCoat = new System.Windows.Forms.Panel();
             this.btn_Color = new System.Windows.Forms.Button();
+            this.txt_Sequence = new System.Windows.Forms.TextBox();
+            this.lbl_IDPlayer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Delete
@@ -59,18 +60,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 19);
+            this.label3.Size = new System.Drawing.Size(41, 18);
             this.label3.TabIndex = 37;
             this.label3.Text = "Màu";
             // 
             // txt_TeamScore
             // 
-            this.txt_TeamScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TeamScore.Location = new System.Drawing.Point(76, 73);
+            this.txt_TeamScore.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TeamScore.Location = new System.Drawing.Point(89, 74);
             this.txt_TeamScore.Multiline = true;
             this.txt_TeamScore.Name = "txt_TeamScore";
             this.txt_TeamScore.Size = new System.Drawing.Size(54, 30);
@@ -82,21 +83,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 19);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 35;
             this.label2.Text = "Điểm";
             // 
             // txt_TeamName
             // 
-            this.txt_TeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TeamName.Location = new System.Drawing.Point(76, 37);
+            this.txt_TeamName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TeamName.Location = new System.Drawing.Point(89, 39);
             this.txt_TeamName.Multiline = true;
             this.txt_TeamName.Name = "txt_TeamName";
-            this.txt_TeamName.Size = new System.Drawing.Size(220, 30);
+            this.txt_TeamName.Size = new System.Drawing.Size(207, 30);
             this.txt_TeamName.TabIndex = 34;
             this.txt_TeamName.TextChanged += new System.EventHandler(this.txt_TeamName_TextChanged);
             // 
@@ -104,38 +105,25 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 19);
+            this.label1.Size = new System.Drawing.Size(69, 18);
             this.label1.TabIndex = 33;
             this.label1.Text = "Tên đội";
-            // 
-            // lbl_Number
-            // 
-            this.lbl_Number.AutoSize = true;
-            this.lbl_Number.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Number.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Number.ForeColor = System.Drawing.Color.White;
-            this.lbl_Number.Location = new System.Drawing.Point(47, 5);
-            this.lbl_Number.Name = "lbl_Number";
-            this.lbl_Number.Size = new System.Drawing.Size(31, 21);
-            this.lbl_Number.TabIndex = 43;
-            this.lbl_Number.Text = "Số";
             // 
             // lblVong
             // 
             this.lblVong.AutoSize = true;
             this.lblVong.BackColor = System.Drawing.Color.Transparent;
-            this.lblVong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVong.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVong.ForeColor = System.Drawing.Color.White;
-            this.lblVong.Location = new System.Drawing.Point(6, 6);
+            this.lblVong.Location = new System.Drawing.Point(14, 7);
             this.lblVong.Name = "lblVong";
-            this.lblVong.Size = new System.Drawing.Size(36, 19);
+            this.lblVong.Size = new System.Drawing.Size(64, 18);
             this.lblVong.TabIndex = 42;
-            this.lblVong.Text = "Đội";
+            this.lblVong.Text = "Thứ tự";
             // 
             // btn_Paint
             // 
@@ -171,12 +159,35 @@
             this.btn_Color.UseVisualStyleBackColor = false;
             this.btn_Color.Click += new System.EventHandler(this.btn_Color_Click);
             // 
+            // txt_Sequence
+            // 
+            this.txt_Sequence.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Sequence.Location = new System.Drawing.Point(89, 4);
+            this.txt_Sequence.Multiline = true;
+            this.txt_Sequence.Name = "txt_Sequence";
+            this.txt_Sequence.Size = new System.Drawing.Size(54, 30);
+            this.txt_Sequence.TabIndex = 43;
+            this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
+            this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
+            // 
+            // lbl_IDPlayer
+            // 
+            this.lbl_IDPlayer.AutoSize = true;
+            this.lbl_IDPlayer.Location = new System.Drawing.Point(272, 134);
+            this.lbl_IDPlayer.Name = "lbl_IDPlayer";
+            this.lbl_IDPlayer.Size = new System.Drawing.Size(15, 13);
+            this.lbl_IDPlayer.TabIndex = 44;
+            this.lbl_IDPlayer.Text = "id";
+            this.lbl_IDPlayer.Visible = false;
+            // 
             // Add_Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.lbl_IDPlayer);
+            this.Controls.Add(this.txt_Sequence);
             this.Controls.Add(this.pnl_ColorCoat);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Color);
@@ -185,7 +196,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_TeamName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_Number);
             this.Controls.Add(this.lblVong);
             this.Controls.Add(this.btn_Paint);
             this.DoubleBuffered = true;
@@ -198,7 +208,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Color;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -208,7 +217,9 @@
         public System.Windows.Forms.Panel pnl_ColorCoat;
         public System.Windows.Forms.TextBox txt_TeamScore;
         public System.Windows.Forms.TextBox txt_TeamName;
-        public System.Windows.Forms.Label lbl_Number;
         public System.Windows.Forms.Button btn_Paint;
+        public System.Windows.Forms.TextBox txt_Sequence;
+        public System.Windows.Forms.Label lbl_IDPlayer;
+        public System.Windows.Forms.Button btn_Delete;
     }
 }

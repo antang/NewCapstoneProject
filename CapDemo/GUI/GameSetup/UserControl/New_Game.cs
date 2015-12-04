@@ -25,8 +25,26 @@ namespace CapDemo.GUI.User_Controls
 
         private void New_Game_DoubleClick(object sender, EventArgs e)
         {
-            EditGameSetting EditGameSetting = new EditGameSetting(Convert.ToInt32(label2.Text));
-            EditGameSetting.ShowDialog();
+            //EditGameSetting EditGameSetting = new EditGameSetting(Convert.ToInt32(label2.Text));
+            //EditGameSetting.ShowDialog();
+            ContinueSetting continueSetting = new ContinueSetting(Convert.ToInt32(label2.Text));
+            continueSetting.ShowDialog();
+        }
+
+        private void New_Game_MouseClick(object sender, MouseEventArgs e)
+        {
+            //this.BackColor = Color.LightBlue;
+
+        }
+
+        private void New_Game_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.MediumPurple;
+        }
+
+        private void New_Game_MouseHover(object sender, EventArgs e)
+        {
+            this.BackColor = Color.MediumSlateBlue;
         }
 
         
