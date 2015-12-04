@@ -22,7 +22,7 @@ namespace CapDemo.BL
         {
             List<Catalogue> CatalogueList = new List<Catalogue>();
             string query = "SELECT [Catalogue_ID],[Catalogue_Name]"
-                        + " FROM [Capstone].[dbo].[Catalogue]";
+                        + " FROM [Catalogue]";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
             if (dt!= null)

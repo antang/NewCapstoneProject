@@ -21,7 +21,7 @@ namespace CapDemo.BL
         {
             List<Competition> CompetitionList = new List<Competition>();
             string query = "SELECT [Competition_ID],[Competition_Name]"
-                         + " FROM [Capstone].[dbo].[Competition]";
+                         + " FROM [Competition]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt != null)
@@ -42,7 +42,7 @@ namespace CapDemo.BL
         //Insert Competition
         public bool AddCompetition(Competition Competition)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Competition]([Competition_Name])"
+            string query = "INSERT INTO [Competition]([Competition_Name])"
                             + " VALUES('" + Competition.NameCompetition + "')";
 
             if (ExistCompetition(Competition) == true)
@@ -58,7 +58,7 @@ namespace CapDemo.BL
         public bool ExistCompetition(Competition Competition)
         {
             string query = "SELECT [Competition_ID],[Competition_Name]"
-                         + " FROM [Capstone].[dbo].[Competition]"
+                         + " FROM [Competition]"
                          + " WHERE [Competition_Name] = '" + Competition.NameCompetition.ToUpper() + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
@@ -74,7 +74,7 @@ namespace CapDemo.BL
         public bool EditExistCompetiton(Competition Competition)
         {
             string query = "SELECT [Competition_ID],[Competition_Name]"
-                         + " FROM [Capstone].[dbo].[Competition]"
+                         + " FROM [Competition]"
                          + " WHERE [Competition_Name]= '" + Competition.NameCompetition.ToUpper() + "'"
                          + " AND [Competition_ID] <> '" + Competition.IDCompetition + "'";
             DataTable dt = DA.SelectDatabase(query);
@@ -90,7 +90,7 @@ namespace CapDemo.BL
         //Edit Competition
         public bool EditCompetitionbyID(Competition Competition)
         {
-            string query = "UPDATE [Capstone].[dbo].[Competition]"
+            string query = "UPDATE [Competition]"
                          + " SET [Competition_Name] ='" + Competition.NameCompetition.Replace("'","''") + "'"
                          + " WHERE [Competition_ID] = '" + Competition.IDCompetition + "'";
 
@@ -107,7 +107,7 @@ namespace CapDemo.BL
         //Delete Competition
         public bool DeleteCompetitionbyID(Competition Competition)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[Competition]"
+            string query = "DELETE FROM [Competition]"
                          + " WHERE [Competition_ID] = '" + Competition.IDCompetition + "'";
             return DA.DeleteDatabase(query);
         }

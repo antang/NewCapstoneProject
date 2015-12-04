@@ -63,7 +63,7 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["AnswerContent"].Visible = false;
             dgv_Question.Columns["Date"].Visible = false;
 
-            dgv_Question.Columns["Sequence"].HeaderText= "STT";
+            dgv_Question.Columns["Sequence"].HeaderText = "STT";
             dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
             dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên chủ Đề";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";

@@ -33,8 +33,8 @@
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.lb_Phase = new System.Windows.Forms.ListBox();
             this.btn_ImportQuestion = new System.Windows.Forms.Button();
-            this.btn_DeleteQuestion = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_DeleteQuestion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +85,17 @@
             this.btn_ImportQuestion.UseVisualStyleBackColor = true;
             this.btn_ImportQuestion.Click += new System.EventHandler(this.btn_ImportQuestion_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Lui.png");
+            this.imageList1.Images.SetKeyName(1, "Tiep.png");
+            this.imageList1.Images.SetKeyName(2, "save-512.png");
+            this.imageList1.Images.SetKeyName(3, "ok.png");
+            this.imageList1.Images.SetKeyName(4, "import.png");
+            this.imageList1.Images.SetKeyName(5, "Cut.ico");
+            // 
             // btn_DeleteQuestion
             // 
             this.btn_DeleteQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,17 +111,6 @@
             this.btn_DeleteQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_DeleteQuestion.UseVisualStyleBackColor = true;
             this.btn_DeleteQuestion.Click += new System.EventHandler(this.btn_DeleteQuestion_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Lui.png");
-            this.imageList1.Images.SetKeyName(1, "Tiep.png");
-            this.imageList1.Images.SetKeyName(2, "save-512.png");
-            this.imageList1.Images.SetKeyName(3, "ok.png");
-            this.imageList1.Images.SetKeyName(4, "import.png");
-            this.imageList1.Images.SetKeyName(5, "Cut.ico");
             // 
             // QuestionSetting
             // 

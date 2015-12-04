@@ -21,7 +21,7 @@ namespace CapDemo.BL
         {
             List<Round> RoundList = new List<Round>();
             string query = "SELECT [Round_ID],[Competition_ID],[Round_Name]"
-                            + " FROM [Capstone].[dbo].[Round]";
+                            + " FROM [Round]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt!= null)
@@ -43,7 +43,7 @@ namespace CapDemo.BL
         //Insert Round
         public bool AddRound(Round Round)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Round]([Competition_ID],[Round_Name])"
+            string query = "INSERT INTO [Round]([Competition_ID],[Round_Name])"
                            + " VALUES ('" + Round.IDCompetition+ "','" + Round.NameRound.Replace("'","''") + "')";
             if (ExistRound(Round) == true)
             {
@@ -59,7 +59,7 @@ namespace CapDemo.BL
         public bool ExistRound(Round Round)
         {
             string query = "SELECT [Round_ID],[Competition_ID],[Round_Name]"
-                       + " FROM [Capstone].[dbo].[Round]"
+                       + " FROM [Round]"
                        + " WHERE [Round_Name] = '" + Round.NameRound.ToUpper() + "' AND [Competition_ID] = '" + Round.IDCompetition + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
@@ -75,7 +75,7 @@ namespace CapDemo.BL
         //Edit Round
         public bool EditRoundbyID(Round Round)
         {
-            string query = "UPDATE [Capstone].[dbo].[Round] SET"
+            string query = "UPDATE [Round] SET"
                          + " [Round_Name] ='" + Round.NameRound.Replace("'","''") + "'"
                          + " WHERE [Round_ID] = '" + Round.IDRound + "'";
             if (EditExistRound(Round) == true)
@@ -91,7 +91,7 @@ namespace CapDemo.BL
         public bool EditExistRound(Round Round)
         {
             string query = "SELECT [Round_ID],[Competition_ID],[Round_Name]"
-                         + " FROM [Capstone].[dbo].[Round]"
+                         + " FROM [Round]"
                          + " WHERE [Round_Name]= '" + Round.NameRound.ToUpper() + "'"
                          + " AND [Competition_ID] = '" + Round.IDCompetition + "'"
                          + " AND [Round_ID] <> '" + Round.IDRound + "'";
@@ -108,7 +108,7 @@ namespace CapDemo.BL
         //Delete Round
         public bool DeleteRoundbyID(Round Round)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[Round]"
+            string query = "DELETE FROM [Round]"
                          + " WHERE [Round_ID] = '" + Round.IDRound + "'";
             return DA.DeleteDatabase(query);
         }

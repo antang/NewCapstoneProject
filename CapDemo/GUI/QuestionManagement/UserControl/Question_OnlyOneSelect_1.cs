@@ -45,6 +45,11 @@ namespace CapDemo.GUI.User_Controls
                 {
                     this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
                 }
+            if (cmb_Catalogue.Items.Count >0 )
+            {
+                cmb_Catalogue.SelectedIndex = 0;
+            }
+            
             txt_Date.Text = DateTime.Now.ToString("d");
             //AUTO ADD 4 ANSWER
             for (int j = 0; j < 4; j++)

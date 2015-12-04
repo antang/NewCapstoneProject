@@ -11,18 +11,17 @@ namespace CapDemo.DO
         int questionID;
         string questionName;
         string typeQuestion;
-        //Catalogue catalogue;
+        Catalogue catalogue;
         List<Answer> answerList;
-        string nameCatalogue;
         int iDCatalogue;
         int sequence;
         string answerContent;
         DateTime date;
 
-        //public Question()
-        //{
-        //    catalogue = new Catalogue();
-        //}
+        public Question()
+        {
+            catalogue = new Catalogue();
+        }
         
         public string AnswerContent
         {
@@ -58,16 +57,16 @@ namespace CapDemo.DO
 
         public string NameCatalogue
         {
-            get { return nameCatalogue; }
-            set { nameCatalogue = value; }
+            get { return catalogue.NameCatalogue; }
+            set { catalogue.NameCatalogue = value; }
         }
 
 
-        //public Catalogue Catalogue
-        //{
-        //    get { return catalogue; }
-        //    set { catalogue = value; }
-        //}
+        public Catalogue Catalogue
+        {
+            get { return catalogue; }
+            set { catalogue = value; }
+        }
         public int IDCatalogue
         {
             get { return iDCatalogue; }

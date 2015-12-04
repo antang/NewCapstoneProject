@@ -33,9 +33,9 @@
             this.tbc_DataManagement = new System.Windows.Forms.TabControl();
             this.tbp_CatalogueManagement = new System.Windows.Forms.TabPage();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.gb_CatalogueFunction = new System.Windows.Forms.GroupBox();
             this.btn_ViewQuestion = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_ImportQuestion = new System.Windows.Forms.Button();
             this.btn_EditCatalogue = new System.Windows.Forms.Button();
             this.btn_DeleteCatalogue = new System.Windows.Forms.Button();
@@ -117,18 +117,6 @@
             this.btn_SearchCatalogue.TabIndex = 14;
             this.btn_SearchCatalogue.UseVisualStyleBackColor = false;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Cancel.png");
-            this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
-            this.imageList1.Images.SetKeyName(2, "review.png");
-            this.imageList1.Images.SetKeyName(3, "copy.png");
-            this.imageList1.Images.SetKeyName(4, "move.png");
-            this.imageList1.Images.SetKeyName(5, "search.png");
-            this.imageList1.Images.SetKeyName(6, "search2.png");
-            // 
             // gb_CatalogueFunction
             // 
             this.gb_CatalogueFunction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -166,6 +154,18 @@
             this.btn_ViewQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ViewQuestion.UseVisualStyleBackColor = false;
             this.btn_ViewQuestion.Click += new System.EventHandler(this.btn_ViewQuestion_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Cancel.png");
+            this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
+            this.imageList1.Images.SetKeyName(2, "review.png");
+            this.imageList1.Images.SetKeyName(3, "copy.png");
+            this.imageList1.Images.SetKeyName(4, "move.png");
+            this.imageList1.Images.SetKeyName(5, "search.png");
+            this.imageList1.Images.SetKeyName(6, "search2.png");
             // 
             // btn_ImportQuestion
             // 

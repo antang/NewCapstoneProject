@@ -21,7 +21,7 @@ namespace CapDemo.BL
         {
             List<Player> PlayerList = new List<Player>();
             string query = "SELECT [Player_ID],[Contest_ID],[Player_Name],[Player_Score],[Color],[Sequence]"
-                        +  " FROM [Capstone].[dbo].[Player]";
+                        +  " FROM [Player]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt!= null)
@@ -47,7 +47,7 @@ namespace CapDemo.BL
         {
             List<Player> PlayerList = new List<Player>();
             string query = "SELECT [Player_ID],[Contest_ID],[Player_Name],[Player_Score],[Color],[Sequence]"
-                        + " FROM [Capstone].[dbo].[Player]"
+                        + " FROM [Player]"
                         + " WHERE [Contest_ID] = '"+player.IDContest+"'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt != null)
@@ -70,7 +70,7 @@ namespace CapDemo.BL
         //Insert Player
         public bool AddPlayer(Player Player)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Player]([Contest_ID],[Sequence],[Player_Name],[Player_Score],[Color])"
+            string query = "INSERT INTO [Player]([Contest_ID],[Sequence],[Player_Name],[Player_Score],[Color])"
                            + " VALUES ('" + Player.IDContest + "','" + Player.Sequence + "','" + Player.PlayerName + "',"
                            + "'" + Player.PlayerScore + "','" + Player.Color + "')";
 
@@ -88,7 +88,7 @@ namespace CapDemo.BL
         //public bool ExistPlayer(Player Player)
         //{
         //    string query = "SELECT [Player_ID],[Player_Name]"
-        //               + " FROM [Capstone].[dbo].[Player]"
+        //               + " FROM [Player]"
         //               + " WHERE [Player_Name] = '" + Player.PlayerName.ToUpper() + "'";
         //    DataTable dt = DA.SelectDatabase(query);
         //    if (dt.Rows.Count != 0)
@@ -104,7 +104,7 @@ namespace CapDemo.BL
         //Edit Player
         public bool EditPlayerbyID(Player Player)
         {
-            string query = "UPDATE [Capstone].[dbo].[Player] SET "
+            string query = "UPDATE [Player] SET "
                          + "[Player_Name] ='" + Player.PlayerName + "',[Player_Score] ='" + Player.PlayerScore + "',[Color] ='" + Player.Color + "',[Sequence] ='" + Player.Sequence + "'"
                          + " WHERE Player_ID = '" + Player.IDPlayer + "'";
             return DA.UpdateDatabase(query);
@@ -112,7 +112,7 @@ namespace CapDemo.BL
         //Delete Player
         public bool DeletePlayerbyID(Player Player)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[Player]"
+            string query = "DELETE FROM [Player]"
                          + " WHERE [Player_ID] = '" + Player.IDPlayer + "'";
             return DA.DeleteDatabase(query);
         }

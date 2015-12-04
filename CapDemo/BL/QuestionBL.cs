@@ -39,10 +39,10 @@ namespace CapDemo.BL
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
-                    Question.NameCatalogue = item["Catalogue_Name"].ToString();
+                    //Question.NameCatalogue = item["Catalogue_Name"].ToString();
                     Question.Date = (DateTime)item["Date_Create"];
                     Question.Sequence = i;
-                    //Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
+                    Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     //Question.Catalogue.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
                     QuestionList.Add(Question);
                     i++;

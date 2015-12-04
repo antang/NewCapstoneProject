@@ -9,7 +9,7 @@ namespace CapDemo.DO
     class Catalogue
     {
         int IDcatalogue;
-        string name;
+        string catName;
         int sequence;
 
         public int Sequence
@@ -26,8 +26,8 @@ namespace CapDemo.DO
 
         public string NameCatalogue
         {
-            get { return name; }
-            set { name = value; }
+            get { return catName; }
+            set { catName = value; }
         }
     }
 }

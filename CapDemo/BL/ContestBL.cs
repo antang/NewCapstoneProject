@@ -22,7 +22,7 @@ namespace CapDemo.BL
             List<Contest> ContestList = new List<Contest>();
             string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
                         + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
-                        + " FROM [Capstone].[dbo].[Contest]";
+                        + " FROM [Contest]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt!= null)
@@ -55,9 +55,9 @@ namespace CapDemo.BL
             string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
                         + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
                         + ",r.[Round_Name],r.[Round_ID],n.[Competition_Name],r.[Competition_ID]"
-                        + " FROM [Capstone].[dbo].[Contest] c"
-                        + " INNER JOIN [Capstone].[dbo].[Round] r ON r.[Round_ID] = c.[Round_ID]"
-                        + " INNER JOIN [Capstone].[dbo].[Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
+                        + " FROM [Contest] c"
+                        + " INNER JOIN [Round] r ON r.[Round_ID] = c.[Round_ID]"
+                        + " INNER JOIN [Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt != null)
@@ -91,7 +91,7 @@ namespace CapDemo.BL
         //Insert Contest
         public bool AddContest(Contest Contest)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Contest]"
+            string query = "INSERT INTO [Contest]"
                 +"([Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge],"
                 +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False])"
                 + " VALUES ('" + Contest.IDRound + "','" + Contest.NameContest.Replace("'", "''") + "','" + Contest.Bonus + "',"
@@ -112,7 +112,7 @@ namespace CapDemo.BL
         {
             string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
                         + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
-                        + " FROM [Capstone].[dbo].[Contest]"
+                        + " FROM [Contest]"
                         + " WHERE [Round_ID]= '"+Contest.IDRound+"' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt.Rows.Count != 0)
@@ -128,14 +128,14 @@ namespace CapDemo.BL
         //Edit Contest
         public bool EditContestbyID(Contest Contest)
         {
-            string query = "UPDATE [Capstone].[dbo].[Contest]"
+            string query = "UPDATE [Contest]"
                          + " SET [Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
                          + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
                          + ",[Challenge_Score] = '" + Contest.ChallengceScore + "', [Number_Challenge] = '" + Contest.NumberChallenge + "'"
                          + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
                          + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
                          + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
-            //string query = "UPDATE [Capstone].[dbo].[Contest]"
+            //string query = "UPDATE [Contest]"
             //             + " SET"
             //             + " [Bonus]='" + Contest.Bonus + "'"
             //             + ",[Time_show_Anwer]='" + Contest.TimeShowAnswer + "',[Time_show_Question]='" + Contest.TimeShowQuestion + "'"
@@ -155,7 +155,7 @@ namespace CapDemo.BL
         {
             string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
                         + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
-                        + " FROM [Capstone].[dbo].[Contest]"
+                        + " FROM [Contest]"
                         + " WHERE [Round_ID]= '" + Contest.IDRound + "' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'"
                         + " AND [Contest_ID]<> '" + Contest.IDContest + "'";
             DataTable dt = DA.SelectDatabase(query);
@@ -172,7 +172,7 @@ namespace CapDemo.BL
         //Delete Contest
         public bool DeleteContestbyID(Contest Contest)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[Contest]"
+            string query = "DELETE FROM [Contest]"
                          + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
             return DA.DeleteDatabase(query);
         }

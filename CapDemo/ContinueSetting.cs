@@ -66,8 +66,7 @@ namespace CapDemo
             }
             else if (i==2)
             {
-                //LoadPhaseSetting();
-                //Load Team setup
+
                 if (ps.MoreOnePhase() == true)
                 {
                     if (ps.checkPhaseEmpty() == false)
@@ -255,7 +254,6 @@ namespace CapDemo
             }
             else
             {
-                MessageBox.Show("ok2");
                 ps.btn_AddPhase.Visible = true;
                 return false;
             }

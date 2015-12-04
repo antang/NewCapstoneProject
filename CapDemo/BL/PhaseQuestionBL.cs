@@ -19,7 +19,7 @@ namespace CapDemo.BL
         //Insert Phase
         public bool AddPhaseQuestion(Phase Phase)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[PhaseQuestion]"
+            string query = "INSERT INTO [PhaseQuestion]"
                 + "([Phase_ID],[Question_ID])"
                 + " VALUES ('" + Phase.IDPhase + "','" + Phase.IDQuestion+ "')";
             if (DA.InsertDatabase(query))
@@ -37,9 +37,9 @@ namespace CapDemo.BL
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT p.[Phase_ID],p.[Contest_ID],p.[Phase_Name],p.[Phase_Time],p.[Phase_Score],p.[Phase_Minus],p.[Sequence],"
                         + " q.[Question_ID],q.[Catalogue_ID],q.[Question_Title],q.[Question_Name],q.[Question_Type] "
-                        + " FROM [Capstone].[dbo].[PhaseQuestion] pq"
-                        + " INNER JOIN [Capstone].[dbo].[Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
-                        + " INNER JOIN [Capstone].[dbo].[Question] q ON q.[Question_ID] = pq.[Question_ID]"
+                        + " FROM [PhaseQuestion] pq"
+                        + " INNER JOIN [Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
+                        + " INNER JOIN [Question] q ON q.[Question_ID] = pq.[Question_ID]"
                         + " WHERE p.[Phase_ID] = '"+Phase.IDPhase+"'";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
@@ -84,9 +84,9 @@ namespace CapDemo.BL
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT p.[Phase_ID],p.[Contest_ID],p.[Phase_Name],p.[Phase_Time],p.[Phase_Score],p.[Phase_Minus],p.[Sequence],"
                         + " q.[Question_ID],q.[Catalogue_ID],q.[Question_Title],q.[Question_Name],q.[Question_Type] "
-                        + " FROM [Capstone].[dbo].[PhaseQuestion] pq"
-                        + " INNER JOIN [Capstone].[dbo].[Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
-                        + " INNER JOIN [Capstone].[dbo].[Question] q ON q.[Question_ID] = pq.[Question_ID]"
+                        + " FROM [PhaseQuestion] pq"
+                        + " INNER JOIN [Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
+                        + " INNER JOIN [Question] q ON q.[Question_ID] = pq.[Question_ID]"
                         + " WHERE p.[Contest_ID] = '" + Phase.IDContest + "'";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
@@ -129,7 +129,7 @@ namespace CapDemo.BL
         //Delete Phase
         public bool DeleteQuestionbyID(Phase Phase)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[PhaseQuestion]"
+            string query = "DELETE FROM [PhaseQuestion]"
                          + " WHERE [Question_ID] = '" + Phase.IDQuestion + "' AND [Phase_ID] = '" + Phase.IDPhase+ "'";
             return DA.DeleteDatabase(query);
         }

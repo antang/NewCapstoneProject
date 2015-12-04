@@ -6,30 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.IO;
 
 namespace CapDemo.DA
 {
     class DatabaseAccess
     {
-        public SqlConnection con;
-        public SqlDataAdapter adapter;
-        public SqlCommand cmd;
-        CapDemo.Properties.Settings setting;
+
+        public SQLiteConnection con;
+        public SQLiteDataAdapter adapter;
+        public SQLiteCommand cmd;
+        //public SQLiteConnection con;
+        //public SQLiteDataAdapter adapter;
+        //public SQLiteCommand cmd;
+        //CapDemo.Properties.Settings setting;
 
         string connection;
         public DatabaseAccess()
         {
-            setting = new Properties.Settings();
-            connection = "Data Source=" + setting.Sever + ";Initial Catalog=" + setting.DB + ";User ID=" + setting.UserName + ";Password=" + setting.PassWord;
+            //setting = new Properties.Settings();
+            //connection = "Data Source=" + setting.Sever + ";Initial Catalog=" + setting.DB + ";User ID=" + setting.UserName + ";Password=" + setting.PassWord;
+            string s = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Capstone.db";
+            connection = @"Data Source = "+s+"; Version=3";
+            //setting.DB = "dkjl";
+            //setting.Save();
         }
         //select from database
         public DataTable SelectDatabase(string query)
         {
             try
             {
-                con = new SqlConnection(connection);
+                con = new SQLiteConnection(connection);
                 con.Open();
-                adapter = new SqlDataAdapter(query, con);
+                adapter = new SQLiteDataAdapter(query, con);
                 DataTable dtb = new DataTable();
                 adapter.Fill(dtb);
                 con.Close();
@@ -50,8 +60,8 @@ namespace CapDemo.DA
         {
             try
             {
-                con = new SqlConnection(connection);
-                cmd = new SqlCommand(query, con);
+                con = new SQLiteConnection(connection);
+                cmd = new SQLiteCommand(query, con);
                 con.Open();
                 int i= cmd.ExecuteNonQuery();
                 con.Close();
@@ -80,8 +90,8 @@ namespace CapDemo.DA
         {
             try
             {
-                con = new SqlConnection(connection);
-                cmd = new SqlCommand(query, con);
+                con = new SQLiteConnection(connection);
+                cmd = new SQLiteCommand(query, con);
                 con.Open();
                 int i= cmd.ExecuteNonQuery();
                 con.Close();
@@ -108,8 +118,8 @@ namespace CapDemo.DA
         {
             try
             {
-                con = new SqlConnection(connection);
-                cmd = new SqlCommand(query, con);
+                con = new SQLiteConnection(connection);
+                cmd = new SQLiteCommand(query, con);
                 con.Open();
                 int i=cmd.ExecuteNonQuery();
                 con.Close();
@@ -136,8 +146,8 @@ namespace CapDemo.DA
         {
             try
             {
-                con = new SqlConnection(connection);
-                cmd = new SqlCommand(query, con);
+                con = new SQLiteConnection(connection);
+                cmd = new SQLiteCommand(query, con);
                 con.Open();
                 return (int)cmd.ExecuteScalar();
             }

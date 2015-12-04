@@ -21,7 +21,7 @@ namespace CapDemo.BL
         {
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT [Contest_ID],[Phase_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
-                            +" FROM [Capstone].[dbo].[Phase]";
+                            +" FROM [Phase]";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
             if (dt!= null)
@@ -48,7 +48,7 @@ namespace CapDemo.BL
         {
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT [Phase_ID],[Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
-                            + " FROM [Capstone].[dbo].[Phase]"
+                            + " FROM [Phase]"
                             + " WHERE [Contest_ID] = '" + phase.IDContest + "'";
             DataTable dt = DA.SelectDatabase(query);
             //int i = 1;
@@ -74,7 +74,7 @@ namespace CapDemo.BL
         //Insert Phase
         public bool AddPhase(Phase Phase)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[Phase]"
+            string query = "INSERT INTO [Phase]"
                 + "([Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence])"
                 +" VALUES ('" + Phase.IDContest + "','" + Phase.NamePhase + "',"
                 + "'" + Phase.ScorePhase + "','" + Phase.MinusPhase + "','" + Phase.TimePhase + "','" + Phase.Sequence + "')";
@@ -91,7 +91,7 @@ namespace CapDemo.BL
         //Edit Phase
         public bool EditPhasebyID(Phase Phase)
         {
-            string query = "UPDATE [Capstone].[dbo].[Phase]"
+            string query = "UPDATE [Phase]"
                          + " SET [Phase_Name] ='" + Phase.NamePhase + "', [Phase_Score]= ='" + Phase.ScorePhase + "'"
                          + ",[Phase_Minus] ='" + Phase.MinusPhase + "', [Phase_Time]='" + Phase.TimePhase + "', [Sequence]='" + Phase.Sequence + "'"
                          + " WHERE [Phase_ID] = '" + Phase.IDPhase + "'";
@@ -100,7 +100,7 @@ namespace CapDemo.BL
         //Delete Phase
         public bool DeletePhasebyID(Phase Phase)
         {
-            string query = "DELETE FROM [Capstone].[dbo].[Phase]"
+            string query = "DELETE FROM [Phase]"
                          + " WHERE [Contest_ID] = '" + Phase.IDContest + "'";
             return DA.DeleteDatabase(query);
         }

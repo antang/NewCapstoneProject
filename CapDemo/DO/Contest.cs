@@ -28,6 +28,7 @@ namespace CapDemo.DO
         {
             get { return player; }
             set { player = value; }
+            
         }
 
         public Phase Phase
