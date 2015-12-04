@@ -53,5 +53,45 @@ namespace CapDemo.GUI.User_Controls
             UserManagement um = new UserManagement();
             pnl_Setting.Controls.Add(um);
         }
+
+        private void btn_DataManagement_MouseHover(object sender, EventArgs e)
+        {
+            btn_DataManagement.BackgroundImage = CapDemo.Properties.Resources.QLDL_Setting_hover;
+        }
+
+        private void btn_DataManagement_MouseLeave(object sender, EventArgs e)
+        {
+            btn_DataManagement.BackgroundImage = CapDemo.Properties.Resources.QLDL_Setting;
+        }
+
+        private void btn_GameSetting_MouseHover(object sender, EventArgs e)
+        {
+            btn_GameSetting.BackgroundImage = CapDemo.Properties.Resources.TLG_Setting_hover;
+        }
+
+        private void btn_GameSetting_MouseLeave(object sender, EventArgs e)
+        {
+            btn_GameSetting.BackgroundImage = CapDemo.Properties.Resources.TLG_Setting;
+        }
+
+        private void btn_UserManagement_MouseHover(object sender, EventArgs e)
+        {
+            btn_UserManagement.BackgroundImage = CapDemo.Properties.Resources.QLTK_Setting_hover;
+        }
+
+        private void btn_UserManagement_MouseLeave(object sender, EventArgs e)
+        {
+            btn_UserManagement.BackgroundImage = CapDemo.Properties.Resources.QLTK_Setting;
+        }
+
+        private void btn_Exit_MouseHover(object sender, EventArgs e)
+        {
+            btn_Exit.BackgroundImage = CapDemo.Properties.Resources.Thoat_Setting_hover;
+        }
+
+        private void btn_Exit_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Exit.BackgroundImage = CapDemo.Properties.Resources.Thoat_Setting;
+        }
     }
 }

@@ -72,5 +72,45 @@ namespace CapDemo.GUI.User_Controls
             ChangePassword ChangePass = new ChangePassword(userID,userName,pass);
             ChangePass.ShowDialog();
         }
+
+        private void btn_Start_MouseHover(object sender, EventArgs e)
+        {
+            btn_Start.BackgroundImage = CapDemo.Properties.Resources.BD_menu_hover;
+        }
+
+        private void btn_Start_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Start.BackgroundImage = CapDemo.Properties.Resources.BD_menu;
+        }
+
+        private void btn_Setting_MouseHover(object sender, EventArgs e)
+        {
+            btn_Setting.BackgroundImage = CapDemo.Properties.Resources.CD_menu_hover;
+        }
+
+        private void btn_Setting_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Setting.BackgroundImage = CapDemo.Properties.Resources.CD_menu;
+        }
+
+        private void btn_Help_MouseHover(object sender, EventArgs e)
+        {
+            btn_Help.BackgroundImage = CapDemo.Properties.Resources.HD_menu_hover;
+        }
+
+        private void btn_Help_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Help.BackgroundImage = CapDemo.Properties.Resources.HD_menu;
+        }
+
+        private void btn_ExitMenu_MouseHover(object sender, EventArgs e)
+        {
+            btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu_hover;
+        }
+
+        private void btn_ExitMenu_MouseLeave(object sender, EventArgs e)
+        {
+            btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu;
+        }
     }
 }

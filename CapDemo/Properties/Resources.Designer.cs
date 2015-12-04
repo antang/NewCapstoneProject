@@ -63,6 +63,36 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1600_864 {
+            get {
+                object obj = ResourceManager.GetObject("_1600_864", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1600_864_setting_3 {
+            get {
+                object obj = ResourceManager.GetObject("_1600_864_setting_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1600_864_start {
+            get {
+                object obj = ResourceManager.GetObject("_1600_864_start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroud_setting {
             get {
                 object obj = ResourceManager.GetObject("backgroud_setting", resourceCulture);
@@ -76,6 +106,16 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap BD_menu {
             get {
                 object obj = ResourceManager.GetObject("BD_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BD_menu_hover {
+            get {
+                object obj = ResourceManager.GetObject("BD_menu_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +143,39 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CD_menu_hover {
+            get {
+                object obj = ResourceManager.GetObject("CD_menu_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HD_menu {
             get {
                 object obj = ResourceManager.GetObject("HD_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HD_menu_hover {
+            get {
+                object obj = ResourceManager.GetObject("HD_menu_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hit_Your_Goal_2 {
+            get {
+                object obj = ResourceManager.GetObject("Hit_Your_Goal_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +243,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_W {
+            get {
+                object obj = ResourceManager.GetObject("logo_W", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MauAo {
             get {
                 object obj = ResourceManager.GetObject("MauAo", resourceCulture);
@@ -223,9 +303,29 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap QLDL_Setting_hover {
+            get {
+                object obj = ResourceManager.GetObject("QLDL_Setting_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap QLTK_Setting {
             get {
                 object obj = ResourceManager.GetObject("QLTK_Setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap QLTK_Setting_hover {
+            get {
+                object obj = ResourceManager.GetObject("QLTK_Setting_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +353,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T_menu_hover {
+            get {
+                object obj = ResourceManager.GetObject("T_menu_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap The_Weightless_World {
             get {
                 object obj = ResourceManager.GetObject("The_Weightless_World", resourceCulture);
@@ -273,6 +383,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Thoat_Setting_hover {
+            get {
+                object obj = ResourceManager.GetObject("Thoat_Setting_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Thoat_Setting1 {
             get {
                 object obj = ResourceManager.GetObject("Thoat_Setting1", resourceCulture);
@@ -286,6 +406,26 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap TLG_Setting {
             get {
                 object obj = ResourceManager.GetObject("TLG_Setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TLG_Setting_hover {
+            get {
+                object obj = ResourceManager.GetObject("TLG_Setting_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TWLW {
+            get {
+                object obj = ResourceManager.GetObject("TWLW", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

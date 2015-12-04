@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
             this.ptb_logo = new System.Windows.Forms.PictureBox();
             this.btn_DataManagement = new System.Windows.Forms.Button();
             this.btn_GameSetting = new System.Windows.Forms.Button();
@@ -41,8 +40,7 @@
             // ptb_logo
             // 
             this.ptb_logo.BackColor = System.Drawing.Color.Transparent;
-            this.ptb_logo.BackgroundImage = global::CapDemo.Properties.Resources.logo;
-            this.ptb_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptb_logo.BackgroundImage = global::CapDemo.Properties.Resources.logo_W;
             this.ptb_logo.Location = new System.Drawing.Point(17, 19);
             this.ptb_logo.Name = "ptb_logo";
             this.ptb_logo.Size = new System.Drawing.Size(203, 204);
@@ -61,6 +59,8 @@
             this.btn_DataManagement.TabIndex = 1;
             this.btn_DataManagement.UseVisualStyleBackColor = false;
             this.btn_DataManagement.Click += new System.EventHandler(this.btn_DataManagement_Click);
+            this.btn_DataManagement.MouseLeave += new System.EventHandler(this.btn_DataManagement_MouseLeave);
+            this.btn_DataManagement.MouseHover += new System.EventHandler(this.btn_DataManagement_MouseHover);
             // 
             // btn_GameSetting
             // 
@@ -73,6 +73,8 @@
             this.btn_GameSetting.TabIndex = 2;
             this.btn_GameSetting.UseVisualStyleBackColor = false;
             this.btn_GameSetting.Click += new System.EventHandler(this.btn_GameSetting_Click);
+            this.btn_GameSetting.MouseLeave += new System.EventHandler(this.btn_GameSetting_MouseLeave);
+            this.btn_GameSetting.MouseHover += new System.EventHandler(this.btn_GameSetting_MouseHover);
             // 
             // btn_UserManagement
             // 
@@ -85,6 +87,8 @@
             this.btn_UserManagement.TabIndex = 3;
             this.btn_UserManagement.UseVisualStyleBackColor = false;
             this.btn_UserManagement.Click += new System.EventHandler(this.btn_UserManagement_Click);
+            this.btn_UserManagement.MouseLeave += new System.EventHandler(this.btn_UserManagement_MouseLeave);
+            this.btn_UserManagement.MouseHover += new System.EventHandler(this.btn_UserManagement_MouseHover);
             // 
             // btn_Exit
             // 
@@ -92,12 +96,14 @@
             this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Thoat_Setting1;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(17, 555);
+            this.btn_Exit.Location = new System.Drawing.Point(17, 643);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(203, 50);
             this.btn_Exit.TabIndex = 4;
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            this.btn_Exit.MouseLeave += new System.EventHandler(this.btn_Exit_MouseLeave);
+            this.btn_Exit.MouseHover += new System.EventHandler(this.btn_Exit_MouseHover);
             // 
             // pnl_Setting
             // 
@@ -107,15 +113,14 @@
             this.pnl_Setting.BackColor = System.Drawing.SystemColors.Control;
             this.pnl_Setting.Location = new System.Drawing.Point(238, 19);
             this.pnl_Setting.Name = "pnl_Setting";
-            this.pnl_Setting.Size = new System.Drawing.Size(710, 584);
+            this.pnl_Setting.Size = new System.Drawing.Size(774, 672);
             this.pnl_Setting.TabIndex = 5;
             // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::CapDemo.Properties.Resources._1600_864_setting_3;
             this.Controls.Add(this.pnl_Setting);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_UserManagement);
@@ -124,7 +129,7 @@
             this.Controls.Add(this.ptb_logo);
             this.DoubleBuffered = true;
             this.Name = "Setting";
-            this.Size = new System.Drawing.Size(960, 612);
+            this.Size = new System.Drawing.Size(1024, 700);
             this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).EndInit();
             this.ResumeLayout(false);

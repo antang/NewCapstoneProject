@@ -52,6 +52,7 @@
             this.txt_CompetitionName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tab_PhaseSetting = new System.Windows.Forms.TabPage();
+            this.flp_Phase = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_TeamSetting = new System.Windows.Forms.TabPage();
             this.tab_CompetitionSetting = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,6 @@
             this.txt_TimeForSupport = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.flp_Phase = new System.Windows.Forms.FlowLayoutPanel();
             this.tcl_GameSetting.SuspendLayout();
             this.tab_GeneralSetting.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -344,6 +344,13 @@
             this.tab_PhaseSetting.TabIndex = 1;
             this.tab_PhaseSetting.Text = "Giai đoạn";
             // 
+            // flp_Phase
+            // 
+            this.flp_Phase.Location = new System.Drawing.Point(6, 6);
+            this.flp_Phase.Name = "flp_Phase";
+            this.flp_Phase.Size = new System.Drawing.Size(752, 463);
+            this.flp_Phase.TabIndex = 0;
+            // 
             // tab_TeamSetting
             // 
             this.tab_TeamSetting.Location = new System.Drawing.Point(4, 22);
@@ -490,13 +497,6 @@
             this.btn_Save.Text = "Lưu";
             this.btn_Save.UseVisualStyleBackColor = true;
             // 
-            // flp_Phase
-            // 
-            this.flp_Phase.Location = new System.Drawing.Point(6, 6);
-            this.flp_Phase.Name = "flp_Phase";
-            this.flp_Phase.Size = new System.Drawing.Size(752, 463);
-            this.flp_Phase.TabIndex = 0;
-            // 
             // EditGameSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,7 +505,8 @@
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.tcl_GameSetting);
             this.Name = "EditGameSetting";
-            this.Text = "EditGameSetting";
+            this.ShowIcon = false;
+            this.Text = "Chỉnh sữa cài đặt Game";
             this.Load += new System.EventHandler(this.EditGameSetting_Load);
             this.tcl_GameSetting.ResumeLayout(false);
             this.tab_GeneralSetting.ResumeLayout(false);

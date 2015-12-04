@@ -190,4 +190,46 @@
   <data name="T_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\T_menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BD_menu_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BD_menu_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CD_menu_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CD_menu_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HD_menu_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HD_menu_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hit_Your_Goal_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hit Your Goal_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_W" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_W.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QLDL_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QLDL_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QLTK_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QLTK_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thoat_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thoat_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TLG_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TLG_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TWLW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TWLW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T_menu_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T_menu_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_864" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-864.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_864_setting_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-864-setting-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_864_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-864-start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

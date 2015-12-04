@@ -583,6 +583,20 @@
     <None Include="image\CD_menu.png" />
     <None Include="image\HD_menu.png" />
     <None Include="image\T_menu.png" />
+    <None Include="Resources\1600-864.png" />
+    <None Include="Resources\1600-864-setting-3.png" />
+    <None Include="Resources\1600-864-start.png" />
+    <None Include="Resources\BD_menu_hover.png" />
+    <None Include="Resources\CD_menu_hover.png" />
+    <None Include="Resources\HD_menu_hover.png" />
+    <None Include="Resources\Hit Your Goal_2.png" />
+    <None Include="Resources\logo_W.png" />
+    <None Include="Resources\QLDL_Setting_hover.png" />
+    <None Include="Resources\QLTK_Setting_hover.png" />
+    <None Include="Resources\T_menu_hover.png" />
+    <None Include="Resources\Thoat_Setting_hover.png" />
+    <None Include="Resources\TLG_Setting_hover.png" />
+    <None Include="Resources\TWLW.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

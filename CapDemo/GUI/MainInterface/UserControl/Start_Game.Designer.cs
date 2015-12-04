@@ -41,11 +41,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Mistral", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Windsor", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(298, 47);
+            this.label1.Location = new System.Drawing.Point(155, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(364, 76);
+            this.label1.Size = new System.Drawing.Size(424, 81);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn Cuộc Thi";
             // 
@@ -58,20 +58,21 @@
             this.flp_StartGame.BackColor = System.Drawing.Color.White;
             this.flp_StartGame.Location = new System.Drawing.Point(169, 126);
             this.flp_StartGame.Name = "flp_StartGame";
-            this.flp_StartGame.Size = new System.Drawing.Size(624, 376);
+            this.flp_StartGame.Size = new System.Drawing.Size(688, 464);
             this.flp_StartGame.TabIndex = 1;
             // 
             // btn_Exit
             // 
             this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btn_Exit.BackColor = System.Drawing.Color.White;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Exit.ImageIndex = 0;
             this.btn_Exit.ImageList = this.imageList1;
-            this.btn_Exit.Location = new System.Drawing.Point(820, 560);
+            this.btn_Exit.Location = new System.Drawing.Point(736, 626);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(121, 38);
+            this.btn_Exit.Size = new System.Drawing.Size(121, 49);
             this.btn_Exit.TabIndex = 2;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -88,14 +89,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.KhungPanner4;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImage = global::CapDemo.Properties.Resources._1600_864_start;
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.flp_StartGame);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "Start_Game";
-            this.Size = new System.Drawing.Size(960, 612);
+            this.Size = new System.Drawing.Size(1024, 700);
             this.Load += new System.EventHandler(this.Start_Game_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
