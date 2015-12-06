@@ -62,11 +62,13 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["IDCatalogue"].Visible = false;
             dgv_Question.Columns["AnswerContent"].Visible = false;
             dgv_Question.Columns["Date"].Visible = false;
+            dgv_Question.Columns["Catalogue"].Visible = false;
 
             dgv_Question.Columns["Sequence"].HeaderText = "STT";
-            dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question.Columns["NameQuestion"].HeaderText = "Nội Dung Câu Hỏi";
             dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên chủ Đề";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
+            dgv_Question.Columns["QuestionTitle"].HeaderText = "Tên Câu hỏi";
 
             dgv_Question.Columns["Sequence"].ReadOnly = true;
             dgv_Question.Columns["NameQuestion"].ReadOnly = false;
@@ -77,6 +79,7 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["QuestionTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
         //ADD NEW QUESTION
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)

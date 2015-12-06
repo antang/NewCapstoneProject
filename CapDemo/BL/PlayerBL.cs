@@ -105,7 +105,7 @@ namespace CapDemo.BL
         public bool EditPlayerbyID(Player Player)
         {
             string query = "UPDATE [Player] SET "
-                         + "[Player_Name] ='" + Player.PlayerName + "',[Player_Score] ='" + Player.PlayerScore + "',[Color] ='" + Player.Color + "',[Sequence] ='" + Player.Sequence + "'"
+                         + "[Contest_ID] ='" + Player.IDContest + "',[Player_Name] ='" + Player.PlayerName + "',[Player_Score] ='" + Player.PlayerScore + "',[Color] ='" + Player.Color + "',[Sequence] ='" + Player.Sequence + "'"
                          + " WHERE Player_ID = '" + Player.IDPlayer + "'";
             return DA.UpdateDatabase(query);
         }

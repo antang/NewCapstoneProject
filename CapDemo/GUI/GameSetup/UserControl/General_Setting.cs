@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapDemo.BL;
+using CapDemo.DO;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -16,16 +18,21 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        //private static General_Setting _instance;
-        //public static General_Setting instance
-        //{
-        //    get
-        //    {
-        //        if (_instance == null)
-        //            _instance = new General_Setting();
-        //        return _instance;
-        //    }
-        //}
+        int idCompetition;
+        string nameCompetition;
+        int idRound;
+        public int IdRound
+        {
+            get { return idRound; }
+            set { idRound = value; }
+        }
+
+        public int IdCompetition
+        {
+            get { return idCompetition; }
+            set { idCompetition = value; }
+        }
+        
 
         private void chk_Answer_CheckedChanged(object sender, EventArgs e)
         {
@@ -103,7 +110,6 @@ namespace CapDemo.GUI.User_Controls
                 e.Handled = true;
             }
         }
-
         private void txt_Bonus_KeyDown(object sender, KeyEventArgs e)
         {
             nonNumberEntered = false;
@@ -131,7 +137,6 @@ namespace CapDemo.GUI.User_Controls
                 e.Handled = true;
             }
         }
-
         private void txt_NumStepPass_KeyDown(object sender, KeyEventArgs e)
         {
             nonNumberEntered = false;
@@ -159,7 +164,6 @@ namespace CapDemo.GUI.User_Controls
                 e.Handled = true;
             }
         }
-
         private void txt_NumStepFail_KeyDown(object sender, KeyEventArgs e)
         {
             nonNumberEntered = false;
@@ -183,7 +187,7 @@ namespace CapDemo.GUI.User_Controls
         //Check form
         public bool CheckFormEmpty()
         {
-            if (txt_CompetitionName.Text.Trim() == "" || txt_RoundName.Text.Trim() == "" || txt_ContestName.Text.Trim() == "" || txt_Bonus.Text.Trim() == "" || txt_NumStepFail.Text.Trim() == "" || txt_NumStepPass.Text.Trim() == "")
+            if (txt_ContestName.Text.Trim() == "" || txt_Bonus.Text.Trim() == "" || txt_NumStepFail.Text.Trim() == "" || txt_NumStepPass.Text.Trim() == ""||cmb_Competition.SelectedItem == null || cmb_Round.SelectedItem == null)
             {
                 return true;
             }
@@ -234,32 +238,7 @@ namespace CapDemo.GUI.User_Controls
                 }
             }
         }
-        //Limit input more character for competition name
-        private void txt_CompetitionName_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_CompetitionName.Text.Trim().Length < 30)
-            {
 
-            }
-            else
-            {
-                txt_CompetitionName.Text = txt_CompetitionName.Text.Trim().Substring(0, txt_CompetitionName.Text.Length - 1);
-                MessageBox.Show("Không được phép nhập trên 30 ký tự.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        //Limit input more character for round name
-        private void txt_RoundName_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_RoundName.Text.Trim().Length < 30)
-            {
-
-            }
-            else
-            {
-                txt_RoundName.Text = txt_RoundName.Text.Trim().Substring(0, txt_RoundName.Text.Length - 1);
-                MessageBox.Show("Không được phép nhập trên 30 ký tự.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
         //Limit input more character for contest name
         private void txt_ContestName_TextChanged(object sender, EventArgs e)
         {
@@ -324,23 +303,90 @@ namespace CapDemo.GUI.User_Controls
             }
         }
 
+        //Load Form
         private void General_Setting_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
+            cmb_Competition.Items.Clear();
+            LoadCompetition();
+            cmb_Round.Items.Clear();
+            LoadRound();
         }
 
-        //public string GetCompetitionName()
-        //{
-        //    return txt_CompetitionName.Text;
-        //}
-        //public string GetRoundName()
-        //{
-        //    return txt_RoundName.Text;
-        //}
-        //public string GetContestName()
-        //{
-        //    return txt_ContestName.Text;
-        //}
+        //Load Competition
+        public void LoadCompetition()
+        {
+            CompetitionBL CompetitionBL = new CompetitionBL();
+            List<Competition> ListCompetition;
+            ListCompetition = CompetitionBL.GetCompetition();
+            if (ListCompetition != null)
+            {
+                for (int i = 0; i < ListCompetition.Count; i++)
+                {
+                    cmb_Competition.Items.Add(ListCompetition.ElementAt(i).NameCompetition);
+                }
+            }
+            if (cmb_Competition.Items.Count > 0)
+            {
+                cmb_Competition.SelectedIndex = 0;
+            }
+        }
+
+        //Load round
+        public void LoadRound()
+        {
+            RoundBL RoundBL = new RoundBL();
+            Round Round = new Round();
+            CompetitionBL CompetitionBL = new CompetitionBL();
+
+            List<Competition> ListCompetition;
+            ListCompetition = CompetitionBL.GetCompetition();
+            if (ListCompetition != null)
+            {
+                for (int i = 0; i < ListCompetition.Count; i++)
+                {
+                    if (cmb_Competition.SelectedItem.ToString() == ListCompetition.ElementAt(i).NameCompetition)
+                    {
+                        Round.IDCompetition = ListCompetition.ElementAt(i).IDCompetition;
+                        idCompetition = ListCompetition.ElementAt(i).IDCompetition;
+                        nameCompetition = cmb_Competition.SelectedItem.ToString();
+                    }
+                }
+            }
+            //load commobox round
+            List<Round> ListRound;
+            ListRound = RoundBL.GetRoundByIDCompetition(Round);
+            if (ListRound != null)
+            {
+                for (int i = 0; i < ListRound.Count; i++)
+                {
+                    cmb_Round.Items.Add(ListRound.ElementAt(i).NameRound);
+                }
+            }
+            if (cmb_Round.Items.Count > 0)
+            {
+                cmb_Round.SelectedIndex = 0;
+            }
+        }
+        
+        //Get Id Round
+        public void GetIDround()
+        {
+            RoundBL RoundBl = new RoundBL();
+            List<Round> ListRound;
+            ListRound = RoundBl.GetRound();
+            if (ListRound != null)
+            {
+                for (int i = 0; i < ListRound.Count; i++)
+                {
+                    if (cmb_Round.SelectedItem.ToString() == ListRound.ElementAt(i).NameRound && ListRound.ElementAt(i).IDCompetition == idCompetition)
+                    {
+                        idRound = ListRound.ElementAt(i).IDRound;
+                    }
+                }
+            }
+        }
+
         //Check time show question auto
         private void chk_Question_CheckedChanged(object sender, EventArgs e)
         {
@@ -365,5 +411,33 @@ namespace CapDemo.GUI.User_Controls
                 }
             }
         }
+        //Add new Competition
+        private void btn_AddCompetition_Click(object sender, EventArgs e)
+        {
+            Add_Competition AddCompetition = new Add_Competition();
+            AddCompetition.ShowDialog();
+            cmb_Competition.Items.Clear();
+            LoadCompetition();
+        }
+        //Add new Round
+        private void btn_AddRound_Click(object sender, EventArgs e)
+        {
+            Add_Round AddRound = new Add_Round(idCompetition,nameCompetition);
+            AddRound.ShowDialog();
+            cmb_Round.Items.Clear();
+            LoadRound();
+        }
+        //Select Competition in commobox to load round list
+        private void cmb_Competition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmb_Round.Items.Clear();
+            LoadRound();
+        }
+        //Select Round in commobox
+        private void cmb_Round_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetIDround();
+        }
+        
     }
 }

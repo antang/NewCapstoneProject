@@ -26,6 +26,7 @@ namespace CapDemo.DA
                 foreach (XmlNode node in NodeQuestionType)
                 {
                     QuestionContent += node.Attributes["type"].Value + "---";
+                    QuestionContent += node["name"].InnerText.ToString() + "---";
                     QuestionContent += node["questiontext"].InnerText.ToString() + "---";
                     foreach (XmlNode item in node.SelectNodes("answer"))
                     {
@@ -37,7 +38,7 @@ namespace CapDemo.DA
                 }
                 QuestionContent = QuestionContent.Replace("<p>", "");
                 QuestionContent = QuestionContent.Replace("</p>", "");
-                QuestionContent = QuestionContent.Replace("<br>", "");
+                QuestionContent = QuestionContent.Replace("<br>", Environment.NewLine);
                 QuestionContent = QuestionContent.Replace("</br>", "");
                 QuestionContent = QuestionContent.Replace("'", "''");
                 return QuestionContent;

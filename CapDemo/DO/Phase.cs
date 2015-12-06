@@ -15,6 +15,13 @@ namespace CapDemo.DO
         int minusPhase;
         int timePhase;
         int sequence;
+        bool status;
+
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
        // Question question;
 
         //public Phase()

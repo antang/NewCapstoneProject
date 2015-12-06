@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\GameSetup\Form\Add_Competition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameSetup\Form\Add_Competition.Designer.cs">
+      <DependentUpon>Add_Competition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameSetup\Form\Add_Round.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameSetup\Form\Add_Round.Designer.cs">
+      <DependentUpon>Add_Round.cs</DependentUpon>
+    </Compile>
     <Compile Include="BL\AES.cs" />
     <Compile Include="BL\CompetitionBL.cs" />
     <Compile Include="BL\ContestBL.cs" />
@@ -55,10 +67,10 @@
     <Compile Include="BL\PhaseQuestionBL.cs" />
     <Compile Include="BL\PlayerBL.cs" />
     <Compile Include="BL\RoundBL.cs" />
-    <Compile Include="ContinueSetting.cs">
+    <Compile Include="GUI\GameSetup\Form\ContinueSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContinueSetting.Designer.cs">
+    <Compile Include="GUI\GameSetup\Form\ContinueSetting.Designer.cs">
       <DependentUpon>ContinueSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="DO\Competition.cs" />
@@ -72,16 +84,10 @@
     <Compile Include="GUI\GameSetup\Form\GetQuestion.Designer.cs">
       <DependentUpon>GetQuestion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GameSetup\Form\EditGameSetting.cs">
+    <Compile Include="GUI\GameSetup\Form\Add_New_Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\GameSetup\Form\EditGameSetting.Designer.cs">
-      <DependentUpon>EditGameSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\MainInterface\Form\Add_New_Game.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\MainInterface\Form\Add_New_Game.Designer.cs">
+    <Compile Include="GUI\GameSetup\Form\Add_New_Game.Designer.cs">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainInterface\Form\ChangePassword.cs">
@@ -360,16 +366,19 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ContinueSetting.resx">
+    <EmbeddedResource Include="GUI\GameSetup\Form\Add_Competition.resx">
+      <DependentUpon>Add_Competition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameSetup\Form\Add_Round.resx">
+      <DependentUpon>Add_Round.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameSetup\Form\ContinueSetting.resx">
       <DependentUpon>ContinueSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\Form\GetQuestion.resx">
       <DependentUpon>GetQuestion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GameSetup\Form\EditGameSetting.resx">
-      <DependentUpon>EditGameSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainInterface\Form\Add_New_Game.resx">
+    <EmbeddedResource Include="GUI\GameSetup\Form\Add_New_Game.resx">
       <DependentUpon>Add_New_Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainInterface\Form\ChangePassword.resx">

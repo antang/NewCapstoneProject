@@ -42,13 +42,13 @@ namespace CapDemo.GUI.User_Controls
                 AddPhase.Tag = i;
                 AddPhase.ID_Phase = i;
                 AddPhase.onDelete += AddPhase_onDelete;
-                //AddPhase.lbl_Number.Text = i.ToString();
+                AddPhase.txt_Sequence.Text = (i).ToString();
                 flp_Phase.Controls.Add(AddPhase);
 
-                for (int j = 0; j < flp_Phase.Controls.Count; j++)
-                {
-                    AddPhase.txt_Sequence.Text = (j + 1).ToString();
-                }
+                //for (int j = 0; j < flp_Phase.Controls.Count; j++)
+                //{
+                //AddPhase.txt_Sequence.Text = (i).ToString();
+                //}
             }
             else
             {
@@ -136,7 +136,7 @@ namespace CapDemo.GUI.User_Controls
             {
                 foreach (Add_Phase item1 in flp_Phase.Controls)
                 {
-                    if (item.txt_Sequence.Text == item1.txt_Sequence.Text || item.txt_PhaseName.Text.Trim() == item1.txt_PhaseName.Text.Trim())
+                    if (item.txt_Sequence.Text == item1.txt_Sequence.Text || item.txt_PhaseName.Text.Trim().ToUpper() == item1.txt_PhaseName.Text.Trim().ToUpper())
                     {
                         j++;
                     }

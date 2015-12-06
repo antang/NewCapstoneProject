@@ -22,14 +22,16 @@ namespace CapDemo.GUI.User_Controls
         private void lbl_AddGame_Click(object sender, EventArgs e)
         {
             Add_New_Game ang = new Add_New_Game();
+            New_Game game = new New_Game();
             DialogResult result = ang.ShowDialog();
             if (result== DialogResult.OK)
             {
-                //notifyIcon1.Icon = SystemIcons.Information;
-                //notifyIcon1.BalloonTipText = "Thiết lập trò chơi thành công";
-                //notifyIcon1.ShowBalloonTip(1000);
                 load();
-            } 
+            }
+            else
+            {
+                load();
+            }
         }
 
         private void Setting_Game_Load(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace CapDemo.GUI.User_Controls
             //notifyIcon1.ShowBalloonTip(1000);
             this.Dock = DockStyle.Fill;
         }
-
+        //LOAD
         public void load()
         {
             flp_Game.Controls.Clear();
@@ -58,18 +60,16 @@ namespace CapDemo.GUI.User_Controls
                     game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
                     game.label2.Text = ListContest.ElementAt(i).IDContest.ToString();
                     game.lbl_Number.Text = (i+1).ToString();
-                    if (ListContest.ElementAt(i).NumberChallenge.ToString() == "")
-                    {
-                        game.lbl_Status.Text = "Chưa hoàn Tất";
-                        game.lbl_Status.ForeColor = Color.Red;
-                    }
-                    else
+                    if (ListContest.ElementAt(i).NumberChallenge >0)
                     {
                         game.lbl_Status.Text = "Hoàn tất";
                         game.lbl_Status.ForeColor = Color.LightGreen;
                     }
-                    
-
+                    else
+                    {
+                        game.lbl_Status.Text = "Chưa hoàn Tất";
+                        game.lbl_Status.ForeColor = Color.Red;
+                    }
                     flp_Game.Controls.Add(game);
                 }
             }

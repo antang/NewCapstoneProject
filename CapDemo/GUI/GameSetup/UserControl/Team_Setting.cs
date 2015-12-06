@@ -43,13 +43,14 @@ namespace CapDemo.GUI.User_Controls
                 AddPhase.Tag = i;
                 AddPhase.ID_Team = i;
                 AddPhase.onDelete += AddTeam_onDelete;
+                AddPhase.txt_Sequence.Text = (i).ToString();
                 //AddPhase.lbl_Number.Text = i.ToString();
                 flp_Team.Controls.Add(AddPhase);
 
-                for (int j = 0; j < flp_Team.Controls.Count; j++)
-                {
-                    AddPhase.txt_Sequence.Text = (j + 1).ToString();
-                }
+                //for (int j = 0; j < flp_Team.Controls.Count; j++)
+                //{
+                //    AddPhase.txt_Sequence.Text = (j + 1).ToString();
+                //}
             }
             else
             {

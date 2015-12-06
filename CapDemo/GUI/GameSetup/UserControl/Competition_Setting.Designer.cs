@@ -179,6 +179,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Competition_Setting";
             this.Size = new System.Drawing.Size(710, 480);
+            this.Load += new System.EventHandler(this.Competition_Setting_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

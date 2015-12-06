@@ -111,6 +111,7 @@ namespace CapDemo
             dgv_Question.Columns["MinusPhase"].Visible = false;
             dgv_Question.Columns["TimePhase"].Visible = false;
             dgv_Question.Columns["Sequence"].Visible = false;
+            dgv_Question.Columns["Status"].Visible = false;
 
             dgv_Question.Columns["IDQuestion"].Visible = false;
 
@@ -129,7 +130,15 @@ namespace CapDemo
         //Select listbox to show question
         private void lb_Phase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            load();
+            if (lb_Phase.SelectedItem != null)
+            {
+                load();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tên giai đoạn.");
+            }
+
         }
         //Delete question
         private void btn_DeleteQuestion_Click(object sender, EventArgs e)
@@ -195,7 +204,6 @@ namespace CapDemo
                             check++;
                         }
                     }
-                    
                 }
             }
             if (check == 0)
@@ -205,9 +213,7 @@ namespace CapDemo
             else
             {
                 return false;
-            }
-           
-            
+            } 
         }
         
     }

@@ -17,38 +17,14 @@ namespace CapDemo.GUI.User_Controls
             InitializeComponent();
         }
 
-        public Competition_Setting(int p)
-        {
-            // TODO: Complete member initialization
-            InitializeComponent();
-            this.p = p;
-        }
-        //LOAD USER CONTROL
-        private static Competition_Setting _instance;
-        public static Competition_Setting instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new Competition_Setting();
-                return _instance;
-            }
-        }
+        int amountPlayer;
 
-        //Check form empty
-        public bool checkFormEmpty()
+        public int AmountPlayer
         {
-            if (txt_TimeForSupport.Text.Trim() == "" || txt_NumTeam.Text.Trim()==""||txt_ChallengeScore.Text.Trim()=="")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            get { return amountPlayer; }
+            set { amountPlayer = value; }
         }
         private bool nonNumberEntered = false;
-        private int p;
         //Input time for request support choice
         private void txt_TimeForSupport_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -138,9 +114,9 @@ namespace CapDemo.GUI.User_Controls
         {
             if (txt_NumTeam.Text != "")
             {
-                if (Convert.ToInt32(txt_NumTeam.Text) == 0 || Convert.ToInt32(txt_NumTeam.Text) > (p-1))
+                if (Convert.ToInt32(txt_NumTeam.Text) == 0 || Convert.ToInt32(txt_NumTeam.Text) > (amountPlayer-1))
                 {
-                    MessageBox.Show("Số lượng đội thách đấu tối thiểu là 1 và tối đa là " + (p- 1).ToString() + ".", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số lượng đội thách đấu tối thiểu là 1 và tối đa là " + (amountPlayer- 1).ToString() + ".", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_NumTeam.Text = "";
                 }
             }
@@ -168,6 +144,11 @@ namespace CapDemo.GUI.User_Controls
                     txt_TimeForSupport.Text = "";
                 }
             }
+        }
+
+        private void Competition_Setting_Load(object sender, EventArgs e)
+        {
+            this.Dock = DockStyle.Fill;
         }
 
         ////limit input time to support

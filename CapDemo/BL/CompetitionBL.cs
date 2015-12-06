@@ -23,7 +23,6 @@ namespace CapDemo.BL
             string query = "SELECT [Competition_ID],[Competition_Name]"
                          + " FROM [Competition]";
             DataTable dt = DA.SelectDatabase(query);
-            //int i = 1;
             if (dt != null)
             {
                 foreach (DataRow item in dt.Rows)
@@ -31,9 +30,7 @@ namespace CapDemo.BL
                     Competition Competition = new Competition();
                     Competition.IDCompetition = Convert.ToInt32(item["Competition_ID"].ToString());
                     Competition.NameCompetition = item["Competition_Name"].ToString();
-                    //Competition.Sequence = i;
                     CompetitionList.Add(Competition);
-                    //i++;
                 }
             }
             return CompetitionList;
@@ -43,7 +40,7 @@ namespace CapDemo.BL
         public bool AddCompetition(Competition Competition)
         {
             string query = "INSERT INTO [Competition]([Competition_Name])"
-                            + " VALUES('" + Competition.NameCompetition + "')";
+                            + " VALUES('" + Competition.NameCompetition.Replace("'","''") + "')";
 
             if (ExistCompetition(Competition) == true)
             {
@@ -58,51 +55,61 @@ namespace CapDemo.BL
         public bool ExistCompetition(Competition Competition)
         {
             string query = "SELECT [Competition_ID],[Competition_Name]"
-                         + " FROM [Competition]"
-                         + " WHERE [Competition_Name] = '" + Competition.NameCompetition.ToUpper() + "'";
+                         + " FROM [Competition]";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt != null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (item["Competition_Name"].ToString().ToUpper() == Competition.NameCompetition.ToUpper())
+                    {
+                        i++;
+                    }
+                }
+            }
+            if (i==0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         //Edit competition exist in competition table
-        public bool EditExistCompetiton(Competition Competition)
-        {
-            string query = "SELECT [Competition_ID],[Competition_Name]"
-                         + " FROM [Competition]"
-                         + " WHERE [Competition_Name]= '" + Competition.NameCompetition.ToUpper() + "'"
-                         + " AND [Competition_ID] <> '" + Competition.IDCompetition + "'";
-            DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        //Edit Competition
-        public bool EditCompetitionbyID(Competition Competition)
-        {
-            string query = "UPDATE [Competition]"
-                         + " SET [Competition_Name] ='" + Competition.NameCompetition.Replace("'","''") + "'"
-                         + " WHERE [Competition_ID] = '" + Competition.IDCompetition + "'";
+        //public bool EditExistCompetiton(Competition Competition)
+        //{
+        //    string query = "SELECT [Competition_ID],[Competition_Name]"
+        //                 + " FROM [Competition]"
+        //                 + " WHERE [Competition_Name]= '" + Competition.NameCompetition.ToUpper() + "'"
+        //                 + " AND [Competition_ID] <> '" + Competition.IDCompetition + "'";
+        //    DataTable dt = DA.SelectDatabase(query);
+        //    if (dt != null)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+        ////Edit Competition
+        //public bool EditCompetitionbyID(Competition Competition)
+        //{
+        //    string query = "UPDATE [Competition]"
+        //                 + " SET [Competition_Name] ='" + Competition.NameCompetition.Replace("'","''") + "'"
+        //                 + " WHERE [Competition_ID] = '" + Competition.IDCompetition + "'";
 
-            if (EditExistCompetiton(Competition) == true)
-            {
-                return false;
-            }
-            else
-            {
-                return DA.UpdateDatabase(query);
-            }
-        }
+        //    if (EditExistCompetiton(Competition) == true)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return DA.UpdateDatabase(query);
+        //    }
+        //}
 
         //Delete Competition
         public bool DeleteCompetitionbyID(Competition Competition)

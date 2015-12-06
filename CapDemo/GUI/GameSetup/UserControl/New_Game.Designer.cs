@@ -50,6 +50,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 64);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // label1
             // 
@@ -62,6 +64,8 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cuộc Thi:";
+            this.label1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.label1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_Name
             // 
@@ -74,6 +78,8 @@
             this.lbl_Name.Size = new System.Drawing.Size(73, 16);
             this.lbl_Name.TabIndex = 2;
             this.lbl_Name.Text = "Vòng thi:";
+            this.lbl_Name.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_Name.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_Number
             // 
@@ -86,6 +92,8 @@
             this.lbl_Number.Size = new System.Drawing.Size(19, 20);
             this.lbl_Number.TabIndex = 3;
             this.lbl_Number.Text = "1";
+            this.lbl_Number.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_Number.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_CompetitionName
             // 
@@ -98,6 +106,8 @@
             this.lbl_CompetitionName.Size = new System.Drawing.Size(93, 16);
             this.lbl_CompetitionName.TabIndex = 5;
             this.lbl_CompetitionName.Text = "tên cuộc thi";
+            this.lbl_CompetitionName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_CompetitionName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // label3
             // 
@@ -110,6 +120,8 @@
             this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phần Thi:";
+            this.label3.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.label3.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_RoundName
             // 
@@ -122,6 +134,8 @@
             this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
             this.lbl_RoundName.TabIndex = 6;
             this.lbl_RoundName.Text = "tên vòng thi";
+            this.lbl_RoundName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_RoundName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_ContestName
             // 
@@ -134,6 +148,8 @@
             this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
             this.lbl_ContestName.TabIndex = 7;
             this.lbl_ContestName.Text = "tên phần thi";
+            this.lbl_ContestName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_ContestName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // label2
             // 
@@ -144,6 +160,8 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
             this.label2.Visible = false;
+            this.label2.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.label2.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // label4
             // 
@@ -155,6 +173,8 @@
             this.label4.Size = new System.Drawing.Size(155, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Trạng thái Thiết Đặt:";
+            this.label4.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.label4.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // lbl_Status
             // 
@@ -166,12 +186,14 @@
             this.lbl_Status.Size = new System.Drawing.Size(54, 16);
             this.lbl_Status.TabIndex = 10;
             this.lbl_Status.Text = "status";
+            this.lbl_Status.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            this.lbl_Status.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // New_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumPurple;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lbl_Status);
             this.Controls.Add(this.label4);

@@ -20,8 +20,8 @@ namespace CapDemo.BL
         public bool AddPhaseQuestion(Phase Phase)
         {
             string query = "INSERT INTO [PhaseQuestion]"
-                + "([Phase_ID],[Question_ID])"
-                + " VALUES ('" + Phase.IDPhase + "','" + Phase.IDQuestion+ "')";
+                + "([Phase_ID],[Question_ID],[Status])"
+                + " VALUES ('" + Phase.IDPhase + "','" + Phase.IDQuestion+ "', '"+Phase.Status+"')";
             if (DA.InsertDatabase(query))
             {
                 return true;
@@ -131,6 +131,12 @@ namespace CapDemo.BL
         {
             string query = "DELETE FROM [PhaseQuestion]"
                          + " WHERE [Question_ID] = '" + Phase.IDQuestion + "' AND [Phase_ID] = '" + Phase.IDPhase+ "'";
+            return DA.DeleteDatabase(query);
+        }
+        public bool DeletePhaseQuestionbyIDPhase(Phase Phase)
+        {
+            string query = "DELETE FROM [PhaseQuestion]"
+                         + " WHERE [Phase_ID] = '" + Phase.IDPhase + "'";
             return DA.DeleteDatabase(query);
         }
     }

@@ -68,14 +68,7 @@ namespace CapDemo.GUI.User_Controls
         //Load
         private void Add_Phase_Load(object sender, EventArgs e)
         {
-            //CatalogueBL CatBL = new CatalogueBL();
-            //List<DO.Catalogue> CatList;
-            //CatList = CatBL.GetCatalogue();
-            //if (CatList != null)
-            //    for (int i = 0; i < CatList.Count; i++)
-            //    {
-            //        this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
-            //    }
+            lbl_IDPhase.Visible = false;
         }
         //Only Input number for minus score
         private void txt_Minus_KeyPress(object sender, KeyPressEventArgs e)

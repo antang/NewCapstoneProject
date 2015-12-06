@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(General_Setting));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_TimeQuestion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chk_Answer = new System.Windows.Forms.CheckBox();
             this.grb_Question = new System.Windows.Forms.GroupBox();
-            this.txt_CompetitionName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.txt_TimeAnswer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,15 +49,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.grb_Answer = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_RoundName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_ContestName = new System.Windows.Forms.TextBox();
             this.chk_Question = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.cmb_Competition = new System.Windows.Forms.ComboBox();
+            this.cmb_Round = new System.Windows.Forms.ComboBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_AddRound = new System.Windows.Forms.Button();
+            this.btn_AddCompetition = new System.Windows.Forms.Button();
             this.grb_Question.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grb_Answer.SuspendLayout();
@@ -125,14 +130,16 @@
             this.grb_Question.TabIndex = 17;
             this.grb_Question.TabStop = false;
             // 
-            // txt_CompetitionName
+            // label18
             // 
-            this.txt_CompetitionName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CompetitionName.Location = new System.Drawing.Point(6, 39);
-            this.txt_CompetitionName.Name = "txt_CompetitionName";
-            this.txt_CompetitionName.Size = new System.Drawing.Size(276, 23);
-            this.txt_CompetitionName.TabIndex = 15;
-            this.txt_CompetitionName.TextChanged += new System.EventHandler(this.txt_CompetitionName_TextChanged);
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(284, 26);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(40, 16);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Giây";
             // 
             // txt_TimeAnswer
             // 
@@ -292,6 +299,17 @@
             this.grb_Answer.TabIndex = 19;
             this.grb_Answer.TabStop = false;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(284, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(40, 16);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "Giây";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -303,15 +321,6 @@
             this.label7.Size = new System.Drawing.Size(97, 16);
             this.label7.TabIndex = 21;
             this.label7.Text = "Tên vòng thi";
-            // 
-            // txt_RoundName
-            // 
-            this.txt_RoundName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_RoundName.Location = new System.Drawing.Point(6, 96);
-            this.txt_RoundName.Name = "txt_RoundName";
-            this.txt_RoundName.Size = new System.Drawing.Size(276, 23);
-            this.txt_RoundName.TabIndex = 22;
-            this.txt_RoundName.TextChanged += new System.EventHandler(this.txt_RoundName_TextChanged);
             // 
             // label8
             // 
@@ -350,9 +359,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_CompetitionName);
+            this.groupBox1.Controls.Add(this.btn_AddRound);
+            this.groupBox1.Controls.Add(this.btn_AddCompetition);
+            this.groupBox1.Controls.Add(this.cmb_Round);
+            this.groupBox1.Controls.Add(this.cmb_Competition);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_RoundName);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_ContestName);
             this.groupBox1.Controls.Add(this.label8);
@@ -380,27 +391,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết đặt tự động";
             // 
-            // label18
+            // cmb_Competition
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(284, 26);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 16);
-            this.label18.TabIndex = 35;
-            this.label18.Text = "Giây";
+            this.cmb_Competition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Competition.FormattingEnabled = true;
+            this.cmb_Competition.Location = new System.Drawing.Point(7, 39);
+            this.cmb_Competition.Name = "cmb_Competition";
+            this.cmb_Competition.Size = new System.Drawing.Size(192, 21);
+            this.cmb_Competition.TabIndex = 25;
+            this.cmb_Competition.SelectedIndexChanged += new System.EventHandler(this.cmb_Competition_SelectedIndexChanged);
             // 
-            // label19
+            // cmb_Round
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(284, 26);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 16);
-            this.label19.TabIndex = 36;
-            this.label19.Text = "Giây";
+            this.cmb_Round.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Round.FormattingEnabled = true;
+            this.cmb_Round.Location = new System.Drawing.Point(7, 99);
+            this.cmb_Round.Name = "cmb_Round";
+            this.cmb_Round.Size = new System.Drawing.Size(192, 21);
+            this.cmb_Round.TabIndex = 26;
+            this.cmb_Round.SelectedIndexChanged += new System.EventHandler(this.cmb_Round_SelectedIndexChanged);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "edit_add.ico");
+            // 
+            // btn_AddRound
+            // 
+            this.btn_AddRound.BackColor = System.Drawing.Color.White;
+            this.btn_AddRound.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AddRound.ForeColor = System.Drawing.Color.White;
+            this.btn_AddRound.ImageIndex = 0;
+            this.btn_AddRound.ImageList = this.imageList1;
+            this.btn_AddRound.Location = new System.Drawing.Point(205, 99);
+            this.btn_AddRound.Name = "btn_AddRound";
+            this.btn_AddRound.Size = new System.Drawing.Size(27, 23);
+            this.btn_AddRound.TabIndex = 28;
+            this.btn_AddRound.UseVisualStyleBackColor = false;
+            this.btn_AddRound.Click += new System.EventHandler(this.btn_AddRound_Click);
+            // 
+            // btn_AddCompetition
+            // 
+            this.btn_AddCompetition.BackColor = System.Drawing.Color.White;
+            this.btn_AddCompetition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_AddCompetition.ForeColor = System.Drawing.Color.White;
+            this.btn_AddCompetition.ImageIndex = 0;
+            this.btn_AddCompetition.ImageList = this.imageList1;
+            this.btn_AddCompetition.Location = new System.Drawing.Point(205, 39);
+            this.btn_AddCompetition.Name = "btn_AddCompetition";
+            this.btn_AddCompetition.Size = new System.Drawing.Size(27, 23);
+            this.btn_AddCompetition.TabIndex = 27;
+            this.btn_AddCompetition.UseVisualStyleBackColor = false;
+            this.btn_AddCompetition.Click += new System.EventHandler(this.btn_AddCompetition_Click);
             // 
             // General_Setting
             // 
@@ -442,12 +485,10 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txt_TimeQuestion;
         public System.Windows.Forms.CheckBox chk_Answer;
-        public System.Windows.Forms.TextBox txt_CompetitionName;
         public System.Windows.Forms.TextBox txt_TimeAnswer;
         public System.Windows.Forms.TextBox txt_NumStepFail;
         public System.Windows.Forms.TextBox txt_NumStepPass;
         public System.Windows.Forms.TextBox txt_Bonus;
-        public System.Windows.Forms.TextBox txt_RoundName;
         public System.Windows.Forms.TextBox txt_ContestName;
         public System.Windows.Forms.CheckBox chk_Question;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -457,5 +498,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btn_AddRound;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btn_AddCompetition;
+        public System.Windows.Forms.ComboBox cmb_Round;
+        public System.Windows.Forms.ComboBox cmb_Competition;
     }
 }

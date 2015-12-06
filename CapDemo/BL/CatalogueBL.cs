@@ -45,45 +45,64 @@ namespace CapDemo.BL
         {
             string query = "INSERT INTO Catalogue (Catalogue_Name)"
                         + " VALUES ('" + Catalogue.NameCatalogue.Replace("'", "''") + "')";
-
-            if(ExistCatalogue(Catalogue) == true)
-            {
-                return false;
-            }
-            else
-            {
-                return DA.InsertDatabase(query);
-            }
+                if (ExistCatalogue(Catalogue)==true)
+                {
+                    return false;
+                }
+                else
+                {
+                    return DA.InsertDatabase(query);
+                }
         }
-        //Check Catalogue Exist
         public bool ExistCatalogue(Catalogue Catalogue)
         {
-            string query = "SELECT Catalogue_ID, Catalogue_Name FROM Catalogue"
-                         + " WHERE Catalogue_Name = '" + Catalogue.NameCatalogue.ToUpper() + "'";
+            string query = "SELECT [Catalogue_ID],[Catalogue_Name]"
+                        + " FROM [Catalogue]";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt != null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (item["Catalogue_Name"].ToString().ToUpper() == Catalogue.NameCatalogue.ToUpper())
+                    {
+                        i++;
+                    }
+                }
+            }
+            if (i ==0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         //Edit catalogue exist in catalogue table
         public bool EditExistCatalogue(Catalogue Catalogue)
         {
-            string query = "SELECT Catalogue_ID, Catalogue_Name FROM Catalogue"
-                         + " WHERE Catalogue_Name = '" + Catalogue.NameCatalogue.ToUpper() + "'"
-                         +" AND Catalogue_ID <> '" + Catalogue.IDCatalogue + "'";
+            string query = "SELECT [Catalogue_ID],[Catalogue_Name]"
+                        + " FROM [Catalogue]";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt != null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (item["Catalogue_Name"].ToString().ToUpper() == Catalogue.NameCatalogue.ToUpper() && Convert.ToInt32(item["Catalogue_ID"]) != Catalogue.IDCatalogue)
+                    {
+                        i++;
+                    }
+                }
+            }
+            if (i == 0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

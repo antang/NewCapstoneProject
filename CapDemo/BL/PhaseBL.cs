@@ -92,13 +92,19 @@ namespace CapDemo.BL
         public bool EditPhasebyID(Phase Phase)
         {
             string query = "UPDATE [Phase]"
-                         + " SET [Phase_Name] ='" + Phase.NamePhase + "', [Phase_Score]= ='" + Phase.ScorePhase + "'"
+                         + " SET [Contest_ID] ='" + Phase.IDContest + "',[Phase_Name] ='" + Phase.NamePhase + "', [Phase_Score] ='" + Phase.ScorePhase + "'"
                          + ",[Phase_Minus] ='" + Phase.MinusPhase + "', [Phase_Time]='" + Phase.TimePhase + "', [Sequence]='" + Phase.Sequence + "'"
                          + " WHERE [Phase_ID] = '" + Phase.IDPhase + "'";
             return DA.UpdateDatabase(query);
         }
         //Delete Phase
-        public bool DeletePhasebyID(Phase Phase)
+        public bool DeletePhasebyIDPhase(Phase Phase)
+        {
+            string query = "DELETE FROM [Phase]"
+                         + " WHERE [Phase_ID] = '" + Phase.IDPhase + "'";
+            return DA.DeleteDatabase(query);
+        }
+        public bool DeletePhasebyIDContest(Phase Phase)
         {
             string query = "DELETE FROM [Phase]"
                          + " WHERE [Contest_ID] = '" + Phase.IDContest + "'";

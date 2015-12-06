@@ -39,19 +39,22 @@ namespace CapDemo.GUI
             dgv_Question.Columns["IDQuestion"].Visible = false;
             dgv_Question.Columns["NameCatalogue"].Visible = false;
             dgv_Question.Columns["AnswerContent"].Visible = false;
-            dgv_Question.Columns["TypeQuestion"].Visible = false;
+            dgv_Question.Columns["Catalogue"].Visible = false;
             dgv_Question.Columns["Date"].Visible = false;
 
             dgv_Question.Columns["Sequence"].HeaderText = "STT";
-            dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question.Columns["NameQuestion"].HeaderText = "Nội dung Câu Hỏi";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
+            dgv_Question.Columns["QuestionTitle"].HeaderText = "Tên câu hỏi";
 
             dgv_Question.Columns["Sequence"].ReadOnly = true;
             dgv_Question.Columns["NameQuestion"].ReadOnly = true;
             dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+            dgv_Question.Columns["QuestionTitle"].ReadOnly = true;
 
             dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["QuestionTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
             CheckColumn.Name = "Check";
@@ -152,7 +155,7 @@ namespace CapDemo.GUI
 
             foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                if (row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "" && row.Cells["TypeQuestion"].Value.ToString().Trim() != "")
+                if (row.Cells["QuestionTitle"].Value.ToString().Trim() != "" && row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "" && row.Cells["TypeQuestion"].Value.ToString().Trim() != "")
                 {
                     if (row.Cells["TypeQuestion"].Value.ToString().Trim() == "shortanswer" || row.Cells["TypeQuestion"].Value.ToString().Trim() == "multichoice")
                     {
@@ -303,6 +306,7 @@ namespace CapDemo.GUI
                                         string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
                                         string[] AnswerItem = AnswerContent[0].Split(new string[] { "---" }, StringSplitOptions.None);
 
+                                        question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString().Trim();
                                         question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
                                         question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString().Trim();
                                         question.IDCatalogue = IDCat;
@@ -322,6 +326,7 @@ namespace CapDemo.GUI
                                     {
                                         string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
                                         //ADD QUESTION MULTIPLE CHOICE
+                                        question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString().Trim();
                                         question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
                                         question.TypeQuestion = "";
                                         question.IDCatalogue = IDCat;

@@ -42,19 +42,26 @@ namespace CapDemo.GUI.User_Controls
             dataGridView1.Columns["IDQuestion"].Visible = false;
             dataGridView1.Columns["NameCatalogue"].Visible = false;
             dataGridView1.Columns["AnswerContent"].Visible = false;
-            dataGridView1.Columns["TypeQuestion"].Visible = false;
+            dataGridView1.Columns["Catalogue"].Visible = false;
+            //dataGridView1.Columns["TypeQuestion"].Visible = false;
             dataGridView1.Columns["Date"].Visible = false;
 
             dataGridView1.Columns["Sequence"].HeaderText = "STT";
-            dataGridView1.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dataGridView1.Columns["NameQuestion"].HeaderText = "Nội Dung Câu Hỏi";
             dataGridView1.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
+            //
+            dataGridView1.Columns["QuestionTitle"].HeaderText = "Tên câu hỏi";
 
             dataGridView1.Columns["Sequence"].ReadOnly = true;
+            //
+            dataGridView1.Columns["QuestionTitle"].ReadOnly = true;
             dataGridView1.Columns["NameQuestion"].ReadOnly = true;
             dataGridView1.Columns["TypeQuestion"].ReadOnly = true;
 
             dataGridView1.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //
+            dataGridView1.Columns["QuestionTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
             CheckColumn.Name = "Check";
@@ -161,7 +168,7 @@ namespace CapDemo.GUI.User_Controls
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                    if (row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "" && row.Cells["TypeQuestion"].Value.ToString().Trim() != "")
+                    if ( row.Cells["QuestionTitle"].Value.ToString().Trim() != "" && row.Cells["NameQuestion"].Value.ToString().Trim() != "" && row.Cells["AnswerContent"].Value.ToString().Trim() != "" && row.Cells["TypeQuestion"].Value.ToString().Trim() != "")
                     {
                         if (row.Cells["TypeQuestion"].Value.ToString().Trim() == "shortanswer" || row.Cells["TypeQuestion"].Value.ToString().Trim() == "multichoice")
                         {
@@ -264,9 +271,6 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (txt_FilePath.Text == "")
                 {
-                    //notifyIcon1.Icon = SystemIcons.Warning;
-                    //notifyIcon1.BalloonTipText = "Vui lòng chọn đường dẫn đến tập tin.";
-                    //notifyIcon1.ShowBalloonTip(2000);
                     MessageBox.Show("Vui lòng chọn đường dẫn đến tập tin trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -295,6 +299,8 @@ namespace CapDemo.GUI.User_Controls
                                     string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
                                     string[] AnswerItem = AnswerContent[0].Split(new string[] { "---" }, StringSplitOptions.None);
 
+                                    //question.QuestionTitle = 
+                                    question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString().Trim();
                                     question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
                                     question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString().Trim();
                                     question.IDCatalogue = IDCat;
@@ -314,6 +320,7 @@ namespace CapDemo.GUI.User_Controls
                                 {
                                     string[] AnswerContent = row.Cells["AnswerContent"].Value.ToString().Trim().Split(new string[] { "</answer>" }, StringSplitOptions.None);
                                     //ADD QUESTION MULTIPLE CHOICE
+                                    question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString().Trim();
                                     question.NameQuestion = row.Cells["NameQuestion"].Value.ToString().Trim();
                                     question.TypeQuestion = "";
                                     question.IDCatalogue = IDCat;

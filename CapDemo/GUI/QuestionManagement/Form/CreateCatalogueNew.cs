@@ -30,7 +30,7 @@ namespace CapDemo.GUI
                 CatalogueBL CatBL = new CatalogueBL();
                 Catalogue Cat = new Catalogue();
                 Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
-                if (CatBL.AddCatalogue(Cat) ==true)
+                if (CatBL.AddCatalogue(Cat) == true)
                 {
                     notifyIcon1.Icon = SystemIcons.Information;
                     notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";

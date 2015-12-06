@@ -24,7 +24,7 @@ namespace CapDemo.BL
         public List<Question> GetQuestion()
         {
             List<Question> QuestionList = new List<Question>();
-            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Date_Create"
+            string query = "SELECT q.Question_ID,q.Question_Title, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Question_Title"
                          + " FROM Question q"
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
                          
@@ -36,11 +36,12 @@ namespace CapDemo.BL
                 {
                     Question Question = new Question();
                     Question.IDQuestion = Convert.ToInt32(item["Question_ID"]);
+                    Question.QuestionTitle = item["Question_Title"].ToString();
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
                     //Question.NameCatalogue = item["Catalogue_Name"].ToString();
-                    Question.Date = (DateTime)item["Date_Create"];
+                    //Question.Date = item["Date_Create"].ToString();
                     Question.Sequence = i;
                     Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     //Question.Catalogue.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
@@ -55,7 +56,7 @@ namespace CapDemo.BL
         public List<Question> GetQuestionByCatalogue(Catalogue Catalogue)
         {
             List<Question> QuestionList = new List<Question>();
-            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, c.Catalogue_Name"
+            string query = "SELECT q.Question_ID, q.Question_Title, q.Question_Name, q.Question_Type, c.Catalogue_Name"
                          + " FROM Question q "
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID"
                          + " WHERE q.Catalogue_ID='"+Catalogue.IDCatalogue+"'";
@@ -67,6 +68,7 @@ namespace CapDemo.BL
                 {
                     Question Question = new Question();
                     Question.IDQuestion = Convert.ToInt32(item["Question_ID"]);
+                    Question.QuestionTitle = item["Question_Title"].ToString();
                     Question.NameQuestion = item["Question_Name"].ToString();
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.NameCatalogue = item["Catalogue_Name"].ToString();
@@ -104,8 +106,8 @@ namespace CapDemo.BL
         //INSERT QUESTION
         public bool AddQuestion(Question Question)
         {
-            string query = "INSERT INTO Question (Question_Name, Question_Type, Catalogue_ID, Date_Create)"
-                        + " VALUES ('" + Question.NameQuestion.Replace("'","''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
+            string query = "INSERT INTO Question (Question_Title,Question_Name, Question_Type, Catalogue_ID, Date_Create)"
+                        + " VALUES ('" + Question.QuestionTitle.Replace("'", "''") + "','" + Question.NameQuestion.Replace("'", "''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
 
             return DA.InsertDatabase(query);
         }
@@ -121,7 +123,7 @@ namespace CapDemo.BL
         public bool EditQuestionbyID(Question Question)
         {
             string query = "UPDATE Question"
-                         + " SET Question_Name ='" + Question.NameQuestion.Replace("'", "''") + "'"
+                         + " SET Question_Title ='" + Question.QuestionTitle.Replace("'", "''") + "', Question_Name ='" + Question.NameQuestion.Replace("'", "''") + "'"
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -172,6 +174,7 @@ namespace CapDemo.BL
                 int stt = 1;
                 DataTable dtb = new DataTable();
                 dtb.Columns.Add("Sequence", typeof(string));
+                dtb.Columns.Add("QuestionTitle", typeof(string));
                 dtb.Columns.Add("NameQuestion", typeof(string));
                 dtb.Columns.Add("TypeQuestion", typeof(string));
                 dtb.Columns.Add("AnswerContent", typeof(string));
@@ -181,7 +184,7 @@ namespace CapDemo.BL
                 for (int i = 0; i < QuestionContent.Length - 1; i++)
                 {
                     string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-                    dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2]);
+                    dtb.Rows.Add(stt.ToString(),QuestionItem[1], QuestionItem[2], QuestionItem[0], QuestionItem[3]);
                     stt++;
                 }
 
@@ -192,6 +195,7 @@ namespace CapDemo.BL
                     {
                         Question Question = new Question();
                         Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                        Question.QuestionTitle = item["QuestionTitle"].ToString();
                         Question.NameQuestion = item["NameQuestion"].ToString();
                         Question.TypeQuestion = item["TypeQuestion"].ToString();
 
@@ -269,7 +273,7 @@ namespace CapDemo.BL
 //LOAD DATA TABLE QUESTION
         public DataTable DatatableQuestion()
         {
-            string query = "SELECT q.Question_ID, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Date_Create"
+            string query = "SELECT q.Question_ID, q.Question_Title, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Date_Create"
                          + " FROM Question q"
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
 

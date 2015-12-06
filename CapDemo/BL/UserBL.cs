@@ -21,9 +21,7 @@ namespace CapDemo.BL
         {
             List<User> UserList = new List<User>();
             string query = "SELECT u.[User_ID],u.[Username],u.[Password]"
-                        + " FROM [Capstone].[dbo].[User] u";
-            //string query = "SELECT u.User_ID,u.Username,u.Password"
-            //            + " FROM User u";
+                        + " FROM [User] u";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
             if (dt!= null)
@@ -45,7 +43,7 @@ namespace CapDemo.BL
         //Insert user
         public bool AddUser(User User)
         {
-            string query = "INSERT INTO [Capstone].[dbo].[User]([Username],[Password])"
+            string query = "INSERT INTO [User]([Username],[Password])"
                            + "VALUES ('" + User.UserName.Replace("'", "''") + "','" + User.PassWord + "')";
             if (ExistUser(User) == true)
             {
@@ -60,24 +58,34 @@ namespace CapDemo.BL
         //Check User Exist
         public bool ExistUser(User User)
         {
-            string query = "SELECT [User_ID],[Username],[Password]"
-                       + " FROM [Capstone].[dbo].[User]"
-                       + " WHERE [Username] = '" + User.UserName.ToUpper() + "'";
+            string query = "SELECT u.[User_ID],u.[Username],u.[Password]"
+                        + " FROM [User] u";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt!= null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (item["Username"].ToString().ToUpper() == User.UserName.ToUpper())
+	                {
+                        i++;
+	                }
+                }
+            }
+            if (i==0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
         //Edit User
         public bool EditUserbyID(User User)
         {
-            string query= " UPDATE [Capstone].[dbo].[User]"
+            string query= " UPDATE [User]"
                         + " SET [Username] = '" + User.UserName.Replace("'", "''") + "',[Password] = '" + User.PassWord + "'"
                         + " WHERE [User_ID] = '" + User.UserID + "'";
             return DA.UpdateDatabase(query);

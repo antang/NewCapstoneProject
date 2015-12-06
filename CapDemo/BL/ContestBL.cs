@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CapDemo.BL
 {
@@ -112,16 +113,26 @@ namespace CapDemo.BL
         {
             string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
                         + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
-                        + " FROM [Contest]"
-                        + " WHERE [Round_ID]= '"+Contest.IDRound+"' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'";
+                        + " FROM [Contest]";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt != null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (Convert.ToInt32(item["Round_ID"])==Contest.IDRound && item["Contest_Name"].ToString().ToUpper()==Contest.NameContest.ToUpper())
+                    {
+                        i++;
+                    }
+                }
+            }
+            if (i==0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
@@ -129,18 +140,12 @@ namespace CapDemo.BL
         public bool EditContestbyID(Contest Contest)
         {
             string query = "UPDATE [Contest]"
-                         + " SET [Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
+                         + " SET [Round_ID] = '" + Contest.IDRound + "',[Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
                          + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
                          + ",[Challenge_Score] = '" + Contest.ChallengceScore + "', [Number_Challenge] = '" + Contest.NumberChallenge + "'"
                          + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
                          + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
                          + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
-            //string query = "UPDATE [Contest]"
-            //             + " SET"
-            //             + " [Bonus]='" + Contest.Bonus + "'"
-            //             + ",[Time_show_Anwer]='" + Contest.TimeShowAnswer + "',[Time_show_Question]='" + Contest.TimeShowQuestion + "'"
-            //             + ",[Time_of_True]='" + Contest.TimesTrue + "',[Time_of_False]='" + Contest.TimesFalse + "'"
-            //             + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
             if (EditExistContest(Contest) == true)
             {
                 return false;
@@ -155,17 +160,26 @@ namespace CapDemo.BL
         {
             string query = "SELECT [Contest_ID],[Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge]"
                         + ",[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False]"
-                        + " FROM [Contest]"
-                        + " WHERE [Round_ID]= '" + Contest.IDRound + "' AND [Contest_Name] = '" + Contest.NameContest.ToUpper() + "'"
-                        + " AND [Contest_ID]<> '" + Contest.IDContest + "'";
+                        + " FROM [Contest]";
             DataTable dt = DA.SelectDatabase(query);
-            if (dt.Rows.Count != 0)
+            int i = 0;
+            if (dt != null)
             {
-                return true;
+                foreach (DataRow item in dt.Rows)
+                {
+                    if (Convert.ToInt32(item["Round_ID"]) == Contest.IDRound && item["Contest_Name"].ToString().ToUpper() == Contest.NameContest.ToUpper() && Convert.ToInt32(item["Contest_ID"])!=Contest.IDContest)
+                    {
+                        i++;
+                    }
+                }
+            }
+            if (i == 0)
+            {
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

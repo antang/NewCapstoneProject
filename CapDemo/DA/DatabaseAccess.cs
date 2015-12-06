@@ -65,14 +65,14 @@ namespace CapDemo.DA
                 con.Open();
                 int i= cmd.ExecuteNonQuery();
                 con.Close();
-                if (i>=0)
+                //return true;
+                if (i >= 0)
                 {
-
                     return true;
                 }
                 else
                 {
-                    return false; 
+                    return false;
                 }
                 
             }
@@ -149,7 +149,9 @@ namespace CapDemo.DA
                 con = new SQLiteConnection(connection);
                 cmd = new SQLiteCommand(query, con);
                 con.Open();
-                return (int)cmd.ExecuteScalar();
+                object val = cmd.ExecuteScalar();
+                int max = int.Parse(val.ToString());
+                return max;
             }
             catch (Exception ex)
             {

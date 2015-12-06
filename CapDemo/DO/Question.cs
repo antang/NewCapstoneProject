@@ -17,6 +17,9 @@ namespace CapDemo.DO
         int sequence;
         string answerContent;
         DateTime date;
+        string questionTitle;
+
+        
 
         public Question()
         {
@@ -40,8 +43,12 @@ namespace CapDemo.DO
             get { return questionID; }
             set { questionID = value; }
         }
-        
 
+        public string QuestionTitle
+        {
+            get { return questionTitle; }
+            set { questionTitle = value; }
+        }
         public string NameQuestion
         {
             get { return questionName; }
