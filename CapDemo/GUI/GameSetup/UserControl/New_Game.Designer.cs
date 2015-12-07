@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
@@ -39,6 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Status = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,6 +193,21 @@
             this.lbl_Status.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             this.lbl_Status.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteSetupToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // deleteSetupToolStripMenuItem
+            // 
+            this.deleteSetupToolStripMenuItem.Image = global::CapDemo.Properties.Resources.Cancel;
+            this.deleteSetupToolStripMenuItem.Name = "deleteSetupToolStripMenuItem";
+            this.deleteSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteSetupToolStripMenuItem.Text = "Delete Setup";
+            this.deleteSetupToolStripMenuItem.Click += new System.EventHandler(this.deleteSetupToolStripMenuItem_Click);
+            // 
             // New_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +233,8 @@
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseClick);
             this.MouseLeave += new System.EventHandler(this.New_Game_MouseLeave);
             this.MouseHover += new System.EventHandler(this.New_Game_MouseHover);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseUp);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +253,7 @@
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lbl_Status;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteSetupToolStripMenuItem;
     }
 }

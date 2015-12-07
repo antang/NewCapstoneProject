@@ -47,6 +47,9 @@ namespace CapDemo.GUI.User_Controls
             dgv_Catalogue.Columns["Sequence"].HeaderText = "STT";
             dgv_Catalogue.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
             dgv_Catalogue.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            this.dgv_Catalogue.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgv_Catalogue.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }
         //LOAD QUESTION TABLE FROM DATABASE
         public void loadQuestion()
@@ -80,6 +83,8 @@ namespace CapDemo.GUI.User_Controls
             dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["QuestionTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgv_Question.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgv_Question.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }
         //ADD NEW QUESTION
         private void lbl_CreateQuestion_Click(object sender, EventArgs e)

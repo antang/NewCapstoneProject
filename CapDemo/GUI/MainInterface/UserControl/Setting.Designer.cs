@@ -52,6 +52,7 @@
             // 
             this.btn_DataManagement.BackColor = System.Drawing.Color.Transparent;
             this.btn_DataManagement.BackgroundImage = global::CapDemo.Properties.Resources.QLDL_Setting;
+            this.btn_DataManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_DataManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DataManagement.Location = new System.Drawing.Point(17, 258);
             this.btn_DataManagement.Name = "btn_DataManagement";
@@ -59,13 +60,14 @@
             this.btn_DataManagement.TabIndex = 1;
             this.btn_DataManagement.UseVisualStyleBackColor = false;
             this.btn_DataManagement.Click += new System.EventHandler(this.btn_DataManagement_Click);
+            this.btn_DataManagement.MouseEnter += new System.EventHandler(this.btn_DataManagement_MouseHover);
             this.btn_DataManagement.MouseLeave += new System.EventHandler(this.btn_DataManagement_MouseLeave);
-            this.btn_DataManagement.MouseHover += new System.EventHandler(this.btn_DataManagement_MouseHover);
             // 
             // btn_GameSetting
             // 
             this.btn_GameSetting.BackColor = System.Drawing.Color.Transparent;
             this.btn_GameSetting.BackgroundImage = global::CapDemo.Properties.Resources.TLG_Setting;
+            this.btn_GameSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_GameSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GameSetting.Location = new System.Drawing.Point(17, 321);
             this.btn_GameSetting.Name = "btn_GameSetting";
@@ -73,13 +75,14 @@
             this.btn_GameSetting.TabIndex = 2;
             this.btn_GameSetting.UseVisualStyleBackColor = false;
             this.btn_GameSetting.Click += new System.EventHandler(this.btn_GameSetting_Click);
+            this.btn_GameSetting.MouseEnter += new System.EventHandler(this.btn_GameSetting_MouseHover);
             this.btn_GameSetting.MouseLeave += new System.EventHandler(this.btn_GameSetting_MouseLeave);
-            this.btn_GameSetting.MouseHover += new System.EventHandler(this.btn_GameSetting_MouseHover);
             // 
             // btn_UserManagement
             // 
             this.btn_UserManagement.BackColor = System.Drawing.Color.Transparent;
             this.btn_UserManagement.BackgroundImage = global::CapDemo.Properties.Resources.QLTK_Setting;
+            this.btn_UserManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_UserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_UserManagement.Location = new System.Drawing.Point(17, 384);
             this.btn_UserManagement.Name = "btn_UserManagement";
@@ -87,14 +90,15 @@
             this.btn_UserManagement.TabIndex = 3;
             this.btn_UserManagement.UseVisualStyleBackColor = false;
             this.btn_UserManagement.Click += new System.EventHandler(this.btn_UserManagement_Click);
+            this.btn_UserManagement.MouseEnter += new System.EventHandler(this.btn_UserManagement_MouseHover);
             this.btn_UserManagement.MouseLeave += new System.EventHandler(this.btn_UserManagement_MouseLeave);
-            this.btn_UserManagement.MouseHover += new System.EventHandler(this.btn_UserManagement_MouseHover);
             // 
             // btn_Exit
             // 
             this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Thoat_Setting1;
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Location = new System.Drawing.Point(17, 643);
             this.btn_Exit.Name = "btn_Exit";
@@ -102,8 +106,8 @@
             this.btn_Exit.TabIndex = 4;
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            this.btn_Exit.MouseEnter += new System.EventHandler(this.btn_Exit_MouseHover);
             this.btn_Exit.MouseLeave += new System.EventHandler(this.btn_Exit_MouseLeave);
-            this.btn_Exit.MouseHover += new System.EventHandler(this.btn_Exit_MouseHover);
             // 
             // pnl_Setting
             // 
@@ -120,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources._1600_864_setting_3;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.bg;
             this.Controls.Add(this.pnl_Setting);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_UserManagement);
