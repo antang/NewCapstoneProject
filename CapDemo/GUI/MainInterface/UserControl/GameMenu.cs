@@ -54,7 +54,7 @@ namespace CapDemo.GUI.User_Controls
             if (this.onClick != null)
                 this.onClick(this, e);
         }
-
+        //load form
         private void GameMenu_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;

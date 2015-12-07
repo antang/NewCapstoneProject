@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GameSetup\Form\Add_Competition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\Form\Add_Competition.resx">
       <DependentUpon>Add_Competition.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,6 +618,10 @@
     <None Include="Resources\TWLW.png" />
     <None Include="Resources\1600-864.jpg" />
     <Content Include="Template.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\GameRunning\Form\" />
+    <Folder Include="GUI\GameRunning\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -53,16 +53,16 @@ namespace CapDemo.GUI
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             this.Controls.Add(gm1);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
-            this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
+            //st.btn_Exit.Click += new EventHandler(Exit_Setting);
             gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
-            this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
+            //sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
         }
         //Exit Start Game GUI
         void btn_Exit_onlick(object sender, EventArgs e)
         {
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
-            this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
+            //this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
             gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
             //this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
 
@@ -73,25 +73,29 @@ namespace CapDemo.GUI
         //Click to show Start Game GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
+            Start_Game sg1 = new Start_Game();
             this.Controls.Clear();
-            this.Controls.Add(sg);
+            sg1.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
+            this.Controls.Add(sg1);
+            //sg.Refresh();
         }
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
+            this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
             this.Controls.Add(st);
         }
         //Exit Setting GUI
         void Exit_Setting(object sender, EventArgs e)
         {
+            this.Controls.Clear();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
             //this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
             gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
-            this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
+            //this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
 
-            this.Controls.Clear();
             this.Controls.Add(gm1);
         }
         
