@@ -112,5 +112,10 @@ namespace CapDemo.GUI.User_Controls
         {
             btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu;
         }
+        //Exit program
+        private void btn_ExitMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

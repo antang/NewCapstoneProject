@@ -24,7 +24,7 @@ namespace CapDemo.BL
         public List<Question> GetQuestion()
         {
             List<Question> QuestionList = new List<Question>();
-            string query = "SELECT q.Question_ID,q.Question_Title, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Question_Title"
+            string query = "SELECT q.Question_ID,q.Question_Title, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Question_Title, q.[Date_Create]"
                          + " FROM Question q"
                          + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID";
                          
@@ -41,7 +41,7 @@ namespace CapDemo.BL
                     Question.TypeQuestion = item["Question_Type"].ToString();
                     Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
                     //Question.NameCatalogue = item["Catalogue_Name"].ToString();
-                    //Question.Date = item["Date_Create"].ToString();
+                    Question.Date = (DateTime)item["Date_Create"];
                     Question.Sequence = i;
                     Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
                     //Question.Catalogue.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
@@ -107,7 +107,7 @@ namespace CapDemo.BL
         public bool AddQuestion(Question Question)
         {
             string query = "INSERT INTO Question (Question_Title,Question_Name, Question_Type, Catalogue_ID, Date_Create)"
-                        + " VALUES ('" + Question.QuestionTitle.Replace("'", "''") + "','" + Question.NameQuestion.Replace("'", "''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date + "')";
+                        + " VALUES ('" + Question.QuestionTitle.Replace("'", "''") + "','" + Question.NameQuestion.Replace("'", "''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date.ToString("yyyy-MM-dd hh:mm:ss") + "')";
 
             return DA.InsertDatabase(query);
         }

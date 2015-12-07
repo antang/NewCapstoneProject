@@ -123,6 +123,7 @@ namespace CapDemo
                 if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
                     Phase.IDPhase = idPhase;
+                    Phase.IDContest = idContest;
                     //Phase.Question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
                     Phase.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
                     Phase.Status = true;

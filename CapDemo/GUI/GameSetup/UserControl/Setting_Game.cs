@@ -43,6 +43,7 @@ namespace CapDemo.GUI.User_Controls
             this.Dock = DockStyle.Fill;
         }
         //LOAD
+        int TagGame = 0;
         public void load()
         {
             flp_Game.Controls.Clear();
@@ -55,6 +56,11 @@ namespace CapDemo.GUI.User_Controls
                 for (int i = 0; i < ListContest.Count; i++)
                 {
                     New_Game game = new New_Game();
+                    TagGame++;
+                    game.Tag = TagGame;
+                    game.ID_NewGame = TagGame;
+                    game.onDelete += AddTeam_onDelete;
+
                     game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                     game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                     game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
@@ -72,6 +78,25 @@ namespace CapDemo.GUI.User_Controls
                     }
                     flp_Game.Controls.Add(game);
                 }
+            }
+        }
+        // eventhandler on delete
+        void AddTeam_onDelete(object sender, EventArgs e)
+        {
+            int stt = 1;
+            //New_Game Add_Game = new New_Game();
+            int GameID = (e as MyEventArgs).IDNewGame;
+            foreach (New_Game item in flp_Game.Controls)
+            {
+                if (item.ID_NewGame == GameID)
+                {
+                    flp_Game.Controls.Remove(item);
+                }
+
+            }
+            foreach (New_Game item in flp_Game.Controls)
+            {
+                item.lbl_Number.Text = (stt++).ToString();
             }
         }
     }

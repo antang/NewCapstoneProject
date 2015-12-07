@@ -116,5 +116,11 @@ namespace CapDemo.BL
                          + " WHERE [Player_ID] = '" + Player.IDPlayer + "'";
             return DA.DeleteDatabase(query);
         }
+        public bool DeletePlayerbyIDContest(Player Player)
+        {
+            string query = "DELETE FROM [Player]"
+                         + " WHERE [Contest_ID] = '" + Player.IDContest + "'";
+            return DA.DeleteDatabase(query);
+        }
     }
 }

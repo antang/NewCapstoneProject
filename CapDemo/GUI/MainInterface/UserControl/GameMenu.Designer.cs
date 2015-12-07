@@ -28,76 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Name = new System.Windows.Forms.Label();
+            this.lbl_ChangePass = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_ExitMenu = new System.Windows.Forms.Button();
             this.btn_Help = new System.Windows.Forms.Button();
             this.btn_Setting = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_Name = new System.Windows.Forms.Label();
-            this.lbl_ChangePass = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_ExitMenu
-            // 
-            this.btn_ExitMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_ExitMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ExitMenu.BackgroundImage = global::CapDemo.Properties.Resources.T_menu;
-            this.btn_ExitMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ExitMenu.Location = new System.Drawing.Point(358, 404);
-            this.btn_ExitMenu.Name = "btn_ExitMenu";
-            this.btn_ExitMenu.Size = new System.Drawing.Size(319, 63);
-            this.btn_ExitMenu.TabIndex = 7;
-            this.btn_ExitMenu.UseVisualStyleBackColor = false;
-            this.btn_ExitMenu.MouseLeave += new System.EventHandler(this.btn_ExitMenu_MouseLeave);
-            this.btn_ExitMenu.MouseHover += new System.EventHandler(this.btn_ExitMenu_MouseHover);
-            // 
-            // btn_Help
-            // 
-            this.btn_Help.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Help.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Help.BackgroundImage = global::CapDemo.Properties.Resources.HD_menu;
-            this.btn_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help.Location = new System.Drawing.Point(358, 327);
-            this.btn_Help.Name = "btn_Help";
-            this.btn_Help.Size = new System.Drawing.Size(319, 63);
-            this.btn_Help.TabIndex = 6;
-            this.btn_Help.UseVisualStyleBackColor = false;
-            this.btn_Help.MouseLeave += new System.EventHandler(this.btn_Help_MouseLeave);
-            this.btn_Help.MouseHover += new System.EventHandler(this.btn_Help_MouseHover);
-            // 
-            // btn_Setting
-            // 
-            this.btn_Setting.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Setting.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Setting.BackgroundImage = global::CapDemo.Properties.Resources.CD_menu;
-            this.btn_Setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Setting.Location = new System.Drawing.Point(358, 251);
-            this.btn_Setting.Name = "btn_Setting";
-            this.btn_Setting.Size = new System.Drawing.Size(319, 63);
-            this.btn_Setting.TabIndex = 5;
-            this.btn_Setting.UseVisualStyleBackColor = false;
-            this.btn_Setting.Click += new System.EventHandler(this.btn_Setting_Click);
-            this.btn_Setting.MouseLeave += new System.EventHandler(this.btn_Setting_MouseLeave);
-            this.btn_Setting.MouseHover += new System.EventHandler(this.btn_Setting_MouseHover);
-            // 
-            // btn_Start
-            // 
-            this.btn_Start.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Start.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Start.BackgroundImage = global::CapDemo.Properties.Resources.BD_menu;
-            this.btn_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Start.Location = new System.Drawing.Point(358, 173);
-            this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(319, 63);
-            this.btn_Start.TabIndex = 4;
-            this.btn_Start.UseVisualStyleBackColor = false;
-            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
-            this.btn_Start.MouseLeave += new System.EventHandler(this.btn_Start_MouseLeave);
-            this.btn_Start.MouseHover += new System.EventHandler(this.btn_Start_MouseHover);
             // 
             // label1
             // 
@@ -140,6 +82,17 @@
             this.lbl_ChangePass.Text = "Thay đổi mật khẩu";
             this.lbl_ChangePass.Click += new System.EventHandler(this.lbl_ChangePass_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.TWLW;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 615);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(236, 71);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -151,22 +104,74 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // btn_ExitMenu
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.TWLW;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 615);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(236, 71);
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.btn_ExitMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_ExitMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ExitMenu.BackgroundImage = global::CapDemo.Properties.Resources.T_menu;
+            this.btn_ExitMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_ExitMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ExitMenu.Location = new System.Drawing.Point(358, 404);
+            this.btn_ExitMenu.Name = "btn_ExitMenu";
+            this.btn_ExitMenu.Size = new System.Drawing.Size(319, 63);
+            this.btn_ExitMenu.TabIndex = 7;
+            this.btn_ExitMenu.UseVisualStyleBackColor = false;
+            this.btn_ExitMenu.Click += new System.EventHandler(this.btn_ExitMenu_Click);
+            this.btn_ExitMenu.MouseEnter += new System.EventHandler(this.btn_ExitMenu_MouseHover);
+            this.btn_ExitMenu.MouseLeave += new System.EventHandler(this.btn_ExitMenu_MouseLeave);
+            // 
+            // btn_Help
+            // 
+            this.btn_Help.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Help.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Help.BackgroundImage = global::CapDemo.Properties.Resources.HD_menu;
+            this.btn_Help.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help.Location = new System.Drawing.Point(358, 327);
+            this.btn_Help.Name = "btn_Help";
+            this.btn_Help.Size = new System.Drawing.Size(319, 63);
+            this.btn_Help.TabIndex = 6;
+            this.btn_Help.UseVisualStyleBackColor = false;
+            this.btn_Help.MouseEnter += new System.EventHandler(this.btn_Help_MouseHover);
+            this.btn_Help.MouseLeave += new System.EventHandler(this.btn_Help_MouseLeave);
+            // 
+            // btn_Setting
+            // 
+            this.btn_Setting.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Setting.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Setting.BackgroundImage = global::CapDemo.Properties.Resources.CD_menu;
+            this.btn_Setting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Setting.Location = new System.Drawing.Point(358, 251);
+            this.btn_Setting.Name = "btn_Setting";
+            this.btn_Setting.Size = new System.Drawing.Size(319, 63);
+            this.btn_Setting.TabIndex = 5;
+            this.btn_Setting.UseVisualStyleBackColor = false;
+            this.btn_Setting.Click += new System.EventHandler(this.btn_Setting_Click);
+            this.btn_Setting.MouseEnter += new System.EventHandler(this.btn_Setting_MouseHover);
+            this.btn_Setting.MouseLeave += new System.EventHandler(this.btn_Setting_MouseLeave);
+            // 
+            // btn_Start
+            // 
+            this.btn_Start.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_Start.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Start.BackgroundImage = global::CapDemo.Properties.Resources.BD_menu;
+            this.btn_Start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Start.Location = new System.Drawing.Point(358, 173);
+            this.btn_Start.Name = "btn_Start";
+            this.btn_Start.Size = new System.Drawing.Size(319, 63);
+            this.btn_Start.TabIndex = 4;
+            this.btn_Start.UseVisualStyleBackColor = false;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
+            this.btn_Start.MouseEnter += new System.EventHandler(this.btn_Start_MouseHover);
+            this.btn_Start.MouseLeave += new System.EventHandler(this.btn_Start_MouseLeave);
             // 
             // GameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources._1600_864;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.bg;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_ChangePass);
@@ -180,8 +185,8 @@
             this.Name = "GameMenu";
             this.Size = new System.Drawing.Size(1024, 700);
             this.Load += new System.EventHandler(this.GameMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
