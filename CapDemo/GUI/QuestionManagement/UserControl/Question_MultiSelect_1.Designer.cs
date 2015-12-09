@@ -243,6 +243,7 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(74, 5);
@@ -394,7 +395,6 @@
             this.txt_NameQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NameQuestion.Location = new System.Drawing.Point(6, 47);
             this.txt_NameQuestion.Name = "txt_NameQuestion";
-            this.txt_NameQuestion.ReadOnly = true;
             this.txt_NameQuestion.Size = new System.Drawing.Size(295, 23);
             this.txt_NameQuestion.TabIndex = 27;
             // 

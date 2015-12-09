@@ -103,34 +103,43 @@ namespace CapDemo.GUI.User_Controls
                         if (count > 0)
                         {
                             Question question = new Question();
+                            question.QuestionTitle = QuestionList.ElementAt(i).QuestionTitle;
                             question.NameQuestion = QuestionList.ElementAt(i).NameQuestion;
                             question.TypeQuestion = QuestionList.ElementAt(i).TypeQuestion;
                             question.IDCatalogue = IDCatSelected;
                             IDQuestion = QuestionList.ElementAt(i).IDQuestion;
                             question.Date = DateTime.Now;
-                            QuestionBL.AddQuestion(question);
-
-                            //ADD ANSWER
-                            Question Question = new Question();
-                            Question.IDQuestion = IDQuestion;
-                            List<DO.Answer> AnswerList;
-                            AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
-                            if (AnswerList != null)
-                                for (int ii = 0; ii < AnswerList.Count; ii++)
-                                {
-                                    if (AnswerList.ElementAt(ii).IDQuestion == IDQuestion)
+                            if (QuestionBL.AddQuestion(question)==true)
+                            {
+                                //ADD ANSWER
+                                Question Question = new Question();
+                                Question.IDQuestion = IDQuestion;
+                                List<DO.Answer> AnswerList;
+                                AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
+                                if (AnswerList != null)
+                                    for (int ii = 0; ii < AnswerList.Count; ii++)
                                     {
-                                        Answer answer = new Answer();
-                                        answer.ContentAnswer = AnswerList.ElementAt(ii).ContentAnswer;
-                                        answer.IsCorrect = (bool)AnswerList.ElementAt(ii).IsCorrect;
-                                        answer.IDQuestion = QuestionBL.MaxIDQuestion();
-                                        answer.IDCatalogue = IDCatSelected;
-                                        QuestionBL.AddAnswer(answer);
+                                        if (AnswerList.ElementAt(ii).IDQuestion == IDQuestion)
+                                        {
+                                            Answer answer = new Answer();
+                                            answer.ContentAnswer = AnswerList.ElementAt(ii).ContentAnswer;
+                                            if (AnswerList.ElementAt(ii).IsCorrect == true)
+                                            {
+                                                answer.Check = 1;
+                                            }
+                                            else
+                                            {
+                                                answer.Check = 0;
+                                            }
+                                            answer.IDQuestion = QuestionBL.MaxIDQuestion();
+                                            answer.IDCatalogue = IDCatSelected;
+                                            QuestionBL.AddAnswer(answer);
+                                        }
                                     }
-                                }
-                            //DELETE QUESTION
-                            QuestionBL.DeleteAnswerByIDQuestion(Question);
-                            QuestionBL.DeleteQuestionByID(Question);
+                                //DELETE QUESTION
+                                QuestionBL.DeleteAnswerByIDQuestion(Question);
+                                QuestionBL.DeleteQuestionByID(Question);  
+                            }
                         }
                     }
                     //Notify

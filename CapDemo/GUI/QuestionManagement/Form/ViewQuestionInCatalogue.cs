@@ -59,13 +59,15 @@ namespace CapDemo.GUI
             dgv_Question1.Columns["Date"].Visible = false;
 
             dgv_Question1.Columns["Sequence"].HeaderText = "STT";
-            dgv_Question1.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
+            dgv_Question1.Columns["QuestionTitle"].HeaderText = "Tên câu Hỏi";
+            dgv_Question1.Columns["NameQuestion"].HeaderText = "Nội dung câu Hỏi";
             dgv_Question1.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
             dgv_Question1.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
 
             dgv_Question1.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question1.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question1.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question1.Columns["QuestionTitle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
         //EXIT FORM
         private void btn_CancelViewQuestione_Click(object sender, EventArgs e)
@@ -125,7 +127,7 @@ namespace CapDemo.GUI
             DataTable dt = converter.ToDataTable(QuestionList);
 
             dgv_Question1.DataSource = dt;
-            dt.DefaultView.RowFilter = string.Format("NameQuestion LIKE '%{0}%' or TypeQuestion LIKE '%{0}%' or NameCatalogue LIKE '%{0}%' or Sequence LIKE '%{0}%'", txt_SearchCatalogue.Text);
+            dt.DefaultView.RowFilter = string.Format("NameQuestion LIKE '%{0}%' or TypeQuestion LIKE '%{0}%' or NameCatalogue LIKE '%{0}%' or QuestionTitle LIKE '%{0}%'or Sequence LIKE '%{0}%'", txt_SearchCatalogue.Text);
 
             dgv_Question1.Columns["IDCatalogue"].Visible = false;
             dgv_Question1.Columns["IDQuestion"].Visible = false;

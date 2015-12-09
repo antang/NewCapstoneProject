@@ -118,7 +118,6 @@
             this.txt_NameQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NameQuestion.Location = new System.Drawing.Point(10, 52);
             this.txt_NameQuestion.Name = "txt_NameQuestion";
-            this.txt_NameQuestion.ReadOnly = true;
             this.txt_NameQuestion.Size = new System.Drawing.Size(273, 23);
             this.txt_NameQuestion.TabIndex = 29;
             // 

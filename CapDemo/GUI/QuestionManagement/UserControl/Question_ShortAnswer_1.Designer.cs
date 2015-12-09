@@ -46,14 +46,14 @@
             this.lbl_Question = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_NameQuestion = new System.Windows.Forms.TextBox();
             this.btn_CancelQuestion = new System.Windows.Forms.Button();
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.lbl_Catalogue = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lbl_NewCatalogue = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_NameQuestion = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -251,6 +251,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nội dung câu hỏi - dạng câu hỏi tự luận";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(2, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 19);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Tên câu hỏi";
+            // 
+            // txt_NameQuestion
+            // 
+            this.txt_NameQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NameQuestion.Location = new System.Drawing.Point(6, 46);
+            this.txt_NameQuestion.Name = "txt_NameQuestion";
+            this.txt_NameQuestion.Size = new System.Drawing.Size(330, 23);
+            this.txt_NameQuestion.TabIndex = 31;
+            // 
             // btn_CancelQuestion
             // 
             this.btn_CancelQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -292,6 +311,7 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(74, 5);
@@ -327,26 +347,6 @@
             this.lbl_NewCatalogue.TabIndex = 52;
             this.lbl_NewCatalogue.Text = "+Chủ đề mới";
             this.lbl_NewCatalogue.Click += new System.EventHandler(this.lbl_NewCatalogue_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(2, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 19);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Tên câu hỏi";
-            // 
-            // txt_NameQuestion
-            // 
-            this.txt_NameQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NameQuestion.Location = new System.Drawing.Point(6, 46);
-            this.txt_NameQuestion.Name = "txt_NameQuestion";
-            this.txt_NameQuestion.ReadOnly = true;
-            this.txt_NameQuestion.Size = new System.Drawing.Size(330, 23);
-            this.txt_NameQuestion.TabIndex = 31;
             // 
             // Question_ShortAnswer_1
             // 
