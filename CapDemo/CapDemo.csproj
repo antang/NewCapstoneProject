@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game-Hit-Your-Goal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game-Hit-Your-Goal.Designer.cs">
+      <DependentUpon>Game-Hit-Your-Goal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -365,6 +371,12 @@
     <Compile Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.Designer.cs">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Introduce-Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Introduce-Game.Designer.cs">
+      <DependentUpon>Introduce-Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
@@ -373,6 +385,15 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Question-show.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Question-show.Designer.cs">
+      <DependentUpon>Question-show.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Game-Hit-Your-Goal.resx">
+      <DependentUpon>Game-Hit-Your-Goal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +543,9 @@
     <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.resx">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Introduce-Game.resx">
+      <DependentUpon>Introduce-Game.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -529,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\UserControl\QuestionSetting.resx">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Question-show.resx">
+      <DependentUpon>Question-show.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />
@@ -617,6 +644,14 @@
     <None Include="Resources\TLG_Setting_hover.png" />
     <None Include="Resources\TWLW.png" />
     <None Include="Resources\1600-864.jpg" />
+    <None Include="Resources\Ao-doi-thi.png" />
+    <None Include="Resources\Cau-hoi.jpg" />
+    <None Include="Resources\Doi-thi.jpg" />
+    <None Include="Resources\doi-thi-2.png" />
+    <None Include="Resources\Man-Hinh-cuôc-thi.jpg" />
+    <None Include="Resources\Noi-dung.jpg" />
+    <None Include="Resources\Vong-thi.jpg" />
+    <None Include="Resources\vong-thi-2.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
