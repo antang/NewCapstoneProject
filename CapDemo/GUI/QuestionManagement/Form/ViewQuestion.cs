@@ -213,7 +213,14 @@ namespace CapDemo.GUI
                              if (item.txt_Answercontent.Text.Trim() != "")
                              {
                                  answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
-                                 answer.IsCorrect = item.rad_check.Checked;
+                                 if (item.rad_check.Checked ==true && item.rad_check.Checked != null)
+                                 {
+                                     answer.Check = 1;
+                                 }
+                                 else
+                                 {
+                                     answer.Check = 0;
+                                 }
                                  answer.IDQuestion = IDQuestion;
                                  answer.IDCatalogue = IDCatalogue;
                                  questionBl.AddAnswer(answer);

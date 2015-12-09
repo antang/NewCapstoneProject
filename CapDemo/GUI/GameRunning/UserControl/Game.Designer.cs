@@ -38,8 +38,8 @@
             this.lbl_Name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.deleteSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +144,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(141, 26);
             // 
+            // deleteSetupToolStripMenuItem
+            // 
+            this.deleteSetupToolStripMenuItem.Image = global::CapDemo.Properties.Resources.Cancel;
+            this.deleteSetupToolStripMenuItem.Name = "deleteSetupToolStripMenuItem";
+            this.deleteSetupToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.deleteSetupToolStripMenuItem.Text = "Delete Setup";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -153,13 +160,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 64);
             this.panel1.TabIndex = 11;
-            // 
-            // deleteSetupToolStripMenuItem
-            // 
-            this.deleteSetupToolStripMenuItem.Image = global::CapDemo.Properties.Resources.Cancel;
-            this.deleteSetupToolStripMenuItem.Name = "deleteSetupToolStripMenuItem";
-            this.deleteSetupToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.deleteSetupToolStripMenuItem.Text = "Delete Setup";
             // 
             // Game
             // 
@@ -178,6 +178,7 @@
             this.Name = "Game";
             this.Size = new System.Drawing.Size(294, 181);
             this.Load += new System.EventHandler(this.Game_Load);
+            this.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

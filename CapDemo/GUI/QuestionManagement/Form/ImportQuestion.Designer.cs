@@ -45,6 +45,11 @@
             this.btn_SaveImport = new System.Windows.Forms.Button();
             this.btn_ExitImport = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.Sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
@@ -175,6 +180,12 @@
             this.dgv_Question.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Question.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Question.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sequence,
+            this.QuestionTitle,
+            this.QuestionName,
+            this.QuestionType,
+            this.Check});
             this.dgv_Question.Location = new System.Drawing.Point(15, 125);
             this.dgv_Question.Name = "dgv_Question";
             this.dgv_Question.RowHeadersVisible = false;
@@ -254,6 +265,45 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // Sequence
+            // 
+            this.Sequence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Sequence.DataPropertyName = "Sequence";
+            this.Sequence.HeaderText = "STT";
+            this.Sequence.Name = "Sequence";
+            this.Sequence.ReadOnly = true;
+            this.Sequence.Width = 53;
+            // 
+            // QuestionTitle
+            // 
+            this.QuestionTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionTitle.HeaderText = "Tên câu Hỏi";
+            this.QuestionTitle.Name = "QuestionTitle";
+            this.QuestionTitle.ReadOnly = true;
+            this.QuestionTitle.Width = 91;
+            // 
+            // QuestionName
+            // 
+            this.QuestionName.HeaderText = "Nội dung";
+            this.QuestionName.Name = "QuestionName";
+            this.QuestionName.ReadOnly = true;
+            // 
+            // QuestionType
+            // 
+            this.QuestionType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionType.HeaderText = "Loại Cậu Hỏi";
+            this.QuestionType.Name = "QuestionType";
+            this.QuestionType.ReadOnly = true;
+            this.QuestionType.Width = 93;
+            // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Check.HeaderText = "Chọn";
+            this.Check.Name = "Check";
+            this.Check.ReadOnly = true;
+            this.Check.Width = 38;
+            // 
             // ImportQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,5 +348,10 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox chk_CheckAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sequence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionType;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
     }
 }

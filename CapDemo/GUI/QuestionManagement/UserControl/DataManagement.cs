@@ -180,18 +180,18 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_ImportQuestion_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 int IDCat = Convert.ToInt32(dgv_Catalogue.CurrentRow.Cells["IDCatalogue"].Value);
                 string NameCat = dgv_Catalogue.CurrentRow.Cells["NameCatalogue"].Value.ToString();
                 ImportQuestionForCatalogue iqc = new ImportQuestionForCatalogue(IDCat, NameCat);
                 iqc.ShowDialog();
                 loadQuestion();
-            }
-            catch (Exception)
-            {
+           // }
+            //catch (Exception)
+            //{
                 
-            }
+            //}
             
         }
 

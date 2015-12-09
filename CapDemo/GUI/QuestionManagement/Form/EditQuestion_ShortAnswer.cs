@@ -88,7 +88,8 @@ namespace CapDemo.GUI
                 //Update  answer
                 answer.IDQuestion = IDQuestion;
                 answer.ContentAnswer = txt_ContentAnswer.Text.Trim();
-                answer.IsCorrect = true;
+                //answer.IsCorrect = true;
+                answer.Check = 1;
                 questionBl.EditAnswerbyID(answer);
 
                 //Show notify

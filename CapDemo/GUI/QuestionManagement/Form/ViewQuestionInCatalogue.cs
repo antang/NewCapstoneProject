@@ -55,6 +55,7 @@ namespace CapDemo.GUI
             dgv_Question1.Columns["IDCatalogue"].Visible = false;
             dgv_Question1.Columns["IDQuestion"].Visible = false;
             dgv_Question1.Columns["AnswerContent"].Visible = false;
+            dgv_Question1.Columns["Catalogue"].Visible = false;
             dgv_Question1.Columns["Date"].Visible = false;
 
             dgv_Question1.Columns["Sequence"].HeaderText = "STT";

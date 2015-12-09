@@ -18,7 +18,17 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+        //public event EventHandler onDelete;
         public event EventHandler onClick;
+        public event EventHandler DoubleClick;
+        public event EventHandler Run;
+        int idcontest;
+        public int Idcontest
+        {
+            get { return idcontest; }
+            set { idcontest = value; }
+        }
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             if (this.onClick != null)
@@ -51,8 +61,9 @@ namespace CapDemo.GUI.User_Controls
                         Game game = new Game();
                         TagGame++;
                         game.Tag = TagGame;
-                        game.ID_NewGame = TagGame;
-                        game.onDelete += AddTeam_onDelete;
+                        game.ID_Game = TagGame;
+                        game.onRun += game_onRun;
+                        game.onClick += game_onClick;
 
                         game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                         game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
@@ -64,23 +75,28 @@ namespace CapDemo.GUI.User_Controls
                 }
             }
         }
-        // eventhandler on delete
-        void AddTeam_onDelete(object sender, EventArgs e)
+
+
+        void game_onClick(object sender, EventArgs e)
         {
-            int stt = 1;
-            //New_Game Add_Game = new New_Game();
-            int GameID = (e as MyEventArgs).IDNewGame;
-            foreach (New_Game item in flp_StartGame.Controls)
+            if (this.DoubleClick != null)
             {
-                if (item.ID_NewGame == GameID)
+                this.DoubleClick(this, e);
+                MessageBox.Show(""+idcontest);
+            }
+        }
+        // eventhandler on delete
+        void game_onRun(object sender, EventArgs e)
+        {
+            int GameID = (e as MyEventArgs).IDGame;
+            foreach (Game item in flp_StartGame.Controls)
+            {
+                if (item.ID_Game == GameID)
                 {
-                    flp_StartGame.Controls.Remove(item);
+                    idcontest = Convert.ToInt32(item.label2.Text);
+                    MessageBox.Show(""+idcontest);
                 }
 
-            }
-            foreach (New_Game item in flp_StartGame.Controls)
-            {
-                item.lbl_Number.Text = (stt++).ToString();
             }
         }
     }

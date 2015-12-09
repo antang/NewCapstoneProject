@@ -86,6 +86,9 @@ namespace CapDemo.BL
             string query = "SELECT a.Answer_ID, a.Answer_Name, a.Question_ID, a.Correct_Answer"
                          + " FROM Answer a "
                          + " WHERE a.Question_ID='" + Question.IDQuestion + "'";
+            //string query = "SELECT *"
+            //            + " FROM Answer a "
+            //            + " WHERE a.Question_ID='" + Question.IDQuestion + "'";
             DataTable dt = DA.SelectDatabase(query);
             if (dt != null)
             {
@@ -93,7 +96,7 @@ namespace CapDemo.BL
                 {
                     Answer Answer = new Answer();
                     Answer.IDAnswer = Convert.ToInt32(item["Answer_ID"]);
-                    Answer.ContentAnswer = item["Answer_Name"].ToString();
+                    Answer.ContentAnswer = item["Answer_Name"].ToString() ;
                     Answer.IDQuestion = Convert.ToInt32(item["Question_ID"].ToString());
                     Answer.IsCorrect = (bool)item["Correct_Answer"];
                     AnswerList.Add(Answer);
@@ -110,12 +113,14 @@ namespace CapDemo.BL
                         + " VALUES ('" + Question.QuestionTitle.Replace("'", "''") + "','" + Question.NameQuestion.Replace("'", "''") + "','" + Question.TypeQuestion + "','" + Question.IDCatalogue + "','" + Question.Date.ToString("yyyy-MM-dd hh:mm:ss") + "')";
 
             return DA.InsertDatabase(query);
+
+
         }
         //INSERT ANSWER
         public bool AddAnswer( Answer Answer)
         {
             string query= " INSERT INTO Answer (Answer_Name, Correct_Answer, Question_ID, Catalogue_ID)"
-                        + " VALUES ('" + Answer.ContentAnswer.Replace("'", "''") + "','" + Answer.IsCorrect + "','" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
+                        + " VALUES ('" + Answer.ContentAnswer.Replace("'", "''") + "'," +Answer.Check + ",'" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
             return DA.InsertDatabase(query);
         }
 //EDIT QUESTION AND ANSWER
@@ -123,7 +128,7 @@ namespace CapDemo.BL
         public bool EditQuestionbyID(Question Question)
         {
             string query = "UPDATE Question"
-                         + " SET Question_Title ='" + Question.QuestionTitle.Replace("'", "''") + "', Question_Name ='" + Question.NameQuestion.Replace("'", "''") + "'"
+                         + " SET Question_Name ='" + Question.NameQuestion.Replace("'", "''") + "'"
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -140,7 +145,7 @@ namespace CapDemo.BL
         public bool EditAnswerbyID(Answer Answer)
         {
             string query = "UPDATE Answer"
-                         + " SET Answer_Name ='" + Answer.ContentAnswer.Replace("'", "''") + "', Correct_Answer='" + Answer.IsCorrect + "'"
+                         + " SET Answer_Name ='" + Answer.ContentAnswer.Replace("'", "''") + "', Correct_Answer='" + Answer.Check + "'"
                          + " WHERE Question_ID = '" + Answer.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
@@ -199,7 +204,7 @@ namespace CapDemo.BL
                         Question.NameQuestion = item["NameQuestion"].ToString();
                         Question.TypeQuestion = item["TypeQuestion"].ToString();
 
-                        string AnswerContent = item["AnswerContent"].ToString().Trim();
+                        string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("''","'");
                         AnswerContent = AnswerContent.Replace("+++", "---");
                         Question.AnswerContent = AnswerContent;
                         QuestionList.Add(Question);

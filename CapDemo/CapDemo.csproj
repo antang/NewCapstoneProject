@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Game-Hit-Your-Goal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,9 +56,19 @@
       <DependentUpon>Game-Hit-Your-Goal.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs">
+=======
+    <Compile Include="ControlGame.cs">
+>>>>>>> an3
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Game.Designer.cs">
+    <Compile Include="ControlGame.Designer.cs">
+      <DependentUpon>ControlGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DO\Log.cs" />
+    <Compile Include="GUI\GameRunning\UserControl\Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GameSetup\Form\Add_Competition.cs">
@@ -385,6 +396,7 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Question-show.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +407,18 @@
       <DependentUpon>Game-Hit-Your-Goal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
+=======
+    <Compile Include="Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Team.Designer.cs">
+      <DependentUpon>Team.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlGame.resx">
+      <DependentUpon>ControlGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Game.resx">
+>>>>>>> an3
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\Form\Add_Competition.resx">
@@ -554,8 +578,13 @@
     <EmbeddedResource Include="GUI\GameSetup\UserControl\QuestionSetting.resx">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Question-show.resx">
       <DependentUpon>Question-show.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Team.resx">
+      <DependentUpon>Team.cs</DependentUpon>
+>>>>>>> an3
     </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />
@@ -656,7 +685,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\GameRunning\Form\" />
-    <Folder Include="GUI\GameRunning\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -36,5 +36,12 @@ namespace CapDemo.GUI.User_Controls
             get { return iDNewGame; }
             set { iDNewGame = value; }
         }
+        int iDGame;
+
+        public int IDGame
+        {
+            get { return iDGame; }
+            set { iDGame = value; }
+        }
     }
 }

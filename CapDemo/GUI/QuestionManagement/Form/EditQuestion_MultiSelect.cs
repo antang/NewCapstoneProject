@@ -167,7 +167,15 @@ namespace CapDemo.GUI
                             if (item.txt_AnswerContent.Text.Trim() != "")
                             {
                                 answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
-                                answer.IsCorrect = item.chk_Check.Checked;
+                                if (item.chk_Check.Checked == true && item.chk_Check.Checked!= null)
+                                {
+                                    answer.Check = 1;
+                                }
+                                else
+                                {
+                                    answer.Check = 0;
+                                }
+                                //answer.IsCorrect = item.chk_Check.Checked;
                                 answer.IDQuestion = IDQuestion;
                                 answer.IDCatalogue = IDCatalogue;
                                 questionBl.AddAnswer(answer);
