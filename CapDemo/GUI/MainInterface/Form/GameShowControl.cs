@@ -1,4 +1,5 @@
-﻿using CapDemo.GUI.User_Controls;
+﻿using CapDemo.DO;
+using CapDemo.GUI.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,15 +70,25 @@ namespace CapDemo.GUI
             this.Controls.Clear();
             this.Controls.Add(gm1);
         }
-
+        
         //Click to show Start Game GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
             Start_Game sg1 = new Start_Game();
             this.Controls.Clear();
             sg1.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
+            sg1.DoubleClick += sg1_DoubleClick;
+            
             this.Controls.Add(sg1);
-            //sg.Refresh();
+            
+        }
+
+
+        void sg1_DoubleClick(object sender, EventArgs e)
+        {
+            ControlGame cg = new ControlGame();
+            this.Controls.Clear();
+            this.Controls.Add(cg);
         }
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)

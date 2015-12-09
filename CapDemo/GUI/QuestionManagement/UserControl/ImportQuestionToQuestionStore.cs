@@ -56,26 +56,37 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
-                    question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
-                    question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
+                    question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString();
+                    question.NameQuestion = row.Cells["QuestionName"].Value.ToString();
+                    question.TypeQuestion = row.Cells["QuestionType"].Value.ToString();
                     question.IDCatalogue = IDCat;
                     question.Date = DateTime.Now;
-                    questionBL.AddQuestion(question);
 
-                    question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
-                    List<DO.Answer> AnswerList;
-                    AnswerList = questionBL.GetAnswerByQuestionID(question);
-                    if (AnswerList != null)
+                    if (questionBL.AddQuestion(question))
                     {
-                        for (int i = 0; i < AnswerList.Count; i++)
+                        question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                        List<DO.Answer> AnswerList;
+                        AnswerList = questionBL.GetAnswerByQuestionID(question);
+                        if (AnswerList != null)
                         {
-                            answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
-                            answer.IsCorrect = AnswerList.ElementAt(i).IsCorrect;
-                            answer.IDQuestion = questionBL.MaxIDQuestion();
-                            answer.IDCatalogue = IDCat;
-                            questionBL.AddAnswer(answer);
+                            for (int i = 0; i < AnswerList.Count; i++)
+                            {
+                                answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
+                                if (AnswerList.ElementAt(i).IsCorrect == true)
+                                {
+                                    answer.Check = 1;
+                                }
+                                else
+                                {
+                                    answer.Check = 0;
+                                }
+                                answer.IDQuestion = questionBL.MaxIDQuestion();
+                                answer.IDCatalogue = IDCat;
+                                questionBL.AddAnswer(answer);
+                            }
                         }
                     }
+                    
                 }
             }
         }
@@ -102,29 +113,39 @@ namespace CapDemo.GUI.User_Controls
                 if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
                     //add question
-                    question.NameQuestion = row.Cells["NameQuestion"].Value.ToString();
-                    question.TypeQuestion = row.Cells["TypeQuestion"].Value.ToString();
+                    question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString();
+                    question.NameQuestion = row.Cells["QuestionName"].Value.ToString();
+                    question.TypeQuestion = row.Cells["QuestionType"].Value.ToString();
                     question.IDCatalogue = IDCat;
                     question.Date = DateTime.Now;
-                    questionBL.AddQuestion(question);
-                    //add answer
-                    question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
-                    List<DO.Answer> AnswerList;
-                    AnswerList = questionBL.GetAnswerByQuestionID(question);
-                    if (AnswerList != null)
+                    if (questionBL.AddQuestion(question))
                     {
-                        for (int i = 0; i < AnswerList.Count; i++)
+                        //add answer
+                        question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                        List<DO.Answer> AnswerList;
+                        AnswerList = questionBL.GetAnswerByQuestionID(question);
+                        if (AnswerList != null)
                         {
-                            answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
-                            answer.IsCorrect = AnswerList.ElementAt(i).IsCorrect;
-                            answer.IDQuestion = questionBL.MaxIDQuestion();
-                            answer.IDCatalogue = IDCat;
-                            questionBL.AddAnswer(answer);
+                            for (int i = 0; i < AnswerList.Count; i++)
+                            {
+                                answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
+                                if (AnswerList.ElementAt(i).IsCorrect == true)
+                                {
+                                    answer.Check = 1;
+                                }
+                                else
+                                {
+                                    answer.Check = 0;
+                                }
+                                answer.IDQuestion = questionBL.MaxIDQuestion();
+                                answer.IDCatalogue = IDCat;
+                                questionBL.AddAnswer(answer);
+                            }
                         }
+                        //Delete answer and question
+                        questionBL.DeleteAnswerByIDQuestion(question);
+                        questionBL.DeleteQuestionByID(question);
                     }
-                    //Delete answer and question
-                    questionBL.DeleteAnswerByIDQuestion(question);
-                    questionBL.DeleteQuestionByID(question);
                 }
             }
         }
@@ -134,7 +155,6 @@ namespace CapDemo.GUI.User_Controls
         {
             Form FindForm = this.FindForm();
             FindForm.Close();
-            //ImportFileForm.Dispose();
         }
 
         //SAVE QUESTION
@@ -174,9 +194,6 @@ namespace CapDemo.GUI.User_Controls
                     }
                     else
                     {
-                        //notifyIcon1.Icon = SystemIcons.Warning;
-                        //notifyIcon1.BalloonTipText = "Không có câu hỏi nào được chọn để di chuyển đến chủ đề.";
-                        //notifyIcon1.ShowBalloonTip(2000);
                         MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }  
                 }
@@ -184,9 +201,6 @@ namespace CapDemo.GUI.User_Controls
             }
             else
             {
-                //notifyIcon1.Icon = SystemIcons.Warning;
-                //notifyIcon1.BalloonTipText = "Vui lòng chọn chủ đề!";
-                //notifyIcon1.ShowBalloonTip(2000);
                 MessageBox.Show("Vui lòng chọn chủ đề trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
@@ -194,7 +208,7 @@ namespace CapDemo.GUI.User_Controls
         //SELECT ITEM IN COMMOBOX
         private void cmb_Catalogue_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgv_Question.Columns.Clear();
+            //dgv_Question.Columns.Clear();
             Catalogue catalogue = new Catalogue();
             CatalogueBL CatBL = new CatalogueBL();
 
@@ -215,31 +229,13 @@ namespace CapDemo.GUI.User_Controls
             if (QuestionList != null)
             {
                 dgv_Question.DataSource = QuestionList;
+                dgv_Question.Columns["IDCatalogue"].Visible = false;
+                dgv_Question.Columns["IDQuestion"].Visible = false;
+                dgv_Question.Columns["AnswerContent"].Visible = false;
+                dgv_Question.Columns["Catalogue"].Visible = false;
+                dgv_Question.Columns["NameCatalogue"].Visible = false;
+                dgv_Question.Columns["Date"].Visible = false;
             }
-
-            dgv_Question.Columns["IDCatalogue"].Visible = false;
-            dgv_Question.Columns["IDQuestion"].Visible = false;
-            dgv_Question.Columns["AnswerContent"].Visible = false;
-            dgv_Question.Columns["Date"].Visible = false;
-
-            dgv_Question.Columns["Sequence"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_Question.Columns["NameCatalogue"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
-            dgv_Question.Columns["Sequence"].HeaderText = "STT";
-            dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu Hỏi";
-            dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
-            dgv_Question.Columns["NameCatalogue"].HeaderText = "Tên Chủ Đề";
-            dgv_Question.Columns["Sequence"].ReadOnly = true;
-            dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
-            dgv_Question.Columns["NameQuestion"].ReadOnly = true;
-            dgv_Question.Columns["NameCatalogue"].ReadOnly = true;
-
-            DataGridViewCheckBoxColumn CheckColumn = new DataGridViewCheckBoxColumn();
-            CheckColumn.Name = "Check";       
-            dgv_Question.Columns.Add(CheckColumn);
-            dgv_Question.Columns["Check"].HeaderText = "Chọn";
-            dgv_Question.Columns["Check"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             chk_CheckAll.Checked = false;
         }

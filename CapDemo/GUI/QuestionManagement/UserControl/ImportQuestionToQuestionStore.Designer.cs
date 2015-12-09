@@ -40,6 +40,11 @@
             this.dgv_Question = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.chk_CheckAll = new System.Windows.Forms.CheckBox();
+            this.Sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,6 +157,12 @@
             this.dgv_Question.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Question.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Question.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Question.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sequence,
+            this.QuestionTitle,
+            this.QuestionName,
+            this.QuestionType,
+            this.Check});
             this.dgv_Question.Location = new System.Drawing.Point(12, 40);
             this.dgv_Question.Name = "dgv_Question";
             this.dgv_Question.RowHeadersVisible = false;
@@ -177,6 +188,54 @@
             this.chk_CheckAll.Text = "Chọn tất cả";
             this.chk_CheckAll.UseVisualStyleBackColor = true;
             this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
+            // 
+            // Sequence
+            // 
+            this.Sequence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Sequence.DataPropertyName = "Sequence";
+            this.Sequence.Frozen = true;
+            this.Sequence.HeaderText = "STT";
+            this.Sequence.Name = "Sequence";
+            this.Sequence.ReadOnly = true;
+            this.Sequence.Width = 53;
+            // 
+            // QuestionTitle
+            // 
+            this.QuestionTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionTitle.DataPropertyName = "QuestionTitle";
+            this.QuestionTitle.Frozen = true;
+            this.QuestionTitle.HeaderText = "Tên Câu Hỏi";
+            this.QuestionTitle.Name = "QuestionTitle";
+            this.QuestionTitle.ReadOnly = true;
+            this.QuestionTitle.Width = 92;
+            // 
+            // QuestionName
+            // 
+            this.QuestionName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.QuestionName.DataPropertyName = "NameQuestion";
+            this.QuestionName.Frozen = true;
+            this.QuestionName.HeaderText = "Nội Dung";
+            this.QuestionName.Name = "QuestionName";
+            this.QuestionName.ReadOnly = true;
+            this.QuestionName.Width = 445;
+            // 
+            // QuestionType
+            // 
+            this.QuestionType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionType.DataPropertyName = "TypeQuestion";
+            this.QuestionType.Frozen = true;
+            this.QuestionType.HeaderText = "Loại Câu Hỏi";
+            this.QuestionType.Name = "QuestionType";
+            this.QuestionType.ReadOnly = true;
+            this.QuestionType.Width = 93;
+            // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Check.Frozen = true;
+            this.Check.HeaderText = "Chọn";
+            this.Check.Name = "Check";
+            this.Check.Width = 38;
             // 
             // ImportQuestionToQuestionStore
             // 
@@ -212,5 +271,10 @@
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox chk_CheckAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sequence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionType;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
     }
 }

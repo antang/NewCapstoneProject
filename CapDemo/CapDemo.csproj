@@ -48,10 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs">
+    <Compile Include="ControlGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Game.Designer.cs">
+    <Compile Include="ControlGame.Designer.cs">
+      <DependentUpon>ControlGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DO\Log.cs" />
+    <Compile Include="GUI\GameRunning\UserControl\Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GameSetup\Form\Add_Competition.cs">
@@ -373,7 +380,16 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Game.resx">
+    <Compile Include="Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Team.Designer.cs">
+      <DependentUpon>Team.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlGame.resx">
+      <DependentUpon>ControlGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameSetup\Form\Add_Competition.resx">
@@ -530,6 +546,9 @@
     <EmbeddedResource Include="GUI\GameSetup\UserControl\QuestionSetting.resx">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Team.resx">
+      <DependentUpon>Team.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />
     <None Include="Properties\Settings.settings">
@@ -621,7 +640,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\GameRunning\Form\" />
-    <Folder Include="GUI\GameRunning\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

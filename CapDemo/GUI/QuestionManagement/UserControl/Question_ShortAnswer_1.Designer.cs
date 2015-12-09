@@ -52,6 +52,8 @@
             this.lbl_Catalogue = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lbl_NewCatalogue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_NameQuestion = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -189,11 +191,11 @@
             this.txt_AnswerContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_AnswerContent.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_AnswerContent.Location = new System.Drawing.Point(412, 51);
+            this.txt_AnswerContent.Location = new System.Drawing.Point(412, 46);
             this.txt_AnswerContent.Multiline = true;
             this.txt_AnswerContent.Name = "txt_AnswerContent";
             this.txt_AnswerContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_AnswerContent.Size = new System.Drawing.Size(308, 181);
+            this.txt_AnswerContent.Size = new System.Drawing.Size(308, 186);
             this.txt_AnswerContent.TabIndex = 23;
             // 
             // label1
@@ -201,7 +203,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(409, 29);
+            this.label1.Location = new System.Drawing.Point(408, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 22;
@@ -211,7 +213,7 @@
             // 
             this.lbl_Question.AutoSize = true;
             this.lbl_Question.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Question.Location = new System.Drawing.Point(6, 29);
+            this.lbl_Question.Location = new System.Drawing.Point(2, 79);
             this.lbl_Question.Name = "lbl_Question";
             this.lbl_Question.Size = new System.Drawing.Size(63, 19);
             this.lbl_Question.TabIndex = 21;
@@ -223,11 +225,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_ContentQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ContentQuestion.Location = new System.Drawing.Point(6, 51);
+            this.txt_ContentQuestion.Location = new System.Drawing.Point(6, 101);
             this.txt_ContentQuestion.Multiline = true;
             this.txt_ContentQuestion.Name = "txt_ContentQuestion";
             this.txt_ContentQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_ContentQuestion.Size = new System.Drawing.Size(398, 181);
+            this.txt_ContentQuestion.Size = new System.Drawing.Size(398, 131);
             this.txt_ContentQuestion.TabIndex = 19;
             // 
             // groupBox1
@@ -235,6 +237,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_NameQuestion);
             this.groupBox1.Controls.Add(this.txt_AnswerContent);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lbl_Question);
@@ -324,6 +328,26 @@
             this.lbl_NewCatalogue.Text = "+Chủ đề mới";
             this.lbl_NewCatalogue.Click += new System.EventHandler(this.lbl_NewCatalogue_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(2, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 19);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Tên câu hỏi";
+            // 
+            // txt_NameQuestion
+            // 
+            this.txt_NameQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NameQuestion.Location = new System.Drawing.Point(6, 46);
+            this.txt_NameQuestion.Name = "txt_NameQuestion";
+            this.txt_NameQuestion.ReadOnly = true;
+            this.txt_NameQuestion.Size = new System.Drawing.Size(330, 23);
+            this.txt_NameQuestion.TabIndex = 31;
+            // 
             // Question_ShortAnswer_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,5 +397,7 @@
         private System.Windows.Forms.Label lbl_Catalogue;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lbl_NewCatalogue;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_NameQuestion;
     }
 }

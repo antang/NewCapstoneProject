@@ -141,9 +141,9 @@ namespace CapDemo.GUI.User_Controls
             {
                int NumAnswer = flp_addAnswer.Controls.Count;
 
-               if (txt_ContentQuestion.Text.Trim() == "" || NumAnswer < 2)
+               if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "" || NumAnswer < 2)
                {
-                   if (txt_ContentQuestion.Text.Trim() == "")
+                   if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "")
                    {
 
                        MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -184,29 +184,38 @@ namespace CapDemo.GUI.User_Controls
                            Question question = new Question();
                            Answer answer = new Answer();
 
+                           question.QuestionTitle = txt_NameQuestion.Text.Trim();
                            question.NameQuestion = txt_ContentQuestion.Text.Trim();
-                           question.TypeQuestion = "multiplechoice";
+                           question.TypeQuestion = "multichoice";
                            question.IDCatalogue = IDCat;
-                           questionBl.AddQuestion(question);
-
-                           foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+                           if ( questionBl.AddQuestion(question))
                            {
-                               if (item.txt_AnswerContent.Text.Trim() != "")
+                               foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
                                {
-                                   answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
-                                   answer.IsCorrect = item.chk_Check.Checked;
-                                   answer.IDQuestion = questionBl.MaxIDQuestion();
-                                   answer.IDCatalogue = IDCat;
-                                   questionBl.AddAnswer(answer);
+                                   if (item.txt_AnswerContent.Text.Trim() != "")
+                                   {
+                                       answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
+                                       if (item.chk_Check.Checked == true && item.chk_Check.Checked != null)
+                                       {
+                                           answer.Check = 1;
+                                       }
+                                       else
+                                       {
+                                           answer.Check = 0;
+                                       }
+                                       answer.IDQuestion = questionBl.MaxIDQuestion();
+                                       answer.IDCatalogue = IDCat;
+                                       questionBl.AddAnswer(answer);
+                                   }
                                }
-                           }
-                           //Show notify
-                           notifyIcon1.Icon = SystemIcons.Information;
-                           notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
-                           notifyIcon1.ShowBalloonTip(2000);
-                           //Close Form
-                           Form FindForm = this.FindForm();
-                           FindForm.Close();
+                               //Show notify
+                               notifyIcon1.Icon = SystemIcons.Information;
+                               notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                               notifyIcon1.ShowBalloonTip(2000);
+                               //Close Form
+                               Form FindForm = this.FindForm();
+                               FindForm.Close();
+                           }  
                        }
                    }
                }
@@ -229,9 +238,9 @@ namespace CapDemo.GUI.User_Controls
             {
                 int NumAnswer = flp_addAnswer.Controls.Count;
 
-                if (txt_ContentQuestion.Text.Trim() == "" || NumAnswer < 2)
+                if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "" || NumAnswer < 2)
                 {
-                    if (txt_ContentQuestion.Text.Trim() == "")
+                    if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "")
                     {
 
                         MessageBox.Show("Vui lòng nhập thông tin câu hỏi trước khi lưu!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -273,40 +282,49 @@ namespace CapDemo.GUI.User_Controls
                             Question question = new Question();
                             Answer answer = new Answer();
 
+                            question.QuestionTitle = txt_NameQuestion.Text.Trim();
                             question.NameQuestion = txt_ContentQuestion.Text.Trim();
-                            question.TypeQuestion = "multiplechoice";
+                            question.TypeQuestion = "multichoice";
                             question.IDCatalogue = IDCat;
-                            questionBl.AddQuestion(question);
-
-                            foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
+                            if (questionBl.AddQuestion(question))
                             {
-                                if (item.txt_AnswerContent.Text.Trim() != "")
+                                foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
                                 {
-                                    answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
-                                    answer.IsCorrect = item.chk_Check.Checked;
-                                    answer.IDQuestion = questionBl.MaxIDQuestion();
-                                    answer.IDCatalogue = IDCat;
-                                    questionBl.AddAnswer(answer);
+                                    if (item.txt_AnswerContent.Text.Trim() != "")
+                                    {
+                                        answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
+                                        if (item.chk_Check.Checked == true && item.chk_Check.Checked != null)
+                                        {
+                                            answer.Check = 1;
+                                        }
+                                        else
+                                        {
+                                            answer.Check = 0;
+                                        }
+                                        answer.IDQuestion = questionBl.MaxIDQuestion();
+                                        answer.IDCatalogue = IDCat;
+                                        questionBl.AddAnswer(answer);
+                                    }
                                 }
-                            }
-                            //Show notify
-                            notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                            notifyIcon1.ShowBalloonTip(2000);
-                            //Refesh form
-                            this.txt_ContentQuestion.Text = "";
-                            flp_addAnswer.Controls.Clear();
+                                //Show notify
+                                notifyIcon1.Icon = SystemIcons.Information;
+                                notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
+                                notifyIcon1.ShowBalloonTip(2000);
+                                //Refesh form
+                                this.txt_ContentQuestion.Text = "";
+                                flp_addAnswer.Controls.Clear();
 
-                            //AUTO ADD 4 ANSWER
-                            for (int j = 0; j < 4; j++)
-                            {
-                                Answer_MultiSelect MultiSelectAnswer = new Answer_MultiSelect();
-                                i++;
-                                MultiSelectAnswer.Tag = i;
-                                MultiSelectAnswer.ID_Answer = i;
-                                MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
-                                MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
-                                flp_addAnswer.Controls.Add(MultiSelectAnswer);
+                                //AUTO ADD 4 ANSWER
+                                for (int j = 0; j < 4; j++)
+                                {
+                                    Answer_MultiSelect MultiSelectAnswer = new Answer_MultiSelect();
+                                    i++;
+                                    MultiSelectAnswer.Tag = i;
+                                    MultiSelectAnswer.ID_Answer = i;
+                                    MultiSelectAnswer.onDelete += MultiSelectAnswer_onDelete;
+                                    MultiSelectAnswer.chk_Check.Text = Convert.ToChar(a + j).ToString();
+                                    flp_addAnswer.Controls.Add(MultiSelectAnswer);
+                                }
                             }
                         }
                     }

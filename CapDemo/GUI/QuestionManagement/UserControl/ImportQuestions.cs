@@ -307,7 +307,8 @@ namespace CapDemo.GUI.User_Controls
                                     question.Date = DateTime.Now;
                                     questionBL.AddQuestion(question);
 
-                                    answer.IsCorrect = true;
+                                    //answer.IsCorrect = true;
+                                    answer.Check = 1;
                                     answer.ContentAnswer = AnswerItem[1].ToString().Trim();
                                     answer.IDQuestion = questionBL.MaxIDQuestion();
                                     answer.IDCatalogue = IDCat;
@@ -336,7 +337,8 @@ namespace CapDemo.GUI.User_Controls
 
                                         if (Convert.ToInt32(AnswerItem[0].ToString().Trim()) > 0)
                                         {
-                                            answer.IsCorrect = true;
+                                            //answer.IsCorrect = true;
+                                            answer.Check = 1;
                                             answer.ContentAnswer = AnswerItem[1].ToString().Trim();
                                             answer.IDQuestion = questionBL.MaxIDQuestion();
                                             answer.IDCatalogue = IDCat;
@@ -345,7 +347,8 @@ namespace CapDemo.GUI.User_Controls
                                         }
                                         else
                                         {
-                                            answer.IsCorrect = false;
+                                            //answer.IsCorrect = false;
+                                            answer.Check = 0;
                                             answer.ContentAnswer = AnswerItem[1].ToString().Trim();
                                             answer.IDQuestion = questionBL.MaxIDQuestion();
                                             answer.IDCatalogue = IDCat;

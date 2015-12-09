@@ -52,6 +52,13 @@ namespace CapDemo.DO
             get { return iDCatalogue; }
             set { iDCatalogue = value; }
         }
+        int check;
+
+        public int Check
+        {
+            get { return check; }
+            set { check = value; }
+        }
         //private Question question;
 
         //public Question Question

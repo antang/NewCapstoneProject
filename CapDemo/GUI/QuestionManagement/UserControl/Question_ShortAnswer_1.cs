@@ -68,9 +68,9 @@ namespace CapDemo.GUI.User_Controls
                 QuestionBL questionBl = new QuestionBL();
                 Question question = new Question();
                 Answer answer = new Answer();
-                if (txt_ContentQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
+                if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
                 {
-                    if (txt_ContentQuestion.Text.Trim() == "")
+                    if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "")
                     {
                         MessageBox.Show("Câu hỏi không được rỗng. Vui lòng nhập thông tin câu hỏi trước khi lưu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -81,23 +81,26 @@ namespace CapDemo.GUI.User_Controls
                 }
                 else
                 {
+                    question.QuestionTitle = txt_NameQuestion.Text.Trim();
                     question.NameQuestion = txt_ContentQuestion.Text.Trim();
                     question.TypeQuestion = "shortanswer";
                     question.IDCatalogue = IDCat;
-                    questionBl.AddQuestion(question);
-
-                    answer.ContentAnswer = txt_AnswerContent.Text.Trim();
-                    answer.IsCorrect = true;
-                    answer.IDQuestion = questionBl.MaxIDQuestion();
-                    answer.IDCatalogue = IDCat;
-                    questionBl.AddAnswer(answer);
-                    //Show notify
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                    notifyIcon1.ShowBalloonTip(2000);
-                    //Close form
-                    Form FindForm = this.FindForm();
-                    FindForm.Close();
+                   
+                    if (questionBl.AddQuestion(question))
+                    {
+                        answer.ContentAnswer = txt_AnswerContent.Text.Trim();
+                        answer.Check =1;
+                        answer.IDQuestion = questionBl.MaxIDQuestion();
+                        answer.IDCatalogue = IDCat;
+                        questionBl.AddAnswer(answer);
+                        //Show notify
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
+                        notifyIcon1.ShowBalloonTip(2000);
+                        //Close form
+                        Form FindForm = this.FindForm();
+                        FindForm.Close();
+                    }
                 }
             }
             else
@@ -133,9 +136,9 @@ namespace CapDemo.GUI.User_Controls
                 QuestionBL questionBl = new QuestionBL();
                 Question question = new Question();
                 Answer answer = new Answer();
-                if (txt_ContentQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
+                if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "" || txt_AnswerContent.Text.Trim() == "")
                 {
-                    if (txt_ContentQuestion.Text.Trim() == "")
+                    if (txt_ContentQuestion.Text.Trim() == "" || txt_NameQuestion.Text.Trim() == "")
                     {
                         MessageBox.Show("Câu hỏi không được rỗng. Vui lòng nhập thông tin câu hỏi trước khi lưu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -146,23 +149,27 @@ namespace CapDemo.GUI.User_Controls
                 }
                 else
                 {
+                    question.QuestionTitle = txt_NameQuestion.Text.Trim();
                     question.NameQuestion = txt_ContentQuestion.Text.Trim();
                     question.TypeQuestion = "shortanswer";
                     question.IDCatalogue = IDCat;
-                    questionBl.AddQuestion(question);
-
-                    answer.ContentAnswer = txt_AnswerContent.Text.Trim();
-                    answer.IsCorrect = true;
-                    answer.IDQuestion = questionBl.MaxIDQuestion();
-                    answer.IDCatalogue = IDCat;
-                    questionBl.AddAnswer(answer);
-                    //Show notify
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
-                    notifyIcon1.ShowBalloonTip(2000);
-                    //Refesh form
-                    txt_ContentQuestion.Text = "";
-                    txt_AnswerContent.Text = "";
+                    
+                    if (questionBl.AddQuestion(question))
+                    {
+                        answer.ContentAnswer = txt_AnswerContent.Text.Trim();
+                        answer.Check = 1;
+                        answer.IDQuestion = questionBl.MaxIDQuestion();
+                        answer.IDCatalogue = IDCat;
+                        questionBl.AddAnswer(answer);
+                        //Show notify
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                        notifyIcon1.ShowBalloonTip(2000);
+                        //Refesh form
+                        txt_ContentQuestion.Text = "";
+                        txt_AnswerContent.Text = "";
+                    }
+                    
                 }
             }
             else
