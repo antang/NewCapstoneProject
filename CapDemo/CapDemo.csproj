@@ -372,6 +372,12 @@
     <Compile Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.Designer.cs">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Open_Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Open_Game.Designer.cs">
+      <DependentUpon>Open_Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
@@ -537,6 +543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.resx">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Open_Game.resx">
+      <DependentUpon>Open_Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -89,6 +89,52 @@ namespace CapDemo.BL
             return ContestList;
         }
 
+        //Get contest to run game
+        public List<Contest> GetContestByID(Contest contest)
+        {
+            List<Contest> ContestList = new List<Contest>();
+            string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
+                        + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
+                        //+ ",ph.[Phase_Name],ph.[Phase_ID],ph.[Phase_Time],ph.[Phase_Score],ph.[Sequence]"
+                        //+ ",pl.[Player_Name],pl.[Player_ID],pl.[Color],pl.[Player_Score],pl.[Player_Sequence]"
+                        + " FROM [Contest] c"
+                        //+ " INNER JOIN Player pl ON pl.Contest_ID = c.Contest_ID"
+                        //+ " INNER JOIN Phase ph ON ph.Contest_ID = c.Contest_ID"
+                        + " WHERE c.[Contest_ID] = '" + contest.IDContest + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            //int i = 0;
+            if (dt != null)
+            {
+                
+                foreach (DataRow item in dt.Rows)
+                {
+                    Contest Contest = new Contest();
+                    Contest.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
+                    Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
+                    Contest.NameContest = (item["Contest_Name"]).ToString();
+                    Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
+                    Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
+                    Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
+                    Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
+                    Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
+                    Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
+                    //Player
+                    //Contest.Player.PlayerName = (item["Player_Name"].ToString());
+                    //Contest.Player.PlayerScore = Convert.ToInt32( (item["Player_Score"].ToString()));
+                    //Contest.Player.Sequence = Convert.ToInt32((item["Player_Sequence"].ToString()));
+                    ////Contest.Player.IDPlayer = Convert.ToInt32((item["Player_ID"].ToString()));
+                    ////Contest.Player.PlayerName = (item["Player_Name"].ToString());
+                    //Contest.PlayerList.Add(Contest.Player);
+                    
+
+                    ContestList.Add(Contest);
+                    //i++;
+                }
+               
+            }
+            return ContestList;
+        }
         //Insert Contest
         public bool AddContest(Contest Contest)
         {
@@ -143,6 +189,24 @@ namespace CapDemo.BL
                          + " SET [Round_ID] = '" + Contest.IDRound + "',[Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
                          + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
                          + ",[Challenge_Score] = '" + Contest.ChallengceScore + "', [Number_Challenge] = '" + Contest.NumberChallenge + "'"
+                         + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
+                         + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
+                         + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
+            if (EditExistContest(Contest) == true)
+            {
+                return false;
+            }
+            else
+            {
+                return DA.UpdateDatabase(query);
+            }
+        }
+
+        public bool EditGeneralSetting(Contest Contest)
+        {
+            string query = "UPDATE [Contest]"
+                         + " SET [Round_ID] = '" + Contest.IDRound + "',[Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
+                         + ",[Bonus]='" + Contest.Bonus + "'"
                          + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
                          + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
                          + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";

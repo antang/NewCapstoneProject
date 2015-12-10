@@ -267,7 +267,7 @@ namespace CapDemo
         {
             DataGeneralSetting();
             Contest.IDContest = contestID;
-            if (ContestBL.EditContestbyID(Contest) == true)
+            if (ContestBL.EditGeneralSetting(Contest) == true)
             {
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(ps);
@@ -413,8 +413,8 @@ namespace CapDemo
                         AddTeam.txt_Sequence.Text = ListPlayer.ElementAt(j).Sequence.ToString();
                         AddTeam.txt_TeamName.Text = ListPlayer.ElementAt(j).PlayerName.ToString();
                         AddTeam.txt_TeamScore.Text = ListPlayer.ElementAt(j).PlayerScore.ToString();
-                        AddTeam.btn_Paint.BackColor = Color.FromName(ListPlayer.ElementAt(j).Color.ToString());
-                        AddTeam.pnl_ColorCoat.BackColor = Color.FromName(ListPlayer.ElementAt(j).Color.ToString());
+                        AddTeam.btn_Paint.BackColor = Color.FromArgb(Convert.ToInt32(ListPlayer.ElementAt(j).Color));
+                        AddTeam.pnl_ColorCoat.BackColor = Color.FromArgb(Convert.ToInt32(ListPlayer.ElementAt(j).Color));
                         ts.flp_Team.Controls.Add(AddTeam);
                     }
                 }
@@ -434,7 +434,7 @@ namespace CapDemo
                     Player.Sequence = Convert.ToInt32(item.txt_Sequence.Text.Trim());
                     Player.PlayerName = item.txt_TeamName.Text.Trim();
                     Player.PlayerScore = Convert.ToInt32(item.txt_TeamScore.Text.Trim());
-                    Player.Color = item.btn_Paint.BackColor.Name;
+                    Player.Color = item.btn_Paint.BackColor.ToArgb().ToString();
                     if (PlayerBL.EditPlayerbyID(Player) == true)
                     {
                         check = true;
@@ -450,7 +450,7 @@ namespace CapDemo
                     Player.Sequence = Convert.ToInt32(item.txt_Sequence.Text.Trim());
                     Player.PlayerName = item.txt_TeamName.Text.Trim();
                     Player.PlayerScore = Convert.ToInt32(item.txt_TeamScore.Text.Trim());
-                    Player.Color = item.btn_Paint.BackColor.Name;
+                    Player.Color = item.btn_Paint.BackColor.ToArgb().ToString();
                     if (PlayerBL.AddPlayer(Player) == true)
                     {
                         check = true;

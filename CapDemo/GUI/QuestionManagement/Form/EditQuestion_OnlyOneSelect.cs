@@ -164,7 +164,7 @@ namespace CapDemo.GUI
                             {
                                 answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
                                 //answer.IsCorrect = item.rad_check.Checked;
-                                if (item.rad_check.Checked == true && item.rad_check.Checked !=null)
+                                if (item.rad_check.Checked == true )
                                 {
                                     answer.Check = 1;
                                 }

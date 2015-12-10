@@ -250,7 +250,7 @@ namespace CapDemo.GUI
                             {
                                 answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
                                 //answer.IsCorrect = item.chk_Check.Checked;
-                                if (item.chk_Check.Checked == true && item.chk_Check.Checked != null)
+                                if (item.chk_Check.Checked == true )
                                 {
                                     answer.Check = 1;
                                 }

@@ -185,7 +185,7 @@ namespace CapDemo.GUI.User_Controls
                                 {
                                     answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
                                     //answer.IsCorrect = item.rad_check.Checked;
-                                    if (item.rad_check.Checked == true && item.rad_check.Checked != null)
+                                    if (item.rad_check.Checked == true)
                                     {
                                         answer.Check = 1;
                                     }
@@ -259,7 +259,7 @@ namespace CapDemo.GUI.User_Controls
                             foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
                             {
                                 answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
-                                if (item.rad_check.Checked == true && item.rad_check.Checked != null)
+                                if (item.rad_check.Checked == true)
                                 {
                                     answer.Check = 1;
                                 }

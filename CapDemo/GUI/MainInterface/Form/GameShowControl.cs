@@ -19,7 +19,8 @@ namespace CapDemo.GUI
         private string pass;
 
         Setting st = new Setting();
-        Start_Game sg = new Start_Game();
+        Start_Game sgFirst = new Start_Game();
+        ControlGame cg = new ControlGame();
         //GameMenu gm = new GameMenu();
         public int UserID
         {
@@ -52,49 +53,43 @@ namespace CapDemo.GUI
         private void GameShowControl_Load(object sender, EventArgs e)
         {
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
+            gm1.onClick_Setting += btn_Setting_onClick;
+            gm1.onClick_Start += btn_Start_onClick;
             this.Controls.Add(gm1);
-            gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
-            //st.btn_Exit.Click += new EventHandler(Exit_Setting);
-            gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
-            //sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
         }
-        //Exit Start Game GUI
-        void btn_Exit_onlick(object sender, EventArgs e)
-        {
-            GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
-            gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
-            //this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
-            gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
-            //this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
 
-            this.Controls.Clear();
-            this.Controls.Add(gm1);
-        }
-        
         //Click to show Start Game GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
-            Start_Game sg1 = new Start_Game();
+            Start_Game sg = new Start_Game();
+            sg.onExit += Exit_StartGame;
+            //sg.Doubleclick += sg_DoubleClick;
             this.Controls.Clear();
-            sg1.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
-            sg1.DoubleClick += sg1_DoubleClick;
-            
-            this.Controls.Add(sg1);
-            
+            this.Controls.Add(sg);
         }
 
-
-        void sg1_DoubleClick(object sender, EventArgs e)
-        {
-            ControlGame cg = new ControlGame();
-            this.Controls.Clear();
-            this.Controls.Add(cg);
-        }
+        //void sg_DoubleClick(object sender, EventArgs e)
+        //{
+        //    Start_Game sg = new Start_Game();
+        //    this.cg.onExit += Exit_ControlGame;
+        //    //cg.Idcontest = sg.Idcontest;
+        //    this.Controls.Clear();
+        //    this.Controls.Add(cg); 
+        //}
+        //Exit Control game
+        //void Exit_ControlGame(object sender, EventArgs e)
+        //{
+        //    Start_Game sg = new Start_Game();
+        //    sg.onExit += Exit_StartGame;
+        //    //sg.Doubleclick += sg_DoubleClick;
+        //    this.Controls.Clear();
+        //    this.Controls.Add(sg);
+        //}
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
+            this.st.onExit += Exit_Setting;
             this.Controls.Add(st);
         }
         //Exit Setting GUI
@@ -102,13 +97,18 @@ namespace CapDemo.GUI
         {
             this.Controls.Clear();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
-            gm1.btn_Setting.Click += new EventHandler(btn_Setting_onClick);
-            //this.st.btn_Exit.Click += new EventHandler(Exit_Setting);
-            gm1.btn_Start.Click += new EventHandler(btn_Start_onClick);
-            //this.sg.btn_Exit.Click += new EventHandler(btn_Exit_onlick);
-
+            gm1.onClick_Setting += btn_Setting_onClick;
+            gm1.onClick_Start += btn_Start_onClick;
             this.Controls.Add(gm1);
         }
-        
+        //Exit start Game
+        void Exit_StartGame(object sender, EventArgs e)
+        {
+            GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
+            gm1.onClick_Setting += btn_Setting_onClick;
+            gm1.onClick_Start += btn_Start_onClick;
+            this.Controls.Clear();
+            this.Controls.Add(gm1);
+        }
     }
 }

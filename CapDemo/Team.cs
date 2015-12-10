@@ -16,5 +16,11 @@ namespace CapDemo
         {
             InitializeComponent();
         }
+
+        private void lbl_ShowMenu_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(Cursor.Position);
+        }
+
     }
 }

@@ -22,11 +22,11 @@ namespace CapDemo.GUI.User_Controls
             this.Dock = DockStyle.Fill;
             pnl_Setting.Visible = false;
         }
-        public event EventHandler onClick;
+        public event EventHandler onExit;
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            if (this.onClick != null)
-                this.onClick(this, e);
+            if (this.onExit != null)
+                this.onExit(this, e);
             pnl_Setting.Visible = false;
         }
 

@@ -18,10 +18,10 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        //public event EventHandler onDelete;
+        public event EventHandler onExit;
         public event EventHandler onClick;
-        public event EventHandler DoubleClick;
-        public event EventHandler Run;
+        public event EventHandler Doubleclick;
+        //public event EventHandler Run;
         int idcontest;
         public int Idcontest
         {
@@ -31,14 +31,13 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            if (this.onClick != null)
-                this.onClick(this, e);
+            if (this.onExit != null)
+                this.onExit(this, e);
         }
 
         private void Start_Game_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
-            //MessageBox.Show("");
             load();
         }
 
@@ -62,8 +61,8 @@ namespace CapDemo.GUI.User_Controls
                         TagGame++;
                         game.Tag = TagGame;
                         game.ID_Game = TagGame;
-                        game.onRun += game_onRun;
-                        game.onClick += game_onClick;
+                        //game.onRun += game_onRun;
+                        //game.onClick += game_onClick;
 
                         game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                         game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
@@ -77,27 +76,25 @@ namespace CapDemo.GUI.User_Controls
         }
 
 
-        void game_onClick(object sender, EventArgs e)
-        {
-            if (this.DoubleClick != null)
-            {
-                this.DoubleClick(this, e);
-                MessageBox.Show(""+idcontest);
-            }
-        }
+        //void game_onClick(object sender, EventArgs e)
+        //{
+        //    if (this.Doubleclick != null)
+        //    {
+        //        this.Doubleclick(this, e);
+        //    }
+        //}
         // eventhandler on delete
-        void game_onRun(object sender, EventArgs e)
-        {
-            int GameID = (e as MyEventArgs).IDGame;
-            foreach (Game item in flp_StartGame.Controls)
-            {
-                if (item.ID_Game == GameID)
-                {
-                    idcontest = Convert.ToInt32(item.label2.Text);
-                    MessageBox.Show(""+idcontest);
-                }
+        //void game_onRun(object sender, EventArgs e)
+        //{
+        //    int GameID = (e as MyEventArgs).IDGame;
+        //    foreach (Game item in flp_StartGame.Controls)
+        //    {
+        //        if (item.ID_Game == GameID)
+        //        {
+        //            idcontest = Convert.ToInt32(item.label2.Text);
+        //        }
 
-            }
-        }
+        //    }
+        //}
     }
 }

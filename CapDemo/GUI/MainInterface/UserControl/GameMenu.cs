@@ -33,7 +33,7 @@ namespace CapDemo.GUI.User_Controls
             get { return pass; }
             set { pass = value; }
         }
-        public event EventHandler onClick;
+        public event EventHandler onClick_Setting;
         public event EventHandler onClick_Start;
         //public GameMenu()
         //{
@@ -51,8 +51,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_Setting_Click(object sender, EventArgs e)
         {
-            if (this.onClick != null)
-                this.onClick(this, e);
+            if (this.onClick_Setting != null)
+                this.onClick_Setting(this, e);
         }
         //load form
         private void GameMenu_Load(object sender, EventArgs e)

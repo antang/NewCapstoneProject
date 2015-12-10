@@ -167,7 +167,7 @@ namespace CapDemo.GUI
                             if (item.txt_AnswerContent.Text.Trim() != "")
                             {
                                 answer.ContentAnswer = item.txt_AnswerContent.Text.Trim();
-                                if (item.chk_Check.Checked == true && item.chk_Check.Checked!= null)
+                                if (item.chk_Check.Checked == true )
                                 {
                                     answer.Check = 1;
                                 }

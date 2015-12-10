@@ -23,6 +23,19 @@ namespace CapDemo.DO
         Competition competition;
         Phase phase;
         Player player;
+        List<Player> playerList;
+
+        public string NamePlayer
+        {
+            get { return player.PlayerName; }
+            set { player.PlayerName = value; }
+        }
+
+        internal List<Player> PlayerList
+        {
+            get { return playerList; }
+            set { playerList = value; }
+        }
 
         public Player Player
         {
@@ -48,6 +61,7 @@ namespace CapDemo.DO
             competition = new Competition();
             phase = new Phase();
             player = new Player();
+            playerList = new List<Player>();
         }
         public Round Round
         {

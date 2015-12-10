@@ -213,7 +213,7 @@ namespace CapDemo.GUI
                              if (item.txt_Answercontent.Text.Trim() != "")
                              {
                                  answer.ContentAnswer = item.txt_Answercontent.Text.Trim();
-                                 if (item.rad_check.Checked ==true && item.rad_check.Checked != null)
+                                 if (item.rad_check.Checked ==true)
                                  {
                                      answer.Check = 1;
                                  }

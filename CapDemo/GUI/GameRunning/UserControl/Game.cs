@@ -33,16 +33,23 @@ namespace CapDemo
         //Double Click to rum game
         private void Game_DoubleClick(object sender, EventArgs e)
         {
-            if (this.onClick != null)
+            //if (this.onClick != null)
+            //{
+            //    EventHandler run = onRun;
+            //    if (run != null)
+            //    {
+            //        MyEventArgs args = new MyEventArgs();
+            //        args.IDGame = iD_Game;
+            //        run(this, args);
+            //    }
+            //    this.onClick(this, e);
+            //}
+            Open_Game OpenGame = new Open_Game();
+            OpenGame.IDContest = Convert.ToInt32(label2.Text);
+            DialogResult result = OpenGame.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                EventHandler run = onRun;
-                if (run != null)
-                {
-                    MyEventArgs args = new MyEventArgs();
-                    args.IDGame = iD_Game;
-                    run(this, args);
-                }
-                this.onClick(this, e);
+                //load();
             }
         }
     }
