@@ -71,6 +71,33 @@ namespace CapDemo.BL
             }
             return PhaseList;
         }
+
+        //Get phase by id contest and sequence
+        public List<Phase> GetPhaseByIDContestSequence(Phase phase)
+        {
+            List<Phase> PhaseList = new List<Phase>();
+            string query = "SELECT [Phase_ID],[Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
+                            + " FROM [Phase]"
+                            + " WHERE [Contest_ID] = '" + phase.IDContest + "' AND [Sequence] = '" + phase.Sequence + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Phase Phase = new Phase();
+                    Phase.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
+                    Phase.IDPhase = Convert.ToInt32(item["Phase_ID"].ToString());
+                    Phase.NamePhase = item["Phase_Name"].ToString();
+                    Phase.ScorePhase = Convert.ToInt32(item["Phase_Score"].ToString());
+                    Phase.MinusPhase = Convert.ToInt32(item["Phase_Minus"].ToString());
+                    Phase.TimePhase = Convert.ToInt32(item["Phase_Time"].ToString());
+                    Phase.Sequence = Convert.ToInt32(item["Sequence"].ToString());
+
+                    PhaseList.Add(Phase);
+                }
+            }
+            return PhaseList;
+        }
         //Insert Phase
         public bool AddPhase(Phase Phase)
         {

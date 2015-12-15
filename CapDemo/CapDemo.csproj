@@ -48,12 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlGame.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ControlGame.Designer.cs">
-      <DependentUpon>ControlGame.cs</DependentUpon>
-    </Compile>
+    <Compile Include="BL\LogBL.cs" />
     <Compile Include="DO\Log.cs" />
     <Compile Include="GUI\GameRunning\UserControl\Game.cs">
       <SubType>UserControl</SubType>
@@ -372,11 +367,35 @@
     <Compile Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.Designer.cs">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Open_Game.cs">
+    <Compile Include="GUI\GameRunning\Form\Open_Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Open_Game.Designer.cs">
+    <Compile Include="GUI\GameRunning\Form\Open_Game.Designer.cs">
       <DependentUpon>Open_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Phase_Lane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Phase_Lane.Designer.cs">
+      <DependentUpon>Phase_Lane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Player_Lane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Player_Lane.Designer.cs">
+      <DependentUpon>Player_Lane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Life.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Life.Designer.cs">
+      <DependentUpon>Life.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Node_Phase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Node_Phase.Designer.cs">
+      <DependentUpon>Node_Phase.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -386,15 +405,24 @@
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.Designer.cs">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Team.cs">
+    <Compile Include="GUI\GameRunning\Form\Run_Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\Form\Run_Game.Designer.cs">
+      <DependentUpon>Run_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\UserControl\Team.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Team.Designer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\Team.Designer.cs">
       <DependentUpon>Team.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ControlGame.resx">
-      <DependentUpon>ControlGame.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="ShowAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowAnswer.Designer.cs">
+      <DependentUpon>ShowAnswer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,8 +572,20 @@
     <EmbeddedResource Include="GUI\QuestionManagement\Form\ViewQuestionShortAnswer.resx">
       <DependentUpon>ViewQuestionShortAnswer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Open_Game.resx">
+    <EmbeddedResource Include="GUI\GameRunning\Form\Open_Game.resx">
       <DependentUpon>Open_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Phase_Lane.resx">
+      <DependentUpon>Phase_Lane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Player_Lane.resx">
+      <DependentUpon>Player_Lane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Life.resx">
+      <DependentUpon>Life.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Node_Phase.resx">
+      <DependentUpon>Node_Phase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -555,8 +595,14 @@
     <EmbeddedResource Include="GUI\GameSetup\UserControl\QuestionSetting.resx">
       <DependentUpon>QuestionSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Team.resx">
+    <EmbeddedResource Include="GUI\GameRunning\Form\Run_Game.resx">
+      <DependentUpon>Run_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\Team.resx">
       <DependentUpon>Team.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowAnswer.resx">
+      <DependentUpon>ShowAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />
@@ -645,11 +691,13 @@
     <None Include="Resources\TLG_Setting_hover.png" />
     <None Include="Resources\TWLW.png" />
     <None Include="Resources\1600-864.jpg" />
+    <Content Include="Resources\3.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\5.png" />
+    <Content Include="Resources\6.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\GameRunning\Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

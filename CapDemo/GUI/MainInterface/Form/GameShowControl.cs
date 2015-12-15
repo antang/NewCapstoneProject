@@ -20,7 +20,6 @@ namespace CapDemo.GUI
 
         Setting st = new Setting();
         Start_Game sgFirst = new Start_Game();
-        ControlGame cg = new ControlGame();
         //GameMenu gm = new GameMenu();
         public int UserID
         {

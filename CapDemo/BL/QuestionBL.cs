@@ -52,6 +52,38 @@ namespace CapDemo.BL
             return QuestionList;
         }
 
+        public List<Question> GetQuestionByID(Question question)
+        {
+            List<Question> QuestionList = new List<Question>();
+            string query = "SELECT q.Question_ID,q.Question_Title, q.Question_Name, q.Question_Type, q.Catalogue_ID, c.Catalogue_Name, q.Question_Title, q.[Date_Create]"
+                         + " FROM Question q"
+                         + " INNER JOIN Catalogue c ON c.Catalogue_ID = q.Catalogue_ID"
+                         + " WHERE q.Question_ID='" + question.IDQuestion + "'";
+
+            DataTable dt = DA.SelectDatabase(query);
+            int i = 1;
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Question Question = new Question();
+                    Question.IDQuestion = Convert.ToInt32(item["Question_ID"]);
+                    Question.QuestionTitle = item["Question_Title"].ToString();
+                    Question.NameQuestion = item["Question_Name"].ToString();
+                    Question.TypeQuestion = item["Question_Type"].ToString();
+                    Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
+                    //Question.NameCatalogue = item["Catalogue_Name"].ToString();
+                    Question.Date = (DateTime)item["Date_Create"];
+                    Question.Sequence = i;
+                    Question.Catalogue.NameCatalogue = item["Catalogue_Name"].ToString();
+                    //Question.Catalogue.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
+                    QuestionList.Add(Question);
+                    i++;
+                }
+            }
+            return QuestionList;
+        }
+
         //Select question by ID catalogue
         public List<Question> GetQuestionByCatalogue(Catalogue Catalogue)
         {
