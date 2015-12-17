@@ -47,6 +47,8 @@ namespace CapDemo
             Open_Game OpenGame = new Open_Game();
             OpenGame.IDContest = Convert.ToInt32(label2.Text);
             DialogResult result = OpenGame.ShowDialog();
+
+
             if (result == DialogResult.OK)
             {
                 //load();

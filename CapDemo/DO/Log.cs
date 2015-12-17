@@ -15,6 +15,13 @@ namespace CapDemo.DO
         int currentNumofTrue;
         int currentNumofFalse;
         bool exist;
+        int check;
+
+        public int Check
+        {
+            get { return check; }
+            set { check = value; }
+        }
 
         public int ContestID
         {

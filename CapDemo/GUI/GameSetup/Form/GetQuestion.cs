@@ -126,7 +126,7 @@ namespace CapDemo
                     Phase.IDContest = idContest;
                     //Phase.Question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
                     Phase.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
-                    Phase.Status = true;
+                    Phase.Status = 1;
                     PhaseQuestionBL.AddPhaseQuestion(Phase);
                 }
             }

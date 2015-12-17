@@ -31,6 +31,8 @@
             this.rtxt_Answer = new System.Windows.Forms.RichTextBox();
             this.lbl_Answer = new System.Windows.Forms.Label();
             this.lbl_Correct = new System.Windows.Forms.Label();
+            this.rdb1 = new System.Windows.Forms.RadioButton();
+            this.chk1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // rtxt_Answer
@@ -46,11 +48,12 @@
             // 
             this.lbl_Answer.AutoSize = true;
             this.lbl_Answer.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Answer.Location = new System.Drawing.Point(3, 6);
+            this.lbl_Answer.Location = new System.Drawing.Point(0, 0);
             this.lbl_Answer.Name = "lbl_Answer";
             this.lbl_Answer.Size = new System.Drawing.Size(41, 13);
             this.lbl_Answer.TabIndex = 2;
             this.lbl_Answer.Text = "label1";
+            this.lbl_Answer.Visible = false;
             // 
             // lbl_Correct
             // 
@@ -62,10 +65,33 @@
             this.lbl_Correct.Text = "label1";
             this.lbl_Correct.Visible = false;
             // 
+            // rdb1
+            // 
+            this.rdb1.AutoSize = true;
+            this.rdb1.Location = new System.Drawing.Point(3, 20);
+            this.rdb1.Name = "rdb1";
+            this.rdb1.Size = new System.Drawing.Size(14, 13);
+            this.rdb1.TabIndex = 5;
+            this.rdb1.TabStop = true;
+            this.rdb1.UseVisualStyleBackColor = true;
+            this.rdb1.Visible = false;
+            // 
+            // chk1
+            // 
+            this.chk1.AutoSize = true;
+            this.chk1.Location = new System.Drawing.Point(23, 20);
+            this.chk1.Name = "chk1";
+            this.chk1.Size = new System.Drawing.Size(15, 14);
+            this.chk1.TabIndex = 6;
+            this.chk1.UseVisualStyleBackColor = true;
+            this.chk1.Visible = false;
+            // 
             // ShowAnswer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chk1);
+            this.Controls.Add(this.rdb1);
             this.Controls.Add(this.lbl_Correct);
             this.Controls.Add(this.rtxt_Answer);
             this.Controls.Add(this.lbl_Answer);
@@ -81,5 +107,7 @@
         public System.Windows.Forms.RichTextBox rtxt_Answer;
         public System.Windows.Forms.Label lbl_Answer;
         public System.Windows.Forms.Label lbl_Correct;
+        public System.Windows.Forms.RadioButton rdb1;
+        public System.Windows.Forms.CheckBox chk1;
     }
 }

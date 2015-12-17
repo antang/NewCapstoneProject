@@ -33,7 +33,6 @@
             this.lbl_TeamScore = new System.Windows.Forms.Label();
             this.lbl_CurrentPhase = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl_Time = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tháchĐấuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,20 +77,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(68, 99);
+            this.textBox1.Location = new System.Drawing.Point(3, 96);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 21);
+            this.textBox1.Size = new System.Drawing.Size(192, 21);
             this.textBox1.TabIndex = 3;
-            // 
-            // lbl_Time
-            // 
-            this.lbl_Time.AutoSize = true;
-            this.lbl_Time.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Time.Location = new System.Drawing.Point(3, 107);
-            this.lbl_Time.Name = "lbl_Time";
-            this.lbl_Time.Size = new System.Drawing.Size(35, 13);
-            this.lbl_Time.TabIndex = 4;
-            this.lbl_Time.Text = "Time";
             // 
             // label1
             // 
@@ -158,11 +147,11 @@
             // 
             this.lbl_Sequence.AutoSize = true;
             this.lbl_Sequence.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sequence.Location = new System.Drawing.Point(190, 0);
+            this.lbl_Sequence.Location = new System.Drawing.Point(208, 134);
             this.lbl_Sequence.Name = "lbl_Sequence";
-            this.lbl_Sequence.Size = new System.Drawing.Size(17, 13);
+            this.lbl_Sequence.Size = new System.Drawing.Size(22, 13);
             this.lbl_Sequence.TabIndex = 8;
-            this.lbl_Sequence.Text = "id";
+            this.lbl_Sequence.Text = "Se";
             // 
             // Team
             // 
@@ -173,7 +162,6 @@
             this.Controls.Add(this.lbl_TeamID);
             this.Controls.Add(this.lbl_ShowMenu);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_CurrentPhase);
             this.Controls.Add(this.lbl_TeamScore);
@@ -198,7 +186,6 @@
         public System.Windows.Forms.Label lbl_TeamScore;
         public System.Windows.Forms.Label lbl_CurrentPhase;
         public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Label lbl_Time;
         public System.Windows.Forms.Label lbl_ShowMenu;
         public System.Windows.Forms.Label lbl_TeamID;
         public System.Windows.Forms.Label lbl_Sequence;

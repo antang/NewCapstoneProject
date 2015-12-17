@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.btn_Player = new System.Windows.Forms.Button();
+            this.lbl_SequencePlayer = new System.Windows.Forms.Label();
+            this.txt_Point = new System.Windows.Forms.TextBox();
             this.lbl_IDPlayer = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_Player
@@ -43,33 +44,44 @@
             this.btn_Player.Text = "Name Player";
             this.btn_Player.UseVisualStyleBackColor = true;
             // 
+            // lbl_SequencePlayer
+            // 
+            this.lbl_SequencePlayer.AutoSize = true;
+            this.lbl_SequencePlayer.Location = new System.Drawing.Point(0, 0);
+            this.lbl_SequencePlayer.Name = "lbl_SequencePlayer";
+            this.lbl_SequencePlayer.Size = new System.Drawing.Size(18, 13);
+            this.lbl_SequencePlayer.TabIndex = 1;
+            this.lbl_SequencePlayer.Text = "se";
+            this.lbl_SequencePlayer.Visible = false;
+            // 
+            // txt_Point
+            // 
+            this.txt_Point.Enabled = false;
+            this.txt_Point.Location = new System.Drawing.Point(0, 325);
+            this.txt_Point.Multiline = true;
+            this.txt_Point.Name = "txt_Point";
+            this.txt_Point.Size = new System.Drawing.Size(90, 25);
+            this.txt_Point.TabIndex = 2;
+            this.txt_Point.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // lbl_IDPlayer
             // 
             this.lbl_IDPlayer.AutoSize = true;
-            this.lbl_IDPlayer.Location = new System.Drawing.Point(0, 0);
+            this.lbl_IDPlayer.Location = new System.Drawing.Point(41, 0);
             this.lbl_IDPlayer.Name = "lbl_IDPlayer";
-            this.lbl_IDPlayer.Size = new System.Drawing.Size(35, 13);
-            this.lbl_IDPlayer.TabIndex = 1;
-            this.lbl_IDPlayer.Text = "label1";
+            this.lbl_IDPlayer.Size = new System.Drawing.Size(15, 13);
+            this.lbl_IDPlayer.TabIndex = 3;
+            this.lbl_IDPlayer.Text = "id";
             this.lbl_IDPlayer.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(0, 325);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 25);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Player_Lane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_IDPlayer);
+            this.Controls.Add(this.txt_Point);
+            this.Controls.Add(this.lbl_SequencePlayer);
             this.Controls.Add(this.btn_Player);
             this.Name = "Player_Lane";
             this.Size = new System.Drawing.Size(90, 350);
@@ -81,7 +93,8 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Player;
+        public System.Windows.Forms.Label lbl_SequencePlayer;
+        public System.Windows.Forms.TextBox txt_Point;
         public System.Windows.Forms.Label lbl_IDPlayer;
-        public System.Windows.Forms.TextBox textBox1;
     }
 }

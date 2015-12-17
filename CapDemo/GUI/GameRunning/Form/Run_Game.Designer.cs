@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_GameMap = new System.Windows.Forms.Panel();
             this.pnl_PhaseLine = new System.Windows.Forms.Panel();
             this.rtxt_QuestionContent = new System.Windows.Forms.RichTextBox();
             this.flp_AnswerContent = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // pnl_GameMap
             // 
+            this.pnl_GameMap.AutoScroll = true;
             this.pnl_GameMap.BackColor = System.Drawing.Color.White;
             this.pnl_GameMap.Location = new System.Drawing.Point(90, 0);
             this.pnl_GameMap.Name = "pnl_GameMap";
-            this.pnl_GameMap.Size = new System.Drawing.Size(385, 335);
+            this.pnl_GameMap.Size = new System.Drawing.Size(385, 360);
             this.pnl_GameMap.TabIndex = 0;
             // 
             // pnl_PhaseLine
@@ -66,12 +70,26 @@
             this.flp_AnswerContent.Size = new System.Drawing.Size(515, 302);
             this.flp_AnswerContent.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(421, 392);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Run_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flp_AnswerContent);
             this.Controls.Add(this.rtxt_QuestionContent);
             this.Controls.Add(this.pnl_PhaseLine);
@@ -80,6 +98,7 @@
             this.Text = "Run_Game";
             this.Load += new System.EventHandler(this.Run_Game_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,5 +108,7 @@
         public System.Windows.Forms.Panel pnl_GameMap;
         public System.Windows.Forms.RichTextBox rtxt_QuestionContent;
         public System.Windows.Forms.FlowLayoutPanel flp_AnswerContent;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Timer timer1;
     }
 }

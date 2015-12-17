@@ -71,7 +71,9 @@ namespace CapDemo
                 {
                     Player_Lane PlayerLane = new Player_Lane();
                     PlayerLane.Location = new Point(PlayerLane.Location.X + ((95 * i)+5), PlayerLane.Location.Y + 5);
-                    PlayerLane.lbl_IDPlayer.Text = listPlayer.ElementAt(i).Sequence.ToString();
+                    PlayerLane.lbl_SequencePlayer.Text = listPlayer.ElementAt(i).Sequence.ToString();
+                    PlayerLane.lbl_IDPlayer.Text = listPlayer.ElementAt(i).IDPlayer.ToString();
+                    PlayerLane.txt_Point.Text = listPlayer.ElementAt(i).PlayerScore.ToString();
                     pnl_GameMap.Controls.Add(PlayerLane); 
                 }
             }
@@ -84,7 +86,7 @@ namespace CapDemo
                 {
                     Node_Phase NodePhase = new Node_Phase();
                     NodePhase.Size = new System.Drawing.Size(15, 15);
-                    NodePhase.Location = new Point(NodePhase.Location.X + ((17 * i)), NodePhase.Location.Y + HeightPanel-45);
+                    NodePhase.Location = new Point(NodePhase.Location.X + ((17 * i)), NodePhase.Location.Y + HeightPanel-70);
                     item.Controls.Add(NodePhase);
                 }
                 //draw num of life in phase to end game
@@ -92,7 +94,7 @@ namespace CapDemo
                 {
                     Life Life = new Life();
                     Life.Size = new System.Drawing.Size(15, 15);
-                    Life.Location = new Point(Life.Location.X + ((17 * i)), Life.Location.Y + HeightPanel-25);
+                    Life.Location = new Point(Life.Location.X + ((17 * i)), Life.Location.Y + HeightPanel-50);
                     item.Controls.Add(Life);
                 }
                 //draw phase in map
@@ -101,7 +103,7 @@ namespace CapDemo
                     for (int i = 0; i < listPhase.Count; i++)
                     {
                         Phase_Lane PhaseLane = new Phase_Lane();
-                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (HeightPanel - ((50 * i) + 90)));
+                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (HeightPanel - ((50 * i) + 115)));
                         PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
                         item.Controls.Add(PhaseLane);  
                     }
@@ -115,12 +117,20 @@ namespace CapDemo
                 for (int i = 0; i < listPhase.Count; i++)
                 {
                     Phase_Lane PhaseLane = new Phase_Lane();
-                    PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (HeightPanel - ((50 * i) + 85)));
+                    PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (HeightPanel - ((50 * i) + 110)));
                     PhaseLane.BackColor = Color.LightGreen;
                     PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
                     pnl_PhaseLine.Controls.Add(PhaseLane);
                 }
             }
+        }
+
+        //Countdown time
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = (int.Parse(label1.Text) - 1).ToString(); 
+            if (int.Parse(label1.Text) == 0)  
+                timer1.Stop();
         }
     }
 }

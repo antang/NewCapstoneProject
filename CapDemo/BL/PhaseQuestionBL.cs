@@ -58,18 +58,9 @@ namespace CapDemo.BL
                     phase.Sequence = Convert.ToInt32(item["Sequence"]);
 
                     phase.IDQuestion = Convert.ToInt32(item["Question_ID"]);
-                    //phase.Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
-                    //phase.NameQuestion = item["Question_Title"].ToString();
                     phase.NameQuestion = item["Question_Name"].ToString();
                     phase.TypeQuestion = item["Question_Type"].ToString();
                     phase.SequenceQuestion = i;
-
-                    //phase.Question.IDQuestion = Convert.ToInt32(item["Question_ID"]);
-                    ////phase.Question.IDCatalogue = Convert.ToInt32(item["Catalogue_ID"]);
-                    //phase.Question.NameQuestion = item["Question_Title"].ToString();
-                    //phase.Question.NameQuestion = item["Question_Name"].ToString();
-                    //phase.Question.TypeQuestion = item["Question_Type"].ToString();
-                    //phase.Question.Sequence = i;
                     
                     PhaseList.Add(phase);
                     i++;
@@ -86,7 +77,7 @@ namespace CapDemo.BL
                         + " FROM [PhaseQuestion] pq"
                         + " INNER JOIN [Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
                         + " INNER JOIN [Question] q ON q.[Question_ID] = pq.[Question_ID]"
-                        + " WHERE p.[Phase_ID] = '" + Phase.IDPhase + "' AND pq.[Status] = '"+1+"'";
+                        + " WHERE pq.[Phase_ID] = '" + Phase.IDPhase + "' AND pq.[Status] = '"+1+"'";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
             if (dt != null)
