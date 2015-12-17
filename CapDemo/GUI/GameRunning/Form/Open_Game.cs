@@ -392,12 +392,14 @@ namespace CapDemo
                 int score = 0;
                 int idpla = 0;
                 int NumTrue;
+                int SeqPhase=0;
                 foreach (Team item in flp_Team.Controls)
                 {
                     if (Convert.ToInt32(item.lbl_Sequence.Text) == team)
                     {
                         score = ScoreofPhase(iDContest, SequencePhase(PlayerPosition(iDContest, Convert.ToInt32(item.lbl_TeamID.Text))));
                         idpla = Convert.ToInt32(item.lbl_TeamID.Text);
+                        SeqPhase = SequencePhase(PlayerPosition(iDContest, Convert.ToInt32(item.lbl_TeamID.Text)));
                     }
                 }
                 //update log
@@ -405,12 +407,20 @@ namespace CapDemo
 
                 if (NumTrue == 0)
                 {
+                    Log.PlayerID = idpla;
+                    Log.PlayerScore = ScoreofPlayer(idpla) + score;
+                    Log.CurrentNumofTrue = AmountSteptoPass;
+                    Log.CurrentNumofFalse = AmountSteptofail;
+                    //get current sequence of phase
 
+                    Log.PhaseID = IDofPhase(iDContest,SeqPhase+1);
+                    logBL.EditLogbyIDPlayer(Log);
                 }
                 else
                 {
                     Log.PlayerID = idpla;
                     Log.CurrentNumofTrue = NumTrue;
+                    Log.PlayerScore = ScoreofPlayer(idpla)+ score;
                     logBL.EditLogbyIDPlayer(Log);
                 }
                 //update GUI
@@ -429,10 +439,18 @@ namespace CapDemo
                         item.txt_Point.Text = (Convert.ToInt32(item.txt_Point.Text) + score).ToString();
                     }
                 }
+
+
             }
             else
             {
-
+                foreach (Player_Lane item in Rungame.pnl_GameMap.Controls)
+                {
+                    if (Convert.ToInt32(item.lbl_SequencePlayer.Text) == team)
+                    {
+                        
+                    }
+                }
             }
 
             //move to another player
@@ -447,7 +465,7 @@ namespace CapDemo
             }
         }
 
-        //Get point for phase
+        //Get point for phase by id contest and sequence of phase
         public int ScoreofPhase(int idCon, int Seq)
         {
             List<Phase> ListPhase;
@@ -455,6 +473,15 @@ namespace CapDemo
             Phase.Sequence = Seq;
             ListPhase = PhaseBL.GetPhaseByIDContestSequence(Phase);
             return ListPhase.ElementAt(0).ScorePhase;
+        }
+        //Get id of phase by id contest and sequence of phase
+        public int IDofPhase(int idCon, int Seq)
+        {
+            List<Phase> ListPhase;
+            Phase.IDContest = idCon;
+            Phase.Sequence = Seq;
+            ListPhase = PhaseBL.GetPhaseByIDContestSequence(Phase);
+            return ListPhase.ElementAt(0).IDPhase;
         }
         //get position of player
         public int PlayerPosition(int idCon, int idPla)
