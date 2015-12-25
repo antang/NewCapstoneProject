@@ -49,9 +49,8 @@ namespace CapDemo.BL
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT [Phase_ID],[Contest_ID],[Phase_Name],[Phase_Score],[Phase_Minus],[Phase_Time],[Sequence]"
                             + " FROM [Phase]"
-                            + " WHERE [Contest_ID] = '" + phase.IDContest + "'";
+                            + " WHERE [Contest_ID] = '" + phase.IDContest + "' AND [Sequence] >= 0 ORDER BY [Sequence] ASC";
             DataTable dt = DA.SelectDatabase(query);
-            //int i = 1;
             if (dt != null)
             {
                 foreach (DataRow item in dt.Rows)
@@ -66,7 +65,6 @@ namespace CapDemo.BL
                     Phase.Sequence = Convert.ToInt32(item["Sequence"].ToString());
 
                     PhaseList.Add(Phase);
-                    //i++;
                 }
             }
             return PhaseList;

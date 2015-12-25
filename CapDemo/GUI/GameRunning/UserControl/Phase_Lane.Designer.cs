@@ -28,35 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Phase_Lane));
             this.lbl_NamePhase = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // lbl_NamePhase
             // 
-            this.lbl_NamePhase.AutoSize = true;
-            this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NamePhase.Location = new System.Drawing.Point(3, 9);
+            this.lbl_NamePhase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_NamePhase.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NamePhase.ImageIndex = 0;
+            this.lbl_NamePhase.Location = new System.Drawing.Point(16, 12);
             this.lbl_NamePhase.Name = "lbl_NamePhase";
             this.lbl_NamePhase.Size = new System.Drawing.Size(58, 18);
             this.lbl_NamePhase.TabIndex = 0;
             this.lbl_NamePhase.Text = "label1";
+            this.lbl_NamePhase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "khung-vong-thi.png");
             // 
             // Phase_Lane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.Controls.Add(this.lbl_NamePhase);
             this.Name = "Phase_Lane";
             this.Size = new System.Drawing.Size(98, 40);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         public System.Windows.Forms.Label lbl_NamePhase;
+        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

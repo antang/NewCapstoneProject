@@ -19,8 +19,8 @@ namespace CapDemo.GUI.User_Controls
             InitializeComponent();
         }
         public event EventHandler onExit;
-        public event EventHandler onClick;
-        public event EventHandler Doubleclick;
+        //public event EventHandler onClick;
+        //public event EventHandler Doubleclick;
         //public event EventHandler Run;
         int idcontest;
         public int Idcontest

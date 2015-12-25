@@ -48,8 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audience_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audience_Screen.Designer.cs">
+      <DependentUpon>Audience_Screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="BL\LogBL.cs" />
     <Compile Include="DO\Log.cs" />
+    <Compile Include="DO\Record.cs" />
     <Compile Include="GUI\GameRunning\UserControl\Game.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -397,6 +404,24 @@
     <Compile Include="GUI\GameRunning\UserControl\Node_Phase.Designer.cs">
       <DependentUpon>Node_Phase.cs</DependentUpon>
     </Compile>
+    <Compile Include="multichoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="multichoice.Designer.cs">
+      <DependentUpon>multichoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="onechoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="onechoice.Designer.cs">
+      <DependentUpon>onechoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player_Lane1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Player_Lane1.Designer.cs">
+      <DependentUpon>Player_Lane1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
@@ -423,6 +448,15 @@
     <Compile Include="ShowAnswer.Designer.cs">
       <DependentUpon>ShowAnswer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Team_AudienceScreeen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Team_AudienceScreeen.Designer.cs">
+      <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Audience_Screen.resx">
+      <DependentUpon>Audience_Screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,6 +621,15 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Node_Phase.resx">
       <DependentUpon>Node_Phase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="multichoice.resx">
+      <DependentUpon>multichoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="onechoice.resx">
+      <DependentUpon>onechoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Player_Lane1.resx">
+      <DependentUpon>Player_Lane1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -603,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowAnswer.resx">
       <DependentUpon>ShowAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Team_AudienceScreeen.resx">
+      <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />
@@ -695,6 +741,20 @@
     <Content Include="Resources\4.png" />
     <Content Include="Resources\5.png" />
     <Content Include="Resources\6.png" />
+    <None Include="Resources\khung-vong-thi.png" />
+    <None Include="Resources\Button_Close.png" />
+    <None Include="Resources\PlayGame.png" />
+    <None Include="Resources\ao_lon.png" />
+    <None Include="Resources\ao_nho.png" />
+    <None Include="Resources\chiec-cup.png" />
+    <None Include="Resources\het-thach-dau.png" />
+    <None Include="Resources\het-y-kien.png" />
+    <None Include="Resources\thach-dau.png" />
+    <None Include="Resources\trai-tim-dung.png" />
+    <None Include="Resources\trai-tim-sai.png" />
+    <None Include="Resources\vong-tron-gio.png" />
+    <None Include="Resources\y-kien.png" />
+    <None Include="Resources\Hinh-nen.jpg" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -702,6 +762,9 @@
       <Project>{4c10111d-47da-46b8-a10b-19c59e3db76c}</Project>
       <Name>myStruct</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

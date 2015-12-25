@@ -10,18 +10,13 @@ using System.Windows.Forms;
 
 namespace CapDemo
 {
-    public partial class Team : UserControl
+    public partial class multichoice : UserControl
     {
-        public Team()
+        public multichoice()
         {
             InitializeComponent();
         }
 
-        private void lbl_ShowMenu_Click(object sender, EventArgs e)
-        {
-            contextMenuStrip1.Show(Cursor.Position);
-        }
-
-
+        public EventHandler oncheck;
     }
 }
