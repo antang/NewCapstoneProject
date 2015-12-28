@@ -80,5 +80,10 @@ namespace CapDemo_Client
             richTextBox2.Text = "";
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
