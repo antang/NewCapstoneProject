@@ -22,14 +22,14 @@ namespace CapDemo
         {
             
         }
-        public event EventHandler onRun;
+        //public event EventHandler onRun;
         int iD_Game;
         public int ID_Game
         {
             get { return iD_Game; }
             set { iD_Game = value; }
         }
-        public event EventHandler onClick;
+        //public event EventHandler onClick;
         //Double Click to rum game
         private void Game_DoubleClick(object sender, EventArgs e)
         {

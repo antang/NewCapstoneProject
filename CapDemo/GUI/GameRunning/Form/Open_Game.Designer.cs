@@ -29,38 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.btn_Start = new System.Windows.Forms.Button();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_Listen = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.btn_Send = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Time = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblHint = new System.Windows.Forms.Label();
+            this.pb_Play = new System.Windows.Forms.PictureBox();
+            this.pb_Exit = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Location = new System.Drawing.Point(760, 644);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
-            this.btn_Exit.TabIndex = 4;
-            this.btn_Exit.Text = "Exit";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btn_Start
-            // 
-            this.btn_Start.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Start.Location = new System.Drawing.Point(841, 644);
-            this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(75, 23);
-            this.btn_Start.TabIndex = 3;
-            this.btn_Start.Text = "Start";
-            this.btn_Start.UseVisualStyleBackColor = true;
-            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // flp_Team
             // 
@@ -68,80 +46,94 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_Team.AutoScroll = true;
-            this.flp_Team.BackColor = System.Drawing.Color.LightBlue;
-            this.flp_Team.Location = new System.Drawing.Point(3, 12);
+            this.flp_Team.BackColor = System.Drawing.Color.Transparent;
+            this.flp_Team.Location = new System.Drawing.Point(0, 0);
             this.flp_Team.Name = "flp_Team";
-            this.flp_Team.Size = new System.Drawing.Size(1002, 292);
+            this.flp_Team.Size = new System.Drawing.Size(1024, 350);
             this.flp_Team.TabIndex = 5;
-            // 
-            // btn_Listen
-            // 
-            this.btn_Listen.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Listen.Location = new System.Drawing.Point(361, 565);
-            this.btn_Listen.Name = "btn_Listen";
-            this.btn_Listen.Size = new System.Drawing.Size(75, 23);
-            this.btn_Listen.TabIndex = 6;
-            this.btn_Listen.Text = "Listen";
-            this.btn_Listen.UseVisualStyleBackColor = true;
-            this.btn_Listen.Click += new System.EventHandler(this.btn_Next_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(48, 379);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(298, 176);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(48, 579);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(298, 47);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
-            // 
-            // btn_Send
-            // 
-            this.btn_Send.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Send.Location = new System.Drawing.Point(361, 594);
-            this.btn_Send.Name = "btn_Send";
-            this.btn_Send.Size = new System.Drawing.Size(75, 23);
-            this.btn_Send.TabIndex = 9;
-            this.btn_Send.Text = "send";
-            this.btn_Send.UseVisualStyleBackColor = true;
-            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
+            // lbl_Time
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 323);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
+            this.lbl_Time.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_Time.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Time.ForeColor = System.Drawing.Color.White;
+            this.lbl_Time.Location = new System.Drawing.Point(189, 435);
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Size = new System.Drawing.Size(807, 42);
+            this.lbl_Time.TabIndex = 12;
+            this.lbl_Time.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 432);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 42);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Wait time:";
+            // 
+            // lblHint
+            // 
+            this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHint.BackColor = System.Drawing.Color.Transparent;
+            this.lblHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHint.ForeColor = System.Drawing.Color.SeaShell;
+            this.lblHint.Location = new System.Drawing.Point(0, 708);
+            this.lblHint.Name = "lblHint";
+            this.lblHint.Size = new System.Drawing.Size(984, 16);
+            this.lblHint.TabIndex = 13;
+            this.lblHint.Text = "Hint";
+            this.lblHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pb_Play
+            // 
+            this.pb_Play.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.PlayGame;
+            this.pb_Play.Location = new System.Drawing.Point(880, 577);
+            this.pb_Play.Name = "pb_Play";
+            this.pb_Play.Size = new System.Drawing.Size(128, 128);
+            this.pb_Play.TabIndex = 14;
+            this.pb_Play.TabStop = false;
+            this.pb_Play.Click += new System.EventHandler(this.pb_Play_Click);
+            // 
+            // pb_Exit
+            // 
+            this.pb_Exit.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Button_Close;
+            this.pb_Exit.Location = new System.Drawing.Point(3, 577);
+            this.pb_Exit.Name = "pb_Exit";
+            this.pb_Exit.Size = new System.Drawing.Size(128, 128);
+            this.pb_Exit.TabIndex = 15;
+            this.pb_Exit.TabStop = false;
+            this.pb_Exit.Click += new System.EventHandler(this.pb_Exit_Click);
             // 
             // Open_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_Send);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.btn_Listen);
+            this.Controls.Add(this.pb_Exit);
+            this.Controls.Add(this.pb_Play);
+            this.Controls.Add(this.lblHint);
+            this.Controls.Add(this.lbl_Time);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.flp_Team);
-            this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.btn_Start);
             this.Name = "Open_Game";
             this.Text = "Open_Game";
             this.Load += new System.EventHandler(this.Open_Game_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,14 +141,12 @@
 
         #endregion
 
-        public System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.Button btn_Start;
         private System.Windows.Forms.FlowLayoutPanel flp_Team;
-        private System.Windows.Forms.Button btn_Listen;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Time;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.PictureBox pb_Play;
+        private System.Windows.Forms.PictureBox pb_Exit;
     }
 }

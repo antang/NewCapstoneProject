@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace CapDemo
 {
-    public partial class Life : UserControl
+    public partial class multichoice : UserControl
     {
-        public Life()
+        public multichoice()
         {
             InitializeComponent();
         }
 
-        private void Life_Load(object sender, EventArgs e)
-        {
-            //label1.Text = "";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        public EventHandler oncheck;
     }
 }

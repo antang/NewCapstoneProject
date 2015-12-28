@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace CapDemo
 {
-    public partial class Life : UserControl
+    public partial class shortanswer : UserControl
     {
-        public Life()
+        public shortanswer()
         {
             InitializeComponent();
         }
 
-        private void Life_Load(object sender, EventArgs e)
+        private void shortanswer_Load(object sender, EventArgs e)
         {
-            //label1.Text = "";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            this.Size = new System.Drawing.Size(187,30);
         }
     }
 }

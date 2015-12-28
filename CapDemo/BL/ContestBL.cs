@@ -35,6 +35,7 @@ namespace CapDemo.BL
                     Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
                     Contest.NameContest = (item["Contest_Name"]).ToString();
                     Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.TimeSupport = Convert.ToInt32(item["Request_Time"].ToString());
                     Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
                     Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
                     Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
@@ -55,7 +56,7 @@ namespace CapDemo.BL
             List<Contest> ContestList = new List<Contest>();
             string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
                         + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
-                        + ",r.[Round_Name],r.[Round_ID],n.[Competition_Name],r.[Competition_ID]"
+                        + ",r.[Round_Name],n.[Competition_Name],r.[Competition_ID]"
                         + " FROM [Contest] c"
                         + " INNER JOIN [Round] r ON r.[Round_ID] = c.[Round_ID]"
                         + " INNER JOIN [Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
@@ -70,6 +71,7 @@ namespace CapDemo.BL
                     Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
                     Contest.NameContest = (item["Contest_Name"]).ToString();
                     Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.TimeSupport = Convert.ToInt32(item["Request_Time"].ToString());
                     Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
                     Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
                     Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
@@ -113,6 +115,7 @@ namespace CapDemo.BL
                     Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
                     Contest.NameContest = (item["Contest_Name"]).ToString();
                     Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.TimeSupport = Convert.ToInt32(item["Request_Time"].ToString());
                     Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
                     Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
                     Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
@@ -142,7 +145,7 @@ namespace CapDemo.BL
                 +"([Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge],"
                 +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False])"
                 + " VALUES ('" + Contest.IDRound + "','" + Contest.NameContest.Replace("'", "''") + "','" + Contest.Bonus + "',"
-                            +"'" + Contest.RequestTime + "','" + Contest.ChallengceScore + "','" + Contest.NumberChallenge + "',"
+                            + "'" + Contest.TimeSupport + "','" + Contest.ChallengceScore + "','" + Contest.NumberChallenge + "',"
                             + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "')";
             if (ExistContest(Contest) == true)
             {
@@ -187,7 +190,7 @@ namespace CapDemo.BL
         {
             string query = "UPDATE [Contest]"
                          + " SET [Round_ID] = '" + Contest.IDRound + "',[Contest_Name] = '" + Contest.NameContest.Replace("'", "''") + "'"
-                         + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.RequestTime + "'"
+                         + ",[Bonus]='" + Contest.Bonus + "',[Request_Time]='" + Contest.TimeSupport + "'"
                          + ",[Challenge_Score] = '" + Contest.ChallengceScore + "', [Number_Challenge] = '" + Contest.NumberChallenge + "'"
                          + ",[Time_show_Anwer] = '" + Contest.TimeShowAnswer + "', [Time_show_Question] = '" + Contest.TimeShowQuestion + "'"
                          + ",[Time_of_True] = '" + Contest.TimesTrue + "', [Time_of_False] = '" + Contest.TimesFalse + "'"
