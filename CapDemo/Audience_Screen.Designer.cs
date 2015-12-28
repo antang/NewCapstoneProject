@@ -33,7 +33,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Map = new System.Windows.Forms.TabPage();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Lane = new System.Windows.Forms.Panel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
@@ -44,6 +43,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pnl_FinishLane = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
@@ -67,8 +67,8 @@
             // 
             this.tab_Map.BackColor = System.Drawing.Color.White;
             this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.tab_Map.Controls.Add(this.pnl_FinishLane);
             this.tab_Map.Controls.Add(this.flp_Team);
-            this.tab_Map.Controls.Add(this.flowLayoutPanel2);
             this.tab_Map.Controls.Add(this.flp_Finish);
             this.tab_Map.Controls.Add(this.pnl_Lane);
             this.tab_Map.Location = new System.Drawing.Point(4, 22);
@@ -86,16 +86,6 @@
             this.flp_Team.Name = "flp_Team";
             this.flp_Team.Size = new System.Drawing.Size(375, 735);
             this.flp_Team.TabIndex = 3;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Red;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 89);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(631, 52);
-            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // flp_Finish
             // 
@@ -219,6 +209,16 @@
             this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
             this.imageList1.Images.SetKeyName(15, "y-kien.png");
             // 
+            // pnl_FinishLane
+            // 
+            this.pnl_FinishLane.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_FinishLane.BackColor = System.Drawing.Color.Gold;
+            this.pnl_FinishLane.Location = new System.Drawing.Point(4, 89);
+            this.pnl_FinishLane.Name = "pnl_FinishLane";
+            this.pnl_FinishLane.Size = new System.Drawing.Size(631, 52);
+            this.pnl_FinishLane.TabIndex = 4;
+            // 
             // Audience_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,9 +250,9 @@
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.FlowLayoutPanel flp_Finish;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
+        public System.Windows.Forms.Panel pnl_FinishLane;
     }
 }
