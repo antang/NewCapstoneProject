@@ -33,8 +33,8 @@
             this.pb_Heart1 = new System.Windows.Forms.PictureBox();
             this.pb_Heart2 = new System.Windows.Forms.PictureBox();
             this.pb_Heart3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pb_ChallengeChoice = new System.Windows.Forms.PictureBox();
+            this.pb_SupportChoice = new System.Windows.Forms.PictureBox();
             this.lbl_TeamName = new System.Windows.Forms.Label();
             this.lbl_TeamScore = new System.Windows.Forms.Label();
             this.pb_TeamShirt = new System.Windows.Forms.PictureBox();
@@ -45,8 +45,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ChallengeChoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SupportChoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TeamShirt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,25 +90,25 @@
             this.pb_Heart3.TabIndex = 5;
             this.pb_Heart3.TabStop = false;
             // 
-            // pictureBox2
+            // pb_ChallengeChoice
             // 
-            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.thach_dau;
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Location = new System.Drawing.Point(312, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 44);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pb_ChallengeChoice.BackgroundImage = global::CapDemo.Properties.Resources.thach_dau;
+            this.pb_ChallengeChoice.Enabled = false;
+            this.pb_ChallengeChoice.Location = new System.Drawing.Point(312, 40);
+            this.pb_ChallengeChoice.Name = "pb_ChallengeChoice";
+            this.pb_ChallengeChoice.Size = new System.Drawing.Size(44, 44);
+            this.pb_ChallengeChoice.TabIndex = 5;
+            this.pb_ChallengeChoice.TabStop = false;
             // 
-            // pictureBox3
+            // pb_SupportChoice
             // 
-            this.pictureBox3.BackgroundImage = global::CapDemo.Properties.Resources.y_kien;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(306, 90);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 40);
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.pb_SupportChoice.BackgroundImage = global::CapDemo.Properties.Resources.y_kien;
+            this.pb_SupportChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_SupportChoice.Location = new System.Drawing.Point(306, 90);
+            this.pb_SupportChoice.Name = "pb_SupportChoice";
+            this.pb_SupportChoice.Size = new System.Drawing.Size(55, 40);
+            this.pb_SupportChoice.TabIndex = 5;
+            this.pb_SupportChoice.TabStop = false;
             // 
             // lbl_TeamName
             // 
@@ -156,9 +156,9 @@
             // 
             this.lbl_Hint.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Hint.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Hint.Location = new System.Drawing.Point(3, 3);
+            this.lbl_Hint.Location = new System.Drawing.Point(18, 3);
             this.lbl_Hint.Name = "lbl_Hint";
-            this.lbl_Hint.Size = new System.Drawing.Size(242, 31);
+            this.lbl_Hint.Size = new System.Drawing.Size(227, 31);
             this.lbl_Hint.TabIndex = 7;
             this.lbl_Hint.Text = "Game Over";
             this.lbl_Hint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,8 +171,8 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbl_Hint);
             this.Controls.Add(this.lbl_ID);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pb_SupportChoice);
+            this.Controls.Add(this.pb_ChallengeChoice);
             this.Controls.Add(this.lbl_TeamScore);
             this.Controls.Add(this.lbl_TeamName);
             this.Controls.Add(this.flp_Heart);
@@ -183,8 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ChallengeChoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SupportChoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TeamShirt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,8 +200,8 @@
         public System.Windows.Forms.PictureBox pb_Heart3;
         public System.Windows.Forms.Label lbl_TeamName;
         public System.Windows.Forms.Label lbl_TeamScore;
-        public System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.PictureBox pb_ChallengeChoice;
+        public System.Windows.Forms.PictureBox pb_SupportChoice;
         public System.Windows.Forms.Timer timerHighLight;
         public System.Windows.Forms.Label lbl_ID;
         public System.Windows.Forms.Label lbl_Hint;

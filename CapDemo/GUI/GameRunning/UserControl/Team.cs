@@ -31,13 +31,16 @@ namespace CapDemo
 
         private void chk_Support_CheckedChanged(object sender, EventArgs e)
         {
-            EventHandler checksupport = checkSupport;
-            if (checksupport!=null)
+            if (chk_Support.Checked ==true)
             {
-                MyEventArgs args = new MyEventArgs();
-                args.IDPlayerUC = idPlayerUC;
-                checksupport(this, args);
-            }
+                EventHandler checksupport = checkSupport;
+                if (checksupport != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    checksupport(this, args);
+                }
+            }  
         }
 
 
