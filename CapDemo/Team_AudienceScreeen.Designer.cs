@@ -40,6 +40,7 @@
             this.pb_TeamShirt = new System.Windows.Forms.PictureBox();
             this.timerHighLight = new System.Windows.Forms.Timer(this.components);
             this.lbl_ID = new System.Windows.Forms.Label();
+            this.lbl_Hint = new System.Windows.Forms.Label();
             this.flp_Heart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart2)).BeginInit();
@@ -132,7 +133,7 @@
             // pb_TeamShirt
             // 
             this.pb_TeamShirt.BackgroundImage = global::CapDemo.Properties.Resources.ao_lon;
-            this.pb_TeamShirt.Location = new System.Drawing.Point(22, 27);
+            this.pb_TeamShirt.Location = new System.Drawing.Point(19, 37);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
             this.pb_TeamShirt.Size = new System.Drawing.Size(78, 92);
             this.pb_TeamShirt.TabIndex = 0;
@@ -151,11 +152,24 @@
             this.lbl_ID.TabIndex = 6;
             this.lbl_ID.Visible = false;
             // 
+            // lbl_Hint
+            // 
+            this.lbl_Hint.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Hint.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Hint.Location = new System.Drawing.Point(3, 3);
+            this.lbl_Hint.Name = "lbl_Hint";
+            this.lbl_Hint.Size = new System.Drawing.Size(242, 31);
+            this.lbl_Hint.TabIndex = 7;
+            this.lbl_Hint.Text = "Game Over";
+            this.lbl_Hint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Hint.Visible = false;
+            // 
             // Team_AudienceScreeen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lbl_Hint);
             this.Controls.Add(this.lbl_ID);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -190,6 +204,7 @@
         public System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.Timer timerHighLight;
         public System.Windows.Forms.Label lbl_ID;
+        public System.Windows.Forms.Label lbl_Hint;
 
     }
 }

@@ -43,5 +43,13 @@ namespace CapDemo.GUI.User_Controls
             get { return iDGame; }
             set { iDGame = value; }
         }
+
+        int iDPlayerUC;
+
+        public int IDPlayerUC
+        {
+            get { return iDPlayerUC; }
+            set { iDPlayerUC = value; }
+        }
     }
 }

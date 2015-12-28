@@ -15,6 +15,7 @@ using System.Threading;
 using myStruct;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using CapDemo.GUI.User_Controls;
 
 namespace CapDemo
 {
@@ -31,6 +32,7 @@ namespace CapDemo
             get { return iDContest; }
             set { iDContest = value; }
         }
+        int tag = 0;
         #region Declare
         Player Player = new Player();
         Contest Contest = new Contest();
@@ -96,7 +98,7 @@ namespace CapDemo
                     AutoShowAnswer = ListContest.ElementAt(i).TimeShowAnswer;
                     AmountSteptoPass = ListContest.ElementAt(i).TimesTrue;
                     AmountSteptofail = ListContest.ElementAt(i).TimesFalse;
-                    TimeSupport = ListContest.ElementAt(i).RequestTime;
+                    TimeSupport = ListContest.ElementAt(i).TimeSupport;
                     Bonus = ListContest.ElementAt(i).Bonus;
                     ChallengeScore = ListContest.ElementAt(i).ChallengceScore;
                     NumofChallenge = ListContest.ElementAt(i).NumberChallenge;
@@ -121,13 +123,18 @@ namespace CapDemo
                     if (ListPlayer.ElementAt(i) != null)
                     {
                         Team team = new Team();
+                        tag++;
+                        team.Tag = tag;
+                        team.IdPlayerUC = tag;
+                        team.checkSupport += team_checkSupport;
                         team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
                         team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
                         team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
                         team.lbl_Sequence.Text = ListPlayer.ElementAt(i).Sequence.ToString();
+                        team.gb_team.Visible = false;
                         idPlayer = ListPlayer.ElementAt(i).IDPlayer;
                         
-                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail);
+                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail, true,0, ListPlayer.ElementAt(i).PlayerScore);
                         records.Add(r);
 
                         flp_Team.Controls.Add(team);
@@ -135,11 +142,36 @@ namespace CapDemo
                 }
             }
         }
+        //get eventhandler check support from audience choice
+        void team_checkSupport(object sender, EventArgs e)
+        {
+            int idPlayerUC = (e as MyEventArgs).IDPlayerUC;
+            foreach (Team TeamUC in flp_Team.Controls)
+            {
+                if (TeamUC.IdPlayerUC == idPlayerUC)
+                {
+                    timer1.Stop();
+                    DialogResult dr = MessageBox.Show("Are you sure to use this choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        lbl_Time.Text = (Convert.ToInt32(lbl_Time.Text)+(TimeSupport)).ToString();
+                        timer1.Interval = 1000;
+                        timer1.Start();
+                    }
+                    else
+                    {
+                        timer1.Start();
+                    }
+                }
+            }
+        }
+        //load form
         public void LoadForm()
         {
             this.Dock = DockStyle.Fill;
             GetContestContent();
         }
+        //load form
         private void Open_Game_Load(object sender, EventArgs e)
         {
             LoadForm(); 
@@ -154,11 +186,17 @@ namespace CapDemo
             {
                 team = 0;
             }
+            int i = 0;
             //show all team on controller screen
             foreach (Team teamControllerScreen in flp_Team.Controls)
             {
                 teamControllerScreen.BackColor = Color.Gainsboro;
+                teamControllerScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(i).IDPlayer);
+                teamControllerScreen.lbl_TeamScore.Text = records.ElementAt(i).TeamScore.ToString();
+                teamControllerScreen.lbl_CurrentPhase.Text = NameofPhase(records.ElementAt(i).IDPhase);
+                teamControllerScreen.gb_team.Visible = false;
                 teamControllerScreen.flp_Answer.Controls.Clear();
+                i++;
             }
             //show lanes in audience screen
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
@@ -166,10 +204,45 @@ namespace CapDemo
                 playerLane.pb_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
                 playerLane.HighLight(false);
             }
+
+            int j = 0;
             //show player information on audience screen
             foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
             {
-                    teamAdienceScreen.HighLight(false);
+                teamAdienceScreen.HighLight(false);
+                teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
+                teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
+                if (records.ElementAt(j).NumFail==3)
+                {
+                    teamAdienceScreen.pb_Heart1.Show();
+                    teamAdienceScreen.pb_Heart2.Show();
+                    teamAdienceScreen.pb_Heart3.Show();
+                }
+                else
+                {
+                    if (records.ElementAt(j).NumFail == 2)
+                    {
+                        teamAdienceScreen.pb_Heart1.Show();
+                        teamAdienceScreen.pb_Heart2.Show();
+                        teamAdienceScreen.pb_Heart3.Hide();
+                    }
+                    else
+                    {
+                        if (records.ElementAt(j).NumFail == 1)
+                        {
+                            teamAdienceScreen.pb_Heart1.Show();
+                            teamAdienceScreen.pb_Heart2.Hide();
+                            teamAdienceScreen.pb_Heart3.Hide();
+                        }
+                        else
+                        {
+                            teamAdienceScreen.pb_Heart1.Hide();
+                            teamAdienceScreen.pb_Heart2.Hide();
+                            teamAdienceScreen.pb_Heart3.Hide();
+                        }
+                    }
+                }
+                j++;
             }
             //Clear panel
             audience.flp_AnswerQuiz.Controls.Clear();
@@ -180,6 +253,32 @@ namespace CapDemo
         // Go player will compete
         public void GoPlayer()
         {
+            // Get team in turn
+            for (int i = 0; i < records.Count; i++)
+            {
+                if (i== team)
+                {
+                    if (records.ElementAt(i).Exist == true)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        team++;
+                        if (team== AmountPlayer)
+                        {
+                            for (int j = 0; j < records.Count; j++)
+                            {
+                                if (records.ElementAt(j).Exist == true)
+                                {
+                                    team = j;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             //show on game controller screen
             foreach (Team item in flp_Team.Controls)
             {
@@ -187,9 +286,12 @@ namespace CapDemo
                 {
                     item.BackColor = Color.LightPink;
                     item.Enabled = true;
+                    item.gb_team.Visible = true;
+                    item.chk_Support.Visible = false;
                 }else
 	            {
-                    item.Enabled = false;
+                    //item.Enabled = false;
+                    //item.gb_team.Visible = false;
 	            }
             }
             
@@ -199,7 +301,7 @@ namespace CapDemo
                 if (Convert.ToInt32(item.lbl_SequencePlayer.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
                     item.HighLight(true);
-                    if (records.ElementAt(team).NumPass  == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail)
+                    if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0)
                     {
                         item.pb_Team.Location = new Point(item.pb_Team.Location.X + 0, item.pb_Team.Location.Y - 55);                        
                     }
@@ -211,6 +313,13 @@ namespace CapDemo
                 if (Convert.ToInt32(teamAdienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
                 {
                     teamAdienceScreen.HighLight(true);
+                }
+                else
+                {
+                    if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
+                    {
+                        teamAdienceScreen.lbl_Hint.Visible=true;
+                    }
                 }
             }
             
@@ -283,7 +392,7 @@ namespace CapDemo
                             }
                             else
                             {
-
+                                audience.flp_AnswerQuiz.BackColor = Color.Transparent;
                             }
                         }
                         //update 
@@ -304,6 +413,9 @@ namespace CapDemo
                                     onechoice one = new onechoice();
                                     one.radioButton1.Text = Convert.ToChar(a + h).ToString();
                                     item.flp_Answer.Controls.Add(one);
+                                    item.chk_Support.Visible = true;
+                                    item.chk_defy.Visible = false;
+                                    item.chk_Question.Visible = false;
                                 }
                             }
                             else
@@ -315,11 +427,20 @@ namespace CapDemo
                                         multichoice multi = new multichoice();
                                         multi.checkBox1.Text = Convert.ToChar(a + h).ToString();
                                         item.flp_Answer.Controls.Add(multi);
+                                        item.chk_Support.Visible = true;
+                                        item.chk_defy.Visible = false;
+                                        item.chk_Question.Visible = false;
                                     }
                                 }
                                 else
                                 {
-
+                                    shortanswer shortanswer = new shortanswer();
+                                    shortanswer.Location = new Point(shortanswer.Location.X + 3, shortanswer.Location.Y + 3);
+                                    
+                                    item.flp_Answer.Controls.Add(shortanswer);
+                                    item.chk_Support.Visible = true;
+                                    item.chk_defy.Visible = false;
+                                    item.chk_Question.Visible = false;
                                 }
                             }
                         }
@@ -387,12 +508,17 @@ namespace CapDemo
                         }
                         else
                         {
-
+                            foreach (shortanswer shortanwser in item.flp_Answer.Controls)
+                            {
+                                audience.flp_AnswerQuiz.Controls.Add(shortanwser);
+                            }
                         }
                     }
+                    item.gb_team.Visible = false;
                 }
                 else
                 {
+                    item.gb_team.Visible = false;
                 }
             }
             step++;
@@ -430,6 +556,7 @@ namespace CapDemo
         //Update point for player
         public void CalculteScore()
         {
+            int NumPlayerEndGame = 0;
             if (PlayerCheck == CorrectAnswer)
             {
                 int score = 0;
@@ -458,40 +585,44 @@ namespace CapDemo
                     {
                         teamAudienceScreen.lbl_TeamScore.Text = (Convert.ToInt32(teamAudienceScreen.lbl_TeamScore.Text) + score).ToString();
                     }
-                }     
-                ////update log
-                //NumTrue = NumT(idpla)-1;
+                }
+                //Update score into record
+                records.ElementAt(team).TeamScore += score;
+                //move to next phase
+                if (records.ElementAt(team).NumPass == 0)
+                {
+                    //get phase
+                    Phase.IDContest = iDContest;
+                    List<Phase> ListPhase;
+                    ListPhase = PhaseBL.GetPhaseByIDContest(Phase);
+                    records.ElementAt(team).PhaseIndex += 1;
+                    records.ElementAt(team).NumFail = AmountSteptofail;
+                    records.ElementAt(team).NumPass = AmountSteptoPass;
+                    if (records.ElementAt(team).PhaseIndex < AmountPhase)
+                    {
+                        records.ElementAt(team).IDPhase = ListPhase.ElementAt(records.ElementAt(team).PhaseIndex).IDPhase;
+                    }
+                    else
+                    {
 
-                //if (NumTrue == 0)
-                //{
-                //    Log.PlayerID = idpla;
-                //    Log.PlayerScore = ScoreofPlayer(idpla) + score;
-                //    Log.CurrentNumofTrue = AmountSteptoPass;
-                //    Log.CurrentNumofFalse = AmountSteptofail;
-                //    //get current sequence of phase
-
-                //    Log.PhaseID = IDofPhase(iDContest,SeqPhase+1);
-                //    logBL.EditLogbyIDPlayer(Log);
-                //}
-                //else
-                //{
-                //    Log.PlayerID = idpla;
-                //    Log.CurrentNumofTrue = NumTrue;
-                //    Log.PlayerScore = ScoreofPlayer(idpla)+ score;
-                //    logBL.EditLogbyIDPlayer(Log);
-                //}
-
+                    }
+                    
+                }
+                
             }
             else
             {
+                //munus life if team fail in question
                 records.ElementAt(team).NumFail -= 1;
                 foreach (Team_AudienceScreeen teamAudienceScreen in audience.flp_Team.Controls)
                 {
                     if (Convert.ToInt32(teamAudienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
                     {
-                        if (records.ElementAt(team).NumFail ==1)
+                        if (records.ElementAt(team).NumFail ==0)
                         {
-                            teamAudienceScreen.pb_Heart2.Hide();
+                            
+                            teamAudienceScreen.pb_Heart1.Hide();
+                            records.ElementAt(team).Exist = false;
                         }
                         else
                         {
@@ -501,25 +632,51 @@ namespace CapDemo
                             }
                             else
                             {
-                                teamAudienceScreen.pb_Heart1.Hide();
+                                teamAudienceScreen.pb_Heart2.Hide();
                             }
                         }
                     }
-                } 
+                }
+                //check to end game
+                foreach (Record record in records)
+                {
+                    if (record.Exist==false)
+                    {
+                        NumPlayerEndGame++;
+                    } 
+                }
             }
-            //move to another player
-            CorrectAnswer =0;
-            PlayerCheck = 0;
-            team++;
-            step = 1;
+            //End Game
+            if (NumPlayerEndGame == AmountPlayer)
+            {
+                MessageBox.Show("End Game!");
+                this.Close();
+            }
+            else
+            {
+                //move to another player
+                CorrectAnswer = 0;
+                PlayerCheck = 0;
+                team++;
+                step = 1;
+            }
+            
         }
-        //Get point for phase by id contest and sequence of phase
+        //Get score of phase by id phase
         public int ScoreofPhase(int idpha)
         {
             List<Phase> ListPhase;
             Phase.IDPhase = idpha;
             ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
             return ListPhase.ElementAt(0).ScorePhase;
+        }
+        //Get name phase by id phase
+        public string NameofPhase(int idpha)
+        {
+            List<Phase> ListPhase;
+            Phase.IDPhase = idpha;
+            ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
+            return ListPhase.ElementAt(0).NamePhase;
         }
         //Get time of phase
         public int TimeofPhase(int idpha)

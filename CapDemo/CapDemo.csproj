@@ -442,6 +442,12 @@
     <Compile Include="GUI\GameRunning\UserControl\Team.Designer.cs">
       <DependentUpon>Team.cs</DependentUpon>
     </Compile>
+    <Compile Include="shortanswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="shortanswer.Designer.cs">
+      <DependentUpon>shortanswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -643,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Team.resx">
       <DependentUpon>Team.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shortanswer.resx">
+      <DependentUpon>shortanswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowAnswer.resx">
       <DependentUpon>ShowAnswer.cs</DependentUpon>

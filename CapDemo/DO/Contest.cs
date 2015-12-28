@@ -11,7 +11,7 @@ namespace CapDemo.DO
         int iDContest;
         string nameContest;
         int bonus;
-        int requestTime;
+        int timeSupport;
         int challengceScore;
         int numberChallenge;
         int timeShowAnswer;
@@ -36,7 +36,6 @@ namespace CapDemo.DO
             get { return playerList; }
             set { playerList = value; }
         }
-
         public Player Player
         {
             get { return player; }
@@ -91,11 +90,11 @@ namespace CapDemo.DO
             get { return bonus; }
             set { bonus = value; }
         }
-
-        public int RequestTime
+        
+        public int TimeSupport
         {
-            get { return requestTime; }
-            set { requestTime = value; }
+            get { return timeSupport; }
+            set { timeSupport = value; }
         }
 
         public int ChallengceScore

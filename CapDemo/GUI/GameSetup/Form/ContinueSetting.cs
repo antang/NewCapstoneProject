@@ -467,7 +467,7 @@ namespace CapDemo
                 cs.AmountPlayer = ts.CountTeam();
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(cs);
-                //LoadCompetitionSetting();
+                LoadCompetitionSetting();
                 btn_Next.Visible = false;
                 btn_Save.Visible = true;
                 btn_Back.Visible = true;
@@ -512,7 +512,7 @@ namespace CapDemo
                 Contest.IDContest = contestID;
                 Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
                 Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
-                Contest.RequestTime = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
+                Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
 
                 ContestBL.EditContestbyID(Contest);
                 this.Close();
@@ -539,7 +539,7 @@ namespace CapDemo
                         //General Setting
                         cs.txt_NumTeam.Text = ListContest.ElementAt(j).NumberChallenge.ToString();
                         cs.txt_ChallengeScore.Text = ListContest.ElementAt(j).ChallengceScore.ToString();
-                        cs.txt_TimeForSupport.Text = ListContest.ElementAt(j).RequestTime.ToString();
+                        cs.txt_TimeForSupport.Text = ListContest.ElementAt(j).TimeSupport.ToString();
                     }
                 }
             }

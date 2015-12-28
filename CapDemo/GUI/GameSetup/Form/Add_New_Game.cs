@@ -222,7 +222,7 @@ namespace CapDemo.GUI
                 Contest.IDContest = IdContest;
                 Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
                 Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
-                Contest.RequestTime = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
+                Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
 
                 ContestBL.EditContestbyID(Contest);
                 this.Close();

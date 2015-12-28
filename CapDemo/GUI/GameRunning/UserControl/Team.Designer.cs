@@ -159,7 +159,7 @@
             // 
             this.chk_defy.AutoSize = true;
             this.chk_defy.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_defy.Location = new System.Drawing.Point(16, 23);
+            this.chk_defy.Location = new System.Drawing.Point(16, 43);
             this.chk_defy.Name = "chk_defy";
             this.chk_defy.Size = new System.Drawing.Size(56, 17);
             this.chk_defy.TabIndex = 14;
@@ -170,18 +170,19 @@
             // 
             this.chk_Support.AutoSize = true;
             this.chk_Support.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_Support.Location = new System.Drawing.Point(16, 47);
+            this.chk_Support.Location = new System.Drawing.Point(16, 66);
             this.chk_Support.Name = "chk_Support";
             this.chk_Support.Size = new System.Drawing.Size(77, 17);
             this.chk_Support.TabIndex = 15;
             this.chk_Support.Text = "Support";
             this.chk_Support.UseVisualStyleBackColor = true;
+            this.chk_Support.CheckedChanged += new System.EventHandler(this.chk_Support_CheckedChanged);
             // 
             // chk_Question
             // 
             this.chk_Question.AutoSize = true;
             this.chk_Question.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_Question.Location = new System.Drawing.Point(16, 71);
+            this.chk_Question.Location = new System.Drawing.Point(16, 20);
             this.chk_Question.Name = "chk_Question";
             this.chk_Question.Size = new System.Drawing.Size(196, 17);
             this.chk_Question.TabIndex = 16;
@@ -286,8 +287,8 @@
         public System.Windows.Forms.CheckBox chk_Question;
         public System.Windows.Forms.Label lbl_Sequence;
         public System.Windows.Forms.FlowLayoutPanel flp_Answer;
-        private System.Windows.Forms.GroupBox gb_team;
         private System.Windows.Forms.CheckBox chk_true;
+        public System.Windows.Forms.GroupBox gb_team;
 
     }
 }
