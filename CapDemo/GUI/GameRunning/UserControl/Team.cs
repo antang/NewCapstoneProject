@@ -24,11 +24,12 @@ namespace CapDemo
             set { idPlayerUC = value; }
         }
         public event EventHandler checkSupport;
+        public event EventHandler checkQuestionPM;
         private void lbl_ShowMenu_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(Cursor.Position);
         }
-
+        //check to get support form audience
         private void chk_Support_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_Support.Checked ==true)
@@ -39,6 +40,20 @@ namespace CapDemo
                     MyEventArgs args = new MyEventArgs();
                     args.IDPlayerUC = idPlayerUC;
                     checksupport(this, args);
+                }
+            }  
+        }
+        //check to show question PM
+        private void chk_QuestionPM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_QuestionPM.Checked == true)
+            {
+                EventHandler checkquestionPM = checkQuestionPM;
+                if (checkquestionPM != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    checkquestionPM(this, args);
                 }
             }  
         }

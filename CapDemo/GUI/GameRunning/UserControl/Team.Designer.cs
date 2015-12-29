@@ -42,7 +42,7 @@
             this.lbl_P = new System.Windows.Forms.Label();
             this.chk_defy = new System.Windows.Forms.CheckBox();
             this.chk_Support = new System.Windows.Forms.CheckBox();
-            this.chk_Question = new System.Windows.Forms.CheckBox();
+            this.chk_QuestionPM = new System.Windows.Forms.CheckBox();
             this.lbl_Answer = new System.Windows.Forms.Label();
             this.lbl_Sequence = new System.Windows.Forms.Label();
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
@@ -178,16 +178,17 @@
             this.chk_Support.UseVisualStyleBackColor = true;
             this.chk_Support.CheckedChanged += new System.EventHandler(this.chk_Support_CheckedChanged);
             // 
-            // chk_Question
+            // chk_QuestionPM
             // 
-            this.chk_Question.AutoSize = true;
-            this.chk_Question.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_Question.Location = new System.Drawing.Point(16, 20);
-            this.chk_Question.Name = "chk_Question";
-            this.chk_Question.Size = new System.Drawing.Size(196, 17);
-            this.chk_Question.TabIndex = 16;
-            this.chk_Question.Text = "Question For Management";
-            this.chk_Question.UseVisualStyleBackColor = true;
+            this.chk_QuestionPM.AutoSize = true;
+            this.chk_QuestionPM.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_QuestionPM.Location = new System.Drawing.Point(16, 20);
+            this.chk_QuestionPM.Name = "chk_QuestionPM";
+            this.chk_QuestionPM.Size = new System.Drawing.Size(196, 17);
+            this.chk_QuestionPM.TabIndex = 16;
+            this.chk_QuestionPM.Text = "Question For Management";
+            this.chk_QuestionPM.UseVisualStyleBackColor = true;
+            this.chk_QuestionPM.CheckedChanged += new System.EventHandler(this.chk_QuestionPM_CheckedChanged);
             // 
             // lbl_Answer
             // 
@@ -220,7 +221,7 @@
             // 
             this.gb_team.Controls.Add(this.chk_Support);
             this.gb_team.Controls.Add(this.chk_defy);
-            this.gb_team.Controls.Add(this.chk_Question);
+            this.gb_team.Controls.Add(this.chk_QuestionPM);
             this.gb_team.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_team.Location = new System.Drawing.Point(6, 176);
             this.gb_team.Name = "gb_team";
@@ -284,7 +285,7 @@
         private System.Windows.Forms.Label lbl_Answer;
         public System.Windows.Forms.CheckBox chk_defy;
         public System.Windows.Forms.CheckBox chk_Support;
-        public System.Windows.Forms.CheckBox chk_Question;
+        public System.Windows.Forms.CheckBox chk_QuestionPM;
         public System.Windows.Forms.Label lbl_Sequence;
         public System.Windows.Forms.FlowLayoutPanel flp_Answer;
         private System.Windows.Forms.CheckBox chk_true;

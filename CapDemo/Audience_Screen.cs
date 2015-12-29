@@ -61,7 +61,7 @@ namespace CapDemo
             List<Player> listPlayer;
 
             listContest = contestBL.GetContestByID(contest);
-            listPhase = phaseBL.GetPhaseByIDContest(phase);
+            listPhase = phaseBL.GetPhaseNormal(phase);
             listPlayer = playerBL.GetPlayerByIDContest(player);
             //get element in contest
             if (listContest != null)

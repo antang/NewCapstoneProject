@@ -72,6 +72,7 @@
             this.rdb1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rdb1.AutoSize = true;
+            this.rdb1.Enabled = false;
             this.rdb1.Location = new System.Drawing.Point(0, 0);
             this.rdb1.Name = "rdb1";
             this.rdb1.Size = new System.Drawing.Size(14, 13);
@@ -86,6 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.chk1.AutoSize = true;
             this.chk1.BackColor = System.Drawing.Color.Transparent;
+            this.chk1.Enabled = false;
             this.chk1.Location = new System.Drawing.Point(0, 0);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(15, 14);

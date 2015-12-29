@@ -32,7 +32,8 @@ namespace CapDemo
             get { return iDContest; }
             set { iDContest = value; }
         }
-        int tag = 0;
+        int teamtTag = 0;
+        int onechoiceTag = 0;
         #region Declare
         Player Player = new Player();
         Contest Contest = new Contest();
@@ -110,7 +111,7 @@ namespace CapDemo
             //get phase
             Phase.IDContest = iDContest;
             List<Phase> ListPhase;
-            ListPhase = PhaseBL.GetPhaseByIDContest(Phase);
+            ListPhase = PhaseBL.GetPhaseNormal(Phase);
             AmountPhase = ListPhase.Count;
 
             //get player
@@ -125,10 +126,11 @@ namespace CapDemo
                     if (ListPlayer.ElementAt(i) != null)
                     {
                         Team team = new Team();
-                        tag++;
-                        team.Tag = tag;
-                        team.IdPlayerUC = tag;
+                        teamtTag++;
+                        team.Tag = teamtTag;
+                        team.IdPlayerUC = teamtTag;
                         team.checkSupport += team_checkSupport;
+                        team.checkQuestionPM += team_checkQuestionPM;
                         team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
                         team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
                         team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
@@ -143,6 +145,43 @@ namespace CapDemo
                     }
                 }
             }
+        }
+        //get eventhadler check question PM
+        void team_checkQuestionPM(object sender, EventArgs e)
+        {
+            int idPlayerUC = (e as MyEventArgs).IDPlayerUC;
+            foreach (Team TeamCS in flp_Team.Controls)
+            {
+                if (TeamCS.IdPlayerUC == idPlayerUC)
+                {
+                    int IDPhase = 0;
+                    List<Phase> ListPhase;
+                    Phase.IDContest = iDContest;
+                    ListPhase = PhaseBL.GetPhasePM(Phase);
+                    IDPhase = ListPhase.ElementAt(0).IDPhase;
+                    foreach (Team teamCS in flp_Team.Controls)
+                    {
+                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                        {
+                            if (records.ElementAt(team).Support == false)
+                            {
+                                teamCS.chk_Support.Visible = false;
+                            }
+                            else
+                            {
+                                teamCS.chk_Support.Visible = true;
+                            }
+                            teamCS.chk_QuestionPM.Visible = false;
+                            teamCS.chk_defy.Visible = false;
+                        }
+                    }
+                    //show audience screen
+                    lblHint.Text = guideline[3].ToString();
+                    audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
+                    //show question by id phase
+                    ShowQuestionByIDPhase(IDPhase);
+                }
+            }  
         }
         //get eventhandler check support from audience choice
         void team_checkSupport(object sender, EventArgs e)
@@ -189,18 +228,12 @@ namespace CapDemo
             }
         }
         //load form
-        public void LoadForm()
+        private void Open_Game_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
             GetContestContent();
-        }
-        //load form
-        private void Open_Game_Load(object sender, EventArgs e)
-        {
-            LoadForm(); 
             lblHint.Text = guideline[0].ToString();
         }
-        
         //load Map
         public void loadMap()
         {
@@ -218,7 +251,7 @@ namespace CapDemo
                 teamControllerScreen.lbl_TeamScore.Text = records.ElementAt(i).TeamScore.ToString();
                 teamControllerScreen.lbl_CurrentPhase.Text = NameofPhase(records.ElementAt(i).IDPhase);
                 teamControllerScreen.gb_team.Visible = false;
-                teamControllerScreen.chk_Question.Checked = false;
+                teamControllerScreen.chk_QuestionPM.Checked = false;
                 teamControllerScreen.chk_defy.Checked = false;
                 teamControllerScreen.chk_Support.Checked = false;
                 teamControllerScreen.flp_Answer.Controls.Clear();
@@ -332,7 +365,7 @@ namespace CapDemo
                     item.BackColor = Color.LightPink;
                     item.Enabled = true;
                     item.gb_team.Visible = true;
-                    item.chk_Question.Visible = true;
+                    item.chk_QuestionPM.Visible = true;
                     if (records.ElementAt(team).Defy ==true)
                     {
                         item.chk_defy.Visible = true;
@@ -383,17 +416,12 @@ namespace CapDemo
         //Show question Answer
         public void ShowQuestion()
         {
-            List<Phase> ListPhase;
-            List<Question> ListQuestion;
-            List<Answer> ListAnswer;
-            int idquestion= 0;
-            int a = 65;
-
+            int IDPhase=0;
             foreach (Team teamCS in flp_Team.Controls)
             {
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
-                    Phase.IDPhase = records.ElementAt(team).IDPhase;
+                    IDPhase = records.ElementAt(team).IDPhase;
                     if (records.ElementAt(team).Support == false)
                     {
                         teamCS.chk_Support.Visible = false;
@@ -402,120 +430,12 @@ namespace CapDemo
                     {
                         teamCS.chk_Support.Visible = true;
                     }
-                    teamCS.chk_Question.Visible = false;
+                    teamCS.chk_QuestionPM.Visible = false;
                     teamCS.chk_defy.Visible = false;
                 }
             }
-            //get list question in phase
-            ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
-            if (ListPhase != null)
-            {
-                try
-                {
-                    idquestion = ListPhase.ElementAt(0).IDQuestion;
-
-                    //show question in phase
-                    Question.IDQuestion = idquestion;
-                    ListQuestion = QuestionBL.GetQuestionByID(Question);
-                    ListAnswer = QuestionBL.GetAnswerByQuestionID(Question);
-                    //////show question on audience screen
-                    if (ListQuestion != null)
-                    {
-                        /////display question on audience screen
-                        audience.richTextBox1.Text = ListQuestion.ElementAt(0).NameQuestion;
-                        typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
-
-                        /////question is onechoice type
-                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
-                        {
-                            for (int h = 0; h < ListAnswer.Count; h++)
-                            {
-                                ShowAnswer ShowAnswer = new ShowAnswer();
-                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2-10, audience.flp_AnswerQuiz.Height / 2-10);
-                                ShowAnswer.rdb1.Visible = true;
-                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
-                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
-                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
-                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
-                            }
-                        }
-                        else
-                        {   //question is multichoice type
-                            if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
-                            {
-                                for (int h = 0; h < ListAnswer.Count; h++)
-                                {
-                                    ShowAnswer ShowAnswer = new ShowAnswer();
-                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / 2 -10);
-                                    ShowAnswer.chk1.Visible = true;
-                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
-                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
-                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
-                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
-                                }
-                            }
-                            else
-                            {
-                                audience.flp_AnswerQuiz.BackColor = Color.Transparent;
-                                CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
-                            }
-                        }
-                        //update 
-                        Phase.IDQuestion = idquestion;
-                        //PhaseQuestionBl.EditQuestionStatus(Phase);
-                        step++;
-                    }
-
-                    /////show answer one on control screen
-                    foreach (Team teamCS in flp_Team.Controls)
-                    {
-                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
-                        {
-                            if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
-                            {
-                                for (int h = 0; h < ListAnswer.Count; h++)
-                                {
-                                    onechoice one = new onechoice();
-                                    one.radioButton1.Text = Convert.ToChar(a + h).ToString();
-                                    teamCS.flp_Answer.Controls.Add(one);
-                                }
-                            }
-                            else
-                            {
-                                if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
-                                {
-                                    for (int h = 0; h < ListAnswer.Count; h++)
-                                    {
-                                        multichoice multi = new multichoice();
-                                        multi.checkBox1.Text = Convert.ToChar(a + h).ToString();
-                                        teamCS.flp_Answer.Controls.Add(multi); 
-                                    }
-                                }
-                                else
-                                {
-                                    shortanswer shortanswer = new shortanswer();
-                                    shortanswer.Location = new Point(shortanswer.Location.X + 3, shortanswer.Location.Y + 3);
-                                    teamCS.flp_Answer.Controls.Add(shortanswer);
-                                }
-                            }
-                        }
-                    }
-
-                    ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
-                    //show countdown time on game controller screen
-                    lbl_Time.Text = ListPhase.ElementAt(0).TimePhase.ToString();
-                    timer1.Interval = 1000;
-                    timer1.Start();
-                    //show time conut down on audience screen
-                    audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
-                    audience.timer1.Interval = 1000;
-                    audience.timer1.Start();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Run Out of Question");
-                }
-            } 
+            //show question by id phase
+            ShowQuestionByIDPhase(IDPhase);
         }
         //Show Correct Answer
         public void EnterAnswer()
@@ -733,7 +653,7 @@ namespace CapDemo
                 //get phase
                 Phase.IDContest = iDContest;
                 List<Phase> ListPhase;
-                ListPhase = PhaseBL.GetPhaseByIDContest(Phase);
+                ListPhase = PhaseBL.GetPhaseNormal(Phase);
                 records.ElementAt(team).PhaseIndex += 1;
                 records.ElementAt(team).NumFail = AmountSteptofail;
                 records.ElementAt(team).NumPass = AmountSteptoPass;
@@ -775,7 +695,153 @@ namespace CapDemo
                 }
             }
         }
+        //show question by id question
+        public void ShowQuestionByIDPhase(int id)
+        {
+            //declare
+            List<Phase> ListPhase;
+            List<Question> ListQuestion;
+            List<Answer> ListAnswer;
+            int idquestion = 0;
+            int a = 65;
+            Phase.IDPhase = id;
 
+            ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
+            if (ListPhase != null)
+            {
+                try
+                {
+                    idquestion = ListPhase.ElementAt(0).IDQuestion;
+
+                    //show question in phase
+                    Question.IDQuestion = idquestion;
+                    ListQuestion = QuestionBL.GetQuestionByID(Question);
+                    ListAnswer = QuestionBL.GetAnswerByQuestionID(Question);
+                    //////show question on audience screen
+                    if (ListQuestion != null)
+                    {
+                        /////display question on audience screen
+                        audience.richTextBox1.Text = ListQuestion.ElementAt(0).NameQuestion;
+                        typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
+
+                        /////question is onechoice type
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                ShowAnswer ShowAnswer = new ShowAnswer();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / 2 - 10);
+                                ShowAnswer.rdb1.Visible = true;
+                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                            }
+                        }
+                        else
+                        {   //question is multichoice type
+                            if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    ShowAnswer ShowAnswer = new ShowAnswer();
+                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / 2 - 10);
+                                    ShowAnswer.chk1.Visible = true;
+                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                                }
+                            }
+                            else
+                            {
+                                audience.flp_AnswerQuiz.BackColor = Color.Transparent;
+                                CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
+                            }
+                        }
+                        //update 
+                        Phase.IDQuestion = idquestion;
+                        //PhaseQuestionBl.EditQuestionStatus(Phase);
+                        step++;
+                    }
+
+                    /////show answer one on control screen
+                    foreach (Team teamCS in flp_Team.Controls)
+                    {
+                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                        {
+                            if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    onechoice one = new onechoice();
+                                    onechoiceTag++;
+                                    one.Tag = onechoiceTag;
+                                    one.ID_OneChoice = onechoiceTag;
+                                    one.onCheckOneChoice += one_onCheckOneChoice;
+                                    one.radioButton1.Text = Convert.ToChar(a + h).ToString();
+                                    teamCS.flp_Answer.Controls.Add(one);
+                                }
+                            }
+                            else
+                            {
+                                if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                                {
+                                    for (int h = 0; h < ListAnswer.Count; h++)
+                                    {
+                                        multichoice multi = new multichoice();
+                                        multi.checkBox1.Text = Convert.ToChar(a + h).ToString();
+                                        teamCS.flp_Answer.Controls.Add(multi);
+                                    }
+                                }
+                                else
+                                {
+                                    shortanswer shortanswer = new shortanswer();
+                                    shortanswer.Location = new Point(shortanswer.Location.X + 3, shortanswer.Location.Y + 3);
+                                    teamCS.flp_Answer.Controls.Add(shortanswer);
+                                }
+                            }
+                        }
+                    }
+
+                    ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
+                    //show countdown time on game controller screen
+                    lbl_Time.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                    timer1.Interval = 1000;
+                    timer1.Start();
+                    //show time conut down on audience screen
+                    audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                    audience.timer1.Interval = 1000;
+                    audience.timer1.Start();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Run Out of Question");
+                }
+            } 
+        }
+        //get eventhandler check one choice on controller screen
+        void one_onCheckOneChoice(object sender, EventArgs e)
+        {
+            //int idPlayerUC = (e as MyEventArgs).IDPlayerUC;
+            foreach (Team TeamCS in flp_Team.Controls)
+            {
+                //if (TeamCS.IdPlayerUC == idPlayerUC)
+                //{
+                    int onechoiceID = (e as MyEventArgs).IDOneChoice;
+                    foreach (onechoice onechoice in TeamCS.flp_Answer.Controls)
+                    {
+                        if (onechoice.ID_OneChoice != onechoiceID)
+                        {
+                            onechoice.radioButton1.Checked = false;
+                        }
+                    }
+                //}
+            }
+
+            
+        }
+        #region Property in game
         //Get score of phase by id phase
         //get from database
         public int ScoreofPhase(int idpha)
@@ -902,6 +968,7 @@ namespace CapDemo
             ListLog = logBL.GetLogByIdPlayer(Log);
             return ListLog.ElementAt(0).PlayerScore;
         }
+        #endregion
         //update log
         public void UpdateLog(int idPla, int idpha,int score, int NumTrue, int NumFalse, int check)
         {
@@ -913,7 +980,7 @@ namespace CapDemo
             Log.Check = check;
             logBL.EditLogbyIDPlayer(Log);
         }
-
+        //each step to controller control game
         public void StartGame()
         {
             //Rungame.IdContest = iDContest;
