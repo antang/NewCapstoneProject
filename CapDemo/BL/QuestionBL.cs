@@ -259,11 +259,14 @@ namespace CapDemo.BL
             int stt = 1;
             DataTable dtb = new DataTable();
             dtb.Columns.Add("Sequence", typeof(string));
+            dtb.Columns.Add("QuestionTitle", typeof(string));
             dtb.Columns.Add("NameQuestion", typeof(string));
             dtb.Columns.Add("TypeQuestion", typeof(string));
             dtb.Columns.Add("AnswerContent", typeof(string));
 
             content = content.Replace("[Q]", "");
+            content = content.Replace("[NQ]", "---");
+            content = content.Replace("[/NQ]", "");
             content = content.Replace("[TQ]", "---");
             content = content.Replace("[/TQ]", "---");
 
@@ -272,7 +275,7 @@ namespace CapDemo.BL
             for (int i = 0; i < QuestionContent.Length-1; i++)
             {
                 string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-                dtb.Rows.Add(stt.ToString(), QuestionItem[0], QuestionItem[1], QuestionItem[2]);
+                dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2], QuestionItem[3]);
                 stt++;
             }
 
@@ -283,6 +286,7 @@ namespace CapDemo.BL
                 {
                     Question Question = new Question();
                     Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                    Question.QuestionTitle = item["QuestionTitle"].ToString();
                     Question.NameQuestion = item["NameQuestion"].ToString();
                     Question.TypeQuestion = item["TypeQuestion"].ToString();
 

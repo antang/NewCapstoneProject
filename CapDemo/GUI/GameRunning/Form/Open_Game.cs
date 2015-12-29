@@ -53,7 +53,6 @@ namespace CapDemo
         List<int> PlayerNO = new List<int>();
 
         List<Record> records = new List<Record>();
-        Run_Game Rungame = new Run_Game();
         Audience_Screen audience = new Audience_Screen();
 
         int AmountPlayer;
@@ -74,6 +73,8 @@ namespace CapDemo
         string PlayerAnswerShortQuestion = "";
         int step = 1;
         int team = 0;
+        bool CheckQuestionPM = false;
+        int IDPhasePM;
 
         string[] guideline = new string[] 
         {"Bấm để tải sơ đồ cuộc thi",
@@ -154,32 +155,49 @@ namespace CapDemo
             {
                 if (TeamCS.IdPlayerUC == idPlayerUC)
                 {
-                    int IDPhase = 0;
-                    List<Phase> ListPhase;
-                    Phase.IDContest = iDContest;
-                    ListPhase = PhaseBL.GetPhasePM(Phase);
-                    IDPhase = ListPhase.ElementAt(0).IDPhase;
-                    foreach (Team teamCS in flp_Team.Controls)
-                    {
-                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
-                        {
-                            if (records.ElementAt(team).Support == false)
-                            {
-                                teamCS.chk_Support.Visible = false;
-                            }
-                            else
-                            {
-                                teamCS.chk_Support.Visible = true;
-                            }
-                            teamCS.chk_QuestionPM.Visible = false;
-                            teamCS.chk_defy.Visible = false;
-                        }
-                    }
-                    //show audience screen
-                    lblHint.Text = guideline[3].ToString();
-                    audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
-                    //show question by id phase
-                    ShowQuestionByIDPhase(IDPhase);
+                     DialogResult dr = MessageBox.Show("Are you sure to use Question PM?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                     if (dr == DialogResult.Yes)
+                     {
+                         try
+                         {
+                             List<Phase> ListPhase;
+                             Phase.IDContest = iDContest;
+                             ListPhase = PhaseBL.GetPhasePM(Phase);
+                             IDPhasePM = ListPhase.ElementAt(0).IDPhase;
+                             foreach (Team teamCS in flp_Team.Controls)
+                             {
+                                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                                 {
+                                     if (records.ElementAt(team).Support == false)
+                                     {
+                                         teamCS.chk_Support.Visible = false;
+                                     }
+                                     else
+                                     {
+                                         teamCS.chk_Support.Visible = true;
+                                     }
+                                     teamCS.chk_QuestionPM.Visible = false;
+                                     teamCS.chk_defy.Visible = false;
+                                     CheckQuestionPM = true;
+                                 }
+                             }
+                             //show audience screen
+                             lblHint.Text = guideline[3].ToString();
+                             audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
+                             //show question by id phase
+                             ShowQuestionByIDPhase(IDPhasePM);
+                         }
+                         catch (Exception)
+                         {
+                             MessageBox.Show("Question is not set up in game. Please choose question in phase");
+                             TeamCS.chk_QuestionPM.Checked = false;
+                         }
+                         
+                     }
+                     else
+                     {
+                         TeamCS.chk_QuestionPM.Checked = false;
+                     }
                 }
             }  
         }
@@ -234,7 +252,7 @@ namespace CapDemo
             GetContestContent();
             lblHint.Text = guideline[0].ToString();
         }
-        //load Map
+        //--1 load Map
         public void loadMap()
         {
             audience.Show();
@@ -328,7 +346,7 @@ namespace CapDemo
             //move to next step
             step++;
         }
-        // Go player will compete
+        //--2 Go player will compete
         public void GoPlayer()
         {
             // Get team in turn
@@ -413,7 +431,7 @@ namespace CapDemo
             //move to next step
             step++;
         }
-        //Show question Answer
+        //--3 Show question Answer
         public void ShowQuestion()
         {
             int IDPhase=0;
@@ -437,7 +455,7 @@ namespace CapDemo
             //show question by id phase
             ShowQuestionByIDPhase(IDPhase);
         }
-        //Show Correct Answer
+        //--4 Show Correct Answer
         public void EnterAnswer()
         {
             foreach (Team teamCS in flp_Team.Controls)
@@ -475,7 +493,7 @@ namespace CapDemo
                                         if (item2.checkBox1.Text == item1.chk1.Text)
                                         {
                                             item1.chk1.Checked = true;
-                                            item1.BackColor = Color.Blue;
+                                            item1.BackColor = Color.LightYellow;
                                         }
                                     }
                                 }
@@ -485,6 +503,7 @@ namespace CapDemo
                         {
                             foreach (shortanswer shortanswer in teamCS.flp_Answer.Controls)
                             {
+                                shortanswer.txt_ShortAnswer.ReadOnly = true;
                                 audience.flp_AnswerQuiz.Controls.Add(shortanswer);
                                 PlayerAnswerShortQuestion = shortanswer.txt_ShortAnswer.Text;
                             }
@@ -499,7 +518,7 @@ namespace CapDemo
             }
             step++;
         }
-        //show correct answer
+        //--5 show correct answer
         int CorrectAnswer ;
         int PlayerCheck ;
         public void ShowCorrectAnswer()
@@ -536,41 +555,77 @@ namespace CapDemo
                 txt_Answer.Text = CorrectShortAnswer;
                 txt_Answer.Font = new Font("Verdana",14.0f,FontStyle.Bold);
                 txt_Answer.BackColor = Color.LightGreen;
+                txt_Answer.ReadOnly = true;
                 audience.flp_AnswerQuiz.Controls.Add(txt_Answer);
             }
             
             step++;
         }
-        //Update point for player
-        
+        //--6 Update point for player
         public void CalculteScore()
         {
             int NumPlayerEndGame = 0;
-            int score = ScoreofPhase(records.ElementAt(team).IDPhase);
-            //player answer with question onechoice or multichoice
-            if (typequestion =="onechoice" || typequestion=="multichoice")
+            //Update score, position between question into phase and question PM
+            if (CheckQuestionPM ==false)
             {
-                //player answer correct
-                if (PlayerCheck == CorrectAnswer)
+                int BonusScore = BonusScoreofPhase(records.ElementAt(team).IDPhase);
+                int MinusScore = MinusScoreofPhase(records.ElementAt(team).IDPhase);
+                //player answer with question onechoice or multichoice
+                if (typequestion == "onechoice" || typequestion == "multichoice")
                 {
-                    PassQuestion(score);
+                    //player answer correct
+                    if (PlayerCheck == CorrectAnswer)
+                    {
+                        PassQuestionInPhase(BonusScore);
+                    }
+                    else
+                    {
+                        FailQuestionInPhase(MinusScore);
+                    }
                 }
                 else
-                {
-                    FailQuestion();
+                {//player answer with question shortanswer
+                    if (PlayerAnswerShortQuestion.Equals(CorrectShortAnswer) == true)
+                    {
+                        PassQuestionInPhase(BonusScore);
+                    }
+                    else
+                    {
+                        FailQuestionInPhase(MinusScore);
+                    }
                 }
             }
             else
-            {//player answer with question shortanswer
-                if (PlayerAnswerShortQuestion.Equals(CorrectShortAnswer)==true)
+            {
+                int BonusScoreQuestionPM = BonusScoreofPhase(IDPhasePM);
+                int MinusScoreQuestionPM = MinusScoreofPhase(IDPhasePM);
+                CheckQuestionPM = false;
+                //player answer with question onechoice or multichoice
+                if (typequestion == "onechoice" || typequestion == "multichoice")
                 {
-                    PassQuestion(score);
+                    //player answer correct
+                    if (PlayerCheck == CorrectAnswer)
+                    {
+                        PassQuestionPM(BonusScoreQuestionPM);
+                    }
+                    else
+                    {
+                        FailQuestionPM(MinusScoreQuestionPM);
+                    }
                 }
                 else
-                {
-                    FailQuestion();
+                {//player answer with question shortanswer
+                    if (PlayerAnswerShortQuestion.Equals(CorrectShortAnswer) == true)
+                    {
+                        PassQuestionPM(BonusScoreQuestionPM);
+                    }
+                    else
+                    {
+                        FailQuestionPM(MinusScoreQuestionPM);
+                    }
                 }
             }
+            
 
             //check number of player end game
             foreach (Record record in records)
@@ -597,8 +652,8 @@ namespace CapDemo
             
         }
         ////method
-        /////update score, position, record after player have correct answer
-        public void PassQuestion(int score)
+        /////update score, position, record after player have correct answer in phase
+        public void PassQuestionInPhase(int score)
         {
             records.ElementAt(team).NumPass -= 1;
             records.ElementAt(team).TotalPass++;
@@ -667,15 +722,26 @@ namespace CapDemo
                 }
             }
         }
-        /////update score, position, record after player have incorrect answer
-        public void FailQuestion()
+        /////update score, position, record after player have incorrect answer in phase
+        public void FailQuestionInPhase(int score)
         {
             //minus life if team fail in question
             records.ElementAt(team).NumFail -= 1;
+            records.ElementAt(team).TeamScore -= score;
+            //update team score on controller screen
+            foreach (Team item in flp_Team.Controls)
+            {
+                if (Convert.ToInt32(item.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                {
+                    item.lbl_TeamScore.Text = (Convert.ToInt32(item.lbl_TeamScore.Text) - score).ToString();
+                }
+            }
+            //Update team information in audience screen 
             foreach (Team_AudienceScreeen teamAudienceScreen in audience.flp_Team.Controls)
             {
                 if (Convert.ToInt32(teamAudienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
                 {
+                    teamAudienceScreen.lbl_TeamScore.Text = (Convert.ToInt32(teamAudienceScreen.lbl_TeamScore.Text) - score).ToString();
                     if (records.ElementAt(team).NumFail == 0)
                     {
                         teamAudienceScreen.pb_Heart1.Hide();
@@ -692,6 +758,48 @@ namespace CapDemo
                             teamAudienceScreen.pb_Heart2.Hide();
                         }
                     }
+                }
+            }
+        }
+        ////Pass question PM
+        public void PassQuestionPM(int score)
+        {
+            records.ElementAt(team).TeamScore += score;
+            //update team score on controller screen
+            foreach (Team item in flp_Team.Controls)
+            {
+                if (Convert.ToInt32(item.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                {
+                    item.lbl_TeamScore.Text = (Convert.ToInt32(item.lbl_TeamScore.Text) + score).ToString();
+                }
+            }
+            //Update team information in audience screen 
+            foreach (Team_AudienceScreeen teamAudienceScreen in audience.flp_Team.Controls)
+            {
+                if (Convert.ToInt32(teamAudienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
+                {
+                    teamAudienceScreen.lbl_TeamScore.Text = (Convert.ToInt32(teamAudienceScreen.lbl_TeamScore.Text) + score).ToString();
+                }
+            }
+        }
+        //// Fail quesion pm
+        public void FailQuestionPM(int score)
+        {
+            records.ElementAt(team).TeamScore -= score;
+            //update team score on controller screen
+            foreach (Team item in flp_Team.Controls)
+            {
+                if (Convert.ToInt32(item.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                {
+                    item.lbl_TeamScore.Text = (Convert.ToInt32(item.lbl_TeamScore.Text) - score).ToString();
+                }
+            }
+            //Update team information in audience screen 
+            foreach (Team_AudienceScreeen teamAudienceScreen in audience.flp_Team.Controls)
+            {
+                if (Convert.ToInt32(teamAudienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
+                {
+                    teamAudienceScreen.lbl_TeamScore.Text = (Convert.ToInt32(teamAudienceScreen.lbl_TeamScore.Text) - score).ToString();
                 }
             }
         }
@@ -797,7 +905,7 @@ namespace CapDemo
                                 else
                                 {
                                     shortanswer shortanswer = new shortanswer();
-                                    shortanswer.Location = new Point(shortanswer.Location.X + 3, shortanswer.Location.Y + 3);
+                                    shortanswer.Location = new Point(shortanswer.Location.X + 3, shortanswer.Location.Y + 0);
                                     teamCS.flp_Answer.Controls.Add(shortanswer);
                                 }
                             }
@@ -842,14 +950,21 @@ namespace CapDemo
             
         }
         #region Property in game
-        //Get score of phase by id phase
-        //get from database
-        public int ScoreofPhase(int idpha)
+        //Get bonus score of phase by id phase
+        public int BonusScoreofPhase(int idpha)
         {
             List<Phase> ListPhase;
             Phase.IDPhase = idpha;
             ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
             return ListPhase.ElementAt(0).ScorePhase;
+        }
+        //Get minus score of phase by id phase
+        public int MinusScoreofPhase(int idpha)
+        {
+            List<Phase> ListPhase;
+            Phase.IDPhase = idpha;
+            ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
+            return ListPhase.ElementAt(0).MinusPhase;
         }
         //Get name phase by id phase
         public string NameofPhase(int idpha)
