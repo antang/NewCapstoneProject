@@ -130,8 +130,10 @@ namespace CapDemo
                         teamtTag++;
                         team.Tag = teamtTag;
                         team.IdPlayerUC = teamtTag;
+                        //subcribe event
                         team.checkSupport += team_checkSupport;
                         team.checkQuestionPM += team_checkQuestionPM;
+                        team.checkChallenge += team_checkChallenge;
                         team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
                         team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
                         team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
@@ -143,6 +145,28 @@ namespace CapDemo
                         records.Add(r);
 
                         flp_Team.Controls.Add(team);
+                    }
+                }
+            }
+        }
+        //Get evenhanler check challenge choice
+        void team_checkChallenge(object sender, EventArgs e)
+        {
+            int idPlayerUC = (e as MyEventArgs).IDPlayerUC;
+            foreach (Team TeamCS in flp_Team.Controls)
+            {
+                if (TeamCS.IdPlayerUC == idPlayerUC)
+                {
+                    DialogResult dr = MessageBox.Show("Are you sure to use this choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        records.ElementAt(team).Defy = false;
+                        TeamCS.chk_defy.Visible = false;
+                        ShowTeamsChallenged();
+                    }
+                    else
+                    {
+                        TeamCS.chk_defy.Checked = false;
                     }
                 }
             }
@@ -928,6 +952,31 @@ namespace CapDemo
                 }
             } 
         }
+        //show teams are challenged
+        public void ShowTeamsChallenged()
+        {
+            //foreach (Team item in flp_Team.Controls)
+           // {
+               // if (Convert.ToInt32(item.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                //{
+                    for (int i = 0; i < records.Count; i++)
+                    {
+                        if (records.ElementAt(i).Exist == true)
+                        {
+                            foreach (Team teamCS in flp_Team.Controls)
+                            {
+                                if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(i).IDPlayer) && i!=team)
+                                {
+                                    teamCS.chk_Challenged.Visible = true;
+                                }
+                            }
+                        }
+                    }
+                //}
+            //}
+            
+        }
+
         //get eventhandler check one choice on controller screen
         void one_onCheckOneChoice(object sender, EventArgs e)
         {

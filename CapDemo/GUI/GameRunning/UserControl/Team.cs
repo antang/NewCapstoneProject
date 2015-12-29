@@ -25,6 +25,7 @@ namespace CapDemo
         }
         public event EventHandler checkSupport;
         public event EventHandler checkQuestionPM;
+        public event EventHandler checkChallenge;
         private void lbl_ShowMenu_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(Cursor.Position);
@@ -56,6 +57,25 @@ namespace CapDemo
                     checkquestionPM(this, args);
                 }
             }  
+        }
+        //check to get challengce choice
+        private void chk_defy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_defy.Checked == true)
+            {
+                EventHandler checkdefy = checkChallenge;
+                if (checkdefy != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    checkdefy(this,args);
+                }
+            }
+        }
+        //check when player is challenged
+        private void chk_Challenged_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
 

@@ -48,6 +48,7 @@
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.gb_team = new System.Windows.Forms.GroupBox();
             this.chk_true = new System.Windows.Forms.CheckBox();
+            this.chk_Challenged = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1.SuspendLayout();
             this.gb_team.SuspendLayout();
             this.SuspendLayout();
@@ -165,6 +166,7 @@
             this.chk_defy.TabIndex = 14;
             this.chk_defy.Text = "Defy";
             this.chk_defy.UseVisualStyleBackColor = true;
+            this.chk_defy.CheckedChanged += new System.EventHandler(this.chk_defy_CheckedChanged);
             // 
             // chk_Support
             // 
@@ -241,11 +243,26 @@
             this.chk_true.Text = "Correct";
             this.chk_true.UseVisualStyleBackColor = true;
             // 
+            // chk_Challenged
+            // 
+            this.chk_Challenged.AutoSize = true;
+            this.chk_Challenged.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Challenged.ForeColor = System.Drawing.Color.Red;
+            this.chk_Challenged.Location = new System.Drawing.Point(0, 0);
+            this.chk_Challenged.Name = "chk_Challenged";
+            this.chk_Challenged.Size = new System.Drawing.Size(98, 17);
+            this.chk_Challenged.TabIndex = 21;
+            this.chk_Challenged.Text = "Challenged";
+            this.chk_Challenged.UseVisualStyleBackColor = true;
+            this.chk_Challenged.Visible = false;
+            this.chk_Challenged.CheckedChanged += new System.EventHandler(this.chk_Challenged_CheckedChanged);
+            // 
             // Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.chk_Challenged);
             this.Controls.Add(this.chk_true);
             this.Controls.Add(this.gb_team);
             this.Controls.Add(this.flp_Answer);
@@ -290,6 +307,7 @@
         public System.Windows.Forms.FlowLayoutPanel flp_Answer;
         private System.Windows.Forms.CheckBox chk_true;
         public System.Windows.Forms.GroupBox gb_team;
+        public System.Windows.Forms.CheckBox chk_Challenged;
 
     }
 }
