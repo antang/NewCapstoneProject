@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_Map = new System.Windows.Forms.TabPage();
+            this.pnl_FinishLane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Lane = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pnl_FinishLane = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
@@ -77,6 +77,16 @@
             this.tab_Map.Size = new System.Drawing.Size(1018, 745);
             this.tab_Map.TabIndex = 0;
             this.tab_Map.Text = "tabPage1";
+            // 
+            // pnl_FinishLane
+            // 
+            this.pnl_FinishLane.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_FinishLane.BackColor = System.Drawing.Color.Gold;
+            this.pnl_FinishLane.Location = new System.Drawing.Point(4, 89);
+            this.pnl_FinishLane.Name = "pnl_FinishLane";
+            this.pnl_FinishLane.Size = new System.Drawing.Size(631, 52);
+            this.pnl_FinishLane.TabIndex = 4;
             // 
             // flp_Team
             // 
@@ -208,16 +218,6 @@
             this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
             this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
             this.imageList1.Images.SetKeyName(15, "y-kien.png");
-            // 
-            // pnl_FinishLane
-            // 
-            this.pnl_FinishLane.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_FinishLane.BackColor = System.Drawing.Color.Gold;
-            this.pnl_FinishLane.Location = new System.Drawing.Point(4, 89);
-            this.pnl_FinishLane.Name = "pnl_FinishLane";
-            this.pnl_FinishLane.Size = new System.Drawing.Size(631, 52);
-            this.pnl_FinishLane.TabIndex = 4;
             // 
             // Audience_Screen
             // 

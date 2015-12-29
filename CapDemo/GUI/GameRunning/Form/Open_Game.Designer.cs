@@ -83,7 +83,7 @@
             // 
             // lblHint
             // 
-            this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHint.BackColor = System.Drawing.Color.Transparent;
             this.lblHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHint.ForeColor = System.Drawing.Color.SeaShell;
@@ -96,6 +96,7 @@
             // 
             // pb_Play
             // 
+            this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Play.BackColor = System.Drawing.Color.Transparent;
             this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.PlayGame;
             this.pb_Play.Location = new System.Drawing.Point(880, 577);
@@ -122,6 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.pb_Exit);
             this.Controls.Add(this.pb_Play);
