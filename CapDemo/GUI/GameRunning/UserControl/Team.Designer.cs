@@ -49,6 +49,7 @@
             this.gb_team = new System.Windows.Forms.GroupBox();
             this.chk_true = new System.Windows.Forms.CheckBox();
             this.chk_Challenged = new System.Windows.Forms.CheckBox();
+            this.lbl_IDPlayer = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.gb_team.SuspendLayout();
             this.SuspendLayout();
@@ -257,11 +258,22 @@
             this.chk_Challenged.Visible = false;
             this.chk_Challenged.CheckedChanged += new System.EventHandler(this.chk_Challenged_CheckedChanged);
             // 
+            // lbl_IDPlayer
+            // 
+            this.lbl_IDPlayer.AutoSize = true;
+            this.lbl_IDPlayer.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IDPlayer.Location = new System.Drawing.Point(3, 279);
+            this.lbl_IDPlayer.Name = "lbl_IDPlayer";
+            this.lbl_IDPlayer.Size = new System.Drawing.Size(0, 14);
+            this.lbl_IDPlayer.TabIndex = 22;
+            this.lbl_IDPlayer.Visible = false;
+            // 
             // Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.lbl_IDPlayer);
             this.Controls.Add(this.chk_Challenged);
             this.Controls.Add(this.chk_true);
             this.Controls.Add(this.gb_team);
@@ -308,6 +320,7 @@
         private System.Windows.Forms.CheckBox chk_true;
         public System.Windows.Forms.GroupBox gb_team;
         public System.Windows.Forms.CheckBox chk_Challenged;
+        public System.Windows.Forms.Label lbl_IDPlayer;
 
     }
 }

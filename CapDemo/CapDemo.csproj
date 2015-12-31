@@ -404,6 +404,12 @@
     <Compile Include="GUI\GameRunning\UserControl\Player_Lane1.Designer.cs">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerAnswer.Designer.cs">
+      <DependentUpon>PlayerAnswer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
@@ -602,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Player_Lane1.resx">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerAnswer.resx">
+      <DependentUpon>PlayerAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

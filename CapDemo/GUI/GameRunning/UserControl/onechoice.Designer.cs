@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.lbl_Seq = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -42,10 +43,19 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
+            // lbl_Seq
+            // 
+            this.lbl_Seq.AutoSize = true;
+            this.lbl_Seq.Location = new System.Drawing.Point(-3, 7);
+            this.lbl_Seq.Name = "lbl_Seq";
+            this.lbl_Seq.Size = new System.Drawing.Size(0, 13);
+            this.lbl_Seq.TabIndex = 1;
+            // 
             // onechoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_Seq);
             this.Controls.Add(this.radioButton1);
             this.Name = "onechoice";
             this.Size = new System.Drawing.Size(33, 21);
@@ -57,6 +67,7 @@
         #endregion
 
         public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.Label lbl_Seq;
 
     }
 }
