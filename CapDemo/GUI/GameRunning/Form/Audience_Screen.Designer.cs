@@ -37,7 +37,7 @@
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Lane = new System.Windows.Forms.Panel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.flp_PlayerAnswers = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
             this.flp_AnswerQuiz = new System.Windows.Forms.FlowLayoutPanel();
@@ -124,7 +124,7 @@
             // 
             this.tab_ShowQuestion.BackColor = System.Drawing.Color.SkyBlue;
             this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
-            this.tab_ShowQuestion.Controls.Add(this.panel3);
+            this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
             this.tab_ShowQuestion.Controls.Add(this.panel1);
             this.tab_ShowQuestion.Controls.Add(this.flp_AnswerQuiz);
             this.tab_ShowQuestion.Controls.Add(this.richTextBox1);
@@ -135,15 +135,15 @@
             this.tab_ShowQuestion.TabIndex = 1;
             this.tab_ShowQuestion.Text = "tabPage2";
             // 
-            // panel3
+            // flp_PlayerAnswers
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.flp_PlayerAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(0, 635);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1018, 110);
-            this.panel3.TabIndex = 0;
+            this.flp_PlayerAnswers.BackColor = System.Drawing.Color.Transparent;
+            this.flp_PlayerAnswers.Location = new System.Drawing.Point(0, 635);
+            this.flp_PlayerAnswers.Name = "flp_PlayerAnswers";
+            this.flp_PlayerAnswers.Size = new System.Drawing.Size(1018, 110);
+            this.flp_PlayerAnswers.TabIndex = 5;
             // 
             // panel1
             // 
@@ -173,7 +173,7 @@
             // 
             this.flp_AnswerQuiz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_AnswerQuiz.AutoScroll = true;
-            this.flp_AnswerQuiz.BackColor = System.Drawing.Color.SkyBlue;
+            this.flp_AnswerQuiz.BackColor = System.Drawing.Color.Transparent;
             this.flp_AnswerQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flp_AnswerQuiz.Location = new System.Drawing.Point(0, 313);
             this.flp_AnswerQuiz.Name = "flp_AnswerQuiz";
@@ -250,9 +250,9 @@
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.FlowLayoutPanel flp_Finish;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
         public System.Windows.Forms.Panel pnl_FinishLane;
+        public System.Windows.Forms.FlowLayoutPanel flp_PlayerAnswers;
     }
 }

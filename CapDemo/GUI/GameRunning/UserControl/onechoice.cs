@@ -24,7 +24,7 @@ namespace CapDemo
             get { return iD_OneChoice; }
             set { iD_OneChoice = value; }
         }
-
+        int i = 1;
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             EventHandler oncheck = onCheckOneChoice;
@@ -34,6 +34,16 @@ namespace CapDemo
                 args.IDOneChoice = iD_OneChoice;
                 oncheck(this, args);
             }
+            //if (i == 1)
+            //{
+            //    radioButton1.Checked = true;
+            //    i++;
+            //}
+            //else
+            //{
+            //    radioButton1.Checked = false;
+            //    i=1;
+            //}
         }
     }
 }

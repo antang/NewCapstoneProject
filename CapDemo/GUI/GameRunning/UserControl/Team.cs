@@ -75,7 +75,16 @@ namespace CapDemo
         //check when player is challenged
         private void chk_Challenged_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chk_Challenged.Checked == true)
+            {
+                this.BackColor = Color.Yellow;
+                this.flp_Answer.Visible = true;
+                this.gb_team.Visible = false;
+            }
+            else
+            {
+                this.BackColor = Color.Gainsboro;
+            }
         }
 
 
