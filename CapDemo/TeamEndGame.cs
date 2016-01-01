@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace CapDemo
 {
-    public partial class multichoice : UserControl
+    public partial class TeamEndGame : UserControl
     {
-        public multichoice()
+        public TeamEndGame()
         {
             InitializeComponent();
         }
 
-        public EventHandler oncheck;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

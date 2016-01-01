@@ -386,18 +386,6 @@
     <Compile Include="GUI\GameRunning\UserControl\Phase_Lane.Designer.cs">
       <DependentUpon>Phase_Lane.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\multichoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\multichoice.Designer.cs">
-      <DependentUpon>multichoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\onechoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\onechoice.Designer.cs">
-      <DependentUpon>onechoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\GameRunning\UserControl\Player_Lane1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,12 +412,6 @@
     <Compile Include="GUI\GameRunning\UserControl\Team.Designer.cs">
       <DependentUpon>Team.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\shortanswer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\GameRunning\UserControl\shortanswer.Designer.cs">
-      <DependentUpon>shortanswer.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\GameRunning\UserControl\ShowAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -441,6 +423,12 @@
     </Compile>
     <Compile Include="GUI\GameRunning\UserControl\Team_AudienceScreeen.Designer.cs">
       <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamEndGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeamEndGame.Designer.cs">
+      <DependentUpon>TeamEndGame.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\GameRunning\Form\Audience_Screen.resx">
       <DependentUpon>Audience_Screen.cs</DependentUpon>
@@ -600,12 +588,6 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Phase_Lane.resx">
       <DependentUpon>Phase_Lane.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GameRunning\UserControl\multichoice.resx">
-      <DependentUpon>multichoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GameRunning\UserControl\onechoice.resx">
-      <DependentUpon>onechoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Player_Lane1.resx">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </EmbeddedResource>
@@ -623,14 +605,14 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Team.resx">
       <DependentUpon>Team.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GameRunning\UserControl\shortanswer.resx">
-      <DependentUpon>shortanswer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\ShowAnswer.resx">
       <DependentUpon>ShowAnswer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Team_AudienceScreeen.resx">
       <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamEndGame.resx">
+      <DependentUpon>TeamEndGame.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capstone.db" />
     <None Include="ClassDiagram_IC1.cd" />

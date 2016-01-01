@@ -39,7 +39,7 @@
             // 
             this.pb_TeamShirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pb_TeamShirt.BackgroundImage = global::CapDemo.Properties.Resources.ao_lon;
-            this.pb_TeamShirt.Location = new System.Drawing.Point(31, 0);
+            this.pb_TeamShirt.Location = new System.Drawing.Point(31, 30);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
             this.pb_TeamShirt.Size = new System.Drawing.Size(72, 80);
             this.pb_TeamShirt.TabIndex = 0;
@@ -50,7 +50,7 @@
             this.lbl_TeamAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_TeamAnswer.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamAnswer.ForeColor = System.Drawing.Color.White;
-            this.lbl_TeamAnswer.Location = new System.Drawing.Point(3, 83);
+            this.lbl_TeamAnswer.Location = new System.Drawing.Point(3, 0);
             this.lbl_TeamAnswer.Name = "lbl_TeamAnswer";
             this.lbl_TeamAnswer.Size = new System.Drawing.Size(141, 27);
             this.lbl_TeamAnswer.TabIndex = 1;
