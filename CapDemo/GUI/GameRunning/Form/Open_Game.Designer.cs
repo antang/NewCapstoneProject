@@ -36,8 +36,10 @@
             this.lblHint = new System.Windows.Forms.Label();
             this.pb_Play = new System.Windows.Forms.PictureBox();
             this.pb_Exit = new System.Windows.Forms.PictureBox();
+            this.pb_EndGame = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -117,6 +119,19 @@
             this.pb_Exit.TabStop = false;
             this.pb_Exit.Click += new System.EventHandler(this.pb_Exit_Click);
             // 
+            // pb_EndGame
+            // 
+            this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
+            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_EndGame.Location = new System.Drawing.Point(165, 577);
+            this.pb_EndGame.Name = "pb_EndGame";
+            this.pb_EndGame.Size = new System.Drawing.Size(128, 128);
+            this.pb_EndGame.TabIndex = 16;
+            this.pb_EndGame.TabStop = false;
+            this.pb_EndGame.Visible = false;
+            this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
+            // 
             // Open_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +140,7 @@
             this.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.pb_EndGame);
             this.Controls.Add(this.pb_Exit);
             this.Controls.Add(this.pb_Play);
             this.Controls.Add(this.lblHint);
@@ -136,6 +152,7 @@
             this.Load += new System.EventHandler(this.Open_Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +167,6 @@
         private System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.PictureBox pb_Play;
         private System.Windows.Forms.PictureBox pb_Exit;
+        private System.Windows.Forms.PictureBox pb_EndGame;
     }
 }

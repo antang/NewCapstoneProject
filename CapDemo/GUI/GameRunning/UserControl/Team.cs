@@ -84,7 +84,20 @@ namespace CapDemo
             else
             {
                 this.BackColor = Color.Gainsboro;
+                this.flp_Answer.Visible = false;
             }
+        }
+        int sequence;
+
+        public int Sequence
+        {
+            get { return sequence; }
+            set { sequence = value; }
+        }
+
+        private void flp_Answer_MouseEnter(object sender, EventArgs e)
+        {
+            sequence = Convert.ToInt32(lbl_Sequence.Text);
         }
 
 

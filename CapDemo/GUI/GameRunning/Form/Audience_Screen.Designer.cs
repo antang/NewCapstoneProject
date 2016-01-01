@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tab_EndGame = new System.Windows.Forms.TabPage();
+            this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_Map = new System.Windows.Forms.TabPage();
             this.pnl_FinishLane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
@@ -42,9 +46,9 @@
             this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
             this.flp_AnswerQuiz = new System.Windows.Forms.FlowLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.tab_EndGame.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,11 +61,60 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tab_Map);
             this.tabControl1.Controls.Add(this.tab_ShowQuestion);
+            this.tabControl1.Controls.Add(this.tab_EndGame);
             this.tabControl1.Location = new System.Drawing.Point(2, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1026, 771);
             this.tabControl1.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
+            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
+            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
+            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
+            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
+            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
+            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
+            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
+            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
+            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
+            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
+            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
+            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
+            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
+            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
+            this.imageList1.Images.SetKeyName(15, "y-kien.png");
+            // 
+            // tab_EndGame
+            // 
+            this.tab_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.tab_EndGame.Controls.Add(this.label1);
+            this.tab_EndGame.Controls.Add(this.flp_TeamEndGame);
+            this.tab_EndGame.Location = new System.Drawing.Point(4, 22);
+            this.tab_EndGame.Name = "tab_EndGame";
+            this.tab_EndGame.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_EndGame.Size = new System.Drawing.Size(1018, 745);
+            this.tab_EndGame.TabIndex = 2;
+            this.tab_EndGame.Text = "tabPage1";
+            this.tab_EndGame.UseVisualStyleBackColor = true;
+            // 
+            // flp_TeamEndGame
+            // 
+            this.flp_TeamEndGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp_TeamEndGame.BackColor = System.Drawing.Color.White;
+            this.flp_TeamEndGame.Location = new System.Drawing.Point(0, 164);
+            this.flp_TeamEndGame.Name = "flp_TeamEndGame";
+            this.flp_TeamEndGame.Size = new System.Drawing.Size(1018, 260);
+            this.flp_TeamEndGame.TabIndex = 0;
             // 
             // tab_Map
             // 
@@ -194,30 +247,18 @@
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
-            // timer1
+            // label1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
-            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
-            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
-            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
-            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
-            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
-            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
-            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
-            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
-            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
-            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
-            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
-            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
-            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
-            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
-            this.imageList1.Images.SetKeyName(15, "y-kien.png");
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 72F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1018, 150);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Congatulation";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Audience_Screen
             // 
@@ -231,6 +272,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Audience_Screen_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tab_EndGame.ResumeLayout(false);
             this.tab_Map.ResumeLayout(false);
             this.tab_ShowQuestion.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -254,5 +296,8 @@
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
         public System.Windows.Forms.Panel pnl_FinishLane;
         public System.Windows.Forms.FlowLayoutPanel flp_PlayerAnswers;
+        public System.Windows.Forms.TabPage tab_EndGame;
+        public System.Windows.Forms.FlowLayoutPanel flp_TeamEndGame;
+        public System.Windows.Forms.Label label1;
     }
 }

@@ -41,10 +41,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxt_Answer.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxt_Answer.Location = new System.Drawing.Point(40, 3);
+            this.rtxt_Answer.Location = new System.Drawing.Point(48, 3);
             this.rtxt_Answer.Name = "rtxt_Answer";
             this.rtxt_Answer.ReadOnly = true;
-            this.rtxt_Answer.Size = new System.Drawing.Size(431, 114);
+            this.rtxt_Answer.Size = new System.Drawing.Size(425, 114);
             this.rtxt_Answer.TabIndex = 3;
             this.rtxt_Answer.Text = "";
             // 
@@ -73,6 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rdb1.AutoSize = true;
             this.rdb1.Enabled = false;
+            this.rdb1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb1.Location = new System.Drawing.Point(0, 0);
             this.rdb1.Name = "rdb1";
             this.rdb1.Size = new System.Drawing.Size(14, 13);
@@ -88,6 +89,7 @@
             this.chk1.AutoSize = true;
             this.chk1.BackColor = System.Drawing.Color.Transparent;
             this.chk1.Enabled = false;
+            this.chk1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk1.Location = new System.Drawing.Point(0, 0);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(15, 14);
