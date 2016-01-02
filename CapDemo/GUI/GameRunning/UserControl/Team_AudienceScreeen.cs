@@ -31,7 +31,9 @@ namespace CapDemo
 
         private void timerHighLight_Tick(object sender, EventArgs e)
         {
-            lbl_TeamName.ForeColor = lbl_TeamName.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+            //lbl_TeamName.ForeColor = lbl_TeamName.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+            this.BackColor = this.BackColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+
         }
 
     }

@@ -24,6 +24,14 @@ namespace CapDemo.DO
         Phase phase;
         Player player;
         List<Player> playerList;
+        int endContest;
+        bool status;
+
+        public bool Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
         public string NamePlayer
         {
@@ -133,7 +141,11 @@ namespace CapDemo.DO
             set { timesFalse = value; }
         }
 
-
+        public int EndContest
+        {
+            get { return endContest; }
+            set { endContest = value; }
+        }
 
     }
 }

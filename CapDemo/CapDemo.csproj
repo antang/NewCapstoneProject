@@ -719,6 +719,17 @@
     <None Include="Resources\vong-tron-gio.png" />
     <None Include="Resources\y-kien.png" />
     <None Include="Resources\Hinh-nen.jpg" />
+    <None Include="Resources\spinner.gif" />
+    <None Include="Resources\ProCircle.gif" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\congratulation.gif" />
+    <None Include="Resources\congmoving.gif" />
+    <None Include="Resources\Checkerboard-banner.jpg" />
+    <None Include="Resources\landRace.png" />
+    <None Include="Resources\nascar checkered flag take 2.jpg" />
+    <None Include="Resources\lane.jpg" />
+    <None Include="Resources\nen-doi-thi.png" />
+    <None Include="Resources\nen-vong-thi.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

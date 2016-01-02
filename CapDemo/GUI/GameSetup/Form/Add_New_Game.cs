@@ -281,6 +281,8 @@ namespace CapDemo.GUI
         public void SaveGeneralSetting()
         {
             DataGeneralSetting();
+            //mark contest havev't run
+            Contest.EndContest = 0;
             if (ContestBL.AddContest(Contest) == true)
             {
                 GetIdContest();

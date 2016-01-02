@@ -132,10 +132,11 @@
             // 
             // pb_TeamShirt
             // 
+            this.pb_TeamShirt.BackColor = System.Drawing.Color.White;
             this.pb_TeamShirt.BackgroundImage = global::CapDemo.Properties.Resources.ao_lon;
             this.pb_TeamShirt.Location = new System.Drawing.Point(19, 37);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
-            this.pb_TeamShirt.Size = new System.Drawing.Size(78, 92);
+            this.pb_TeamShirt.Size = new System.Drawing.Size(75, 89);
             this.pb_TeamShirt.TabIndex = 0;
             this.pb_TeamShirt.TabStop = false;
             // 
@@ -168,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbl_Hint);
             this.Controls.Add(this.lbl_ID);

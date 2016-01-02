@@ -84,7 +84,7 @@
             this.pb_TeamShirt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pb_TeamShirt.Location = new System.Drawing.Point(92, 148);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
-            this.pb_TeamShirt.Size = new System.Drawing.Size(76, 90);
+            this.pb_TeamShirt.Size = new System.Drawing.Size(75, 89);
             this.pb_TeamShirt.TabIndex = 0;
             this.pb_TeamShirt.TabStop = false;
             this.pb_TeamShirt.Click += new System.EventHandler(this.pictureBox1_Click);

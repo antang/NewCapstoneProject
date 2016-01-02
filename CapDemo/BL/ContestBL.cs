@@ -56,7 +56,7 @@ namespace CapDemo.BL
             List<Contest> ContestList = new List<Contest>();
             string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
                         + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
-                        + ",r.[Round_Name],n.[Competition_Name],r.[Competition_ID]"
+                        + ",r.[Round_Name],n.[Competition_Name],r.[Competition_ID], c.[EndContest]"
                         + " FROM [Contest] c"
                         + " INNER JOIN [Round] r ON r.[Round_ID] = c.[Round_ID]"
                         + " INNER JOIN [Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
@@ -77,6 +77,7 @@ namespace CapDemo.BL
                     Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
                     Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
                     Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
+                    Contest.Status = (bool)item["EndContest"];
                     //round
                     Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
                     Contest.Round.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
@@ -143,10 +144,10 @@ namespace CapDemo.BL
         {
             string query = "INSERT INTO [Contest]"
                 +"([Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge],"
-                +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False])"
+                +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False],[EndContest])"
                 + " VALUES ('" + Contest.IDRound + "','" + Contest.NameContest.Replace("'", "''") + "','" + Contest.Bonus + "',"
                             + "'" + Contest.TimeSupport + "','" + Contest.ChallengceScore + "','" + Contest.NumberChallenge + "',"
-                            + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "')";
+                            + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "','" + Contest.EndContest + "')";
             if (ExistContest(Contest) == true)
             {
                 return false;
@@ -204,7 +205,7 @@ namespace CapDemo.BL
                 return DA.UpdateDatabase(query);
             }
         }
-
+        //Update contest by id
         public bool EditGeneralSetting(Contest Contest)
         {
             string query = "UPDATE [Contest]"
@@ -221,6 +222,17 @@ namespace CapDemo.BL
             {
                 return DA.UpdateDatabase(query);
             }
+        }
+
+        //Update status contest when contest have run
+        public bool EditStatusContestbyID(Contest Contest)
+        {
+            string query = "UPDATE [Contest]"
+                         + " SET [EndContest] = '" + Contest.EndContest + "'"
+                         + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
+            
+            return DA.UpdateDatabase(query);
+           
         }
         //Check Edit Contest Exist
         public bool EditExistContest(Contest Contest)

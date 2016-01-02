@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_RoundName = new System.Windows.Forms.Label();
             this.lbl_ContestName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_IDContest = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Status = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -54,8 +54,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 64);
             this.panel1.TabIndex = 0;
-            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // label1
             // 
@@ -68,8 +67,7 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cuộc Thi:";
-            this.label1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.label1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.label1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_Name
             // 
@@ -82,8 +80,7 @@
             this.lbl_Name.Size = new System.Drawing.Size(73, 16);
             this.lbl_Name.TabIndex = 2;
             this.lbl_Name.Text = "Vòng thi:";
-            this.lbl_Name.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_Name.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_Name.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_Number
             // 
@@ -96,8 +93,7 @@
             this.lbl_Number.Size = new System.Drawing.Size(19, 20);
             this.lbl_Number.TabIndex = 3;
             this.lbl_Number.Text = "1";
-            this.lbl_Number.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_Number.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_Number.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_CompetitionName
             // 
@@ -110,8 +106,7 @@
             this.lbl_CompetitionName.Size = new System.Drawing.Size(93, 16);
             this.lbl_CompetitionName.TabIndex = 5;
             this.lbl_CompetitionName.Text = "tên cuộc thi";
-            this.lbl_CompetitionName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_CompetitionName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // label3
             // 
@@ -124,8 +119,7 @@
             this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phần Thi:";
-            this.label3.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.label3.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.label3.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_RoundName
             // 
@@ -138,8 +132,7 @@
             this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
             this.lbl_RoundName.TabIndex = 6;
             this.lbl_RoundName.Text = "tên vòng thi";
-            this.lbl_RoundName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_RoundName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_RoundName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_ContestName
             // 
@@ -152,20 +145,17 @@
             this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
             this.lbl_ContestName.TabIndex = 7;
             this.lbl_ContestName.Text = "tên phần thi";
-            this.lbl_ContestName.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_ContestName.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_ContestName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
-            // label2
+            // lbl_IDContest
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            this.label2.Visible = false;
-            this.label2.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.label2.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_IDContest.AutoSize = true;
+            this.lbl_IDContest.Location = new System.Drawing.Point(4, 16);
+            this.lbl_IDContest.Name = "lbl_IDContest";
+            this.lbl_IDContest.Size = new System.Drawing.Size(0, 13);
+            this.lbl_IDContest.TabIndex = 8;
+            this.lbl_IDContest.Visible = false;
+            this.lbl_IDContest.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // label4
             // 
@@ -177,8 +167,7 @@
             this.label4.Size = new System.Drawing.Size(155, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Trạng thái Thiết Đặt:";
-            this.label4.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.label4.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.label4.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_Status
             // 
@@ -190,21 +179,20 @@
             this.lbl_Status.Size = new System.Drawing.Size(54, 16);
             this.lbl_Status.TabIndex = 10;
             this.lbl_Status.Text = "status";
-            this.lbl_Status.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            this.lbl_Status.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.lbl_Status.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteSetupToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 26);
             // 
             // deleteSetupToolStripMenuItem
             // 
             this.deleteSetupToolStripMenuItem.Image = global::CapDemo.Properties.Resources.Cancel;
             this.deleteSetupToolStripMenuItem.Name = "deleteSetupToolStripMenuItem";
-            this.deleteSetupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteSetupToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.deleteSetupToolStripMenuItem.Text = "Delete Setup";
             this.deleteSetupToolStripMenuItem.Click += new System.EventHandler(this.deleteSetupToolStripMenuItem_Click);
             // 
@@ -216,7 +204,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lbl_Status);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_IDContest);
             this.Controls.Add(this.lbl_ContestName);
             this.Controls.Add(this.lbl_RoundName);
             this.Controls.Add(this.lbl_CompetitionName);
@@ -231,8 +219,8 @@
             this.Load += new System.EventHandler(this.New_Game_Load);
             this.DoubleClick += new System.EventHandler(this.New_Game_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseClick);
+            this.MouseEnter += new System.EventHandler(this.New_Game_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.New_Game_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.New_Game_MouseHover);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseUp);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -250,7 +238,7 @@
         public System.Windows.Forms.Label lbl_RoundName;
         public System.Windows.Forms.Label lbl_ContestName;
         public System.Windows.Forms.Label lbl_Number;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbl_IDContest;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

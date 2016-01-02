@@ -33,7 +33,7 @@ namespace CapDemo.GUI.User_Controls
         private void New_Game_DoubleClick(object sender, EventArgs e)
         {
             ContinueSetting continueSetting = new ContinueSetting();
-            continueSetting.ContestID = Convert.ToInt32(label2.Text);
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
 
             DialogResult result = continueSetting.ShowDialog();
             if (result == DialogResult.OK)
@@ -57,12 +57,12 @@ namespace CapDemo.GUI.User_Controls
             {
                 for (int i = 0; i < ListContest.Count; i++)
                 {
-                    if (ListContest.ElementAt(i).IDContest == Convert.ToInt32(label2.Text) )
+                    if (ListContest.ElementAt(i).IDContest == Convert.ToInt32(lbl_IDContest.Text) )
                     {
                         lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                         lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                         lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
-                        label2.Text = ListContest.ElementAt(i).IDContest.ToString();
+                        lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
                         lbl_Number.Text = (i + 1).ToString();
                         if (ListContest.ElementAt(i).NumberChallenge > 0)
                         {
@@ -84,25 +84,6 @@ namespace CapDemo.GUI.User_Controls
 
         }
 
-        private void New_Game_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackColor = Color.SkyBlue;
-        }
-
-        private void New_Game_MouseHover(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Cyan;
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            //this.BackColor = Color.Cyan;
-        }
-
-        private void panel1_MouseHover(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Cyan;
-        }
 
         private void New_Game_MouseUp(object sender, MouseEventArgs e)
         {
@@ -127,9 +108,9 @@ namespace CapDemo.GUI.User_Controls
                 PlayerBL PlayerBL = new PlayerBL();
                 PhaseQuestionBL PhaseQuestionBL = new PhaseQuestionBL();
 
-                Contest.IDContest = Convert.ToInt32(label2.Text);
-                Phase.IDContest = Convert.ToInt32(label2.Text);
-                Player.IDContest = Convert.ToInt32(label2.Text);
+                Contest.IDContest = Convert.ToInt32(lbl_IDContest.Text);
+                Phase.IDContest = Convert.ToInt32(lbl_IDContest.Text);
+                Player.IDContest = Convert.ToInt32(lbl_IDContest.Text);
 
                 PlayerBL.DeletePlayerbyIDContest(Player);
                 PhaseQuestionBL.DeletePhaseQuestionbyIDContest(Phase);
@@ -164,7 +145,7 @@ namespace CapDemo.GUI.User_Controls
                     lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                     lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                     lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
-                    label2.Text = ListContest.ElementAt(i).IDContest.ToString();
+                    lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
                     lbl_Number.Text = (i + 1).ToString();
                     if (ListContest.ElementAt(i).NumberChallenge > 0)
                     {
@@ -179,6 +160,21 @@ namespace CapDemo.GUI.User_Controls
                     sg.flp_Game.Controls.Add(this);
                 }
             }
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Cyan;
+        }
+
+        private void New_Game_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Cyan;
+        }
+
+        private void New_Game_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.SkyBlue;
         }
         
     }
