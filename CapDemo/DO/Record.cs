@@ -16,6 +16,9 @@ namespace CapDemo.DO
         int phaseIndex;
         int teamScore;
         int totalPass;
+        int sequencePlayer;
+
+       
 
         bool exist;
         bool defy;
@@ -24,7 +27,7 @@ namespace CapDemo.DO
         public Record(){
         }
 
-        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass)
+        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer)
         {
             this.iDPlayer = idPlayer;
             this.iDPhase = idPhase;
@@ -37,6 +40,7 @@ namespace CapDemo.DO
             this.phaseIndex = phaseIndex;
             this.teamScore = teamScore;
             this.totalPass = totalPass;
+            this.sequencePlayer = sequencePlayer;
         }
 
         public int IDPlayer
@@ -93,6 +97,11 @@ namespace CapDemo.DO
         {
             get { return totalPass; }
             set { totalPass = value; }
+        }
+        public int SequecePlayer
+        {
+            get { return sequencePlayer; }
+            set { sequencePlayer = value; }
         }
     }
 }

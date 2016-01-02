@@ -75,6 +75,8 @@ namespace CapDemo
         int team = 0;
         bool CheckQuestionPM = false;
         bool CheckChallengeChoice = false;
+        bool Done = true;
+        bool GameOver = false;
         int IDPhasePM;
 
         string[] guideline = new string[] 
@@ -142,7 +144,7 @@ namespace CapDemo
                         team.gb_team.Visible = false;
                         idPlayer = ListPlayer.ElementAt(i).IDPlayer;
                         
-                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail,true,true,true,0, ListPlayer.ElementAt(i).PlayerScore,0);
+                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail,true,true,true,0, ListPlayer.ElementAt(i).PlayerScore,0,i);
                         records.Add(r);
 
                         flp_Team.Controls.Add(team);
@@ -367,6 +369,7 @@ namespace CapDemo
             foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
             {
                 teamAdienceScreen.HighLight(false);
+                teamAdienceScreen.BackColor = Color.White;
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
                 //check support choice exist to show
@@ -423,6 +426,8 @@ namespace CapDemo
             //Clear panel
             audience.flp_AnswerQuiz.Controls.Clear();
             audience.richTextBox1.Text = "";
+            audience.lbl_Phase.Text = "";
+            audience.lbl_Point.Text = "";
             //move to next step
             step++;
         }
@@ -700,6 +705,17 @@ namespace CapDemo
                 //move to another player
                 CorrectAnswer = 0;
                 PlayerCheck = 0;
+                if (GameOver == true)
+                {
+                    if (records.ElementAt(team).SequecePlayer == LastPlayerRun())
+                    {
+                        pb_EndGame.Visible = true;
+                        pb_Play.Enabled = false;
+                        //update status contest id this contest have run
+                        Contest.EndContest = 1;
+                        ContestBL.EditStatusContestbyID(Contest);
+                    }
+                }
                 team++;
                 step = 1;
             }
@@ -763,6 +779,8 @@ namespace CapDemo
                     {
                         /////display question on audience screen
                         audience.richTextBox1.Text = ListQuestion.ElementAt(0).NameQuestion;
+                        audience.lbl_Phase.Text = NameofPhase(records.ElementAt(team).IDPhase) + "/" +(ListPhase.Count-1) +" Question";
+                        audience.lbl_Point.Text = "Point: "+ BonusScoreofPhase(records.ElementAt(team).IDPhase).ToString();
                         typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
 
                         /////question is onechoice type
@@ -1343,6 +1361,16 @@ namespace CapDemo
                 {
                     if (records.ElementAt(team).TotalPass == AmountPhase * AmountSteptoPass)
                     {//move out lane when done all question in all phase
+                        //get  bonus when team is the first champion
+                        if (Done == true)
+                        {
+                            records.ElementAt(team).TeamScore += Bonus;
+                            Done = false;
+                            GameOver = true;
+                            //show  icon to end when team have finished
+                            //pb_EndGame.Visible = true;
+                        }
+                        
                         PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - PlayerLane.Height);
 
                         PictureBox pBoxTeamShirt = new PictureBox();
@@ -1356,9 +1384,8 @@ namespace CapDemo
                         pBoxTeamShirt.Location = new Point(pBoxTeamShirt.Location.X + PlayerLane.Location.X + PlayerLane.pb_Team.Location.X, pBoxTeamShirt.Location.Y + 5);
 
                         audience.pnl_FinishLane.Controls.Add(pBoxTeamShirt);
-
-                        //show  icon to end when team have finished
-                        pb_EndGame.Visible = true;
+                      
+                        
                     }
                     else
                     {//move after done each question
@@ -1676,6 +1703,19 @@ namespace CapDemo
         {
             audience.tabControl1.SelectedTab = audience.tab_EndGame;
             EndGame();
+        }
+
+        public int LastPlayerRun()
+        {
+            int check = 0;
+            for (int i = 0; i < records.Count; i++)
+            {
+                if (records.ElementAt(i).Exist == true)
+                {
+                    check = i;
+                }
+            }
+            return check;
         }
     }
 }

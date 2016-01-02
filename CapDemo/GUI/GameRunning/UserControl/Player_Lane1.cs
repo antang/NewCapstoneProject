@@ -31,7 +31,7 @@ namespace CapDemo
 
         private void timeHightLight_Tick(object sender, EventArgs e)
         {
-            this.ForeColor = this.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+                this.ForeColor = this.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
         }
     }
 }

@@ -55,7 +55,7 @@ namespace CapDemo.GUI.User_Controls
             {
                 for (int i = 0; i < ListContest.Count; i++)
                 { 
-                    if (ListContest.ElementAt(i).NumberChallenge > 0)
+                    if (ListContest.ElementAt(i).ChallengceScore > 0)
                     {
                         Game game = new Game();
                         TagGame++;
@@ -63,12 +63,24 @@ namespace CapDemo.GUI.User_Controls
                         game.ID_Game = TagGame;
                         //game.onRun += game_onRun;
                         //game.onClick += game_onClick;
+                        //game.Enabled = false;
 
                         game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                         game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                         game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
-                        game.label2.Text = ListContest.ElementAt(i).IDContest.ToString();
+                        game.lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
                         game.lbl_Number.Text = (i + 1).ToString();
+                        if (ListContest.ElementAt(i).Status == true)
+                        {
+                            game.Enabled = false;
+                            game.lbl_Status.Text = "Hoàn Tất";
+                            game.lbl_Status.ForeColor = Color.LightGreen;
+                        }
+                        else
+                        {
+                            game.lbl_Status.Text = "Chưa Hoàn Tất";
+                            game.lbl_Status.ForeColor = Color.Red;
+                        }
                         flp_StartGame.Controls.Add(game);
                     } 
                 }

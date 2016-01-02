@@ -45,7 +45,7 @@ namespace CapDemo
             //    this.onClick(this, e);
             //}
             Open_Game OpenGame = new Open_Game();
-            OpenGame.IDContest = Convert.ToInt32(label2.Text);
+            OpenGame.IDContest = Convert.ToInt32(lbl_IDContest.Text);
             DialogResult result = OpenGame.ShowDialog();
 
 
@@ -54,5 +54,26 @@ namespace CapDemo
                 //load();
             }
         }
+        //enter game to change color
+        private void Game_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Cyan;
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Cyan;
+        }
+
+        private void Game_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.SkyBlue;
+        }
+
+        private void lbl_Number_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Cyan;
+        }
+
     }
 }

@@ -64,7 +64,7 @@ namespace CapDemo.GUI.User_Controls
                     game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
                     game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                     game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
-                    game.label2.Text = ListContest.ElementAt(i).IDContest.ToString();
+                    game.lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
                     game.lbl_Number.Text = (i+1).ToString();
                     if (ListContest.ElementAt(i).NumberChallenge >0)
                     {

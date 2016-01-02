@@ -43,9 +43,8 @@
             this.lbl_IDPlayer.AutoSize = true;
             this.lbl_IDPlayer.Location = new System.Drawing.Point(105, 9);
             this.lbl_IDPlayer.Name = "lbl_IDPlayer";
-            this.lbl_IDPlayer.Size = new System.Drawing.Size(15, 13);
+            this.lbl_IDPlayer.Size = new System.Drawing.Size(0, 13);
             this.lbl_IDPlayer.TabIndex = 2;
-            this.lbl_IDPlayer.Text = "id";
             this.lbl_IDPlayer.Visible = false;
             // 
             // lbl_SequencePlayer
@@ -53,9 +52,8 @@
             this.lbl_SequencePlayer.AutoSize = true;
             this.lbl_SequencePlayer.Location = new System.Drawing.Point(4, 10);
             this.lbl_SequencePlayer.Name = "lbl_SequencePlayer";
-            this.lbl_SequencePlayer.Size = new System.Drawing.Size(18, 13);
+            this.lbl_SequencePlayer.Size = new System.Drawing.Size(0, 13);
             this.lbl_SequencePlayer.TabIndex = 3;
-            this.lbl_SequencePlayer.Text = "se";
             this.lbl_SequencePlayer.Visible = false;
             // 
             // imageList1
