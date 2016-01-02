@@ -109,7 +109,7 @@ namespace CapDemo.GUI.User_Controls
                 nonNumberEntered = true;
             }
         }
-        //limit input time to support
+        //limit number of team on challenge
         private void txt_NumTeam_TextChanged(object sender, EventArgs e)
         {
             if (txt_NumTeam.Text != "")
@@ -121,19 +121,27 @@ namespace CapDemo.GUI.User_Controls
                 }
             }
         }
-
+        //limit score to challenge
         private void txt_ChallengeScore_TextChanged(object sender, EventArgs e)
         {
             if (txt_ChallengeScore.Text != "")
             {
                 if (Convert.ToInt32(txt_ChallengeScore.Text) == 0)
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng đội  bị thách đấu lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập điểm thách đấu lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_ChallengeScore.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_ChallengeScore.Text) > 1000)
+                    {
+                        MessageBox.Show("Vui lòng nhập điểm thách đấu nhỏ hơn 1000", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_ChallengeScore.Text = "";
+                    }
                 }
             }
         }
-
+        //limit time for support choice
         private void txt_TimeForSupport_TextChanged(object sender, EventArgs e)
         {
             if (txt_TimeForSupport.Text != "")
@@ -142,6 +150,14 @@ namespace CapDemo.GUI.User_Controls
                 {
                     MessageBox.Show("Vui lòng nhập thời gian cho quyền trợ giúp lớn hơn 0", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_TimeForSupport.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_TimeForSupport.Text) > 3600)
+                    {
+                        MessageBox.Show("Vui lòng nhập thời gian cho quyền trợ giúp nhỏ hơn 3600", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_TimeForSupport.Text = "";
+                    }
                 }
             }
         }
