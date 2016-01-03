@@ -87,6 +87,16 @@ namespace CapDemo.GUI.User_Controls
             }
         }
 
+        private void btn_Exit_MouseEnter(object sender, EventArgs e)
+        {
+            btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_horver;
+        }
+
+        private void btn_Exit_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_normal;
+        }
+
 
         //void game_onClick(object sender, EventArgs e)
         //{

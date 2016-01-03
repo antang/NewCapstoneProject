@@ -133,6 +133,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroud {
+            get {
+                object obj = ResourceManager.GetObject("backgroud", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgroud_setting {
             get {
                 object obj = ResourceManager.GetObject("backgroud_setting", resourceCulture);
@@ -423,6 +433,26 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Nut_thoat_horver {
+            get {
+                object obj = ResourceManager.GetObject("Nut_thoat_horver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nut_thoat_normal {
+            get {
+                object obj = ResourceManager.GetObject("Nut_thoat_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paint_pro {
             get {
                 object obj = ResourceManager.GetObject("paint_pro", resourceCulture);
@@ -483,6 +513,26 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap screen_flp_Team {
+            get {
+                object obj = ResourceManager.GetObject("screen_flp_Team", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screen_pnl_FinishLane {
+            get {
+                object obj = ResourceManager.GetObject("Screen_pnl_FinishLane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search2 {
             get {
                 object obj = ResourceManager.GetObject("search2", resourceCulture);
@@ -513,9 +563,39 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Team_AudienceScreeen {
+            get {
+                object obj = ResourceManager.GetObject("Team_AudienceScreeen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap thach_dau {
             get {
                 object obj = ResourceManager.GetObject("thach_dau", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thanh_dau_1 {
+            get {
+                object obj = ResourceManager.GetObject("thanh_dau_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thanh_dau_2 {
+            get {
+                object obj = ResourceManager.GetObject("thanh_dau_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +716,26 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap y_kien {
             get {
                 object obj = ResourceManager.GetObject("y_kien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap y_kien_1 {
+            get {
+                object obj = ResourceManager.GetObject("y_kien_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap y_kien_2 {
+            get {
+                object obj = ResourceManager.GetObject("y_kien_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -977,7 +977,8 @@ namespace CapDemo
                                     if (oneChoice.Text == showAnswer.rdb1.Text)
                                     {
                                         showAnswer.rdb1.Checked = true;
-                                        showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
+                                        showAnswer.BackColor = Color.LightBlue;
+                                        //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
                                     }
                                 }
                             }
@@ -997,7 +998,8 @@ namespace CapDemo
                                         if (multiChoice.Text == showAnswer.chk1.Text)
                                         {
                                             showAnswer.chk1.Checked = true;
-                                            showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
+                                            showAnswer.BackColor = Color.LightBlue;
+                                            //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
                                         }
                                     }
                                 }
@@ -1495,7 +1497,7 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.het_y_kien;
+                    teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.y_kien_2;
                 }
                 //check challenge choice exist to show
                 if (records.ElementAt(j).Defy == true)
@@ -1504,7 +1506,7 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.het_thach_dau;
+                    teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.thanh_dau_1;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)

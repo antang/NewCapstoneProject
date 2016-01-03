@@ -31,9 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tab_Map = new System.Windows.Forms.TabPage();
+            this.pnl_FinishLane = new System.Windows.Forms.Panel();
+            this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_Lane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
             this.lbl_Point = new System.Windows.Forms.Label();
@@ -46,9 +47,8 @@
             this.tab_EndGame = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_Lane = new System.Windows.Forms.Panel();
-            this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl_FinishLane = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
@@ -70,35 +70,10 @@
             this.tabControl1.Size = new System.Drawing.Size(1026, 771);
             this.tabControl1.TabIndex = 0;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
-            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
-            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
-            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
-            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
-            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
-            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
-            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
-            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
-            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
-            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
-            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
-            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
-            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
-            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
-            this.imageList1.Images.SetKeyName(15, "y-kien.png");
-            // 
             // tab_Map
             // 
             this.tab_Map.BackColor = System.Drawing.Color.White;
-            this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.backgroud;
             this.tab_Map.Controls.Add(this.pnl_FinishLane);
             this.tab_Map.Controls.Add(this.flp_Finish);
             this.tab_Map.Controls.Add(this.pnl_Lane);
@@ -109,6 +84,40 @@
             this.tab_Map.Size = new System.Drawing.Size(1018, 745);
             this.tab_Map.TabIndex = 0;
             this.tab_Map.Text = "tabPage1";
+            // 
+            // pnl_FinishLane
+            // 
+            this.pnl_FinishLane.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_FinishLane.BackColor = System.Drawing.Color.Gold;
+            this.pnl_FinishLane.BackgroundImage = global::CapDemo.Properties.Resources.Screen_pnl_FinishLane;
+            this.pnl_FinishLane.Location = new System.Drawing.Point(4, 89);
+            this.pnl_FinishLane.Name = "pnl_FinishLane";
+            this.pnl_FinishLane.Size = new System.Drawing.Size(632, 52);
+            this.pnl_FinishLane.TabIndex = 4;
+            // 
+            // flp_Finish
+            // 
+            this.flp_Finish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp_Finish.BackColor = System.Drawing.Color.Transparent;
+            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.flp_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flp_Finish.Location = new System.Drawing.Point(4, 2);
+            this.flp_Finish.Name = "flp_Finish";
+            this.flp_Finish.Size = new System.Drawing.Size(632, 81);
+            this.flp_Finish.TabIndex = 0;
+            // 
+            // pnl_Lane
+            // 
+            this.pnl_Lane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_Lane.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_Lane.Location = new System.Drawing.Point(4, 147);
+            this.pnl_Lane.Name = "pnl_Lane";
+            this.pnl_Lane.Size = new System.Drawing.Size(632, 592);
+            this.pnl_Lane.TabIndex = 1;
             // 
             // flp_Team
             // 
@@ -124,7 +133,7 @@
             // tab_ShowQuestion
             // 
             this.tab_ShowQuestion.BackColor = System.Drawing.Color.SkyBlue;
-            this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.backgroud;
             this.tab_ShowQuestion.Controls.Add(this.lbl_Point);
             this.tab_ShowQuestion.Controls.Add(this.lbl_Phase);
             this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
@@ -226,7 +235,7 @@
             // 
             // tab_EndGame
             // 
-            this.tab_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Hinh_nen;
+            this.tab_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.backgroud;
             this.tab_EndGame.Controls.Add(this.label1);
             this.tab_EndGame.Controls.Add(this.flp_TeamEndGame);
             this.tab_EndGame.Location = new System.Drawing.Point(4, 22);
@@ -261,39 +270,30 @@
             this.flp_TeamEndGame.Size = new System.Drawing.Size(1018, 260);
             this.flp_TeamEndGame.TabIndex = 0;
             // 
-            // pnl_Lane
+            // timer1
             // 
-            this.pnl_Lane.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Lane.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_Lane.Location = new System.Drawing.Point(4, 147);
-            this.pnl_Lane.Name = "pnl_Lane";
-            this.pnl_Lane.Size = new System.Drawing.Size(632, 592);
-            this.pnl_Lane.TabIndex = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // flp_Finish
+            // imageList1
             // 
-            this.flp_Finish.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flp_Finish.BackColor = System.Drawing.Color.Transparent;
-            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
-            this.flp_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flp_Finish.Location = new System.Drawing.Point(4, 2);
-            this.flp_Finish.Name = "flp_Finish";
-            this.flp_Finish.Size = new System.Drawing.Size(632, 81);
-            this.flp_Finish.TabIndex = 0;
-            // 
-            // pnl_FinishLane
-            // 
-            this.pnl_FinishLane.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_FinishLane.BackColor = System.Drawing.Color.Gold;
-            this.pnl_FinishLane.BackgroundImage = global::CapDemo.Properties.Resources.lane;
-            this.pnl_FinishLane.Location = new System.Drawing.Point(4, 89);
-            this.pnl_FinishLane.Name = "pnl_FinishLane";
-            this.pnl_FinishLane.Size = new System.Drawing.Size(632, 52);
-            this.pnl_FinishLane.TabIndex = 4;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
+            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
+            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
+            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
+            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
+            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
+            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
+            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
+            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
+            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
+            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
+            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
+            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
+            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
+            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
+            this.imageList1.Images.SetKeyName(15, "y-kien.png");
             // 
             // Audience_Screen
             // 
