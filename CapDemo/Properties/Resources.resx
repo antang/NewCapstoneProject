@@ -292,4 +292,34 @@
   <data name="nen_doi_thi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nen-doi-thi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="backgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nut_thoat_horver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nut-thoat-horver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nut_thoat_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nut-thoat-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="screen_flp_Team" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\screen-flp_Team.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screen_pnl_FinishLane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screen-pnl_FinishLane.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Team_AudienceScreeen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team_AudienceScreeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanh_dau_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanh-dau-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanh_dau_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanh-dau-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="y_kien_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\y-kien-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="y_kien_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\y-kien-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

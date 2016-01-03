@@ -257,12 +257,18 @@ namespace CapDemo.GUI.User_Controls
         {
             if (txt_TimeQuestion.Text!="")
             {
-                //MessageBox.Show("Vui lòng nhập lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 if (Convert.ToInt32(txt_TimeQuestion.Text) == 0 )
                 {
                     MessageBox.Show("Vui lòng nhập thời gian hiển thị câu hỏi lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_TimeQuestion.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_TimeQuestion.Text) > 300)
+                    {
+                        MessageBox.Show("Vui lòng nhập thời gian hiển thị câu hỏi nhỏ hơn hoặc bằng 300.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_TimeQuestion.Text = "";
+                    }
                 }
             }
         }
@@ -276,6 +282,14 @@ namespace CapDemo.GUI.User_Controls
                     MessageBox.Show("Vui lòng nhập điểm thưởng cho đội về đích đầu tiên lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_Bonus.Text = "";
                 }
+                else
+                {
+                    if (Convert.ToInt32(txt_Bonus.Text) > 1000)
+                    {
+                        MessageBox.Show("Vui lòng nhập điểm thưởng cho đội về đích đầu tiên nhỏ hơn 1000.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_Bonus.Text = "";
+                    }
+                }
             }
         }
         //limit input number of step pass
@@ -285,8 +299,16 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (Convert.ToInt32(txt_NumStepPass.Text) == 0)
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng câu đúng lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập số lượng câu đúng để hoàn thành một giai đoạn lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_NumStepPass.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_NumStepPass.Text) >3)
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng câu đúng để hoàn thành một giai đoạn nhỏ hơn 4.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_NumStepPass.Text = "";
+                    }
                 }
             }
         }
@@ -297,8 +319,36 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (Convert.ToInt32(txt_NumStepFail.Text) == 0)
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng câu sai lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập số lượng câu sai để dừng lại ở một giai đoạn lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_NumStepFail.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_NumStepFail.Text) >3)
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng câu sai để dừng lại ở một giai đoạn nhỏ hơn 4.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_NumStepFail.Text = "";
+                    }
+                }
+            }
+        }
+        //limit time auto show answer
+        private void txt_TimeAnswer_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_TimeAnswer.Text != "")
+            {
+                if (Convert.ToInt32(txt_TimeAnswer.Text) == 0)
+                {
+                    MessageBox.Show("Vui lòng nhập thời gian hiển thị đáp án lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_TimeAnswer.Text = "";
+                }
+                else
+                {
+                    if (Convert.ToInt32(txt_TimeAnswer.Text) >300)
+                    {
+                        MessageBox.Show("Vui lòng nhập thời gian hiển thị đáp án nhỏ hơn hoặc bằng 300.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_TimeAnswer.Text = "";
+                    }
                 }
             }
         }
@@ -400,17 +450,7 @@ namespace CapDemo.GUI.User_Controls
             }
         }
 
-        private void txt_TimeAnswer_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_TimeAnswer.Text != "")
-            {
-                if (Convert.ToInt32(txt_TimeAnswer.Text) == 0)
-                {
-                    MessageBox.Show("Vui lòng nhập thời gian hiển thị đáp án lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_TimeAnswer.Text = "";
-                }
-            }
-        }
+       
         //Add new Competition
         private void btn_AddCompetition_Click(object sender, EventArgs e)
         {

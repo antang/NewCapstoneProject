@@ -47,7 +47,7 @@
             this.lbl_Sequence = new System.Windows.Forms.Label();
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.gb_team = new System.Windows.Forms.GroupBox();
-            this.chk_true = new System.Windows.Forms.CheckBox();
+            this.chk_Correct = new System.Windows.Forms.CheckBox();
             this.chk_Challenged = new System.Windows.Forms.CheckBox();
             this.lbl_IDPlayer = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
@@ -58,9 +58,9 @@
             // 
             this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamName.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_TeamName.Location = new System.Drawing.Point(50, 12);
+            this.lbl_TeamName.Location = new System.Drawing.Point(60, 12);
             this.lbl_TeamName.Name = "lbl_TeamName";
-            this.lbl_TeamName.Size = new System.Drawing.Size(197, 26);
+            this.lbl_TeamName.Size = new System.Drawing.Size(187, 26);
             this.lbl_TeamName.TabIndex = 0;
             this.lbl_TeamName.Text = "Name";
             this.lbl_TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,9 +69,9 @@
             // 
             this.lbl_TeamScore.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamScore.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_TeamScore.Location = new System.Drawing.Point(54, 38);
+            this.lbl_TeamScore.Location = new System.Drawing.Point(60, 38);
             this.lbl_TeamScore.Name = "lbl_TeamScore";
-            this.lbl_TeamScore.Size = new System.Drawing.Size(193, 26);
+            this.lbl_TeamScore.Size = new System.Drawing.Size(187, 26);
             this.lbl_TeamScore.TabIndex = 1;
             this.lbl_TeamScore.Text = "Score";
             this.lbl_TeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,9 +80,9 @@
             // 
             this.lbl_CurrentPhase.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CurrentPhase.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_CurrentPhase.Location = new System.Drawing.Point(57, 64);
+            this.lbl_CurrentPhase.Location = new System.Drawing.Point(63, 64);
             this.lbl_CurrentPhase.Name = "lbl_CurrentPhase";
-            this.lbl_CurrentPhase.Size = new System.Drawing.Size(190, 24);
+            this.lbl_CurrentPhase.Size = new System.Drawing.Size(184, 24);
             this.lbl_CurrentPhase.TabIndex = 2;
             this.lbl_CurrentPhase.Text = "Phase";
             this.lbl_CurrentPhase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -229,21 +229,22 @@
             this.gb_team.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_team.Location = new System.Drawing.Point(6, 176);
             this.gb_team.Name = "gb_team";
-            this.gb_team.Size = new System.Drawing.Size(224, 100);
+            this.gb_team.Size = new System.Drawing.Size(224, 89);
             this.gb_team.TabIndex = 19;
             this.gb_team.TabStop = false;
             this.gb_team.Text = "Choice";
             // 
-            // chk_true
+            // chk_Correct
             // 
-            this.chk_true.AutoSize = true;
-            this.chk_true.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_true.Location = new System.Drawing.Point(146, 98);
-            this.chk_true.Name = "chk_true";
-            this.chk_true.Size = new System.Drawing.Size(72, 17);
-            this.chk_true.TabIndex = 20;
-            this.chk_true.Text = "Correct";
-            this.chk_true.UseVisualStyleBackColor = true;
+            this.chk_Correct.AutoSize = true;
+            this.chk_Correct.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_Correct.Location = new System.Drawing.Point(146, 98);
+            this.chk_Correct.Name = "chk_Correct";
+            this.chk_Correct.Size = new System.Drawing.Size(72, 17);
+            this.chk_Correct.TabIndex = 20;
+            this.chk_Correct.Text = "Correct";
+            this.chk_Correct.UseVisualStyleBackColor = true;
+            this.chk_Correct.Visible = false;
             // 
             // chk_Challenged
             // 
@@ -276,7 +277,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.lbl_IDPlayer);
             this.Controls.Add(this.chk_Challenged);
-            this.Controls.Add(this.chk_true);
+            this.Controls.Add(this.chk_Correct);
             this.Controls.Add(this.gb_team);
             this.Controls.Add(this.flp_Answer);
             this.Controls.Add(this.lbl_Answer);
@@ -318,10 +319,10 @@
         public System.Windows.Forms.CheckBox chk_QuestionPM;
         public System.Windows.Forms.Label lbl_Sequence;
         public System.Windows.Forms.FlowLayoutPanel flp_Answer;
-        private System.Windows.Forms.CheckBox chk_true;
         public System.Windows.Forms.GroupBox gb_team;
         public System.Windows.Forms.CheckBox chk_Challenged;
         public System.Windows.Forms.Label lbl_IDPlayer;
+        public System.Windows.Forms.CheckBox chk_Correct;
 
     }
 }

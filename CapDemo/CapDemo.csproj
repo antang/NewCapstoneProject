@@ -730,6 +730,16 @@
     <None Include="Resources\lane.jpg" />
     <None Include="Resources\nen-doi-thi.png" />
     <None Include="Resources\nen-vong-thi.png" />
+    <None Include="Resources\backgroud.jpg" />
+    <None Include="Resources\screen-flp_Team.jpg" />
+    <None Include="Resources\Screen-pnl_FinishLane.jpg" />
+    <None Include="Resources\Team_AudienceScreeen.png" />
+    <None Include="Resources\thanh-dau-1.png" />
+    <None Include="Resources\thanh-dau-2.png" />
+    <None Include="Resources\y-kien-1.png" />
+    <None Include="Resources\y-kien-2.png" />
+    <None Include="Resources\Nut-thoat-horver.png" />
+    <None Include="Resources\Nut-thoat-normal.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

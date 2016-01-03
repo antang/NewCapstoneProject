@@ -78,9 +78,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 25);
+            this.label1.Size = new System.Drawing.Size(214, 25);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Tạo cuộc thi mới";
+            this.label1.Text = "Thiết lập cuộc thi";
             // 
             // btn_Next
             // 
