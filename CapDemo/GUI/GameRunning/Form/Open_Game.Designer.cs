@@ -51,7 +51,7 @@
             this.flp_Team.BackColor = System.Drawing.Color.Transparent;
             this.flp_Team.Location = new System.Drawing.Point(0, 0);
             this.flp_Team.Name = "flp_Team";
-            this.flp_Team.Size = new System.Drawing.Size(1024, 350);
+            this.flp_Team.Size = new System.Drawing.Size(1005, 350);
             this.flp_Team.TabIndex = 5;
             // 
             // timer1
@@ -72,7 +72,8 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +86,7 @@
             // 
             // lblHint
             // 
-            this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHint.BackColor = System.Drawing.Color.Transparent;
             this.lblHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHint.ForeColor = System.Drawing.Color.SeaShell;
@@ -98,7 +99,7 @@
             // 
             // pb_Play
             // 
-            this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Play.BackColor = System.Drawing.Color.Transparent;
             this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.PlayGame;
             this.pb_Play.Location = new System.Drawing.Point(880, 577);
@@ -110,6 +111,7 @@
             // 
             // pb_Exit
             // 
+            this.pb_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pb_Exit.BackColor = System.Drawing.Color.Transparent;
             this.pb_Exit.BackgroundImage = global::CapDemo.Properties.Resources.Button_Close;
             this.pb_Exit.Location = new System.Drawing.Point(3, 577);
@@ -121,6 +123,7 @@
             // 
             // pb_EndGame
             // 
+            this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
             this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -137,7 +140,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.backgroud;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.pb_EndGame);
@@ -147,8 +149,12 @@
             this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flp_Team);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Open_Game";
             this.Text = "Open_Game";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Open_Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();

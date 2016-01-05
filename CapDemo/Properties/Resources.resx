@@ -142,9 +142,6 @@
   <data name="KhungTao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\KhungTao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="QLTK_Setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\QLTK_Setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,9 +186,6 @@
   </data>
   <data name="Thoat_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thoat_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_pro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\icon\paint_pro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,32 +235,14 @@
   <data name="QLTK_Setting_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QLTK_Setting_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="khung-vong-thi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\khung-vong-thi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Button_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayGame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ao_lon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_lon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ao_nho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ao_nho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="chiec_cup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chiec-cup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="het_thach_dau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\het-thach-dau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="het_y_kien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\het-y-kien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thach_dau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thach-dau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trai_tim_dung" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trai-tim-dung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,17 +250,8 @@
   <data name="trai_tim_sai" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trai-tim-sai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vong_tron_gio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vong-tron-gio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="y_kien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\y-kien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Hinh_nen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hinh-nen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lane.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,25 +268,37 @@
   <data name="Nut_thoat_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nut-thoat-normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="screen_flp_Team" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\screen-flp_Team.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Screen_pnl_FinishLane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screen-pnl_FinishLane.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Team_AudienceScreeen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Team_AudienceScreeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading_circle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thanh_dau_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thanh-dau-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="spinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spinner.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thanh_dau_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thanh-dau-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Correct_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Correct_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="y_kien_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\y-kien-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="incorrect_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\incorrect_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="y_kien_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\y-kien-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="End_Support" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\End_Support.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Support" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Support.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao_lon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao-lon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon-stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shields_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shields_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shield_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shield_Grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

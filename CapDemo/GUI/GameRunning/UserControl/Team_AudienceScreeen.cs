@@ -24,15 +24,18 @@ namespace CapDemo
             }
             else
             {
-                lbl_TeamName.ForeColor = Color.RoyalBlue;
+                //lbl_TeamName.ForeColor = Color.RoyalBlue;
                 timerHighLight.Stop();
             }
         }
 
         private void timerHighLight_Tick(object sender, EventArgs e)
         {
-            lbl_TeamName.ForeColor = lbl_TeamName.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
-            //this.BackColor = this.BackColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+            //lbl_TeamName.ForeColor = lbl_TeamName.ForeColor == Color.RoyalBlue ? Color.LawnGreen : Color.RoyalBlue;
+            this.BackColor = Color.LightCoral;
+            btn_SupportChoice.BackColor = Color.LightCoral;
+            btn_ChallengeChoice.BackColor = Color.LightCoral;
+            btn_Stop.BackColor = Color.LightCoral;
 
         }
 

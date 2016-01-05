@@ -57,7 +57,7 @@
             this.flp_StartGame.BackgroundImage = global::CapDemo.Properties.Resources.backgroud;
             this.flp_StartGame.Location = new System.Drawing.Point(42, 77);
             this.flp_StartGame.Name = "flp_StartGame";
-            this.flp_StartGame.Size = new System.Drawing.Size(944, 530);
+            this.flp_StartGame.Size = new System.Drawing.Size(944, 559);
             this.flp_StartGame.TabIndex = 1;
             // 
             // btn_Exit
@@ -68,7 +68,7 @@
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.Red;
-            this.btn_Exit.Location = new System.Drawing.Point(844, 613);
+            this.btn_Exit.Location = new System.Drawing.Point(844, 642);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(142, 43);
             this.btn_Exit.TabIndex = 2;
