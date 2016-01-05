@@ -39,12 +39,12 @@
             this.lbl_NamePhase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_NamePhase.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NamePhase.BackColor = System.Drawing.Color.Silver;
+            this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NamePhase.ImageIndex = 0;
-            this.lbl_NamePhase.Location = new System.Drawing.Point(16, 12);
+            this.lbl_NamePhase.Location = new System.Drawing.Point(0, 0);
             this.lbl_NamePhase.Name = "lbl_NamePhase";
-            this.lbl_NamePhase.Size = new System.Drawing.Size(58, 18);
+            this.lbl_NamePhase.Size = new System.Drawing.Size(83, 40);
             this.lbl_NamePhase.TabIndex = 0;
             this.lbl_NamePhase.Text = "label1";
             this.lbl_NamePhase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

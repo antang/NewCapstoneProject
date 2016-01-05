@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CapDemo
 {
-    public partial class PlayerAnswer : UserControl
+    public partial class PhaseLane1 : UserControl
     {
-        public PlayerAnswer()
+        public PhaseLane1()
         {
             InitializeComponent();
-        }
-
-        private void pb_TeamShirt_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

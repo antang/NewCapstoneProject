@@ -299,7 +299,7 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(teamAdienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
                             {
-                                teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.het_y_kien;
+                                teamAdienceScreen.btn_SupportChoice.BackgroundImage = Properties.Resources.End_Support;
                             }
                         }
 
@@ -363,6 +363,7 @@ namespace CapDemo
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
             {
                 playerLane.pb_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
+                playerLane.BackColor = Color.SkyBlue;
                 playerLane.HighLight(false);
             }
 
@@ -371,9 +372,12 @@ namespace CapDemo
             foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
             {
                 teamAdienceScreen.HighLight(false);
-                teamAdienceScreen.BackColor = Color.White;
+                teamAdienceScreen.BackColor = Color.SkyBlue;
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
+                teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
+                teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
+                teamAdienceScreen.btn_Stop.BackColor = Color.SkyBlue;
                 //check support choice exist to show
                 if (records.ElementAt(j).Support==true)
                 {
@@ -381,7 +385,8 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.het_y_kien;
+                    //teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.het_y_kien;
+                    teamAdienceScreen.btn_SupportChoice.BackgroundImage = Properties.Resources.End_Support;
                 }
                 //check challenge choice exist to show
                 if (records.ElementAt(j).Defy == true)
@@ -390,7 +395,8 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.het_thach_dau;
+                    //teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.het_thach_dau;
+                    teamAdienceScreen.btn_ChallengeChoice.BackgroundImage = Properties.Resources.Shield_Grey;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail==3)
@@ -489,14 +495,16 @@ namespace CapDemo
             }
             
             //show player lane on audience screen
-            foreach (Player_Lane1 item in audience.pnl_Lane.Controls)
+            foreach (Player_Lane1 Playerlane in audience.pnl_Lane.Controls)
             {
-                if (Convert.ToInt32(item.lbl_SequencePlayer.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                if (Convert.ToInt32(Playerlane.lbl_SequencePlayer.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
-                    item.HighLight(true);
+                    Playerlane.HighLight(true);
+                    
                     if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0)
                     {
-                        item.pb_Team.Location = new Point(item.pb_Team.Location.X + 0, item.pb_Team.Location.Y - 55);                        
+                        int H_Phase = ( Playerlane.Height- Playerlane.pb_Team.Height - Playerlane.lbl_Finish.Location.Y - Playerlane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        Playerlane.pb_Team.Location = new Point(Playerlane.pb_Team.Location.X + 0, Playerlane.pb_Team.Location.Y - (H_Phase/2 + Playerlane.pb_Team.Height/2));                        
                     }
                 }
             }
@@ -511,7 +519,7 @@ namespace CapDemo
                 {
                     if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
                     {
-                        teamAdienceScreen.lbl_Hint.Visible=true;
+                        teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
                     }
                 }
             }
@@ -635,14 +643,8 @@ namespace CapDemo
                 }
             }
             else
-            {
-                TextBox txt_Answer = new TextBox();
-                txt_Answer.Text = CorrectShortAnswer;
+            {  
                 CorrectAnswerChallenge = CorrectShortAnswer;
-                txt_Answer.Font = new Font("Verdana",32.0f,FontStyle.Bold);
-                txt_Answer.BackColor = Color.LightGreen;
-                txt_Answer.ReadOnly = true;
-                audience.flp_AnswerQuiz.Controls.Add(txt_Answer);
             }
 
             //check player correct or incorrect
@@ -653,26 +655,50 @@ namespace CapDemo
                     if (playerAnswer.lbl_TeamAnswer.Text.Trim().Replace(" ","") == CorrectAnswerChallenge)
                     {
                         playerAnswer.lbl_Check.Text = "true";
+                        playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                     }
                     else
                     {
                         playerAnswer.lbl_Check.Text = "false";
+                        playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
                     }
                 }
             }
             else
             {
-                foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                if (typequestion == "onechoice")
                 {
-                    if (playerAnswer.lbl_TeamAnswer.Text == CorrectAnswerChallenge)
+                    foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
-                        playerAnswer.lbl_Check.Text = "true";
-                    }
-                    else
-                    {
-                        playerAnswer.lbl_Check.Text = "false";
+                        if (playerAnswer.lbl_TeamAnswer.Text == CorrectAnswerChallenge)
+                        {
+                            playerAnswer.lbl_Check.Text = "true";
+                            playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                        }
+                        else
+                        {
+                            playerAnswer.lbl_Check.Text = "false";
+                            playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
+                        }
                     }
                 }
+                else
+                {
+                    foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                    {
+                        if (playerAnswer.lbl_TeamAnswer.Text == CorrectAnswerChallenge)
+                        {
+                            playerAnswer.lbl_Check.Text = "true";
+                            playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                        }
+                        else
+                        {
+                            playerAnswer.lbl_Check.Text = "false";
+                            playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
+                        }
+                    }
+                }
+                
             }
             step++;
         }
@@ -699,8 +725,10 @@ namespace CapDemo
             //End Game
             if (NumPlayerEndGame == AmountPlayer)
             {
-                MessageBox.Show("End Game!");
-                this.Close();
+                pb_Play.Enabled = false;
+                pb_EndGame.Visible = true;
+                Contest.EndContest = 1;
+                ContestBL.EditStatusContestbyID(Contest);
             }
             else
             {
@@ -739,7 +767,10 @@ namespace CapDemo
             //minus life if team fail in question
             records.ElementAt(team).NumFail -= 1;
             records.ElementAt(team).TeamScore -= score;
-            //MoveNextPhaseHaveChallenge();
+            if (records.ElementAt(team).NumFail == 0)
+            {
+                records.ElementAt(team).Exist = false;
+            }
             UpdateScreenAfterChallenge();
         }
         ////Pass question PM
@@ -781,7 +812,7 @@ namespace CapDemo
                     {
                         /////display question on audience screen
                         audience.richTextBox1.Text = ListQuestion.ElementAt(0).NameQuestion;
-                        audience.lbl_Phase.Text = NameofPhase(records.ElementAt(team).IDPhase) + "/" +(ListPhase.Count-1) +" Question";
+                        audience.lbl_Phase.Text = NameofPhase(records.ElementAt(team).IDPhase) + "(" +(ListPhase.Count-1) +")";
                         audience.lbl_Point.Text = "Point: "+ BonusScoreofPhase(records.ElementAt(team).IDPhase).ToString();
                         typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
 
@@ -844,6 +875,7 @@ namespace CapDemo
                     timer1.Start();
                     //show time conut down on audience screen
                     audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                    audience.lbl_TimeShowQuestion.Image = Properties.Resources.loading_circle;
                     audience.timer1.Interval = 1000;
                     audience.timer1.Start();
                 }
@@ -868,6 +900,8 @@ namespace CapDemo
                     PlayerAnswer PlayerAnswer = new PlayerAnswer();
                     PlayerAnswer.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
                     PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
+                    PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
+                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width/2 - PlayerAnswer.Width/2), PlayerAnswer.Location.Y + 5);
                     audience.flp_PlayerAnswers.Controls.Add(PlayerAnswer);
 
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
@@ -911,6 +945,14 @@ namespace CapDemo
         void TableAnswerMultiTeam(List<Question> ListQuestion, List<Answer> ListAnswer)
         {
             int a = 65;
+            int No = 0;
+            int D =1 ; 
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                teamCS.chk_Challenged.Visible = false;
+                if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer) || teamCS.chk_Challenged.Checked == true)
+                { D++; }
+            }
             /////show answer one on control screen
             foreach (Team teamCS in flp_Team.Controls)
             {
@@ -918,9 +960,13 @@ namespace CapDemo
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer) || teamCS.chk_Challenged.Checked==true)
                 {
                     PlayerAnswer PlayerAnswer = new PlayerAnswer();
+                    //PlayerAnswer.Location = new Point(PlayerAnswer.Location.X+0, PlayerAnswer.Location.Y+0);
                     PlayerAnswer.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
                     PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
+                    PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
+                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width / D - PlayerAnswer.Width / 2) + audience.flp_PlayerAnswers.Width / D *No, PlayerAnswer.Location.Y + 5);
                     audience.flp_PlayerAnswers.Controls.Add(PlayerAnswer);
+                    No++;
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
                     {
                         for (int h = 0; h < ListAnswer.Count; h++)
@@ -977,7 +1023,16 @@ namespace CapDemo
                                     if (oneChoice.Text == showAnswer.rdb1.Text)
                                     {
                                         showAnswer.rdb1.Checked = true;
-                                        showAnswer.BackColor = Color.LightBlue;
+                                        showAnswer.BackColor = Color.Yellow;
+
+                                        foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                                        {
+                                            //check team on controller screen and TeamAnswer on audience screen is equal
+                                            if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                                            {
+                                                  playerAnswer.lbl_TeamAnswer.Text = oneChoice.Text;
+                                            }
+                                        }
                                         //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
                                     }
                                 }
@@ -998,8 +1053,16 @@ namespace CapDemo
                                         if (multiChoice.Text == showAnswer.chk1.Text)
                                         {
                                             showAnswer.chk1.Checked = true;
-                                            showAnswer.BackColor = Color.LightBlue;
+                                            showAnswer.BackColor = Color.Yellow;
                                             //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
+
+                                            foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                                            {
+                                                if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Text += multiChoice.Text + " ";
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -1009,11 +1072,16 @@ namespace CapDemo
                         {
                             foreach (TextBox shortanswer in teamCS.flp_Answer.Controls)
                             {
-                                shortanswer.ReadOnly = true;
-                                shortanswer.Font = new Font("Verdana", 32.0f, FontStyle.Bold);
-                                shortanswer.AutoSize = true;
-                                audience.flp_AnswerQuiz.Controls.Add(shortanswer);
                                 PlayerAnswerShortQuestion = shortanswer.Text;
+
+                                foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                                {
+                                    //check team on controller screen and TeamAnswer on audience screen is equal
+                                    if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                                    {
+                                            playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1416,26 +1484,13 @@ namespace CapDemo
                             //show  icon to end when team have finished
                             //pb_EndGame.Visible = true;
                         }
-                        
-                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - PlayerLane.Height);
-
-                        PictureBox pBoxTeamShirt = new PictureBox();
-                        pBoxTeamShirt.Image = Properties.Resources.ao_nho;
-                        pBoxTeamShirt.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
-
-                        // Properties
-                        pBoxTeamShirt.Width = 39;
-                        pBoxTeamShirt.Height = 45;
-                        pBoxTeamShirt.Anchor = AnchorStyles.None;
-                        pBoxTeamShirt.Location = new Point(pBoxTeamShirt.Location.X + PlayerLane.Location.X + PlayerLane.pb_Team.Location.X, pBoxTeamShirt.Location.Y + 5);
-
-                        audience.pnl_FinishLane.Controls.Add(pBoxTeamShirt);
-                      
-                        
+                        int H_Phase = (PlayerLane.Height - PlayerLane.pb_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - (H_Phase/2 - PlayerLane.pb_Team.Height/2 ) - PlayerLane.lbl_Finish.Height - PlayerLane.pb_Team.Height - 2);  
                     }
                     else
                     {//move after done each question
-                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - 50);
+                        int H_Phase = (PlayerLane.Height - PlayerLane.pb_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - H_Phase);
                     }
                 }
             }
@@ -1490,6 +1545,7 @@ namespace CapDemo
             {
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
+                //teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
                 //check support choice exist to show
                 if (records.ElementAt(j).Support == true)
                 {
@@ -1497,7 +1553,8 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.y_kien_2;
+                    //teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.y_kien_2;
+                    teamAdienceScreen.btn_SupportChoice.BackgroundImage = Properties.Resources.End_Support;
                 }
                 //check challenge choice exist to show
                 if (records.ElementAt(j).Defy == true)
@@ -1506,7 +1563,14 @@ namespace CapDemo
                 }
                 else
                 {
-                    teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.thanh_dau_1;
+                    //teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.thanh_dau_1;
+                    teamAdienceScreen.btn_ChallengeChoice.BackgroundImage = Properties.Resources.Shield_Grey;
+                }
+
+                //check to stop game player
+                if (records.ElementAt(j).Exist == false)
+                {
+                    teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)
@@ -1678,6 +1742,7 @@ namespace CapDemo
             else if (step ==7)
             {
                 lblHint.Text = guideline[0].ToString();
+                UpdateScreenAfterChallenge();
                 audience.tabControl1.SelectedTab = audience.tab_Map;
                 CalculteScore();
             }

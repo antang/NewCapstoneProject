@@ -392,6 +392,12 @@
     <Compile Include="GUI\GameRunning\UserControl\Player_Lane1.Designer.cs">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhaseLane1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhaseLane1.Designer.cs">
+      <DependentUpon>PhaseLane1.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -591,6 +597,9 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Player_Lane1.resx">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhaseLane1.resx">
+      <DependentUpon>PhaseLane1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayerAnswer.resx">
       <DependentUpon>PlayerAnswer.cs</DependentUpon>
     </EmbeddedResource>
@@ -719,7 +728,6 @@
     <None Include="Resources\vong-tron-gio.png" />
     <None Include="Resources\y-kien.png" />
     <None Include="Resources\Hinh-nen.jpg" />
-    <None Include="Resources\spinner.gif" />
     <None Include="Resources\ProCircle.gif" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\congratulation.gif" />
@@ -740,6 +748,18 @@
     <None Include="Resources\y-kien-2.png" />
     <None Include="Resources\Nut-thoat-horver.png" />
     <None Include="Resources\Nut-thoat-normal.png" />
+    <None Include="Resources\loading_circle.gif" />
+    <None Include="Resources\spinner.gif" />
+    <None Include="Resources\Correct_ico.png" />
+    <None Include="Resources\incorrect_ico.png" />
+    <None Include="Resources\Support.png" />
+    <None Include="Resources\End_Support.png" />
+    <None Include="Resources\sheild1.jpg" />
+    <None Include="Resources\Shield_Green.jpg" />
+    <None Include="Resources\Shield_Grey.png" />
+    <None Include="Resources\Shields_0.png" />
+    <None Include="Resources\Icon-stop.png" />
+    <None Include="Resources\ao-lon.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

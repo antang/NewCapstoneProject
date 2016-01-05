@@ -206,7 +206,7 @@
             // 
             this.lbl_Sequence.AutoSize = true;
             this.lbl_Sequence.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Sequence.Location = new System.Drawing.Point(225, 277);
+            this.lbl_Sequence.Location = new System.Drawing.Point(206, 279);
             this.lbl_Sequence.Name = "lbl_Sequence";
             this.lbl_Sequence.Size = new System.Drawing.Size(24, 14);
             this.lbl_Sequence.TabIndex = 8;
@@ -291,7 +291,7 @@
             this.Controls.Add(this.lbl_TeamName);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Team";
-            this.Size = new System.Drawing.Size(250, 300);
+            this.Size = new System.Drawing.Size(237, 300);
             this.contextMenuStrip1.ResumeLayout(false);
             this.gb_team.ResumeLayout(false);
             this.gb_team.PerformLayout();
