@@ -39,12 +39,14 @@
             this.lbl_NamePhase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_NamePhase.BackColor = System.Drawing.Color.Silver;
+            this.lbl_NamePhase.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_NamePhase.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NamePhase.ForeColor = System.Drawing.Color.White;
             this.lbl_NamePhase.ImageIndex = 0;
             this.lbl_NamePhase.Location = new System.Drawing.Point(0, 0);
             this.lbl_NamePhase.Name = "lbl_NamePhase";
-            this.lbl_NamePhase.Size = new System.Drawing.Size(83, 40);
+            this.lbl_NamePhase.Size = new System.Drawing.Size(81, 38);
             this.lbl_NamePhase.TabIndex = 0;
             this.lbl_NamePhase.Text = "label1";
             this.lbl_NamePhase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,10 +61,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lbl_NamePhase);
             this.Name = "Phase_Lane";
-            this.Size = new System.Drawing.Size(98, 40);
+            this.Size = new System.Drawing.Size(96, 38);
             this.ResumeLayout(false);
 
         }

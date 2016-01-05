@@ -42,11 +42,11 @@
             // 
             this.lbl_TeamAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_TeamAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_TeamAnswer.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamAnswer.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamAnswer.ForeColor = System.Drawing.Color.Black;
-            this.lbl_TeamAnswer.Location = new System.Drawing.Point(68, 39);
+            this.lbl_TeamAnswer.Location = new System.Drawing.Point(39, 36);
             this.lbl_TeamAnswer.Name = "lbl_TeamAnswer";
-            this.lbl_TeamAnswer.Size = new System.Drawing.Size(160, 38);
+            this.lbl_TeamAnswer.Size = new System.Drawing.Size(162, 41);
             this.lbl_TeamAnswer.TabIndex = 1;
             this.lbl_TeamAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -71,32 +71,32 @@
             // lbl_TeamName
             // 
             this.lbl_TeamName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_TeamName.BackColor = System.Drawing.Color.NavajoWhite;
-            this.lbl_TeamName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TeamName.ForeColor = System.Drawing.Color.Black;
-            this.lbl_TeamName.Location = new System.Drawing.Point(68, 0);
+            this.lbl_TeamName.BackColor = System.Drawing.Color.DimGray;
+            this.lbl_TeamName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamName.ForeColor = System.Drawing.Color.White;
+            this.lbl_TeamName.Location = new System.Drawing.Point(39, -1);
             this.lbl_TeamName.Name = "lbl_TeamName";
-            this.lbl_TeamName.Size = new System.Drawing.Size(199, 38);
+            this.lbl_TeamName.Size = new System.Drawing.Size(162, 37);
             this.lbl_TeamName.TabIndex = 5;
             this.lbl_TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb_Result
             // 
             this.pb_Result.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_Result.Location = new System.Drawing.Point(228, 39);
+            this.pb_Result.Location = new System.Drawing.Point(0, 37);
             this.pb_Result.Name = "pb_Result";
-            this.pb_Result.Size = new System.Drawing.Size(39, 38);
+            this.pb_Result.Size = new System.Drawing.Size(39, 40);
             this.pb_Result.TabIndex = 4;
             this.pb_Result.TabStop = false;
             // 
             // pb_TeamShirt
             // 
             this.pb_TeamShirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pb_TeamShirt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_TeamShirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pb_TeamShirt.Location = new System.Drawing.Point(0, 0);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
-            this.pb_TeamShirt.Size = new System.Drawing.Size(68, 78);
+            this.pb_TeamShirt.Size = new System.Drawing.Size(39, 37);
             this.pb_TeamShirt.TabIndex = 0;
             this.pb_TeamShirt.TabStop = false;
             this.pb_TeamShirt.Click += new System.EventHandler(this.pb_TeamShirt_Click);
@@ -114,7 +114,7 @@
             this.Controls.Add(this.lbl_TeamAnswer);
             this.Controls.Add(this.pb_TeamShirt);
             this.Name = "PlayerAnswer";
-            this.Size = new System.Drawing.Size(266, 77);
+            this.Size = new System.Drawing.Size(200, 77);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Result)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TeamShirt)).EndInit();
             this.ResumeLayout(false);

@@ -363,7 +363,7 @@ namespace CapDemo
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
             {
                 playerLane.pb_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
-                playerLane.BackColor = Color.SkyBlue;
+                playerLane.BackColor = Color.Transparent;
                 playerLane.HighLight(false);
             }
 
@@ -433,8 +433,9 @@ namespace CapDemo
             }
             //Clear panel
             audience.flp_AnswerQuiz.Controls.Clear();
-            audience.richTextBox1.Text = "";
+            audience.lbl_QuestionContent.Text = "";
             audience.lbl_Phase.Text = "";
+            audience.lbl_typeQ.Text = "";
             audience.lbl_Point.Text = "";
             //move to next step
             step++;
@@ -611,7 +612,8 @@ namespace CapDemo
                 {
                     if (answer.lbl_Correct.Text.ToLower() == "true")
                     {
-                        answer.BackColor = Color.LightGreen;
+                        answer.BackColor = Color.LimeGreen;
+                        answer.rtxt_Answer.BackColor = Color.LimeGreen;
                         if (typequestion == "onechoice")
                         {
                             CorrectAnswerChallenge = answer.rdb1.Text;
@@ -811,10 +813,13 @@ namespace CapDemo
                     if (ListQuestion != null)
                     {
                         /////display question on audience screen
-                        audience.richTextBox1.Text = ListQuestion.ElementAt(0).NameQuestion;
+                        audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
+                        audience.lbl_QuestionContent.Size = new System.Drawing.Size(audience.pnl_QuestionFrame.Width * 66/100, audience.lbl_QuestionContent.Height);
+                        audience.lbl_QuestionContent.Location = new Point(audience.lbl_QuestionContent.Location.X - audience.lbl_QuestionContent.Location.X + (audience.pnl_QuestionFrame.Width / 2) * 35 / 100, audience.lbl_QuestionContent.Location.Y);
                         audience.lbl_Phase.Text = NameofPhase(records.ElementAt(team).IDPhase) + "(" +(ListPhase.Count-1) +")";
                         audience.lbl_Point.Text = "Point: "+ BonusScoreofPhase(records.ElementAt(team).IDPhase).ToString();
                         typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
+                        audience.lbl_typeQ.Text = "Type: " + typequestion;
 
                         /////question is onechoice type
                         if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
@@ -823,8 +828,8 @@ namespace CapDemo
                             {
                                 ShowAnswer ShowAnswer = new ShowAnswer();
                                 ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                                ShowAnswer.rdb1.Visible = true;
                                 ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString()+":";
                                 ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                 ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -838,8 +843,8 @@ namespace CapDemo
                                 {
                                     ShowAnswer ShowAnswer = new ShowAnswer();
                                     ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                                    ShowAnswer.chk1.Visible = true;
                                     ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString()+":";
                                     ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                     ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                     audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -1023,7 +1028,8 @@ namespace CapDemo
                                     if (oneChoice.Text == showAnswer.rdb1.Text)
                                     {
                                         showAnswer.rdb1.Checked = true;
-                                        showAnswer.BackColor = Color.Yellow;
+                                        showAnswer.BackColor = Color.LightSalmon;
+                                        showAnswer.rtxt_Answer.BackColor = Color.LightSalmon;
 
                                         foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                                         {
@@ -1053,7 +1059,8 @@ namespace CapDemo
                                         if (multiChoice.Text == showAnswer.chk1.Text)
                                         {
                                             showAnswer.chk1.Checked = true;
-                                            showAnswer.BackColor = Color.Yellow;
+                                            showAnswer.BackColor = Color.LightSalmon;
+                                            showAnswer.rtxt_Answer.BackColor = Color.LightSalmon;
                                             //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
 
                                             foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
@@ -1708,8 +1715,12 @@ namespace CapDemo
             audience.IdContest = iDContest;
             if (step ==1)
             {
+                this.SuspendLayout();
+                audience.SuspendLayout();
                 lblHint.Text = guideline[1].ToString();
                 loadMap();
+                audience.ResumeLayout();
+                this.ResumeLayout();
             }
             else if (step == 2)
             {
@@ -1791,8 +1802,8 @@ namespace CapDemo
             }
             //Declare data
             string[] Rank = new string[] {"st","nd","rd","th","th"};
-            int width = audience.flp_TeamEndGame.Width/AmountPlayer;
-            int height = audience.flp_TeamEndGame.Height;
+            int width = audience.flp_TeamEndGame.Width;
+            //int height = audience.flp_TeamEndGame.Height;
             //Show player
             for (int i = 0; i < records.Count; i++)
             {
@@ -1805,7 +1816,7 @@ namespace CapDemo
                 teamEndGame.lbl_Score.Text = records.ElementAt(i).TeamScore.ToString();
                 teamEndGame.lbl_Name.Text = nameplayer(records.ElementAt(i).IDPlayer);
                 teamEndGame.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(records.ElementAt(i).IDPlayer));
-                teamEndGame.Size = new System.Drawing.Size(width -10, height);
+                teamEndGame.Size = new System.Drawing.Size(width - 10, teamEndGame.Height);
                 audience.flp_TeamEndGame.Controls.Add(teamEndGame);
             }
         }
