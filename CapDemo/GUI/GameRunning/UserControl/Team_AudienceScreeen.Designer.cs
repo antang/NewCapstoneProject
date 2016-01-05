@@ -97,7 +97,10 @@
             // btn_Stop
             // 
             this.btn_Stop.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Stop.BackgroundImage = global::CapDemo.Properties.Resources.cachalka;
+            this.btn_Stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Stop.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Stop.ForeColor = System.Drawing.Color.LimeGreen;
             this.btn_Stop.Location = new System.Drawing.Point(3, 113);
             this.btn_Stop.Name = "btn_Stop";
             this.btn_Stop.Size = new System.Drawing.Size(123, 53);

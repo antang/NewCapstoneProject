@@ -760,6 +760,10 @@
     <None Include="Resources\Shields_0.png" />
     <None Include="Resources\Icon-stop.png" />
     <None Include="Resources\ao-lon.png" />
+    <None Include="Resources\Answer.png" />
+    <None Include="Resources\Question.png" />
+    <None Include="Resources\go-icon.png" />
+    <None Include="Resources\cachalka.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

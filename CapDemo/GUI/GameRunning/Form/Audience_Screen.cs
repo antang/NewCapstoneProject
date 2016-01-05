@@ -114,9 +114,9 @@ namespace CapDemo
                     {
                         Phase_Lane PhaseLane = new Phase_Lane();
                         PhaseLane.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep);
-                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_BoundaryPlayerLane / listPhase.Count * (j + 1) / NumStep)-1);
+                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_BoundaryPlayerLane / listPhase.Count * (j + 1) / NumStep)-2);
                         PhaseLane.BorderStyle = BorderStyle.FixedSingle;
-                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep -2 );
+                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep -3 );
                         PhaseLane.lbl_NamePhase.Text = "";
                         PlayerLane.Controls.Add(PhaseLane);
                     } 

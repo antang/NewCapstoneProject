@@ -93,6 +93,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Answer {
+            get {
+                object obj = ResourceManager.GetObject("Answer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ao_lon {
             get {
                 object obj = ResourceManager.GetObject("ao_lon", resourceCulture);
@@ -163,6 +173,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cachalka {
+            get {
+                object obj = ResourceManager.GetObject("cachalka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel {
             get {
                 object obj = ResourceManager.GetObject("Cancel", resourceCulture);
@@ -216,6 +236,16 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap End_Support {
             get {
                 object obj = ResourceManager.GetObject("End_Support", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap go_icon {
+            get {
+                object obj = ResourceManager.GetObject("go_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +516,16 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap QLTK_Setting_hover {
             get {
                 object obj = ResourceManager.GetObject("QLTK_Setting_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Question {
+            get {
+                object obj = ResourceManager.GetObject("Question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

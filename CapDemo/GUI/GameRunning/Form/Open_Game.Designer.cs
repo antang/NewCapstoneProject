@@ -34,12 +34,12 @@
             this.lbl_Time = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblHint = new System.Windows.Forms.Label();
-            this.pb_Play = new System.Windows.Forms.PictureBox();
-            this.pb_Exit = new System.Windows.Forms.PictureBox();
             this.pb_EndGame = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
+            this.pb_Exit = new System.Windows.Forms.PictureBox();
+            this.pb_Play = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -97,17 +97,18 @@
             this.lblHint.Text = "Hint";
             this.lblHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pb_Play
+            // pb_EndGame
             // 
-            this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pb_Play.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.PlayGame;
-            this.pb_Play.Location = new System.Drawing.Point(880, 577);
-            this.pb_Play.Name = "pb_Play";
-            this.pb_Play.Size = new System.Drawing.Size(128, 128);
-            this.pb_Play.TabIndex = 14;
-            this.pb_Play.TabStop = false;
-            this.pb_Play.Click += new System.EventHandler(this.pb_Play_Click);
+            this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
+            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_EndGame.Location = new System.Drawing.Point(165, 577);
+            this.pb_EndGame.Name = "pb_EndGame";
+            this.pb_EndGame.Size = new System.Drawing.Size(128, 128);
+            this.pb_EndGame.TabIndex = 16;
+            this.pb_EndGame.TabStop = false;
+            this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
             // 
             // pb_Exit
             // 
@@ -121,19 +122,17 @@
             this.pb_Exit.TabStop = false;
             this.pb_Exit.Click += new System.EventHandler(this.pb_Exit_Click);
             // 
-            // pb_EndGame
+            // pb_Play
             // 
-            this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
-            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
-            this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_EndGame.Location = new System.Drawing.Point(165, 577);
-            this.pb_EndGame.Name = "pb_EndGame";
-            this.pb_EndGame.Size = new System.Drawing.Size(128, 128);
-            this.pb_EndGame.TabIndex = 16;
-            this.pb_EndGame.TabStop = false;
-            this.pb_EndGame.Visible = false;
-            this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
+            this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_Play.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.PlayGame;
+            this.pb_Play.Location = new System.Drawing.Point(880, 577);
+            this.pb_Play.Name = "pb_Play";
+            this.pb_Play.Size = new System.Drawing.Size(128, 128);
+            this.pb_Play.TabIndex = 14;
+            this.pb_Play.TabStop = false;
+            this.pb_Play.Click += new System.EventHandler(this.pb_Play_Click);
             // 
             // Open_Game
             // 
@@ -156,9 +155,9 @@
             this.Text = "Open_Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Open_Game_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
