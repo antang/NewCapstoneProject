@@ -392,17 +392,23 @@
     <Compile Include="GUI\GameRunning\UserControl\Player_Lane1.Designer.cs">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhaseLane1.cs">
+    <Compile Include="GUI\GameRunning\UserControl\PhaseLane1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PhaseLane1.Designer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\PhaseLane1.Designer.cs">
       <DependentUpon>PhaseLane1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayerAnswer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\PlayerAnswer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PlayerAnswer.Designer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\PlayerAnswer.Designer.cs">
       <DependentUpon>PlayerAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GameRunning\Form\PleaseWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GameRunning\Form\PleaseWaitForm.Designer.cs">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -430,10 +436,10 @@
     <Compile Include="GUI\GameRunning\UserControl\Team_AudienceScreeen.Designer.cs">
       <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeamEndGame.cs">
+    <Compile Include="GUI\GameRunning\UserControl\TeamEndGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeamEndGame.Designer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\TeamEndGame.Designer.cs">
       <DependentUpon>TeamEndGame.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\GameRunning\Form\Audience_Screen.resx">
@@ -597,11 +603,14 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Player_Lane1.resx">
       <DependentUpon>Player_Lane1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhaseLane1.resx">
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\PhaseLane1.resx">
       <DependentUpon>PhaseLane1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlayerAnswer.resx">
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\PlayerAnswer.resx">
       <DependentUpon>PlayerAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GameRunning\Form\PleaseWaitForm.resx">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -620,7 +629,7 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\Team_AudienceScreeen.resx">
       <DependentUpon>Team_AudienceScreeen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeamEndGame.resx">
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\TeamEndGame.resx">
       <DependentUpon>TeamEndGame.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capstone.db" />

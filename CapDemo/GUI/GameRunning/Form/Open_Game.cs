@@ -1709,6 +1709,7 @@ namespace CapDemo
             logBL.EditLogbyIDPlayer(Log);
         }
         //each step to controller control game
+
         public void StartGame()
         {
             //Rungame.IdContest = iDContest;
@@ -1721,6 +1722,7 @@ namespace CapDemo
                 loadMap();
                 audience.ResumeLayout();
                 this.ResumeLayout();
+                
             }
             else if (step == 2)
             {
