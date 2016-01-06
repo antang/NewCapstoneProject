@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace CapDemo
 {
@@ -19,8 +20,15 @@ namespace CapDemo
         int MValY;
         public Audience_Screen()
         {
+            
             InitializeComponent();
+            
         }
+        public void SpashStart()
+        {
+            Application.Run(new PleaseWaitForm());
+        }
+
         int idContest;
 
         public int IdContest
@@ -55,7 +63,11 @@ namespace CapDemo
         
         private void Audience_Screen_Load(object sender, EventArgs e)
         {
-            this.SuspendLayout();
+            Thread t = new Thread(new ThreadStart(SpashStart));
+            t.Start();
+            Thread.Sleep(15000);
+            
+            //this.SuspendLayout();
             this.Dock = DockStyle.Fill;
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1);
@@ -176,7 +188,9 @@ namespace CapDemo
                     flp_Team.Controls.Add(team_AudienceScreen);
                 }
             }
-            this.ResumeLayout();
+            t.Abort();
+            //this.ResumeLayout();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

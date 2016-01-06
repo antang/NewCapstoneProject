@@ -34,12 +34,12 @@
             this.timerHighLight = new System.Windows.Forms.Timer(this.components);
             this.lbl_ID = new System.Windows.Forms.Label();
             this.flp_Heart = new System.Windows.Forms.Panel();
-            this.btn_Stop = new System.Windows.Forms.Button();
-            this.btn_ChallengeChoice = new System.Windows.Forms.Button();
-            this.btn_SupportChoice = new System.Windows.Forms.Button();
             this.pb_Heart3 = new System.Windows.Forms.PictureBox();
             this.pb_Heart2 = new System.Windows.Forms.PictureBox();
             this.pb_Heart1 = new System.Windows.Forms.PictureBox();
+            this.btn_Stop = new System.Windows.Forms.Button();
+            this.btn_ChallengeChoice = new System.Windows.Forms.Button();
+            this.btn_SupportChoice = new System.Windows.Forms.Button();
             this.pb_TeamShirt = new System.Windows.Forms.PictureBox();
             this.flp_Heart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart3)).BeginInit();
@@ -94,11 +94,41 @@
             this.flp_Heart.Size = new System.Drawing.Size(167, 52);
             this.flp_Heart.TabIndex = 8;
             // 
+            // pb_Heart3
+            // 
+            this.pb_Heart3.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
+            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_Heart3.Location = new System.Drawing.Point(122, 8);
+            this.pb_Heart3.Name = "pb_Heart3";
+            this.pb_Heart3.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart3.TabIndex = 5;
+            this.pb_Heart3.TabStop = false;
+            // 
+            // pb_Heart2
+            // 
+            this.pb_Heart2.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
+            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_Heart2.Location = new System.Drawing.Point(70, 8);
+            this.pb_Heart2.Name = "pb_Heart2";
+            this.pb_Heart2.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart2.TabIndex = 4;
+            this.pb_Heart2.TabStop = false;
+            // 
+            // pb_Heart1
+            // 
+            this.pb_Heart1.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
+            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pb_Heart1.Location = new System.Drawing.Point(18, 8);
+            this.pb_Heart1.Name = "pb_Heart1";
+            this.pb_Heart1.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart1.TabIndex = 3;
+            this.pb_Heart1.TabStop = false;
+            // 
             // btn_Stop
             // 
             this.btn_Stop.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Stop.BackgroundImage = global::CapDemo.Properties.Resources.cachalka;
-            this.btn_Stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Stop.BackgroundImage = global::CapDemo.Properties.Resources.go_icon;
+            this.btn_Stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Stop.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Stop.ForeColor = System.Drawing.Color.LimeGreen;
             this.btn_Stop.Location = new System.Drawing.Point(3, 113);
@@ -130,36 +160,6 @@
             this.btn_SupportChoice.Size = new System.Drawing.Size(86, 71);
             this.btn_SupportChoice.TabIndex = 9;
             this.btn_SupportChoice.UseVisualStyleBackColor = false;
-            // 
-            // pb_Heart3
-            // 
-            this.pb_Heart3.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart3.Location = new System.Drawing.Point(122, 8);
-            this.pb_Heart3.Name = "pb_Heart3";
-            this.pb_Heart3.Size = new System.Drawing.Size(30, 31);
-            this.pb_Heart3.TabIndex = 5;
-            this.pb_Heart3.TabStop = false;
-            // 
-            // pb_Heart2
-            // 
-            this.pb_Heart2.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart2.Location = new System.Drawing.Point(70, 8);
-            this.pb_Heart2.Name = "pb_Heart2";
-            this.pb_Heart2.Size = new System.Drawing.Size(30, 31);
-            this.pb_Heart2.TabIndex = 4;
-            this.pb_Heart2.TabStop = false;
-            // 
-            // pb_Heart1
-            // 
-            this.pb_Heart1.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart1.Location = new System.Drawing.Point(18, 8);
-            this.pb_Heart1.Name = "pb_Heart1";
-            this.pb_Heart1.Size = new System.Drawing.Size(30, 31);
-            this.pb_Heart1.TabIndex = 3;
-            this.pb_Heart1.TabStop = false;
             // 
             // pb_TeamShirt
             // 
