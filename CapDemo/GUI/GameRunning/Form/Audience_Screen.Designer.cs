@@ -73,6 +73,9 @@
             this.tbc_ShowGame.SelectedIndex = 0;
             this.tbc_ShowGame.Size = new System.Drawing.Size(1024, 768);
             this.tbc_ShowGame.TabIndex = 0;
+            this.tbc_ShowGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.tbc_ShowGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.tbc_ShowGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // tab_Map
             // 
@@ -89,6 +92,9 @@
             this.tab_Map.Size = new System.Drawing.Size(1016, 742);
             this.tab_Map.TabIndex = 0;
             this.tab_Map.Text = "Player Information";
+            this.tab_Map.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.tab_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.tab_Map.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_Round
             // 
@@ -102,6 +108,9 @@
             this.lbl_Round.TabIndex = 5;
             this.lbl_Round.Text = "label2";
             this.lbl_Round.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Round.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_Round.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_Round.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // pnl_Phase
             // 
@@ -112,6 +121,9 @@
             this.pnl_Phase.Name = "pnl_Phase";
             this.pnl_Phase.Size = new System.Drawing.Size(205, 628);
             this.pnl_Phase.TabIndex = 4;
+            this.pnl_Phase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.pnl_Phase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.pnl_Phase.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // flp_Finish
             // 
@@ -136,6 +148,9 @@
             this.pnl_Lane.Name = "pnl_Lane";
             this.pnl_Lane.Size = new System.Drawing.Size(490, 628);
             this.pnl_Lane.TabIndex = 1;
+            this.pnl_Lane.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.pnl_Lane.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.pnl_Lane.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // flp_Team
             // 
@@ -145,6 +160,9 @@
             this.flp_Team.Name = "flp_Team";
             this.flp_Team.Size = new System.Drawing.Size(257, 465);
             this.flp_Team.TabIndex = 3;
+            this.flp_Team.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.flp_Team.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.flp_Team.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // tab_ShowQuestion
             // 
@@ -164,6 +182,9 @@
             this.tab_ShowQuestion.Size = new System.Drawing.Size(1016, 742);
             this.tab_ShowQuestion.TabIndex = 1;
             this.tab_ShowQuestion.Text = "Show Question";
+            this.tab_ShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.tab_ShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.tab_ShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_typeQ
             // 
@@ -176,6 +197,9 @@
             this.lbl_typeQ.TabIndex = 10;
             this.lbl_typeQ.Text = "Type:";
             this.lbl_typeQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_typeQ.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_typeQ.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_typeQ.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // pnl_QuestionFrame
             // 
@@ -189,6 +213,9 @@
             this.pnl_QuestionFrame.Name = "pnl_QuestionFrame";
             this.pnl_QuestionFrame.Size = new System.Drawing.Size(1018, 176);
             this.pnl_QuestionFrame.TabIndex = 9;
+            this.pnl_QuestionFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.pnl_QuestionFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.pnl_QuestionFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_QuestionContent
             // 
@@ -202,6 +229,9 @@
             this.lbl_QuestionContent.Size = new System.Drawing.Size(662, 147);
             this.lbl_QuestionContent.TabIndex = 0;
             this.lbl_QuestionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_QuestionContent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_QuestionContent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_QuestionContent.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // flp_PlayerAnswers
             // 
@@ -212,6 +242,9 @@
             this.flp_PlayerAnswers.Name = "flp_PlayerAnswers";
             this.flp_PlayerAnswers.Size = new System.Drawing.Size(1018, 89);
             this.flp_PlayerAnswers.TabIndex = 8;
+            this.flp_PlayerAnswers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.flp_PlayerAnswers.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.flp_PlayerAnswers.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_Point
             // 
@@ -225,6 +258,9 @@
             this.lbl_Point.TabIndex = 7;
             this.lbl_Point.Text = "Point: ";
             this.lbl_Point.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Point.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_Point.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_Point.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_Phase
             // 
@@ -237,6 +273,9 @@
             this.lbl_Phase.TabIndex = 5;
             this.lbl_Phase.Text = "Phase";
             this.lbl_Phase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Phase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_Phase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_Phase.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // panel1
             // 
@@ -248,6 +287,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(410, 132);
             this.panel1.TabIndex = 3;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // lbl_TimeShowQuestion
             // 
@@ -263,6 +305,9 @@
             this.lbl_TimeShowQuestion.TabIndex = 2;
             this.lbl_TimeShowQuestion.Text = "0";
             this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // flp_AnswerQuiz
             // 
@@ -273,6 +318,9 @@
             this.flp_AnswerQuiz.Name = "flp_AnswerQuiz";
             this.flp_AnswerQuiz.Size = new System.Drawing.Size(1018, 288);
             this.flp_AnswerQuiz.TabIndex = 1;
+            this.flp_AnswerQuiz.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.flp_AnswerQuiz.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.flp_AnswerQuiz.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // tab_EndGame
             // 
@@ -285,6 +333,9 @@
             this.tab_EndGame.Size = new System.Drawing.Size(1016, 742);
             this.tab_EndGame.TabIndex = 2;
             this.tab_EndGame.Text = "End Game";
+            this.tab_EndGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.tab_EndGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.tab_EndGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // panel2
             // 
@@ -297,6 +348,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1016, 742);
             this.panel2.TabIndex = 2;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // flp_TeamEndGame
             // 
@@ -307,6 +361,9 @@
             this.flp_TeamEndGame.Name = "flp_TeamEndGame";
             this.flp_TeamEndGame.Size = new System.Drawing.Size(534, 541);
             this.flp_TeamEndGame.TabIndex = 0;
+            this.flp_TeamEndGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseDown);
+            this.flp_TeamEndGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseMove);
+            this.flp_TeamEndGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flp_Finish_MouseUp);
             // 
             // timer1
             // 

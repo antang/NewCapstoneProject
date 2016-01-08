@@ -211,7 +211,7 @@ namespace CapDemo
             }
                 
         }
-
+        //drag form audience
         private void flp_Finish_MouseDown(object sender, MouseEventArgs e)
         {
             TogMove = 1;
@@ -226,11 +226,10 @@ namespace CapDemo
 
         private void flp_Finish_MouseMove(object sender, MouseEventArgs e)
         {
-            if (TogMove==1)
+            if (TogMove == 1)
             {
-                this.SetDesktopLocation(MousePosition.X -MValX, MousePosition.Y - MValY);
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
             }
         }
-
     }
 }
