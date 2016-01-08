@@ -299,6 +299,7 @@
             this.txt_ContentAnswer.Multiline = true;
             this.txt_ContentAnswer.Name = "txt_ContentAnswer";
             this.txt_ContentAnswer.ReadOnly = true;
+            this.txt_ContentAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txt_ContentAnswer.Size = new System.Drawing.Size(373, 195);
             this.txt_ContentAnswer.TabIndex = 84;
             // 
