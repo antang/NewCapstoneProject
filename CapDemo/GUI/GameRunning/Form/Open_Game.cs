@@ -164,7 +164,7 @@ namespace CapDemo
             {
                 if (TeamCS.IdPlayerUC == idPlayerUC)
                 {
-                    DialogResult dr = MessageBox.Show("Are you sure to use this choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dr = MessageBox.Show("Are you sure to use Challenged Choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         records.ElementAt(team).Defy = false;
@@ -256,12 +256,12 @@ namespace CapDemo
                                  {
                                      if (countTeamChallenged == 0)
                                      {
-                                         MessageBox.Show("Please selected challenge team!");
+                                         MessageBox.Show("Please selected challenged team!");
                                          TeamCS.chk_QuestionPM.Checked = false;
                                      }
                                      else
                                      {
-                                         MessageBox.Show("Maxmimum number of team will be challenge is " + NumofChallenge);
+                                         MessageBox.Show("Maxmimum number of team will be challenged is " + NumofChallenge);
                                          TeamCS.chk_QuestionPM.Checked = false;
                                      }
                                  }
@@ -333,7 +333,7 @@ namespace CapDemo
                 {
                     timer1.Stop();
                     audience.timer1.Stop();
-                    DialogResult dr = MessageBox.Show("Are you sure to use this choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dr = MessageBox.Show("Are you sure to use supported choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         records.ElementAt(team).Support = false;
@@ -603,11 +603,11 @@ namespace CapDemo
                 {
                     if (countTeamChallenged == 0)
                     {
-                        MessageBox.Show("Please selected challenge team!");
+                        MessageBox.Show("Please selected challenged team!");
                     }
                     else
                     {
-                        MessageBox.Show("Maxmimum number of team will be challenge is "+NumofChallenge);
+                        MessageBox.Show("Maxmimum number of team will be challenged is "+NumofChallenge);
                     }
                 }
                 else
