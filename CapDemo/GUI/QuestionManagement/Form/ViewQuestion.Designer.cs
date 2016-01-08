@@ -321,6 +321,7 @@
             // 
             // flp_Answer
             // 
+            this.flp_Answer.AutoScroll = true;
             this.flp_Answer.BackColor = System.Drawing.Color.White;
             this.flp_Answer.ForeColor = System.Drawing.Color.Black;
             this.flp_Answer.Location = new System.Drawing.Point(409, 130);

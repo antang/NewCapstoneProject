@@ -105,7 +105,7 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Sai mật tài khoản. Vui lòng đăng nhập lại.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng kiểm tra lại tài khoản hoặc mật khẩu của bạn.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

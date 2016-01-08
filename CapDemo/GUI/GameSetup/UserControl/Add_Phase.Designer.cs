@@ -204,6 +204,7 @@
             this.txt_Sequence.Name = "txt_Sequence";
             this.txt_Sequence.Size = new System.Drawing.Size(50, 23);
             this.txt_Sequence.TabIndex = 48;
+            this.txt_Sequence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
             this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
             // 

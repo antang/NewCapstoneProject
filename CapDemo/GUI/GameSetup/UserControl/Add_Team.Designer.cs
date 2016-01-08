@@ -76,6 +76,8 @@
             this.txt_TeamScore.Name = "txt_TeamScore";
             this.txt_TeamScore.Size = new System.Drawing.Size(54, 30);
             this.txt_TeamScore.TabIndex = 36;
+            this.txt_TeamScore.Text = "0";
+            this.txt_TeamScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_TeamScore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TeamScore_KeyDown);
             this.txt_TeamScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TeamScore_KeyPress);
             // 
@@ -167,6 +169,7 @@
             this.txt_Sequence.Name = "txt_Sequence";
             this.txt_Sequence.Size = new System.Drawing.Size(54, 30);
             this.txt_Sequence.TabIndex = 43;
+            this.txt_Sequence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
             this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
             // 

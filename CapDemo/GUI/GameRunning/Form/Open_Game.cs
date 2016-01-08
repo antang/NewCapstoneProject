@@ -427,12 +427,11 @@ namespace CapDemo
             {
                 teamAdienceScreen.HighLight(false);
                 teamAdienceScreen.HighLightChallenge(false);
-                //teamAdienceScreen.BackColor = Color.SkyBlue;
+                teamAdienceScreen.BackColor = Color.Transparent;
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
                 teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
                 teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
-                //teamAdienceScreen.btn_Stop.BackColor = Color.SkyBlue;
                 //check support choice exist to show
                 if (records.ElementAt(j).Support==true)
                 {
