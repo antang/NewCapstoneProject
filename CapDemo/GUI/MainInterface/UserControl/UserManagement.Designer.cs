@@ -65,10 +65,10 @@
             // lbl_Create
             // 
             this.lbl_Create.AutoSize = true;
-            this.lbl_Create.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Create.BackColor = System.Drawing.Color.SteelBlue;
             this.lbl_Create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Create.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Create.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl_Create.ForeColor = System.Drawing.Color.White;
             this.lbl_Create.Location = new System.Drawing.Point(29, 100);
             this.lbl_Create.Name = "lbl_Create";
             this.lbl_Create.Size = new System.Drawing.Size(180, 23);
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.Controls.Add(this.btn_SearchCatalogue);
             this.Controls.Add(this.txt_SearchCatalogue);
             this.Controls.Add(this.lbl_Create);
