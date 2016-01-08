@@ -69,7 +69,6 @@ namespace CapDemo.GUI.User_Controls
                         game.lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                         game.lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
                         game.lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
-                        game.lbl_Number.Text = (i + 1).ToString();
                         if (ListContest.ElementAt(i).Status == true)
                         {
                             game.Enabled = false;
@@ -90,11 +89,13 @@ namespace CapDemo.GUI.User_Controls
         private void btn_Exit_MouseEnter(object sender, EventArgs e)
         {
             btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_horver;
+            btn_Exit.ForeColor = Color.Red;
         }
 
         private void btn_Exit_MouseLeave(object sender, EventArgs e)
         {
             btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_normal;
+            btn_Exit.ForeColor = Color.White;
         }
 
 

@@ -26,6 +26,7 @@ namespace CapDemo
         public event EventHandler checkSupport;
         public event EventHandler checkQuestionPM;
         public event EventHandler checkChallenge;
+        public event EventHandler ChoiceChallengedTeam;
         private void lbl_ShowMenu_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(Cursor.Position);
@@ -77,15 +78,35 @@ namespace CapDemo
         {
             if (chk_Challenged.Checked == true)
             {
-                this.BackColor = Color.Yellow;
+                this.BackColor = Color.LightPink;
                 this.flp_Answer.Visible = true;
                 this.gb_team.Visible = false;
+
+                //check equal true
+                EventHandler choiceChallengedTeam = ChoiceChallengedTeam;
+                if (choiceChallengedTeam != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    choiceChallengedTeam(this, args);
+                } 
             }
             else
             {
                 this.BackColor = Color.Gainsboro;
                 this.flp_Answer.Visible = false;
+
+                //check equal false
+                EventHandler choiceChallengedTeam = ChoiceChallengedTeam;
+                if (choiceChallengedTeam != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    choiceChallengedTeam(this, args);
+                }
             }
+
+            
         }
         int sequence;
 

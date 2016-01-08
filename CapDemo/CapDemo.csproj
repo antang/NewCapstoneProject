@@ -773,6 +773,24 @@
     <None Include="Resources\Question.png" />
     <None Include="Resources\go-icon.png" />
     <None Include="Resources\cachalka.png" />
+    <None Include="Resources\chon.png" />
+    <None Include="Resources\dung.png" />
+    <None Include="Resources\team-answer-11.png" />
+    <None Include="Resources\team-answer-20.png" />
+    <None Include="Resources\team-answer-30.png" />
+    <None Include="Resources\X_icon.png" />
+    <None Include="Resources\Congratulation.png" />
+    <None Include="Resources\notifi-Defy.gif" />
+    <None Include="Resources\dung-2.png" />
+    <None Include="Resources\HitYourGoal-GiaoDienKhanGia.jpg" />
+    <None Include="Resources\BackGround_2.jpg" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\TWLW-1.png" />
+    <None Include="Resources\team-Answer.png" />
+    <None Include="Resources\X_icon-vien.png" />
+    <None Include="Resources\team-into.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
