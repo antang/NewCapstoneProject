@@ -410,6 +410,12 @@
     <Compile Include="GUI\GameRunning\Form\PleaseWaitForm.Designer.cs">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\GameSetup\UserControl\QuestionSetting.cs">
@@ -612,6 +618,9 @@
     <EmbeddedResource Include="GUI\GameRunning\Form\PleaseWaitForm.resx">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -719,6 +728,24 @@
     <None Include="Resources\TLG_Setting_hover.png" />
     <None Include="Resources\TWLW.png" />
     <None Include="Resources\1600-864.jpg" />
+    <None Include="Resources\1024-768.jpg" />
+    <None Include="Resources\1024-768-setting.jpg" />
+    <None Include="Resources\1024-768-start.jpg" />
+    <None Include="Resources\1280-800.jpg" />
+    <None Include="Resources\1280-800-setting.jpg" />
+    <None Include="Resources\1280-800-start.jpg" />
+    <None Include="Resources\1280-1024.jpg" />
+    <None Include="Resources\1280-1024-setting.jpg" />
+    <None Include="Resources\1280-1024-start.jpg" />
+    <None Include="Resources\1366-768.jpg" />
+    <None Include="Resources\1366-768-setting.jpg" />
+    <None Include="Resources\1366-768-start.jpg" />
+    <None Include="Resources\1600-900.jpg" />
+    <None Include="Resources\1600-900-setting.jpg" />
+    <None Include="Resources\1600-900-start.jpg" />
+    <None Include="Resources\1920-1080.jpg" />
+    <None Include="Resources\1920-1080-setting.jpg" />
+    <None Include="Resources\1920-1080-start.jpg" />
     <Content Include="Resources\3.png" />
     <Content Include="Resources\4.png" />
     <Content Include="Resources\5.png" />
@@ -798,6 +825,7 @@
     <None Include="Resources\Thirst.png" />
     <None Include="Resources\ao.png" />
     <None Include="Resources\RestoreDown.png" />
+    <None Include="Resources\welcome-dong.gif" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -31,13 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_ChangePass = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_ExitMenu = new System.Windows.Forms.Button();
             this.btn_Help = new System.Windows.Forms.Button();
             this.btn_Setting = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,17 +80,6 @@
             this.lbl_ChangePass.Text = "Thay đổi mật khẩu";
             this.lbl_ChangePass.Click += new System.EventHandler(this.lbl_ChangePass_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.TWLW;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 615);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(236, 71);
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -132,6 +119,7 @@
             this.btn_Help.Size = new System.Drawing.Size(319, 63);
             this.btn_Help.TabIndex = 6;
             this.btn_Help.UseVisualStyleBackColor = false;
+            this.btn_Help.Click += new System.EventHandler(this.btn_Help_Click);
             this.btn_Help.MouseEnter += new System.EventHandler(this.btn_Help_MouseHover);
             this.btn_Help.MouseLeave += new System.EventHandler(this.btn_Help_MouseLeave);
             // 
@@ -171,8 +159,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.bg;
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_ChangePass);
             this.Controls.Add(this.lbl_Name);
@@ -185,7 +171,6 @@
             this.Name = "GameMenu";
             this.Size = new System.Drawing.Size(1024, 700);
             this.Load += new System.EventHandler(this.GameMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,6 +187,5 @@
         public System.Windows.Forms.Button btn_Start;
         private System.Windows.Forms.Label lbl_ChangePass;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

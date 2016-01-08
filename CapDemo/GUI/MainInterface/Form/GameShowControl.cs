@@ -20,6 +20,7 @@ namespace CapDemo.GUI
 
         Setting st = new Setting();
         Start_Game sgFirst = new Start_Game();
+        Help Help = new Help();
         //GameMenu gm = new GameMenu();
         public int UserID
         {
@@ -51,9 +52,163 @@ namespace CapDemo.GUI
         }
         private void GameShowControl_Load(object sender, EventArgs e)
         {
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
+            if (w == 1024 && h == 768)
+            {
+                gm1.BackgroundImage = Properties.Resources._1024_768;
+            }
+            else
+            {
+                if (w==1280 && h==1024)
+                {
+                    gm1.BackgroundImage = Properties.Resources._1280_1024;
+                }
+                else
+                {
+                    if (w==1280 && h==800)
+                    {
+                        gm1.BackgroundImage = Properties.Resources._1280_800;
+                    }
+                    else
+                    {
+                        if (w==1366 && h ==768)
+                        {
+                            gm1.BackgroundImage = Properties.Resources._1366_768;
+                        }
+                        else
+                        {
+                            if (w==1600 && h == 900)
+                            {
+                                gm1.BackgroundImage = Properties.Resources._1600_900;
+                            }
+                            else
+                            {
+                                if (w==1920 && h==1080)
+                                {
+                                    gm1.BackgroundImage = Properties.Resources._1920_1080;
+                                }
+                                else
+                                {
+                                    gm1.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
+            gm1.onClick_Help += gm1_onClick_Help;
+            this.Controls.Add(gm1);
+        }
+        //log up event help
+        void gm1_onClick_Help(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                Help.BackgroundImage = Properties.Resources._1024_768_setting;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    Help.BackgroundImage = Properties.Resources._1280_1024_setting;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        Help.BackgroundImage = Properties.Resources._1280_800_setting;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            Help.BackgroundImage = Properties.Resources._1366_768_setting;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                Help.BackgroundImage = Properties.Resources._1600_900_setting;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    Help.BackgroundImage = Properties.Resources._1920_1080_setting;
+                                }
+                                else
+                                {
+                                    Help.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //this.st.onExit += Exit_Setting;
+            this.Help.onExit += Help_onExit;
+            this.Controls.Add(Help);
+        }
+        //exit help Control
+        void Help_onExit(object sender, EventArgs e)
+        {
+            GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                gm1.BackgroundImage = Properties.Resources._1024_768;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    gm1.BackgroundImage = Properties.Resources._1280_1024;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        gm1.BackgroundImage = Properties.Resources._1280_800;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            gm1.BackgroundImage = Properties.Resources._1366_768;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                gm1.BackgroundImage = Properties.Resources._1600_900;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    gm1.BackgroundImage = Properties.Resources._1920_1080;
+                                }
+                                else
+                                {
+                                    gm1.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            gm1.onClick_Setting += btn_Setting_onClick;
+            gm1.onClick_Start += btn_Start_onClick;
+            gm1.onClick_Help += gm1_onClick_Help;
+            this.Controls.Clear();
             this.Controls.Add(gm1);
         }
 
@@ -61,33 +216,108 @@ namespace CapDemo.GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
             Start_Game sg = new Start_Game();
+            //auto fix screen start game
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                sg.BackgroundImage = Properties.Resources._1024_768_start;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    sg.BackgroundImage = Properties.Resources._1280_1024_start;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        sg.BackgroundImage = Properties.Resources._1280_800_start;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            sg.BackgroundImage = Properties.Resources._1366_768_start;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                sg.BackgroundImage = Properties.Resources._1600_900_start;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    sg.BackgroundImage = Properties.Resources._1920_1080_start;
+                                }
+                                else
+                                {
+                                    sg.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             sg.onExit += Exit_StartGame;
             //sg.Doubleclick += sg_DoubleClick;
             this.Controls.Clear();
             this.Controls.Add(sg);
         }
 
-        //void sg_DoubleClick(object sender, EventArgs e)
-        //{
-        //    Start_Game sg = new Start_Game();
-        //    this.cg.onExit += Exit_ControlGame;
-        //    //cg.Idcontest = sg.Idcontest;
-        //    this.Controls.Clear();
-        //    this.Controls.Add(cg); 
-        //}
-        //Exit Control game
-        //void Exit_ControlGame(object sender, EventArgs e)
-        //{
-        //    Start_Game sg = new Start_Game();
-        //    sg.onExit += Exit_StartGame;
-        //    //sg.Doubleclick += sg_DoubleClick;
-        //    this.Controls.Clear();
-        //    this.Controls.Add(sg);
-        //}
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                st.BackgroundImage = Properties.Resources._1024_768_setting;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    st.BackgroundImage = Properties.Resources._1280_1024_setting;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        st.BackgroundImage = Properties.Resources._1280_800_setting;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            st.BackgroundImage = Properties.Resources._1366_768_setting;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                st.BackgroundImage = Properties.Resources._1600_900_setting;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    st.BackgroundImage = Properties.Resources._1920_1080_setting;
+                                }
+                                else
+                                {
+                                    st.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             this.st.onExit += Exit_Setting;
             this.Controls.Add(st);
         }
@@ -96,16 +326,108 @@ namespace CapDemo.GUI
         {
             this.Controls.Clear();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                gm1.BackgroundImage = Properties.Resources._1024_768;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    gm1.BackgroundImage = Properties.Resources._1280_1024;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        gm1.BackgroundImage = Properties.Resources._1280_800;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            gm1.BackgroundImage = Properties.Resources._1366_768;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                gm1.BackgroundImage = Properties.Resources._1600_900;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    gm1.BackgroundImage = Properties.Resources._1920_1080;
+                                }
+                                else
+                                {
+                                    gm1.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
+            gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Add(gm1);
         }
         //Exit start Game
         void Exit_StartGame(object sender, EventArgs e)
         {
             GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            if (w == 1024 && h == 768)
+            {
+                gm1.BackgroundImage = Properties.Resources._1024_768;
+            }
+            else
+            {
+                if (w == 1280 && h == 1024)
+                {
+                    gm1.BackgroundImage = Properties.Resources._1280_1024;
+                }
+                else
+                {
+                    if (w == 1280 && h == 800)
+                    {
+                        gm1.BackgroundImage = Properties.Resources._1280_800;
+                    }
+                    else
+                    {
+                        if (w == 1366 && h == 768)
+                        {
+                            gm1.BackgroundImage = Properties.Resources._1366_768;
+                        }
+                        else
+                        {
+                            if (w == 1600 && h == 900)
+                            {
+                                gm1.BackgroundImage = Properties.Resources._1600_900;
+                            }
+                            else
+                            {
+                                if (w == 1920 && h == 1080)
+                                {
+                                    gm1.BackgroundImage = Properties.Resources._1920_1080;
+                                }
+                                else
+                                {
+                                    gm1.BackgroundImage = Properties.Resources.bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
+            gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Clear();
             this.Controls.Add(gm1);
         }

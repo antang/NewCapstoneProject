@@ -379,4 +379,61 @@
   <data name="Thirst" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Thirst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="welcome_dong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome-dong.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1024_768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024-768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1024_768_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024-768-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1024_768_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1024-768-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_1024" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-1024.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_1024_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-1024-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_1024_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-1024-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_800" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-800.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_800_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-800-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1280_800_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1280-800-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1366_768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1366-768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1366_768_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1366-768-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1366_768_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1366-768-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_900" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-900.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_900_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-900-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1600_900_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600-900-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1920_1080" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1920-1080.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1920_1080_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1920-1080-setting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1920_1080_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1920-1080-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

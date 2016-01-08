@@ -124,7 +124,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.bg;
             this.Controls.Add(this.pnl_Setting);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_UserManagement);

@@ -117,52 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CAAAAk1TRnQBSQFMAwEBAAFYAQABWAEAAR4BAAEeAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMA
-        AXgDAAEeAwABAQEAAQgFAAEQAQ4YAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wEAASAd+VoAASAd+VoA
-        ASAd+VoAASAd+VoAASAd+VoAASAd+VoAASAF+QFHAeMGFgP5AUcFFgHjAUcF+VoAASAF+QFHARoB8wT/
-        AfQD+QG9BP8C9AHjBflaAAEgBvkBFgH0Bf8BlAH5AZQF/wHzAZQBRwX5WgABIAb5AUcBlAH0Bf8BRwX/
-        AfQB8wHjBvlaAAEgB/kBFgL0BP8BvQT/AfQB8wGUAUcG+VoAASAH+QFHAZQB8wn/AfMBvQFHB/laAAEg
-        CPkBlAL0CP8B9AGUCPlaAAEgCfkBlAHzCP8BlAn5WgABIAn5AUcBvQj/AZQJ+VoAASAJ+QGUCf8BlAn5
-        WgABIAj5AUcBvQr/AZQI+VoAASAI+QGUBf8C9AT/AZQBRwf5WgABIAf5ARYB9AT/BPQE/wGUB/laAAEg
-        BvkBRwGUBP8B9AHzAZQB8wH0BP8BvQFHBvlaAAEgBvkBFgX0AfMBGgH5ARYD8wL0AfMBlAFHBflaAAEg
-        BfkBRwGUAfMF9AEXAvkBlAHzBPQB8wEXBflaAAEgBfkBRwcWBPkB4wQWAeMBRwX5WgABIB35WgABIB35
-        WgABIB35WgABIB35WgABIB35WgABIAHjG70B+VoAAekdIFoAAUIBTQE+BwABPgMAASgDAAF4AwABHgMA
-        AQEBAAEBBQAB4AEBFgAD//8A4gAL
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>HIT YOUR GOALS
+a.	Nội dung
+·	Trò chơi kiểm tra kiến thức về các giai đoạn trong quy trình làm phần mềm đi từ lấy yêu cầu, phân tích thiết kế, lập trình, kiểm thử, cài đặt, và quản lý dự án.
+·	Các đội cần phải trả lời đúng các câu hỏi để đi qua các giai đoạn. Trò chơi kết thúc khi hết 1 lượt có đội hoàn thành tất cả các giai đoạn của quy trình.
+b.	Luật chơi
+·	Bản đồ thể hiện 1 quy trình phát triển phần mềm. Mỗi giai đoạn có 1 số điểm dừng. Các đội bắt đầu tại điểm dừng đầu tiên của giai đoạn đầu tiên trong quy trình.
+·	Ở mỗi lượt thi đấu, 4 đội luân phiên trả lời câu hỏi ngẫu nhiên thuộc lĩnh vực mà giai đoạn đang đứng. Tại mỗi lượt:
+o	Đội tới lượt sẽ chọn câu hỏi giai đoạn hoặc câu hỏi quản lý.
+o	Sau khi nhận được câu hỏi, đội có 5 giây suy nghĩ để ra quyết định có chọn một trong hai quyền sau hay không:
+§	Thách đấu các đội còn lại. Mỗi lần chỉ được thách đấu 1 hoặc 2 đội.
+·	Đội ra tín hiệu thách đấu bằng cách nêu rõ tên đội bị thách đấu.
+·	Đội thách đấu và đội bị thách đấu có 25 giây suy nghĩ và trả lời vào bảng.
+§	Nhờ trợ giúp từ khán giả. Mỗi đội chỉ có một lần được sử dụng quyền trợ giúp ở vòng thi này.
+·	Nếu đội ra yêu cầu trợ giúp từ khán giả, khán giả sẽ có 25 giây để suy nghĩ và đưa ra câu trả lời. Sau đó đội sẽ xác nhận câu trả lời cuối cùng.
+·	Nếu câu trả lời là đúng, đội được đánh giá là vượt qua và chuyển sang điểm dừng tiếp theo.
+·	Nếu câu trả lời là sai, đội giữ nguyên vị trí.
+§	Đội không được đồng thời chọn quyền thách đấu và trợ giúp ở cùng một câu hỏi.
+o	Sau đó các đội có 25 giây để suy nghĩ và chọn phương án trả lời
+o	Ban giám khảo sẽ đánh giá câu trả lời của đội. Nếu câu trả lời được đánh giá là vượt qua, đội chọn câu hỏi sẽ chuyển sang điểm dừng tiếp theo, ngược lại đội vẫn giữ nguyên vị trí.
+·	Khi kết thúc lượt đấu, nếu có đội vượt qua được điểm dừng cuối cùng trên bản đồ thì cuộc chơi sẽ kết thúc.
+·	Ở mỗi giai đoạn có một số lượng câu hỏi nhất định. Khi đội nào không còn câu hỏi trong giai đoạn mình đang dừng thì sẽ bị loại khỏi trò chơi.
+·	Ở lượt trả lời câu hỏi, các đội được quyền chọn câu hỏi trong giai đoạn đội đang đứng hay câu hỏi về quản lý dự án. Các câu hỏi liên quan đến giai đoạn quyết định bước di chuyển của đội. Các câu hỏi về quản lý dự án đem lại điểm thưởng và không ảnh hưởng đến vị trí hiện tại của đội.
+c.	Cách tính điểm
+·	Trả lời đúng câu hỏi giai đoạn: 20 điểm/câu
+·	Trả lời đúng câu hỏi quản lý: 30 điểm/câu
+·	Trả lời sai câu hỏi quản lý: -10 điểm/câu
+·	Đội vượt qua điểm dừng cuối cùng: cộng 30 điểm
+·	Đối với đội bị thách đấu
+a.	Nếu trả lời sai: bị trừ 20 điểm. Nếu đội thách đấu trả lời đúng thì sẽ cộng 20 điểm này cho đội thách đấu
+b.	Nếu trả lời đúng: được cộng 20 điểm và trừ 20 điểm này cho đội thách đấu
+·	Nếu đội dùng quyền trợ giúp từ khán giả
+a.	Căn cứ vào câu trả lời xác nhận cuối cùng của đội, nếu đúng đội được cộng 20 điểm hoặc 30 điểm tùy vào câu hỏi giai đoạn hay câu hỏi quản lý. Nếu là câu hỏi quản lý, trả lời sai vẫn bị trừ 10 điểm.
 </value>
   </data>
 </root>

@@ -35,6 +35,7 @@ namespace CapDemo.GUI.User_Controls
         }
         public event EventHandler onClick_Setting;
         public event EventHandler onClick_Start;
+        public event EventHandler onClick_Help;
         //public GameMenu()
         //{
         //    InitializeComponent();
@@ -116,6 +117,13 @@ namespace CapDemo.GUI.User_Controls
         private void btn_ExitMenu_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        
+        private void btn_Help_Click(object sender, EventArgs e)
+        {
+            if (this.onClick_Help != null)
+                this.onClick_Help(this, e);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace CapDemo
         private void PleaseWaitForm_Load(object sender, EventArgs e)
         {
             this.SuspendLayout();
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
             this.ResumeLayout();
         }
     }
