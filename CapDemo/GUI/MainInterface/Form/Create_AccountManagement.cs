@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -131,6 +132,20 @@ namespace CapDemo.GUI
                     }
                 }
             }
+        }
+        //limit input username
+        private void txt_Username_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String sKeys = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%&*()-_+[;:?.,!]";
+            if (!sKeys.Contains(e.KeyChar.ToString()) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        //limit input password
+        private void txt_Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String sKeys = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%&*()-_+[;:?.,!]";
+            if (!sKeys.Contains(e.KeyChar.ToString()) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
