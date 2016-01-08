@@ -280,9 +280,6 @@
   <data name="Correct_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Correct_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="incorrect_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\incorrect_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="End_Support" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\End_Support.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -307,9 +304,6 @@
   <data name="Question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cachalka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cachalka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="go_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -330,9 +324,6 @@
   </data>
   <data name="team_answer_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\team-answer-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="X_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\X_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="notifi_Defy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notifi-Defy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -366,5 +357,26 @@
   </data>
   <data name="X_icon_vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\X_icon-vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Congratulation_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Congratulation_bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="First" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\First.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fourth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fourth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestoreDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestoreDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Second" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Second.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thirst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thirst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

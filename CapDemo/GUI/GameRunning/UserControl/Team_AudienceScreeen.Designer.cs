@@ -54,9 +54,9 @@
             this.lbl_TeamName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamName.ForeColor = System.Drawing.Color.White;
-            this.lbl_TeamName.Location = new System.Drawing.Point(101, 13);
+            this.lbl_TeamName.Location = new System.Drawing.Point(100, 12);
             this.lbl_TeamName.Name = "lbl_TeamName";
-            this.lbl_TeamName.Size = new System.Drawing.Size(140, 21);
+            this.lbl_TeamName.Size = new System.Drawing.Size(142, 21);
             this.lbl_TeamName.TabIndex = 3;
             this.lbl_TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -65,9 +65,9 @@
             this.lbl_TeamScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_TeamScore.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamScore.ForeColor = System.Drawing.Color.White;
-            this.lbl_TeamScore.Location = new System.Drawing.Point(27, 13);
+            this.lbl_TeamScore.Location = new System.Drawing.Point(26, 12);
             this.lbl_TeamScore.Name = "lbl_TeamScore";
-            this.lbl_TeamScore.Size = new System.Drawing.Size(74, 88);
+            this.lbl_TeamScore.Size = new System.Drawing.Size(74, 89);
             this.lbl_TeamScore.TabIndex = 4;
             this.lbl_TeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -90,9 +90,9 @@
             this.flp_Heart.Controls.Add(this.pb_Heart3);
             this.flp_Heart.Controls.Add(this.pb_Heart2);
             this.flp_Heart.Controls.Add(this.pb_Heart1);
-            this.flp_Heart.Location = new System.Drawing.Point(101, 78);
+            this.flp_Heart.Location = new System.Drawing.Point(100, 78);
             this.flp_Heart.Name = "flp_Heart";
-            this.flp_Heart.Size = new System.Drawing.Size(140, 23);
+            this.flp_Heart.Size = new System.Drawing.Size(142, 23);
             this.flp_Heart.TabIndex = 8;
             // 
             // pb_Heart3
@@ -144,6 +144,7 @@
             this.btn_ChallengeChoice.Name = "btn_ChallengeChoice";
             this.btn_ChallengeChoice.Size = new System.Drawing.Size(54, 43);
             this.btn_ChallengeChoice.TabIndex = 10;
+            this.btn_ChallengeChoice.TabStop = false;
             this.btn_ChallengeChoice.UseVisualStyleBackColor = false;
             // 
             // btn_SupportChoice
@@ -152,19 +153,20 @@
             this.btn_SupportChoice.BackgroundImage = global::CapDemo.Properties.Resources.Support;
             this.btn_SupportChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SupportChoice.ForeColor = System.Drawing.Color.Black;
-            this.btn_SupportChoice.Location = new System.Drawing.Point(125, 34);
+            this.btn_SupportChoice.Location = new System.Drawing.Point(119, 34);
             this.btn_SupportChoice.Name = "btn_SupportChoice";
             this.btn_SupportChoice.Size = new System.Drawing.Size(54, 43);
             this.btn_SupportChoice.TabIndex = 9;
+            this.btn_SupportChoice.TabStop = false;
             this.btn_SupportChoice.UseVisualStyleBackColor = false;
             // 
             // pb_TeamShirt
             // 
             this.pb_TeamShirt.BackColor = System.Drawing.Color.White;
             this.pb_TeamShirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_TeamShirt.Location = new System.Drawing.Point(7, 13);
+            this.pb_TeamShirt.Location = new System.Drawing.Point(7, 12);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
-            this.pb_TeamShirt.Size = new System.Drawing.Size(18, 88);
+            this.pb_TeamShirt.Size = new System.Drawing.Size(18, 89);
             this.pb_TeamShirt.TabIndex = 0;
             this.pb_TeamShirt.TabStop = false;
             // 

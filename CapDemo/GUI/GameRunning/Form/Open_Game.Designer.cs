@@ -36,18 +36,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblHint = new System.Windows.Forms.Label();
             this.ctMenuStrip_Setting = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnui_Maximize = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnui_Minimize = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pb_Setting = new System.Windows.Forms.PictureBox();
             this.pb_EndGame = new System.Windows.Forms.PictureBox();
             this.pb_Exit = new System.Windows.Forms.PictureBox();
-            this.pb_Setting = new System.Windows.Forms.PictureBox();
             this.pb_Play = new System.Windows.Forms.PictureBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mnui_Maximize = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnui_Minimize = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnui_RestoreDown = new System.Windows.Forms.ToolStripMenuItem();
             this.ctMenuStrip_Setting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,35 +111,40 @@
             // 
             this.ctMenuStrip_Setting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnui_Maximize,
-            this.mnui_Minimize});
+            this.mnui_Minimize,
+            this.mnui_RestoreDown});
             this.ctMenuStrip_Setting.Name = "ctMenuStrip_Setting";
             this.ctMenuStrip_Setting.ShowCheckMargin = true;
-            this.ctMenuStrip_Setting.Size = new System.Drawing.Size(147, 48);
+            this.ctMenuStrip_Setting.Size = new System.Drawing.Size(170, 70);
             // 
-            // mnui_Maximize
+            // imageList1
             // 
-            this.mnui_Maximize.Image = global::CapDemo.Properties.Resources.maximize;
-            this.mnui_Maximize.Name = "mnui_Maximize";
-            this.mnui_Maximize.Size = new System.Drawing.Size(146, 22);
-            this.mnui_Maximize.Text = "Maximize";
-            this.mnui_Maximize.Click += new System.EventHandler(this.mnui_Maximize_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "chon.png");
+            this.imageList1.Images.SetKeyName(1, "dung.png");
+            this.imageList1.Images.SetKeyName(2, "dung-2.png");
             // 
-            // mnui_Minimize
+            // pb_Setting
             // 
-            this.mnui_Minimize.Image = global::CapDemo.Properties.Resources.minimize;
-            this.mnui_Minimize.Name = "mnui_Minimize";
-            this.mnui_Minimize.Size = new System.Drawing.Size(146, 22);
-            this.mnui_Minimize.Text = "Minimize";
-            this.mnui_Minimize.Click += new System.EventHandler(this.mnui_Minimize_Click);
+            this.pb_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_Setting.Image = global::CapDemo.Properties.Resources.setting;
+            this.pb_Setting.Location = new System.Drawing.Point(0, 682);
+            this.pb_Setting.Name = "pb_Setting";
+            this.pb_Setting.Size = new System.Drawing.Size(52, 42);
+            this.pb_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_Setting.TabIndex = 18;
+            this.pb_Setting.TabStop = false;
+            this.pb_Setting.Click += new System.EventHandler(this.pb_Setting_Click);
             // 
             // pb_EndGame
             // 
-            this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_EndGame.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
             this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_EndGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_EndGame.Location = new System.Drawing.Point(470, 442);
+            this.pb_EndGame.Location = new System.Drawing.Point(756, 627);
             this.pb_EndGame.Name = "pb_EndGame";
             this.pb_EndGame.Size = new System.Drawing.Size(75, 69);
             this.pb_EndGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,18 +168,6 @@
             this.toolTip1.SetToolTip(this.pb_Exit, "Exit");
             this.pb_Exit.Click += new System.EventHandler(this.pb_Exit_Click);
             // 
-            // pb_Setting
-            // 
-            this.pb_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pb_Setting.Image = global::CapDemo.Properties.Resources.setting;
-            this.pb_Setting.Location = new System.Drawing.Point(0, 682);
-            this.pb_Setting.Name = "pb_Setting";
-            this.pb_Setting.Size = new System.Drawing.Size(52, 42);
-            this.pb_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_Setting.TabIndex = 18;
-            this.pb_Setting.TabStop = false;
-            this.pb_Setting.Click += new System.EventHandler(this.pb_Setting_Click);
-            // 
             // pb_Play
             // 
             this.pb_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -187,13 +181,29 @@
             this.pb_Play.TabStop = false;
             this.pb_Play.Click += new System.EventHandler(this.pb_Play_Click);
             // 
-            // imageList1
+            // mnui_Maximize
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "chon.png");
-            this.imageList1.Images.SetKeyName(1, "dung.png");
-            this.imageList1.Images.SetKeyName(2, "dung-2.png");
+            this.mnui_Maximize.Image = global::CapDemo.Properties.Resources.maximize;
+            this.mnui_Maximize.Name = "mnui_Maximize";
+            this.mnui_Maximize.Size = new System.Drawing.Size(169, 22);
+            this.mnui_Maximize.Text = "Maximize";
+            this.mnui_Maximize.Click += new System.EventHandler(this.mnui_Maximize_Click);
+            // 
+            // mnui_Minimize
+            // 
+            this.mnui_Minimize.Image = global::CapDemo.Properties.Resources.minimize;
+            this.mnui_Minimize.Name = "mnui_Minimize";
+            this.mnui_Minimize.Size = new System.Drawing.Size(169, 22);
+            this.mnui_Minimize.Text = "Minimize";
+            this.mnui_Minimize.Click += new System.EventHandler(this.mnui_Minimize_Click);
+            // 
+            // mnui_RestoreDown
+            // 
+            this.mnui_RestoreDown.Image = global::CapDemo.Properties.Resources.RestoreDown;
+            this.mnui_RestoreDown.Name = "mnui_RestoreDown";
+            this.mnui_RestoreDown.Size = new System.Drawing.Size(169, 22);
+            this.mnui_RestoreDown.Text = "Restore Down";
+            this.mnui_RestoreDown.Click += new System.EventHandler(this.mnui_RestoreDown_Click);
             // 
             // Open_Game
             // 
@@ -214,13 +224,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Open_Game";
-            this.Text = "Open_Game";
+            this.Text = "Điều Khiển Trò Chơi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Open_Game_Load);
             this.ctMenuStrip_Setting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -243,5 +253,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.PictureBox pb_Setting;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripMenuItem mnui_RestoreDown;
     }
 }

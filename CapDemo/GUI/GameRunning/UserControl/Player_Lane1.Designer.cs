@@ -83,6 +83,7 @@
             this.btn_Team.Name = "btn_Team";
             this.btn_Team.Size = new System.Drawing.Size(40, 45);
             this.btn_Team.TabIndex = 9;
+            this.btn_Team.TabStop = false;
             this.btn_Team.UseVisualStyleBackColor = false;
             // 
             // Player_Lane1
