@@ -37,7 +37,8 @@
             this.pb_Heart3 = new System.Windows.Forms.PictureBox();
             this.pb_Heart2 = new System.Windows.Forms.PictureBox();
             this.pb_Heart1 = new System.Windows.Forms.PictureBox();
-            this.btn_Stop = new System.Windows.Forms.Button();
+            this.timeUpdateScore = new System.Windows.Forms.Timer(this.components);
+            this.timerChallenge = new System.Windows.Forms.Timer(this.components);
             this.btn_ChallengeChoice = new System.Windows.Forms.Button();
             this.btn_SupportChoice = new System.Windows.Forms.Button();
             this.pb_TeamShirt = new System.Windows.Forms.PictureBox();
@@ -51,22 +52,22 @@
             // lbl_TeamName
             // 
             this.lbl_TeamName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TeamName.ForeColor = System.Drawing.Color.Black;
-            this.lbl_TeamName.Location = new System.Drawing.Point(126, 7);
+            this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamName.ForeColor = System.Drawing.Color.White;
+            this.lbl_TeamName.Location = new System.Drawing.Point(101, 13);
             this.lbl_TeamName.Name = "lbl_TeamName";
-            this.lbl_TeamName.Size = new System.Drawing.Size(168, 37);
+            this.lbl_TeamName.Size = new System.Drawing.Size(140, 21);
             this.lbl_TeamName.TabIndex = 3;
-            this.lbl_TeamName.Text = "Name";
             this.lbl_TeamName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_TeamScore
             // 
             this.lbl_TeamScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_TeamScore.Font = new System.Drawing.Font("Verdana", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TeamScore.Location = new System.Drawing.Point(4, 46);
+            this.lbl_TeamScore.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamScore.ForeColor = System.Drawing.Color.White;
+            this.lbl_TeamScore.Location = new System.Drawing.Point(27, 13);
             this.lbl_TeamScore.Name = "lbl_TeamScore";
-            this.lbl_TeamScore.Size = new System.Drawing.Size(122, 67);
+            this.lbl_TeamScore.Size = new System.Drawing.Size(74, 88);
             this.lbl_TeamScore.TabIndex = 4;
             this.lbl_TeamScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -85,57 +86,53 @@
             // 
             // flp_Heart
             // 
-            this.flp_Heart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flp_Heart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flp_Heart.Controls.Add(this.pb_Heart3);
             this.flp_Heart.Controls.Add(this.pb_Heart2);
             this.flp_Heart.Controls.Add(this.pb_Heart1);
-            this.flp_Heart.Location = new System.Drawing.Point(126, 114);
+            this.flp_Heart.Location = new System.Drawing.Point(101, 78);
             this.flp_Heart.Name = "flp_Heart";
-            this.flp_Heart.Size = new System.Drawing.Size(167, 52);
+            this.flp_Heart.Size = new System.Drawing.Size(140, 23);
             this.flp_Heart.TabIndex = 8;
             // 
             // pb_Heart3
             // 
             this.pb_Heart3.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart3.Location = new System.Drawing.Point(122, 8);
+            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart3.Location = new System.Drawing.Point(96, 0);
             this.pb_Heart3.Name = "pb_Heart3";
-            this.pb_Heart3.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart3.Size = new System.Drawing.Size(25, 20);
             this.pb_Heart3.TabIndex = 5;
             this.pb_Heart3.TabStop = false;
             // 
             // pb_Heart2
             // 
             this.pb_Heart2.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart2.Location = new System.Drawing.Point(70, 8);
+            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart2.Location = new System.Drawing.Point(55, -1);
             this.pb_Heart2.Name = "pb_Heart2";
-            this.pb_Heart2.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart2.Size = new System.Drawing.Size(25, 20);
             this.pb_Heart2.TabIndex = 4;
             this.pb_Heart2.TabStop = false;
             // 
             // pb_Heart1
             // 
             this.pb_Heart1.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pb_Heart1.Location = new System.Drawing.Point(18, 8);
+            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart1.Location = new System.Drawing.Point(15, 0);
             this.pb_Heart1.Name = "pb_Heart1";
-            this.pb_Heart1.Size = new System.Drawing.Size(30, 31);
+            this.pb_Heart1.Size = new System.Drawing.Size(25, 20);
             this.pb_Heart1.TabIndex = 3;
             this.pb_Heart1.TabStop = false;
             // 
-            // btn_Stop
+            // timeUpdateScore
             // 
-            this.btn_Stop.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Stop.BackgroundImage = global::CapDemo.Properties.Resources.go_icon;
-            this.btn_Stop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Stop.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Stop.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btn_Stop.Location = new System.Drawing.Point(3, 113);
-            this.btn_Stop.Name = "btn_Stop";
-            this.btn_Stop.Size = new System.Drawing.Size(123, 53);
-            this.btn_Stop.TabIndex = 11;
-            this.btn_Stop.UseVisualStyleBackColor = false;
+            this.timeUpdateScore.Interval = 400;
+            // 
+            // timerChallenge
+            // 
+            this.timerChallenge.Interval = 350;
+            this.timerChallenge.Tick += new System.EventHandler(this.timerChallenge_Tick);
             // 
             // btn_ChallengeChoice
             // 
@@ -143,9 +140,9 @@
             this.btn_ChallengeChoice.BackgroundImage = global::CapDemo.Properties.Resources.Shields_0;
             this.btn_ChallengeChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_ChallengeChoice.ForeColor = System.Drawing.Color.SeaShell;
-            this.btn_ChallengeChoice.Location = new System.Drawing.Point(210, 44);
+            this.btn_ChallengeChoice.Location = new System.Drawing.Point(188, 34);
             this.btn_ChallengeChoice.Name = "btn_ChallengeChoice";
-            this.btn_ChallengeChoice.Size = new System.Drawing.Size(84, 71);
+            this.btn_ChallengeChoice.Size = new System.Drawing.Size(54, 43);
             this.btn_ChallengeChoice.TabIndex = 10;
             this.btn_ChallengeChoice.UseVisualStyleBackColor = false;
             // 
@@ -155,9 +152,9 @@
             this.btn_SupportChoice.BackgroundImage = global::CapDemo.Properties.Resources.Support;
             this.btn_SupportChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_SupportChoice.ForeColor = System.Drawing.Color.Black;
-            this.btn_SupportChoice.Location = new System.Drawing.Point(126, 44);
+            this.btn_SupportChoice.Location = new System.Drawing.Point(125, 34);
             this.btn_SupportChoice.Name = "btn_SupportChoice";
-            this.btn_SupportChoice.Size = new System.Drawing.Size(86, 71);
+            this.btn_SupportChoice.Size = new System.Drawing.Size(54, 43);
             this.btn_SupportChoice.TabIndex = 9;
             this.btn_SupportChoice.UseVisualStyleBackColor = false;
             // 
@@ -165,9 +162,9 @@
             // 
             this.pb_TeamShirt.BackColor = System.Drawing.Color.White;
             this.pb_TeamShirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_TeamShirt.Location = new System.Drawing.Point(4, 7);
+            this.pb_TeamShirt.Location = new System.Drawing.Point(7, 13);
             this.pb_TeamShirt.Name = "pb_TeamShirt";
-            this.pb_TeamShirt.Size = new System.Drawing.Size(122, 37);
+            this.pb_TeamShirt.Size = new System.Drawing.Size(18, 88);
             this.pb_TeamShirt.TabIndex = 0;
             this.pb_TeamShirt.TabStop = false;
             // 
@@ -175,9 +172,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.btn_Stop);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.team_into;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btn_ChallengeChoice);
             this.Controls.Add(this.btn_SupportChoice);
             this.Controls.Add(this.flp_Heart);
@@ -185,9 +182,10 @@
             this.Controls.Add(this.lbl_TeamScore);
             this.Controls.Add(this.lbl_TeamName);
             this.Controls.Add(this.pb_TeamShirt);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Team_AudienceScreeen";
-            this.Size = new System.Drawing.Size(300, 170);
+            this.Size = new System.Drawing.Size(254, 112);
             this.flp_Heart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Heart2)).EndInit();
@@ -211,7 +209,8 @@
         private System.Windows.Forms.Panel flp_Heart;
         public System.Windows.Forms.Button btn_SupportChoice;
         public System.Windows.Forms.Button btn_ChallengeChoice;
-        public System.Windows.Forms.Button btn_Stop;
+        public System.Windows.Forms.Timer timeUpdateScore;
+        public System.Windows.Forms.Timer timerChallenge;
 
     }
 }

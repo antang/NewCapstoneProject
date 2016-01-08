@@ -63,15 +63,17 @@ namespace CapDemo
         
         private void Audience_Screen_Load(object sender, EventArgs e)
         {
+            this.Hide();
             Thread t = new Thread(new ThreadStart(SpashStart));
             t.Start();
-            Thread.Sleep(15000);
-            
-            //this.SuspendLayout();
+            Thread.Sleep(3000);
+            this.SuspendLayout();
+            //this.Hide();
             this.Dock = DockStyle.Fill;
-            tabControl1.Appearance = TabAppearance.FlatButtons;
-            tabControl1.ItemSize = new Size(0, 1);
-            tabControl1.SizeMode = TabSizeMode.Fixed;
+            
+            tbc_ShowGame.Appearance = TabAppearance.FlatButtons;
+            tbc_ShowGame.ItemSize = new Size(0, 1);
+            tbc_ShowGame.SizeMode = TabSizeMode.Fixed;
 
             H_PlayerLane = pnl_Lane.Height;
             W_PlayerLane = pnl_Lane.Width;
@@ -84,12 +86,15 @@ namespace CapDemo
             player.IDContest = idContest;
 
             List<Contest> listContest;
+            List<Contest> ListContestHaveRound;
             List<Phase> listPhase;
             List<Player> listPlayer;
 
             listContest = contestBL.GetContestByID(contest);
             listPhase = phaseBL.GetPhaseNormal(phase);
             listPlayer = playerBL.GetPlayerByIDContest(player);
+            ListContestHaveRound = contestBL.GetRoundByIDContest(contest);
+            lbl_Round.Text = ListContestHaveRound.ElementAt(0).Round.NameRound;
             //get element in contest
             if (listContest != null)
             {
@@ -110,14 +115,14 @@ namespace CapDemo
                     PlayerLane.Size = new System.Drawing.Size(W_PlayerLane / listPlayer.Count, H_PlayerLane);
                     PlayerLane.Location = new Point(PlayerLane.Location.X + (W_PlayerLane / listPlayer.Count *i), PlayerLane.Location.Y + 0);
                     PlayerLane.lbl_SequencePlayer.Text = listPlayer.ElementAt(i).Sequence.ToString();
-                    PlayerLane.pb_Team.BackColor = Color.FromArgb(Convert.ToInt32(listPlayer.ElementAt(i).Color));
+                    PlayerLane.btn_Team.BackColor = Color.FromArgb(Convert.ToInt32(listPlayer.ElementAt(i).Color));
                     PlayerLane.lbl_IDPlayer.Text = listPlayer.ElementAt(i).IDPlayer.ToString();
                     PlayerLane.lbl_Finish.Size = new System.Drawing.Size(W_PlayerLane / listPlayer.Count, PlayerLane.lbl_Finish.Height);
 
                     //get boundary to drwaw phase
                     H_FinishLocation = PlayerLane.lbl_Finish.Location.Y + PlayerLane.lbl_Finish.Height;
-                    H_PlayerLocation = PlayerLane.pb_Team.Location.Y;
-                    H_player = PlayerLane.pb_Team.Height;
+                    H_PlayerLocation = PlayerLane.btn_Team.Location.Y;
+                    H_player = PlayerLane.btn_Team.Height;
 
                     int H_BoundaryPlayerLane = 0;
                     H_BoundaryPlayerLane = H_PhaseLane - (H_FinishLocation + H_player);
@@ -126,9 +131,9 @@ namespace CapDemo
                     {
                         Phase_Lane PhaseLane = new Phase_Lane();
                         PhaseLane.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep);
-                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_BoundaryPlayerLane / listPhase.Count * (j + 1) / NumStep)-2);
+                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_BoundaryPlayerLane / listPhase.Count * (j + 1) / NumStep));
                         PhaseLane.BorderStyle = BorderStyle.FixedSingle;
-                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep -3 );
+                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep-2);
                         PhaseLane.lbl_NamePhase.Text = "";
                         PlayerLane.Controls.Add(PhaseLane);
                     } 
@@ -188,8 +193,11 @@ namespace CapDemo
                     flp_Team.Controls.Add(team_AudienceScreen);
                 }
             }
+            
             t.Abort();
-            //this.ResumeLayout();
+            this.Show();
+            this.ResumeLayout();
+            
             
         }
 
@@ -222,21 +230,6 @@ namespace CapDemo
             {
                 this.SetDesktopLocation(MousePosition.X -MValX, MousePosition.Y - MValY);
             }
-        }
-        bool max = true;
-        private void flp_Finish_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (max==true)
-            {
-                this.WindowState = FormWindowState.Maximized;
-                max = false;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-                max = true;
-            }
-            
         }
 
     }

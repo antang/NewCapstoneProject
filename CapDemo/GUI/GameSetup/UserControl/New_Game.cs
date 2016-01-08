@@ -63,7 +63,7 @@ namespace CapDemo.GUI.User_Controls
                         lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                         lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
                         lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
-                        lbl_Number.Text = (i + 1).ToString();
+                        //lbl_Number.Text = (i + 1).ToString();
                         if (ListContest.ElementAt(i).NumberChallenge > 0)
                         {
                             lbl_Status.Text = "Hoàn tất";
@@ -146,7 +146,7 @@ namespace CapDemo.GUI.User_Controls
                     lbl_RoundName.Text = ListContest.ElementAt(i).Round.NameRound;
                     lbl_ContestName.Text = ListContest.ElementAt(i).NameContest;
                     lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
-                    lbl_Number.Text = (i + 1).ToString();
+                    //lbl_Number.Text = (i + 1).ToString();
                     if (ListContest.ElementAt(i).NumberChallenge > 0)
                     {
                         lbl_Status.Text = "Hoàn tất";

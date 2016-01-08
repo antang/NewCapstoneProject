@@ -136,6 +136,7 @@ namespace CapDemo
                         team.checkSupport += team_checkSupport;
                         team.checkQuestionPM += team_checkQuestionPM;
                         team.checkChallenge += team_checkChallenge;
+                        team.ChoiceChallengedTeam += team_ChoiceChallengedTeam;
                         team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
                         team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
                         team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
@@ -152,6 +153,8 @@ namespace CapDemo
                 }
             }
         }
+
+        
         #region EventHandler
         //Get evenhanler check challenge choice
         void team_checkChallenge(object sender, EventArgs e)
@@ -169,11 +172,54 @@ namespace CapDemo
                         TeamCS.chk_defy.Visible = false;
                         CheckChallengeChoice = true;
                         ShowTeamsChallenged();
+
+                        foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
+                        {
+                            if (TeamCS.lbl_IDPlayer.Text ==  TeamAS.lbl_ID.Text)
+                            {
+                                TeamAS.HighLightChallenge(true);
+                            }
+                        }
                     }
                     else
                     {
                         TeamCS.chk_defy.Checked = false;
                     }
+                }
+            }
+        }
+        //check team challenged
+        void team_ChoiceChallengedTeam(object sender, EventArgs e)
+        {
+            int idPlayerUC = (e as MyEventArgs).IDPlayerUC;
+            foreach (Team TeamCS in flp_Team.Controls)
+            {
+                if (TeamCS.IdPlayerUC == idPlayerUC)
+                {
+                    if (TeamCS.chk_Challenged.Checked == true)
+                    {
+                        foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
+                        {
+                            if (TeamCS.lbl_IDPlayer.Text == TeamAS.lbl_ID.Text)
+                            {
+                                TeamAS.BackColor = Color.LightPink;
+                                TeamAS.btn_ChallengeChoice.BackColor = Color.LightPink;
+                                TeamAS.btn_SupportChoice.BackColor = Color.LightPink;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
+                        {
+                            if (TeamCS.lbl_IDPlayer.Text == TeamAS.lbl_ID.Text)
+                            {
+                                TeamAS.BackColor = Color.Transparent;
+                                TeamAS.btn_ChallengeChoice.BackColor = Color.SkyBlue;
+                                TeamAS.btn_SupportChoice.BackColor = Color.SkyBlue;
+                            }
+                        }
+                    } 
                 }
             }
         }
@@ -206,10 +252,18 @@ namespace CapDemo
                              //show question have challenge choice
                              if (CheckChallengeChoice == true)
                              {
-                                 if (countTeamChallenged == 0)
+                                 if (countTeamChallenged == 0 || countTeamChallenged > NumofChallenge)
                                  {
-                                     MessageBox.Show("Please selected challenge team!");
-                                     TeamCS.chk_QuestionPM.Checked = false;
+                                     if (countTeamChallenged == 0)
+                                     {
+                                         MessageBox.Show("Please selected challenge team!");
+                                         TeamCS.chk_QuestionPM.Checked = false;
+                                     }
+                                     else
+                                     {
+                                         MessageBox.Show("Maxmimum number of team will be challenge is " + NumofChallenge);
+                                         TeamCS.chk_QuestionPM.Checked = false;
+                                     }
                                  }
                                  else
                                  {
@@ -221,7 +275,7 @@ namespace CapDemo
                                              CheckQuestionPM = true;
                                              //show audience screen
                                              lblHint.Text = guideline[3].ToString();
-                                             audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
+                                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                              //show question by id phase
                                              ShowQuestionByIDPhase(IDPhasePM);
                                          }
@@ -248,7 +302,7 @@ namespace CapDemo
                                          CheckQuestionPM = true;
                                          //show audience screen
                                          lblHint.Text = guideline[3].ToString();
-                                         audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
+                                         audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                          //show question by id phase
                                          ShowQuestionByIDPhase(IDPhasePM);
                                      }
@@ -362,7 +416,7 @@ namespace CapDemo
             //show lanes in audience screen
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
             {
-                playerLane.pb_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
+                playerLane.btn_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
                 playerLane.BackColor = Color.Transparent;
                 playerLane.HighLight(false);
             }
@@ -372,12 +426,13 @@ namespace CapDemo
             foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
             {
                 teamAdienceScreen.HighLight(false);
-                teamAdienceScreen.BackColor = Color.SkyBlue;
+                teamAdienceScreen.HighLightChallenge(false);
+                //teamAdienceScreen.BackColor = Color.SkyBlue;
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
                 teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
                 teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
-                teamAdienceScreen.btn_Stop.BackColor = Color.SkyBlue;
+                //teamAdienceScreen.btn_Stop.BackColor = Color.SkyBlue;
                 //check support choice exist to show
                 if (records.ElementAt(j).Support==true)
                 {
@@ -474,7 +529,7 @@ namespace CapDemo
             {
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
-                    teamCS.BackColor = Color.LightPink;
+                    teamCS.BackColor = Color.LightGreen;
                     teamCS.Enabled = true;
                     teamCS.flp_Answer.Visible = true;
                     teamCS.gb_team.Visible = true;
@@ -504,8 +559,8 @@ namespace CapDemo
                     
                     if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0)
                     {
-                        int H_Phase = ( Playerlane.Height- Playerlane.pb_Team.Height - Playerlane.lbl_Finish.Location.Y - Playerlane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
-                        Playerlane.pb_Team.Location = new Point(Playerlane.pb_Team.Location.X + 0, Playerlane.pb_Team.Location.Y - (H_Phase/2 + Playerlane.pb_Team.Height/2));                        
+                        int H_Phase = ( Playerlane.Height- Playerlane.btn_Team.Height - Playerlane.lbl_Finish.Location.Y - Playerlane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        Playerlane.btn_Team.Location = new Point(Playerlane.btn_Team.Location.X + 0, Playerlane.btn_Team.Location.Y - (H_Phase/2 + Playerlane.btn_Team.Height/2));                        
                     }
                 }
             }
@@ -520,7 +575,7 @@ namespace CapDemo
                 {
                     if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
                     {
-                        teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                        //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
                     }
                 }
             }
@@ -544,9 +599,16 @@ namespace CapDemo
             //show question have challenge choice
             if (CheckChallengeChoice == true)
             {
-                if (countTeamChallenged == 0)
+                if (countTeamChallenged == 0 || countTeamChallenged > NumofChallenge)
                 {
-                    MessageBox.Show("Please selected challenge team!");
+                    if (countTeamChallenged == 0)
+                    {
+                        MessageBox.Show("Please selected challenge team!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Maxmimum number of team will be challenge is "+NumofChallenge);
+                    }
                 }
                 else
                 {
@@ -558,6 +620,7 @@ namespace CapDemo
                             IDPhase = records.ElementAt(team).IDPhase;
                             //show question by id phase
                             ShowQuestionByIDPhase(IDPhase);
+                            audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                         }
                     }
                 }
@@ -581,6 +644,7 @@ namespace CapDemo
                         IDPhase = records.ElementAt(team).IDPhase;
                         //show question by id phase
                         ShowQuestionByIDPhase(IDPhase);
+                        audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                     }
                 }
             } 
@@ -612,8 +676,7 @@ namespace CapDemo
                 {
                     if (answer.lbl_Correct.Text.ToLower() == "true")
                     {
-                        answer.BackColor = Color.LimeGreen;
-                        answer.rtxt_Answer.BackColor = Color.LimeGreen;
+                        answer.BackgroundImage = Properties.Resources.dung_2;
                         if (typequestion == "onechoice")
                         {
                             CorrectAnswerChallenge = answer.rdb1.Text;
@@ -662,7 +725,7 @@ namespace CapDemo
                     else
                     {
                         playerAnswer.lbl_Check.Text = "false";
-                        playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
+                        playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                     }
                 }
             }
@@ -680,7 +743,7 @@ namespace CapDemo
                         else
                         {
                             playerAnswer.lbl_Check.Text = "false";
-                            playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
+                            playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                         }
                     }
                 }
@@ -696,7 +759,7 @@ namespace CapDemo
                         else
                         {
                             playerAnswer.lbl_Check.Text = "false";
-                            playerAnswer.pb_Result.Image = Properties.Resources.incorrect_ico;
+                            playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                         }
                     }
                 }
@@ -903,7 +966,7 @@ namespace CapDemo
                 {
                     //dislay team will answer question
                     PlayerAnswer PlayerAnswer = new PlayerAnswer();
-                    PlayerAnswer.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
+                    PlayerAnswer.pb_Result.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
                     PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
                     PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
                     PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width/2 - PlayerAnswer.Width/2), PlayerAnswer.Location.Y + 5);
@@ -951,13 +1014,16 @@ namespace CapDemo
         {
             int a = 65;
             int No = 0;
-            int D =1 ; 
+            int D =0 ; 
             foreach (Team teamCS in flp_Team.Controls)
             {
                 teamCS.chk_Challenged.Visible = false;
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer) || teamCS.chk_Challenged.Checked == true)
-                { D++; }
+                { 
+                    D++; 
+                }
             }
+            int D1 = D - 1;
             /////show answer one on control screen
             foreach (Team teamCS in flp_Team.Controls)
             {
@@ -965,13 +1031,13 @@ namespace CapDemo
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer) || teamCS.chk_Challenged.Checked==true)
                 {
                     PlayerAnswer PlayerAnswer = new PlayerAnswer();
-                    //PlayerAnswer.Location = new Point(PlayerAnswer.Location.X+0, PlayerAnswer.Location.Y+0);
-                    PlayerAnswer.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
+                    PlayerAnswer.pb_Result.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
                     PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
                     PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
-                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width / D - PlayerAnswer.Width / 2) + audience.flp_PlayerAnswers.Width / D *No, PlayerAnswer.Location.Y + 5);
+                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width / (D)/2 - PlayerAnswer.Width / 2) + audience.flp_PlayerAnswers.Width / D *No, PlayerAnswer.Location.Y + 5);
                     audience.flp_PlayerAnswers.Controls.Add(PlayerAnswer);
                     No++;
+                    D1--;
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
                     {
                         for (int h = 0; h < ListAnswer.Count; h++)
@@ -980,7 +1046,6 @@ namespace CapDemo
                             radioButton.Text = Convert.ToChar(a + h).ToString();
                             radioButton.AutoSize = true;
                             teamCS.flp_Answer.Controls.Add(radioButton);
-                            //panelAnswer.Controls.Add(radioButton);
                         }
                     }
                     else
@@ -1028,8 +1093,7 @@ namespace CapDemo
                                     if (oneChoice.Text == showAnswer.rdb1.Text)
                                     {
                                         showAnswer.rdb1.Checked = true;
-                                        showAnswer.BackColor = Color.LightSalmon;
-                                        showAnswer.rtxt_Answer.BackColor = Color.LightSalmon;
+                                        showAnswer.BackgroundImage = Properties.Resources.chon;
 
                                         foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                                         {
@@ -1039,7 +1103,6 @@ namespace CapDemo
                                                   playerAnswer.lbl_TeamAnswer.Text = oneChoice.Text;
                                             }
                                         }
-                                        //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
                                     }
                                 }
                             }
@@ -1059,9 +1122,7 @@ namespace CapDemo
                                         if (multiChoice.Text == showAnswer.chk1.Text)
                                         {
                                             showAnswer.chk1.Checked = true;
-                                            showAnswer.BackColor = Color.LightSalmon;
-                                            showAnswer.rtxt_Answer.BackColor = Color.LightSalmon;
-                                            //showAnswer.BackColor = Color.FromArgb(colorplayer(records.ElementAt(team).IDPlayer));
+                                            showAnswer.BackgroundImage = Properties.Resources.chon;
 
                                             foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                                             {
@@ -1491,13 +1552,13 @@ namespace CapDemo
                             //show  icon to end when team have finished
                             //pb_EndGame.Visible = true;
                         }
-                        int H_Phase = (PlayerLane.Height - PlayerLane.pb_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
-                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - (H_Phase/2 - PlayerLane.pb_Team.Height/2 ) - PlayerLane.lbl_Finish.Height - PlayerLane.pb_Team.Height - 2);  
+                        int H_Phase = (PlayerLane.Height - PlayerLane.btn_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        PlayerLane.btn_Team.Location = new Point(PlayerLane.btn_Team.Location.X + 0, PlayerLane.btn_Team.Location.Y - (H_Phase/2 - PlayerLane.btn_Team.Height/2 ) - PlayerLane.lbl_Finish.Height - PlayerLane.btn_Team.Height - 2);  
                     }
                     else
                     {//move after done each question
-                        int H_Phase = (PlayerLane.Height - PlayerLane.pb_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
-                        PlayerLane.pb_Team.Location = new Point(PlayerLane.pb_Team.Location.X + 0, PlayerLane.pb_Team.Location.Y - H_Phase);
+                        int H_Phase = (PlayerLane.Height - PlayerLane.btn_Team.Height - PlayerLane.lbl_Finish.Location.Y - PlayerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                        PlayerLane.btn_Team.Location = new Point(PlayerLane.btn_Team.Location.X + 0, PlayerLane.btn_Team.Location.Y - H_Phase);
                     }
                 }
             }
@@ -1543,7 +1604,7 @@ namespace CapDemo
             //show lanes in audience screen
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
             {
-                playerLane.pb_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
+                playerLane.btn_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
             }
 
             int j = 0;
@@ -1552,7 +1613,6 @@ namespace CapDemo
             {
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
-                //teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
                 //check support choice exist to show
                 if (records.ElementAt(j).Support == true)
                 {
@@ -1560,7 +1620,6 @@ namespace CapDemo
                 }
                 else
                 {
-                    //teamAdienceScreen.pb_SupportChoice.Image = Properties.Resources.y_kien_2;
                     teamAdienceScreen.btn_SupportChoice.BackgroundImage = Properties.Resources.End_Support;
                 }
                 //check challenge choice exist to show
@@ -1570,14 +1629,13 @@ namespace CapDemo
                 }
                 else
                 {
-                    //teamAdienceScreen.pb_ChallengeChoice.Image = Properties.Resources.thanh_dau_1;
                     teamAdienceScreen.btn_ChallengeChoice.BackgroundImage = Properties.Resources.Shield_Grey;
                 }
 
                 //check to stop game player
                 if (records.ElementAt(j).Exist == false)
                 {
-                    teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                    //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)
@@ -1616,10 +1674,6 @@ namespace CapDemo
         //show teams are challenged
         public void ShowTeamsChallenged()
         {
-            //foreach (Team item in flp_Team.Controls)
-           // {
-               // if (Convert.ToInt32(item.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
-                //{
                     for (int i = 0; i < records.Count; i++)
                     {
                         if (records.ElementAt(i).Exist == true)
@@ -1633,8 +1687,6 @@ namespace CapDemo
                             }
                         }
                     }
-                //}
-            //}
             
         }
 
@@ -1732,7 +1784,6 @@ namespace CapDemo
             else if (step ==3)
             {
                 lblHint.Text = guideline[3].ToString();
-                audience.tabControl1.SelectedTab = audience.tab_ShowQuestion;
                 ShowQuestion();
             }
             else if (step ==4)
@@ -1749,15 +1800,16 @@ namespace CapDemo
             {
                 step++;
                 UpdateScreenAfterChallenge();
-                audience.tabControl1.SelectedTab = audience.tab_Map;
+                audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
                 lblHint.Text = guideline[6].ToString();
             }
             else if (step ==7)
             {
                 lblHint.Text = guideline[0].ToString();
                 UpdateScreenAfterChallenge();
-                audience.tabControl1.SelectedTab = audience.tab_Map;
                 CalculteScore();
+                audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
+                
             }
         }
 
@@ -1788,6 +1840,9 @@ namespace CapDemo
             //Sort player assending in list player
             int length = records.Count;
             Record temp = records[0];
+            //Declare data
+            string[] Rank = new string[] { "st", "nd", "rd", "th", "th" };
+
             for (int i = 0; i < length; i++)
             {
                 for (int j = i + 1; j < length; j++)
@@ -1803,9 +1858,7 @@ namespace CapDemo
                 }
             }
             //Declare data
-            string[] Rank = new string[] {"st","nd","rd","th","th"};
             int width = audience.flp_TeamEndGame.Width;
-            //int height = audience.flp_TeamEndGame.Height;
             //Show player
             for (int i = 0; i < records.Count; i++)
             {
@@ -1814,18 +1867,34 @@ namespace CapDemo
                 {
                     teamEndGame.lbl_Winner.Visible = true;
                 }
-                teamEndGame.lbl_Position.Text = (i + 1).ToString()+ Rank[i].ToString();
+                teamEndGame.lbl_Position.Text = (i + 1).ToString() + Rank[i].ToString();
                 teamEndGame.lbl_Score.Text = records.ElementAt(i).TeamScore.ToString();
                 teamEndGame.lbl_Name.Text = nameplayer(records.ElementAt(i).IDPlayer);
                 teamEndGame.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(records.ElementAt(i).IDPlayer));
                 teamEndGame.Size = new System.Drawing.Size(width - 10, teamEndGame.Height);
+                if (i==0)
+                {
+                    teamEndGame.BackgroundImage = Properties.Resources.chon;
+                }
+                if (i == 1)
+                {
+                    teamEndGame.BackgroundImage = Properties.Resources.Answer;
+                }
+                if (i == 2)
+                {
+                    teamEndGame.BackgroundImage = Properties.Resources.dung;
+                }
+                if (i == 3)
+                {
+                    teamEndGame.BackgroundImage = Properties.Resources.dung_2;
+                }
                 audience.flp_TeamEndGame.Controls.Add(teamEndGame);
             }
         }
         //click to statistic the result of game
         private void pb_EndGame_Click(object sender, EventArgs e)
         {
-            audience.tabControl1.SelectedTab = audience.tab_EndGame;
+            audience.tbc_ShowGame.SelectedTab = audience.tab_EndGame;
             EndGame();
         }
         //Get last player when there is team go to finish lane
@@ -1840,6 +1909,23 @@ namespace CapDemo
                 }
             }
             return check;
+        }
+        //show setting
+        private void pb_Setting_Click(object sender, EventArgs e)
+        {
+            Point ptLowerLeft = new Point(0, pb_Setting.Height);
+            ptLowerLeft = pb_Setting.PointToScreen(ptLowerLeft);
+            ctMenuStrip_Setting.Show(ptLowerLeft);
+        }
+        //Maximize screen
+        private void mnui_Maximize_Click(object sender, EventArgs e)
+        {
+            audience.WindowState = FormWindowState.Maximized;
+        }
+        //Minimize screen
+        private void mnui_Minimize_Click(object sender, EventArgs e)
+        {
+            audience.WindowState = FormWindowState.Minimized;
         }
     }
 }

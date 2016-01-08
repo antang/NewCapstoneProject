@@ -313,4 +313,58 @@
   <data name="go_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Congratulation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Congratulation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_answer_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team-answer-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_answer_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team-answer-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_answer_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team-answer-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="X_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="notifi_Defy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notifi-Defy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackGround_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackGround_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dung_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dung-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HitYourGoal_GiaoDienKhanGia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HitYourGoal-GiaoDienKhanGia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_Answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team-Answer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="team_into" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\team-into.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TWLW_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TWLW-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="X_icon_vien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X_icon-vien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

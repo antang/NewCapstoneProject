@@ -139,6 +139,42 @@ namespace CapDemo.BL
             }
             return ContestList;
         }
+
+        //Get round by id contest
+        public List<Contest> GetRoundByIDContest(Contest contest)
+        {
+            List<Contest> ContestList = new List<Contest>();
+            string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
+                        + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False], r.[Round_Name]"
+                        + " FROM [Contest] c"
+                        + " INNER JOIN Round r ON r.Round_ID = c.Round_ID"
+                        + " WHERE c.[Contest_ID] = '" + contest.IDContest + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            //int i = 0;
+            if (dt != null)
+            {
+
+                foreach (DataRow item in dt.Rows)
+                {
+                    Contest Contest = new Contest();
+                    Contest.IDContest = Convert.ToInt32(item["Contest_ID"].ToString());
+                    Contest.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
+                    Contest.NameContest = (item["Contest_Name"]).ToString();
+                    Contest.Bonus = Convert.ToInt32(item["Bonus"].ToString());
+                    Contest.TimeSupport = Convert.ToInt32(item["Request_Time"].ToString());
+                    Contest.ChallengceScore = Convert.ToInt32(item["Challenge_Score"].ToString());
+                    Contest.NumberChallenge = Convert.ToInt32(item["Number_Challenge"].ToString());
+                    Contest.TimeShowAnswer = Convert.ToInt32(item["Time_show_Anwer"].ToString());
+                    Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
+                    Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
+                    Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
+                    Contest.Round.NameRound = (item["Round_Name"].ToString());
+                    ContestList.Add(Contest);
+                }
+
+            }
+            return ContestList;
+        }
         //Insert Contest
         public bool AddContest(Contest Contest)
         {
