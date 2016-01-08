@@ -212,24 +212,22 @@ namespace CapDemo
                 
         }
 
-        private void flp_Finish_MouseDown(object sender, MouseEventArgs e)
+        //drag form
+        private void pnl_Phase_MouseDown_1(object sender, MouseEventArgs e)
         {
             TogMove = 1;
             MValX = e.X;
             MValY = e.Y;
         }
 
-        private void flp_Finish_MouseUp(object sender, MouseEventArgs e)
+        private void pnl_Phase_MouseUp_1(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }
 
-        private void flp_Finish_MouseMove(object sender, MouseEventArgs e)
+        private void pnl_Phase_MouseMove_1(object sender, MouseEventArgs e)
         {
-            if (TogMove==1)
-            {
-                this.SetDesktopLocation(MousePosition.X -MValX, MousePosition.Y - MValY);
-            }
+            TogMove = 1;
         }
 
     }
