@@ -40,16 +40,16 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
-            this.btn_LoadFile = new System.Windows.Forms.Button();
-            this.txt_FilePath = new System.Windows.Forms.TextBox();
-            this.btn_SaveImport = new System.Windows.Forms.Button();
-            this.btn_ExitImport = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_LoadFile = new System.Windows.Forms.Button();
+            this.txt_FilePath = new System.Windows.Forms.TextBox();
+            this.btn_SaveImport = new System.Windows.Forms.Button();
+            this.btn_ExitImport = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
@@ -161,11 +161,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 3);
+            this.label3.Location = new System.Drawing.Point(39, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 13);
+            this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Download mẫu file tại đây\r\n";
+            this.label3.Text = "Tải file mẫu  tại đây\r\n";
             // 
             // dgv_Question
             // 
@@ -192,6 +192,45 @@
             this.dgv_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Question.Size = new System.Drawing.Size(742, 315);
             this.dgv_Question.TabIndex = 4;
+            // 
+            // Sequence
+            // 
+            this.Sequence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Sequence.DataPropertyName = "Sequence";
+            this.Sequence.HeaderText = "STT";
+            this.Sequence.Name = "Sequence";
+            this.Sequence.ReadOnly = true;
+            this.Sequence.Width = 53;
+            // 
+            // QuestionTitle
+            // 
+            this.QuestionTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionTitle.HeaderText = "Tên câu Hỏi";
+            this.QuestionTitle.Name = "QuestionTitle";
+            this.QuestionTitle.ReadOnly = true;
+            this.QuestionTitle.Width = 91;
+            // 
+            // QuestionName
+            // 
+            this.QuestionName.HeaderText = "Nội dung";
+            this.QuestionName.Name = "QuestionName";
+            this.QuestionName.ReadOnly = true;
+            // 
+            // QuestionType
+            // 
+            this.QuestionType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuestionType.HeaderText = "Loại Cậu Hỏi";
+            this.QuestionType.Name = "QuestionType";
+            this.QuestionType.ReadOnly = true;
+            this.QuestionType.Width = 93;
+            // 
+            // Check
+            // 
+            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Check.HeaderText = "Chọn";
+            this.Check.Name = "Check";
+            this.Check.ReadOnly = true;
+            this.Check.Width = 38;
             // 
             // btn_LoadFile
             // 
@@ -264,45 +303,6 @@
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // Sequence
-            // 
-            this.Sequence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Sequence.DataPropertyName = "Sequence";
-            this.Sequence.HeaderText = "STT";
-            this.Sequence.Name = "Sequence";
-            this.Sequence.ReadOnly = true;
-            this.Sequence.Width = 53;
-            // 
-            // QuestionTitle
-            // 
-            this.QuestionTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.QuestionTitle.HeaderText = "Tên câu Hỏi";
-            this.QuestionTitle.Name = "QuestionTitle";
-            this.QuestionTitle.ReadOnly = true;
-            this.QuestionTitle.Width = 91;
-            // 
-            // QuestionName
-            // 
-            this.QuestionName.HeaderText = "Nội dung";
-            this.QuestionName.Name = "QuestionName";
-            this.QuestionName.ReadOnly = true;
-            // 
-            // QuestionType
-            // 
-            this.QuestionType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.QuestionType.HeaderText = "Loại Cậu Hỏi";
-            this.QuestionType.Name = "QuestionType";
-            this.QuestionType.ReadOnly = true;
-            this.QuestionType.Width = 93;
-            // 
-            // Check
-            // 
-            this.Check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Check.HeaderText = "Chọn";
-            this.Check.Name = "Check";
-            this.Check.ReadOnly = true;
-            this.Check.Width = 38;
             // 
             // ImportQuestion
             // 

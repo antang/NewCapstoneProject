@@ -52,6 +52,7 @@
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(16, 46);

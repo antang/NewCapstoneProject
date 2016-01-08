@@ -202,7 +202,7 @@
             this.btn_EditCatalogue.Name = "btn_EditCatalogue";
             this.btn_EditCatalogue.Size = new System.Drawing.Size(127, 47);
             this.btn_EditCatalogue.TabIndex = 33;
-            this.btn_EditCatalogue.Text = "Chỉnh Sữa";
+            this.btn_EditCatalogue.Text = "Chỉnh Sửa";
             this.btn_EditCatalogue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_EditCatalogue.UseVisualStyleBackColor = false;
             this.btn_EditCatalogue.Click += new System.EventHandler(this.btn_EditCatalogue_Click);
@@ -274,7 +274,7 @@
             this.lbl_CreateCatalogue.Name = "lbl_CreateCatalogue";
             this.lbl_CreateCatalogue.Size = new System.Drawing.Size(161, 23);
             this.lbl_CreateCatalogue.TabIndex = 10;
-            this.lbl_CreateCatalogue.Text = "+ Tạo chủ để mới";
+            this.lbl_CreateCatalogue.Text = "+ Tạo chủ đề mới";
             this.lbl_CreateCatalogue.Click += new System.EventHandler(this.lbl_CreateCatalogue_Click);
             // 
             // lbl1
@@ -480,7 +480,7 @@
             this.btn_EditQuestion.Name = "btn_EditQuestion";
             this.btn_EditQuestion.Size = new System.Drawing.Size(127, 47);
             this.btn_EditQuestion.TabIndex = 33;
-            this.btn_EditQuestion.Text = "Chỉnh Sữa";
+            this.btn_EditQuestion.Text = "Chỉnh Sửa";
             this.btn_EditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_EditQuestion.UseVisualStyleBackColor = false;
             this.btn_EditQuestion.Click += new System.EventHandler(this.btn_EditQuestion_Click);
