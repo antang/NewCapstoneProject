@@ -41,8 +41,9 @@
             this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
             this.progressBar1.Location = new System.Drawing.Point(18, 181);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(778, 48);
+            this.progressBar1.Size = new System.Drawing.Size(988, 48);
             this.progressBar1.TabIndex = 2;
+            this.progressBar1.Visible = false;
             // 
             // timer1
             // 
@@ -53,14 +54,13 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Image = global::CapDemo.Properties.Resources.spinner;
-            this.label1.Location = new System.Drawing.Point(298, 41);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 120F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LawnGreen;
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 134);
+            this.label1.Size = new System.Drawing.Size(1024, 768);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Loading ...";
+            this.label1.Text = "Welcome To\r\nHit Your Goal";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PleaseWaitForm
@@ -68,13 +68,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(814, 241);
+            this.BackgroundImage = global::CapDemo.Properties.Resources.BackGround_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PleaseWaitForm";
-            this.Text = "PleaseWaitForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Welcome";
             this.Load += new System.EventHandler(this.PleaseWaitForm_Load);
             this.ResumeLayout(false);
 

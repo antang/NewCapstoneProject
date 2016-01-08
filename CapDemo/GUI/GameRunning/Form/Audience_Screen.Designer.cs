@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tbc_ShowGame = new System.Windows.Forms.TabControl();
             this.tab_Map = new System.Windows.Forms.TabPage();
+            this.lbl_Round = new System.Windows.Forms.Label();
             this.pnl_Phase = new System.Windows.Forms.Panel();
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Lane = new System.Windows.Forms.Panel();
@@ -48,11 +49,9 @@
             this.flp_AnswerQuiz = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_EndGame = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lbl_Round = new System.Windows.Forms.Label();
             this.tbc_ShowGame.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.pnl_Phase.SuspendLayout();
@@ -90,6 +89,19 @@
             this.tab_Map.Size = new System.Drawing.Size(1016, 742);
             this.tab_Map.TabIndex = 0;
             this.tab_Map.Text = "Player Information";
+            // 
+            // lbl_Round
+            // 
+            this.lbl_Round.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Round.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Round.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Round.ForeColor = System.Drawing.Color.White;
+            this.lbl_Round.Location = new System.Drawing.Point(735, 690);
+            this.lbl_Round.Name = "lbl_Round";
+            this.lbl_Round.Size = new System.Drawing.Size(257, 35);
+            this.lbl_Round.TabIndex = 5;
+            this.lbl_Round.Text = "label2";
+            this.lbl_Round.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_Phase
             // 
@@ -138,6 +150,7 @@
             // 
             this.tab_ShowQuestion.BackColor = System.Drawing.Color.Blue;
             this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.BackGround_2;
+            this.tab_ShowQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_ShowQuestion.Controls.Add(this.lbl_typeQ);
             this.tab_ShowQuestion.Controls.Add(this.pnl_QuestionFrame);
             this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
@@ -263,7 +276,7 @@
             // 
             // tab_EndGame
             // 
-            this.tab_EndGame.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tab_EndGame.BackColor = System.Drawing.Color.White;
             this.tab_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.BackGround_2;
             this.tab_EndGame.Controls.Add(this.panel2);
             this.tab_EndGame.Location = new System.Drawing.Point(4, 22);
@@ -276,36 +289,23 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::CapDemo.Properties.Resources.Congratulation;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackgroundImage = global::CapDemo.Properties.Resources.Congratulation_bg;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.flp_TeamEndGame);
-            this.panel2.Location = new System.Drawing.Point(208, 110);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 548);
+            this.panel2.Size = new System.Drawing.Size(1016, 742);
             this.panel2.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(90, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(410, 74);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Congratulation";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // flp_TeamEndGame
             // 
             this.flp_TeamEndGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flp_TeamEndGame.BackColor = System.Drawing.Color.Transparent;
-            this.flp_TeamEndGame.Location = new System.Drawing.Point(90, 121);
+            this.flp_TeamEndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flp_TeamEndGame.Location = new System.Drawing.Point(243, 161);
             this.flp_TeamEndGame.Name = "flp_TeamEndGame";
-            this.flp_TeamEndGame.Size = new System.Drawing.Size(410, 407);
+            this.flp_TeamEndGame.Size = new System.Drawing.Size(534, 541);
             this.flp_TeamEndGame.TabIndex = 0;
             // 
             // timer1
@@ -333,28 +333,19 @@
             this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
             this.imageList1.Images.SetKeyName(15, "y-kien.png");
             // 
-            // lbl_Round
-            // 
-            this.lbl_Round.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Round.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Round.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Round.ForeColor = System.Drawing.Color.White;
-            this.lbl_Round.Location = new System.Drawing.Point(735, 690);
-            this.lbl_Round.Name = "lbl_Round";
-            this.lbl_Round.Size = new System.Drawing.Size(257, 35);
-            this.lbl_Round.TabIndex = 5;
-            this.lbl_Round.Text = "label2";
-            this.lbl_Round.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Audience_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.tbc_ShowGame);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Audience_Screen";
-            this.Text = "Audience_Screen";
+            this.ShowInTaskbar = false;
+            this.Text = "Hiển thị Game";
             this.Load += new System.EventHandler(this.Audience_Screen_Load);
             this.tbc_ShowGame.ResumeLayout(false);
             this.tab_Map.ResumeLayout(false);
@@ -380,7 +371,6 @@
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
         public System.Windows.Forms.TabPage tab_EndGame;
         public System.Windows.Forms.FlowLayoutPanel flp_TeamEndGame;
-        public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lbl_Point;
         public System.Windows.Forms.Label lbl_Phase;
         public System.Windows.Forms.Label lbl_TimeShowQuestion;

@@ -66,7 +66,7 @@ namespace CapDemo
             this.Hide();
             Thread t = new Thread(new ThreadStart(SpashStart));
             t.Start();
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             this.SuspendLayout();
             //this.Hide();
             this.Dock = DockStyle.Fill;

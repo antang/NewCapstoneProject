@@ -576,6 +576,7 @@ namespace CapDemo
                     if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
                     {
                         //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                        teamAdienceScreen.Enabled = false;
                     }
                 }
             }
@@ -923,7 +924,7 @@ namespace CapDemo
                         //update 
                         Phase.IDQuestion = idquestion;
                         //Check question have been showed
-                        //PhaseQuestionBl.EditQuestionStatus(Phase);
+                        PhaseQuestionBl.EditQuestionStatus(Phase);
                         step++;
                     }
 
@@ -1636,6 +1637,7 @@ namespace CapDemo
                 if (records.ElementAt(j).Exist == false)
                 {
                     //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                    teamAdienceScreen.Enabled = false;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)
@@ -1863,30 +1865,26 @@ namespace CapDemo
             for (int i = 0; i < records.Count; i++)
             {
                 TeamEndGame teamEndGame = new TeamEndGame();
-                if (i==0)
-                {
-                    teamEndGame.lbl_Winner.Visible = true;
-                }
-                teamEndGame.lbl_Position.Text = (i + 1).ToString() + Rank[i].ToString();
                 teamEndGame.lbl_Score.Text = records.ElementAt(i).TeamScore.ToString();
                 teamEndGame.lbl_Name.Text = nameplayer(records.ElementAt(i).IDPlayer);
                 teamEndGame.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(records.ElementAt(i).IDPlayer));
                 teamEndGame.Size = new System.Drawing.Size(width - 10, teamEndGame.Height);
                 if (i==0)
                 {
-                    teamEndGame.BackgroundImage = Properties.Resources.chon;
+                    teamEndGame.BackgroundImage = Properties.Resources.First;
                 }
                 if (i == 1)
                 {
-                    teamEndGame.BackgroundImage = Properties.Resources.Answer;
+                    teamEndGame.BackgroundImage = Properties.Resources.Second;
                 }
                 if (i == 2)
                 {
-                    teamEndGame.BackgroundImage = Properties.Resources.dung;
+                    teamEndGame.BackgroundImage = Properties.Resources.Thirst;
                 }
                 if (i == 3)
                 {
-                    teamEndGame.BackgroundImage = Properties.Resources.dung_2;
+                    teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                    teamEndGame.lbl_Position.Visible = true;
                 }
                 audience.flp_TeamEndGame.Controls.Add(teamEndGame);
             }
@@ -1926,6 +1924,11 @@ namespace CapDemo
         private void mnui_Minimize_Click(object sender, EventArgs e)
         {
             audience.WindowState = FormWindowState.Minimized;
+        }
+        //Restore down Audience Screen
+        private void mnui_RestoreDown_Click(object sender, EventArgs e)
+        {
+            audience.WindowState = FormWindowState.Normal;
         }
     }
 }

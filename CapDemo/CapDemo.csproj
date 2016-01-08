@@ -791,6 +791,13 @@
     <None Include="Resources\team-Answer.png" />
     <None Include="Resources\X_icon-vien.png" />
     <None Include="Resources\team-into.png" />
+    <None Include="Resources\Congratulation_bg.jpg" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\Fourth.png" />
+    <None Include="Resources\Second.png" />
+    <None Include="Resources\Thirst.png" />
+    <None Include="Resources\ao.png" />
+    <None Include="Resources\RestoreDown.png" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
