@@ -210,6 +210,7 @@ namespace CapDemo
                     if (ListContest.ElementAt(i).IDContest == contestID)
                     {
                         //General Setting
+                        gs.cmb_Competition.SelectedItem = ListContest.ElementAt(i).Competition.NameCompetition;
                         gs.txt_ContestName.Text = ListContest.ElementAt(i).NameContest;
                         gs.txt_Bonus.Text = ListContest.ElementAt(i).Bonus.ToString();
                         gs.txt_NumStepFail.Text = ListContest.ElementAt(i).TimesFalse.ToString();
