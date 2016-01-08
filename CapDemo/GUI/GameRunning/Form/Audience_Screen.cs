@@ -211,35 +211,25 @@ namespace CapDemo
             }
                 
         }
-<<<<<<< HEAD
-
-        //drag form
-        private void pnl_Phase_MouseDown_1(object sender, MouseEventArgs e)
-=======
         //drag form audience
-        private void flp_Finish_MouseDown(object sender, MouseEventArgs e)
->>>>>>> an1
+        private void tbc_ShowGame_MouseDown(object sender, MouseEventArgs e)
         {
             TogMove = 1;
             MValX = e.X;
             MValY = e.Y;
         }
 
-        private void pnl_Phase_MouseUp_1(object sender, MouseEventArgs e)
+        private void tbc_ShowGame_MouseUp(object sender, MouseEventArgs e)
         {
             TogMove = 0;
         }
 
-        private void pnl_Phase_MouseMove_1(object sender, MouseEventArgs e)
+        private void tbc_ShowGame_MouseMove(object sender, MouseEventArgs e)
         {
-<<<<<<< HEAD
-            TogMove = 1;
-=======
             if (TogMove == 1)
             {
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
             }
->>>>>>> an1
         }
     }
 }
