@@ -211,9 +211,14 @@ namespace CapDemo
             }
                 
         }
+<<<<<<< HEAD
 
         //drag form
         private void pnl_Phase_MouseDown_1(object sender, MouseEventArgs e)
+=======
+        //drag form audience
+        private void flp_Finish_MouseDown(object sender, MouseEventArgs e)
+>>>>>>> an1
         {
             TogMove = 1;
             MValX = e.X;
@@ -227,8 +232,14 @@ namespace CapDemo
 
         private void pnl_Phase_MouseMove_1(object sender, MouseEventArgs e)
         {
+<<<<<<< HEAD
             TogMove = 1;
+=======
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
+>>>>>>> an1
         }
-
     }
 }
