@@ -361,6 +361,15 @@ namespace CapDemo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream biggun3 {
+            get {
+                return ResourceManager.GetStream("biggun3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Button_Close {
@@ -697,6 +706,15 @@ namespace CapDemo.Properties {
             get {
                 object obj = ResourceManager.GetObject("minimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream modau {
+            get {
+                return ResourceManager.GetStream("modau", resourceCulture);
             }
         }
         
@@ -1067,6 +1085,15 @@ namespace CapDemo.Properties {
             get {
                 object obj = ResourceManager.GetObject("trai_tim_sai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream traloisai {
+            get {
+                return ResourceManager.GetStream("traloisai", resourceCulture);
             }
         }
         

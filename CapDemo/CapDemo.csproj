@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>C:\Users\TNA\Downloads\NAudio-Release\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -826,16 +829,36 @@
     <None Include="Resources\ao.png" />
     <None Include="Resources\RestoreDown.png" />
     <None Include="Resources\welcome-dong.gif" />
+    <None Include="Resources\LetItGo.mp3" />
+    <None Include="Resources\biggun3.wav" />
+    <None Include="Resources\modau.wav" />
+    <None Include="Resources\traloisai.wav" />
+    <Content Include="Sound\Ai_Se_Eu_Pego.mp3" />
+    <Content Include="Sound\LetItGo.mp3" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\myStruct\myStruct.csproj">
-      <Project>{4c10111d-47da-46b8-a10b-19c59e3db76c}</Project>
-      <Name>myStruct</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

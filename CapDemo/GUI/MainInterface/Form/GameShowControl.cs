@@ -9,7 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Media;
+using NAudio.Wave;
+using System.IO;
 namespace CapDemo.GUI
 {
     public partial class GameShowControl : Form
@@ -52,6 +54,8 @@ namespace CapDemo.GUI
         }
         private void GameShowControl_Load(object sender, EventArgs e)
         {
+            Sound();
+            
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
@@ -106,6 +110,7 @@ namespace CapDemo.GUI
         //log up event help
         void gm1_onClick_Help(object sender, EventArgs e)
         {
+            s.Stop();
             this.Controls.Clear();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -159,6 +164,8 @@ namespace CapDemo.GUI
         //exit help Control
         void Help_onExit(object sender, EventArgs e)
         {
+            Sound();
+
             GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -216,6 +223,7 @@ namespace CapDemo.GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
             Start_Game sg = new Start_Game();
+           // s.Stop();
             //auto fix screen start game
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -273,6 +281,7 @@ namespace CapDemo.GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
+            s.Stop();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             if (w == 1024 && h == 768)
@@ -325,6 +334,7 @@ namespace CapDemo.GUI
         void Exit_Setting(object sender, EventArgs e)
         {
             this.Controls.Clear();
+            Sound();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -380,6 +390,7 @@ namespace CapDemo.GUI
         void Exit_StartGame(object sender, EventArgs e)
         {
             GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
+            Sound();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             if (w == 1024 && h == 768)
@@ -430,6 +441,23 @@ namespace CapDemo.GUI
             gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Clear();
             this.Controls.Add(gm1);
+        }
+
+        //show sound
+        SoundPlayer s;
+        public void Sound()
+        {
+            using (Mp3FileReader mp3 = new Mp3FileReader(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.mp3"))
+            {
+                using (WaveStream pcm = WaveFormatConversionStream.CreatePcmStream(mp3))
+                {
+                    WaveFileWriter.CreateWaveFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.wav", pcm);
+                }
+            }
+            s = new SoundPlayer();
+            s.SoundLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.wav";
+            s.Play();
+            s.PlayLooping();
         }
     }
 }

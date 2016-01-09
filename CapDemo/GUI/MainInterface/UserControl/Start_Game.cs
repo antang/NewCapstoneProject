@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapDemo.BL;
 using CapDemo.DO;
+using System.Media;
+using NAudio.Wave;
+using System.IO;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -39,8 +42,26 @@ namespace CapDemo.GUI.User_Controls
         {
             this.Dock = DockStyle.Fill;
             load();
+            //SoundPlayer s = new SoundPlayer(CapDemo.Properties.Resources.biggun3);
+            Sound();
+           
         }
-
+        //show sound
+        SoundPlayer s;
+        public void Sound()
+        {
+            using (Mp3FileReader mp3 = new Mp3FileReader(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.mp3"))
+            {
+                using (WaveStream pcm = WaveFormatConversionStream.CreatePcmStream(mp3))
+                {
+                    WaveFileWriter.CreateWaveFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.wav", pcm);
+                }
+            }
+            s = new SoundPlayer();
+            s.SoundLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.wav";
+            s.Play();
+            s.PlayLooping();
+        }
         //Load Game
         //LOAD
         int TagGame = 0;
@@ -98,26 +119,5 @@ namespace CapDemo.GUI.User_Controls
             btn_Exit.ForeColor = Color.White;
         }
 
-
-        //void game_onClick(object sender, EventArgs e)
-        //{
-        //    if (this.Doubleclick != null)
-        //    {
-        //        this.Doubleclick(this, e);
-        //    }
-        //}
-        // eventhandler on delete
-        //void game_onRun(object sender, EventArgs e)
-        //{
-        //    int GameID = (e as MyEventArgs).IDGame;
-        //    foreach (Game item in flp_StartGame.Controls)
-        //    {
-        //        if (item.ID_Game == GameID)
-        //        {
-        //            idcontest = Convert.ToInt32(item.label2.Text);
-        //        }
-
-        //    }
-        //}
     }
 }

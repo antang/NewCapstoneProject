@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace CapDemo
 {
@@ -204,9 +205,12 @@ namespace CapDemo
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
+            SoundPlayer s = new SoundPlayer(Properties.Resources.biggun3);
+            s.Play();
             if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
             {
                 timer1.Stop();
+                s.Stop();
                 lbl_TimeShowQuestion.Image = null;
             }
                 
