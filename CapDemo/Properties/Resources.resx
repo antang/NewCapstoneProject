@@ -436,4 +436,13 @@
   <data name="_1920_1080_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1920-1080-start.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="biggun3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\biggun3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="modau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="traloisai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\traloisai.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

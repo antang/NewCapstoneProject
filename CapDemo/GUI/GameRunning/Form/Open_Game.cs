@@ -12,10 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Threading;
-using myStruct;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using CapDemo.GUI.User_Controls;
+using System.Media;
 
 namespace CapDemo
 {
@@ -26,6 +26,7 @@ namespace CapDemo
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
+        SoundPlayer s;
         int iDContest;
         public int IDContest
         {
@@ -173,6 +174,11 @@ namespace CapDemo
                         CheckChallengeChoice = true;
                         ShowTeamsChallenged();
 
+                        //sound
+                        s = new SoundPlayer(Properties.Resources.biggun3);
+                        s.Play();
+                        s.PlayLooping();
+
                         foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
                         {
                             if (TeamCS.lbl_IDPlayer.Text ==  TeamAS.lbl_ID.Text)
@@ -236,6 +242,10 @@ namespace CapDemo
                      {
                          try
                          {
+                             //sound
+                             s = new SoundPlayer(Properties.Resources.traloisai);
+                             s.Play();
+
                              List<Phase> ListPhase;
                              Phase.IDContest = iDContest;
                              ListPhase = PhaseBL.GetPhasePM(Phase);
@@ -336,6 +346,9 @@ namespace CapDemo
                     DialogResult dr = MessageBox.Show("Are you sure to use supported choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
+                        s = new SoundPlayer(Properties.Resources.biggun3);
+                        s.Play();
+
                         records.ElementAt(team).Support = false;
                         //hide support choice on controller screen
                         TeamCS.chk_Support.Visible = false;
@@ -1769,9 +1782,12 @@ namespace CapDemo
             audience.IdContest = iDContest;
             if (step ==1)
             {
+                
                 this.SuspendLayout();
                 audience.SuspendLayout();
                 lblHint.Text = guideline[1].ToString();
+                s = new SoundPlayer(Properties.Resources.modau);
+                s.Play();
                 loadMap();
                 audience.ResumeLayout();
                 this.ResumeLayout();
@@ -1779,26 +1795,37 @@ namespace CapDemo
             }
             else if (step == 2)
             {
+                s = new SoundPlayer(Properties.Resources.biggun3);
+                s.Play();
                 lblHint.Text = guideline[2].ToString();
                 GoPlayer();
             }
             else if (step ==3)
             {
+                s.Stop();
+                s = new SoundPlayer(Properties.Resources.traloisai);
+                s.Play();
                 lblHint.Text = guideline[3].ToString();
                 ShowQuestion();
             }
             else if (step ==4)
             {
+                s = new SoundPlayer(Properties.Resources.biggun3);
+                s.Play();
                 lblHint.Text = guideline[4].ToString();
                 EnterAnswer();
             }
             else if (step ==5)
             {
+                s = new SoundPlayer(Properties.Resources.traloisai);
+                s.Play();
                 lblHint.Text = guideline[5].ToString();
                 ShowCorrectAnswer();
             }
             else if (step == 6)
             {
+                s = new SoundPlayer(Properties.Resources.modau);
+                s.Play();
                 step++;
                 UpdateScreenAfterChallenge();
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
@@ -1806,6 +1833,8 @@ namespace CapDemo
             }
             else if (step ==7)
             {
+                s = new SoundPlayer(Properties.Resources.traloisai);
+                s.Play();
                 lblHint.Text = guideline[0].ToString();
                 UpdateScreenAfterChallenge();
                 CalculteScore();
@@ -1828,6 +1857,7 @@ namespace CapDemo
             {
                 this.Close();
                 audience.Close();
+                s.Stop();
             } 
         }
         //Click play to execute game

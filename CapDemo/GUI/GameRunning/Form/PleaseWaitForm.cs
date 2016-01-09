@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,8 @@ namespace CapDemo
 
         private void PleaseWaitForm_Load(object sender, EventArgs e)
         {
+            SoundPlayer s = new SoundPlayer(Properties.Resources.modau);
+            s.Play();
             this.SuspendLayout();
             //this.Dock = DockStyle.Fill;
             this.ResumeLayout();
