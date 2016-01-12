@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -73,10 +74,12 @@ namespace CapDemo.GUI.User_Controls
             ChangePassword ChangePass = new ChangePassword(userID,userName,pass);
             ChangePass.ShowDialog();
         }
-
+        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        //start
         private void btn_Start_MouseHover(object sender, EventArgs e)
         {
             btn_Start.BackgroundImage = CapDemo.Properties.Resources.BD_menu_hover;
+            sound.PlaySync();
         }
 
         private void btn_Start_MouseLeave(object sender, EventArgs e)
@@ -84,9 +87,11 @@ namespace CapDemo.GUI.User_Controls
             btn_Start.BackgroundImage = CapDemo.Properties.Resources.BD_menu;
         }
 
+        //setting
         private void btn_Setting_MouseHover(object sender, EventArgs e)
         {
             btn_Setting.BackgroundImage = CapDemo.Properties.Resources.CD_menu_hover;
+            sound.PlaySync();
         }
 
         private void btn_Setting_MouseLeave(object sender, EventArgs e)
@@ -94,9 +99,11 @@ namespace CapDemo.GUI.User_Controls
             btn_Setting.BackgroundImage = CapDemo.Properties.Resources.CD_menu;
         }
 
+        //help
         private void btn_Help_MouseHover(object sender, EventArgs e)
         {
             btn_Help.BackgroundImage = CapDemo.Properties.Resources.HD_menu_hover;
+            sound.PlaySync();
         }
 
         private void btn_Help_MouseLeave(object sender, EventArgs e)
@@ -104,15 +111,18 @@ namespace CapDemo.GUI.User_Controls
             btn_Help.BackgroundImage = CapDemo.Properties.Resources.HD_menu;
         }
 
+        //exit
         private void btn_ExitMenu_MouseHover(object sender, EventArgs e)
         {
             btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu_hover;
+            sound.PlaySync();
         }
 
         private void btn_ExitMenu_MouseLeave(object sender, EventArgs e)
         {
             btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu;
         }
+
         //Exit program
         private void btn_ExitMenu_Click(object sender, EventArgs e)
         {

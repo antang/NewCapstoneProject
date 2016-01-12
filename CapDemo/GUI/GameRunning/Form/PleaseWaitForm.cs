@@ -27,11 +27,19 @@ namespace CapDemo
 
         private void PleaseWaitForm_Load(object sender, EventArgs e)
         {
-            SoundPlayer s = new SoundPlayer(Properties.Resources.modau);
-            s.Play();
+            SoundPlayer sound = new SoundPlayer(Properties.Resources.welcome_game);
+            sound.Play();
+
             this.SuspendLayout();
+            Screen[] screens = Screen.AllScreens;
+            Rectangle bounds = screens[1].Bounds;
+            this.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+            this.StartPosition = FormStartPosition.Manual;
+            //this.Show();
             //this.Dock = DockStyle.Fill;
             this.ResumeLayout();
+
+
         }
     }
 }

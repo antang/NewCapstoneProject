@@ -49,7 +49,7 @@ namespace CapDemo.DA
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -79,7 +79,7 @@ namespace CapDemo.DA
             catch (Exception ex)
             {
                
-                MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -108,7 +108,7 @@ namespace CapDemo.DA
             catch (Exception ex)
             {
                
-                MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -135,7 +135,7 @@ namespace CapDemo.DA
             catch (Exception ex)
             {
                
-                MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -156,7 +156,7 @@ namespace CapDemo.DA
             catch (Exception ex)
             {
                 
-                    MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
         }

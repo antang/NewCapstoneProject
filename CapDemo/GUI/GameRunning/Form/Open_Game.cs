@@ -26,7 +26,7 @@ namespace CapDemo
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
-        SoundPlayer s;
+        SoundPlayer sound;
         int iDContest;
         public int IDContest
         {
@@ -138,6 +138,8 @@ namespace CapDemo
                         team.checkQuestionPM += team_checkQuestionPM;
                         team.checkChallenge += team_checkChallenge;
                         team.ChoiceChallengedTeam += team_ChoiceChallengedTeam;
+                        //properties
+                        team.BackColor = Color.FromArgb(colorplayer(ListPlayer.ElementAt(i).IDPlayer));
                         team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
                         team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
                         team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
@@ -174,10 +176,10 @@ namespace CapDemo
                         CheckChallengeChoice = true;
                         ShowTeamsChallenged();
 
-                        //sound
-                        s = new SoundPlayer(Properties.Resources.biggun3);
-                        s.Play();
-                        s.PlayLooping();
+                        //sound challenged
+                        sound.Stop();
+                        sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                        sound.Play();
 
                         foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
                         {
@@ -208,9 +210,14 @@ namespace CapDemo
                         {
                             if (TeamCS.lbl_IDPlayer.Text == TeamAS.lbl_ID.Text)
                             {
-                                TeamAS.BackColor = Color.LightPink;
-                                TeamAS.btn_ChallengeChoice.BackColor = Color.LightPink;
-                                TeamAS.btn_SupportChoice.BackColor = Color.LightPink;
+                                //sound challenged
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                                sound.Play();
+
+                                TeamAS.BackColor = Color.LightCoral;
+                                TeamAS.btn_ChallengeChoice.BackColor = Color.LightCoral;
+                                TeamAS.btn_SupportChoice.BackColor = Color.LightCoral;
                             }
                         }
                     }
@@ -242,10 +249,6 @@ namespace CapDemo
                      {
                          try
                          {
-                             //sound
-                             s = new SoundPlayer(Properties.Resources.traloisai);
-                             s.Play();
-
                              List<Phase> ListPhase;
                              Phase.IDContest = iDContest;
                              ListPhase = PhaseBL.GetPhasePM(Phase);
@@ -288,6 +291,12 @@ namespace CapDemo
                                              audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                              //show question by id phase
                                              ShowQuestionByIDPhase(IDPhasePM);
+
+                                             //sound show question
+                                             sound.Stop();
+                                             sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                                             sound.Play();
+                                             sound.PlayLooping();
                                          }
                                      }
                                  }
@@ -315,6 +324,12 @@ namespace CapDemo
                                          audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                          //show question by id phase
                                          ShowQuestionByIDPhase(IDPhasePM);
+
+                                         //sound show question
+                                         sound.Stop();
+                                         sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                                         sound.Play();
+                                         sound.PlayLooping();
                                      }
                                  }
                              } 
@@ -346,8 +361,6 @@ namespace CapDemo
                     DialogResult dr = MessageBox.Show("Are you sure to use supported choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                        s = new SoundPlayer(Properties.Resources.biggun3);
-                        s.Play();
 
                         records.ElementAt(team).Support = false;
                         //hide support choice on controller screen
@@ -393,7 +406,21 @@ namespace CapDemo
         //--1 load Map
         public void loadMap()
         {
-            audience.Show();
+            
+            Screen[] screens = Screen.AllScreens;
+            if (screens.Count() > 1 )
+            {
+                Rectangle bounds = screens[1].Bounds;
+                audience.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+                audience.StartPosition = FormStartPosition.Manual;
+                audience.Show();
+            }
+            else
+            {
+                audience.Show();
+            }
+
+            //audience.Show();
             audience.flp_PlayerAnswers.Controls.Clear();
             CheckChallengeChoice = false;
             CheckQuestionPM = false;
@@ -410,7 +437,8 @@ namespace CapDemo
             //show all team on controller screen
             foreach (Team teamControllerScreen in flp_Team.Controls)
             {
-                teamControllerScreen.BackColor = Color.Gainsboro;
+                teamControllerScreen.BackgroundImage = Properties.Resources.team_2;
+                teamControllerScreen.BackColor = Color.FromArgb(colorplayer(records.ElementAt(i).IDPlayer));
                 teamControllerScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(i).IDPlayer);
                 teamControllerScreen.lbl_TeamScore.Text = records.ElementAt(i).TeamScore.ToString();
                 teamControllerScreen.lbl_CurrentPhase.Text = NameofPhase(records.ElementAt(i).IDPhase);
@@ -541,7 +569,7 @@ namespace CapDemo
             {
                 if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
-                    teamCS.BackColor = Color.LightGreen;
+                    teamCS.BackgroundImage = Properties.Resources.Team;
                     teamCS.Enabled = true;
                     teamCS.flp_Answer.Visible = true;
                     teamCS.gb_team.Visible = true;
@@ -588,7 +616,7 @@ namespace CapDemo
                     if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
                     {
                         //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
-                        teamAdienceScreen.Enabled = false;
+                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
                     }
                 }
             }
@@ -634,6 +662,12 @@ namespace CapDemo
                             //show question by id phase
                             ShowQuestionByIDPhase(IDPhase);
                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+
+                            //sound show question
+                            sound.Stop();
+                            sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                            sound.Play();
+                            sound.PlayLooping();
                         }
                     }
                 }
@@ -658,6 +692,12 @@ namespace CapDemo
                         //show question by id phase
                         ShowQuestionByIDPhase(IDPhase);
                         audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+
+                        //sund show question
+                        sound.Stop();
+                        sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                        sound.Play();
+                        sound.PlayLooping();
                     }
                 }
             } 
@@ -734,13 +774,31 @@ namespace CapDemo
                     {
                         playerAnswer.lbl_Check.Text = "true";
                         playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+
+                        //sound correct answer
+                        if (CheckChallengeChoice == false)
+                        {
+                            sound.Stop();
+                            sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                            sound.Play();
+                        }
                     }
                     else
                     {
                         playerAnswer.lbl_Check.Text = "false";
                         playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+
+                        //sound wrong answer
+                        if (CheckChallengeChoice == false)
+                        {
+                            sound.Stop();
+                            sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                            sound.Play();
+                        }
                     }
                 }
+
+                
             }
             else
             {
@@ -752,11 +810,27 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+
+                            //sound correct answer
+                            if (CheckChallengeChoice == false)
+                            {
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                                sound.Play();
+                            }
                         }
                         else
                         {
                             playerAnswer.lbl_Check.Text = "false";
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+
+                            //sound wrong answer
+                            if (CheckChallengeChoice == false)
+                            {
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                                sound.Play();
+                            }
                         }
                     }
                 }
@@ -768,15 +842,39 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+
+                            //sound correct answer
+                            if (CheckChallengeChoice == false)
+                            {
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                                sound.Play();
+                            }
                         }
                         else
                         {
                             playerAnswer.lbl_Check.Text = "false";
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+
+                            //sound wrong answer
+                            if (CheckChallengeChoice == false)
+                            {
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                                sound.Play();
+                            }
                         }
                     }
+                } 
+            }
+
+            //show check correct
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer) || teamCS.chk_Challenged.Checked == true)
+                {
+                    teamCS.chk_Correct.Visible = true;
                 }
-                
             }
             step++;
         }
@@ -892,8 +990,8 @@ namespace CapDemo
                         audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
                         audience.lbl_QuestionContent.Size = new System.Drawing.Size(audience.pnl_QuestionFrame.Width * 66/100, audience.lbl_QuestionContent.Height);
                         audience.lbl_QuestionContent.Location = new Point(audience.lbl_QuestionContent.Location.X - audience.lbl_QuestionContent.Location.X + (audience.pnl_QuestionFrame.Width / 2) * 35 / 100, audience.lbl_QuestionContent.Location.Y);
-                        audience.lbl_Phase.Text = NameofPhase(records.ElementAt(team).IDPhase) + "(" +(ListPhase.Count-1) +")";
-                        audience.lbl_Point.Text = "Point: "+ BonusScoreofPhase(records.ElementAt(team).IDPhase).ToString();
+                        audience.lbl_Phase.Text = NameofPhase(id) + "(" + (ListPhase.Count - 1) + ")";
+                        audience.lbl_Point.Text = "Point: " + BonusScoreofPhase(id).ToString();
                         typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
                         audience.lbl_typeQ.Text = "Type: " + typequestion;
 
@@ -990,6 +1088,7 @@ namespace CapDemo
                         for (int h = 0; h < ListAnswer.Count; h++)
                         {
                             RadioButton radioButton = new RadioButton();
+                            radioButton.ForeColor = Color.White;
                             radioButton.Text = Convert.ToChar(a + h).ToString();
                             radioButton.AutoSize = true;
                             teamCS.flp_Answer.Controls.Add(radioButton);
@@ -1002,6 +1101,7 @@ namespace CapDemo
                             for (int h = 0; h < ListAnswer.Count; h++)
                             {
                                 CheckBox checkBox = new CheckBox();
+                                checkBox.ForeColor = Color.White;
                                 checkBox.Text = Convert.ToChar(a + h).ToString();
                                 checkBox.AutoSize = true;
                                 teamCS.flp_Answer.Controls.Add(checkBox);
@@ -1010,6 +1110,7 @@ namespace CapDemo
                         else
                         {
                             TextBox textBox = new TextBox();
+                            textBox.ForeColor = Color.Black;
                             textBox.AutoSize = false;
                             textBox.Anchor = AnchorStyles.Top;
                             textBox.Anchor = AnchorStyles.Left;
@@ -1056,6 +1157,7 @@ namespace CapDemo
                         for (int h = 0; h < ListAnswer.Count; h++)
                         {
                             RadioButton radioButton = new RadioButton();
+                            radioButton.ForeColor = Color.White;
                             radioButton.Text = Convert.ToChar(a + h).ToString();
                             radioButton.AutoSize = true;
                             teamCS.flp_Answer.Controls.Add(radioButton);
@@ -1068,6 +1170,7 @@ namespace CapDemo
                             for (int h = 0; h < ListAnswer.Count; h++)
                             {
                                 CheckBox checkBox = new CheckBox();
+                                checkBox.ForeColor = Color.White;
                                 checkBox.Text = Convert.ToChar(a + h).ToString();
                                 checkBox.AutoSize = true;
                                 teamCS.flp_Answer.Controls.Add(checkBox);
@@ -1076,6 +1179,7 @@ namespace CapDemo
                         else
                         {
                             TextBox textBox = new TextBox();
+                            textBox.ForeColor = Color.Black;
                             textBox.AutoSize = false;
                             textBox.Anchor = AnchorStyles.Top;
                             textBox.Anchor = AnchorStyles.Left;
@@ -1167,8 +1271,6 @@ namespace CapDemo
                         }
                     }
                     teamCS.gb_team.Visible = false;
-                    teamCS.chk_Correct.Visible = true;
-                    
                 }
                 else
                 {
@@ -1237,7 +1339,6 @@ namespace CapDemo
                         }
                     }
                     teamCS.gb_team.Visible = false;
-                    teamCS.chk_Correct.Visible = true;
                 }
                 else
                 {
@@ -1649,7 +1750,7 @@ namespace CapDemo
                 if (records.ElementAt(j).Exist == false)
                 {
                     //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
-                    teamAdienceScreen.Enabled = false;
+                    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)
@@ -1782,12 +1883,9 @@ namespace CapDemo
             audience.IdContest = iDContest;
             if (step ==1)
             {
-                
                 this.SuspendLayout();
                 audience.SuspendLayout();
                 lblHint.Text = guideline[1].ToString();
-                s = new SoundPlayer(Properties.Resources.modau);
-                s.Play();
                 loadMap();
                 audience.ResumeLayout();
                 this.ResumeLayout();
@@ -1795,37 +1893,42 @@ namespace CapDemo
             }
             else if (step == 2)
             {
-                s = new SoundPlayer(Properties.Resources.biggun3);
-                s.Play();
+                //sound to player's turn
+                sound = new SoundPlayer(Properties.Resources.Click);
+                sound.Play();
+
                 lblHint.Text = guideline[2].ToString();
                 GoPlayer();
             }
             else if (step ==3)
             {
-                s.Stop();
-                s = new SoundPlayer(Properties.Resources.traloisai);
-                s.Play();
                 lblHint.Text = guideline[3].ToString();
                 ShowQuestion();
             }
             else if (step ==4)
             {
-                s = new SoundPlayer(Properties.Resources.biggun3);
-                s.Play();
+                //sound enter answer
+                sound.Stop();
+                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                sound.Play();
+
                 lblHint.Text = guideline[4].ToString();
                 EnterAnswer();
             }
             else if (step ==5)
             {
-                s = new SoundPlayer(Properties.Resources.traloisai);
-                s.Play();
+                //sound show corect answer when challenged
+                if (CheckChallengeChoice == true)
+                {
+                    sound.Stop();
+                    sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                    sound.Play();
+                }
                 lblHint.Text = guideline[5].ToString();
                 ShowCorrectAnswer();
             }
             else if (step == 6)
             {
-                s = new SoundPlayer(Properties.Resources.modau);
-                s.Play();
                 step++;
                 UpdateScreenAfterChallenge();
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
@@ -1833,8 +1936,11 @@ namespace CapDemo
             }
             else if (step ==7)
             {
-                s = new SoundPlayer(Properties.Resources.traloisai);
-                s.Play();
+                //sound check score
+                sound.Stop();
+                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                sound.Play();
+
                 lblHint.Text = guideline[0].ToString();
                 UpdateScreenAfterChallenge();
                 CalculteScore();
@@ -1857,7 +1963,7 @@ namespace CapDemo
             {
                 this.Close();
                 audience.Close();
-                s.Stop();
+                //s.Stop();
             } 
         }
         //Click play to execute game
@@ -1958,6 +2064,26 @@ namespace CapDemo
         private void mnui_RestoreDown_Click(object sender, EventArgs e)
         {
             audience.WindowState = FormWindowState.Normal;
+        }
+        //minimize controller screen
+        private void pb_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; 
+        }
+        //maximize
+        private void pb_Maximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.toolTip1.SetToolTip(this.pb_Maximize, "Maximize");
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                this.toolTip1.SetToolTip(this.pb_Maximize, "Restore Down");
+            }
+            
         }
     }
 }

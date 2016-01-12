@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Status = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,10 @@
             this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
             this.lbl_ContestName.TabIndex = 18;
             this.lbl_ContestName.Text = "tên phần thi";
-            this.lbl_ContestName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.toolTip1.SetToolTip(this.lbl_ContestName, "Double Click");
+            this.lbl_ContestName.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.lbl_ContestName.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.lbl_ContestName.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // lbl_RoundName
             // 
@@ -77,19 +81,24 @@
             this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
             this.lbl_RoundName.TabIndex = 17;
             this.lbl_RoundName.Text = "tên vòng thi";
-            this.lbl_RoundName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.toolTip1.SetToolTip(this.lbl_RoundName, "Double Click");
+            this.lbl_RoundName.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.lbl_RoundName.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.lbl_RoundName.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // lbl_CompetitionName
             // 
             this.lbl_CompetitionName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CompetitionName.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CompetitionName.ForeColor = System.Drawing.Color.White;
-            this.lbl_CompetitionName.Location = new System.Drawing.Point(187, 37);
+            this.lbl_CompetitionName.Location = new System.Drawing.Point(187, 36);
             this.lbl_CompetitionName.Name = "lbl_CompetitionName";
             this.lbl_CompetitionName.Size = new System.Drawing.Size(102, 35);
             this.lbl_CompetitionName.TabIndex = 16;
             this.lbl_CompetitionName.Text = "tên";
-            this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.lbl_CompetitionName.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.lbl_CompetitionName.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // label3
             // 
@@ -102,7 +111,10 @@
             this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "Phần Thi:";
-            this.label3.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.toolTip1.SetToolTip(this.label3, "Double Click");
+            this.label3.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.label3.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.label3.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // lbl_Name
             // 
@@ -115,7 +127,10 @@
             this.lbl_Name.Size = new System.Drawing.Size(73, 16);
             this.lbl_Name.TabIndex = 13;
             this.lbl_Name.Text = "Vòng thi:";
-            this.lbl_Name.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.toolTip1.SetToolTip(this.lbl_Name, "Double Click");
+            this.lbl_Name.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.lbl_Name.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.lbl_Name.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // contextMenuStrip1
             // 
@@ -141,7 +156,10 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(292, 72);
             this.panel1.TabIndex = 11;
-            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.toolTip1.SetToolTip(this.panel1, "Double Click");
+            this.panel1.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.panel1.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // lbl_Status
             // 
@@ -154,6 +172,10 @@
             this.lbl_Status.Size = new System.Drawing.Size(50, 16);
             this.lbl_Status.TabIndex = 21;
             this.lbl_Status.Text = "Đã thi";
+            this.toolTip1.SetToolTip(this.lbl_Status, "Double Click");
+            this.lbl_Status.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.lbl_Status.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.lbl_Status.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // label4
             // 
@@ -166,6 +188,10 @@
             this.label4.Size = new System.Drawing.Size(86, 16);
             this.label4.TabIndex = 20;
             this.label4.Text = "Trạng thái:";
+            this.toolTip1.SetToolTip(this.label4, "Double Click");
+            this.label4.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
+            this.label4.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
+            this.label4.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
             // Game
             // 
@@ -182,6 +208,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Game";
             this.Size = new System.Drawing.Size(294, 181);
+            this.toolTip1.SetToolTip(this, "Double Click");
             this.Load += new System.EventHandler(this.Game_Load);
             this.DoubleClick += new System.EventHandler(this.Game_DoubleClick);
             this.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
@@ -206,5 +233,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteSetupToolStripMenuItem;
         public System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

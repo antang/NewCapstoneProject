@@ -293,7 +293,9 @@ namespace CapDemo.GUI.User_Controls
                     {
                         Question Question = new Question();
                         QuestionBL QuestionBL = new QuestionBL();
+                        PhaseQuestionBL PhaseQuestionBL = new BL.PhaseQuestionBL();
                         Question.IDQuestion = Convert.ToInt32(item.Cells["IDQuestion"].Value.ToString());
+                        PhaseQuestionBL.DeletePhaseQuestionbyIDQuestion(Question);
                         QuestionBL.DeleteAnswerByIDQuestion(Question);
                         QuestionBL.DeleteQuestionByID(Question);
                     }

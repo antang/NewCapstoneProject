@@ -78,6 +78,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PleaseWaitForm";
+            this.ShowInTaskbar = false;
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.PleaseWaitForm_Load);
             this.ResumeLayout(false);

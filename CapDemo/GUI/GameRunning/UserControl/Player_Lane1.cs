@@ -24,14 +24,14 @@ namespace CapDemo
             }
             else
             {
-                this.ForeColor = Color.RoyalBlue;
+                //this.ForeColor = Color.RoyalBlue;
                 timeHightLight.Stop();
             }
         }
 
         private void timeHightLight_Tick(object sender, EventArgs e)
         {
-                this.BackColor = Color.LightGreen;
+                this.BackColor = Color.LawnGreen;
         }
     }
 }

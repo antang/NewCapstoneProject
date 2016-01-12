@@ -152,7 +152,7 @@ namespace CapDemo.BL
         public bool AddAnswer( Answer Answer)
         {
             string query= " INSERT INTO Answer (Answer_Name, Correct_Answer, Question_ID, Catalogue_ID)"
-                        + " VALUES ('" + Answer.ContentAnswer.Replace("'", "''") + "'," +Answer.Check + ",'" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
+                        + " VALUES ('" + Answer.ContentAnswer.Replace("'", "''") + "'," + Answer.Check + ",'" + Answer.IDQuestion + "','" + Answer.IDCatalogue + "')";
             return DA.InsertDatabase(query);
         }
 //EDIT QUESTION AND ANSWER
@@ -172,7 +172,21 @@ namespace CapDemo.BL
                          + " WHERE Question_ID = '" + Question.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
-
+        //update catalouge by question id
+        public bool EditIDCatalogueQuestionByIDQuestion(Question Question)
+        {
+            string query = "UPDATE Question"
+                         + " SET Catalogue_ID ='" + Question.IDCatalogue + "'"
+                         + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+            return DA.UpdateDatabase(query);
+        }
+        public bool EditIDCatalogueAnswerByIDQuestion(Question Question)
+        {
+            string query = "UPDATE Answer"
+                         + " SET Catalogue_ID ='" + Question.IDCatalogue + "'"
+                         + " WHERE Question_ID = '" + Question.IDQuestion + "'";
+            return DA.UpdateDatabase(query);
+        }
         //EDIT ANSWER
         public bool EditAnswerbyID(Answer Answer)
         {
@@ -181,6 +195,8 @@ namespace CapDemo.BL
                          + " WHERE Question_ID = '" + Answer.IDQuestion + "'";
             return DA.UpdateDatabase(query);
         }
+
+
 //DELETE QUESTION
         //DELETE QUESTION
         public bool DeleteQuestionByID(Question Question)
