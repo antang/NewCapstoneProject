@@ -78,7 +78,7 @@ namespace CapDemo
         {
             if (chk_Challenged.Checked == true)
             {
-                this.BackColor = Color.LightPink;
+                this.BackgroundImage = Properties.Resources.Team;
                 this.flp_Answer.Visible = true;
                 this.gb_team.Visible = false;
 
@@ -93,7 +93,7 @@ namespace CapDemo
             }
             else
             {
-                this.BackColor = Color.Gainsboro;
+                this.BackgroundImage = Properties.Resources.team_2;
                 this.flp_Answer.Visible = false;
 
                 //check equal false

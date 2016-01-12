@@ -169,6 +169,13 @@ namespace CapDemo.BL
                          + " WHERE [Question_ID] = '" + Phase.IDQuestion + "' AND [Phase_ID] = '" + Phase.IDPhase+ "'";
             return DA.DeleteDatabase(query);
         }
+        public bool DeletePhaseQuestionbyIDQuestion(Question Question)
+        {
+            string query = "DELETE FROM [PhaseQuestion]"
+                         + " WHERE [Question_ID] = '" + Question.IDQuestion + "'";
+            return DA.DeleteDatabase(query);
+        }
+
         public bool DeletePhaseQuestionbyIDPhase(Phase Phase)
         {
             string query = "DELETE FROM [PhaseQuestion]"

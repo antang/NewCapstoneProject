@@ -112,8 +112,8 @@ namespace CapDemo.GUI.User_Controls
                 Phase.IDContest = Convert.ToInt32(lbl_IDContest.Text);
                 Player.IDContest = Convert.ToInt32(lbl_IDContest.Text);
 
-                PlayerBL.DeletePlayerbyIDContest(Player);
                 PhaseQuestionBL.DeletePhaseQuestionbyIDContest(Phase);
+                PlayerBL.DeletePlayerbyIDContest(Player);
                 PhaseBl.DeletePhasebyIDContest(Phase);
                 ContestBL.DeleteContestbyID(Contest);
                 LoadAll();

@@ -102,44 +102,49 @@ namespace CapDemo.GUI.User_Controls
                         }
                         if (count > 0)
                         {
+                            //QuestionBL questionbl = new QuestionBL();
                             Question question = new Question();
-                            question.QuestionTitle = QuestionList.ElementAt(i).QuestionTitle;
-                            question.NameQuestion = QuestionList.ElementAt(i).NameQuestion;
-                            question.TypeQuestion = QuestionList.ElementAt(i).TypeQuestion;
+                            question.IDQuestion = QuestionList.ElementAt(i).IDQuestion;
                             question.IDCatalogue = IDCatSelected;
-                            IDQuestion = QuestionList.ElementAt(i).IDQuestion;
-                            question.Date = DateTime.Now;
-                            if (QuestionBL.AddQuestion(question)==true)
-                            {
-                                //ADD ANSWER
-                                Question Question = new Question();
-                                Question.IDQuestion = IDQuestion;
-                                List<DO.Answer> AnswerList;
-                                AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
-                                if (AnswerList != null)
-                                    for (int ii = 0; ii < AnswerList.Count; ii++)
-                                    {
-                                        if (AnswerList.ElementAt(ii).IDQuestion == IDQuestion)
-                                        {
-                                            Answer answer = new Answer();
-                                            answer.ContentAnswer = AnswerList.ElementAt(ii).ContentAnswer;
-                                            if (AnswerList.ElementAt(ii).IsCorrect == true)
-                                            {
-                                                answer.Check = 1;
-                                            }
-                                            else
-                                            {
-                                                answer.Check = 0;
-                                            }
-                                            answer.IDQuestion = QuestionBL.MaxIDQuestion();
-                                            answer.IDCatalogue = IDCatSelected;
-                                            QuestionBL.AddAnswer(answer);
-                                        }
-                                    }
-                                //DELETE QUESTION
-                                QuestionBL.DeleteAnswerByIDQuestion(Question);
-                                QuestionBL.DeleteQuestionByID(Question);  
-                            }
+                            QuestionBL.EditIDCatalogueAnswerByIDQuestion(question);
+                            QuestionBL.EditIDCatalogueQuestionByIDQuestion(question);
+                            //question.QuestionTitle = QuestionList.ElementAt(i).QuestionTitle;
+                            //question.NameQuestion = QuestionList.ElementAt(i).NameQuestion;
+                            //question.TypeQuestion = QuestionList.ElementAt(i).TypeQuestion;
+                            //question.IDCatalogue = IDCatSelected;
+                            //IDQuestion = QuestionList.ElementAt(i).IDQuestion;
+                            //question.Date = DateTime.Now;
+                            //if (QuestionBL.AddQuestion(question)==true)
+                            //{
+                            //    //ADD ANSWER
+                            //    Question Question = new Question();
+                            //    Question.IDQuestion = IDQuestion;
+                            //    List<DO.Answer> AnswerList;
+                            //    AnswerList = QuestionBL.GetAnswerByQuestionID(Question);
+                            //    if (AnswerList != null)
+                            //        for (int ii = 0; ii < AnswerList.Count; ii++)
+                            //        {
+                            //            if (AnswerList.ElementAt(ii).IDQuestion == IDQuestion)
+                            //            {
+                            //                Answer answer = new Answer();
+                            //                answer.ContentAnswer = AnswerList.ElementAt(ii).ContentAnswer;
+                            //                if (AnswerList.ElementAt(ii).IsCorrect == true)
+                            //                {
+                            //                    answer.Check = 1;
+                            //                }
+                            //                else
+                            //                {
+                            //                    answer.Check = 0;
+                            //                }
+                            //                answer.IDQuestion = QuestionBL.MaxIDQuestion();
+                            //                answer.IDCatalogue = IDCatSelected;
+                            //                QuestionBL.AddAnswer(answer);
+                            //            }
+                            //        }
+                            //    //DELETE QUESTION
+                            //    QuestionBL.DeleteAnswerByIDQuestion(Question);
+                            //    QuestionBL.DeleteQuestionByID(Question);  
+                            //}
                         }
                     }
                     //Notify

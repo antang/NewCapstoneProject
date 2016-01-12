@@ -42,9 +42,9 @@ namespace CapDemo
         }
         private void timerHighLight_Tick(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightGreen;
-            btn_SupportChoice.BackColor = Color.LightGreen;
-            btn_ChallengeChoice.BackColor = Color.LightGreen;
+            this.BackColor = Color.LawnGreen;
+            btn_SupportChoice.BackColor = Color.LawnGreen;
+            btn_ChallengeChoice.BackColor = Color.LawnGreen;
         }
 
         

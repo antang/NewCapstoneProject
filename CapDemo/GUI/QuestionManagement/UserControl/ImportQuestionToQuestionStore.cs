@@ -112,40 +112,44 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
-                    //add question
-                    question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString();
-                    question.NameQuestion = row.Cells["QuestionName"].Value.ToString();
-                    question.TypeQuestion = row.Cells["QuestionType"].Value.ToString();
                     question.IDCatalogue = IDCat;
-                    question.Date = DateTime.Now;
-                    if (questionBL.AddQuestion(question))
-                    {
-                        //add answer
-                        question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
-                        List<DO.Answer> AnswerList;
-                        AnswerList = questionBL.GetAnswerByQuestionID(question);
-                        if (AnswerList != null)
-                        {
-                            for (int i = 0; i < AnswerList.Count; i++)
-                            {
-                                answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
-                                if (AnswerList.ElementAt(i).IsCorrect == true)
-                                {
-                                    answer.Check = 1;
-                                }
-                                else
-                                {
-                                    answer.Check = 0;
-                                }
-                                answer.IDQuestion = questionBL.MaxIDQuestion();
-                                answer.IDCatalogue = IDCat;
-                                questionBL.AddAnswer(answer);
-                            }
-                        }
-                        //Delete answer and question
-                        questionBL.DeleteAnswerByIDQuestion(question);
-                        questionBL.DeleteQuestionByID(question);
-                    }
+                    question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                    questionBL.EditIDCatalogueAnswerByIDQuestion(question);
+                    questionBL.EditIDCatalogueQuestionByIDQuestion(question);
+                    ////add question
+                    //question.QuestionTitle = row.Cells["QuestionTitle"].Value.ToString();
+                    //question.NameQuestion = row.Cells["QuestionName"].Value.ToString();
+                    //question.TypeQuestion = row.Cells["QuestionType"].Value.ToString();
+                    //question.IDCatalogue = IDCat;
+                    //question.Date = DateTime.Now;
+                    //if (questionBL.AddQuestion(question))
+                    //{
+                    //    //add answer
+                    //    question.IDQuestion = Convert.ToInt32(row.Cells["IDQuestion"].Value);
+                    //    List<DO.Answer> AnswerList;
+                    //    AnswerList = questionBL.GetAnswerByQuestionID(question);
+                    //    if (AnswerList != null)
+                    //    {
+                    //        for (int i = 0; i < AnswerList.Count; i++)
+                    //        {
+                    //            answer.ContentAnswer = AnswerList.ElementAt(i).ContentAnswer;
+                    //            if (AnswerList.ElementAt(i).IsCorrect == true)
+                    //            {
+                    //                answer.Check = 1;
+                    //            }
+                    //            else
+                    //            {
+                    //                answer.Check = 0;
+                    //            }
+                    //            answer.IDQuestion = questionBL.MaxIDQuestion();
+                    //            answer.IDCatalogue = IDCat;
+                    //            questionBL.AddAnswer(answer);
+                    //        }
+                    //    }
+                    //    //Delete answer and question
+                    //    questionBL.DeleteAnswerByIDQuestion(question);
+                    //    questionBL.DeleteQuestionByID(question);
+                    //}
                 }
             }
         }

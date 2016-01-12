@@ -28,6 +28,8 @@ namespace CapDemo
         public void SpashStart()
         {
             Application.Run(new PleaseWaitForm());
+
+            
         }
 
         int idContest;
@@ -64,10 +66,11 @@ namespace CapDemo
         
         private void Audience_Screen_Load(object sender, EventArgs e)
         {
+
             this.Hide();
             Thread t = new Thread(new ThreadStart(SpashStart));
             t.Start();
-            Thread.Sleep(4000);
+            Thread.Sleep(8000);
             this.SuspendLayout();
             //this.Hide();
             this.Dock = DockStyle.Fill;
@@ -126,16 +129,20 @@ namespace CapDemo
                     H_player = PlayerLane.btn_Team.Height;
 
                     int H_BoundaryPlayerLane = 0;
-                    H_BoundaryPlayerLane = H_PhaseLane - (H_FinishLocation + H_player);
+                    H_BoundaryPlayerLane = H_PlayerLane - (H_FinishLocation + H_player);
 
                     for (int j = 0; j < listPhase.Count * NumStep; j++)
                     {
                         Phase_Lane PhaseLane = new Phase_Lane();
-                        PhaseLane.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep);
-                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_BoundaryPlayerLane / listPhase.Count * (j + 1) / NumStep));
+                        PhaseLane.Size = new System.Drawing.Size(W_PlayerLane / listPlayer.Count, H_BoundaryPlayerLane / listPhase.Count / NumStep);
+                        PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - (H_BoundaryPlayerLane / listPhase.Count) * (j + 1) / NumStep));
                         PhaseLane.BorderStyle = BorderStyle.FixedSingle;
-                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane, H_BoundaryPlayerLane / listPhase.Count / NumStep-2);
+                        //PhaseLane.BackgroundImage = Properties.Resources.arrow_up;
+                        PhaseLane.BackColor = Color.Transparent;
+                        //PhaseLane.BackgroundImageLayout = ImageLayout.Zoom;
+                        PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PlayerLane / listPlayer.Count, H_BoundaryPlayerLane / listPhase.Count / NumStep - 2);
                         PhaseLane.lbl_NamePhase.Text = "";
+                        PhaseLane.lbl_NamePhase.BackColor = Color.Transparent;
                         PlayerLane.Controls.Add(PhaseLane);
                     } 
                     pnl_Lane.Controls.Add(PlayerLane);
@@ -144,7 +151,7 @@ namespace CapDemo
 
                 //Draw Phase Lane
                 PhaseLane1 Phase = new PhaseLane1();
-                H_Boundary = H_PhaseLane - (H_FinishLocation + H_player);
+                H_Boundary = H_PhaseLane - (H_FinishLocation);
                 Phase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane);
 
                 for (int i = 0; i < listPhase.Count; i++)
@@ -153,6 +160,8 @@ namespace CapDemo
                     PhaseLane.Size = new System.Drawing.Size(W_PhaseLane, H_Boundary / listPhase.Count);
                     PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_Boundary / listPhase.Count * (i + 1)));
                     PhaseLane.BorderStyle = BorderStyle.FixedSingle;
+                    PhaseLane.BackgroundImage = Properties.Resources.rectangle_but;
+                    PhaseLane.BackgroundImageLayout = ImageLayout.Zoom;
                     PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PhaseLane, H_Boundary / listPhase.Count);
                     PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
                     Phase.Controls.Add(PhaseLane);
@@ -201,16 +210,24 @@ namespace CapDemo
             
             
         }
-
+        SoundPlayer s;
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
-            SoundPlayer s = new SoundPlayer(Properties.Resources.biggun3);
-            s.Play();
+             s= new SoundPlayer(Properties.Resources.Watch);
+             if (int.Parse(lbl_TimeShowQuestion.Text) <= 10 && int.Parse(lbl_TimeShowQuestion.Text) > 1)
+            {
+                s.Play(); 
+            }
+            if (int.Parse(lbl_TimeShowQuestion.Text) == 1)
+            {
+                s = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                s.Play(); 
+            }
             if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
             {
-                timer1.Stop();
                 s.Stop();
+                timer1.Stop();
                 lbl_TimeShowQuestion.Image = null;
             }
                 

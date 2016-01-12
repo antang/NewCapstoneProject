@@ -40,7 +40,7 @@ namespace CapDemo.DA
                 QuestionContent = QuestionContent.Replace("</p>", "");
                 QuestionContent = QuestionContent.Replace("<br>", Environment.NewLine);
                 QuestionContent = QuestionContent.Replace("</br>", "");
-                QuestionContent = QuestionContent.Replace("'", "''");
+                //QuestionContent = QuestionContent.Replace("'", "''");
                 return QuestionContent;
             }
             catch (Exception)
@@ -57,12 +57,11 @@ namespace CapDemo.DA
 
             foreach (var line in File.ReadAllLines(NameFile))
             {
-                QuestionContent += line;
 
+                QuestionContent += line;
             }
-            QuestionContent = QuestionContent.Replace("'", "''");
-            return QuestionContent.Trim();
-        }
-        
+            //QuestionContent= QuestionContent.Replace("'", "''");
+            return QuestionContent.Trim().ToString() ;
+        } 
     }
 }

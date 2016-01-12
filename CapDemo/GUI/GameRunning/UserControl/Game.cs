@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapDemo.GUI.User_Controls;
+using CapDemo.GUI;
 
 namespace CapDemo
 {
@@ -29,38 +30,27 @@ namespace CapDemo
             get { return iD_Game; }
             set { iD_Game = value; }
         }
-        //public event EventHandler onClick;
-        //Double Click to rum game
+        public event EventHandler onClick;
         private void Game_DoubleClick(object sender, EventArgs e)
         {
-            //if (this.onClick != null)
-            //{
-            //    EventHandler run = onRun;
-            //    if (run != null)
-            //    {
-            //        MyEventArgs args = new MyEventArgs();
-            //        args.IDGame = iD_Game;
-            //        run(this, args);
-            //    }
-            //    this.onClick(this, e);
-            //}
+            if (this.onClick != null)
+                this.onClick(this, e);
+
             Open_Game OpenGame = new Open_Game();
             OpenGame.IDContest = Convert.ToInt32(lbl_IDContest.Text);
             DialogResult result = OpenGame.ShowDialog();
 
+            //GameShowControl gsc = new GameShowControl();
+            //gsc.Hide();
+            //gsc.axWindowsMediaPlayer1.Ctlcontrols.stop();
 
             if (result == DialogResult.OK)
             {
                 //load();
             }
         }
-        //enter game to change color
-        private void Game_MouseEnter(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Cyan;
-        }
 
-        private void panel1_MouseEnter(object sender, EventArgs e)
+        private void Game_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.Cyan;
         }
@@ -69,11 +59,5 @@ namespace CapDemo
         {
             this.BackColor = Color.SkyBlue;
         }
-
-        private void lbl_Number_MouseEnter(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Cyan;
-        }
-
     }
 }

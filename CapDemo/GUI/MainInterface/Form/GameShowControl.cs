@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
-using NAudio.Wave;
 using System.IO;
 namespace CapDemo.GUI
 {
@@ -23,6 +21,7 @@ namespace CapDemo.GUI
         Setting st = new Setting();
         Start_Game sgFirst = new Start_Game();
         Help Help = new Help();
+        Game game = new Game();
         //GameMenu gm = new GameMenu();
         public int UserID
         {
@@ -54,8 +53,6 @@ namespace CapDemo.GUI
         }
         private void GameShowControl_Load(object sender, EventArgs e)
         {
-            Sound();
-            
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
@@ -106,11 +103,14 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Add(gm1);
+
+            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+            axWindowsMediaPlayer1.settings.setMode("Loop",true);
         }
         //log up event help
         void gm1_onClick_Help(object sender, EventArgs e)
         {
-            s.Stop();
             this.Controls.Clear();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -160,12 +160,12 @@ namespace CapDemo.GUI
             //this.st.onExit += Exit_Setting;
             this.Help.onExit += Help_onExit;
             this.Controls.Add(Help);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
         //exit help Control
         void Help_onExit(object sender, EventArgs e)
         {
-            Sound();
-
             GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -217,13 +217,15 @@ namespace CapDemo.GUI
             gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Clear();
             this.Controls.Add(gm1);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         //Click to show Start Game GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
             Start_Game sg = new Start_Game();
-           // s.Stop();
+            
             //auto fix screen start game
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -273,15 +275,22 @@ namespace CapDemo.GUI
 
             sg.onExit += Exit_StartGame;
             //sg.Doubleclick += sg_DoubleClick;
+            sg.doubleClick += sg_doubleClick;
             this.Controls.Clear();
             this.Controls.Add(sg);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.stop();
+        }
+
+        void sg_doubleClick(object sender, EventArgs e)
+        {
+            this.axWindowsMediaPlayer1.Ctlcontrols.pause();
         }
 
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            s.Stop();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             if (w == 1024 && h == 768)
@@ -329,12 +338,13 @@ namespace CapDemo.GUI
             }
             this.st.onExit += Exit_Setting;
             this.Controls.Add(st);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
         //Exit Setting GUI
         void Exit_Setting(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            Sound();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -385,12 +395,14 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Add(gm1);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         //Exit start Game
         void Exit_StartGame(object sender, EventArgs e)
         {
-            GameMenu gm1 = new GameMenu(UserID, UserName, Pass);
-            Sound();
+            this.axWindowsMediaPlayer1.Ctlcontrols.play();
+            GameMenu gm1 = new GameMenu(UserID, UserName, Pass);          
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             if (w == 1024 && h == 768)
@@ -441,23 +453,9 @@ namespace CapDemo.GUI
             gm1.onClick_Help += gm1_onClick_Help;
             this.Controls.Clear();
             this.Controls.Add(gm1);
+
+            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
-        //show sound
-        SoundPlayer s;
-        public void Sound()
-        {
-            using (Mp3FileReader mp3 = new Mp3FileReader(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.mp3"))
-            {
-                using (WaveStream pcm = WaveFormatConversionStream.CreatePcmStream(mp3))
-                {
-                    WaveFileWriter.CreateWaveFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.wav", pcm);
-                }
-            }
-            s = new SoundPlayer();
-            s.SoundLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Ai_Se_Eu_Pego.wav";
-            s.Play();
-            s.PlayLooping();
-        }
     }
 }

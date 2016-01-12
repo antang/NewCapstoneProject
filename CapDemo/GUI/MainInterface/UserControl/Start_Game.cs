@@ -37,30 +37,12 @@ namespace CapDemo.GUI.User_Controls
             if (this.onExit != null)
                 this.onExit(this, e);
         }
-
+        string s = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
         private void Start_Game_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
             load();
-            //SoundPlayer s = new SoundPlayer(CapDemo.Properties.Resources.biggun3);
-            Sound();
-           
-        }
-        //show sound
-        SoundPlayer s;
-        public void Sound()
-        {
-            using (Mp3FileReader mp3 = new Mp3FileReader(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.mp3"))
-            {
-                using (WaveStream pcm = WaveFormatConversionStream.CreatePcmStream(mp3))
-                {
-                    WaveFileWriter.CreateWaveFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.wav", pcm);
-                }
-            }
-            s = new SoundPlayer();
-            s.SoundLocation = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\LetItGo.wav";
-            s.Play();
-            s.PlayLooping();
+
         }
         //Load Game
         //LOAD
@@ -83,7 +65,7 @@ namespace CapDemo.GUI.User_Controls
                         game.Tag = TagGame;
                         game.ID_Game = TagGame;
                         //game.onRun += game_onRun;
-                        //game.onClick += game_onClick;
+                        game.onClick += game_onClick;
                         //game.Enabled = false;
 
                         game.lbl_CompetitionName.Text = ListContest.ElementAt(i).Competition.NameCompetition;
@@ -105,6 +87,12 @@ namespace CapDemo.GUI.User_Controls
                     } 
                 }
             }
+        }
+        public event EventHandler doubleClick;
+        void game_onClick(object sender, EventArgs e)
+        {
+            if (this.doubleClick != null)
+                this.doubleClick(this, e);
         }
 
         private void btn_Exit_MouseEnter(object sender, EventArgs e)

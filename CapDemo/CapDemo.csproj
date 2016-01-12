@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NAudio">
-      <HintPath>C:\Users\TNA\Downloads\NAudio-Release\NAudio.dll</HintPath>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NAudio.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -833,14 +834,58 @@
     <None Include="Resources\biggun3.wav" />
     <None Include="Resources\modau.wav" />
     <None Include="Resources\traloisai.wav" />
-    <Content Include="Sound\Ai_Se_Eu_Pego.mp3" />
-    <Content Include="Sound\LetItGo.mp3" />
+    <None Include="Resources\Ai_Se_Eu_Pego.wav" />
+    <None Include="Resources\Doi-thi.jpg" />
+    <None Include="Resources\maximize_Control.jpg" />
+    <None Include="Resources\minimize_Control.jpg" />
+    <None Include="Resources\minimize_Windown.png" />
+    <None Include="Resources\maximize_Windown.png" />
+    <None Include="Resources\pattern.jpg" />
+    <None Include="Resources\Pattern_Pieces.jpg" />
+    <None Include="Resources\Pattern_Pieces1.jpg" />
+    <None Include="Resources\Pattern_Piece2.jpg" />
+    <None Include="Resources\Small-Blue-Tiles.jpg" />
+    <None Include="Resources\bg1111.jpg" />
+    <None Include="Resources\Green-animated-arrow.gif" />
+    <None Include="Resources\arrow-up.png" />
+    <None Include="Resources\rectangle-but.png" />
+    <None Include="Resources\sticker.png" />
+    <None Include="Resources\blue-glossy-rectangle.png" />
+    <None Include="Resources\videoplaybutton.png" />
+    <None Include="Resources\blue_Glossy.jpg" />
+    <None Include="Resources\up_ico.png" />
+    <None Include="Resources\double-arrow_Gray.png" />
+    <None Include="Resources\arrow_Blue.jpg" />
+    <None Include="Resources\Arrow up 3.png" />
+    <None Include="Resources\Team.png" />
+    <None Include="Resources\team-2.png" />
+    <None Include="Resources\Click.wav" />
+    <None Include="Resources\hover.wav" />
+    <None Include="Resources\Watch.wav" />
+    <None Include="Resources\correct-buzzer-sound-effect.wav" />
+    <None Include="Resources\show-cau-hoi.wav" />
+    <None Include="Resources\welcome-game.mp3" />
+    <None Include="Resources\wrong-buzzer-sound-effect.wav" />
+    <None Include="Resources\welcome-game.wav" />
+    <None Include="Resources\techno_pattern.jpg" />
+    <None Include="Resources\team-Answer-2.png" />
+    <None Include="Resources\Team_Over.png" />
+    <None Include="Resources\team_Answer_2.png" />
+    <Content Include="Sound\Van_Lang_Dai_Hoc_Duong.mp3" />
     <Content Include="Template.txt" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="MediaPlayer">
       <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -856,6 +901,15 @@
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
