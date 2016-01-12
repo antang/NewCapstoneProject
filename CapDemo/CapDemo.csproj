@@ -414,10 +414,10 @@
     <Compile Include="GUI\GameRunning\Form\PleaseWaitForm.Designer.cs">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Help.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Help.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Help.Designer.cs">
+    <Compile Include="GUI\MainInterface\UserControl\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -622,7 +622,7 @@
     <EmbeddedResource Include="GUI\GameRunning\Form\PleaseWaitForm.resx">
       <DependentUpon>PleaseWaitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Help.resx">
+    <EmbeddedResource Include="GUI\MainInterface\UserControl\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -871,6 +871,9 @@
     <None Include="Resources\team-Answer-2.png" />
     <None Include="Resources\Team_Over.png" />
     <None Include="Resources\team_Answer_2.png" />
+    <None Include="Resources\Correct_Answer.wav" />
+    <None Include="Resources\Incorrect_Answer.wav" />
+    <None Include="Resources\game_over.wav" />
     <Content Include="Sound\Van_Lang_Dai_Hoc_Duong.mp3" />
     <Content Include="Template.txt" />
   </ItemGroup>

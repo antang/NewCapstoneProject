@@ -208,11 +208,11 @@
         public System.Windows.Forms.Label lbl_TeamScore;
         public System.Windows.Forms.Timer timerHighLight;
         public System.Windows.Forms.Label lbl_ID;
-        private System.Windows.Forms.Panel flp_Heart;
         public System.Windows.Forms.Button btn_SupportChoice;
         public System.Windows.Forms.Button btn_ChallengeChoice;
         public System.Windows.Forms.Timer timeUpdateScore;
         public System.Windows.Forms.Timer timerChallenge;
+        public System.Windows.Forms.Panel flp_Heart;
 
     }
 }

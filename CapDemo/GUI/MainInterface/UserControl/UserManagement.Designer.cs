@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl1 = new System.Windows.Forms.Label();
             this.dgv_UserManagement = new System.Windows.Forms.DataGridView();
             this.lbl_Create = new System.Windows.Forms.Label();
@@ -56,6 +57,14 @@
             this.dgv_UserManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_UserManagement.BackgroundColor = System.Drawing.Color.White;
             this.dgv_UserManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_UserManagement.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_UserManagement.Location = new System.Drawing.Point(33, 126);
             this.dgv_UserManagement.Name = "dgv_UserManagement";
             this.dgv_UserManagement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;

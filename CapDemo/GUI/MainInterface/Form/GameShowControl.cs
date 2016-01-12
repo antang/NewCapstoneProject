@@ -102,11 +102,24 @@ namespace CapDemo.GUI
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
+            gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Add(gm1);
 
             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.play();
             axWindowsMediaPlayer1.settings.setMode("Loop",true);
+        }
+        // click log out to show login screen
+        void gm1_onClick_LogOut(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (rs == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Close();
+                
+            }
         }
         //log up event help
         void gm1_onClick_Help(object sender, EventArgs e)
@@ -215,6 +228,7 @@ namespace CapDemo.GUI
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
+            gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Clear();
             this.Controls.Add(gm1);
 
@@ -281,7 +295,7 @@ namespace CapDemo.GUI
 
             //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
-
+        // double game user control click to pause sound
         void sg_doubleClick(object sender, EventArgs e)
         {
             this.axWindowsMediaPlayer1.Ctlcontrols.pause();
@@ -394,6 +408,7 @@ namespace CapDemo.GUI
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
+            gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Add(gm1);
 
             //axWindowsMediaPlayer1.Ctlcontrols.play();
@@ -451,6 +466,7 @@ namespace CapDemo.GUI
             gm1.onClick_Setting += btn_Setting_onClick;
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
+            gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Clear();
             this.Controls.Add(gm1);
 

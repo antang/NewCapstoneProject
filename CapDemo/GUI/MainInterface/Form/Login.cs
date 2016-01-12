@@ -32,7 +32,7 @@ namespace CapDemo.GUI
         {
             login();
         }
-
+        GameShowControl gsc = new GameShowControl();
         private void openComposing(object obj)
         {
             GameShowControl gsc = new GameShowControl(UserID,UserName,Pass);
@@ -98,10 +98,14 @@ namespace CapDemo.GUI
                     }
                 if (check == true)
                 {
-                    this.Close();
-                    th = new Thread(openComposing);
-                    th.SetApartmentState(ApartmentState.STA);
-                    th.Start();
+                    this.Hide();
+                    gsc.UserID = UserID;
+                    gsc.Pass = Pass;
+                    gsc.UserName = UserName;
+                    gsc.Show();
+                    //th = new Thread(openComposing);
+                    //th.SetApartmentState(ApartmentState.STA);
+                    //th.Start();
                 }
                 else
                 {
@@ -124,6 +128,29 @@ namespace CapDemo.GUI
             {
                 e.Handled = true;
             } 
+        }
+        //drag form
+        int TogMove;
+        int MValX;
+        int MValY;
+        private void Login_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+            }
         }
     }
 }

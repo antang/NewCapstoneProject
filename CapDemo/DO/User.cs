@@ -9,7 +9,13 @@ namespace CapDemo.DO
     class User
     {
         int userID;
+        int sequence;
 
+        public int Sequence
+        {
+            get { return sequence; }
+            set { sequence = value; }
+        }
         public int UserID
         {
             get { return userID; }
@@ -36,12 +42,6 @@ namespace CapDemo.DO
             get { return role; }
             set { role = value; }
         }
-        int sequence;
 
-        public int Sequence
-        {
-            get { return sequence; }
-            set { sequence = value; }
-        }
     }
 }
