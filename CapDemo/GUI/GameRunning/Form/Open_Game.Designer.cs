@@ -144,6 +144,7 @@
             this.pb_EndGame.TabIndex = 16;
             this.pb_EndGame.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_EndGame, "Finish");
+            this.pb_EndGame.Visible = false;
             this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
             // 
             // pb_Exit

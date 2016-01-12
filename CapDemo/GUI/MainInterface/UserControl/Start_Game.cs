@@ -21,6 +21,8 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
+        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         public event EventHandler onExit;
         //public event EventHandler onClick;
         //public event EventHandler Doubleclick;
@@ -34,6 +36,7 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
+            sound_Click.Play();
             if (this.onExit != null)
                 this.onExit(this, e);
         }
@@ -91,12 +94,14 @@ namespace CapDemo.GUI.User_Controls
         public event EventHandler doubleClick;
         void game_onClick(object sender, EventArgs e)
         {
+            sound_Click.Play();
             if (this.doubleClick != null)
                 this.doubleClick(this, e);
         }
 
         private void btn_Exit_MouseEnter(object sender, EventArgs e)
         {
+            sound.PlaySync();
             btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_horver;
             btn_Exit.ForeColor = Color.Red;
         }

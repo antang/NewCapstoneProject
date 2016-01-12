@@ -271,15 +271,6 @@ namespace CapDemo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Ai_Se_Eu_Pego {
-            get {
-                return ResourceManager.GetStream("Ai_Se_Eu_Pego", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Answer {
@@ -481,6 +472,15 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Correct_Answer {
+            get {
+                return ResourceManager.GetStream("Correct_Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream correct_buzzer_sound_effect {
             get {
                 return ResourceManager.GetStream("correct_buzzer_sound_effect", resourceCulture);
@@ -558,6 +558,15 @@ namespace CapDemo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream game_over {
+            get {
+                return ResourceManager.GetStream("game_over", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap HD_menu {
@@ -623,6 +632,15 @@ namespace CapDemo.Properties {
             get {
                 object obj = ResourceManager.GetObject("HuongDan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Incorrect_Answer {
+            get {
+                return ResourceManager.GetStream("Incorrect_Answer", resourceCulture);
             }
         }
         

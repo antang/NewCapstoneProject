@@ -346,9 +346,6 @@
   <data name="dung_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dung-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ai_Se_Eu_Pego" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ai_Se_Eu_Pego.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -486,5 +483,14 @@
   </data>
   <data name="team_Answer_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\team_Answer_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Correct_Answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Correct_Answer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Incorrect_Answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Incorrect_Answer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="game_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\game_over.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

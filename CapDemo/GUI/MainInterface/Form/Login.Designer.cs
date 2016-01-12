@@ -48,6 +48,7 @@
             this.lblServer.Size = new System.Drawing.Size(55, 20);
             this.lblServer.TabIndex = 0;
             this.lblServer.Text = "Server";
+            this.lblServer.Visible = false;
             // 
             // txt_UserName
             // 
@@ -115,6 +116,9 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

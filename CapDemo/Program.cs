@@ -17,7 +17,7 @@ namespace CapDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameShowControl());
+            Application.Run(new Login());
         }
     }
 }

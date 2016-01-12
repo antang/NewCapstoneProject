@@ -35,21 +35,28 @@ namespace CapDemo.GUI
             }
             else
             {
-                User user = new User();
-                UserBL UserBL = new UserBL();
-                AES aes = new AES();
-                user.UserName = txt_Username.Text.Trim();
-                user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
-                if (UserBL.AddUser(user) == true)
+                if (txt_Password.Text.Length < 8)
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                    notifyIcon1.ShowBalloonTip(5000);
-                    this.Close();
+                    MessageBox.Show("Mật khẩu không được phép ít hơn 8 ký tự.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    User user = new User();
+                    UserBL UserBL = new UserBL();
+                    AES aes = new AES();
+                    user.UserName = txt_Username.Text.Trim();
+                    user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
+                    if (UserBL.AddUser(user) == true)
+                    {
+                        notifyIcon1.Icon = SystemIcons.Information;
+                        notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                        notifyIcon1.ShowBalloonTip(5000);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
@@ -76,22 +83,30 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    User user = new User();
-                    UserBL UserBL = new UserBL();
-                    AES aes = new AES();
-                    user.UserName = txt_Username.Text.Trim();
-                    user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
-                    if (UserBL.AddUser(user) == true)
+                    if (txt_Password.Text.Length < 8)
                     {
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                        notifyIcon1.ShowBalloonTip(5000);
-                        this.Close();
+                        MessageBox.Show("Mật khẩu không được phép ít hơn 8 ký tự.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        User user = new User();
+                        UserBL UserBL = new UserBL();
+                        AES aes = new AES();
+                        user.UserName = txt_Username.Text.Trim();
+                        user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
+                        if (UserBL.AddUser(user) == true)
+                        {
+                            notifyIcon1.Icon = SystemIcons.Information;
+                            notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                            notifyIcon1.ShowBalloonTip(5000);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
+                    
                 }
             }
             
@@ -114,22 +129,29 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    User user = new User();
-                    UserBL UserBL = new UserBL();
-                    AES aes = new AES();
-                    user.UserName = txt_Username.Text.Trim();
-                    user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
-                    if (UserBL.AddUser(user) == true)
+                    if (txt_Password.Text.Length < 8)
                     {
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                        notifyIcon1.ShowBalloonTip(5000);
-                        this.Close();
+                        MessageBox.Show("Mật khẩu không được phép ít hơn 8 ký tự.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                        User user = new User();
+                        UserBL UserBL = new UserBL();
+                        AES aes = new AES();
+                        user.UserName = txt_Username.Text.Trim();
+                        user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
+                        if (UserBL.AddUser(user) == true)
+                        {
+                            notifyIcon1.Icon = SystemIcons.Information;
+                            notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                            notifyIcon1.ShowBalloonTip(5000);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tài khoản này đã tồn tại trong hệ thống!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    } 
                 }
             }
         }

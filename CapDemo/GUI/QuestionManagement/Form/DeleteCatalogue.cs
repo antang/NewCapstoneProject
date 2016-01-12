@@ -38,7 +38,22 @@ namespace CapDemo.GUI
             {
                 Catalogue Cat = new Catalogue();
                 CatalogueBL CatBL = new CatalogueBL();
+                List<Question> ListQuestion;
+                QuestionBL questionBL = new QuestionBL();
+                Question question = new Question();
+                PhaseQuestionBL phasequestionBL = new PhaseQuestionBL();
                 Cat.IDCatalogue = IDCat;
+                
+                ListQuestion = questionBL.GetQuestionByCatalogue(Cat);
+                if (ListQuestion!= null)
+                {
+                    for (int i = 0; i < ListQuestion.Count; i++)
+                    {
+                        question.IDQuestion = ListQuestion.ElementAt(i).IDQuestion;
+                        phasequestionBL.DeletePhaseQuestionbyIDQuestion(question);
+                    }
+                }
+
                 CatBL.DeleteAnswerByIDCatalogue(Cat);
                 CatBL.DeleteQuestionbyIDCatalogue(Cat);
                 if (CatBL.DeleteCataloguebyID(Cat)==true)

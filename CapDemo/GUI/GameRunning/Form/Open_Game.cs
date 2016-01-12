@@ -285,18 +285,25 @@ namespace CapDemo
                                          if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                                          {
                                              teamCS.gb_team.Visible = false;
-                                             CheckQuestionPM = true;
-                                             //show audience screen
-                                             lblHint.Text = guideline[3].ToString();
-                                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                              //show question by id phase
-                                             ShowQuestionByIDPhase(IDPhasePM);
-
-                                             //sound show question
-                                             sound.Stop();
-                                             sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
-                                             sound.Play();
-                                             sound.PlayLooping();
+                                             if (ShowQuestionByIDPhase(IDPhasePM) == true)
+                                             {
+                                                 CheckQuestionPM = true;
+                                                 //show audience screen
+                                                 lblHint.Text = guideline[3].ToString();
+                                                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+                                                 //sound show question
+                                                 sound.Stop();
+                                                 sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                                                 sound.Play();
+                                                 sound.PlayLooping();
+                                                 step++;
+                                             }
+                                             else
+                                             {
+                                                 MessageBox.Show("Run out of questions PM. Please choose questions in phase");
+                                             }
+                                             
                                          }
                                      }
                                  }
@@ -318,18 +325,27 @@ namespace CapDemo
                                          }
                                          teamCS.chk_QuestionPM.Visible = false;
                                          teamCS.chk_defy.Visible = false;
-                                         CheckQuestionPM = true;
-                                         //show audience screen
-                                         lblHint.Text = guideline[3].ToString();
-                                         audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
-                                         //show question by id phase
-                                         ShowQuestionByIDPhase(IDPhasePM);
 
-                                         //sound show question
-                                         sound.Stop();
-                                         sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
-                                         sound.Play();
-                                         sound.PlayLooping();
+                                         //show question by id phase
+                                         if (ShowQuestionByIDPhase(IDPhasePM) == true)
+                                         {
+                                             CheckQuestionPM = true;
+                                             //show audience screen
+                                             lblHint.Text = guideline[3].ToString();
+                                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+                                             //sound show question
+                                             sound.Stop();
+                                             sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                                             sound.Play();
+                                             sound.PlayLooping();
+
+                                             step++;
+                                         }
+                                         else
+                                         {
+                                             MessageBox.Show("Run out of questions PM. Please choose questions in phase");
+                                         }
+                                         
                                      }
                                  }
                              } 
@@ -660,14 +676,20 @@ namespace CapDemo
                             teamCS.gb_team.Visible = false;
                             IDPhase = records.ElementAt(team).IDPhase;
                             //show question by id phase
-                            ShowQuestionByIDPhase(IDPhase);
-                            audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
-
-                            //sound show question
-                            sound.Stop();
-                            sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
-                            sound.Play();
-                            sound.PlayLooping();
+                            if (ShowQuestionByIDPhase(IDPhase) == true)
+                            {
+                                audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+                                //sound show question
+                                sound.Stop();
+                                sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                                sound.Play();
+                                sound.PlayLooping();
+                                step++;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Run Out of Question");
+                            }
                         }
                     }
                 }
@@ -690,14 +712,23 @@ namespace CapDemo
                         teamCS.chk_defy.Visible = false;
                         IDPhase = records.ElementAt(team).IDPhase;
                         //show question by id phase
-                        ShowQuestionByIDPhase(IDPhase);
-                        audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
-
-                        //sund show question
-                        sound.Stop();
-                        sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
-                        sound.Play();
-                        sound.PlayLooping();
+                        if (ShowQuestionByIDPhase(IDPhase) == true)
+                        {
+                            audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+                            //sund show question
+                            sound.Stop();
+                            sound = new SoundPlayer(Properties.Resources.show_cau_hoi);
+                            sound.Play();
+                            sound.PlayLooping();
+                            step++;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Run Out of Question");
+                        }
+                        
+                        
+                        
                     }
                 }
             } 
@@ -779,7 +810,7 @@ namespace CapDemo
                         if (CheckChallengeChoice == false)
                         {
                             sound.Stop();
-                            sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                            sound = new SoundPlayer(Properties.Resources.Correct_Answer);
                             sound.Play();
                         }
                     }
@@ -792,7 +823,7 @@ namespace CapDemo
                         if (CheckChallengeChoice == false)
                         {
                             sound.Stop();
-                            sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                            sound = new SoundPlayer(Properties.Resources.Incorrect_Answer);
                             sound.Play();
                         }
                     }
@@ -815,7 +846,7 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 sound.Stop();
-                                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                                sound = new SoundPlayer(Properties.Resources.Correct_Answer);
                                 sound.Play();
                             }
                         }
@@ -828,7 +859,7 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 sound.Stop();
-                                sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                                sound = new SoundPlayer(Properties.Resources.Incorrect_Answer);
                                 sound.Play();
                             }
                         }
@@ -847,7 +878,7 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 sound.Stop();
-                                sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                                sound = new SoundPlayer(Properties.Resources.Correct_Answer);
                                 sound.Play();
                             }
                         }
@@ -860,7 +891,7 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 sound.Stop();
-                                sound = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
+                                sound = new SoundPlayer(Properties.Resources.Incorrect_Answer);
                                 sound.Play();
                             }
                         }
@@ -901,6 +932,9 @@ namespace CapDemo
             //End Game
             if (NumPlayerEndGame == AmountPlayer)
             {
+                System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+                ToolTip1.SetToolTip(this.pb_Play, "Game Over");
+
                 pb_Play.Enabled = false;
                 pb_EndGame.Visible = true;
                 Contest.EndContest = 1;
@@ -915,6 +949,8 @@ namespace CapDemo
                 {
                     if (records.ElementAt(team).SequecePlayer == LastPlayerRun())
                     {
+                        System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+                        ToolTip1.SetToolTip(this.pb_Play, "Game Over");
                         pb_EndGame.Visible = true;
                         pb_Play.Enabled = false;
                         //update status contest id this contest have run
@@ -962,7 +998,7 @@ namespace CapDemo
             UpdateScreenAfterChallenge();
         }
         //show question by id question
-        public void ShowQuestionByIDPhase(int id)
+        public bool ShowQuestionByIDPhase(int id)
         {
             //declare
             List<Phase> ListPhase;
@@ -973,8 +1009,8 @@ namespace CapDemo
             Phase.IDPhase = id;
 
             ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
-            if (ListPhase != null)
-            {
+            //if (ListPhase != null)
+            //{
                 try
                 {
                     idquestion = ListPhase.ElementAt(0).IDQuestion;
@@ -1035,7 +1071,6 @@ namespace CapDemo
                         Phase.IDQuestion = idquestion;
                         //Check question have been showed
                         PhaseQuestionBl.EditQuestionStatus(Phase);
-                        step++;
                     }
 
                     if (CheckChallengeChoice == true)
@@ -1057,12 +1092,13 @@ namespace CapDemo
                     audience.lbl_TimeShowQuestion.Image = Properties.Resources.loading_circle;
                     audience.timer1.Interval = 1000;
                     audience.timer1.Start();
+                    return true;
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Run Out of Question");
+                    return false;
                 }
-            } 
+            //} 
         }
         //show table answer on controller screen
         void TableAnswerOneTeam(List<Question> ListQuestion, List<Answer>ListAnswer)
@@ -1750,7 +1786,20 @@ namespace CapDemo
                 if (records.ElementAt(j).Exist == false)
                 {
                     //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                    teamAdienceScreen.BackColor = Color.Transparent;
+                    teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.Transparent;
+                    teamAdienceScreen.btn_SupportChoice.BackColor = Color.Transparent;
+                    teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
+                    teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
+                    teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
                     teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                    if (step ==7 && records.ElementAt(j).IDPlayer == records.ElementAt(team).IDPlayer)
+                    {
+                        sound.Stop();
+                        sound = new SoundPlayer(Properties.Resources.game_over);
+                        sound.Play();
+                    }
+                    
                 }
                 //show heart in player
                 if (records.ElementAt(j).NumFail == 3)
@@ -1921,7 +1970,7 @@ namespace CapDemo
                 if (CheckChallengeChoice == true)
                 {
                     sound.Stop();
-                    sound = new SoundPlayer(Properties.Resources.correct_buzzer_sound_effect);
+                    sound = new SoundPlayer(Properties.Resources.Correct_Answer);
                     sound.Play();
                 }
                 lblHint.Text = guideline[5].ToString();

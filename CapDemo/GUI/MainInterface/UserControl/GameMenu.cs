@@ -37,6 +37,7 @@ namespace CapDemo.GUI.User_Controls
         public event EventHandler onClick_Setting;
         public event EventHandler onClick_Start;
         public event EventHandler onClick_Help;
+        public event EventHandler onClick_LogOut;
         //public GameMenu()
         //{
         //    InitializeComponent();
@@ -50,9 +51,11 @@ namespace CapDemo.GUI.User_Controls
             this.userID = pUserID;
             this.pass = pPass;
         }
-
+        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         private void btn_Setting_Click(object sender, EventArgs e)
         {
+            sound_Click.Play();
             if (this.onClick_Setting != null)
                 this.onClick_Setting(this, e);
         }
@@ -60,21 +63,16 @@ namespace CapDemo.GUI.User_Controls
         private void GameMenu_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
-            lbl_Name.Text = UserName;
+            lbl_Name.Text = "Name: "+UserName;
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
+            sound_Click.Play();
             if (this.onClick_Start != null)
                 this.onClick_Start(this, e);
         }
-        //Change Pass
-        private void lbl_ChangePass_Click(object sender, EventArgs e)
-        {
-            ChangePassword ChangePass = new ChangePassword(userID,userName,pass);
-            ChangePass.ShowDialog();
-        }
-        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        
         //start
         private void btn_Start_MouseHover(object sender, EventArgs e)
         {
@@ -126,14 +124,42 @@ namespace CapDemo.GUI.User_Controls
         //Exit program
         private void btn_ExitMenu_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            sound_Click.Play();
+            DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi chương trình không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
-        
         private void btn_Help_Click(object sender, EventArgs e)
         {
+            sound_Click.Play();
             if (this.onClick_Help != null)
                 this.onClick_Help(this, e);
+            
+        }
+        //change password
+        private void tsmi_ChangePass_Click(object sender, EventArgs e)
+        {
+            ChangePassword ChangePass = new ChangePassword(userID, userName, pass);
+            ChangePass.ShowDialog();
+        }
+        //log out
+        private void tsmi_LogOut_Click(object sender, EventArgs e)
+        {
+            if (onClick_LogOut != null)
+            {
+                this.onClick_LogOut(this, e);
+            }
+        }
+
+        private void pb_UserSetting_Click(object sender, EventArgs e)
+        {
+            Point ptLowerLeft = new Point(0, pb_UserSetting.Height);
+            ptLowerLeft = pb_UserSetting.PointToScreen(ptLowerLeft);
+            cms_UserSetting.Show(ptLowerLeft);
         }
     }
 }
