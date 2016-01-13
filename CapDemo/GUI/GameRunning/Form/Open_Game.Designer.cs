@@ -63,7 +63,7 @@
             this.flp_Team.BackColor = System.Drawing.Color.Transparent;
             this.flp_Team.Location = new System.Drawing.Point(1, 4);
             this.flp_Team.Name = "flp_Team";
-            this.flp_Team.Size = new System.Drawing.Size(1004, 323);
+            this.flp_Team.Size = new System.Drawing.Size(973, 323);
             this.flp_Team.TabIndex = 5;
             // 
             // timer1
@@ -149,13 +149,13 @@
             // 
             // pb_Exit
             // 
-            this.pb_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Exit.BackColor = System.Drawing.Color.Transparent;
             this.pb_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Exit.Image = global::CapDemo.Properties.Resources.Button_Close;
-            this.pb_Exit.Location = new System.Drawing.Point(3, 523);
+            this.pb_Exit.Location = new System.Drawing.Point(983, 5);
             this.pb_Exit.Name = "pb_Exit";
-            this.pb_Exit.Size = new System.Drawing.Size(50, 52);
+            this.pb_Exit.Size = new System.Drawing.Size(25, 20);
             this.pb_Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_Exit.TabIndex = 15;
             this.pb_Exit.TabStop = false;
@@ -164,13 +164,13 @@
             // 
             // pb_Maximize
             // 
-            this.pb_Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_Maximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Maximize.BackColor = System.Drawing.Color.Transparent;
             this.pb_Maximize.BackgroundImage = global::CapDemo.Properties.Resources.maximize_Windown;
             this.pb_Maximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_Maximize.Location = new System.Drawing.Point(4, 578);
+            this.pb_Maximize.Location = new System.Drawing.Point(983, 31);
             this.pb_Maximize.Name = "pb_Maximize";
-            this.pb_Maximize.Size = new System.Drawing.Size(49, 43);
+            this.pb_Maximize.Size = new System.Drawing.Size(25, 20);
             this.pb_Maximize.TabIndex = 20;
             this.pb_Maximize.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_Maximize, "Restore Down");
@@ -178,13 +178,13 @@
             // 
             // pb_Minimize
             // 
-            this.pb_Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_Minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_Minimize.BackColor = System.Drawing.Color.Transparent;
             this.pb_Minimize.BackgroundImage = global::CapDemo.Properties.Resources.minimize_Windown;
             this.pb_Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_Minimize.Location = new System.Drawing.Point(3, 627);
+            this.pb_Minimize.Location = new System.Drawing.Point(983, 57);
             this.pb_Minimize.Name = "pb_Minimize";
-            this.pb_Minimize.Size = new System.Drawing.Size(50, 44);
+            this.pb_Minimize.Size = new System.Drawing.Size(25, 20);
             this.pb_Minimize.TabIndex = 19;
             this.pb_Minimize.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_Minimize, "Minimize");
