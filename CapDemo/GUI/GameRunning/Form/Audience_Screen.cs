@@ -212,19 +212,20 @@ namespace CapDemo
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
-             s= new SoundPlayer(Properties.Resources.Watch);
+             //s= new SoundPlayer(Properties.Resources.Watch);
              if (int.Parse(lbl_TimeShowQuestion.Text) <= 10 && int.Parse(lbl_TimeShowQuestion.Text) > 1)
             {
-                s.Play(); 
+                s = new SoundPlayer(Properties.Resources.Watch);
+                s.Play();
             }
             if (int.Parse(lbl_TimeShowQuestion.Text) == 1)
             {
                 s = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
-                s.Play(); 
+                s.Play();
             }
             if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
             {
-                s.Stop();
+                //s.Stop();
                 timer1.Stop();
                 lbl_TimeShowQuestion.Image = null;
             }
