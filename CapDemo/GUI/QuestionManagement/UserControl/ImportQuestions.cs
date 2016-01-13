@@ -77,77 +77,72 @@ namespace CapDemo.GUI.User_Controls
             DialogResult Result = OpenFile.ShowDialog();
             if (Result == DialogResult.OK)
             {
-                try
-                {
-                    if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml")
-                    {
-                        if (Path.GetExtension(OpenFile.FileName) == ".txt")
-                        {
-                            dataGridView1.Columns.Clear();
-                            QuestionBL QuestionBL = new QuestionBL();
 
-                            List<DO.Question> QuestionList;
-                            QuestionList = QuestionBL.GetFileTXT(OpenFile.FileName);
-                            txt_FilePath.Text = OpenFile.FileName;
-                            if (QuestionList != null)
+                if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml")
+                {
+                    if (Path.GetExtension(OpenFile.FileName) == ".txt")
+                    {
+                        dataGridView1.Columns.Clear();
+                        QuestionBL QuestionBL = new QuestionBL();
+
+                        List<DO.Question> QuestionList;
+                        QuestionList = QuestionBL.GetFileTXT(OpenFile.FileName);
+                        txt_FilePath.Text = OpenFile.FileName;
+                        if (QuestionList != null)
+                        {
+                            dataGridView1.DataSource = QuestionList;
+                            Showcolumns();
+                            CheckQuestion();
+                            if (WrongQuestion > 0)
                             {
-                                dataGridView1.DataSource = QuestionList;
-                                Showcolumns();
-                                CheckQuestion();
-                                if (WrongQuestion > 0)
-                                {
-                                    notifyIcon1.Icon = SystemIcons.Information;
-                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                    notifyIcon1.ShowBalloonTip(3000);
-                                }
+                                notifyIcon1.Icon = SystemIcons.Information;
+                                notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                notifyIcon1.ShowBalloonTip(3000);
                             }
-                            else
-                            {
-                                txt_FilePath.Text = "";
-                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }    
                         }
                         else
                         {
                             dataGridView1.Columns.Clear();
-                            QuestionBL QuestionBL = new QuestionBL();
-
-                            List<DO.Question> QuestionList;
-                            QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
-                            txt_FilePath.Text = OpenFile.FileName;
-                            if (QuestionList != null)
-                            {
-                                dataGridView1.DataSource = QuestionList;
-                                Showcolumns();
-                                CheckQuestion();
-                                if (WrongQuestion > 0)
-                                {
-                                    notifyIcon1.Icon = SystemIcons.Information;
-                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                    notifyIcon1.ShowBalloonTip(3000);
-                                }
-                            }
-                            else
-                            {
-                                txt_FilePath.Text = "";
-                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                               
+                            txt_FilePath.Text = "";
+                            MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
                         dataGridView1.Columns.Clear();
-                        txt_FilePath.Text = "";
-                        MessageBox.Show("Tải file không thành công. Bạn phải chọn File .XML hoặc .TXT.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        QuestionBL QuestionBL = new QuestionBL();
+
+                        List<DO.Question> QuestionList;
+                        QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
+                        txt_FilePath.Text = OpenFile.FileName;
+                        if (QuestionList != null)
+                        {
+                            dataGridView1.DataSource = QuestionList;
+                            Showcolumns();
+                            CheckQuestion();
+                            if (WrongQuestion > 0)
+                            {
+                                notifyIcon1.Icon = SystemIcons.Information;
+                                notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                notifyIcon1.ShowBalloonTip(3000);
+                            }
+                        }
+                        else
+                        {
+                            dataGridView1.Columns.Clear();
+                            txt_FilePath.Text = "";
+                            MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
                 }
-                catch (Exception)
+                else
                 {
                     dataGridView1.Columns.Clear();
                     txt_FilePath.Text = "";
-                    MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tải file không thành công. Bạn phải chọn File .XML hoặc .TXT.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 chk_CheckAll.Checked = false;
             }
         }
@@ -222,19 +217,31 @@ namespace CapDemo.GUI.User_Controls
                                 else
                                 {
                                     int empty = 0;
+                                    int CountNumberOfIncorrect = 0;
+                                    int TotalAnswer = 0;
 
                                     for (int i = 0; i < AnswerContent.Length - 1; i++)
                                     {
                                         string[] AnswerItem = AnswerContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
                                         int PointAnswer;
                                         bool isNum = int.TryParse(AnswerItem[0].ToString().Trim(), out PointAnswer);
+                                        //check null answer or invalid answer
                                         if (AnswerItem[1].ToString().Trim() == "" || AnswerItem[1].ToString().Trim().Contains("</span>") == true || AnswerItem[0].ToString().Trim() == "" || isNum == false)
                                         {
-                                            empty++;
+                                            empty++; 
                                         }
+                                        //check don't have any correct answer
+                                        if (int.TryParse(AnswerItem[0].ToString().Trim(), out PointAnswer))
+                                        {
+                                            if (Convert.ToInt32(AnswerItem[0].ToString().Trim()) == 0)
+                                            {
+                                                CountNumberOfIncorrect++;
+                                            }
+                                        }
+                                        TotalAnswer++;
                                     }
 
-                                    if (empty > 0)
+                                    if (empty > 0 || TotalAnswer == CountNumberOfIncorrect)
                                     {
                                         row.DefaultCellStyle.BackColor = Color.LightCoral;
                                         row.ReadOnly = true;
