@@ -148,7 +148,7 @@ namespace CapDemo
                         team.gb_team.Visible = false;
                         idPlayer = ListPlayer.ElementAt(i).IDPlayer;
                         
-                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail,true,true,true,0, ListPlayer.ElementAt(i).PlayerScore,0,i);
+                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail,true,true,true,0, ListPlayer.ElementAt(i).PlayerScore,0,i,true);
                         records.Add(r);
 
                         flp_Team.Controls.Add(team);
@@ -288,6 +288,7 @@ namespace CapDemo
                                              //show question by id phase
                                              if (ShowQuestionByIDPhase(IDPhasePM) == true)
                                              {
+                                                 records.ElementAt(team).PM = false;
                                                  CheckQuestionPM = true;
                                                  //show audience screen
                                                  lblHint.Text = guideline[3].ToString();
@@ -329,6 +330,7 @@ namespace CapDemo
                                          //show question by id phase
                                          if (ShowQuestionByIDPhase(IDPhasePM) == true)
                                          {
+                                             records.ElementAt(team).PM = false;
                                              CheckQuestionPM = true;
                                              //show audience screen
                                              lblHint.Text = guideline[3].ToString();
@@ -612,8 +614,8 @@ namespace CapDemo
                 if (Convert.ToInt32(Playerlane.lbl_SequencePlayer.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                 {
                     Playerlane.HighLight(true);
-                    
-                    if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0)
+
+                    if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0 && records.ElementAt(team).PM == true)
                     {
                         int H_Phase = ( Playerlane.Height- Playerlane.btn_Team.Height - Playerlane.lbl_Finish.Location.Y - Playerlane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
                         Playerlane.btn_Team.Location = new Point(Playerlane.btn_Team.Location.X + 0, Playerlane.btn_Team.Location.Y - (H_Phase/2 + Playerlane.btn_Team.Height/2));                        
