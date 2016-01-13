@@ -27,9 +27,7 @@ namespace CapDemo
         }
         public void SpashStart()
         {
-            Application.Run(new PleaseWaitForm());
-
-            
+            Application.Run(new PleaseWaitForm());  
         }
 
         int idContest;

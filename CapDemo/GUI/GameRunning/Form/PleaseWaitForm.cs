@@ -32,9 +32,12 @@ namespace CapDemo
 
             this.SuspendLayout();
             Screen[] screens = Screen.AllScreens;
-            Rectangle bounds = screens[1].Bounds;
-            this.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
-            this.StartPosition = FormStartPosition.Manual;
+            if (screens.Count() > 1)
+            {
+                Rectangle bounds = screens[1].Bounds;
+                this.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+                this.StartPosition = FormStartPosition.Manual;
+            }
             //this.Show();
             //this.Dock = DockStyle.Fill;
             this.ResumeLayout();

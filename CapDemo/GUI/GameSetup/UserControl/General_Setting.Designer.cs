@@ -55,12 +55,12 @@
             this.txt_ContestName = new System.Windows.Forms.TextBox();
             this.chk_Question = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmb_Competition = new System.Windows.Forms.ComboBox();
-            this.cmb_Round = new System.Windows.Forms.ComboBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_AddRound = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_AddCompetition = new System.Windows.Forms.Button();
+            this.cmb_Round = new System.Windows.Forms.ComboBox();
+            this.cmb_Competition = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grb_Question.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grb_Answer.SuspendLayout();
@@ -376,47 +376,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thiết đặt tên";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.chk_Question);
-            this.groupBox2.Controls.Add(this.grb_Answer);
-            this.groupBox2.Controls.Add(this.grb_Question);
-            this.groupBox2.Controls.Add(this.chk_Answer);
-            this.groupBox2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(368, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(359, 215);
-            this.groupBox2.TabIndex = 33;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thiết đặt tự động";
-            // 
-            // cmb_Competition
-            // 
-            this.cmb_Competition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Competition.FormattingEnabled = true;
-            this.cmb_Competition.Location = new System.Drawing.Point(7, 39);
-            this.cmb_Competition.Name = "cmb_Competition";
-            this.cmb_Competition.Size = new System.Drawing.Size(192, 21);
-            this.cmb_Competition.TabIndex = 25;
-            this.cmb_Competition.SelectedIndexChanged += new System.EventHandler(this.cmb_Competition_SelectedIndexChanged);
-            // 
-            // cmb_Round
-            // 
-            this.cmb_Round.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Round.FormattingEnabled = true;
-            this.cmb_Round.Location = new System.Drawing.Point(7, 99);
-            this.cmb_Round.Name = "cmb_Round";
-            this.cmb_Round.Size = new System.Drawing.Size(192, 21);
-            this.cmb_Round.TabIndex = 26;
-            this.cmb_Round.SelectedIndexChanged += new System.EventHandler(this.cmb_Round_SelectedIndexChanged);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "edit_add.ico");
-            // 
             // btn_AddRound
             // 
             this.btn_AddRound.BackColor = System.Drawing.Color.White;
@@ -431,6 +390,12 @@
             this.btn_AddRound.UseVisualStyleBackColor = false;
             this.btn_AddRound.Click += new System.EventHandler(this.btn_AddRound_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "edit_add.ico");
+            // 
             // btn_AddCompetition
             // 
             this.btn_AddCompetition.BackColor = System.Drawing.Color.White;
@@ -444,6 +409,42 @@
             this.btn_AddCompetition.TabIndex = 27;
             this.btn_AddCompetition.UseVisualStyleBackColor = false;
             this.btn_AddCompetition.Click += new System.EventHandler(this.btn_AddCompetition_Click);
+            // 
+            // cmb_Round
+            // 
+            this.cmb_Round.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Round.FormattingEnabled = true;
+            this.cmb_Round.Location = new System.Drawing.Point(7, 99);
+            this.cmb_Round.Name = "cmb_Round";
+            this.cmb_Round.Size = new System.Drawing.Size(192, 21);
+            this.cmb_Round.TabIndex = 26;
+            this.cmb_Round.SelectedIndexChanged += new System.EventHandler(this.cmb_Round_SelectedIndexChanged);
+            // 
+            // cmb_Competition
+            // 
+            this.cmb_Competition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Competition.FormattingEnabled = true;
+            this.cmb_Competition.Location = new System.Drawing.Point(7, 39);
+            this.cmb_Competition.Name = "cmb_Competition";
+            this.cmb_Competition.Size = new System.Drawing.Size(192, 21);
+            this.cmb_Competition.TabIndex = 25;
+            this.cmb_Competition.SelectedIndexChanged += new System.EventHandler(this.cmb_Competition_SelectedIndexChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chk_Question);
+            this.groupBox2.Controls.Add(this.grb_Answer);
+            this.groupBox2.Controls.Add(this.grb_Question);
+            this.groupBox2.Controls.Add(this.chk_Answer);
+            this.groupBox2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(368, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(359, 215);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thiết đặt tự động";
+            this.groupBox2.Visible = false;
             // 
             // General_Setting
             // 

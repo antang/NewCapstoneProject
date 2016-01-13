@@ -98,7 +98,8 @@ namespace CapDemo
             }
             
             List<DO.Phase> PhaseList;
-            PhaseList = PhaseQuestionBL.getquestionByIDPhase(Phase);
+            //PhaseList = PhaseQuestionBL.getquestionByIDPhase(Phase);
+            PhaseList = PhaseQuestionBL.getquestionRunGame(Phase);
             if (PhaseList != null)
             {
                 dgv_Question.DataSource = PhaseList;
@@ -182,6 +183,13 @@ namespace CapDemo
         {
             Phase.IDContest = IdContest;
             List<Phase> ListPhase;
+            //get contest
+            //Contest contest = new Contest();
+            //ContestBL contestBL = new ContestBL();
+            //contest.IDContest = IdContest;
+            //List<Contest> ListContest;
+            //ListContest = contestBL.GetContestByID(contest);
+
             int check =0;
             ListPhase = phaseBL.GetPhaseByIDContest(Phase);
             if (ListPhase != null)
@@ -192,14 +200,15 @@ namespace CapDemo
                     Phase.IDPhase = ListPhase.ElementAt(i).IDPhase;
 
                     List<DO.Phase> QuestionListInPhase;
-                    QuestionListInPhase = PhaseQuestionBL.getquestionByIDPhase(Phase);
+                    //QuestionListInPhase = PhaseQuestionBL.getquestionByIDPhase(Phase);
+                    QuestionListInPhase = PhaseQuestionBL.getquestionRunGame(Phase);
                     if (QuestionListInPhase != null)
                     {
                         for (int j = 0; j < QuestionListInPhase.Count; j++)
                         {
                             count++;
                         }
-                        if (count == 0)
+                        if (count == 0 || count < 20 )
                         {
                             check++;
                         }
