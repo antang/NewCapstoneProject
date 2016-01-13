@@ -803,7 +803,7 @@ namespace CapDemo
             {
                 foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                 {
-                    if (playerAnswer.lbl_TeamAnswer.Text.Trim().Replace(" ","") == CorrectAnswerChallenge)
+                    if (playerAnswer.lbl_TeamAnswer.Text.Trim().Replace(" ","").ToLower() == CorrectAnswerChallenge.ToLower())
                     {
                         playerAnswer.lbl_Check.Text = "true";
                         playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
@@ -839,7 +839,7 @@ namespace CapDemo
                 {
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
-                        if (playerAnswer.lbl_TeamAnswer.Text == CorrectAnswerChallenge)
+                        if (playerAnswer.lbl_TeamAnswer.Text.ToLower() == CorrectAnswerChallenge.ToLower())
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
@@ -871,7 +871,7 @@ namespace CapDemo
                 {
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
-                        if (playerAnswer.lbl_TeamAnswer.Text == CorrectAnswerChallenge)
+                        if (playerAnswer.lbl_TeamAnswer.Text.ToLower() == CorrectAnswerChallenge.ToLower())
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
@@ -939,6 +939,7 @@ namespace CapDemo
 
                 pb_Play.Enabled = false;
                 pb_EndGame.Visible = true;
+                UpdateScreenAfterChallenge();
                 Contest.EndContest = 1;
                 ContestBL.EditStatusContestbyID(Contest);
             }
@@ -955,6 +956,7 @@ namespace CapDemo
                         ToolTip1.SetToolTip(this.pb_Play, "Game Over");
                         pb_EndGame.Visible = true;
                         pb_Play.Enabled = false;
+                        UpdateScreenAfterChallenge();
                         //update status contest id this contest have run
                         Contest.EndContest = 1;
                         ContestBL.EditStatusContestbyID(Contest);
@@ -1610,7 +1612,7 @@ namespace CapDemo
                             }
                             else
                             {//player answer with question shortanswer
-                                if (PlayerAnswerShortQuestion.Equals(CorrectShortAnswer) == true)
+                                if (PlayerAnswerShortQuestion.ToLower().Equals(CorrectShortAnswer.ToLower()) == true)
                                 {
                                     PassQuestionInPhase(BonusScoreQuestionInPhase);
                                 }
@@ -1639,7 +1641,7 @@ namespace CapDemo
                             }
                             else
                             {//player answer with question shortanswer
-                                if (PlayerAnswerShortQuestion.Equals(CorrectShortAnswer) == true)
+                                if (PlayerAnswerShortQuestion.ToLower().Equals(CorrectShortAnswer.ToLower()) == true)
                                 {
                                     PassQuestionPM(BonusScoreQuestionPM);
                                 }
