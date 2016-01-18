@@ -1116,9 +1116,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap techno_pattern {
+        internal static System.Drawing.Bitmap Techno {
             get {
-                object obj = ResourceManager.GetObject("techno_pattern", resourceCulture);
+                object obj = ResourceManager.GetObject("Techno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

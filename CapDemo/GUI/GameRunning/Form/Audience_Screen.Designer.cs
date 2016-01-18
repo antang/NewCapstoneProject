@@ -31,34 +31,33 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tbc_ShowGame = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tab_Map = new System.Windows.Forms.TabPage();
+            this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_PM = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Round = new System.Windows.Forms.Label();
             this.pnl_Phase = new System.Windows.Forms.Panel();
-            this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.pnl_Lane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
             this.lbl_typeQ = new System.Windows.Forms.Label();
             this.pnl_QuestionFrame = new System.Windows.Forms.Panel();
+            this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
             this.lbl_QuestionContent = new System.Windows.Forms.Label();
             this.flp_PlayerAnswers = new System.Windows.Forms.Panel();
             this.lbl_Point = new System.Windows.Forms.Label();
             this.lbl_Phase = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
             this.flp_AnswerQuiz = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_EndGame = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbc_ShowGame.SuspendLayout();
             this.tab_Map.SuspendLayout();
-            this.pnl_Phase.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
             this.pnl_QuestionFrame.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tab_EndGame.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,36 +77,13 @@
             this.tbc_ShowGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tbc_ShowGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
-            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
-            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
-            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
-            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
-            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
-            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
-            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
-            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
-            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
-            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
-            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
-            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
-            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
-            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
-            this.imageList1.Images.SetKeyName(15, "y-kien.png");
-            // 
             // tab_Map
             // 
             this.tab_Map.BackColor = System.Drawing.Color.Blue;
             this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.HitYourGoal_GiaoDienKhanGia;
             this.tab_Map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tab_Map.Controls.Add(this.flp_Finish);
+            this.tab_Map.Controls.Add(this.btn_PM);
             this.tab_Map.Controls.Add(this.label1);
             this.tab_Map.Controls.Add(this.lbl_Round);
             this.tab_Map.Controls.Add(this.pnl_Phase);
@@ -123,13 +99,41 @@
             this.tab_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tab_Map.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // flp_Finish
+            // 
+            this.flp_Finish.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flp_Finish.BackColor = System.Drawing.Color.White;
+            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.flp_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.flp_Finish.Location = new System.Drawing.Point(100, 69);
+            this.flp_Finish.Name = "flp_Finish";
+            this.flp_Finish.Size = new System.Drawing.Size(205, 50);
+            this.flp_Finish.TabIndex = 0;
+            this.flp_Finish.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
+            this.flp_Finish.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
+            this.flp_Finish.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
+            // 
+            // btn_PM
+            // 
+            this.btn_PM.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_PM.BackgroundImage = global::CapDemo.Properties.Resources.rectangle_but;
+            this.btn_PM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_PM.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PM.ForeColor = System.Drawing.Color.Blue;
+            this.btn_PM.Location = new System.Drawing.Point(30, 139);
+            this.btn_PM.Name = "btn_PM";
+            this.btn_PM.Size = new System.Drawing.Size(70, 513);
+            this.btn_PM.TabIndex = 7;
+            this.btn_PM.Text = "(35)";
+            this.btn_PM.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Verdana", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(31, 653);
+            this.label1.Location = new System.Drawing.Point(101, 653);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 44);
             this.label1.TabIndex = 6;
@@ -156,28 +160,13 @@
             // 
             this.pnl_Phase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Phase.BackColor = System.Drawing.Color.White;
-            this.pnl_Phase.Controls.Add(this.flp_Finish);
-            this.pnl_Phase.Location = new System.Drawing.Point(29, 69);
+            this.pnl_Phase.Location = new System.Drawing.Point(100, 139);
             this.pnl_Phase.Name = "pnl_Phase";
-            this.pnl_Phase.Size = new System.Drawing.Size(205, 583);
+            this.pnl_Phase.Size = new System.Drawing.Size(205, 511);
             this.pnl_Phase.TabIndex = 4;
             this.pnl_Phase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.pnl_Phase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.pnl_Phase.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
-            // flp_Finish
-            // 
-            this.flp_Finish.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flp_Finish.BackColor = System.Drawing.Color.White;
-            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
-            this.flp_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flp_Finish.Location = new System.Drawing.Point(1, 0);
-            this.flp_Finish.Name = "flp_Finish";
-            this.flp_Finish.Size = new System.Drawing.Size(203, 50);
-            this.flp_Finish.TabIndex = 0;
-            this.flp_Finish.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
-            this.flp_Finish.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
-            this.flp_Finish.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
             // pnl_Lane
             // 
@@ -186,9 +175,9 @@
             this.pnl_Lane.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Lane.BackgroundImage")));
             this.pnl_Lane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_Lane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_Lane.Location = new System.Drawing.Point(235, 69);
+            this.pnl_Lane.Location = new System.Drawing.Point(308, 69);
             this.pnl_Lane.Name = "pnl_Lane";
-            this.pnl_Lane.Size = new System.Drawing.Size(490, 628);
+            this.pnl_Lane.Size = new System.Drawing.Size(417, 628);
             this.pnl_Lane.TabIndex = 1;
             this.pnl_Lane.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.pnl_Lane.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
@@ -216,7 +205,6 @@
             this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
             this.tab_ShowQuestion.Controls.Add(this.lbl_Point);
             this.tab_ShowQuestion.Controls.Add(this.lbl_Phase);
-            this.tab_ShowQuestion.Controls.Add(this.panel1);
             this.tab_ShowQuestion.Controls.Add(this.flp_AnswerQuiz);
             this.tab_ShowQuestion.Location = new System.Drawing.Point(4, 22);
             this.tab_ShowQuestion.Name = "tab_ShowQuestion";
@@ -230,12 +218,13 @@
             // 
             // lbl_typeQ
             // 
+            this.lbl_typeQ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_typeQ.BackColor = System.Drawing.Color.Transparent;
             this.lbl_typeQ.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_typeQ.ForeColor = System.Drawing.Color.White;
-            this.lbl_typeQ.Location = new System.Drawing.Point(1, 48);
+            this.lbl_typeQ.Location = new System.Drawing.Point(311, 3);
             this.lbl_typeQ.Name = "lbl_typeQ";
-            this.lbl_typeQ.Size = new System.Drawing.Size(304, 35);
+            this.lbl_typeQ.Size = new System.Drawing.Size(304, 28);
             this.lbl_typeQ.TabIndex = 10;
             this.lbl_typeQ.Text = "Type:";
             this.lbl_typeQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,27 +239,46 @@
             this.pnl_QuestionFrame.BackColor = System.Drawing.Color.Transparent;
             this.pnl_QuestionFrame.BackgroundImage = global::CapDemo.Properties.Resources.Question;
             this.pnl_QuestionFrame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_QuestionFrame.Controls.Add(this.lbl_TimeShowQuestion);
             this.pnl_QuestionFrame.Controls.Add(this.lbl_QuestionContent);
-            this.pnl_QuestionFrame.Location = new System.Drawing.Point(0, 135);
+            this.pnl_QuestionFrame.Location = new System.Drawing.Point(0, 35);
             this.pnl_QuestionFrame.Name = "pnl_QuestionFrame";
-            this.pnl_QuestionFrame.Size = new System.Drawing.Size(1018, 176);
+            this.pnl_QuestionFrame.Size = new System.Drawing.Size(1018, 282);
             this.pnl_QuestionFrame.TabIndex = 9;
             this.pnl_QuestionFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.pnl_QuestionFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.pnl_QuestionFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // lbl_TimeShowQuestion
+            // 
+            this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
+            this.lbl_TimeShowQuestion.Image = global::CapDemo.Properties.Resources.loading_circle;
+            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(886, 145);
+            this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
+            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(134, 137);
+            this.lbl_TimeShowQuestion.TabIndex = 2;
+            this.lbl_TimeShowQuestion.Text = "0";
+            this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
+            this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
+            this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
+            // 
             // lbl_QuestionContent
             // 
             this.lbl_QuestionContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QuestionContent.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QuestionContent.BackColor = System.Drawing.Color.Maroon;
+            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QuestionContent.ForeColor = System.Drawing.Color.White;
-            this.lbl_QuestionContent.Location = new System.Drawing.Point(180, 14);
+            this.lbl_QuestionContent.Location = new System.Drawing.Point(176, 15);
             this.lbl_QuestionContent.Name = "lbl_QuestionContent";
-            this.lbl_QuestionContent.Size = new System.Drawing.Size(662, 147);
+            this.lbl_QuestionContent.Size = new System.Drawing.Size(662, 251);
             this.lbl_QuestionContent.TabIndex = 0;
+            this.lbl_QuestionContent.Text = "abc";
             this.lbl_QuestionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_QuestionContent.TextChanged += new System.EventHandler(this.lbl_QuestionContent_TextChanged);
             this.lbl_QuestionContent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.lbl_QuestionContent.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.lbl_QuestionContent.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
@@ -280,9 +288,9 @@
             this.flp_PlayerAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_PlayerAnswers.BackColor = System.Drawing.Color.Transparent;
-            this.flp_PlayerAnswers.Location = new System.Drawing.Point(0, 314);
+            this.flp_PlayerAnswers.Location = new System.Drawing.Point(0, 323);
             this.flp_PlayerAnswers.Name = "flp_PlayerAnswers";
-            this.flp_PlayerAnswers.Size = new System.Drawing.Size(1018, 116);
+            this.flp_PlayerAnswers.Size = new System.Drawing.Size(1018, 110);
             this.flp_PlayerAnswers.TabIndex = 8;
             this.flp_PlayerAnswers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.flp_PlayerAnswers.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
@@ -296,7 +304,7 @@
             this.lbl_Point.ForeColor = System.Drawing.Color.White;
             this.lbl_Point.Location = new System.Drawing.Point(713, 3);
             this.lbl_Point.Name = "lbl_Point";
-            this.lbl_Point.Size = new System.Drawing.Size(302, 35);
+            this.lbl_Point.Size = new System.Drawing.Size(302, 28);
             this.lbl_Point.TabIndex = 7;
             this.lbl_Point.Text = "Point: ";
             this.lbl_Point.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -311,45 +319,13 @@
             this.lbl_Phase.ForeColor = System.Drawing.Color.White;
             this.lbl_Phase.Location = new System.Drawing.Point(1, 0);
             this.lbl_Phase.Name = "lbl_Phase";
-            this.lbl_Phase.Size = new System.Drawing.Size(304, 35);
+            this.lbl_Phase.Size = new System.Drawing.Size(304, 31);
             this.lbl_Phase.TabIndex = 5;
             this.lbl_Phase.Text = "Phase";
             this.lbl_Phase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Phase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.lbl_Phase.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.lbl_Phase.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_TimeShowQuestion);
-            this.panel1.Location = new System.Drawing.Point(304, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 132);
-            this.panel1.TabIndex = 3;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
-            // lbl_TimeShowQuestion
-            // 
-            this.lbl_TimeShowQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
-            this.lbl_TimeShowQuestion.Image = global::CapDemo.Properties.Resources.loading_circle;
-            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(131, 0);
-            this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
-            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(156, 132);
-            this.lbl_TimeShowQuestion.TabIndex = 2;
-            this.lbl_TimeShowQuestion.Text = "0";
-            this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
-            this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
-            this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
             // flp_AnswerQuiz
             // 
@@ -358,7 +334,7 @@
             this.flp_AnswerQuiz.BackColor = System.Drawing.Color.Transparent;
             this.flp_AnswerQuiz.Location = new System.Drawing.Point(0, 436);
             this.flp_AnswerQuiz.Name = "flp_AnswerQuiz";
-            this.flp_AnswerQuiz.Size = new System.Drawing.Size(1018, 288);
+            this.flp_AnswerQuiz.Size = new System.Drawing.Size(1018, 303);
             this.flp_AnswerQuiz.TabIndex = 1;
             this.flp_AnswerQuiz.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.flp_AnswerQuiz.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
@@ -407,6 +383,37 @@
             this.flp_TeamEndGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.flp_TeamEndGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
+            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
+            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
+            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
+            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
+            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
+            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
+            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
+            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
+            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
+            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
+            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
+            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
+            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
+            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
+            this.imageList1.Images.SetKeyName(15, "y-kien.png");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Audience_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,10 +430,8 @@
             this.Load += new System.EventHandler(this.Audience_Screen_Load);
             this.tbc_ShowGame.ResumeLayout(false);
             this.tab_Map.ResumeLayout(false);
-            this.pnl_Phase.ResumeLayout(false);
             this.tab_ShowQuestion.ResumeLayout(false);
             this.pnl_QuestionFrame.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.tab_EndGame.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -441,7 +446,6 @@
         public System.Windows.Forms.FlowLayoutPanel flp_AnswerQuiz;
         public System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
         public System.Windows.Forms.TabPage tab_EndGame;
         public System.Windows.Forms.FlowLayoutPanel flp_TeamEndGame;
@@ -458,5 +462,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_Round;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.Button btn_PM;
     }
 }

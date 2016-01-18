@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,9 +27,6 @@ namespace CapDemo
 
         private void PleaseWaitForm_Load(object sender, EventArgs e)
         {
-            SoundPlayer sound = new SoundPlayer(Properties.Resources.welcome_game);
-            sound.Play();
-
             this.SuspendLayout();
             Screen[] screens = Screen.AllScreens;
             if (screens.Count() > 1)
@@ -37,10 +34,12 @@ namespace CapDemo
                 Rectangle bounds = screens[1].Bounds;
                 this.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
                 this.StartPosition = FormStartPosition.Manual;
+                
             }
             //this.Show();
             //this.Dock = DockStyle.Fill;
             this.ResumeLayout();
+            
 
 
         }

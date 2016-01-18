@@ -46,6 +46,7 @@
             this.pb_Setting = new System.Windows.Forms.PictureBox();
             this.pb_Play = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -63,11 +65,12 @@
             this.flp_Team.BackColor = System.Drawing.Color.Transparent;
             this.flp_Team.Location = new System.Drawing.Point(1, 4);
             this.flp_Team.Name = "flp_Team";
-            this.flp_Team.Size = new System.Drawing.Size(973, 323);
+            this.flp_Team.Size = new System.Drawing.Size(982, 323);
             this.flp_Team.TabIndex = 5;
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lbl_Time
@@ -144,7 +147,6 @@
             this.pb_EndGame.TabIndex = 16;
             this.pb_EndGame.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_EndGame, "Finish");
-            this.pb_EndGame.Visible = false;
             this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
             // 
             // pb_Exit
@@ -227,13 +229,25 @@
             this.imageList1.Images.SetKeyName(1, "dung.png");
             this.imageList1.Images.SetKeyName(2, "dung-2.png");
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(131, 518);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(112, 106);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // Open_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.techno_pattern;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.Techno;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_Maximize);
             this.Controls.Add(this.pb_Minimize);
             this.Controls.Add(this.pb_Setting);
@@ -248,7 +262,6 @@
             this.Name = "Open_Game";
             this.ShowInTaskbar = false;
             this.Text = "Điều Khiển Trò Chơi";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Open_Game_Load);
             this.ctMenuStrip_Setting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).EndInit();
@@ -257,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +293,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnui_RestoreDown;
         private System.Windows.Forms.PictureBox pb_Minimize;
         private System.Windows.Forms.PictureBox pb_Maximize;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

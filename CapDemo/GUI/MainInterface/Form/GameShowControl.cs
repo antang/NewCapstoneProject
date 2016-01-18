@@ -173,8 +173,6 @@ namespace CapDemo.GUI
             //this.st.onExit += Exit_Setting;
             this.Help.onExit += Help_onExit;
             this.Controls.Add(Help);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
         //exit help Control
         void Help_onExit(object sender, EventArgs e)
@@ -231,8 +229,6 @@ namespace CapDemo.GUI
             gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Clear();
             this.Controls.Add(gm1);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         //Click to show Start Game GUI
@@ -292,8 +288,6 @@ namespace CapDemo.GUI
             sg.doubleClick += sg_doubleClick;
             this.Controls.Clear();
             this.Controls.Add(sg);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
         // double game user control click to pause sound
         void sg_doubleClick(object sender, EventArgs e)
@@ -352,8 +346,6 @@ namespace CapDemo.GUI
             }
             this.st.onExit += Exit_Setting;
             this.Controls.Add(st);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
         //Exit Setting GUI
         void Exit_Setting(object sender, EventArgs e)
@@ -410,8 +402,6 @@ namespace CapDemo.GUI
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Add(gm1);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         //Exit start Game
         void Exit_StartGame(object sender, EventArgs e)
@@ -469,8 +459,6 @@ namespace CapDemo.GUI
             gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Clear();
             this.Controls.Add(gm1);
-
-            //axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
     }

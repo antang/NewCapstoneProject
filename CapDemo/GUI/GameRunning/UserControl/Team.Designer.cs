@@ -246,7 +246,6 @@
             this.flp_Answer.Name = "flp_Answer";
             this.flp_Answer.Size = new System.Drawing.Size(196, 36);
             this.flp_Answer.TabIndex = 18;
-            this.flp_Answer.MouseEnter += new System.EventHandler(this.flp_Answer_MouseEnter);
             // 
             // gb_team
             // 
@@ -276,6 +275,7 @@
             this.chk_Correct.Text = "Correct";
             this.chk_Correct.UseVisualStyleBackColor = false;
             this.chk_Correct.Visible = false;
+            this.chk_Correct.CheckedChanged += new System.EventHandler(this.chk_Correct_CheckedChanged);
             // 
             // chk_Challenged
             // 

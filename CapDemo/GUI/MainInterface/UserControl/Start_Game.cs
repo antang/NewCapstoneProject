@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using CapDemo.BL;
 using CapDemo.DO;
 using System.Media;
-using NAudio.Wave;
 using System.IO;
 
 namespace CapDemo.GUI.User_Controls
@@ -40,7 +39,6 @@ namespace CapDemo.GUI.User_Controls
             if (this.onExit != null)
                 this.onExit(this, e);
         }
-        string s = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
         private void Start_Game_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
