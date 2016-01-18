@@ -27,6 +27,7 @@ namespace CapDemo
         public event EventHandler checkQuestionPM;
         public event EventHandler checkChallenge;
         public event EventHandler ChoiceChallengedTeam;
+        public event EventHandler checkCorrect;
         private void lbl_ShowMenu_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(Cursor.Position);
@@ -108,17 +109,19 @@ namespace CapDemo
 
             
         }
-        int sequence;
-
-        public int Sequence
+        //Check to player always correct
+        private void chk_Correct_CheckedChanged(object sender, EventArgs e)
         {
-            get { return sequence; }
-            set { sequence = value; }
-        }
-
-        private void flp_Answer_MouseEnter(object sender, EventArgs e)
-        {
-            sequence = Convert.ToInt32(lbl_Sequence.Text);
+            if (chk_Correct.Checked == true)
+            {
+                EventHandler CheckCorrect = checkCorrect;
+                if (CheckCorrect != null)
+                {
+                    MyEventArgs args = new MyEventArgs();
+                    args.IDPlayerUC = idPlayerUC;
+                    CheckCorrect(this, args);
+                }
+            }
         }
 
 

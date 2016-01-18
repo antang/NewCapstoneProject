@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\NAudio.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -419,6 +415,9 @@
     </Compile>
     <Compile Include="GUI\MainInterface\UserControl\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myLabel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -874,6 +873,16 @@
     <None Include="Resources\Correct_Answer.wav" />
     <None Include="Resources\Incorrect_Answer.wav" />
     <None Include="Resources\game_over.wav" />
+    <None Include="Resources\Techno.jpg" />
+    <Content Include="Sound\CapNhatDiem.wav" />
+    <Content Include="Sound\ChaoMung.wav" />
+    <Content Include="Sound\Click.wav" />
+    <Content Include="Sound\DapAnDung.wav" />
+    <Content Include="Sound\DapAnSai.wav" />
+    <Content Include="Sound\DongHo.wav" />
+    <Content Include="Sound\HetGio.wav" />
+    <Content Include="Sound\HienThiCauHoi.wav" />
+    <Content Include="Sound\NhacNen.mp3" />
     <Content Include="Sound\Van_Lang_Dai_Hoc_Duong.mp3" />
     <Content Include="Template.txt" />
   </ItemGroup>

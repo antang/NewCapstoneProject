@@ -16,10 +16,5 @@ namespace CapDemo
         {
             InitializeComponent();
         }
-
-        private void pb_TeamShirt_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

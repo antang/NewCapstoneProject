@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using System.Media;
+using System.IO;
 
 namespace CapDemo
 {
@@ -27,7 +27,7 @@ namespace CapDemo
         }
         public void SpashStart()
         {
-            Application.Run(new PleaseWaitForm());  
+            Application.Run(new PleaseWaitForm());
         }
 
         int idContest;
@@ -60,18 +60,18 @@ namespace CapDemo
         int H_PlayerLocation;
         int H_player;
 
-        
-        
+        int H_Finish;
+
         private void Audience_Screen_Load(object sender, EventArgs e)
         {
 
             this.Hide();
-            Thread t = new Thread(new ThreadStart(SpashStart));
-            t.Start();
-            Thread.Sleep(8000);
+            //Thread t = new Thread(new ThreadStart(SpashStart));
+            //t.Start();
+            //Thread.Sleep(8000);
             this.SuspendLayout();
             //this.Hide();
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
             
             tbc_ShowGame.Appearance = TabAppearance.FlatButtons;
             tbc_ShowGame.ItemSize = new Size(0, 1);
@@ -97,6 +97,7 @@ namespace CapDemo
             listPlayer = playerBL.GetPlayerByIDContest(player);
             ListContestHaveRound = contestBL.GetRoundByIDContest(contest);
             lbl_Round.Text = ListContestHaveRound.ElementAt(0).Round.NameRound;
+            
             //get element in contest
             if (listContest != null)
             {
@@ -107,7 +108,7 @@ namespace CapDemo
                 }
             }
             
-
+            
             if (listPlayer != null)
             {   
                 //draw player lane
@@ -128,7 +129,6 @@ namespace CapDemo
 
                     int H_BoundaryPlayerLane = 0;
                     H_BoundaryPlayerLane = H_PlayerLane - (H_FinishLocation + H_player);
-
                     for (int j = 0; j < listPhase.Count * NumStep; j++)
                     {
                         Phase_Lane PhaseLane = new Phase_Lane();
@@ -145,29 +145,26 @@ namespace CapDemo
                     } 
                     pnl_Lane.Controls.Add(PlayerLane);
                 }
-
+                //draw pm
+                this.btn_PM.Text = "V\nE\nR\nT\nI\nC\nA\nL\n" +"(35)";
 
                 //Draw Phase Lane
-                PhaseLane1 Phase = new PhaseLane1();
-                H_Boundary = H_PhaseLane - (H_FinishLocation);
-                Phase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane);
+                //H_Boundary = H_PlayerLane - (H_FinishLocation) - H_player;
+                //Phase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane);
 
                 for (int i = 0; i < listPhase.Count; i++)
                 {
                     Phase_Lane PhaseLane = new Phase_Lane();
-                    PhaseLane.Size = new System.Drawing.Size(W_PhaseLane, H_Boundary / listPhase.Count);
-                    PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + (H_PlayerLocation - H_Boundary / listPhase.Count * (i + 1)));
+                    PhaseLane.Size = new System.Drawing.Size(W_PhaseLane, (H_PhaseLane ) / listPhase.Count);
+                    PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + pnl_Phase.Height - (H_PhaseLane / listPhase.Count) * (i + 1));
                     PhaseLane.BorderStyle = BorderStyle.FixedSingle;
                     PhaseLane.BackgroundImage = Properties.Resources.rectangle_but;
                     PhaseLane.BackgroundImageLayout = ImageLayout.Zoom;
-                    PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PhaseLane, H_Boundary / listPhase.Count);
+                    PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane / listPhase.Count);
                     PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
-                    Phase.Controls.Add(PhaseLane);
+                    pnl_Phase.Controls.Add(PhaseLane);
                 }
-                pnl_Phase.Controls.Add(Phase);
-
-
-
+                
                 //add player information
                 for (int i = 0; i < listPlayer.Count; i++)
                 {
@@ -202,30 +199,17 @@ namespace CapDemo
                 }
             }
             
-            t.Abort();
+            //t.Abort();
             this.Show();
             this.ResumeLayout();
             
             
         }
-        SoundPlayer s;
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
-             //s= new SoundPlayer(Properties.Resources.Watch);
-             if (int.Parse(lbl_TimeShowQuestion.Text) <= 10 && int.Parse(lbl_TimeShowQuestion.Text) > 1)
-            {
-                s = new SoundPlayer(Properties.Resources.Watch);
-                s.Play();
-            }
-            if (int.Parse(lbl_TimeShowQuestion.Text) == 1)
-            {
-                s = new SoundPlayer(Properties.Resources.wrong_buzzer_sound_effect);
-                s.Play();
-            }
             if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
             {
-                //s.Stop();
                 timer1.Stop();
                 lbl_TimeShowQuestion.Image = null;
             }
@@ -251,5 +235,13 @@ namespace CapDemo
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
             }
         }
+        //text change
+        private void lbl_QuestionContent_TextChanged(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+       
     }
 }
