@@ -849,9 +849,7 @@
     <None Include="Resources\arrow-up.png" />
     <None Include="Resources\rectangle-but.png" />
     <None Include="Resources\sticker.png" />
-    <None Include="Resources\blue-glossy-rectangle.png" />
     <None Include="Resources\videoplaybutton.png" />
-    <None Include="Resources\blue_Glossy.jpg" />
     <None Include="Resources\up_ico.png" />
     <None Include="Resources\double-arrow_Gray.png" />
     <None Include="Resources\arrow_Blue.jpg" />
@@ -874,6 +872,11 @@
     <None Include="Resources\Incorrect_Answer.wav" />
     <None Include="Resources\game_over.wav" />
     <None Include="Resources\Techno.jpg" />
+    <None Include="Resources\cup.jpg" />
+    <None Include="Resources\cup_1.jpg" />
+    <None Include="Resources\FinishLane_1.jpg" />
+    <None Include="Resources\blue_Glossy.jpg" />
+    <None Include="Resources\blue-glossy-rectangle.png" />
     <Content Include="Sound\CapNhatDiem.wav" />
     <Content Include="Sound\ChaoMung.wav" />
     <Content Include="Sound\Click.wav" />

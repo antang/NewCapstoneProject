@@ -81,6 +81,9 @@ namespace CapDemo
         bool GameOver = false;
         bool GameOverAll = false;
         bool SoundWelcome = true;
+        bool OutOfQuestionInPhase = false;
+        bool OutOfQuestionPM = false;
+        //bool ExistPM;
         int IDPhasePM;
 
         //Score
@@ -158,9 +161,17 @@ namespace CapDemo
                         team.lbl_IDPlayer.Text = ListPlayer.ElementAt(i).IDPlayer.ToString();
                         team.gb_team.Visible = false;
                         idPlayer = ListPlayer.ElementAt(i).IDPlayer;
-                        
-                        Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest,AmountSteptoPass,AmountSteptofail,true,true,true,0, ListPlayer.ElementAt(i).PlayerScore,0,i,true);
-                        records.Add(r);
+
+                        if (AmountSteptofail == 0)
+                        {
+                            Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true);
+                            records.Add(r);
+                        }
+                        else
+                        {
+                            Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true,false);
+                            records.Add(r);
+                        }
 
                         flp_Team.Controls.Add(team);
                     }
@@ -295,10 +306,12 @@ namespace CapDemo
                                      {
                                          if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                                          {
-                                             teamCS.gb_team.Visible = false;
+                                             
                                              //show question by id phase
                                              if (ShowQuestionByIDPhase(IDPhasePM) == true)
                                              {
+                                                 teamCS.gb_team.Visible = false;
+///////
                                                  records.ElementAt(team).PM = false;
                                                  CheckQuestionPM = true;
                                                  //show audience screen
@@ -313,6 +326,7 @@ namespace CapDemo
                                              else
                                              {
                                                  MessageBox.Show("Run out of questions PM. Please choose questions in phase");
+                                                 OutOfQuestion();
                                              }
                                              
                                          }
@@ -325,21 +339,23 @@ namespace CapDemo
                                  {
                                      if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                                      {
-                                         if (records.ElementAt(team).Support == false)
-                                         {
-                                             teamCS.gb_team.Visible = false;
-                                             teamCS.chk_Support.Visible = false;
-                                         }
-                                         else
-                                         {
-                                             teamCS.chk_Support.Visible = true;
-                                         }
-                                         teamCS.chk_QuestionPM.Visible = false;
-                                         teamCS.chk_defy.Visible = false;
+                                         
 
                                          //show question by id phase
                                          if (ShowQuestionByIDPhase(IDPhasePM) == true)
                                          {
+                                             if (records.ElementAt(team).Support == false)
+                                             {
+                                                 teamCS.gb_team.Visible = false;
+                                                 teamCS.chk_Support.Visible = false;
+                                             }
+                                             else
+                                             {
+                                                 teamCS.chk_Support.Visible = true;
+                                             }
+                                             teamCS.chk_QuestionPM.Visible = false;
+                                             teamCS.chk_defy.Visible = false;
+///////
                                              records.ElementAt(team).PM = false;
                                              CheckQuestionPM = true;
                                              pb_Play.Enabled = true;
@@ -356,6 +372,7 @@ namespace CapDemo
                                          else
                                          {
                                              MessageBox.Show("Run out of questions PM. Please choose questions in phase");
+                                             OutOfQuestion();
                                          }
                                          
                                      }
@@ -429,7 +446,7 @@ namespace CapDemo
             {
                 if (TeamCS.IdPlayerUC == idPlayerUC)
                 {
-                    DialogResult dr = MessageBox.Show("Are you sure to use Question PM?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult dr = MessageBox.Show("Are you sure to assign this player is coccrect?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
                         foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
@@ -449,6 +466,49 @@ namespace CapDemo
 
                             }
                         }
+
+                        //show answer follow player
+                        if (typequestion == "onechoice")
+                        {
+                            foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
+                            {
+                                foreach (RadioButton oneChoice in TeamCS.flp_Answer.Controls)
+                                {
+                                    if (oneChoice.Checked == true)
+                                    {
+                                        if (oneChoice.Text == showAnswer.rdb1.Text)
+                                        {
+                                            showAnswer.BackgroundImage = Properties.Resources.dung_2;
+                                        }
+                                        else
+                                        {
+                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        if (typequestion == "multichoice")
+                        {
+                            foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
+                            {
+                                foreach (CheckBox multiChoice in TeamCS.flp_Answer.Controls)
+                                {
+                                    if (multiChoice.Checked == true)
+                                    {
+                                        if (multiChoice.Text.ToLower() == showAnswer.chk1.Text.ToLower())
+                                        {
+                                            showAnswer.BackgroundImage = Properties.Resources.dung_2;
+                                        }
+                                        else
+                                        {
+                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                     else
                     {
@@ -940,6 +1000,9 @@ namespace CapDemo
             PlayerAnswerShortQuestion = "";
             CorrectAnswerChallenge = "";
 
+            OutOfQuestionInPhase = false;
+            OutOfQuestionPM = false;
+
             if (team == records.Count)
             {
                 team = 0;
@@ -1005,36 +1068,47 @@ namespace CapDemo
                     teamAdienceScreen.btn_ChallengeChoice.BackgroundImage = Properties.Resources.Shield_Grey;
                 }
                 //show heart in player
-                if (records.ElementAt(j).NumFail == 3)
+////////
+                if (records.ElementAt(team).Undie == false)
                 {
-                    teamAdienceScreen.pb_Heart1.Show();
-                    teamAdienceScreen.pb_Heart2.Show();
-                    teamAdienceScreen.pb_Heart3.Show();
-                }
-                else
-                {
-                    if (records.ElementAt(j).NumFail == 2)
+                    if (records.ElementAt(j).NumFail == 3)
                     {
                         teamAdienceScreen.pb_Heart1.Show();
                         teamAdienceScreen.pb_Heart2.Show();
-                        teamAdienceScreen.pb_Heart3.Hide();
+                        teamAdienceScreen.pb_Heart3.Show();
                     }
                     else
                     {
-                        if (records.ElementAt(j).NumFail == 1)
+                        if (records.ElementAt(j).NumFail == 2)
                         {
                             teamAdienceScreen.pb_Heart1.Show();
-                            teamAdienceScreen.pb_Heart2.Hide();
+                            teamAdienceScreen.pb_Heart2.Show();
                             teamAdienceScreen.pb_Heart3.Hide();
                         }
                         else
                         {
-                            teamAdienceScreen.pb_Heart1.Hide();
-                            teamAdienceScreen.pb_Heart2.Hide();
-                            teamAdienceScreen.pb_Heart3.Hide();
+                            if (records.ElementAt(j).NumFail == 1)
+                            {
+                                teamAdienceScreen.pb_Heart1.Show();
+                                teamAdienceScreen.pb_Heart2.Hide();
+                                teamAdienceScreen.pb_Heart3.Hide();
+                            }
+                            else
+                            {
+                                teamAdienceScreen.pb_Heart1.Hide();
+                                teamAdienceScreen.pb_Heart2.Hide();
+                                teamAdienceScreen.pb_Heart3.Hide();
+                            }
                         }
                     }
                 }
+                else
+                {
+                    teamAdienceScreen.pb_Heart1.Hide();
+                    teamAdienceScreen.pb_Heart2.Hide();
+                    teamAdienceScreen.pb_Heart3.Hide();
+                }
+                
                 j++;
             }
             //Clear panel
@@ -1055,35 +1129,47 @@ namespace CapDemo
         public void GoPlayer()
         {
             // Get team in turn
-            //for (int i = 0; i < records.Count; i++)
+            //if (OutOfQuestionPM == true && OutOfQuestionInPhase == true)
             //{
-            //    if (i == team)
+            //    for (int i = 0; i < records.Count; i++)
             //    {
-            //        if (records.ElementAt(i).Exist == true)
+            //        if (i == team)
             //        {
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            team++;
-            //            if (team == AmountPlayer)
+            //            if (records.ElementAt(i).Exist == true)
             //            {
-            //                for (int j = 0; j < records.Count; j++)
+            //                break;
+            //            }
+            //            else
+            //            {
+            //                team++;
+            //                if (team == AmountPlayer)
             //                {
-            //                    if (records.ElementAt(j).Exist == true)
+            //                    for (int j = 0; j < records.Count; j++)
             //                    {
-            //                        team = j;
-            //                        break;
+            //                        if (records.ElementAt(j).Exist == true)
+            //                        {
+            //                            team = j;
+            //                            break;
+            //                        }
             //                    }
             //                }
             //            }
             //        }
             //    }
             //}
-            if (records.ElementAt(team).Exist == false)
+////////    
+            if (records.ElementAt(team).Undie == false)
             {
-                pb_Play.Enabled = false;
+                if (records.ElementAt(team).Exist == false)
+                {
+                    pb_Play.Enabled = false;
+                }
             }
+            else
+            {
+                ////////
+            }
+            
 
             //show on game controller screen
             foreach (Team teamCS in flp_Team.Controls)
@@ -1094,7 +1180,15 @@ namespace CapDemo
                     teamCS.Enabled = true;
                     teamCS.flp_Answer.Visible = true;
                     teamCS.gb_team.Visible = true;
-                    teamCS.chk_QuestionPM.Visible = true;
+                    if (ExistPM()==false)
+                    {
+                        teamCS.chk_QuestionPM.Visible = false;
+                    }
+                    else
+                    {
+                        teamCS.chk_QuestionPM.Visible = true;
+                    }
+                    
                     teamCS.chk_Support.Visible = false;
                     if (records.ElementAt(team).Defy == true)
                     {
@@ -1135,11 +1229,11 @@ namespace CapDemo
                 }
                 else
                 {
-                    if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
-                    {
-                        //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
-                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
-                    }
+                    //if (teamAdienceScreen.pb_Heart1.Visible == false && teamAdienceScreen.pb_Heart2.Visible == false && teamAdienceScreen.pb_Heart3.Visible == false)
+                    //{
+                    //    //teamAdienceScreen.btn_Stop.BackgroundImage = Properties.Resources.Icon_stop;
+                    //    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                    //}
                 }
             }
             //move to next step
@@ -1172,7 +1266,7 @@ namespace CapDemo
                     }
                     else
                     {
-                        MessageBox.Show("Maxmimum number of team will be challenged is " + NumofChallenge);
+                        MessageBox.Show("Maximum number of team will be challenged is " + NumofChallenge);
                     }
                 }
                 else
@@ -1181,11 +1275,13 @@ namespace CapDemo
                     {
                         if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                         {
-                            teamCS.gb_team.Visible = false;
+                            
                             IDPhase = records.ElementAt(team).IDPhase;
                             //show question by id phase
                             if (ShowQuestionByIDPhase(IDPhase) == true)
                             {
+                                teamCS.gb_team.Visible = false;
+////////
                                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                 //sound show question
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
@@ -1196,6 +1292,7 @@ namespace CapDemo
                             else
                             {
                                 MessageBox.Show("Run Out of Question");
+                                OutOfQuestion();
                             }
                         }
                     }
@@ -1207,20 +1304,22 @@ namespace CapDemo
                 {
                     if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
                     {
-                        if (records.ElementAt(team).Support == false)
-                        {
-                            teamCS.gb_team.Visible = false;
-                        }
-                        else
-                        {
-                            teamCS.chk_Support.Visible = true;
-                        }
-                        teamCS.chk_QuestionPM.Visible = false;
-                        teamCS.chk_defy.Visible = false;
+                        
                         IDPhase = records.ElementAt(team).IDPhase;
                         //show question by id phase
                         if (ShowQuestionByIDPhase(IDPhase) == true)
                         {
+                            if (records.ElementAt(team).Support == false)
+                            {
+                                teamCS.gb_team.Visible = false;
+                            }
+                            else
+                            {
+                                teamCS.chk_Support.Visible = true;
+                            }
+                            teamCS.chk_QuestionPM.Visible = false;
+                            teamCS.chk_defy.Visible = false;
+////////
                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                             //sund show question
                             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
@@ -1231,6 +1330,7 @@ namespace CapDemo
                         else
                         {
                             MessageBox.Show("Run Out of Question");
+                            OutOfQuestion();
                         }
                     }
                 }
@@ -1272,7 +1372,21 @@ namespace CapDemo
                     _BonusPhase = BonusScoreofPhase(id);
                     _MinusPhase = MinusScoreofPhase(id);
                     typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
-                    audience.lbl_typeQ.Text = "Type: " + typequestion;
+                    if (typequestion == "multichoice")
+                    {
+                        audience.lbl_typeQ.Text = "Type: Choose one answer";
+                    }
+                    else
+                    {
+                        if (typequestion == "onechoice")
+                        {
+                            audience.lbl_typeQ.Text = "Type: Choose multi answer";
+                        }
+                        else
+                        {
+                            audience.lbl_typeQ.Text = "Type: Fill short answer";
+                        }
+                    }
 
                     /////question is onechoice type
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
@@ -1879,7 +1993,7 @@ namespace CapDemo
                 {
                     audience.btn_PM.Text += namephase[j] + "\n";
                 }
-                audience.btn_PM.Text += "(" + ListPM1.Count + ")";
+                audience.btn_PM.Text += "\n"+"(" + ListPM1.Count + ")";
             }
             catch (Exception)
             {
@@ -2202,7 +2316,7 @@ namespace CapDemo
             {
                 records.ElementAt(team).NumFail -= 1;
                 records.ElementAt(team).TeamScore -= MinusScoreInPhase;
-                if (records.ElementAt(team).NumFail == 0)
+                if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
                 {
                     records.ElementAt(team).Exist = false;
                     records.ElementAt(team).Defy = false;
@@ -2239,7 +2353,8 @@ namespace CapDemo
                 {//Owner challenge lose
                     records.ElementAt(team).TeamScore -= MinusScoreInPhase;
                     records.ElementAt(team).NumFail -= 1;
-                    if (records.ElementAt(team).NumFail == 0)
+////////
+                    if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
                     {
                         records.ElementAt(team).Exist = false;
                         records.ElementAt(team).Defy = false;
@@ -2377,7 +2492,7 @@ namespace CapDemo
             //minus life if team fail in question
             records.ElementAt(team).NumFail -= 1;
             records.ElementAt(team).TeamScore -= score;
-            if (records.ElementAt(team).NumFail == 0)
+            if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
             {
                 records.ElementAt(team).Exist = false;
                 records.ElementAt(team).Defy = false;
@@ -2875,13 +2990,15 @@ namespace CapDemo
         //Fix size text in question frame
         public void FixSizeText()
         {
-            if (audience.lbl_QuestionContent.Text.Count() > 585)
+            string []NewLine= audience.lbl_QuestionContent.Text.Split('\n');
+
+            if (audience.lbl_QuestionContent.Text.Count() > 585 || NewLine.Length > 9)
             {
-                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 11.0f, audience.lbl_QuestionContent.Font.Style);
+                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 9.0f, audience.lbl_QuestionContent.Font.Style);
             }
             else
             {
-                if (audience.lbl_QuestionContent.Text.Count() > 280)
+                if (audience.lbl_QuestionContent.Text.Count() > 280 || NewLine.Length>7)
                 {
                     audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 15.0f, audience.lbl_QuestionContent.Font.Style);
                 }
@@ -2891,5 +3008,82 @@ namespace CapDemo
                 }
             }
         }
+
+        //out of question to move to next player
+        public void OutOfQuestion()
+        {
+            if (ExistPM() == true)
+            {
+                if (NumofQuestionPM() == 0 && NumofQuestionInPhase(records.ElementAt(team).IDPhase) == 0)
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+
+                    lblHint.Text = guideline[2].ToString();
+                    step = 2;
+                    team++;
+                    if (team == records.Count)
+                    {
+                        team = 0;
+                    }
+                    GoPlayer();
+
+                }
+                //sound to player's turn
+                
+            }
+            else
+            {
+                if (NumofQuestionInPhase(records.ElementAt(team).IDPhase) == 0)
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+
+                    lblHint.Text = guideline[2].ToString();
+                    step = 2;
+                    team++;
+                    if (team == records.Count)
+                    {
+                        team = 0;
+                    }
+                    GoPlayer(); 
+                }
+            }
+        }
+
+        //check phase PM exist
+        public bool ExistPM()
+        {
+            try
+            {
+                List<Phase> ListPhase;
+                Phase.IDContest = iDContest;
+                ListPhase = PhaseBL.GetPhasePM(Phase);
+                IDPhasePM = ListPhase.ElementAt(0).IDPhase;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        //numbe question in phase PM
+        public int NumofQuestionPM()
+        {
+            List<Phase> ListPhase;
+            Phase.IDContest = iDContest;
+            ListPhase = PhaseBL.GetPhasePM(Phase);
+            Phase.IDPhase = ListPhase.ElementAt(0).IDPhase;
+            ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
+            return ListPhase.Count;
+        }
+        public int NumofQuestionInPhase(int id)
+        {
+            List<Phase> ListPhase;
+            Phase.IDPhase = id;
+            ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
+            return ListPhase.Count;
+        }
+        
     }
 }

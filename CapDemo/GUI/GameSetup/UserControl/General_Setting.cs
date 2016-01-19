@@ -319,8 +319,8 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (Convert.ToInt32(txt_NumStepFail.Text) == 0)
                 {
-                    MessageBox.Show("Vui lòng nhập số lượng câu sai để dừng lại ở một giai đoạn lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_NumStepFail.Text = "";
+                    //MessageBox.Show("Vui lòng nhập số lượng câu sai để dừng lại ở một giai đoạn lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //txt_NumStepFail.Text = "";
                 }
                 else
                 {

@@ -229,22 +229,23 @@
             // 
             this.lbl_Sequence.AutoSize = true;
             this.lbl_Sequence.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Sequence.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Sequence.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Sequence.ForeColor = System.Drawing.Color.White;
-            this.lbl_Sequence.Location = new System.Drawing.Point(186, 277);
+            this.lbl_Sequence.Location = new System.Drawing.Point(213, 291);
             this.lbl_Sequence.Name = "lbl_Sequence";
-            this.lbl_Sequence.Size = new System.Drawing.Size(30, 18);
+            this.lbl_Sequence.Size = new System.Drawing.Size(15, 13);
             this.lbl_Sequence.TabIndex = 8;
-            this.lbl_Sequence.Text = "Se";
+            this.lbl_Sequence.Text = "1";
+            this.lbl_Sequence.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // flp_Answer
             // 
             this.flp_Answer.BackColor = System.Drawing.Color.Transparent;
             this.flp_Answer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flp_Answer.ForeColor = System.Drawing.Color.Black;
-            this.flp_Answer.Location = new System.Drawing.Point(19, 130);
+            this.flp_Answer.Location = new System.Drawing.Point(10, 130);
             this.flp_Answer.Name = "flp_Answer";
-            this.flp_Answer.Size = new System.Drawing.Size(196, 36);
+            this.flp_Answer.Size = new System.Drawing.Size(215, 56);
             this.flp_Answer.TabIndex = 18;
             // 
             // gb_team
@@ -255,7 +256,7 @@
             this.gb_team.Controls.Add(this.chk_QuestionPM);
             this.gb_team.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_team.ForeColor = System.Drawing.Color.White;
-            this.gb_team.Location = new System.Drawing.Point(10, 181);
+            this.gb_team.Location = new System.Drawing.Point(10, 192);
             this.gb_team.Name = "gb_team";
             this.gb_team.Size = new System.Drawing.Size(215, 89);
             this.gb_team.TabIndex = 19;
