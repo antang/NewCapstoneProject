@@ -158,8 +158,8 @@ namespace CapDemo
                     PhaseLane.Size = new System.Drawing.Size(W_PhaseLane, (H_PhaseLane ) / listPhase.Count);
                     PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + pnl_Phase.Height - (H_PhaseLane / listPhase.Count) * (i + 1));
                     PhaseLane.BorderStyle = BorderStyle.FixedSingle;
-                    PhaseLane.BackgroundImage = Properties.Resources.rectangle_but;
-                    PhaseLane.BackgroundImageLayout = ImageLayout.Zoom;
+                    PhaseLane.BackgroundImage = Properties.Resources.blue_Glossy;
+                    PhaseLane.BackgroundImageLayout = ImageLayout.Stretch;
                     PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane / listPhase.Count);
                     PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
                     pnl_Phase.Controls.Add(PhaseLane);
@@ -189,9 +189,18 @@ namespace CapDemo
                         }
                         else
                         {
-                            team_AudienceScreen.pb_Heart1.Show();
-                            team_AudienceScreen.pb_Heart2.Show();
-                            team_AudienceScreen.pb_Heart3.Show();
+                            if (NumLife == 3)
+                            {
+                                team_AudienceScreen.pb_Heart1.Show();
+                                team_AudienceScreen.pb_Heart2.Show();
+                                team_AudienceScreen.pb_Heart3.Show();
+                            }
+                            else
+                            {
+                                team_AudienceScreen.pb_Heart1.Hide();
+                                team_AudienceScreen.pb_Heart2.Hide();
+                                team_AudienceScreen.pb_Heart3.Hide();
+                            }
                         }
 
                     }

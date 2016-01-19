@@ -34,8 +34,9 @@
             this.lbl_SequencePlayer = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.timeHightLight = new System.Windows.Forms.Timer(this.components);
-            this.lbl_Finish = new System.Windows.Forms.Label();
             this.btn_Team = new System.Windows.Forms.Button();
+            this.lbl_Finish = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Finish)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_IDPlayer
@@ -67,14 +68,6 @@
             // 
             this.timeHightLight.Tick += new System.EventHandler(this.timeHightLight_Tick);
             // 
-            // lbl_Finish
-            // 
-            this.lbl_Finish.Image = global::CapDemo.Properties.Resources.Screen_pnl_FinishLane;
-            this.lbl_Finish.Location = new System.Drawing.Point(0, 50);
-            this.lbl_Finish.Name = "lbl_Finish";
-            this.lbl_Finish.Size = new System.Drawing.Size(102, 20);
-            this.lbl_Finish.TabIndex = 8;
-            // 
             // btn_Team
             // 
             this.btn_Team.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -86,17 +79,28 @@
             this.btn_Team.TabStop = false;
             this.btn_Team.UseVisualStyleBackColor = false;
             // 
+            // lbl_Finish
+            // 
+            this.lbl_Finish.BackgroundImage = global::CapDemo.Properties.Resources.FinishLane_1;
+            this.lbl_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lbl_Finish.Location = new System.Drawing.Point(0, 50);
+            this.lbl_Finish.Name = "lbl_Finish";
+            this.lbl_Finish.Size = new System.Drawing.Size(102, 20);
+            this.lbl_Finish.TabIndex = 10;
+            this.lbl_Finish.TabStop = false;
+            // 
             // Player_Lane1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btn_Team);
             this.Controls.Add(this.lbl_Finish);
+            this.Controls.Add(this.btn_Team);
             this.Controls.Add(this.lbl_SequencePlayer);
             this.Controls.Add(this.lbl_IDPlayer);
             this.Name = "Player_Lane1";
             this.Size = new System.Drawing.Size(102, 652);
+            ((System.ComponentModel.ISupportInitialize)(this.lbl_Finish)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +112,7 @@
         public System.Windows.Forms.Label lbl_SequencePlayer;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Timer timeHightLight;
-        public System.Windows.Forms.Label lbl_Finish;
         public System.Windows.Forms.Button btn_Team;
+        public System.Windows.Forms.PictureBox lbl_Finish;
     }
 }

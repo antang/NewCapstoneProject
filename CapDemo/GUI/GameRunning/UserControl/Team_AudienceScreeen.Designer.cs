@@ -54,7 +54,7 @@
             // 
             this.lbl_TeamName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_TeamName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TeamName.ForeColor = System.Drawing.Color.Black;
+            this.lbl_TeamName.ForeColor = System.Drawing.Color.White;
             this.lbl_TeamName.Location = new System.Drawing.Point(21, 6);
             this.lbl_TeamName.Name = "lbl_TeamName";
             this.lbl_TeamName.Size = new System.Drawing.Size(222, 27);
@@ -66,7 +66,7 @@
             // 
             this.lbl_TeamScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_TeamScore.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TeamScore.ForeColor = System.Drawing.Color.Black;
+            this.lbl_TeamScore.ForeColor = System.Drawing.Color.White;
             this.lbl_TeamScore.Location = new System.Drawing.Point(21, 35);
             this.lbl_TeamScore.Name = "lbl_TeamScore";
             this.lbl_TeamScore.Size = new System.Drawing.Size(111, 42);

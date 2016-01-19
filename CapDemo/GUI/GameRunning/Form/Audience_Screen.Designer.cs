@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tbc_ShowGame = new System.Windows.Forms.TabControl();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tab_Map = new System.Windows.Forms.TabPage();
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_PM = new System.Windows.Forms.Button();
@@ -51,9 +54,6 @@
             this.tab_EndGame = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbc_ShowGame.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
@@ -76,6 +76,37 @@
             this.tbc_ShowGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.tbc_ShowGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tbc_ShowGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
+            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
+            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
+            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
+            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
+            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
+            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
+            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
+            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
+            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
+            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
+            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
+            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
+            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
+            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
+            this.imageList1.Images.SetKeyName(15, "y-kien.png");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // tab_Map
             // 
@@ -103,11 +134,11 @@
             // 
             this.flp_Finish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flp_Finish.BackColor = System.Drawing.Color.White;
-            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.flp_Finish.BackgroundImage = global::CapDemo.Properties.Resources.cup_1;
             this.flp_Finish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flp_Finish.Location = new System.Drawing.Point(100, 69);
+            this.flp_Finish.Location = new System.Drawing.Point(100, 56);
             this.flp_Finish.Name = "flp_Finish";
-            this.flp_Finish.Size = new System.Drawing.Size(205, 50);
+            this.flp_Finish.Size = new System.Drawing.Size(205, 83);
             this.flp_Finish.TabIndex = 0;
             this.flp_Finish.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.flp_Finish.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
@@ -139,6 +170,7 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Start";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Visible = false;
             // 
             // lbl_Round
             // 
@@ -382,37 +414,6 @@
             this.flp_TeamEndGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.flp_TeamEndGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.flp_TeamEndGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
-            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
-            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
-            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
-            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
-            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
-            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
-            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
-            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
-            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
-            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
-            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
-            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
-            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
-            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
-            this.imageList1.Images.SetKeyName(15, "y-kien.png");
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Audience_Screen
             // 

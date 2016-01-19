@@ -24,14 +24,16 @@ namespace CapDemo.DO
         bool defy;
         bool support;
         bool pM;
+        bool undie;
 
+       
         
 
 
         public Record(){
         }
 
-        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM)
+        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM, bool undie)
         {
             this.iDPlayer = idPlayer;
             this.iDPhase = idPhase;
@@ -46,6 +48,7 @@ namespace CapDemo.DO
             this.totalPass = totalPass;
             this.sequencePlayer = sequencePlayer;
             this.pM = pM;
+            this.undie = undie;
         }
 
         public int IDPlayer
@@ -113,5 +116,11 @@ namespace CapDemo.DO
             get { return pM; }
             set { pM = value; }
         }
+        public bool Undie
+        {
+            get { return undie; }
+            set { undie = value; }
+        }
+
     }
 }
