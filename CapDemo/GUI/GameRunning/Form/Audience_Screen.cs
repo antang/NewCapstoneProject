@@ -55,23 +55,20 @@ namespace CapDemo
         int H_PhaseLane;
         int W_PhaseLane;
 
-        int H_Boundary;
         int H_FinishLocation;
         int H_PlayerLocation;
         int H_player;
-
-        int H_Finish;
 
         private void Audience_Screen_Load(object sender, EventArgs e)
         {
 
             this.Hide();
-            //Thread t = new Thread(new ThreadStart(SpashStart));
-            //t.Start();
-            //Thread.Sleep(8000);
+            Thread t = new Thread(new ThreadStart(SpashStart));
+            t.Start();
+            Thread.Sleep(3000);
             this.SuspendLayout();
             //this.Hide();
-            //this.Dock = DockStyle.Fill;
+            this.Dock = DockStyle.Fill;
             
             tbc_ShowGame.Appearance = TabAppearance.FlatButtons;
             tbc_ShowGame.ItemSize = new Size(0, 1);
@@ -158,7 +155,7 @@ namespace CapDemo
                     PhaseLane.Size = new System.Drawing.Size(W_PhaseLane, (H_PhaseLane ) / listPhase.Count);
                     PhaseLane.Location = new Point(PhaseLane.Location.X + 0, PhaseLane.Location.Y + pnl_Phase.Height - (H_PhaseLane / listPhase.Count) * (i + 1));
                     PhaseLane.BorderStyle = BorderStyle.FixedSingle;
-                    PhaseLane.BackgroundImage = Properties.Resources.blue_Glossy;
+                    PhaseLane.BackgroundImage = Properties.Resources.Phase;
                     PhaseLane.BackgroundImageLayout = ImageLayout.Stretch;
                     PhaseLane.lbl_NamePhase.Size = new System.Drawing.Size(W_PhaseLane, H_PhaseLane / listPhase.Count);
                     PhaseLane.lbl_NamePhase.Text = listPhase.ElementAt(i).NamePhase;
@@ -208,7 +205,7 @@ namespace CapDemo
                 }
             }
             
-            //t.Abort();
+            t.Abort();
             this.Show();
             this.ResumeLayout();
             
@@ -216,6 +213,7 @@ namespace CapDemo
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            prgb_Question.Increment(1);
             lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
             if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
             {

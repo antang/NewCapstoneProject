@@ -42,7 +42,7 @@
             this.lbl_NamePhase.BackColor = System.Drawing.Color.Transparent;
             this.lbl_NamePhase.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_NamePhase.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NamePhase.ForeColor = System.Drawing.Color.Blue;
+            this.lbl_NamePhase.ForeColor = System.Drawing.Color.White;
             this.lbl_NamePhase.Location = new System.Drawing.Point(0, 0);
             this.lbl_NamePhase.Name = "lbl_NamePhase";
             this.lbl_NamePhase.Size = new System.Drawing.Size(110, 69);

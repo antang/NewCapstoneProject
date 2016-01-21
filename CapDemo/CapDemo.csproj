@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\RecordBL.cs" />
     <Compile Include="GUI\GameRunning\Form\Audience_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -800,7 +801,6 @@
     <None Include="Resources\Icon-stop.png" />
     <None Include="Resources\ao-lon.png" />
     <None Include="Resources\Answer.png" />
-    <None Include="Resources\Question.png" />
     <None Include="Resources\go-icon.png" />
     <None Include="Resources\cachalka.png" />
     <None Include="Resources\chon.png" />
@@ -822,10 +822,6 @@
     <None Include="Resources\X_icon-vien.png" />
     <None Include="Resources\team-into.png" />
     <None Include="Resources\Congratulation_bg.jpg" />
-    <None Include="Resources\First.png" />
-    <None Include="Resources\Fourth.png" />
-    <None Include="Resources\Second.png" />
-    <None Include="Resources\Thirst.png" />
     <None Include="Resources\ao.png" />
     <None Include="Resources\RestoreDown.png" />
     <None Include="Resources\welcome-dong.gif" />
@@ -877,6 +873,18 @@
     <None Include="Resources\FinishLane_1.jpg" />
     <None Include="Resources\blue_Glossy.jpg" />
     <None Include="Resources\blue-glossy-rectangle.png" />
+    <None Include="Resources\Heart.png" />
+    <None Include="Resources\First.png" />
+    <None Include="Resources\Fourth.png" />
+    <None Include="Resources\Second.png" />
+    <None Include="Resources\Thirst.png" />
+    <None Include="Resources\Question.png" />
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\Phase.jpg" />
+    <None Include="Resources\PM.jpg" />
+    <None Include="Resources\Welcome.gif" />
+    <None Include="Resources\W_Shortcut2_L.png" />
+    <None Include="Resources\W_Shortcut2_M.ico" />
     <Content Include="Sound\CapNhatDiem.wav" />
     <Content Include="Sound\ChaoMung.wav" />
     <Content Include="Sound\Click.wav" />

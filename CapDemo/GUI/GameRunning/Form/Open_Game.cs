@@ -40,6 +40,7 @@ namespace CapDemo
         Contest Contest = new Contest();
         Phase Phase = new Phase();
         Question Question = new Question();
+        
         Log Log = new Log();
         LogBL logBL = new LogBL();
 
@@ -48,6 +49,7 @@ namespace CapDemo
         PhaseBL PhaseBL = new PhaseBL();
         PhaseQuestionBL PhaseQuestionBl = new PhaseQuestionBL();
         QuestionBL QuestionBL = new QuestionBL();
+        RecordBL RecordBL = new RecordBL();
 
         List<int> listIDQuestion = new List<int>();
         List<int> listIDPlayer = new List<int>();
@@ -66,8 +68,10 @@ namespace CapDemo
         int Bonus;
         int ChallengeScore;
         int NumofChallenge;
+        bool Run;
 
         int idPlayer;
+        int time;
 
         string typequestion = "";
         string CorrectShortAnswer = "";
@@ -81,8 +85,6 @@ namespace CapDemo
         bool GameOver = false;
         bool GameOverAll = false;
         bool SoundWelcome = true;
-        bool OutOfQuestionInPhase = false;
-        bool OutOfQuestionPM = false;
         //bool ExistPM;
         int IDPhasePM;
 
@@ -122,6 +124,7 @@ namespace CapDemo
                     Bonus = ListContest.ElementAt(i).Bonus;
                     ChallengeScore = ListContest.ElementAt(i).ChallengceScore;
                     NumofChallenge = ListContest.ElementAt(i).NumberChallenge;
+                    Run = ListContest.ElementAt(i).Run;
                 }
             }
 
@@ -136,47 +139,158 @@ namespace CapDemo
             List<Player> ListPlayer;
             ListPlayer = PlayerBL.GetPlayerByIDContest(Player);
             AmountPlayer = ListPlayer.Count;
-            if (ListPlayer != null)
+
+            Record Restore = new Record();
+            Restore.AmountTeam = AmountPlayer;
+
+            if (Run ==  false)
             {
-                for (int i = 0; i < ListPlayer.Count; i++)
+                if (ListPlayer != null)
                 {
-                    if (ListPlayer.ElementAt(i) != null)
+                    for (int i = 0; i < ListPlayer.Count; i++)
                     {
-                        Team team = new Team();
-                        teamtTag++;
-                        team.Tag = teamtTag;
-                        team.IdPlayerUC = teamtTag;
-                        //subcribe event
-                        team.checkSupport += team_checkSupport;
-                        team.checkQuestionPM += team_checkQuestionPM;
-                        team.checkChallenge += team_checkChallenge;
-                        team.ChoiceChallengedTeam += team_ChoiceChallengedTeam;
-                        team.checkCorrect += team_checkCorrect;
-                        //properties
-                        team.BackColor = Color.FromArgb(colorplayer(ListPlayer.ElementAt(i).IDPlayer));
-                        team.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
-                        team.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
-                        team.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
-                        team.lbl_Sequence.Text = ListPlayer.ElementAt(i).Sequence.ToString();
-                        team.lbl_IDPlayer.Text = ListPlayer.ElementAt(i).IDPlayer.ToString();
-                        team.gb_team.Visible = false;
-                        idPlayer = ListPlayer.ElementAt(i).IDPlayer;
-
-                        if (AmountSteptofail == 0)
+                        if (ListPlayer.ElementAt(i) != null)
                         {
-                            Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true);
-                            records.Add(r);
-                        }
-                        else
-                        {
-                            Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true,false);
-                            records.Add(r);
-                        }
+                            Team teamCS = new Team();
+                            teamtTag++;
+                            teamCS.Tag = teamtTag;
+                            teamCS.IdPlayerUC = teamtTag;
+                            //subcribe event
+                            teamCS.checkSupport += team_checkSupport;
+                            teamCS.checkQuestionPM += team_checkQuestionPM;
+                            teamCS.checkChallenge += team_checkChallenge;
+                            teamCS.ChoiceChallengedTeam += team_ChoiceChallengedTeam;
+                            teamCS.checkCorrect += team_checkCorrect;
+                            //properties
+                            teamCS.BackColor = Color.FromArgb(colorplayer(ListPlayer.ElementAt(i).IDPlayer));
+                            teamCS.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
+                            teamCS.lbl_TeamScore.Text = ListPlayer.ElementAt(i).PlayerScore.ToString();
+                            teamCS.lbl_CurrentPhase.Text = ListPhase[0].NamePhase;
+                            teamCS.lbl_Sequence.Text = ListPlayer.ElementAt(i).Sequence.ToString();
+                            teamCS.lbl_IDPlayer.Text = ListPlayer.ElementAt(i).IDPlayer.ToString();
+                            teamCS.gb_team.Visible = false;
+                            idPlayer = ListPlayer.ElementAt(i).IDPlayer;
 
-                        flp_Team.Controls.Add(team);
+                            if (AmountSteptofail == 0)
+                            {
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true);
+                                records.Add(r);
+                                //record
+                                Restore.IDContest = iDContest;
+                                Restore.IDPlayer = idPlayer;
+                                Restore.IDPhase = ListPhase[0].IDPhase;
+                                Restore.NumPass = AmountSteptoPass;
+                                Restore.NumFail = AmountSteptofail;
+                                Restore.Defy_I = 1;
+                                Restore.Support_I = 1;
+                                Restore.Exist_I = 1;
+                                Restore.PhaseIndex = 0;
+                                Restore.TeamScore = ListPlayer.ElementAt(i).PlayerScore;
+                                Restore.TotalPass = 0;
+                                Restore.SequecePlayer = ListPlayer.ElementAt(i).Sequence;
+                                Restore.PM_I = 1;
+                                Restore.Undie_I = 1;
+                                Restore.Turn = i;
+
+                                RecordBL.AddRecord(Restore);
+                            }
+                            else
+                            {
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, false);
+                                records.Add(r);
+
+                                //record
+                                Restore.IDContest = iDContest;
+                                Restore.IDPlayer = idPlayer;
+                                Restore.IDPhase = ListPhase[0].IDPhase;
+                                Restore.NumPass = AmountSteptoPass;
+                                Restore.NumFail = AmountSteptofail;
+                                Restore.Defy_I = 1;
+                                Restore.Support_I = 1;
+                                Restore.Exist_I = 1;
+                                Restore.PhaseIndex = 0;
+                                Restore.TeamScore = ListPlayer.ElementAt(i).PlayerScore;
+                                Restore.TotalPass = 0;
+                                Restore.SequecePlayer = ListPlayer.ElementAt(i).Sequence;
+                                Restore.PM_I = 1;
+                                Restore.Undie_I = 0;
+                                Restore.Turn = i;
+
+                                RecordBL.AddRecord(Restore);
+
+                            }
+
+                            flp_Team.Controls.Add(teamCS);
+                        }
                     }
                 }
             }
+            else
+            {
+                Restore.IDContest = iDContest;
+                List<Record> ListRestore;
+                ListRestore = RecordBL.GetRecordByIDContest(Restore);
+
+                if (ListPlayer != null)
+                {
+                    for (int i = 0; i < ListPlayer.Count; i++)
+                    {
+                        if (ListPlayer.ElementAt(i) != null)
+                        {
+                            Team teamCS = new Team();
+                            teamtTag++;
+                            teamCS.Tag = teamtTag;
+                            teamCS.IdPlayerUC = teamtTag;
+                            //subcribe event
+                            teamCS.checkSupport += team_checkSupport;
+                            teamCS.checkQuestionPM += team_checkQuestionPM;
+                            teamCS.checkChallenge += team_checkChallenge;
+                            teamCS.ChoiceChallengedTeam += team_ChoiceChallengedTeam;
+                            teamCS.checkCorrect += team_checkCorrect;
+                            //properties
+                            teamCS.BackColor = Color.FromArgb(colorplayer(ListPlayer.ElementAt(i).IDPlayer));
+                            teamCS.lbl_TeamName.Text = ListPlayer.ElementAt(i).PlayerName;
+                            //
+                            teamCS.lbl_TeamScore.Text = ListRestore[i].TeamScore.ToString();
+                            teamCS.lbl_CurrentPhase.Text = NameofPhase(ListRestore[i].IDPhase);
+                            teamCS.lbl_Sequence.Text = ListPlayer.ElementAt(i).Sequence.ToString();
+                            teamCS.lbl_IDPlayer.Text = ListRestore[i].IDPlayer.ToString();
+                            teamCS.gb_team.Visible = false;
+
+                            if (ListRestore[i].PlayerTurn == true)
+                            {
+                                team = ListRestore[i].Turn;
+                            }
+                            //idPlayer = ListPlayer.ElementAt(i).IDPlayer;
+
+                            if (AmountSteptofail == 0)
+                            {
+                                Record r = new Record(ListRestore.ElementAt(i).IDPlayer, ListRestore.ElementAt(i).IDPhase
+                                    , ListRestore.ElementAt(i).IDContest, ListRestore.ElementAt(i).NumPass
+                                    , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
+                                    , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
+                                    , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie);
+                                records.Add(r);
+                            }
+                            else
+                            {
+                                Record r = new Record(ListRestore.ElementAt(i).IDPlayer, ListRestore.ElementAt(i).IDPhase
+                                    , ListRestore.ElementAt(i).IDContest, ListRestore.ElementAt(i).NumPass
+                                    , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
+                                    , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
+                                    , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie);
+                                records.Add(r);
+                            }
+
+                            flp_Team.Controls.Add(teamCS);
+                        }
+                    }
+                }
+            }
+
+            
         }
 
        
@@ -194,6 +308,13 @@ namespace CapDemo
                     DialogResult dr = MessageBox.Show("Are you sure to use Challenged Choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
+                        //record
+                        Record Restore = new Record();
+                        Restore.Defy_I = 0;
+                        Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                        Restore.IDContest = iDContest;
+                        RecordBL.UpdateDefy(Restore);
+
                         records.ElementAt(team).Defy = false;
                         //TeamCS.gb_team.Visible = false;
                         TeamCS.chk_defy.Visible = false;
@@ -313,6 +434,13 @@ namespace CapDemo
                                                  teamCS.gb_team.Visible = false;
 ///////
                                                  records.ElementAt(team).PM = false;
+                                                 //Record
+                                                 Record Restore = new Record();
+                                                 Restore.PM_I = 0;
+                                                 Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                                 Restore.IDContest = iDContest;
+                                                 RecordBL.UpdatePM(Restore);
+
                                                  CheckQuestionPM = true;
                                                  //show audience screen
                                                  lblHint.Text = guideline[3].ToString();
@@ -357,6 +485,13 @@ namespace CapDemo
                                              teamCS.chk_defy.Visible = false;
 ///////
                                              records.ElementAt(team).PM = false;
+                                             //Record
+                                             Record Restore = new Record();
+                                             Restore.PM_I = 0;
+                                             Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                             Restore.IDContest = iDContest;
+                                             RecordBL.UpdatePM(Restore);
+
                                              CheckQuestionPM = true;
                                              pb_Play.Enabled = true;
                                              //show audience screen
@@ -406,6 +541,12 @@ namespace CapDemo
                     DialogResult dr = MessageBox.Show("Are you sure to use supported choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
+                        //record
+                        Record Restore = new Record();
+                        Restore.Support_I = 0;
+                        Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                        Restore.IDContest = iDContest;
+                        RecordBL.UpdateSupport(Restore);
 
                         records.ElementAt(team).Support = false;
                         //hide support choice on controller screen
@@ -416,6 +557,7 @@ namespace CapDemo
                         timer1.Start();
                         //show time on audience screen
                         audience.lbl_TimeShowQuestion.Text = (Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) + (TimeSupport)).ToString();
+                        audience.prgb_Question.Maximum = time + (TimeSupport);
                         audience.timer1.Interval = 1000;
                         audience.timer1.Start();
                         //hint support choice on controller screen after it has been used
@@ -522,7 +664,7 @@ namespace CapDemo
         //Load Form Open_Game
         private void Open_Game_Load(object sender, EventArgs e)
         {
-            this.Dock = DockStyle.Fill;
+            //this.Dock = DockStyle.Fill;
             GetContestContent();
             lblHint.Text = guideline[0].ToString();
         }
@@ -765,6 +907,14 @@ namespace CapDemo
             audience.IdContest = iDContest;
             if (step == 1)
             {
+                
+                //this.SuspendLayout();
+                audience.SuspendLayout();
+                lblHint.Text = guideline[1].ToString();
+                loadMap();
+
+                Contest.Run_I = 1;
+                ContestBL.CheckRunContestbyID(Contest);
                 //Sound
                 if (SoundWelcome == true)
                 {
@@ -772,10 +922,6 @@ namespace CapDemo
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                     SoundWelcome = false;
                 }
-                //this.SuspendLayout();
-                audience.SuspendLayout();
-                lblHint.Text = guideline[1].ToString();
-                loadMap();
                 audience.ResumeLayout();
                 //this.ResumeLayout();
 
@@ -992,6 +1138,7 @@ namespace CapDemo
 
             //audience.Show();
             audience.flp_PlayerAnswers.Controls.Clear();
+            audience.prgb_Question.Value = 0;
             audience.btn_PM.Text = "";
             CheckChallengeChoice = false;
             CheckQuestionPM = false;
@@ -999,9 +1146,6 @@ namespace CapDemo
             CorrectShortAnswer = "";
             PlayerAnswerShortQuestion = "";
             CorrectAnswerChallenge = "";
-
-            OutOfQuestionInPhase = false;
-            OutOfQuestionPM = false;
 
             if (team == records.Count)
             {
@@ -1029,11 +1173,25 @@ namespace CapDemo
                 i++;
             }
             //show lanes in audience screen
+            Record Restore = new Record();
+            Restore.IDContest = iDContest;
+            List<Record> ListRestore;
+            ListRestore = RecordBL.GetRecordByIDContest(Restore);
+            int k = 0;
+
             foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
             {
+                
                 playerLane.btn_Team.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(playerLane.lbl_IDPlayer.Text)));
                 playerLane.BackColor = Color.Transparent;
                 playerLane.HighLight(false);
+                //show player lane on audience screen
+                if (Run == true && SoundWelcome== true)
+                {
+                    int H_Phase = (playerLane.Height - playerLane.btn_Team.Height - playerLane.lbl_Finish.Location.Y - playerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
+                    playerLane.btn_Team.Location = new Point(playerLane.btn_Team.Location.X + 0, playerLane.btn_Team.Location.Y - (H_Phase / 2 + playerLane.btn_Team.Height / 2) - H_Phase*ListRestore.ElementAt(k).TotalPass);
+                }
+                k++;
             }
 
             int j = 0;
@@ -1045,6 +1203,8 @@ namespace CapDemo
                 teamAdienceScreen.BackColor = Color.Transparent;
                 teamAdienceScreen.lbl_TeamName.Text = nameplayer(records.ElementAt(j).IDPlayer);
                 teamAdienceScreen.lbl_TeamScore.Text = records.ElementAt(j).TeamScore.ToString();
+                teamAdienceScreen.lbl_TeamScore.ForeColor = Color.White;
+                teamAdienceScreen.lbl_TeamName.ForeColor = Color.White;
                 teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
                 teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
                 //check support choice exist to show
@@ -1169,8 +1329,8 @@ namespace CapDemo
             {
                 ////////
             }
-            
 
+            Record Restore = new Record();
             //show on game controller screen
             foreach (Team teamCS in flp_Team.Controls)
             {
@@ -1198,11 +1358,23 @@ namespace CapDemo
                     {
                         teamCS.chk_defy.Visible = false;
                     }
-
+                    
+                    Restore.PlayerTurn_I = 1;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTurn(Restore);
+                    
+                    
                 }
                 else
                 {
                     teamCS.gb_team.Visible = false;
+                    Restore.PlayerTurn_I = 0;
+                    Restore.IDPlayer = Convert.ToInt32(teamCS.lbl_IDPlayer.Text);
+                    Restore.IDContest = iDContest;
+
+                    RecordBL.UpdateTurn(Restore);
+                    
                 }
             }
 
@@ -1213,7 +1385,7 @@ namespace CapDemo
                 {
                     Playerlane.HighLight(true);
 
-                    if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0 && records.ElementAt(team).PM == true)
+                    if (records.ElementAt(team).NumPass == AmountSteptoPass && records.ElementAt(team).NumFail == AmountSteptofail && records.ElementAt(team).PhaseIndex == 0 && records.ElementAt(team).PM == true && Run==false)
                     {
                         int H_Phase = (Playerlane.Height - Playerlane.btn_Team.Height - Playerlane.lbl_Finish.Location.Y - Playerlane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
                         Playerlane.btn_Team.Location = new Point(Playerlane.btn_Team.Location.X + 0, Playerlane.btn_Team.Location.Y - (H_Phase / 2 + Playerlane.btn_Team.Height / 2));
@@ -1226,6 +1398,8 @@ namespace CapDemo
                 if (Convert.ToInt32(teamAdienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
                 {
                     teamAdienceScreen.HighLight(true);
+                    teamAdienceScreen.lbl_TeamScore.ForeColor = Color.Black;
+                    teamAdienceScreen.lbl_TeamName.ForeColor = Color.Black;
                 }
                 else
                 {
@@ -1364,8 +1538,8 @@ namespace CapDemo
                     /////display question on audience screen
                     audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
                     FixSizeText();
-                    audience.lbl_QuestionContent.Size = new System.Drawing.Size(audience.pnl_QuestionFrame.Width * 66 / 100, audience.lbl_QuestionContent.Height);
-                    audience.lbl_QuestionContent.Location = new Point(audience.lbl_QuestionContent.Location.X - audience.lbl_QuestionContent.Location.X + (audience.pnl_QuestionFrame.Width / 2) * 35 / 100, audience.lbl_QuestionContent.Location.Y);
+                    //audience.lbl_QuestionContent.Size = new System.Drawing.Size(audience.pnl_QuestionFrame.Width * 66 / 100, audience.lbl_QuestionContent.Height);
+                    //audience.lbl_QuestionContent.Location = new Point(audience.lbl_QuestionContent.Location.X - audience.lbl_QuestionContent.Location.X + (audience.pnl_QuestionFrame.Width / 2) * 35 / 100, audience.lbl_QuestionContent.Location.Y);
                     audience.lbl_Phase.Text = NameofPhase(id) + "(" + (ListPhase.Count - 1) + ")";
                     audience.lbl_Point.Text = "Point: " + BonusScoreofPhase(id).ToString();
                     //get score
@@ -1446,6 +1620,8 @@ namespace CapDemo
                 timer1.Start();
                 //show time conut down on audience screen
                 audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                audience.prgb_Question.Maximum = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
+                time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
                 audience.lbl_TimeShowQuestion.Image = Properties.Resources.loading_circle;
                 //audience.timer1.Interval = 1000;
                 audience.timer1.Start();
@@ -1821,7 +1997,14 @@ namespace CapDemo
                             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                             axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                            playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                            if (_BonusPhase ==0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                            }
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
@@ -1841,7 +2024,15 @@ namespace CapDemo
                             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
                             axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                            playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+                            
+                            if (_MinusPhase==0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + _MinusPhase;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+                            }
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
@@ -1871,7 +2062,15 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+
+                                if (_BonusPhase==0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -1891,7 +2090,15 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+
+                                if (_MinusPhase == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _MinusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -1917,7 +2124,15 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+
+                                if (_BonusPhase == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -1937,7 +2152,15 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+
+                                if (_MinusPhase == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _MinusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + _MinusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -2136,8 +2359,8 @@ namespace CapDemo
                 pb_Play.Visible = false;
                 //pb_EndGame.Visible = true;
                 UpdateScreenAfterChallenge();
-                //Contest.EndContest = 1;
-                //ContestBL.EditStatusContestbyID(Contest);
+                Contest.EndContest = 1;
+                ContestBL.EditStatusContestbyID(Contest);
             }
             else
             {
@@ -2154,11 +2377,32 @@ namespace CapDemo
                         GameOverAll = true;
                         UpdateScreenAfterChallenge();
                         //update status contest id this contest have run
-                        //Contest.EndContest = 1;
-                        //ContestBL.EditStatusContestbyID(Contest);
+                        Contest.EndContest = 1;
+                        ContestBL.EditStatusContestbyID(Contest);
                     }
                 }
                 team++;
+
+                Record Restore = new Record();
+                //show on game controller screen
+                foreach (Team teamCS in flp_Team.Controls)
+                {
+                    if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                    {
+                        Restore.PlayerTurn_I = 1;
+                        Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                        Restore.IDContest = iDContest;
+                        RecordBL.UpdateTurn(Restore);
+                    }
+                    else
+                    {
+                        Restore.PlayerTurn_I = 0;
+                        Restore.IDPlayer = Convert.ToInt32(teamCS.lbl_IDPlayer.Text);
+                        Restore.IDContest = iDContest;
+                        RecordBL.UpdateTurn(Restore);
+                    }
+                }
+
                 step = 1;
             }
         }
@@ -2222,12 +2466,26 @@ namespace CapDemo
             if (countTeamTrue == audience.flp_PlayerAnswers.Controls.Count)
             {
                 records.ElementAt(team).TeamScore += BonusScoreQuestionPM;
+                //Record
+                Record Restore = new Record();
+                //Team Score
+                Restore.TeamScore = records.ElementAt(team).TeamScore;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateTeamScore(Restore);
                 //update screen
             }
             //all team is incorrect
             if (countTeamFalse == audience.flp_PlayerAnswers.Controls.Count)
             {
                 records.ElementAt(team).TeamScore -= MinusScoreQuestionPM;
+                //Record
+                Record Restore = new Record();
+                //Team Score
+                Restore.TeamScore = records.ElementAt(team).TeamScore;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateTeamScore(Restore);
                 //update screen
             }
             //
@@ -2237,6 +2495,14 @@ namespace CapDemo
                 if (ownerChallenge == true)
                 {
                     records.ElementAt(team).TeamScore += BonusScoreQuestionPM;
+                    //Record
+                    Record Restore = new Record();
+                    //Team Score
+                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTeamScore(Restore);
+
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
@@ -2246,7 +2512,18 @@ namespace CapDemo
                                 if (records.ElementAt(i).IDPlayer == Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text))
                                 {
                                     records.ElementAt(i).TeamScore -= ChallengeScore;
+                                    //Record score for challenged team
+                                    Restore.TeamScore = records.ElementAt(i).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(i).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
+
                                     records.ElementAt(team).TeamScore += ChallengeScore;
+                                    //Record score for defying team
+                                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
                                 }
                             }
 
@@ -2257,6 +2534,14 @@ namespace CapDemo
                 else
                 {//Owner challenge lose
                     records.ElementAt(team).TeamScore -= MinusScoreQuestionPM;
+                    //Record
+                    Record Restore = new Record();
+                    //Team Score
+                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTeamScore(Restore);
+
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "true")
@@ -2266,7 +2551,18 @@ namespace CapDemo
                                 if (records.ElementAt(i).IDPlayer == Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text))
                                 {
                                     records.ElementAt(i).TeamScore += ChallengeScore;
+                                    //Record score for challenged team
+                                    Restore.TeamScore = records.ElementAt(i).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(i).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
+
                                     records.ElementAt(team).TeamScore -= ChallengeScore;
+                                    //Record score for defying team
+                                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
                                 }
                             }
 
@@ -2307,20 +2603,65 @@ namespace CapDemo
             if (countTeamTrue == audience.flp_PlayerAnswers.Controls.Count)
             {
                 records.ElementAt(team).NumPass -= 1;
+                //Record
+                Record Restore = new Record();
+                //Number of Correct
+                Restore.NumPass = records.ElementAt(team).NumPass;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateNumofCorrect(Restore);
+
                 records.ElementAt(team).TotalPass++;
+                //Total correct
+                Restore.TotalPass = records.ElementAt(team).TotalPass;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateTotalCorrect(Restore);
+
                 records.ElementAt(team).TeamScore += BonusScoreInPhase;
+                //Team score
+                Restore.TeamScore = records.ElementAt(team).TeamScore;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateTeamScore(Restore);
+
                 MoveNextPhaseHaveChallenge();
             }
             //all team is incorrect
             if (countTeamFalse == audience.flp_PlayerAnswers.Controls.Count)
             {
                 records.ElementAt(team).NumFail -= 1;
+                //Record
+                Record Restore = new Record();
+                //Number of incorrect
+                Restore.NumFail = records.ElementAt(team).NumFail;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateNumofIncorrect(Restore);
+
                 records.ElementAt(team).TeamScore -= MinusScoreInPhase;
+                //Team score
+                Restore.TeamScore = records.ElementAt(team).TeamScore;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateTeamScore(Restore);
+
                 if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
                 {
                     records.ElementAt(team).Exist = false;
                     records.ElementAt(team).Defy = false;
                     records.ElementAt(team).Support = false;
+                    //record
+                    Restore.Defy_I = 0;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateDefy(Restore);
+
+                    Restore.Support_I = 0;
+                    RecordBL.UpdateSupport(Restore);
+
+                    Restore.Exist_I = 0;
+                    RecordBL.UpdateSupport(Restore);
                 }
             }
             //
@@ -2330,8 +2671,28 @@ namespace CapDemo
                 if (ownerChallenge == true)
                 {
                     records.ElementAt(team).TeamScore += BonusScoreInPhase;
+                    //Record
+                    Record Restore = new Record();
+                    //Team score
+                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTeamScore(Restore);
+
                     records.ElementAt(team).NumPass -= 1;
+                    //Number of correct
+                    Restore.NumPass = records.ElementAt(team).NumPass;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateNumofCorrect(Restore);
+
                     records.ElementAt(team).TotalPass++;
+                    //Total correct
+                    Restore.TotalPass = records.ElementAt(team).TotalPass;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTotalCorrect(Restore);
+
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
@@ -2341,7 +2702,18 @@ namespace CapDemo
                                 if (records.ElementAt(i).IDPlayer == Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text))
                                 {
                                     records.ElementAt(i).TeamScore -= ChallengeScore;
+                                    //Team score for challenged team
+                                    Restore.TeamScore = records.ElementAt(i).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(i).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
+
                                     records.ElementAt(team).TeamScore += ChallengeScore;
+                                    //Team score for defying team
+                                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
                                 }
                             }
 
@@ -2352,13 +2724,37 @@ namespace CapDemo
                 else
                 {//Owner challenge lose
                     records.ElementAt(team).TeamScore -= MinusScoreInPhase;
+                    //Record
+                    Record Restore = new Record();
+                    //Team score
+                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateTeamScore(Restore);
+
                     records.ElementAt(team).NumFail -= 1;
+                    //Number of incorrect
+                    Restore.NumFail = records.ElementAt(team).NumFail;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateNumofIncorrect(Restore);
 ////////
                     if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
                     {
                         records.ElementAt(team).Exist = false;
                         records.ElementAt(team).Defy = false;
                         records.ElementAt(team).Support = false;
+                        //record
+                        Restore.Defy_I = 0;
+                        Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                        Restore.IDContest = iDContest;
+                        RecordBL.UpdateDefy(Restore);
+
+                        Restore.Support_I = 0;
+                        RecordBL.UpdateSupport(Restore);
+
+                        Restore.Exist_I = 0;
+                        RecordBL.UpdateSupport(Restore);
                     }
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
@@ -2369,7 +2765,18 @@ namespace CapDemo
                                 if (records.ElementAt(i).IDPlayer == Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text))
                                 {
                                     records.ElementAt(i).TeamScore += ChallengeScore;
+                                    //Team score for challenged team
+                                    Restore.TeamScore = records.ElementAt(i).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(i).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
+
                                     records.ElementAt(team).TeamScore -= ChallengeScore;
+                                    //Team score for defying team
+                                    Restore.TeamScore = records.ElementAt(team).TeamScore;
+                                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                                    Restore.IDContest = iDContest;
+                                    RecordBL.UpdateTeamScore(Restore);
 
                                 }
                             }
@@ -2469,34 +2876,98 @@ namespace CapDemo
         public void PassQuestionPM(int score)
         {
             records.ElementAt(team).TeamScore += score;
+            //Record
+            Record Restore = new Record();
+            //Team score
+            Restore.TeamScore = records.ElementAt(team).TeamScore;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateTeamScore(Restore);
+
             UpdateScreenAfterChallenge();
         }
         //// Fail quesion pm
         public void FailQuestionPM(int score)
         {
             records.ElementAt(team).TeamScore -= score;
+            //Record
+            Record Restore = new Record();
+            //Team score
+            Restore.TeamScore = records.ElementAt(team).TeamScore;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateTeamScore(Restore);
+
             UpdateScreenAfterChallenge();
         }
         ////Update score, position, record after player have correct answer in phase
         public void PassQuestionInPhase(int score)
         {
+            //Record
+            Record Restore = new Record();
+
             records.ElementAt(team).NumPass -= 1;
+            //Number of correct
+            Restore.NumPass = records.ElementAt(team).NumPass;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateNumofCorrect(Restore);
+
             records.ElementAt(team).TotalPass++;
+            //Total correct
+            Restore.TotalPass = records.ElementAt(team).TotalPass;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateTotalCorrect(Restore);
+
             records.ElementAt(team).TeamScore += score;
+            //Team score
+            Restore.TeamScore = records.ElementAt(team).TeamScore;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateTeamScore(Restore);
+
             MoveNextPhaseHaveChallenge();
             UpdateScreenAfterChallenge();
         }
         ////Update score, position, record after player have incorrect answer in phase
         public void FailQuestionInPhase(int score)
         {
+            //Record
+            Record Restore = new Record();
             //minus life if team fail in question
             records.ElementAt(team).NumFail -= 1;
+            //Number of incorrect
+            Restore.NumFail = records.ElementAt(team).NumFail;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateNumofIncorrect(Restore);
+
             records.ElementAt(team).TeamScore -= score;
+            //Team score
+            Restore.TeamScore = records.ElementAt(team).TeamScore;
+            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+            Restore.IDContest = iDContest;
+            RecordBL.UpdateTeamScore(Restore);
+            
+            
+
             if (records.ElementAt(team).NumFail == 0 && records.ElementAt(team).Undie == false)
             {
                 records.ElementAt(team).Exist = false;
                 records.ElementAt(team).Defy = false;
                 records.ElementAt(team).Support = false;
+                //Record
+                Restore.Defy_I = 0;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateDefy(Restore);
+
+                Restore.Support_I = 0;
+                RecordBL.UpdateSupport(Restore);
+
+                Restore.Exist_I = 0;
+                RecordBL.UpdateSupport(Restore);
             }
             UpdateScreenAfterChallenge();
         }
@@ -2514,6 +2985,14 @@ namespace CapDemo
                         if (Done == true)
                         {
                             records.ElementAt(team).TeamScore += Bonus;
+                            //Record
+                            Record Restore = new Record();
+                            //Team score
+                            Restore.TeamScore = records.ElementAt(team).TeamScore;
+                            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateTeamScore(Restore);
+
                             Done = false;
                             GameOver = true;
                             //show  icon to end when team have finished
@@ -2539,9 +3018,29 @@ namespace CapDemo
                 records.ElementAt(team).PhaseIndex += 1;
                 records.ElementAt(team).NumFail = AmountSteptofail;
                 records.ElementAt(team).NumPass = AmountSteptoPass;
+
+                //Record
+                Record Restore = new Record();
+                //Number of correct
+                Restore.NumPass = records.ElementAt(team).NumPass;
+                Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore.IDContest = iDContest;
+                RecordBL.UpdateNumofCorrect(Restore);
+                //Number of incorrect
+                Restore.NumFail = records.ElementAt(team).NumFail;
+                RecordBL.UpdateNumofIncorrect(Restore);
+                //Phase index
+                Restore.PhaseIndex = records.ElementAt(team).PhaseIndex;
+                RecordBL.UpdatePhaseIndex(Restore);
+
                 if (records.ElementAt(team).PhaseIndex < AmountPhase)
                 {
                     records.ElementAt(team).IDPhase = ListPhase.ElementAt(records.ElementAt(team).PhaseIndex).IDPhase;
+                    //Record
+                    Restore.IDPhase = ListPhase.ElementAt(records.ElementAt(team).PhaseIndex).IDPhase;
+                    Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                    Restore.IDContest = iDContest;
+                    RecordBL.UpdateIDPhase(Restore);
                 }
                 else
                 {
@@ -2589,13 +3088,21 @@ namespace CapDemo
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                         {
-                            playerAnswer.lbl_Score.Text = "+" + BonusScoreQuestionPM;
+                            
+                            if (BonusScoreQuestionPM == 0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + BonusScoreQuestionPM;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "+" + BonusScoreQuestionPM;
+                            }
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
                         {
-                            playerAnswer.lbl_Score.Text = "+0";
+                            playerAnswer.lbl_Score.Text = "0";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                             playerAnswer.lbl_Score.Visible = true;
                         }
@@ -2608,13 +3115,20 @@ namespace CapDemo
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                         {
-                            playerAnswer.lbl_Score.Text = "-" + MinusScoreQuestionPM;
+                            if (MinusScoreQuestionPM == 0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + MinusScoreQuestionPM;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "-" + MinusScoreQuestionPM;
+                            }
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
                         {
-                            playerAnswer.lbl_Score.Text = "-0";
+                            playerAnswer.lbl_Score.Text = "0";
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                             playerAnswer.lbl_Score.Visible = true;
                         }
@@ -2632,7 +3146,15 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
                             {
-                                playerAnswer.lbl_Score.Text = "-" + ChallengeScore;
+                                
+                                if (ChallengeScore==0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + ChallengeScore;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + ChallengeScore;
+                                }
                                 NumTeamFail++;
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
@@ -2640,7 +3162,7 @@ namespace CapDemo
 
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "true")
                             {
-                                playerAnswer.lbl_Score.Text = "+0";
+                                playerAnswer.lbl_Score.Text = "0";
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2650,7 +3172,15 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                             {
-                                playerAnswer.lbl_Score.Text = "+" + (BonusScoreQuestionPM + (NumTeamFail * ChallengeScore));
+                                
+                                if ((BonusScoreQuestionPM + (NumTeamFail * ChallengeScore)) == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + (BonusScoreQuestionPM + (NumTeamFail * ChallengeScore));
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + (BonusScoreQuestionPM + (NumTeamFail * ChallengeScore));
+                                }
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2664,14 +3194,22 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
                             {
-                                playerAnswer.lbl_Score.Text = "-0";
+                                playerAnswer.lbl_Score.Text = "0";
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
 
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "true")
                             {
-                                playerAnswer.lbl_Score.Text = "+" + ChallengeScore;
+                                
+                                if (ChallengeScore == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + ChallengeScore;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + ChallengeScore;
+                                }
                                 NumTeamTrue++;
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
@@ -2682,7 +3220,14 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                             {
-                                playerAnswer.lbl_Score.Text = "-" + (MinusScoreQuestionPM + (NumTeamTrue * ChallengeScore));
+                                if ((MinusScoreQuestionPM + (NumTeamTrue * ChallengeScore)) == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + (MinusScoreQuestionPM + (NumTeamTrue * ChallengeScore));
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + (MinusScoreQuestionPM + (NumTeamTrue * ChallengeScore));
+                                }
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2724,13 +3269,20 @@ namespace CapDemo
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                         {
-                            playerAnswer.lbl_Score.Text = "+" + BonusScoreInPhase;
+                            if (BonusScoreInPhase == 0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + BonusScoreInPhase;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "+" + BonusScoreInPhase;
+                            }
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
                         {
-                            playerAnswer.lbl_Score.Text = "+0";
+                            playerAnswer.lbl_Score.Text = "0";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                             playerAnswer.lbl_Score.Visible = true;
                         }
@@ -2743,13 +3295,20 @@ namespace CapDemo
                     {
                         if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                         {
-                            playerAnswer.lbl_Score.Text = "-" + MinusScoreInPhase;
+                            if (MinusScoreInPhase == 0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + MinusScoreInPhase;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "-" + MinusScoreInPhase;
+                            }
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
                         {
-                            playerAnswer.lbl_Score.Text = "-0";
+                            playerAnswer.lbl_Score.Text = "0";
                             playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                             playerAnswer.lbl_Score.Visible = true;
                         }
@@ -2767,7 +3326,14 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
                             {
-                                playerAnswer.lbl_Score.Text = "-" + ChallengeScore;
+                                if (ChallengeScore==0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + ChallengeScore;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + ChallengeScore;
+                                }
                                 NumTeamFail++;
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
@@ -2775,7 +3341,7 @@ namespace CapDemo
 
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "true")
                             {
-                                playerAnswer.lbl_Score.Text = "+0";
+                                playerAnswer.lbl_Score.Text = "0";
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2785,7 +3351,14 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                             {
-                                playerAnswer.lbl_Score.Text = "+" + (BonusScoreInPhase + (NumTeamFail * ChallengeScore));
+                                if ((BonusScoreInPhase + (NumTeamFail * ChallengeScore)) == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + (BonusScoreInPhase + (NumTeamFail * ChallengeScore));
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + (BonusScoreInPhase + (NumTeamFail * ChallengeScore));
+                                }
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2800,14 +3373,21 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "false")
                             {
-                                playerAnswer.lbl_Score.Text = "-0";
+                                playerAnswer.lbl_Score.Text = "0";
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
 
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) != records.ElementAt(team).IDPlayer && playerAnswer.lbl_Check.Text == "true")
                             {
-                                playerAnswer.lbl_Score.Text = "+" + ChallengeScore;
+                                if (ChallengeScore == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + ChallengeScore;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + ChallengeScore;
+                                }
                                 NumTeamTrue++;
                                 playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                                 playerAnswer.lbl_Score.Visible = true;
@@ -2818,7 +3398,14 @@ namespace CapDemo
                         {
                             if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
                             {
-                                playerAnswer.lbl_Score.Text = "-" + (MinusScoreInPhase + (NumTeamTrue * ChallengeScore));
+                                if ((MinusScoreInPhase + (NumTeamTrue * ChallengeScore)) == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + (MinusScoreInPhase + (NumTeamTrue * ChallengeScore));
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "-" + (MinusScoreInPhase + (NumTeamTrue * ChallengeScore));
+                                }
                                 playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
                                 playerAnswer.lbl_Score.Visible = true;
                             }
@@ -2875,7 +3462,14 @@ namespace CapDemo
                             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                             axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                            playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                            if (_BonusPhase == 0)
+                            {
+                                playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                            }
+                            else
+                            {
+                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                            }
                             playerAnswer.lbl_Score.Visible = true;
                         }
                         else
@@ -2914,7 +3508,14 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                if (_BonusPhase == 0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -2950,7 +3551,15 @@ namespace CapDemo
                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
-                                playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                
+                                if (_BonusPhase ==0)
+                                {
+                                    playerAnswer.lbl_Score.Text = "" + _BonusPhase;
+                                }
+                                else
+                                {
+                                    playerAnswer.lbl_Score.Text = "+" + _BonusPhase;
+                                }
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                             else
@@ -2994,7 +3603,7 @@ namespace CapDemo
 
             if (audience.lbl_QuestionContent.Text.Count() > 585 || NewLine.Length > 9)
             {
-                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 9.0f, audience.lbl_QuestionContent.Font.Style);
+                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 11.0f, audience.lbl_QuestionContent.Font.Style);
             }
             else
             {

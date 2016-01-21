@@ -83,7 +83,7 @@ namespace CapDemo.GUI.User_Controls
         // eventhandler on delete
         void AddTeam_onDelete(object sender, EventArgs e)
         {
-            int stt = 1;
+            //int stt = 1;
             //New_Game Add_Game = new New_Game();
             int GameID = (e as MyEventArgs).IDNewGame;
             foreach (New_Game item in flp_Game.Controls)

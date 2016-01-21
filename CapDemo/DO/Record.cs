@@ -21,14 +21,73 @@ namespace CapDemo.DO
        
 
         bool exist;
+        int exist_I;
+
+        public int Exist_I
+        {
+            get { return exist_I; }
+            set { exist_I = value; }
+        }
         bool defy;
+        int defy_I;
+
+        public int Defy_I
+        {
+            get { return defy_I; }
+            set { defy_I = value; }
+        }
         bool support;
+        int support_I;
+
+        public int Support_I
+        {
+            get { return support_I; }
+            set { support_I = value; }
+        }
         bool pM;
+        int pM_I;
+
+        public int PM_I
+        {
+            get { return pM_I; }
+            set { pM_I = value; }
+        }
         bool undie;
+        int undie_I;
 
-       
-        
+        public int Undie_I
+        {
+            get { return undie_I; }
+            set { undie_I = value; }
+        }
+        bool playerTurn;
 
+        public bool PlayerTurn
+        {
+            get { return playerTurn; }
+            set { playerTurn = value; }
+        }
+        int playerTurn_I;
+
+        public int PlayerTurn_I
+        {
+            get { return playerTurn_I; }
+            set { playerTurn_I = value; }
+        }
+
+        int amountTeam;
+        public int AmountTeam
+        {
+            get { return amountTeam; }
+            set { amountTeam = value; }
+        }
+        int turn;
+
+        public int Turn
+        {
+            get { return turn; }
+            set { turn = value; }
+        }
 
         public Record(){
         }
