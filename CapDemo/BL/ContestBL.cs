@@ -97,7 +97,7 @@ namespace CapDemo.BL
         {
             List<Contest> ContestList = new List<Contest>();
             string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
-                        + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
+                        + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False],c.[Run]"
                         //+ ",ph.[Phase_Name],ph.[Phase_ID],ph.[Phase_Time],ph.[Phase_Score],ph.[Sequence]"
                         //+ ",pl.[Player_Name],pl.[Player_ID],pl.[Color],pl.[Player_Score],pl.[Player_Sequence]"
                         + " FROM [Contest] c"
@@ -123,6 +123,7 @@ namespace CapDemo.BL
                     Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
                     Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
                     Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
+                    Contest.Run = (bool)(item["Run"]);
                     //Player
                     //Contest.Player.PlayerName = (item["Player_Name"].ToString());
                     //Contest.Player.PlayerScore = Convert.ToInt32( (item["Player_Score"].ToString()));
@@ -269,6 +270,17 @@ namespace CapDemo.BL
             
             return DA.UpdateDatabase(query);
            
+        }
+
+        //Update status contest when contest have run
+        public bool CheckRunContestbyID(Contest Contest)
+        {
+            string query = "UPDATE [Contest]"
+                         + " SET [Run] = '" + Contest.Run_I+ "'"
+                         + " WHERE [Contest_ID] = '" + Contest.IDContest + "'";
+
+            return DA.UpdateDatabase(query);
+
         }
         //Check Edit Contest Exist
         public bool EditExistContest(Contest Contest)

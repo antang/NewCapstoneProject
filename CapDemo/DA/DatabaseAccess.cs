@@ -46,7 +46,7 @@ namespace CapDemo.DA
                 return dtb;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -76,7 +76,7 @@ namespace CapDemo.DA
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                
                 //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,7 +105,7 @@ namespace CapDemo.DA
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                
                 //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -132,7 +132,7 @@ namespace CapDemo.DA
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                
                 //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -153,7 +153,7 @@ namespace CapDemo.DA
                 int max = int.Parse(val.ToString());
                 return max;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
                     //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

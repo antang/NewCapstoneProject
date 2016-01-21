@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Team_AudienceScreeen));
             this.lbl_TeamName = new System.Windows.Forms.Label();
             this.lbl_TeamScore = new System.Windows.Forms.Label();
             this.timerHighLight = new System.Windows.Forms.Timer(this.components);
@@ -100,8 +101,8 @@
             // 
             // pb_Heart3
             // 
-            this.pb_Heart3.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_Heart3.BackgroundImage")));
+            this.pb_Heart3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_Heart3.Location = new System.Drawing.Point(77, 3);
             this.pb_Heart3.Name = "pb_Heart3";
             this.pb_Heart3.Size = new System.Drawing.Size(25, 20);
@@ -110,8 +111,8 @@
             // 
             // pb_Heart2
             // 
-            this.pb_Heart2.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_Heart2.BackgroundImage")));
+            this.pb_Heart2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_Heart2.Location = new System.Drawing.Point(40, 2);
             this.pb_Heart2.Name = "pb_Heart2";
             this.pb_Heart2.Size = new System.Drawing.Size(25, 20);
@@ -120,8 +121,8 @@
             // 
             // pb_Heart1
             // 
-            this.pb_Heart1.BackgroundImage = global::CapDemo.Properties.Resources.trai_tim_dung;
-            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_Heart1.BackgroundImage = global::CapDemo.Properties.Resources.Heart;
+            this.pb_Heart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_Heart1.Location = new System.Drawing.Point(4, 2);
             this.pb_Heart1.Name = "pb_Heart1";
             this.pb_Heart1.Size = new System.Drawing.Size(25, 20);

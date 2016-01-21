@@ -27,6 +27,21 @@ namespace CapDemo.DO
         int endContest;
         bool status;
 
+        int run_I;
+        bool run;
+
+        public int Run_I
+        {
+            get { return run_I; }
+            set { run_I = value; }
+        }
+
+        public bool Run
+        {
+            get { return run; }
+            set { run = value; }
+        }
+
         public bool Status
         {
             get { return status; }

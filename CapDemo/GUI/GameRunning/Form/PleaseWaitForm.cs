@@ -36,8 +36,8 @@ namespace CapDemo
                 this.StartPosition = FormStartPosition.Manual;
                 
             }
-            //this.Show();
-            //this.Dock = DockStyle.Fill;
+            this.Show();
+            this.Dock = DockStyle.Fill;
             this.ResumeLayout();
             
 

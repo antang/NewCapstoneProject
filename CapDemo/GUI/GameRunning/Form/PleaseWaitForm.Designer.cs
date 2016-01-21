@@ -58,11 +58,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 120F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LawnGreen;
-            this.label1.Image = global::CapDemo.Properties.Resources.welcome_dong;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Image = global::CapDemo.Properties.Resources.Welcome;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1024, 768);
+            this.label1.Size = new System.Drawing.Size(1022, 768);
             this.label1.TabIndex = 3;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

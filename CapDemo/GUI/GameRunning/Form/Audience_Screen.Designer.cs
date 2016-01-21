@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audience_Screen));
             this.tbc_ShowGame = new System.Windows.Forms.TabControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tab_Map = new System.Windows.Forms.TabPage();
             this.flp_Finish = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_PM = new System.Windows.Forms.Button();
@@ -43,9 +40,10 @@
             this.pnl_Lane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
+            this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
+            this.prgb_Question = new System.Windows.Forms.ProgressBar();
             this.lbl_typeQ = new System.Windows.Forms.Label();
             this.pnl_QuestionFrame = new System.Windows.Forms.Panel();
-            this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
             this.lbl_QuestionContent = new System.Windows.Forms.Label();
             this.flp_PlayerAnswers = new System.Windows.Forms.Panel();
             this.lbl_Point = new System.Windows.Forms.Label();
@@ -54,6 +52,9 @@
             this.tab_EndGame = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flp_TeamEndGame = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbc_ShowGame.SuspendLayout();
             this.tab_Map.SuspendLayout();
             this.tab_ShowQuestion.SuspendLayout();
@@ -76,37 +77,6 @@
             this.tbc_ShowGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.tbc_ShowGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tbc_ShowGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
-            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
-            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
-            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
-            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
-            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
-            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
-            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
-            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
-            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
-            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
-            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
-            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
-            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
-            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
-            this.imageList1.Images.SetKeyName(15, "y-kien.png");
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // tab_Map
             // 
@@ -147,16 +117,17 @@
             // btn_PM
             // 
             this.btn_PM.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_PM.BackgroundImage = global::CapDemo.Properties.Resources.rectangle_but;
+            this.btn_PM.BackColor = System.Drawing.Color.White;
+            this.btn_PM.BackgroundImage = global::CapDemo.Properties.Resources.PM;
             this.btn_PM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_PM.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PM.ForeColor = System.Drawing.Color.Blue;
+            this.btn_PM.ForeColor = System.Drawing.Color.White;
             this.btn_PM.Location = new System.Drawing.Point(30, 139);
             this.btn_PM.Name = "btn_PM";
             this.btn_PM.Size = new System.Drawing.Size(70, 513);
             this.btn_PM.TabIndex = 7;
             this.btn_PM.Text = "(35)";
-            this.btn_PM.UseVisualStyleBackColor = true;
+            this.btn_PM.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -204,7 +175,7 @@
             // 
             this.pnl_Lane.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Lane.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnl_Lane.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Lane.BackgroundImage")));
+            this.pnl_Lane.BackgroundImage = global::CapDemo.Properties.Resources.ArrowUp;
             this.pnl_Lane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_Lane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Lane.Location = new System.Drawing.Point(308, 69);
@@ -232,6 +203,8 @@
             this.tab_ShowQuestion.BackColor = System.Drawing.Color.Blue;
             this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.BackGround_2;
             this.tab_ShowQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tab_ShowQuestion.Controls.Add(this.lbl_TimeShowQuestion);
+            this.tab_ShowQuestion.Controls.Add(this.prgb_Question);
             this.tab_ShowQuestion.Controls.Add(this.lbl_typeQ);
             this.tab_ShowQuestion.Controls.Add(this.pnl_QuestionFrame);
             this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
@@ -248,6 +221,31 @@
             this.tab_ShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tab_ShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // lbl_TimeShowQuestion
+            // 
+            this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
+            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(909, 37);
+            this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
+            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(43, 27);
+            this.lbl_TimeShowQuestion.TabIndex = 2;
+            this.lbl_TimeShowQuestion.Text = "10";
+            this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
+            this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
+            this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
+            // 
+            // prgb_Question
+            // 
+            this.prgb_Question.ForeColor = System.Drawing.Color.Transparent;
+            this.prgb_Question.Location = new System.Drawing.Point(95, 47);
+            this.prgb_Question.Margin = new System.Windows.Forms.Padding(0);
+            this.prgb_Question.Name = "prgb_Question";
+            this.prgb_Question.Size = new System.Drawing.Size(812, 11);
+            this.prgb_Question.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prgb_Question.TabIndex = 11;
+            // 
             // lbl_typeQ
             // 
             this.lbl_typeQ.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -256,7 +254,7 @@
             this.lbl_typeQ.ForeColor = System.Drawing.Color.White;
             this.lbl_typeQ.Location = new System.Drawing.Point(311, 3);
             this.lbl_typeQ.Name = "lbl_typeQ";
-            this.lbl_typeQ.Size = new System.Drawing.Size(304, 28);
+            this.lbl_typeQ.Size = new System.Drawing.Size(367, 28);
             this.lbl_typeQ.TabIndex = 10;
             this.lbl_typeQ.Text = "Type:";
             this.lbl_typeQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,47 +264,28 @@
             // 
             // pnl_QuestionFrame
             // 
-            this.pnl_QuestionFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_QuestionFrame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_QuestionFrame.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_QuestionFrame.BackgroundImage = global::CapDemo.Properties.Resources.Question;
+            this.pnl_QuestionFrame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_QuestionFrame.BackgroundImage")));
             this.pnl_QuestionFrame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_QuestionFrame.Controls.Add(this.lbl_TimeShowQuestion);
             this.pnl_QuestionFrame.Controls.Add(this.lbl_QuestionContent);
-            this.pnl_QuestionFrame.Location = new System.Drawing.Point(0, 35);
+            this.pnl_QuestionFrame.Location = new System.Drawing.Point(0, 61);
             this.pnl_QuestionFrame.Name = "pnl_QuestionFrame";
-            this.pnl_QuestionFrame.Size = new System.Drawing.Size(1018, 282);
+            this.pnl_QuestionFrame.Size = new System.Drawing.Size(1018, 256);
             this.pnl_QuestionFrame.TabIndex = 9;
             this.pnl_QuestionFrame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.pnl_QuestionFrame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.pnl_QuestionFrame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
-            // lbl_TimeShowQuestion
-            // 
-            this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
-            this.lbl_TimeShowQuestion.Image = global::CapDemo.Properties.Resources.loading_circle;
-            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(886, 145);
-            this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
-            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(134, 137);
-            this.lbl_TimeShowQuestion.TabIndex = 2;
-            this.lbl_TimeShowQuestion.Text = "0";
-            this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
-            this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
-            this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
-            // 
             // lbl_QuestionContent
             // 
-            this.lbl_QuestionContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_QuestionContent.BackColor = System.Drawing.Color.Maroon;
+            this.lbl_QuestionContent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QuestionContent.BackColor = System.Drawing.Color.Transparent;
             this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QuestionContent.ForeColor = System.Drawing.Color.White;
-            this.lbl_QuestionContent.Location = new System.Drawing.Point(176, 15);
+            this.lbl_QuestionContent.Location = new System.Drawing.Point(49, 12);
             this.lbl_QuestionContent.Name = "lbl_QuestionContent";
-            this.lbl_QuestionContent.Size = new System.Drawing.Size(662, 251);
+            this.lbl_QuestionContent.Size = new System.Drawing.Size(924, 232);
             this.lbl_QuestionContent.TabIndex = 0;
             this.lbl_QuestionContent.Text = "abc";
             this.lbl_QuestionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,6 +394,37 @@
             this.flp_TeamEndGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.flp_TeamEndGame.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "ao-lon.png");
+            this.imageList1.Images.SetKeyName(1, "ao-nho.png");
+            this.imageList1.Images.SetKeyName(2, "chiec-cup.png");
+            this.imageList1.Images.SetKeyName(3, "het-thach-dau.png");
+            this.imageList1.Images.SetKeyName(4, "het-y-kien.png");
+            this.imageList1.Images.SetKeyName(5, "hinh-tron-dung.png");
+            this.imageList1.Images.SetKeyName(6, "hinh-tron-sai.png");
+            this.imageList1.Images.SetKeyName(7, "hit-your-goal.png");
+            this.imageList1.Images.SetKeyName(8, "khung-doi-thi.png");
+            this.imageList1.Images.SetKeyName(9, "khung-vong-thi.png");
+            this.imageList1.Images.SetKeyName(10, "nen-doi-thi.png");
+            this.imageList1.Images.SetKeyName(11, "nen-vong-thi.png");
+            this.imageList1.Images.SetKeyName(12, "thach-dau.png");
+            this.imageList1.Images.SetKeyName(13, "trai-tim-dung.png");
+            this.imageList1.Images.SetKeyName(14, "trai-tim-sai.png");
+            this.imageList1.Images.SetKeyName(15, "y-kien.png");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Audience_Screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,5 +475,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.Button btn_PM;
+        public System.Windows.Forms.ProgressBar prgb_Question;
     }
 }

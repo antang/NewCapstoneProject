@@ -303,9 +303,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Arrow_up_3 {
+        internal static System.Drawing.Bitmap ArrowUp {
             get {
-                object obj = ResourceManager.GetObject("Arrow_up 3", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -540,16 +540,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dung {
-            get {
-                object obj = ResourceManager.GetObject("dung", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dung_2 {
             get {
                 object obj = ResourceManager.GetObject("dung_2", resourceCulture);
@@ -622,6 +612,16 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap HD_menu_hover {
             get {
                 object obj = ResourceManager.GetObject("HD_menu_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Heart {
+            get {
+                object obj = ResourceManager.GetObject("Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -707,16 +707,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KhungTao {
-            get {
-                object obj = ResourceManager.GetObject("KhungTao", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap loading_circle {
             get {
                 object obj = ResourceManager.GetObject("loading_circle", resourceCulture);
@@ -729,7 +719,7 @@ namespace CapDemo.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap login_6 {
             get {
-                object obj = ResourceManager.GetObject("login 6", resourceCulture);
+                object obj = ResourceManager.GetObject("login_6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -877,9 +867,29 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Phase {
+            get {
+                object obj = ResourceManager.GetObject("Phase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PlayGame {
             get {
                 object obj = ResourceManager.GetObject("PlayGame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PM {
+            get {
+                object obj = ResourceManager.GetObject("PM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -930,16 +940,6 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap Question {
             get {
                 object obj = ResourceManager.GetObject("Question", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rectangle_but {
-            get {
-                object obj = ResourceManager.GetObject("rectangle_but", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1078,7 +1078,7 @@ namespace CapDemo.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap team_2 {
             get {
-                object obj = ResourceManager.GetObject("team-2", resourceCulture);
+                object obj = ResourceManager.GetObject("team_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1236,26 +1236,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap trai_tim_dung {
-            get {
-                object obj = ResourceManager.GetObject("trai_tim_dung", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap trai_tim_sai {
-            get {
-                object obj = ResourceManager.GetObject("trai_tim_sai", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap TWLW {
             get {
                 object obj = ResourceManager.GetObject("TWLW", resourceCulture);
@@ -1278,7 +1258,7 @@ namespace CapDemo.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Untitled_1 {
             get {
-                object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
+                object obj = ResourceManager.GetObject("Untitled_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1294,6 +1274,26 @@ namespace CapDemo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap W_Shortcut2_L {
+            get {
+                object obj = ResourceManager.GetObject("W_Shortcut2_L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon W_Shortcut2_M {
+            get {
+                object obj = ResourceManager.GetObject("W_Shortcut2_M", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Watch {
@@ -1305,9 +1305,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap welcome_dong {
+        internal static System.Drawing.Bitmap Welcome {
             get {
-                object obj = ResourceManager.GetObject("welcome_dong", resourceCulture);
+                object obj = ResourceManager.GetObject("Welcome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
