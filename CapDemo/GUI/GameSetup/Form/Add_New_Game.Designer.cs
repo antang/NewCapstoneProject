@@ -158,7 +158,7 @@
             this.Name = "Add_New_Game";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add_New_Game";
+            this.Text = "Thiết Lập Cuộc Thi";
             this.Load += new System.EventHandler(this.Add_New_Game_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

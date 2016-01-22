@@ -132,8 +132,10 @@
             this.Controls.Add(this.txt_NameCompetition);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Competition";
-            this.Text = "Add_Competition";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm Cuộc Thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

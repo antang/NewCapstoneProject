@@ -132,8 +132,10 @@
             this.Controls.Add(this.txt_NameRound);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Round";
-            this.Text = "Add_Round";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm Vòng Thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
