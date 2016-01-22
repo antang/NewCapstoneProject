@@ -152,8 +152,10 @@
             this.Controls.Add(this.pnl_CreateSetup);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Save);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContinueSetting";
-            this.Text = "ContinueSetting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thiết Lập Cuộc Thi";
             this.Load += new System.EventHandler(this.ContinueSetting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

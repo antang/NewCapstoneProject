@@ -261,6 +261,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Open_Game";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điều Khiển Trò Chơi";
             this.Load += new System.EventHandler(this.Open_Game_Load);
             this.ctMenuStrip_Setting.ResumeLayout(false);

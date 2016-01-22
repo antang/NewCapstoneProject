@@ -162,6 +162,7 @@
             this.Controls.Add(this.chk_CheckAll);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GetQuestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập câu hỏi";
             this.Load += new System.EventHandler(this.GetQuestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).EndInit();
