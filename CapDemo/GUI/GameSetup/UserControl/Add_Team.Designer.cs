@@ -137,6 +137,7 @@
             this.btn_Paint.Size = new System.Drawing.Size(29, 10);
             this.btn_Paint.TabIndex = 41;
             this.btn_Paint.UseVisualStyleBackColor = false;
+            this.btn_Paint.Visible = false;
             // 
             // pnl_ColorCoat
             // 

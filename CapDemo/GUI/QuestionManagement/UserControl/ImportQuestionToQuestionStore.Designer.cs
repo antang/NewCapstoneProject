@@ -38,18 +38,19 @@
             this.rad_Move = new System.Windows.Forms.RadioButton();
             this.rad_Copy = new System.Windows.Forms.RadioButton();
             this.dgv_Question = new System.Windows.Forms.DataGridView();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             this.Sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
             // cmb_Catalogue
             // 
+            this.cmb_Catalogue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Catalogue.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Catalogue.FormattingEnabled = true;
             this.cmb_Catalogue.Location = new System.Drawing.Point(112, 7);
@@ -170,25 +171,6 @@
             this.dgv_Question.Size = new System.Drawing.Size(722, 307);
             this.dgv_Question.TabIndex = 10;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // chk_CheckAll
-            // 
-            this.chk_CheckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chk_CheckAll.AutoSize = true;
-            this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_CheckAll.ForeColor = System.Drawing.Color.White;
-            this.chk_CheckAll.Location = new System.Drawing.Point(642, 14);
-            this.chk_CheckAll.Name = "chk_CheckAll";
-            this.chk_CheckAll.Size = new System.Drawing.Size(92, 20);
-            this.chk_CheckAll.TabIndex = 15;
-            this.chk_CheckAll.Text = "Chọn tất cả";
-            this.chk_CheckAll.UseVisualStyleBackColor = true;
-            this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
-            // 
             // Sequence
             // 
             this.Sequence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -236,6 +218,25 @@
             this.Check.HeaderText = "Chọn";
             this.Check.Name = "Check";
             this.Check.Width = 38;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // chk_CheckAll
+            // 
+            this.chk_CheckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chk_CheckAll.AutoSize = true;
+            this.chk_CheckAll.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_CheckAll.ForeColor = System.Drawing.Color.White;
+            this.chk_CheckAll.Location = new System.Drawing.Point(642, 14);
+            this.chk_CheckAll.Name = "chk_CheckAll";
+            this.chk_CheckAll.Size = new System.Drawing.Size(92, 20);
+            this.chk_CheckAll.TabIndex = 15;
+            this.chk_CheckAll.Text = "Chọn tất cả";
+            this.chk_CheckAll.UseVisualStyleBackColor = true;
+            this.chk_CheckAll.CheckedChanged += new System.EventHandler(this.chk_CheckAll_CheckedChanged);
             // 
             // ImportQuestionToQuestionStore
             // 
