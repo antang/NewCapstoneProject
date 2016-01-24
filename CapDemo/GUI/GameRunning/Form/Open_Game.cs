@@ -2500,28 +2500,52 @@ namespace CapDemo
                         this.DialogResult = DialogResult.OK;
                     }
                 }
-                team++;
+                
 
                 Record Restore = new Record();
                 //show on game controller screen
-                foreach (Team teamCS in flp_Team.Controls)
+                if (team == records.Count-1)
                 {
-                    if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team).IDPlayer))
+                    foreach (Team teamCS in flp_Team.Controls)
                     {
-                        Restore.PlayerTurn_I = 1;
-                        Restore.IDPlayer = records.ElementAt(team).IDPlayer;
-                        Restore.IDContest = iDContest;
-                        RecordBL.UpdateTurn(Restore);
-                    }
-                    else
-                    {
-                        Restore.PlayerTurn_I = 0;
-                        Restore.IDPlayer = Convert.ToInt32(teamCS.lbl_IDPlayer.Text);
-                        Restore.IDContest = iDContest;
-                        RecordBL.UpdateTurn(Restore);
+                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(0).IDPlayer))
+                        {
+                            Restore.PlayerTurn_I = 1;
+                            Restore.IDPlayer = records.ElementAt(0).IDPlayer;
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateTurn(Restore);
+                        }
+                        else
+                        {
+                            Restore.PlayerTurn_I = 0;
+                            Restore.IDPlayer = Convert.ToInt32(teamCS.lbl_IDPlayer.Text);
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateTurn(Restore);
+                        }
                     }
                 }
-
+                else
+                {
+                    foreach (Team teamCS in flp_Team.Controls)
+                    {
+                        if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(team+1).IDPlayer))
+                        {
+                            Restore.PlayerTurn_I = 1;
+                            Restore.IDPlayer = records.ElementAt(team+1).IDPlayer;
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateTurn(Restore);
+                        }
+                        else
+                        {
+                            Restore.PlayerTurn_I = 0;
+                            Restore.IDPlayer = Convert.ToInt32(teamCS.lbl_IDPlayer.Text);
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateTurn(Restore);
+                        }
+                    }
+                }
+                
+                team++;
                 step = 1;
             }
         }
