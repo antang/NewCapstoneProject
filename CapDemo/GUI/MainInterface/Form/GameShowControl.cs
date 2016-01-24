@@ -104,10 +104,16 @@ namespace CapDemo.GUI
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
             this.Controls.Add(gm1);
-
-            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-            axWindowsMediaPlayer1.settings.setMode("Loop",true);
+            try
+            {
+                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                axWindowsMediaPlayer1.settings.setMode("Loop", true);
+            }
+            catch (Exception)
+            {
+            }
+            
         }
         // click log out to show login screen
         void gm1_onClick_LogOut(object sender, EventArgs e)
@@ -292,7 +298,14 @@ namespace CapDemo.GUI
         // double game user control click to pause sound
         void sg_doubleClick(object sender, EventArgs e)
         {
-            this.axWindowsMediaPlayer1.Ctlcontrols.pause();
+            try
+            {
+                this.axWindowsMediaPlayer1.Ctlcontrols.pause();
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         //Click to show Setting Game GUI
@@ -406,7 +419,13 @@ namespace CapDemo.GUI
         //Exit start Game
         void Exit_StartGame(object sender, EventArgs e)
         {
-            this.axWindowsMediaPlayer1.Ctlcontrols.play();
+            try
+            {
+                this.axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
             GameMenu gm1 = new GameMenu(UserID, UserName, Pass);          
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;

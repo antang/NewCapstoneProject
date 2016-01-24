@@ -138,6 +138,7 @@
             this.btn_Back.Text = "Lùi";
             this.btn_Back.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Visible = false;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // ContinueSetting

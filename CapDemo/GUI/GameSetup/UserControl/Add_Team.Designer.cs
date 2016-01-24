@@ -51,7 +51,7 @@
             this.btn_Delete.Location = new System.Drawing.Point(285, 4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(20, 20);
-            this.btn_Delete.TabIndex = 39;
+            this.btn_Delete.TabIndex = 0;
             this.btn_Delete.Text = "X";
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click_1);
@@ -65,7 +65,7 @@
             this.label3.Location = new System.Drawing.Point(14, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 18);
-            this.label3.TabIndex = 37;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Màu";
             // 
             // txt_TeamScore
@@ -75,7 +75,7 @@
             this.txt_TeamScore.Multiline = true;
             this.txt_TeamScore.Name = "txt_TeamScore";
             this.txt_TeamScore.Size = new System.Drawing.Size(54, 30);
-            this.txt_TeamScore.TabIndex = 36;
+            this.txt_TeamScore.TabIndex = 3;
             this.txt_TeamScore.Text = "0";
             this.txt_TeamScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_TeamScore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TeamScore_KeyDown);
@@ -90,7 +90,7 @@
             this.label2.Location = new System.Drawing.Point(14, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 18);
-            this.label2.TabIndex = 35;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Điểm";
             // 
             // txt_TeamName
@@ -100,7 +100,7 @@
             this.txt_TeamName.Multiline = true;
             this.txt_TeamName.Name = "txt_TeamName";
             this.txt_TeamName.Size = new System.Drawing.Size(207, 30);
-            this.txt_TeamName.TabIndex = 34;
+            this.txt_TeamName.TabIndex = 2;
             this.txt_TeamName.TextChanged += new System.EventHandler(this.txt_TeamName_TextChanged);
             // 
             // label1
@@ -112,7 +112,7 @@
             this.label1.Location = new System.Drawing.Point(14, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 18);
-            this.label1.TabIndex = 33;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Tên đội";
             // 
             // lblVong
@@ -124,7 +124,7 @@
             this.lblVong.Location = new System.Drawing.Point(14, 7);
             this.lblVong.Name = "lblVong";
             this.lblVong.Size = new System.Drawing.Size(64, 18);
-            this.lblVong.TabIndex = 42;
+            this.lblVong.TabIndex = 0;
             this.lblVong.Text = "Thứ tự";
             // 
             // btn_Paint
@@ -135,7 +135,7 @@
             this.btn_Paint.Location = new System.Drawing.Point(106, 131);
             this.btn_Paint.Name = "btn_Paint";
             this.btn_Paint.Size = new System.Drawing.Size(29, 10);
-            this.btn_Paint.TabIndex = 41;
+            this.btn_Paint.TabIndex = 0;
             this.btn_Paint.UseVisualStyleBackColor = false;
             this.btn_Paint.Visible = false;
             // 
@@ -147,7 +147,7 @@
             this.pnl_ColorCoat.Location = new System.Drawing.Point(176, 74);
             this.pnl_ColorCoat.Name = "pnl_ColorCoat";
             this.pnl_ColorCoat.Size = new System.Drawing.Size(78, 72);
-            this.pnl_ColorCoat.TabIndex = 40;
+            this.pnl_ColorCoat.TabIndex = 0;
             // 
             // btn_Color
             // 
@@ -158,7 +158,7 @@
             this.btn_Color.Location = new System.Drawing.Point(76, 111);
             this.btn_Color.Name = "btn_Color";
             this.btn_Color.Size = new System.Drawing.Size(30, 30);
-            this.btn_Color.TabIndex = 38;
+            this.btn_Color.TabIndex = 0;
             this.btn_Color.UseVisualStyleBackColor = false;
             this.btn_Color.Click += new System.EventHandler(this.btn_Color_Click);
             // 
@@ -169,7 +169,7 @@
             this.txt_Sequence.Multiline = true;
             this.txt_Sequence.Name = "txt_Sequence";
             this.txt_Sequence.Size = new System.Drawing.Size(54, 30);
-            this.txt_Sequence.TabIndex = 43;
+            this.txt_Sequence.TabIndex = 1;
             this.txt_Sequence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
             this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
@@ -180,7 +180,7 @@
             this.lbl_IDPlayer.Location = new System.Drawing.Point(272, 134);
             this.lbl_IDPlayer.Name = "lbl_IDPlayer";
             this.lbl_IDPlayer.Size = new System.Drawing.Size(15, 13);
-            this.lbl_IDPlayer.TabIndex = 44;
+            this.lbl_IDPlayer.TabIndex = 0;
             this.lbl_IDPlayer.Text = "id";
             this.lbl_IDPlayer.Visible = false;
             // 

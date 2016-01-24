@@ -26,14 +26,28 @@ namespace CapDemo
         SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            sound_Click.Play();
+            try
+            {
+                sound_Click.Play();
+            }
+            catch (Exception)
+            {
+            }
+            
             if (this.onExit != null)
                 this.onExit(this, e);
         }
 
         private void btn_Exit_MouseEnter(object sender, EventArgs e)
         {
-            sound.PlaySync();
+            try
+            {
+                sound.PlaySync();
+            }
+            catch (Exception)
+            {
+            }
+            
             btn_Exit.BackgroundImage = Properties.Resources.Nut_thoat_horver;
             btn_Exit.ForeColor = Color.Red;
         }
