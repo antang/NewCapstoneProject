@@ -14,7 +14,7 @@ namespace CapDemo.GUI.User_Controls
 {
     public partial class MoveQuestion : Form
     {
-        private int IDQuestion;
+        //private int IDQuestion;
 
         public MoveQuestion()
         {

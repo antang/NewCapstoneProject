@@ -54,7 +54,7 @@
             this.lblVong.Location = new System.Drawing.Point(13, 18);
             this.lblVong.Name = "lblVong";
             this.lblVong.Size = new System.Drawing.Size(55, 16);
-            this.lblVong.TabIndex = 40;
+            this.lblVong.TabIndex = 0;
             this.lblVong.Text = "Thứ tự";
             // 
             // btn_Delete
@@ -65,7 +65,7 @@
             this.btn_Delete.Location = new System.Drawing.Point(285, 7);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(20, 20);
-            this.btn_Delete.TabIndex = 39;
+            this.btn_Delete.TabIndex = 0;
             this.btn_Delete.Text = "X";
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
@@ -79,7 +79,7 @@
             this.label5.Location = new System.Drawing.Point(179, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 16);
-            this.label5.TabIndex = 38;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Điểm";
             // 
             // txt_Score
@@ -88,7 +88,7 @@
             this.txt_Score.Location = new System.Drawing.Point(123, 81);
             this.txt_Score.Name = "txt_Score";
             this.txt_Score.Size = new System.Drawing.Size(50, 23);
-            this.txt_Score.TabIndex = 37;
+            this.txt_Score.TabIndex = 3;
             this.txt_Score.Text = "20";
             this.txt_Score.TextChanged += new System.EventHandler(this.txt_Score_TextChanged);
             this.txt_Score.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Score_KeyDown);
@@ -103,7 +103,7 @@
             this.label4.Location = new System.Drawing.Point(13, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 16);
-            this.label4.TabIndex = 36;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Điểm cộng:";
             // 
             // label2
@@ -115,7 +115,7 @@
             this.label2.Location = new System.Drawing.Point(15, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
-            this.label2.TabIndex = 33;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Điểm trừ:";
             // 
             // label1
@@ -127,7 +127,7 @@
             this.label1.Location = new System.Drawing.Point(13, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 16);
-            this.label1.TabIndex = 31;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Tên giai đoạn";
             // 
             // label6
@@ -139,7 +139,7 @@
             this.label6.Location = new System.Drawing.Point(179, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
-            this.label6.TabIndex = 42;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Điểm";
             // 
             // txt_Minus
@@ -148,7 +148,7 @@
             this.txt_Minus.Location = new System.Drawing.Point(123, 115);
             this.txt_Minus.Name = "txt_Minus";
             this.txt_Minus.Size = new System.Drawing.Size(50, 23);
-            this.txt_Minus.TabIndex = 43;
+            this.txt_Minus.TabIndex = 4;
             this.txt_Minus.Text = "0";
             this.txt_Minus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Minus_KeyDown);
             this.txt_Minus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Minus_KeyPress);
@@ -159,7 +159,7 @@
             this.txt_Time.Location = new System.Drawing.Point(123, 144);
             this.txt_Time.Name = "txt_Time";
             this.txt_Time.Size = new System.Drawing.Size(50, 23);
-            this.txt_Time.TabIndex = 46;
+            this.txt_Time.TabIndex = 5;
             this.txt_Time.Text = "30";
             this.txt_Time.TextChanged += new System.EventHandler(this.txt_Time_TextChanged);
             this.txt_Time.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Time_KeyDown);
@@ -174,7 +174,7 @@
             this.label3.Location = new System.Drawing.Point(184, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 45;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Giây";
             // 
             // label7
@@ -186,7 +186,7 @@
             this.label7.Location = new System.Drawing.Point(13, 147);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 16);
-            this.label7.TabIndex = 44;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Thời gian:";
             // 
             // txt_PhaseName
@@ -195,7 +195,7 @@
             this.txt_PhaseName.Location = new System.Drawing.Point(123, 48);
             this.txt_PhaseName.Name = "txt_PhaseName";
             this.txt_PhaseName.Size = new System.Drawing.Size(139, 23);
-            this.txt_PhaseName.TabIndex = 47;
+            this.txt_PhaseName.TabIndex = 2;
             // 
             // txt_Sequence
             // 
@@ -203,7 +203,7 @@
             this.txt_Sequence.Location = new System.Drawing.Point(123, 17);
             this.txt_Sequence.Name = "txt_Sequence";
             this.txt_Sequence.Size = new System.Drawing.Size(50, 23);
-            this.txt_Sequence.TabIndex = 48;
+            this.txt_Sequence.TabIndex = 1;
             this.txt_Sequence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Sequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Sequence_KeyDown);
             this.txt_Sequence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sequence_KeyPress);
@@ -214,7 +214,7 @@
             this.lbl_IDPhase.Location = new System.Drawing.Point(270, 166);
             this.lbl_IDPhase.Name = "lbl_IDPhase";
             this.lbl_IDPhase.Size = new System.Drawing.Size(15, 13);
-            this.lbl_IDPhase.TabIndex = 49;
+            this.lbl_IDPhase.TabIndex = 0;
             this.lbl_IDPhase.Text = "id";
             this.lbl_IDPhase.Visible = false;
             // 

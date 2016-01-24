@@ -67,7 +67,7 @@ namespace CapDemo.GUI.User_Controls
                         if (ListContest.ElementAt(i).NumberChallenge > 0)
                         {
                             lbl_Status.Text = "Hoàn tất";
-                            lbl_Status.ForeColor = Color.LightGreen;
+                            lbl_Status.ForeColor = Color.Red;
                         }
                         else
                         {

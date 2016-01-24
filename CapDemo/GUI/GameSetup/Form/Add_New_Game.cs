@@ -132,7 +132,7 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập câu hỏi cho giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng nhập đủ số lượng câu hỏi cho từng giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (i == 4)

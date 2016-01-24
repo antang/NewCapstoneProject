@@ -62,10 +62,12 @@
             this.lb_Phase.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Phase.ForeColor = System.Drawing.Color.White;
             this.lb_Phase.FormattingEnabled = true;
+            this.lb_Phase.HorizontalScrollbar = true;
             this.lb_Phase.ItemHeight = 16;
             this.lb_Phase.Location = new System.Drawing.Point(3, 51);
             this.lb_Phase.Name = "lb_Phase";
-            this.lb_Phase.Size = new System.Drawing.Size(159, 84);
+            this.lb_Phase.ScrollAlwaysVisible = true;
+            this.lb_Phase.Size = new System.Drawing.Size(159, 132);
             this.lb_Phase.TabIndex = 1;
             this.lb_Phase.SelectedIndexChanged += new System.EventHandler(this.lb_Phase_SelectedIndexChanged);
             // 

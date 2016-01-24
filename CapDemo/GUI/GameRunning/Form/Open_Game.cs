@@ -322,8 +322,14 @@ namespace CapDemo
                         ShowTeamsChallenged();
 
                         //sound challenged
-                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
 
                         foreach (Team_AudienceScreeen TeamAS in audience.flp_Team.Controls)
                         {
@@ -355,8 +361,15 @@ namespace CapDemo
                             if (TeamCS.lbl_IDPlayer.Text == TeamAS.lbl_ID.Text)
                             {
                                 //sound challenged
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                
 
                                 TeamAS.BackColor = Color.LightCoral;
                                 TeamAS.btn_ChallengeChoice.BackColor = Color.LightCoral;
@@ -446,8 +459,15 @@ namespace CapDemo
                                                  lblHint.Text = guideline[3].ToString();
                                                  audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                                  //sound show question
-                                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
-                                                 axWindowsMediaPlayer1.Ctlcontrols.play();
+                                                 try
+                                                 {
+                                                     axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                                     axWindowsMediaPlayer1.Ctlcontrols.play();
+                                                 }
+                                                 catch (Exception)
+                                                 {
+                                                 }
+                                                 
                                                  //axWindowsMediaPlayer1.settings.setMode("Loop", true);
                                                  step++;
                                              }
@@ -498,10 +518,14 @@ namespace CapDemo
                                              lblHint.Text = guideline[3].ToString();
                                              audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                              //sound show question
-                                             axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
-                                             axWindowsMediaPlayer1.Ctlcontrols.play();
-                                             //axWindowsMediaPlayer1.settings.setMode("Loop", true);
-
+                                             try
+                                             {
+                                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                                 axWindowsMediaPlayer1.Ctlcontrols.play();
+                                             }
+                                             catch (Exception)
+                                             {
+                                             }
                                              step++;
                                          }
                                          else
@@ -596,8 +620,14 @@ namespace CapDemo
                             if (TeamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
                             {
                                 //sound challenged
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 playerAnswer.lbl_TeamAnswer1.Text = CorrectAnswerChallenge;
                                 PlayerAnswerShortQuestion = CorrectAnswerChallenge;
@@ -765,13 +795,26 @@ namespace CapDemo
             lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
             if (int.Parse(lbl_Time.Text)<10 && int.Parse(lbl_Time.Text) >1)
             {
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DongHo.wav";
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DongHo.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
+                
             }
             if (int.Parse(lbl_Time.Text) == 1)
             {
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HetGio.wav";
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HetGio.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
             }
 
             if (int.Parse(lbl_Time.Text) == 0)  //if the countdown reaches '0', we stop it
@@ -918,9 +961,16 @@ namespace CapDemo
                 //Sound
                 if (SoundWelcome == true)
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\ChaoMung.wav";
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
-                    SoundWelcome = false;
+                    try
+                    {
+                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\ChaoMung.wav";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        SoundWelcome = false;
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    
                 }
                 audience.ResumeLayout();
                 //this.ResumeLayout();
@@ -929,8 +979,14 @@ namespace CapDemo
             else if (step == 2)
             {
                 //sound to player's turn
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
 
                 lblHint.Text = guideline[2].ToString();
                 GoPlayer();
@@ -943,8 +999,14 @@ namespace CapDemo
             else if (step == 4)
             {
                 //sound enter answer
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
 
                 lblHint.Text = guideline[4].ToString();
                 EnterAnswer();
@@ -962,8 +1024,14 @@ namespace CapDemo
                 //Sound show corect answer when challenged
                 if (CheckChallengeChoice == true)
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                    try
+                    {
+                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
                 lblHint.Text = guideline[5].ToString();
                 ShowCorrectAnswer();
@@ -985,8 +1053,14 @@ namespace CapDemo
             else if (step == 7)
             {
                 //sound check score
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
 
                 lblHint.Text = guideline[0].ToString();
                 UpdateScreenAfterChallenge();
@@ -1458,9 +1532,14 @@ namespace CapDemo
 ////////
                                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                                 //sound show question
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-                                //axWindowsMediaPlayer1.settings.setMode("Loop", true);
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
                                 step++;
                             }
                             else
@@ -1496,9 +1575,14 @@ namespace CapDemo
 ////////
                             audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                             //sund show question
-                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
-                            axWindowsMediaPlayer1.Ctlcontrols.play();
-                            //axWindowsMediaPlayer1.settings.setMode("Loop", true);
+                            try
+                            {
+                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                            }
+                            catch (Exception)
+                            {
+                            }
                             step++;
                         }
                         else
@@ -1622,7 +1706,6 @@ namespace CapDemo
                 audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
                 audience.prgb_Question.Maximum = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
                 time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
-                audience.lbl_TimeShowQuestion.Image = Properties.Resources.loading_circle;
                 //audience.timer1.Interval = 1000;
                 audience.timer1.Start();
                 return true;
@@ -1994,8 +2077,15 @@ namespace CapDemo
                         if (CheckChallengeChoice == false)
                         {
                             //Sound
-                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                            try
+                            {
+                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                            }
+                            catch (Exception)
+                            {
+                            }
+                            
 
                             if (_BonusPhase ==0)
                             {
@@ -2021,9 +2111,14 @@ namespace CapDemo
                         if (CheckChallengeChoice == false)
                         {
                             //Sound
-                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
-                            axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                            try
+                            {
+                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                            }
+                            catch (Exception)
+                            {
+                            }
                             
                             if (_MinusPhase==0)
                             {
@@ -2059,9 +2154,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 if (_BonusPhase==0)
                                 {
@@ -2087,9 +2187,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 if (_MinusPhase == 0)
                                 {
@@ -2121,9 +2226,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 if (_BonusPhase == 0)
                                 {
@@ -2149,9 +2259,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 if (_MinusPhase == 0)
                                 {
@@ -2361,6 +2476,8 @@ namespace CapDemo
                 UpdateScreenAfterChallenge();
                 Contest.EndContest = 1;
                 ContestBL.EditStatusContestbyID(Contest);
+/////////
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -2379,6 +2496,8 @@ namespace CapDemo
                         //update status contest id this contest have run
                         Contest.EndContest = 1;
                         ContestBL.EditStatusContestbyID(Contest);
+/////////
+                        this.DialogResult = DialogResult.OK;
                     }
                 }
                 team++;
@@ -3459,8 +3578,14 @@ namespace CapDemo
                         if (CheckChallengeChoice == false)
                         {
                             //Sound
-                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                            try
+                            {
+                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                            }
+                            catch (Exception)
+                            {
+                            }
 
                             if (_BonusPhase == 0)
                             {
@@ -3505,8 +3630,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
 
                                 if (_BonusPhase == 0)
                                 {
@@ -3548,9 +3679,14 @@ namespace CapDemo
                             if (CheckChallengeChoice == false)
                             {
                                 //Sound
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
-                                axWindowsMediaPlayer1.Ctlcontrols.play();
-
+                                try
+                                {
+                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                                }
+                                catch (Exception)
+                                {
+                                }
                                 
                                 if (_BonusPhase ==0)
                                 {
@@ -3639,14 +3775,19 @@ namespace CapDemo
 
                 }
                 //sound to player's turn
-                
             }
             else
             {
                 if (NumofQuestionInPhase(records.ElementAt(team).IDPhase) == 0)
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                    try
+                    {
+                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                    }
+                    catch (Exception)
+                    {
+                    }
 
                     lblHint.Text = guideline[2].ToString();
                     step = 2;

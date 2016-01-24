@@ -14,7 +14,7 @@ namespace CapDemo.GUI
 {
     public partial class Login : Form
     {
-        Thread th;
+        //Thread th;
         string UserName="";
         string Pass="";
         int UserID;

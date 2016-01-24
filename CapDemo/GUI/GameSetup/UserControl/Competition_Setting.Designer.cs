@@ -50,7 +50,7 @@
             this.label3.Location = new System.Drawing.Point(15, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 16);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Số đội được thách đấu";
             // 
             // txt_NumTeam
@@ -59,7 +59,7 @@
             this.txt_NumTeam.Location = new System.Drawing.Point(198, 37);
             this.txt_NumTeam.Name = "txt_NumTeam";
             this.txt_NumTeam.Size = new System.Drawing.Size(67, 23);
-            this.txt_NumTeam.TabIndex = 4;
+            this.txt_NumTeam.TabIndex = 2;
             this.txt_NumTeam.Text = "1";
             this.txt_NumTeam.TextChanged += new System.EventHandler(this.txt_NumTeam_TextChanged);
             this.txt_NumTeam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_NumTeam_KeyDown);
@@ -72,7 +72,7 @@
             this.label4.Location = new System.Drawing.Point(15, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 16);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Điểm thách đấu";
             // 
             // txt_ChallengeScore
@@ -81,7 +81,7 @@
             this.txt_ChallengeScore.Location = new System.Drawing.Point(198, 83);
             this.txt_ChallengeScore.Name = "txt_ChallengeScore";
             this.txt_ChallengeScore.Size = new System.Drawing.Size(67, 23);
-            this.txt_ChallengeScore.TabIndex = 6;
+            this.txt_ChallengeScore.TabIndex = 3;
             this.txt_ChallengeScore.Text = "20";
             this.txt_ChallengeScore.TextChanged += new System.EventHandler(this.txt_ChallengeScore_TextChanged);
             this.txt_ChallengeScore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ChallengeScore_KeyDown);
@@ -94,7 +94,7 @@
             this.label5.Location = new System.Drawing.Point(271, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Đội";
             // 
             // label6
@@ -104,7 +104,7 @@
             this.label6.Location = new System.Drawing.Point(271, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Điểm";
             // 
             // groupBox2
@@ -120,7 +120,7 @@
             this.groupBox2.Location = new System.Drawing.Point(13, 179);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(643, 196);
-            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết lập quyền thách đấu";
             // 
@@ -153,7 +153,7 @@
             this.label2.Location = new System.Drawing.Point(167, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Giây";
             // 
             // groupBox1
@@ -166,7 +166,7 @@
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(643, 154);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thiết lập quyền yêu cầu trợ giúp";
             // 

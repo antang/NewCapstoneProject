@@ -111,7 +111,7 @@ namespace CapDemo
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập câu hỏi cho giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng nhập đủ số lượng câu hỏi cho từng giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (i == 4)
@@ -468,7 +468,7 @@ namespace CapDemo
                 cs.AmountPlayer = ts.CountTeam();
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(cs);
-                LoadCompetitionSetting();
+                //LoadCompetitionSetting();
                 btn_Next.Visible = false;
                 btn_Save.Visible = true;
                 btn_Back.Visible = true;

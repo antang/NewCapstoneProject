@@ -137,7 +137,7 @@
             // 
             this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
-            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.chiec_cup;
+            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_EndGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_EndGame.Location = new System.Drawing.Point(821, 627);

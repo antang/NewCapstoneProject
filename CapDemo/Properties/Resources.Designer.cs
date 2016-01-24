@@ -313,26 +313,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroud {
-            get {
-                object obj = ResourceManager.GetObject("backgroud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap backgroud_setting {
-            get {
-                object obj = ResourceManager.GetObject("backgroud_setting", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BackGround_2 {
             get {
                 object obj = ResourceManager.GetObject("BackGround_2", resourceCulture);
@@ -366,26 +346,6 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap blue_Glossy {
-            get {
-                object obj = ResourceManager.GetObject("blue_Glossy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap blue_glossy_rectangle {
-            get {
-                object obj = ResourceManager.GetObject("blue_glossy_rectangle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,16 +393,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap chiec_cup {
-            get {
-                object obj = ResourceManager.GetObject("chiec_cup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap chon {
             get {
                 object obj = ResourceManager.GetObject("chon", resourceCulture);
@@ -480,6 +430,16 @@ namespace CapDemo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Contest {
+            get {
+                object obj = ResourceManager.GetObject("Contest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Correct_Answer {
@@ -510,29 +470,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cup {
-            get {
-                object obj = ResourceManager.GetObject("cup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cup_1 {
             get {
                 object obj = ResourceManager.GetObject("cup_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Doi_thi {
-            get {
-                object obj = ResourceManager.GetObject("Doi_thi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -687,36 +627,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KhungDoiChoi {
-            get {
-                object obj = ResourceManager.GetObject("KhungDoiChoi", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap KhungPanner4 {
-            get {
-                object obj = ResourceManager.GetObject("KhungPanner4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap loading_circle {
-            get {
-                object obj = ResourceManager.GetObject("loading_circle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap login_6 {
             get {
                 object obj = ResourceManager.GetObject("login_6", resourceCulture);
@@ -820,16 +730,6 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap newGame {
             get {
                 object obj = ResourceManager.GetObject("newGame", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap notifi_Defy {
-            get {
-                object obj = ResourceManager.GetObject("notifi_Defy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -947,9 +847,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap RestoreDown {
+        internal static System.Drawing.Bitmap Rank {
             get {
-                object obj = ResourceManager.GetObject("RestoreDown", resourceCulture);
+                object obj = ResourceManager.GetObject("Rank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -957,9 +857,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Screen_pnl_FinishLane {
+        internal static System.Drawing.Bitmap RestoreDown {
             get {
-                object obj = ResourceManager.GetObject("Screen_pnl_FinishLane", resourceCulture);
+                object obj = ResourceManager.GetObject("RestoreDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1026,16 +926,6 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spinner {
-            get {
-                object obj = ResourceManager.GetObject("spinner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Support {
             get {
                 object obj = ResourceManager.GetObject("Support", resourceCulture);
@@ -1096,39 +986,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap team_answer_11 {
-            get {
-                object obj = ResourceManager.GetObject("team_answer_11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap team_Answer_2 {
             get {
                 object obj = ResourceManager.GetObject("team_Answer_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap team_answer_20 {
-            get {
-                object obj = ResourceManager.GetObject("team_answer_20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap team_answer_30 {
-            get {
-                object obj = ResourceManager.GetObject("team_answer_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1159,16 +1019,6 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap Techno {
             get {
                 object obj = ResourceManager.GetObject("Techno", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap The_Weightless_World {
-            get {
-                object obj = ResourceManager.GetObject("The_Weightless_World", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

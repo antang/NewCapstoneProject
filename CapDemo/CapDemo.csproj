@@ -813,7 +813,6 @@
     <None Include="Resources\notifi-Defy.gif" />
     <None Include="Resources\dung-2.png" />
     <None Include="Resources\HitYourGoal-GiaoDienKhanGia.jpg" />
-    <None Include="Resources\BackGround_2.jpg" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\maximize.png" />
     <None Include="Resources\minimize.png" />
@@ -885,6 +884,9 @@
     <None Include="Resources\Welcome.gif" />
     <None Include="Resources\W_Shortcut2_L.png" />
     <None Include="Resources\W_Shortcut2_M.ico" />
+    <None Include="Resources\Contest.jpg" />
+    <None Include="Resources\BackGround_2.jpg" />
+    <None Include="Resources\Rank.png" />
     <Content Include="Sound\CapNhatDiem.wav" />
     <Content Include="Sound\ChaoMung.wav" />
     <Content Include="Sound\Click.wav" />
