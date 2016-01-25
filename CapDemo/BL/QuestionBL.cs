@@ -252,7 +252,8 @@ namespace CapDemo.BL
                         Question.NameQuestion = item["NameQuestion"].ToString();
                         Question.TypeQuestion = item["TypeQuestion"].ToString();
 
-                        string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("''","'");
+                        //string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("''","'");
+                        string AnswerContent = item["AnswerContent"].ToString().Trim();
                         AnswerContent = AnswerContent.Replace("+++", "---");
                         Question.AnswerContent = AnswerContent;
                         QuestionList.Add(Question);
@@ -270,55 +271,61 @@ namespace CapDemo.BL
         //LOAD QUESTION FILE TEXT
         public List<Question> GetFileTXT(string file)
         {
-            string content = FA.FileContentTXT(file);
-
-            int stt = 1;
-            DataTable dtb = new DataTable();
-            dtb.Columns.Add("Sequence", typeof(string));
-            dtb.Columns.Add("QuestionTitle", typeof(string));
-            dtb.Columns.Add("NameQuestion", typeof(string));
-            dtb.Columns.Add("TypeQuestion", typeof(string));
-            dtb.Columns.Add("AnswerContent", typeof(string));
-
-            content = content.Replace("[Q]", "");
-            content = content.Replace("[NQ]", "---");
-            content = content.Replace("[/NQ]", "");
-            content = content.Replace("[TQ]", "---");
-            content = content.Replace("[/TQ]", "---");
-
-            string[] QuestionContent = content.Split(new string[] { "[/Q]" }, StringSplitOptions.None);
-
-            for (int i = 0; i < QuestionContent.Length-1; i++)
+            if (FA.FileContentTXT(file) == null)
             {
-                string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
-                dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2], QuestionItem[3]);
-                stt++;
-            }
-
-            List<Question> QuestionList = new List<Question>();
-            if (dtb != null && dtb.Rows.Count>0)
-            {
-                foreach (DataRow item in dtb.Rows)
-                {
-                    Question Question = new Question();
-                    Question.Sequence = Convert.ToInt32(item["Sequence"]);
-                    Question.QuestionTitle = item["QuestionTitle"].ToString();
-                    Question.NameQuestion = item["NameQuestion"].ToString();
-                    Question.TypeQuestion = item["TypeQuestion"].ToString();
-
-                    string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("[A][P]", "");
-                    AnswerContent = AnswerContent.Replace("[/P]", "---");
-                    AnswerContent = AnswerContent.Replace("[/A]", "</answer>");
-                    Question.AnswerContent = AnswerContent;
-
-                    QuestionList.Add(Question);
-                }
-                return QuestionList;
+                return null;
             }
             else
             {
-                return null;
-            }  
+                string content = FA.FileContentTXT(file);
+                int stt = 1;
+                DataTable dtb = new DataTable();
+                dtb.Columns.Add("Sequence", typeof(string));
+                dtb.Columns.Add("QuestionTitle", typeof(string));
+                dtb.Columns.Add("NameQuestion", typeof(string));
+                dtb.Columns.Add("TypeQuestion", typeof(string));
+                dtb.Columns.Add("AnswerContent", typeof(string));
+
+                content = content.Replace("[Q]", "");
+                content = content.Replace("[NQ]", "---");
+                content = content.Replace("[/NQ]", "");
+                content = content.Replace("[TQ]", "---");
+                content = content.Replace("[/TQ]", "---");
+
+                string[] QuestionContent = content.Split(new string[] { "[/Q]" }, StringSplitOptions.None);
+
+                for (int i = 0; i < QuestionContent.Length - 1; i++)
+                {
+                    string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+                    dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[0], QuestionItem[2], QuestionItem[3]);
+                    stt++;
+                }
+
+                List<Question> QuestionList = new List<Question>();
+                if (dtb != null && dtb.Rows.Count > 0)
+                {
+                    foreach (DataRow item in dtb.Rows)
+                    {
+                        Question Question = new Question();
+                        Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                        Question.QuestionTitle = item["QuestionTitle"].ToString();
+                        Question.NameQuestion = item["NameQuestion"].ToString();
+                        Question.TypeQuestion = item["TypeQuestion"].ToString();
+
+                        string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("[A][P]", "");
+                        AnswerContent = AnswerContent.Replace("[/P]", "---");
+                        AnswerContent = AnswerContent.Replace("[/A]", "</answer>");
+                        Question.AnswerContent = AnswerContent;
+
+                        QuestionList.Add(Question);
+                    }
+                    return QuestionList;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         //GET MAXIMUM ID QUESTION
@@ -341,7 +348,54 @@ namespace CapDemo.BL
         //LOAD QUESTION FILE HOT POTATOES
         public List<Question> GetFileHotPotato(string file)
         {
-            return null;
+            if (FA.FileContentHotPotato(file) == null)
+            {
+                return null;
+            }
+            else
+            {
+                string content = FA.FileContentHotPotato(file);
+                int stt = 1;
+                DataTable dtb = new DataTable();
+                dtb.Columns.Add("Sequence", typeof(string));
+                dtb.Columns.Add("QuestionTitle", typeof(string));
+                dtb.Columns.Add("NameQuestion", typeof(string));
+                dtb.Columns.Add("TypeQuestion", typeof(string));
+                dtb.Columns.Add("AnswerContent", typeof(string));
+
+                string[] QuestionContent = content.Split(new string[] { "</question-record>" }, StringSplitOptions.None);
+
+                for (int i = 0; i < QuestionContent.Length - 1; i++)
+                {
+                    string[] QuestionItem = QuestionContent[i].Split(new string[] { "---" }, StringSplitOptions.None);
+                    dtb.Rows.Add(stt.ToString(), QuestionItem[1], QuestionItem[2], QuestionItem[0], QuestionItem[3]);
+                    stt++;
+                }
+
+                List<Question> QuestionList = new List<Question>();
+                if (dtb != null && dtb.Rows.Count > 0)
+                {
+                    foreach (DataRow item in dtb.Rows)
+                    {
+                        Question Question = new Question();
+                        Question.Sequence = Convert.ToInt32(item["Sequence"]);
+                        Question.QuestionTitle = item["QuestionTitle"].ToString();
+                        Question.NameQuestion = item["NameQuestion"].ToString();
+                        Question.TypeQuestion = item["TypeQuestion"].ToString();
+
+                        //string AnswerContent = item["AnswerContent"].ToString().Trim().Replace("''", "'");
+                        string AnswerContent = item["AnswerContent"].ToString().Trim();
+                        AnswerContent = AnswerContent.Replace("+++", "---");
+                        Question.AnswerContent = AnswerContent;
+                        QuestionList.Add(Question);
+                    }
+                    return QuestionList;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }

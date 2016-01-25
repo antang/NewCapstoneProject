@@ -77,8 +77,7 @@ namespace CapDemo.GUI.User_Controls
             DialogResult Result = OpenFile.ShowDialog();
             if (Result == DialogResult.OK)
             {
-
-                if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml")
+                if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml" || Path.GetExtension(OpenFile.FileName) == ".jqz")
                 {
                     if (Path.GetExtension(OpenFile.FileName) == ".txt")
                     {
@@ -109,30 +108,63 @@ namespace CapDemo.GUI.User_Controls
                     }
                     else
                     {
-                        dataGridView1.Columns.Clear();
-                        QuestionBL QuestionBL = new QuestionBL();
-
-                        List<DO.Question> QuestionList;
-                        QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
-                        txt_FilePath.Text = OpenFile.FileName;
-                        if (QuestionList != null)
+                        //xml
+                        if (Path.GetExtension(OpenFile.FileName) == ".xml")
                         {
-                            dataGridView1.DataSource = QuestionList;
-                            Showcolumns();
-                            CheckQuestion();
-                            if (WrongQuestion > 0)
+                            dataGridView1.Columns.Clear();
+                            QuestionBL QuestionBL = new QuestionBL();
+
+                            List<DO.Question> QuestionList;
+                            QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
+                            txt_FilePath.Text = OpenFile.FileName;
+                            if (QuestionList != null)
                             {
-                                notifyIcon1.Icon = SystemIcons.Information;
-                                notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                notifyIcon1.ShowBalloonTip(3000);
+                                dataGridView1.DataSource = QuestionList;
+                                Showcolumns();
+                                CheckQuestion();
+                                if (WrongQuestion > 0)
+                                {
+                                    notifyIcon1.Icon = SystemIcons.Information;
+                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                    notifyIcon1.ShowBalloonTip(3000);
+                                }
+                            }
+                            else
+                            {
+                                dataGridView1.Columns.Clear();
+                                txt_FilePath.Text = "";
+                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
+                            //hot potatoes
                             dataGridView1.Columns.Clear();
-                            txt_FilePath.Text = "";
-                            MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            QuestionBL QuestionBL = new QuestionBL();
+
+                            List<DO.Question> QuestionList;
+                            QuestionList = QuestionBL.GetFileHotPotato(OpenFile.FileName);
+                            txt_FilePath.Text = OpenFile.FileName;
+                            if (QuestionList != null)
+                            {
+                                dataGridView1.DataSource = QuestionList;
+                                Showcolumns();
+                                CheckQuestion();
+                                if (WrongQuestion > 0)
+                                {
+                                    notifyIcon1.Icon = SystemIcons.Information;
+                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                    notifyIcon1.ShowBalloonTip(3000);
+                                }
+                            }
+                            else
+                            {
+                                dataGridView1.Columns.Clear();
+                                txt_FilePath.Text = "";
+                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
+                        
 
                     }
                 }

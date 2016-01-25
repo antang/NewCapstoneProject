@@ -68,14 +68,40 @@ namespace CapDemo.DA
         public string FileContentHotPotato(string NameFile)
         {
             string QuestionContent = "";
-
-            foreach (var line in File.ReadAllLines(NameFile))
+            try
             {
-
-                QuestionContent += line;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(NameFile);
+                XmlElement root = doc.DocumentElement;
+                XmlNodeList NodeQuestionType = root.SelectNodes("//hotpot-jquiz-file/data/questions/question-record");
+                int i = 1;
+                foreach (XmlNode node in NodeQuestionType)
+                {
+                    QuestionContent += "multichoice" + "---";
+                    QuestionContent += "Question "+i.ToString()+ "---";
+                    QuestionContent += node["question"].InnerText.ToString() + "---";
+                    foreach (XmlNode item in node.SelectNodes("answers/answer"))
+                    {
+                        QuestionContent += (item["correct"].InnerText) +"+++";
+                        QuestionContent += (item["text"].InnerText);
+                        QuestionContent += "</" + item.Name + ">";
+                    }
+                    QuestionContent += "</" + node.Name + ">";
+                    i++;
+                }
+                QuestionContent = QuestionContent.Replace("<p>", "");
+                QuestionContent = QuestionContent.Replace("</p>", "");
+                QuestionContent = QuestionContent.Replace("<br>", Environment.NewLine);
+                QuestionContent = QuestionContent.Replace("</br>", "");
+                //QuestionContent = QuestionContent.Replace("'", "''");
+                MessageBox.Show("" + QuestionContent);
+                return QuestionContent;
+                
             }
-            //QuestionContent= QuestionContent.Replace("'", "''");
-            return QuestionContent.Trim().ToString();
+            catch (Exception)
+            {
+                return null;
+            }
         } 
     }
 }
