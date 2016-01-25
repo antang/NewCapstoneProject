@@ -211,16 +211,25 @@ namespace CapDemo
             
             
         }
+        //int timeShowQuestion;
+        double count = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            prgb_Question.Increment(1);
-            lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
-            if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
+            count += timer1.Interval;
+            prgb_Question.Increment(timer1.Interval);
+
+            if (count % 900 == 0)
             {
-                timer1.Stop();
-                lbl_TimeShowQuestion.Image = null;
+                prgb_Question.Increment(1);
+                lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
+                if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
+                {
+                    timer1.Stop();
+                    lbl_TimeShowQuestion.Image = null;
+                }
             }
-                
+            
         }
         //drag form audience
         private void tbc_ShowGame_MouseDown(object sender, MouseEventArgs e)

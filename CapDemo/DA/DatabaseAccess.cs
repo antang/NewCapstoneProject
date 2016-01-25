@@ -27,7 +27,7 @@ namespace CapDemo.DA
         {
             //setting = new Properties.Settings();
             //connection = "Data Source=" + setting.Sever + ";Initial Catalog=" + setting.DB + ";User ID=" + setting.UserName + ";Password=" + setting.PassWord;
-            string s = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Capstone.db";
+            string s = Directory.GetCurrentDirectory() + "\\Capstone.db";
             connection = @"Data Source = "+s+"; Version=3";
             //setting.DB = "dkjl";
             //setting.Save();
@@ -46,10 +46,10 @@ namespace CapDemo.DA
                 return dtb;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                //MessageBox.Show("Error\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error\n"+connection + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

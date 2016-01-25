@@ -338,6 +338,10 @@ namespace CapDemo.BL
             return dt;
         }
 
-
+        //LOAD QUESTION FILE HOT POTATOES
+        public List<Question> GetFileHotPotato(string file)
+        {
+            return null;
+        }
     }
 }

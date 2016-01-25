@@ -226,7 +226,7 @@
             this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
-            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(909, 37);
+            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(496, 31);
             this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
             this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(43, 27);
             this.lbl_TimeShowQuestion.TabIndex = 2;
@@ -239,10 +239,10 @@
             // prgb_Question
             // 
             this.prgb_Question.ForeColor = System.Drawing.Color.Transparent;
-            this.prgb_Question.Location = new System.Drawing.Point(95, 47);
+            this.prgb_Question.Location = new System.Drawing.Point(44, 62);
             this.prgb_Question.Margin = new System.Windows.Forms.Padding(0);
             this.prgb_Question.Name = "prgb_Question";
-            this.prgb_Question.Size = new System.Drawing.Size(812, 11);
+            this.prgb_Question.Size = new System.Drawing.Size(928, 5);
             this.prgb_Question.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prgb_Question.TabIndex = 11;
             // 
@@ -396,7 +396,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // imageList1
