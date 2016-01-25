@@ -48,7 +48,7 @@
             this.lblServer.Size = new System.Drawing.Size(55, 20);
             this.lblServer.TabIndex = 0;
             this.lblServer.Text = "Server";
-            this.lblServer.Visible = false;
+            this.lblServer.Click += new System.EventHandler(this.lblServer_Click);
             // 
             // txt_UserName
             // 

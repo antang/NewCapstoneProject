@@ -56,11 +56,11 @@
             // 
             this.lbl_ContestName.AutoSize = true;
             this.lbl_ContestName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ContestName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ContestName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ContestName.ForeColor = System.Drawing.Color.White;
-            this.lbl_ContestName.Location = new System.Drawing.Point(95, 153);
+            this.lbl_ContestName.Location = new System.Drawing.Point(114, 187);
             this.lbl_ContestName.Name = "lbl_ContestName";
-            this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
+            this.lbl_ContestName.Size = new System.Drawing.Size(113, 18);
             this.lbl_ContestName.TabIndex = 18;
             this.lbl_ContestName.Text = "tên phần thi";
             this.toolTip1.SetToolTip(this.lbl_ContestName, "Double Click");
@@ -72,11 +72,11 @@
             // 
             this.lbl_RoundName.AutoSize = true;
             this.lbl_RoundName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RoundName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoundName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RoundName.ForeColor = System.Drawing.Color.White;
-            this.lbl_RoundName.Location = new System.Drawing.Point(95, 128);
+            this.lbl_RoundName.Location = new System.Drawing.Point(107, 151);
             this.lbl_RoundName.Name = "lbl_RoundName";
-            this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
+            this.lbl_RoundName.Size = new System.Drawing.Size(112, 18);
             this.lbl_RoundName.TabIndex = 17;
             this.lbl_RoundName.Text = "tên vòng thi";
             this.toolTip1.SetToolTip(this.lbl_RoundName, "Double Click");
@@ -88,7 +88,7 @@
             // 
             this.lbl_CompetitionName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CompetitionName.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CompetitionName.ForeColor = System.Drawing.Color.White;
+            this.lbl_CompetitionName.ForeColor = System.Drawing.Color.Turquoise;
             this.lbl_CompetitionName.Location = new System.Drawing.Point(192, 68);
             this.lbl_CompetitionName.Name = "lbl_CompetitionName";
             this.lbl_CompetitionName.Size = new System.Drawing.Size(102, 35);
@@ -102,11 +102,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 153);
+            this.label3.Location = new System.Drawing.Point(19, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 16);
+            this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 15;
             this.label3.Text = "Phần Thi:";
             this.toolTip1.SetToolTip(this.label3, "Double Click");
@@ -118,11 +118,11 @@
             // 
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Name.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.ForeColor = System.Drawing.Color.White;
-            this.lbl_Name.Location = new System.Drawing.Point(16, 128);
+            this.lbl_Name.Location = new System.Drawing.Point(19, 151);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(73, 16);
+            this.lbl_Name.Size = new System.Drawing.Size(84, 18);
             this.lbl_Name.TabIndex = 13;
             this.lbl_Name.Text = "Vòng thi:";
             this.toolTip1.SetToolTip(this.lbl_Name, "Double Click");
@@ -148,11 +148,11 @@
             // 
             this.lbl_Status.AutoSize = true;
             this.lbl_Status.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Status.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Status.ForeColor = System.Drawing.Color.White;
-            this.lbl_Status.Location = new System.Drawing.Point(108, 104);
+            this.lbl_Status.Location = new System.Drawing.Point(125, 117);
             this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(50, 16);
+            this.lbl_Status.Size = new System.Drawing.Size(59, 18);
             this.lbl_Status.TabIndex = 21;
             this.lbl_Status.Text = "Đã thi";
             this.toolTip1.SetToolTip(this.lbl_Status, "Double Click");
@@ -164,11 +164,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 104);
+            this.label4.Location = new System.Drawing.Point(19, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 16);
+            this.label4.Size = new System.Drawing.Size(99, 18);
             this.label4.TabIndex = 20;
             this.label4.Text = "Trạng thái:";
             this.toolTip1.SetToolTip(this.label4, "Double Click");
@@ -191,7 +191,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Name);
             this.Name = "Game";
-            this.Size = new System.Drawing.Size(294, 181);
+            this.Size = new System.Drawing.Size(300, 270);
             this.toolTip1.SetToolTip(this, "Double Click");
             this.Load += new System.EventHandler(this.Game_Load);
             this.DoubleClick += new System.EventHandler(this.Game_DoubleClick);

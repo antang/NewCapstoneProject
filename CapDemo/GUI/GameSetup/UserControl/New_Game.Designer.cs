@@ -37,8 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Status = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lbl_CompetitionName = new System.Windows.Forms.Label();
             this.deleteSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_CompetitionName = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,11 +46,11 @@
             // 
             this.lbl_Name.AutoSize = true;
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Name.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.ForeColor = System.Drawing.Color.White;
-            this.lbl_Name.Location = new System.Drawing.Point(9, 102);
+            this.lbl_Name.Location = new System.Drawing.Point(20, 162);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(73, 16);
+            this.lbl_Name.Size = new System.Drawing.Size(69, 16);
             this.lbl_Name.TabIndex = 2;
             this.lbl_Name.Text = "Vòng thi:";
             this.lbl_Name.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -59,11 +59,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 129);
+            this.label3.Location = new System.Drawing.Point(20, 202);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 16);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phần Thi:";
             this.label3.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -72,11 +72,11 @@
             // 
             this.lbl_RoundName.AutoSize = true;
             this.lbl_RoundName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RoundName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoundName.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RoundName.ForeColor = System.Drawing.Color.White;
-            this.lbl_RoundName.Location = new System.Drawing.Point(88, 102);
+            this.lbl_RoundName.Location = new System.Drawing.Point(99, 157);
             this.lbl_RoundName.Name = "lbl_RoundName";
-            this.lbl_RoundName.Size = new System.Drawing.Size(95, 16);
+            this.lbl_RoundName.Size = new System.Drawing.Size(142, 23);
             this.lbl_RoundName.TabIndex = 6;
             this.lbl_RoundName.Text = "tên vòng thi";
             this.lbl_RoundName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -85,11 +85,11 @@
             // 
             this.lbl_ContestName.AutoSize = true;
             this.lbl_ContestName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ContestName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ContestName.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ContestName.ForeColor = System.Drawing.Color.White;
-            this.lbl_ContestName.Location = new System.Drawing.Point(88, 129);
+            this.lbl_ContestName.Location = new System.Drawing.Point(99, 197);
             this.lbl_ContestName.Name = "lbl_ContestName";
-            this.lbl_ContestName.Size = new System.Drawing.Size(95, 16);
+            this.lbl_ContestName.Size = new System.Drawing.Size(144, 23);
             this.lbl_ContestName.TabIndex = 7;
             this.lbl_ContestName.Text = "tên phần thi";
             this.lbl_ContestName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -108,24 +108,24 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(9, 76);
+            this.label4.Location = new System.Drawing.Point(20, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 16);
+            this.label4.Size = new System.Drawing.Size(82, 16);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Trạng thái Thiết Đặt:";
+            this.label4.Text = "Trạng thái:";
             this.label4.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_Status
             // 
             this.lbl_Status.AutoSize = true;
             this.lbl_Status.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Status.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Status.ForeColor = System.Drawing.Color.White;
-            this.lbl_Status.Location = new System.Drawing.Point(160, 76);
+            this.lbl_Status.Location = new System.Drawing.Point(106, 117);
             this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(54, 16);
+            this.lbl_Status.Size = new System.Drawing.Size(77, 23);
             this.lbl_Status.TabIndex = 10;
             this.lbl_Status.Text = "status";
             this.lbl_Status.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -137,18 +137,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(141, 26);
             // 
-            // lbl_CompetitionName
-            // 
-            this.lbl_CompetitionName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_CompetitionName.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CompetitionName.ForeColor = System.Drawing.Color.White;
-            this.lbl_CompetitionName.Location = new System.Drawing.Point(192, 41);
-            this.lbl_CompetitionName.Name = "lbl_CompetitionName";
-            this.lbl_CompetitionName.Size = new System.Drawing.Size(99, 33);
-            this.lbl_CompetitionName.TabIndex = 5;
-            this.lbl_CompetitionName.Text = "tên";
-            this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
-            // 
             // deleteSetupToolStripMenuItem
             // 
             this.deleteSetupToolStripMenuItem.Image = global::CapDemo.Properties.Resources.Cancel;
@@ -157,13 +145,25 @@
             this.deleteSetupToolStripMenuItem.Text = "Delete Setup";
             this.deleteSetupToolStripMenuItem.Click += new System.EventHandler(this.deleteSetupToolStripMenuItem_Click);
             // 
+            // lbl_CompetitionName
+            // 
+            this.lbl_CompetitionName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CompetitionName.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CompetitionName.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_CompetitionName.Location = new System.Drawing.Point(188, 68);
+            this.lbl_CompetitionName.Name = "lbl_CompetitionName";
+            this.lbl_CompetitionName.Size = new System.Drawing.Size(99, 33);
+            this.lbl_CompetitionName.TabIndex = 5;
+            this.lbl_CompetitionName.Text = "tên";
+            this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            // 
             // New_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Contest;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Controls.Add(this.lbl_CompetitionName);
             this.Controls.Add(this.lbl_Status);
             this.Controls.Add(this.label4);
@@ -174,7 +174,7 @@
             this.Controls.Add(this.lbl_Name);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "New_Game";
-            this.Size = new System.Drawing.Size(294, 181);
+            this.Size = new System.Drawing.Size(300, 270);
             this.Load += new System.EventHandler(this.New_Game_Load);
             this.DoubleClick += new System.EventHandler(this.New_Game_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.New_Game_MouseClick);

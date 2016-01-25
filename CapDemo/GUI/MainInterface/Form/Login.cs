@@ -152,5 +152,11 @@ namespace CapDemo.GUI
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
             }
         }
+
+        private void lblServer_Click(object sender, EventArgs e)
+        {
+            Create_AccountManagement cam = new Create_AccountManagement();
+            cam.ShowDialog();
+        }
     }
 }
