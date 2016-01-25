@@ -71,7 +71,7 @@ namespace CapDemo.GUI
             if (Result == DialogResult.OK)
             {
 
-                if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml")
+                if (Path.GetExtension(OpenFile.FileName) == ".txt" || Path.GetExtension(OpenFile.FileName) == ".xml" || Path.GetExtension(OpenFile.FileName) == ".jqz")
                 {
                     if (Path.GetExtension(OpenFile.FileName) == ".txt")
                     {
@@ -102,31 +102,62 @@ namespace CapDemo.GUI
                     }
                     else
                     {
-                        dgv_Question.Columns.Clear();
-                        QuestionBL QuestionBL = new QuestionBL();
-
-                        List<DO.Question> QuestionList;
-                        QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
-                        txt_FilePath.Text = OpenFile.FileName;
-                        if (QuestionList != null)
+                        //xml
+                        if (Path.GetExtension(OpenFile.FileName) == ".xml")
                         {
-                            dgv_Question.DataSource = QuestionList;
-                            Showcolumns();
-                            CheckQuestion();
-                            if (WrongQuestion > 0)
+                            dgv_Question.Columns.Clear();
+                            QuestionBL QuestionBL = new QuestionBL();
+
+                            List<DO.Question> QuestionList;
+                            QuestionList = QuestionBL.GetFileXML(OpenFile.FileName);
+                            txt_FilePath.Text = OpenFile.FileName;
+                            if (QuestionList != null)
                             {
-                                notifyIcon1.Icon = SystemIcons.Information;
-                                notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                notifyIcon1.ShowBalloonTip(3000);
+                                dgv_Question.DataSource = QuestionList;
+                                Showcolumns();
+                                CheckQuestion();
+                                if (WrongQuestion > 0)
+                                {
+                                    notifyIcon1.Icon = SystemIcons.Information;
+                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                    notifyIcon1.ShowBalloonTip(3000);
+                                }
+                            }
+                            else
+                            {
+                                dgv_Question.Columns.Clear();
+                                txt_FilePath.Text = "";
+                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
+                            //hot potatoes
                             dgv_Question.Columns.Clear();
-                            txt_FilePath.Text = "";
-                            MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            QuestionBL QuestionBL = new QuestionBL();
 
+                            List<DO.Question> QuestionList;
+                            QuestionList = QuestionBL.GetFileHotPotato(OpenFile.FileName);
+                            txt_FilePath.Text = OpenFile.FileName;
+                            if (QuestionList != null)
+                            {
+                                dgv_Question.DataSource = QuestionList;
+                                Showcolumns();
+                                CheckQuestion();
+                                if (WrongQuestion > 0)
+                                {
+                                    notifyIcon1.Icon = SystemIcons.Information;
+                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
+                                    notifyIcon1.ShowBalloonTip(3000);
+                                }
+                            }
+                            else
+                            {
+                                dgv_Question.Columns.Clear();
+                                txt_FilePath.Text = "";
+                                MessageBox.Show("Tải file không thành công. Bạn định dạng file không hợp lý.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                 }
                 else
