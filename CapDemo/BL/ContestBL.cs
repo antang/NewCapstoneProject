@@ -181,10 +181,10 @@ namespace CapDemo.BL
         {
             string query = "INSERT INTO [Contest]"
                 +"([Round_ID],[Contest_Name],[Bonus],[Request_Time],[Challenge_Score],[Number_Challenge],"
-                +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False],[EndContest])"
+                +"[Time_show_Anwer],[Time_show_Question],[Time_of_True],[Time_of_False],[EndContest],[Run])"
                 + " VALUES ('" + Contest.IDRound + "','" + Contest.NameContest.Replace("'", "''") + "','" + Contest.Bonus + "',"
                             + "'" + Contest.TimeSupport + "','" + Contest.ChallengceScore + "','" + Contest.NumberChallenge + "',"
-                            + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "','" + Contest.EndContest + "')";
+                            + "'" + Contest.TimeShowAnswer + "','" + Contest.TimeShowQuestion + "','" + Contest.TimesTrue + "','" + Contest.TimesFalse + "','" + Contest.EndContest + "','" + Contest.Run_I + "')";
             if (ExistContest(Contest) == true)
             {
                 return false;
