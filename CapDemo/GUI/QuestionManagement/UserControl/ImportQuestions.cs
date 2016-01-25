@@ -415,7 +415,7 @@ namespace CapDemo.GUI.User_Controls
                 if (save.ShowDialog() == DialogResult.OK)
                 {
                     StreamWriter writer = new StreamWriter(save.OpenFile());
-                    string text = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Template.txt";
+                    string text = Directory.GetCurrentDirectory() + "\\Template.txt";
 
                     foreach (var line in File.ReadAllLines(text))
                     {

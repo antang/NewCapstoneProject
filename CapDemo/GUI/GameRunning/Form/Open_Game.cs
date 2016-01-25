@@ -324,7 +324,7 @@ namespace CapDemo
                         //sound challenged
                         try
                         {
-                            axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
                             axWindowsMediaPlayer1.Ctlcontrols.play();
                         }
                         catch (Exception)
@@ -363,7 +363,7 @@ namespace CapDemo
                                 //sound challenged
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -461,7 +461,7 @@ namespace CapDemo
                                                  //sound show question
                                                  try
                                                  {
-                                                     axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                                     axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HienThiCauHoi.wav";
                                                      axWindowsMediaPlayer1.Ctlcontrols.play();
                                                  }
                                                  catch (Exception)
@@ -520,7 +520,7 @@ namespace CapDemo
                                              //sound show question
                                              try
                                              {
-                                                 axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                                 axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HienThiCauHoi.wav";
                                                  axWindowsMediaPlayer1.Ctlcontrols.play();
                                              }
                                              catch (Exception)
@@ -577,12 +577,10 @@ namespace CapDemo
                         TeamCS.chk_Support.Visible = false;
                         //show time on controller screen
                         lbl_Time.Text = (Convert.ToInt32(lbl_Time.Text)+(TimeSupport)).ToString();
-                        timer1.Interval = 1000;
                         timer1.Start();
                         //show time on audience screen
                         audience.lbl_TimeShowQuestion.Text = (Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) + (TimeSupport)).ToString();
                         audience.prgb_Question.Maximum = time + (TimeSupport);
-                        audience.timer1.Interval = 1000;
                         audience.timer1.Start();
                         //hint support choice on controller screen after it has been used
 
@@ -622,7 +620,7 @@ namespace CapDemo
                                 //sound challenged
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -788,37 +786,45 @@ namespace CapDemo
             Log.Check = check;
             logBL.EditLogbyIDPlayer(Log);
         }
-        
 
+        //int countTime = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
-            if (int.Parse(lbl_Time.Text)<10 && int.Parse(lbl_Time.Text) >1)
-            {
-                try
+            //if (countTime < 100)
+            //{
+            //    countTime++;
+            //}
+            //else
+            //{
+                //countTime = 0;
+                lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
+                if (int.Parse(lbl_Time.Text) < 5 && int.Parse(lbl_Time.Text) > 1)
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DongHo.wav";
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
-                }
-                catch (Exception)
-                {
-                }
-                
-            }
-            if (int.Parse(lbl_Time.Text) == 1)
-            {
-                try
-                {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HetGio.wav";
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
-                }
-                catch (Exception)
-                {
-                }
-            }
+                    try
+                    {
+                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DongHo.wav";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                    }
+                    catch (Exception)
+                    {
+                    }
 
-            if (int.Parse(lbl_Time.Text) == 0)  //if the countdown reaches '0', we stop it
-                timer1.Stop();
+                }
+                if (int.Parse(lbl_Time.Text) == 1)
+                {
+                    try
+                    {
+                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+
+                if (int.Parse(lbl_Time.Text) == 0) { timer1.Stop(); }    
+            //}
+            
         }
 
         //Get last player when there is team go to finish lane
@@ -963,7 +969,7 @@ namespace CapDemo
                 {
                     try
                     {
-                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\ChaoMung.wav";
+                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\ChaoMung.wav";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         SoundWelcome = false;
                     }
@@ -981,7 +987,7 @@ namespace CapDemo
                 //sound to player's turn
                 try
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
                 catch (Exception)
@@ -1001,7 +1007,7 @@ namespace CapDemo
                 //sound enter answer
                 try
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
                 catch (Exception)
@@ -1026,7 +1032,7 @@ namespace CapDemo
                 {
                     try
                     {
-                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                     }
                     catch (Exception)
@@ -1055,7 +1061,7 @@ namespace CapDemo
                 //sound check score
                 try
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
                 }
                 catch (Exception)
@@ -1212,7 +1218,7 @@ namespace CapDemo
 
             //audience.Show();
             audience.flp_PlayerAnswers.Controls.Clear();
-            audience.prgb_Question.Value = 0;
+            audience.prgb_Question.Value = 1;
             audience.btn_PM.Text = "";
             CheckChallengeChoice = false;
             CheckQuestionPM = false;
@@ -1534,7 +1540,7 @@ namespace CapDemo
                                 //sound show question
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HienThiCauHoi.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -1577,7 +1583,7 @@ namespace CapDemo
                             //sund show question
                             try
                             {
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\HienThiCauHoi.wav";
+                                axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HienThiCauHoi.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
                             }
                             catch (Exception)
@@ -1700,13 +1706,11 @@ namespace CapDemo
                 ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
                 //show countdown time on game controller screen
                 lbl_Time.Text = ListPhase.ElementAt(0).TimePhase.ToString();
-                //timer1.Interval = 1000;
                 timer1.Start();
                 //show time conut down on audience screen
                 audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
-                audience.prgb_Question.Maximum = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
-                time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
-                //audience.timer1.Interval = 1000;
+                audience.prgb_Question.Maximum = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)* 900;
+                time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) ;
                 audience.timer1.Start();
                 return true;
             }
@@ -2079,7 +2083,7 @@ namespace CapDemo
                             //Sound
                             try
                             {
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
                             }
                             catch (Exception)
@@ -2113,7 +2117,7 @@ namespace CapDemo
                             //Sound
                             try
                             {
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnSai.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
                             }
                             catch (Exception)
@@ -2156,7 +2160,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -2189,7 +2193,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnSai.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -2228,7 +2232,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -2261,7 +2265,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnSai.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnSai.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -3604,7 +3608,7 @@ namespace CapDemo
                             //Sound
                             try
                             {
-                                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                 axWindowsMediaPlayer1.Ctlcontrols.play();
                             }
                             catch (Exception)
@@ -3656,7 +3660,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -3705,7 +3709,7 @@ namespace CapDemo
                                 //Sound
                                 try
                                 {
-                                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\DapAnDung.wav";
+                                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
                                     axWindowsMediaPlayer1.Ctlcontrols.play();
                                 }
                                 catch (Exception)
@@ -3785,7 +3789,7 @@ namespace CapDemo
             {
                 if (NumofQuestionPM() == 0 && NumofQuestionInPhase(records.ElementAt(team).IDPhase) == 0)
                 {
-                    axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
                     axWindowsMediaPlayer1.Ctlcontrols.play();
 
                     lblHint.Text = guideline[2].ToString();
@@ -3806,7 +3810,7 @@ namespace CapDemo
                 {
                     try
                     {
-                        axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Click.wav";
+                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                     }
                     catch (Exception)

@@ -645,7 +645,9 @@
     <EmbeddedResource Include="GUI\GameRunning\UserControl\TeamEndGame.resx">
       <DependentUpon>TeamEndGame.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Capstone.db" />
+    <Content Include="Capstone.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="ClassDiagram_IC1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -887,17 +889,39 @@
     <None Include="Resources\Contest.jpg" />
     <None Include="Resources\BackGround_2.jpg" />
     <None Include="Resources\Rank.png" />
-    <Content Include="Sound\CapNhatDiem.wav" />
-    <Content Include="Sound\ChaoMung.wav" />
-    <Content Include="Sound\Click.wav" />
-    <Content Include="Sound\DapAnDung.wav" />
-    <Content Include="Sound\DapAnSai.wav" />
-    <Content Include="Sound\DongHo.wav" />
-    <Content Include="Sound\HetGio.wav" />
-    <Content Include="Sound\HienThiCauHoi.wav" />
-    <Content Include="Sound\NhacNen.mp3" />
-    <Content Include="Sound\Van_Lang_Dai_Hoc_Duong.mp3" />
-    <Content Include="Template.txt" />
+    <Content Include="Sound\CapNhatDiem.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\ChaoMung.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Click.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\DapAnDung.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\DapAnSai.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\DongHo.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\HetGio.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\HienThiCauHoi.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\NhacNen.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\Van_Lang_Dai_Hoc_Duong.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Template.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

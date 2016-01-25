@@ -63,5 +63,19 @@ namespace CapDemo.DA
             //QuestionContent= QuestionContent.Replace("'", "''");
             return QuestionContent.Trim().ToString() ;
         } 
+
+        //Read hot potatoes file
+        public string FileContentHotPotato(string NameFile)
+        {
+            string QuestionContent = "";
+
+            foreach (var line in File.ReadAllLines(NameFile))
+            {
+
+                QuestionContent += line;
+            }
+            //QuestionContent= QuestionContent.Replace("'", "''");
+            return QuestionContent.Trim().ToString();
+        } 
     }
 }

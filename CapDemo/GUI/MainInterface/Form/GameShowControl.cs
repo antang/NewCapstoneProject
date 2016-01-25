@@ -106,7 +106,7 @@ namespace CapDemo.GUI
             this.Controls.Add(gm1);
             try
             {
-                axWindowsMediaPlayer1.URL = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
+                axWindowsMediaPlayer1.URL = Directory.GetCurrentDirectory() + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 axWindowsMediaPlayer1.settings.setMode("Loop", true);
             }
