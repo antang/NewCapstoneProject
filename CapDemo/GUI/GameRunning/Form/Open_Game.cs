@@ -672,6 +672,7 @@ namespace CapDemo
                         {
                             foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
                             {
+                                showAnswer.BackgroundImage = Properties.Resources.Answer;
                                 foreach (CheckBox multiChoice in TeamCS.flp_Answer.Controls)
                                 {
                                     if (multiChoice.Checked == true)
@@ -679,10 +680,6 @@ namespace CapDemo
                                         if (multiChoice.Text.ToLower() == showAnswer.chk1.Text.ToLower())
                                         {
                                             showAnswer.BackgroundImage = Properties.Resources.dung_2;
-                                        }
-                                        else
-                                        {
-                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
                                         }
                                     }
                                 }
@@ -911,7 +908,6 @@ namespace CapDemo
 
         }
 //Closed Controller Screen and Audience screen
-        int TagGame = 0;
         private void pb_Exit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure to exit Contest?", "Close Contest", MessageBoxButtons.OKCancel);
