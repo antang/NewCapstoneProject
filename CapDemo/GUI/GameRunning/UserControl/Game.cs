@@ -23,7 +23,6 @@ namespace CapDemo
         //load
         private void Game_Load(object sender, EventArgs e)
         {
-            
         }
         //public event EventHandler onRun;
         int iD_Game;
@@ -40,12 +39,12 @@ namespace CapDemo
 
             Open_Game OpenGame = new Open_Game();
             OpenGame.IDContest = Convert.ToInt32(lbl_IDContest.Text);
-            DialogResult result = OpenGame.ShowDialog();
-
-            if (result == DialogResult.OK)
+            OpenGame.Enable = this.lbl_EndContest.Text;
+            if (OpenGame.ShowDialog() == DialogResult.OK)
             {
-                LoadContest();
+                LoadContest(); 
             }
+            //OpenGame.ShowDialog();
         }
         //Hover
         private void Game_MouseEnter(object sender, EventArgs e)
@@ -77,18 +76,28 @@ namespace CapDemo
                         //lbl_Number.Text = (i + 1).ToString();
                         if (ListContest.ElementAt(i).Status == true)
                         {
-                            this.Enabled = false;
                             lbl_Status.Text = "Hoàn tất";
                             lbl_Status.ForeColor = Color.Red;
+                            lbl_EndContest.Text = "0";
+                            lbl_Result.Visible = true;
                         }
                         else
                         {
                             lbl_Status.Text = "Chưa hoàn Tất";
                             lbl_Status.ForeColor = Color.Red;
+                            lbl_EndContest.Text = "1";
+                            lbl_Result.Visible = false;
                         }
                     }
                 }
             }
+        }
+        //show result when end game
+        private void lbl_Result_Click(object sender, EventArgs e)
+        {
+            Result Result = new Result();
+            Result.IDcontest = Convert.ToInt32(this.lbl_IDContest.Text);
+            Result.ShowDialog();
         }
     }
 }
