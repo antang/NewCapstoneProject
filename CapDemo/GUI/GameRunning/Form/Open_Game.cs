@@ -574,6 +574,7 @@ namespace CapDemo
                     DialogResult dr = MessageBox.Show("Are you sure to use supported choice?", "Game Choice", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
+                        
                         //record
                         Record Restore = new Record();
                         Restore.Support_I = 0;
@@ -592,8 +593,16 @@ namespace CapDemo
                         audience.progressBarControl1.Max = (int)audience.progressBarControl1.Value + (TimeSupport * 900);
                         audience.progressBarControl1.Value +=  (TimeSupport*900);
                         audience.timer1.Start();
-                        //hint support choice on controller screen after it has been used
 
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        //hint support choice on controller screen after it has been used
                         foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
                         {
                             if (Convert.ToInt32(teamAdienceScreen.lbl_ID.Text) == records.ElementAt(team).IDPlayer)
@@ -672,6 +681,7 @@ namespace CapDemo
                         {
                             foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
                             {
+                                showAnswer.BackgroundImage = Properties.Resources.Answer;
                                 foreach (CheckBox multiChoice in TeamCS.flp_Answer.Controls)
                                 {
                                     if (multiChoice.Checked == true)
@@ -679,10 +689,6 @@ namespace CapDemo
                                         if (multiChoice.Text.ToLower() == showAnswer.chk1.Text.ToLower())
                                         {
                                             showAnswer.BackgroundImage = Properties.Resources.dung_2;
-                                        }
-                                        else
-                                        {
-                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
                                         }
                                     }
                                 }
@@ -820,7 +826,10 @@ namespace CapDemo
             //else
             //{
                 //countTime = 0;
-                lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
+                if (int.Parse(lbl_Time.Text) != 0)
+                {
+                    lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
+                }
                 if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
                 {
                     try
@@ -835,6 +844,7 @@ namespace CapDemo
                 }
                 if (int.Parse(lbl_Time.Text) == 0)
                 {
+                    timer1.Stop();
                     try
                     {
                         axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
@@ -843,9 +853,7 @@ namespace CapDemo
                     catch (Exception)
                     {
                     }
-                }
-
-                if (int.Parse(lbl_Time.Text) == 0) { timer1.Stop(); }    
+                }  
             //}
             
         }
@@ -911,7 +919,6 @@ namespace CapDemo
 
         }
 //Closed Controller Screen and Audience screen
-        int TagGame = 0;
         private void pb_Exit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure to exit Contest?", "Close Contest", MessageBoxButtons.OKCancel);

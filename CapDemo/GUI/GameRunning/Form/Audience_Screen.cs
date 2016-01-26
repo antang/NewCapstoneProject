@@ -222,8 +222,11 @@ namespace CapDemo
 
             if (count % 900 == 0)
             {
-                //prgb_Question.Increment(1);
-                lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
+                if (int.Parse(lbl_TimeShowQuestion.Text) != 0)
+                {
+                    lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
+                }
+                
                 if (int.Parse(lbl_TimeShowQuestion.Text) <=5)
                 {
                     progressBarControl1.ForeColor = Color.Red;
