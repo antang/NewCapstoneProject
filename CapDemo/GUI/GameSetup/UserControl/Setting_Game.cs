@@ -70,6 +70,14 @@ namespace CapDemo.GUI.User_Controls
                     {
                         game.lbl_Status.Text = "Hoàn tất";
                         game.lbl_Status.ForeColor = Color.LightGreen;
+                        if (ListContest.ElementAt(i).Run == true)
+                        {
+                            game.Run = true;
+                        }
+                        else
+                        {
+                            game.Run = false;
+                        }
                     }
                     else
                     {

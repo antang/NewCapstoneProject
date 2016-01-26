@@ -41,14 +41,21 @@ namespace CapDemo
         {
             InitializeComponent();
         }
-
+        // ID contest
         int contestID;
-
         public int ContestID
         {
             get { return contestID; }
             set { contestID = value; }
         }
+        //Checked when game have run
+        bool run;
+        public bool Run
+        {
+            get { return run; }
+            set { run = value; }
+        }
+
         int i = 1;
         public void next()
         {
@@ -108,6 +115,18 @@ namespace CapDemo
                     LoadTeamSetting();
                     i++;
                     lbl_Status.Text = i.ToString() + "/5";
+                    if (run == true)
+                    {
+                        ts.btn_AddTeam.Enabled = false;
+                        foreach (Add_Team Add_Team in ts.flp_Team.Controls)
+                        {
+                            Add_Team.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        ts.Enabled = true;
+                    }
                 }
                 else
                 {
@@ -154,6 +173,18 @@ namespace CapDemo
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(ts);
                 LoadTeamSetting();
+                if (run == true)
+                {
+                    ts.btn_AddTeam.Enabled = false;
+                    foreach (Add_Team Add_Team in ts.flp_Team.Controls)
+                    {
+                        Add_Team.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ts.Enabled = true;
+                }
 
             }
             else if (i == 3)
@@ -162,6 +193,16 @@ namespace CapDemo
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(qs);
                 btn_Back.Visible = true;
+
+                if (run == true)
+                {
+                    qs.btn_DeleteQuestion.Enabled = false;
+                    qs.btn_ImportQuestion.Enabled = false;
+                }
+                else
+                {
+                    qs.Enabled = true;
+                }
             }
             else if (i == 2)
             {
@@ -169,6 +210,18 @@ namespace CapDemo
                 pnl_CreateSetup.Controls.Add(ps);
                 LoadPhaseSetting();
                 btn_Back.Visible = true;
+                if (run == true)
+                {
+                    ps.btn_AddPhase.Enabled = false;
+                    foreach (Add_Phase Add_Phase in ps.flp_Phase.Controls)
+                    {
+                        Add_Phase.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ps.Enabled = true;
+                }
 
             }
             else if (i == 1)
@@ -177,6 +230,15 @@ namespace CapDemo
                 pnl_CreateSetup.Controls.Add(gs);
                 LoadGeneralSetting();
                 btn_Back.Visible = false;
+
+                if (run == true)
+                {
+                    gs.Enabled = false;
+                }
+                else
+                {
+                    gs.Enabled = true;
+                }
             }
         }
         //Click next
@@ -196,6 +258,14 @@ namespace CapDemo
             pnl_CreateSetup.Controls.Add(gs);
             lbl_Status.Text = i.ToString() + "/5";
             LoadGeneralSetting();
+            if (run == true)
+            {
+                gs.Enabled = false;
+            }
+            else
+            {
+                gs.Enabled = true;
+            }
         }
 //General Setting
         //load general Setting
@@ -276,6 +346,19 @@ namespace CapDemo
                 btn_Back.Visible = true;
                 i = i + 1;
                 lbl_Status.Text = i.ToString() + "/5";
+
+                if (run == true)
+                {
+                    ps.btn_AddPhase.Enabled = false;
+                    foreach (Add_Phase Add_Phase in ps.flp_Phase.Controls)
+                    {
+                        Add_Phase.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ps.Enabled = true;
+                }
             }
             else
             {
@@ -383,6 +466,15 @@ namespace CapDemo
                 btn_Back.Visible = true;
                 i++;
                 lbl_Status.Text = i.ToString() + "/5";
+                if (run == true)
+                {
+                    qs.btn_DeleteQuestion.Enabled = false;
+                    qs.btn_ImportQuestion.Enabled = false;
+                }
+                else
+                {
+                    qs.Enabled = true;
+                }
             }
             else
             {
@@ -468,12 +560,21 @@ namespace CapDemo
                 cs.AmountPlayer = ts.CountTeam();
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(cs);
-                //LoadCompetitionSetting();
+///////
+                LoadCompetitionSetting();
                 btn_Next.Visible = false;
                 btn_Save.Visible = true;
                 btn_Back.Visible = true;
                 i++;
                 lbl_Status.Text = i.ToString() + "/5";
+                if (run == true)
+                {
+                    cs.Enabled = false;
+                }
+                else
+                {
+                    cs.Enabled = true;
+                }
             }
             else
             {

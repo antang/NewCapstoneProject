@@ -96,10 +96,14 @@ namespace CapDemo
                     }
                 }
             }
+            //if (lb_Phase.Items.Count > 0)
+            //{
+            //    lb_Phase.SelectedIndex = 0;
+            //}
             
             List<DO.Phase> PhaseList;
             //PhaseList = PhaseQuestionBL.getquestionByIDPhase(Phase);
-            PhaseList = PhaseQuestionBL.getquestionRunGame(Phase);
+            PhaseList = PhaseQuestionBL.getquestionRunGameS(Phase);
             if (PhaseList != null)
             {
                 dgv_Question.DataSource = PhaseList;
@@ -119,13 +123,16 @@ namespace CapDemo
             dgv_Question.Columns["SequenceQuestion"].HeaderText = "STT";
             dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
+            dgv_Question.Columns["StatusShow"].HeaderText = "Trạng thái";
 
             dgv_Question.Columns["SequenceQuestion"].ReadOnly = true;
-            dgv_Question.Columns["NameQuestion"].ReadOnly = false;
+            dgv_Question.Columns["NameQuestion"].ReadOnly = true;
             dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
+            dgv_Question.Columns["StatusShow"].ReadOnly = true;
 
             dgv_Question.Columns["SequenceQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgv_Question.Columns["StatusShow"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         //Select listbox to show question
