@@ -35,6 +35,7 @@
             this.btn_ImportQuestion = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_DeleteQuestion = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,26 @@
             this.btn_DeleteQuestion.UseVisualStyleBackColor = true;
             this.btn_DeleteQuestion.Click += new System.EventHandler(this.btn_DeleteQuestion_Click);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Enabled = false;
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(655, 22);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(88, 17);
+            this.checkBox2.TabIndex = 5;
+            this.checkBox2.Text = "Chưa hiện thị";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // QuestionSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.btn_DeleteQuestion);
             this.Controls.Add(this.btn_ImportQuestion);
             this.Controls.Add(this.lb_Phase);
@@ -128,6 +144,7 @@
             this.Load += new System.EventHandler(this.QuestionSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,8 +152,9 @@
 
         private System.Windows.Forms.DataGridView dgv_Question;
         private System.Windows.Forms.ListBox lb_Phase;
-        private System.Windows.Forms.Button btn_ImportQuestion;
-        private System.Windows.Forms.Button btn_DeleteQuestion;
         private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.Button btn_ImportQuestion;
+        public System.Windows.Forms.Button btn_DeleteQuestion;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

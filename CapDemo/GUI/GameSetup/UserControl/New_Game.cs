@@ -20,11 +20,19 @@ namespace CapDemo.GUI.User_Controls
         }
         Setting_Game sg = new Setting_Game();
         public event EventHandler onDelete;
+        //id control
         int iD_NewGame;
         public int ID_NewGame
         {
             get { return iD_NewGame; }
             set { iD_NewGame = value; }
+        }
+        //checked when game have run
+        bool run;
+        public bool Run
+        {
+            get { return run; }
+            set { run = value; }
         }
         private void New_Game_Load(object sender, EventArgs e)
         {
@@ -34,6 +42,7 @@ namespace CapDemo.GUI.User_Controls
         {
             ContinueSetting continueSetting = new ContinueSetting();
             continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
 
             DialogResult result = continueSetting.ShowDialog();
             if (result == DialogResult.OK)

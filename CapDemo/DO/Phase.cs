@@ -17,11 +17,7 @@ namespace CapDemo.DO
         int sequence;
         int status;
 
-        public int Status
-        {
-            get { return status; }
-            set { status = value; }
-        }
+        
        // Question question;
 
         //public Phase()
@@ -102,6 +98,18 @@ namespace CapDemo.DO
             get { return timePhase; }
             set { timePhase = value; }
         }
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
+        bool statusShow;
+
+        public bool StatusShow
+        {
+            get { return statusShow; }
+            set { statusShow = value; }
+        }
     }
 }

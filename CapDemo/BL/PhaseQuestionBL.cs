@@ -106,6 +106,45 @@ namespace CapDemo.BL
             return PhaseList;
         }
 
+        //seclect all question in phase
+        public List<Phase> getquestionRunGameS(Phase Phase)
+        {
+            List<Phase> PhaseList = new List<Phase>();
+            string query = "SELECT p.[Phase_ID],p.[Contest_ID],p.[Phase_Name],p.[Phase_Time],p.[Phase_Score],p.[Phase_Minus],p.[Sequence],"
+                        + " q.[Question_ID],q.[Catalogue_ID],q.[Question_Title],q.[Question_Name],q.[Question_Type], pq.[Status] "
+                        + " FROM [PhaseQuestion] pq"
+                        + " INNER JOIN [Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
+                        + " INNER JOIN [Question] q ON q.[Question_ID] = pq.[Question_ID]"
+                        + " WHERE pq.[Phase_ID] = '" + Phase.IDPhase + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            int i = 1;
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Phase phase = new Phase();
+
+                    phase.IDPhase = Convert.ToInt32(item["Phase_ID"]);
+                    phase.IDContest = Convert.ToInt32(item["Contest_ID"]);
+                    phase.NamePhase = (item["Phase_Name"]).ToString();
+                    phase.TimePhase = Convert.ToInt32(item["Phase_Time"]);
+                    phase.ScorePhase = Convert.ToInt32(item["Phase_Score"]);
+                    phase.MinusPhase = Convert.ToInt32(item["Phase_Minus"]);
+                    phase.Sequence = Convert.ToInt32(item["Sequence"]);
+
+                    phase.IDQuestion = Convert.ToInt32(item["Question_ID"]);
+                    phase.NameQuestion = item["Question_Name"].ToString();
+                    phase.TypeQuestion = item["Question_Type"].ToString();
+                    phase.StatusShow = (bool)item["Status"];
+                    phase.SequenceQuestion = i;
+
+                    PhaseList.Add(phase);
+                    i++;
+                }
+            }
+            return PhaseList;
+        }
+
         //seclect question by id phase
         public List<Phase> getquestionByIDContest(Phase Phase)
         {

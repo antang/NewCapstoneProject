@@ -56,7 +56,7 @@ namespace CapDemo.BL
             List<Contest> ContestList = new List<Contest>();
             string query = "SELECT c.[Contest_ID],c.[Round_ID],c.[Contest_Name],c.[Bonus],c.[Request_Time],c.[Challenge_Score],c.[Number_Challenge]"
                         + ",c.[Time_show_Anwer],c.[Time_show_Question],c.[Time_of_True],c.[Time_of_False]"
-                        + ",r.[Round_Name],n.[Competition_Name],r.[Competition_ID], c.[EndContest]"
+                        + ",r.[Round_Name],n.[Competition_Name],r.[Competition_ID], c.[EndContest],c.[Run]"
                         + " FROM [Contest] c"
                         + " INNER JOIN [Round] r ON r.[Round_ID] = c.[Round_ID]"
                         + " INNER JOIN [Competition] n ON n.[Competition_ID] = r.[Competition_ID]";
@@ -78,6 +78,7 @@ namespace CapDemo.BL
                     Contest.TimeShowQuestion = Convert.ToInt32(item["Time_show_Question"].ToString());
                     Contest.TimesTrue = Convert.ToInt32(item["Time_of_True"].ToString());
                     Contest.Status = (bool)item["EndContest"];
+                    Contest.Run = (bool)(item["Run"]);
                     //round
                     Contest.TimesFalse = Convert.ToInt32(item["Time_of_False"].ToString());
                     Contest.Round.IDRound = Convert.ToInt32(item["Round_ID"].ToString());
