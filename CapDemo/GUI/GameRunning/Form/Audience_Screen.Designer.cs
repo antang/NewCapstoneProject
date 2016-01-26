@@ -40,8 +40,8 @@
             this.pnl_Lane = new System.Windows.Forms.Panel();
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_ShowQuestion = new System.Windows.Forms.TabPage();
+            this.progressBarControl1 = new CapDemo.ProgressBarControl();
             this.lbl_TimeShowQuestion = new System.Windows.Forms.Label();
-            this.prgb_Question = new System.Windows.Forms.ProgressBar();
             this.lbl_typeQ = new System.Windows.Forms.Label();
             this.pnl_QuestionFrame = new System.Windows.Forms.Panel();
             this.lbl_QuestionContent = new System.Windows.Forms.Label();
@@ -203,8 +203,8 @@
             this.tab_ShowQuestion.BackColor = System.Drawing.Color.Blue;
             this.tab_ShowQuestion.BackgroundImage = global::CapDemo.Properties.Resources.BackGround_2;
             this.tab_ShowQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tab_ShowQuestion.Controls.Add(this.progressBarControl1);
             this.tab_ShowQuestion.Controls.Add(this.lbl_TimeShowQuestion);
-            this.tab_ShowQuestion.Controls.Add(this.prgb_Question);
             this.tab_ShowQuestion.Controls.Add(this.lbl_typeQ);
             this.tab_ShowQuestion.Controls.Add(this.pnl_QuestionFrame);
             this.tab_ShowQuestion.Controls.Add(this.flp_PlayerAnswers);
@@ -221,14 +221,25 @@
             this.tab_ShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.tab_ShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
+            // progressBarControl1
+            // 
+            this.progressBarControl1.BackColor = System.Drawing.Color.Transparent;
+            this.progressBarControl1.ForeColor = System.Drawing.Color.Yellow;
+            this.progressBarControl1.Location = new System.Drawing.Point(44, 58);
+            this.progressBarControl1.Max = 0;
+            this.progressBarControl1.Name = "progressBarControl1";
+            this.progressBarControl1.Size = new System.Drawing.Size(929, 10);
+            this.progressBarControl1.TabIndex = 12;
+            this.progressBarControl1.Value = 0F;
+            // 
             // lbl_TimeShowQuestion
             // 
             this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
-            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(496, 31);
+            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(494, 25);
             this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
-            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(43, 27);
+            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(68, 28);
             this.lbl_TimeShowQuestion.TabIndex = 2;
             this.lbl_TimeShowQuestion.Text = "10";
             this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,25 +247,15 @@
             this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.lbl_TimeShowQuestion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
             // 
-            // prgb_Question
-            // 
-            this.prgb_Question.ForeColor = System.Drawing.Color.Transparent;
-            this.prgb_Question.Location = new System.Drawing.Point(44, 62);
-            this.prgb_Question.Margin = new System.Windows.Forms.Padding(0);
-            this.prgb_Question.Name = "prgb_Question";
-            this.prgb_Question.Size = new System.Drawing.Size(928, 5);
-            this.prgb_Question.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prgb_Question.TabIndex = 11;
-            // 
             // lbl_typeQ
             // 
             this.lbl_typeQ.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_typeQ.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_typeQ.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_typeQ.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_typeQ.ForeColor = System.Drawing.Color.White;
             this.lbl_typeQ.Location = new System.Drawing.Point(311, 3);
             this.lbl_typeQ.Name = "lbl_typeQ";
-            this.lbl_typeQ.Size = new System.Drawing.Size(367, 28);
+            this.lbl_typeQ.Size = new System.Drawing.Size(367, 19);
             this.lbl_typeQ.TabIndex = 10;
             this.lbl_typeQ.Text = "Type:";
             this.lbl_typeQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,11 +312,11 @@
             // 
             this.lbl_Point.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Point.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Point.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Point.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Point.ForeColor = System.Drawing.Color.White;
             this.lbl_Point.Location = new System.Drawing.Point(713, 3);
             this.lbl_Point.Name = "lbl_Point";
-            this.lbl_Point.Size = new System.Drawing.Size(302, 28);
+            this.lbl_Point.Size = new System.Drawing.Size(302, 19);
             this.lbl_Point.TabIndex = 7;
             this.lbl_Point.Text = "Point: ";
             this.lbl_Point.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -326,11 +327,11 @@
             // lbl_Phase
             // 
             this.lbl_Phase.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Phase.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phase.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Phase.ForeColor = System.Drawing.Color.White;
             this.lbl_Phase.Location = new System.Drawing.Point(1, 0);
             this.lbl_Phase.Name = "lbl_Phase";
-            this.lbl_Phase.Size = new System.Drawing.Size(304, 31);
+            this.lbl_Phase.Size = new System.Drawing.Size(304, 22);
             this.lbl_Phase.TabIndex = 5;
             this.lbl_Phase.Text = "Phase";
             this.lbl_Phase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -474,6 +475,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.Button btn_PM;
-        public System.Windows.Forms.ProgressBar prgb_Question;
+        public ProgressBarControl progressBarControl1;
     }
 }

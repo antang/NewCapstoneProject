@@ -216,13 +216,23 @@ namespace CapDemo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            progressBarControl1.ForeColor = Color.Yellow;
             count += timer1.Interval;
-            prgb_Question.Increment(timer1.Interval);
+            progressBarControl1.Value -= timer1.Interval;
 
             if (count % 900 == 0)
             {
-                prgb_Question.Increment(1);
+                //prgb_Question.Increment(1);
                 lbl_TimeShowQuestion.Text = (int.Parse(lbl_TimeShowQuestion.Text) - 1).ToString();
+                if (int.Parse(lbl_TimeShowQuestion.Text) <=5)
+                {
+                    progressBarControl1.ForeColor = Color.Red;
+                }
+                else
+                {
+                    progressBarControl1.ForeColor = Color.Yellow;
+                }
+
                 if (int.Parse(lbl_TimeShowQuestion.Text) == 0)
                 {
                     timer1.Stop();

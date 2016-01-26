@@ -17,6 +17,27 @@ namespace CapDemo.BL
         {
             DA = new DatabaseAccess();
         }
+        //get score player
+        public List<Record> GetsScoreplayerByIDContest(Record record)
+        {
+            List<Record> RecordList = new List<Record>();
+            string query = "SELECT [PlayerScore],[Player_ID]"
+                        + " FROM [Record]"
+                        + " WHERE [Contest_ID] = '" + record.IDContest + "'";
+            DataTable dt = DA.SelectDatabase(query);
+            //int i = 1;
+            if (dt != null)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    Record Record = new Record();
+                    Record.TeamScore = Convert.ToInt32(item["PlayerScore"].ToString());
+                    Record.IDPlayer = Convert.ToInt32(item["Player_ID"].ToString());
+                    RecordList.Add(Record);
+                }
+            }
+            return RecordList;
+        }
 
         //
         public List<Record> GetRecordByIDContest(Record record)

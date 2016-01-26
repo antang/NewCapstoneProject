@@ -80,14 +80,17 @@ namespace CapDemo.GUI.User_Controls
                         game.lbl_IDContest.Text = ListContest.ElementAt(i).IDContest.ToString();
                         if (ListContest.ElementAt(i).Status == true)
                         {
-                            game.Enabled = false;
                             game.lbl_Status.Text = "Hoàn Tất";
                             game.lbl_Status.ForeColor = Color.Red;
+                            game.lbl_EndContest.Text = "0";
+                            game.lbl_Result.Visible = true;
                         }
                         else
                         {
                             game.lbl_Status.Text = "Chưa Hoàn Tất";
                             game.lbl_Status.ForeColor = Color.Red;
+                            game.lbl_EndContest.Text = "1";
+                            game.lbl_Result.Visible = false ;
                         }
                         flp_StartGame.Controls.Add(game);
                     } 

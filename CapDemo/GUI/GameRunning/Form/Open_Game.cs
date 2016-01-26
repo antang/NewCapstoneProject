@@ -33,6 +33,14 @@ namespace CapDemo
             get { return iDContest; }
             set { iDContest = value; }
         }
+        string enable;
+
+        public string Enable
+        {
+            get { return enable; }
+            set { enable = value; }
+        }
+
         int teamtTag = 0;
 
         #region Declare
@@ -84,6 +92,7 @@ namespace CapDemo
         bool Done = true;
         bool GameOver = false;
         bool GameOverAll = false;
+        //bool GameComplete = false;
         bool SoundWelcome = true;
         //bool ExistPM;
         int IDPhasePM;
@@ -580,7 +589,8 @@ namespace CapDemo
                         timer1.Start();
                         //show time on audience screen
                         audience.lbl_TimeShowQuestion.Text = (Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) + (TimeSupport)).ToString();
-                        audience.prgb_Question.Maximum = time + (TimeSupport);
+                        audience.progressBarControl1.Max = (int)audience.progressBarControl1.Value + (TimeSupport * 900);
+                        audience.progressBarControl1.Value +=  (TimeSupport*900);
                         audience.timer1.Start();
                         //hint support choice on controller screen after it has been used
 
@@ -693,7 +703,20 @@ namespace CapDemo
         private void Open_Game_Load(object sender, EventArgs e)
         {
             //this.Dock = DockStyle.Fill;
+            ////
+            if (enable == "0")
+            {
+                pb_Play.Visible = false;
+                pb_EndGame.Visible = false;
+                lblHint.Visible = false;
+            }
+            else
+            {
+                pb_Play.Visible = true;
+                pb_EndGame.Visible = true;
+            }
             GetContestContent();
+            pb_EndGame.Visible = false;
             lblHint.Text = guideline[0].ToString();
         }
 
@@ -798,7 +821,7 @@ namespace CapDemo
             //{
                 //countTime = 0;
                 lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
-                if (int.Parse(lbl_Time.Text) < 5 && int.Parse(lbl_Time.Text) > 1)
+                if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
                 {
                     try
                     {
@@ -810,7 +833,7 @@ namespace CapDemo
                     }
 
                 }
-                if (int.Parse(lbl_Time.Text) == 1)
+                if (int.Parse(lbl_Time.Text) == 0)
                 {
                     try
                     {
@@ -888,6 +911,7 @@ namespace CapDemo
 
         }
 //Closed Controller Screen and Audience screen
+        int TagGame = 0;
         private void pb_Exit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are you sure to exit Contest?", "Close Contest", MessageBoxButtons.OKCancel);
@@ -896,6 +920,7 @@ namespace CapDemo
                 this.Close();
                 audience.Close();
                 axWindowsMediaPlayer1.Ctlcontrols.stop();
+                this.DialogResult = DialogResult.OK;
             }
         }
         #endregion
@@ -943,6 +968,7 @@ namespace CapDemo
                 if (GameOverAll == true)
                 {
                     pb_Play.Visible = false;
+                    //lblHint.Visible = false;
                 }
                 audience.tbc_ShowGame.SelectedIndex = tab;
                 finish = true;
@@ -956,12 +982,11 @@ namespace CapDemo
             audience.IdContest = iDContest;
             if (step == 1)
             {
-                
+                pb_EndGame.Visible = true;
                 //this.SuspendLayout();
                 audience.SuspendLayout();
                 lblHint.Text = guideline[1].ToString();
                 loadMap();
-
                 Contest.Run_I = 1;
                 ContestBL.CheckRunContestbyID(Contest);
                 //Sound
@@ -972,6 +997,8 @@ namespace CapDemo
                         axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\ChaoMung.wav";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
                         SoundWelcome = false;
+
+                        
                     }
                     catch (Exception)
                     {
@@ -1017,8 +1044,8 @@ namespace CapDemo
                 lblHint.Text = guideline[4].ToString();
                 EnterAnswer();
                 //turn off  time
-                lbl_Time.Text = "1";
-                audience.lbl_TimeShowQuestion.Text = "1";
+                //lbl_Time.Text = "1";
+                //audience.lbl_TimeShowQuestion.Text = "1";
                 //Hide table answer
                 foreach (Team teamCS in flp_Team.Controls)
                 {
@@ -1185,7 +1212,6 @@ namespace CapDemo
                                     else
                                     {
                                         teamEndGame.BackgroundImage = Properties.Resources.Fourth;
-                                        teamEndGame.lbl_Position.Visible = true;
                                     }
                                 }
                             }
@@ -1218,7 +1244,7 @@ namespace CapDemo
 
             //audience.Show();
             audience.flp_PlayerAnswers.Controls.Clear();
-            audience.prgb_Question.Value = 1;
+            audience.progressBarControl1.Value = 1;
             audience.btn_PM.Text = "";
             CheckChallengeChoice = false;
             CheckQuestionPM = false;
@@ -1309,7 +1335,7 @@ namespace CapDemo
                 }
                 //show heart in player
 ////////
-                if (records.ElementAt(team).Undie == false)
+                if (records.ElementAt(j).Undie == false)
                 {
                     if (records.ElementAt(j).NumFail == 3)
                     {
@@ -1338,8 +1364,20 @@ namespace CapDemo
                                 teamAdienceScreen.pb_Heart1.Hide();
                                 teamAdienceScreen.pb_Heart2.Hide();
                                 teamAdienceScreen.pb_Heart3.Hide();
+                                teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
                             }
                         }
+                    }
+                    //end game
+                    if (records.ElementAt(j).Exist == false)
+                    {
+                        teamAdienceScreen.BackColor = Color.Transparent;
+                        teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.Transparent;
+                        teamAdienceScreen.btn_SupportChoice.BackColor = Color.Transparent;
+                        teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
+                        teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
+                        teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
+                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
                     }
                 }
                 else
@@ -1348,6 +1386,7 @@ namespace CapDemo
                     teamAdienceScreen.pb_Heart2.Hide();
                     teamAdienceScreen.pb_Heart3.Hide();
                 }
+                
                 
                 j++;
             }
@@ -1709,7 +1748,8 @@ namespace CapDemo
                 timer1.Start();
                 //show time conut down on audience screen
                 audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
-                audience.prgb_Question.Maximum = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)* 900;
+                audience.progressBarControl1.Max = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
+                audience.progressBarControl1.Value = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
                 time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) ;
                 audience.timer1.Start();
                 return true;
@@ -2476,12 +2516,14 @@ namespace CapDemo
                 ToolTip1.SetToolTip(this.pb_Play, "Game Over");
 
                 pb_Play.Visible = false;
+                lblHint.Visible = false;
+                GameOverAll = true;
                 //pb_EndGame.Visible = true;
                 UpdateScreenAfterChallenge();
                 Contest.EndContest = 1;
                 ContestBL.EditStatusContestbyID(Contest);
-/////////
-                this.DialogResult = DialogResult.OK;
+/////////       
+                
             }
             else
             {
@@ -2495,13 +2537,14 @@ namespace CapDemo
                         System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
                         ToolTip1.SetToolTip(this.pb_Play, "Game Over");
                         pb_Play.Visible = false;
+                        lblHint.Visible = false;
                         GameOverAll = true;
                         UpdateScreenAfterChallenge();
                         //update status contest id this contest have run
                         Contest.EndContest = 1;
                         ContestBL.EditStatusContestbyID(Contest);
 /////////
-                        this.DialogResult = DialogResult.OK;
+                        
                     }
                 }
                 

@@ -40,6 +40,8 @@
             this.lbl_Status = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lbl_EndContest = new System.Windows.Forms.Label();
+            this.lbl_Result = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,12 +178,37 @@
             this.label4.MouseEnter += new System.EventHandler(this.Game_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.Game_MouseLeave);
             // 
+            // lbl_EndContest
+            // 
+            this.lbl_EndContest.AutoSize = true;
+            this.lbl_EndContest.Location = new System.Drawing.Point(11, 16);
+            this.lbl_EndContest.Name = "lbl_EndContest";
+            this.lbl_EndContest.Size = new System.Drawing.Size(0, 13);
+            this.lbl_EndContest.TabIndex = 22;
+            this.lbl_EndContest.Visible = false;
+            // 
+            // lbl_Result
+            // 
+            this.lbl_Result.AutoSize = true;
+            this.lbl_Result.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Result.Font = new System.Drawing.Font("Verdana", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Result.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_Result.Location = new System.Drawing.Point(22, 233);
+            this.lbl_Result.Name = "lbl_Result";
+            this.lbl_Result.Size = new System.Drawing.Size(140, 18);
+            this.lbl_Result.TabIndex = 23;
+            this.lbl_Result.Text = "Kết quả thi đấu";
+            this.lbl_Result.Visible = false;
+            this.lbl_Result.Click += new System.EventHandler(this.lbl_Result_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Contest;
+            this.Controls.Add(this.lbl_Result);
+            this.Controls.Add(this.lbl_EndContest);
             this.Controls.Add(this.lbl_CompetitionName);
             this.Controls.Add(this.lbl_Status);
             this.Controls.Add(this.label4);
@@ -190,6 +217,7 @@
             this.Controls.Add(this.lbl_RoundName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Name);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Game";
             this.Size = new System.Drawing.Size(300, 270);
             this.toolTip1.SetToolTip(this, "Double Click");
@@ -216,5 +244,7 @@
         public System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.Label lbl_EndContest;
+        public System.Windows.Forms.Label lbl_Result;
     }
 }
