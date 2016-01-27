@@ -1309,7 +1309,14 @@ namespace CapDemo
                 if (Run == true && SoundWelcome== true)
                 {
                     int H_Phase = (playerLane.Height - playerLane.btn_Team.Height - playerLane.lbl_Finish.Location.Y - playerLane.lbl_Finish.Height) / (AmountPhase * AmountSteptoPass);
-                    playerLane.btn_Team.Location = new Point(playerLane.btn_Team.Location.X + 0, playerLane.btn_Team.Location.Y - (H_Phase / 2 + playerLane.btn_Team.Height / 2) - H_Phase*ListRestore.ElementAt(k).TotalPass);
+                    if (ListRestore.ElementAt(k).TotalPass == AmountSteptoPass*AmountPhase)
+                    {
+                        playerLane.btn_Team.Location = new Point(playerLane.btn_Team.Location.X + 0, playerLane.btn_Team.Location.Y - playerLane.btn_Team.Location.Y + 2);
+                    }
+                    else
+                    {
+                        playerLane.btn_Team.Location = new Point(playerLane.btn_Team.Location.X + 0, playerLane.btn_Team.Location.Y - (H_Phase / 2 + playerLane.btn_Team.Height / 2) - H_Phase * ListRestore.ElementAt(k).TotalPass);
+                    } 
                 }
                 k++;
             }
