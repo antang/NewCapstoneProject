@@ -167,6 +167,7 @@ namespace CapDemo
             i = i - 1;
             if (i == 4)
             {
+                lbl_Status.Text = i.ToString() + "/5";
                 btn_Next.Visible = true;
                 btn_Save.Visible = false;
                 btn_Back.Visible = true;
@@ -189,6 +190,7 @@ namespace CapDemo
             }
             else if (i == 3)
             {
+                lbl_Status.Text = i.ToString() + "/5";
                 QuestionSetting qs = new QuestionSetting(contestID);
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(qs);
@@ -206,6 +208,7 @@ namespace CapDemo
             }
             else if (i == 2)
             {
+                lbl_Status.Text = i.ToString() + "/5";
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(ps);
                 LoadPhaseSetting();
@@ -226,6 +229,7 @@ namespace CapDemo
             }
             else if (i == 1)
             {
+                lbl_Status.Text = i.ToString() + "/5";
                 pnl_CreateSetup.Controls.Clear();
                 pnl_CreateSetup.Controls.Add(gs);
                 LoadGeneralSetting();

@@ -80,7 +80,7 @@
             this.lbl_TeamAnswer.Name = "lbl_TeamAnswer";
             this.lbl_TeamAnswer.Size = new System.Drawing.Size(176, 35);
             this.lbl_TeamAnswer.TabIndex = 1;
-            this.lbl_TeamAnswer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lbl_TeamAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb_Result
             // 
