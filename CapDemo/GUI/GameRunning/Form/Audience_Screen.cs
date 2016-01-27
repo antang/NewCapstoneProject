@@ -25,10 +25,10 @@ namespace CapDemo
             InitializeComponent();
             
         }
-        public void SpashStart()
-        {
-            Application.Run(new PleaseWaitForm());
-        }
+        //public void SpashStart()
+        //{
+        //    Application.Run(new PleaseWaitForm());
+        //}
 
         int idContest;
 
@@ -63,9 +63,9 @@ namespace CapDemo
         {
 
             this.Hide();
-            Thread t = new Thread(new ThreadStart(SpashStart));
-            t.Start();
-            Thread.Sleep(5000);
+            //Thread t = new Thread(new ThreadStart(SpashStart));
+            //t.Start();
+            //Thread.Sleep(5000);
             this.SuspendLayout();
             //this.Hide();
             this.Dock = DockStyle.Fill;
@@ -205,7 +205,7 @@ namespace CapDemo
                 }
             }
             
-            t.Abort();
+            //t.Abort();
             this.Show();
             this.ResumeLayout();
             
