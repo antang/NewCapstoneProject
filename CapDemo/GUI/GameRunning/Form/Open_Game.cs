@@ -1833,7 +1833,7 @@ namespace CapDemo
                             textBox.Anchor = AnchorStyles.Left;
                             textBox.Location = new Point(textBox.Location.X + 0, textBox.Location.Y + 0);
                             textBox.Size = new System.Drawing.Size(teamCS.flp_Answer.Width - 7, teamCS.flp_Answer.Height - 7);
-                            textBox.Font = new Font("Verdana", 14.0f, FontStyle.Bold);
+                            textBox.Font = new Font("Verdana", 12.0f, FontStyle.Bold);
                             teamCS.flp_Answer.Controls.Add(textBox);
                         }
                     }
@@ -1902,7 +1902,7 @@ namespace CapDemo
                             textBox.Anchor = AnchorStyles.Left;
                             textBox.Location = new Point(textBox.Location.X + 0, textBox.Location.Y + 0);
                             textBox.Size = new System.Drawing.Size(teamCS.flp_Answer.Width - 7, teamCS.flp_Answer.Height - 7);
-                            textBox.Font = new Font("Verdana", 14.0f, FontStyle.Bold);
+                            textBox.Font = new Font("Verdana", 12.0f, FontStyle.Bold);
                             teamCS.flp_Answer.Controls.Add(textBox);
                         }
                     }
@@ -1998,6 +1998,18 @@ namespace CapDemo
                                     if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
                                     {
                                         playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
+
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        {
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            }
+                                            else
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            } 
+                                        }
                                     }
                                 }
                             }
@@ -2066,6 +2078,17 @@ namespace CapDemo
                                     {
                                         playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
                                         //PlayerAnswerShortQuestion = shortanswer.txt_ShortAnswer.Text;
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        {
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            }
+                                            else
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            }
+                                        }
                                     }
                                 }
                             }
