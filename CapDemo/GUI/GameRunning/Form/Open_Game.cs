@@ -93,7 +93,7 @@ namespace CapDemo
         //bool DoneFirst = false;
         bool GameOver = false;
         bool GameOverAll = false;
-        //bool GameComplete = false;
+        bool CheckPlayerCorrect = false;
         bool SoundWelcome = true;
         //bool ExistPM;
         int IDPhasePM;
@@ -2130,6 +2130,7 @@ namespace CapDemo
                     {
                         playerAnswer.lbl_Check.Text = "true";
                         playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                        CheckPlayerCorrect = true;
 
                         //Show Score team have receive
                         if (CheckChallengeChoice == false)
@@ -2207,6 +2208,7 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            CheckPlayerCorrect = true;
 
                             //Show Score team have receive
                             if (CheckChallengeChoice == false)
@@ -2279,6 +2281,7 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            CheckPlayerCorrect = true;
 
                             //Show Score team have receive
                             if (CheckChallengeChoice == false)
@@ -3410,6 +3413,7 @@ namespace CapDemo
                                 playerAnswer.lbl_Score.Visible = true;
                             }
                         }
+
                     }
                     else
                     {//Owner challenge lose
@@ -3504,6 +3508,7 @@ namespace CapDemo
                             }
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
                             playerAnswer.lbl_Score.Visible = true;
+                            CheckPlayerCorrect = true;
                         }
                         else
                         {
@@ -3545,6 +3550,7 @@ namespace CapDemo
                     //owner challenge win
                     if (ownerChallenge == true)
                     {
+                        CheckPlayerCorrect = true;
                         int NumTeamFail = 0;
                         //Receive score for team was challenged
                         foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
@@ -3679,6 +3685,7 @@ namespace CapDemo
                     {
                         playerAnswer.lbl_Check.Text = "true";
                         playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                        CheckPlayerCorrect = true;
 
                         //Show Score team have receive
                         if (CheckChallengeChoice == false)
@@ -3731,6 +3738,7 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            CheckPlayerCorrect = true;
 
                             //Show Score team have receive
                             if (CheckChallengeChoice == false)
@@ -3780,6 +3788,7 @@ namespace CapDemo
                         {
                             playerAnswer.lbl_Check.Text = "true";
                             playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            CheckPlayerCorrect = true;
 
                             //Show Score team have receive
                             if (CheckChallengeChoice == false)
@@ -3832,10 +3841,18 @@ namespace CapDemo
                 {
                     if (TeamAS.lbl_ID.Text == playerAnswer.lbl_IDPlayer.Text)
                     {
-                            TeamAS.lbl_Score.Text = playerAnswer.lbl_Score.Text;
-                            TeamAS.lbl_Score.Visible = true;
-
-                            //TeamAS.lbl_Score.Text = (Convert.ToInt32(playerAnswer.lbl_Score.Text)+Bonus).ToString();
+                            
+                            if (records.ElementAt(team).First == true && records.ElementAt(team).TotalPass == (AmountPhase * AmountSteptoPass -1) && CheckPlayerCorrect == true && CheckQuestionPM==false)
+                            {
+                                TeamAS.lbl_Score.Text = "+"+(Convert.ToInt32(playerAnswer.lbl_Score.Text) + Bonus).ToString();
+                                TeamAS.lbl_Score.Visible = true;
+                                CheckPlayerCorrect = false;
+                            }
+                            else
+                            {
+                                TeamAS.lbl_Score.Text = playerAnswer.lbl_Score.Text;
+                                TeamAS.lbl_Score.Visible = true;
+                            }
                     }
                 }
             }
