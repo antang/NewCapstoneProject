@@ -88,11 +88,37 @@ namespace CapDemo.DO
             get { return turn; }
             set { turn = value; }
         }
+        bool done;
 
+        public bool Done
+        {
+            get { return done; }
+            set { done = value; }
+        }
+        int done_I;
+
+        public int Done_I
+        {
+            get { return done_I; }
+            set { done_I = value; }
+        }
+        bool first;
+        public bool First
+        {
+            get { return first; }
+            set { first = value; }
+        }
+        int first_I;
+
+        public int First_I
+        {
+            get { return first_I; }
+            set { first_I = value; }
+        }
         public Record(){
         }
 
-        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM, bool undie)
+        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM, bool undie, bool done, bool first)
         {
             this.iDPlayer = idPlayer;
             this.iDPhase = idPhase;
@@ -108,6 +134,9 @@ namespace CapDemo.DO
             this.sequencePlayer = sequencePlayer;
             this.pM = pM;
             this.undie = undie;
+            //
+            this.done = done;
+            this.first = first;
         }
 
         public int IDPlayer

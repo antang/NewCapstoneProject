@@ -89,7 +89,8 @@ namespace CapDemo
         int team = 0;
         bool CheckQuestionPM = false;
         bool CheckChallengeChoice = false;
-        bool Done = true;
+        //bool Done = true;
+        //bool DoneFirst = false;
         bool GameOver = false;
         bool GameOverAll = false;
         //bool GameComplete = false;
@@ -182,7 +183,7 @@ namespace CapDemo
 
                             if (AmountSteptofail == 0)
                             {
-                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true);
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true,false,true);
                                 records.Add(r);
                                 //record
                                 Restore.IDContest = iDContest;
@@ -200,12 +201,15 @@ namespace CapDemo
                                 Restore.PM_I = 1;
                                 Restore.Undie_I = 1;
                                 Restore.Turn = i;
+                                //
+                                Restore.Done_I = 0;
+                                Restore.First_I = 1;
 
                                 RecordBL.AddRecord(Restore);
                             }
                             else
                             {
-                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, false);
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, false, false, true);
                                 records.Add(r);
 
                                 //record
@@ -224,6 +228,9 @@ namespace CapDemo
                                 Restore.PM_I = 1;
                                 Restore.Undie_I = 0;
                                 Restore.Turn = i;
+                                //
+                                Restore.Done_I = 0;
+                                Restore.First_I = 1;
 
                                 RecordBL.AddRecord(Restore);
 
@@ -279,7 +286,7 @@ namespace CapDemo
                                     , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
                                     , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
                                     , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
-                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie);
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First);
                                 records.Add(r);
                             }
                             else
@@ -289,7 +296,7 @@ namespace CapDemo
                                     , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
                                     , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
                                     , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
-                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie);
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First);
                                 records.Add(r);
                             }
 
@@ -2537,7 +2544,12 @@ namespace CapDemo
                 //move to another player
                 CorrectAnswer = 0;
                 PlayerCheck = 0;
-                if (GameOver == true)
+
+                Record Restore1 = new Record();
+                Restore1.IDPlayer = records.ElementAt(team).IDPlayer;
+                Restore1.IDContest = iDContest;
+                List<Record> ListRecord1 = RecordBL.GetDoneGameByIDContest(Restore1);
+                if (GameOver == true || ListRecord1.ElementAt(0).First==false)
                 {
                     if (records.ElementAt(team).SequecePlayer == records.ElementAt(records.Count-1).SequecePlayer)
                     {
@@ -2858,7 +2870,7 @@ namespace CapDemo
                     RecordBL.UpdateSupport(Restore);
 
                     Restore.Exist_I = 0;
-                    RecordBL.UpdateSupport(Restore);
+                    RecordBL.UpdateExist(Restore);
                 }
             }
             //
@@ -2951,7 +2963,7 @@ namespace CapDemo
                         RecordBL.UpdateSupport(Restore);
 
                         Restore.Exist_I = 0;
-                        RecordBL.UpdateSupport(Restore);
+                        RecordBL.UpdateExist(Restore);
                     }
                     foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
                     {
@@ -3164,7 +3176,7 @@ namespace CapDemo
                 RecordBL.UpdateSupport(Restore);
 
                 Restore.Exist_I = 0;
-                RecordBL.UpdateSupport(Restore);
+                RecordBL.UpdateExist(Restore);
             }
             UpdateScreenAfterChallenge();
         }
@@ -3179,7 +3191,7 @@ namespace CapDemo
                     if (records.ElementAt(team).TotalPass == AmountPhase * AmountSteptoPass)
                     {//move out lane when done all question in all phase
                         //get  bonus when team is the first champion
-                        if (Done == true)
+                        if (records.ElementAt(team).First == true)
                         {
                             records.ElementAt(team).TeamScore += Bonus;
                             //Record
@@ -3189,8 +3201,24 @@ namespace CapDemo
                             Restore.IDPlayer = records.ElementAt(team).IDPlayer;
                             Restore.IDContest = iDContest;
                             RecordBL.UpdateTeamScore(Restore);
+                            
+                            //check player done
+                            records.ElementAt(team).Done = true;
+                            Restore.Done_I = 1;
+                            Restore.IDContest = iDContest;
+                            Restore.IDPlayer = records.ElementAt(team).IDPlayer;
+                            RecordBL.UpdateDone(Restore);
 
-                            Done = false;
+                            //check false all first
+                            for (int i = 0; i < records.Count; i++)
+                            {
+                                records.ElementAt(i).First = false;
+                            }
+                            Restore.First_I = 0;
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateFirst(Restore);
+
+                            //Done = false;
                             GameOver = true;
                             //show  icon to end when team have finished
                             //pb_EndGame.Visible = true;
@@ -3804,8 +3832,10 @@ namespace CapDemo
                 {
                     if (TeamAS.lbl_ID.Text == playerAnswer.lbl_IDPlayer.Text)
                     {
-                        TeamAS.lbl_Score.Text = playerAnswer.lbl_Score.Text;
-                        TeamAS.lbl_Score.Visible = true;
+                            TeamAS.lbl_Score.Text = playerAnswer.lbl_Score.Text;
+                            TeamAS.lbl_Score.Visible = true;
+
+                            //TeamAS.lbl_Score.Text = (Convert.ToInt32(playerAnswer.lbl_Score.Text)+Bonus).ToString();
                     }
                 }
             }
