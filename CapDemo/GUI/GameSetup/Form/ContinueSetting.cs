@@ -130,7 +130,23 @@ namespace CapDemo
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập đủ số lượng câu hỏi cho từng giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (run == true)
+                    {
+                        pnl_CreateSetup.Controls.Clear();
+                        pnl_CreateSetup.Controls.Add(ts);
+                        LoadTeamSetting();
+                        i++;
+                        lbl_Status.Text = i.ToString() + "/5";
+                        ts.btn_AddTeam.Enabled = false;
+                        foreach (Add_Team Add_Team in ts.flp_Team.Controls)
+                        {
+                            Add_Team.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng nhập tối thiểu 20 câu hỏi cho mỗi giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else if (i == 4)
