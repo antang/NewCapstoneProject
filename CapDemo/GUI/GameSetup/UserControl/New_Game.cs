@@ -111,16 +111,20 @@ namespace CapDemo.GUI.User_Controls
                 Contest Contest = new Contest();
                 Phase Phase = new Phase();
                 Player Player = new Player();
+                Record Record = new Record();
 
                 ContestBL ContestBL = new ContestBL();
                 PhaseBL PhaseBl = new PhaseBL();
                 PlayerBL PlayerBL = new PlayerBL();
                 PhaseQuestionBL PhaseQuestionBL = new PhaseQuestionBL();
+                RecordBL RecordBL = new RecordBL();
 
                 Contest.IDContest = Convert.ToInt32(lbl_IDContest.Text);
                 Phase.IDContest = Convert.ToInt32(lbl_IDContest.Text);
                 Player.IDContest = Convert.ToInt32(lbl_IDContest.Text);
+                Record.IDContest = Convert.ToInt32(lbl_IDContest.Text);
 
+                RecordBL.DeleteRecordByIDContest(Record);
                 PhaseQuestionBL.DeletePhaseQuestionbyIDContest(Phase);
                 PlayerBL.DeletePlayerbyIDContest(Player);
                 PhaseBl.DeletePhasebyIDContest(Phase);
