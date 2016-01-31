@@ -235,13 +235,13 @@
             // lbl_TimeShowQuestion
             // 
             this.lbl_TimeShowQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimeShowQuestion.Font = new System.Drawing.Font("Verdana", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TimeShowQuestion.ForeColor = System.Drawing.Color.Cyan;
-            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(494, 25);
+            this.lbl_TimeShowQuestion.Location = new System.Drawing.Point(477, 3);
             this.lbl_TimeShowQuestion.Name = "lbl_TimeShowQuestion";
-            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(68, 28);
+            this.lbl_TimeShowQuestion.Size = new System.Drawing.Size(129, 50);
             this.lbl_TimeShowQuestion.TabIndex = 2;
-            this.lbl_TimeShowQuestion.Text = "10";
+            this.lbl_TimeShowQuestion.Text = "0";
             this.lbl_TimeShowQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_TimeShowQuestion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.lbl_TimeShowQuestion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
@@ -253,12 +253,13 @@
             this.lbl_typeQ.BackColor = System.Drawing.Color.Transparent;
             this.lbl_typeQ.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_typeQ.ForeColor = System.Drawing.Color.White;
-            this.lbl_typeQ.Location = new System.Drawing.Point(311, 3);
+            this.lbl_typeQ.Location = new System.Drawing.Point(365, 0);
             this.lbl_typeQ.Name = "lbl_typeQ";
-            this.lbl_typeQ.Size = new System.Drawing.Size(367, 19);
+            this.lbl_typeQ.Size = new System.Drawing.Size(46, 19);
             this.lbl_typeQ.TabIndex = 10;
             this.lbl_typeQ.Text = "Type:";
             this.lbl_typeQ.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_typeQ.Visible = false;
             this.lbl_typeQ.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);
             this.lbl_typeQ.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseMove);
             this.lbl_typeQ.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseUp);
@@ -312,11 +313,11 @@
             // 
             this.lbl_Point.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Point.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Point.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Point.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Point.ForeColor = System.Drawing.Color.White;
             this.lbl_Point.Location = new System.Drawing.Point(713, 3);
             this.lbl_Point.Name = "lbl_Point";
-            this.lbl_Point.Size = new System.Drawing.Size(302, 19);
+            this.lbl_Point.Size = new System.Drawing.Size(302, 32);
             this.lbl_Point.TabIndex = 7;
             this.lbl_Point.Text = "Point: ";
             this.lbl_Point.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,11 +328,11 @@
             // lbl_Phase
             // 
             this.lbl_Phase.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Phase.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phase.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Phase.ForeColor = System.Drawing.Color.White;
             this.lbl_Phase.Location = new System.Drawing.Point(1, 0);
             this.lbl_Phase.Name = "lbl_Phase";
-            this.lbl_Phase.Size = new System.Drawing.Size(304, 22);
+            this.lbl_Phase.Size = new System.Drawing.Size(358, 35);
             this.lbl_Phase.TabIndex = 5;
             this.lbl_Phase.Text = "Phase";
             this.lbl_Phase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

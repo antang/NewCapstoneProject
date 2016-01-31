@@ -424,10 +424,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressBarControl.cs">
+    <Compile Include="GUI\GameRunning\UserControl\ProgressBarControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressBarControl.Designer.cs">
+    <Compile Include="GUI\GameRunning\UserControl\ProgressBarControl.Designer.cs">
       <DependentUpon>ProgressBarControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -461,10 +461,10 @@
     <Compile Include="GUI\GameRunning\UserControl\TeamEndGame.Designer.cs">
       <DependentUpon>TeamEndGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="Result.cs">
+    <Compile Include="GUI\GameRunning\Form\Result.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Result.Designer.cs">
+    <Compile Include="GUI\GameRunning\Form\Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\GameRunning\Form\Audience_Screen.resx">
@@ -640,7 +640,7 @@
     <EmbeddedResource Include="GUI\MainInterface\UserControl\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressBarControl.resx">
+    <EmbeddedResource Include="GUI\GameRunning\UserControl\ProgressBarControl.resx">
       <DependentUpon>ProgressBarControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -666,7 +666,7 @@
     <Content Include="Capstone.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Result.resx">
+    <EmbeddedResource Include="GUI\GameRunning\Form\Result.resx">
       <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram_IC1.cd" />
@@ -911,6 +911,7 @@
     <None Include="Resources\Contest.jpg" />
     <None Include="Resources\BackGround_2.jpg" />
     <None Include="Resources\Rank.png" />
+    <None Include="Resources\Team_Maps.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

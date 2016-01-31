@@ -823,46 +823,43 @@ namespace CapDemo
             logBL.EditLogbyIDPlayer(Log);
         }
 
-        //int countTime = 0;
+        int countTime = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //if (countTime < 100)
-            //{
-            //    countTime++;
-            //}
-            //else
-            //{
-                //countTime = 0;
-                if (int.Parse(lbl_Time.Text) != 0)
+                if (countTime >=2)
                 {
-                    lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
-                }
-                if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
-                {
-                    try
+
+                    if (int.Parse(lbl_Time.Text) != 0)
                     {
-                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DongHo.wav";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                    }
-                    catch (Exception)
-                    {
+                        lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString();
                     }
 
+                    if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
+                    {
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DongHo.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+                    if (int.Parse(lbl_Time.Text) == 0)
+                    {
+                        timer1.Stop();
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
                 }
-                if (int.Parse(lbl_Time.Text) == 0)
-                {
-                    timer1.Stop();
-                    try
-                    {
-                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }  
-            //}
-            
+                countTime++;
         }
 
         //Get last player when there is team go to finish lane
@@ -1266,6 +1263,7 @@ namespace CapDemo
             CorrectShortAnswer = "";
             PlayerAnswerShortQuestion = "";
             CorrectAnswerChallenge = "";
+            countTime = 0;
 
             if (team == records.Count)
             {
@@ -1735,7 +1733,7 @@ namespace CapDemo
                                 ShowAnswer ShowAnswer = new ShowAnswer();
                                 ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
                                 ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
-                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ":";
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                                 ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                 ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -1765,13 +1763,16 @@ namespace CapDemo
 
                 ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
                 //show countdown time on game controller screen
-                lbl_Time.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                lbl_Time.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
                 timer1.Start();
                 //show time conut down on audience screen
-                audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                audience.lbl_TimeShowQuestion.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
                 audience.progressBarControl1.Max = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
                 audience.progressBarControl1.Value = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
+                //audience.progressBarControl1.Max = ListPhase.ElementAt(0).TimePhase * 900;
+                //audience.progressBarControl1.Value = ListPhase.ElementAt(0).TimePhase * 900;
                 time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) ;
+                //time = ListPhase.ElementAt(0).TimePhase;
                 audience.timer1.Start();
                 return true;
             }
@@ -2044,6 +2045,12 @@ namespace CapDemo
                                         playerAnswer.lbl_TeamAnswer.Text = oneChoice.Text;
                                     }
                                 }
+                                //show notify to know challenged team
+
+                                if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                {
+                                    playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
+                                }
                             }
                         }
                     }
@@ -2062,6 +2069,12 @@ namespace CapDemo
                                         {
                                             playerAnswer.lbl_TeamAnswer.Text += multiChoice.Text + " ";
                                         }
+                                    }
+                                    //show notify to know challenged team
+
+                                    if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                    {
+                                        playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
                                     }
                                 }
 
@@ -2089,6 +2102,12 @@ namespace CapDemo
                                                 playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                         }
+                                    }
+                                    //show notify to know challenged team
+
+                                    if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                    {
+                                        playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
                                     }
                                 }
                             }
