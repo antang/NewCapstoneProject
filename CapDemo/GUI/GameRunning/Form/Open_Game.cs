@@ -678,7 +678,7 @@ namespace CapDemo
                                         }
                                         else
                                         {
-                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                            showAnswer.BackgroundImage = Properties.Resources.Answer_M;
                                         }
                                     }
                                 }
@@ -688,7 +688,7 @@ namespace CapDemo
                         {
                             foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
                             {
-                                showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                showAnswer.BackgroundImage = Properties.Resources.Answer_M;
                                 foreach (CheckBox multiChoice in TeamCS.flp_Answer.Controls)
                                 {
                                     if (multiChoice.Checked == true)
@@ -1383,7 +1383,11 @@ namespace CapDemo
                                 teamAdienceScreen.pb_Heart1.Hide();
                                 teamAdienceScreen.pb_Heart2.Hide();
                                 teamAdienceScreen.pb_Heart3.Hide();
-                                teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                                teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                                //hide all right
+                                teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                                teamAdienceScreen.btn_SupportChoice.Visible = false;
+                                teamAdienceScreen.flp_Heart.Visible = false;
                             }
                         }
                     }
@@ -1396,7 +1400,11 @@ namespace CapDemo
                         teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
                         teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
                         teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
-                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                        //hide all right
+                        teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                        teamAdienceScreen.btn_SupportChoice.Visible = false;
+                        teamAdienceScreen.flp_Heart.Visible = false;
                     }
                 }
                 else
@@ -1718,7 +1726,7 @@ namespace CapDemo
                             ShowAnswer ShowAnswer = new ShowAnswer();
                             ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
                             ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
-                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ":";
+                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                             ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                             ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                             audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -2509,7 +2517,12 @@ namespace CapDemo
                     teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
                     teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
                     teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
-                    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                    //hide all right
+                    teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                    teamAdienceScreen.btn_SupportChoice.Visible = false;
+                    teamAdienceScreen.flp_Heart.Visible = false;
+
                     if (step == 7 && records.ElementAt(j).IDPlayer == records.ElementAt(team).IDPlayer)
                     {
                         //sound.Stop();

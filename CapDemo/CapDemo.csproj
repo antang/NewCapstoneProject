@@ -912,6 +912,12 @@
     <None Include="Resources\BackGround_2.jpg" />
     <None Include="Resources\Rank.png" />
     <None Include="Resources\Team_Maps.png" />
+    <None Include="Resources\Team_Over_1.png" />
+    <None Include="Resources\Game.jpg" />
+    <None Include="Resources\Answer_M.png" />
+    <None Include="Resources\Question_Sub.png" />
+    <None Include="Resources\Rank_1.png" />
+    <None Include="Resources\Hearth_M.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

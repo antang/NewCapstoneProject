@@ -206,7 +206,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.BackgroundImage = global::CapDemo.Properties.Resources.Contest;
+            this.BackgroundImage = global::CapDemo.Properties.Resources.Game;
             this.Controls.Add(this.lbl_Result);
             this.Controls.Add(this.lbl_EndContest);
             this.Controls.Add(this.lbl_CompetitionName);
