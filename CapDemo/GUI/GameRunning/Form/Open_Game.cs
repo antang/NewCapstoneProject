@@ -97,6 +97,8 @@ namespace CapDemo
         bool SoundWelcome = true;
         //bool ExistPM;
         int IDPhasePM;
+        //id to show question when more text
+        int IDQuestion_Sub;
 
         //Score
         int _BonusPhase;
@@ -930,6 +932,7 @@ namespace CapDemo
             {
                 this.Close();
                 audience.Close();
+                questionScreen.Close();
                 axWindowsMediaPlayer1.Ctlcontrols.stop();
                 this.DialogResult = DialogResult.OK;
             }
@@ -1683,6 +1686,7 @@ namespace CapDemo
             try
             {
                 idquestion = ListPhase.ElementAt(0).IDQuestion;
+                IDQuestion_Sub = idquestion;
 
                 //show question in phase
                 Question.IDQuestion = idquestion;
@@ -4020,6 +4024,36 @@ namespace CapDemo
             Phase.IDPhase = id;
             ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
             return ListPhase.Count;
+        }
+        //Show question when question have more text
+        Question_Screen questionScreen = new Question_Screen();
+        bool show = false;
+        private void pb_QuestionSub_Click(object sender, EventArgs e)
+        {
+            if (show ==false)
+	        {
+                Screen[] screens = Screen.AllScreens;
+                if (screens.Count() > 1)
+                {
+                    Rectangle bounds = screens[1].Bounds;
+                    questionScreen.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+                    questionScreen.StartPosition = FormStartPosition.Manual;
+                    questionScreen.Show();
+                    questionScreen.ShowQuestionSub(IDQuestion_Sub);
+                }
+                else
+                {
+                    questionScreen.Show();
+                    questionScreen.ShowQuestionSub(IDQuestion_Sub);
+                }
+                show = true;
+            }
+            else
+            {
+                questionScreen.Hide();
+                show = false;
+            }
+            
         }
         
     }

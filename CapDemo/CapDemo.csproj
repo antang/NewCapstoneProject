@@ -467,6 +467,12 @@
     <Compile Include="GUI\GameRunning\Form\Result.Designer.cs">
       <DependentUpon>Result.cs</DependentUpon>
     </Compile>
+    <Compile Include="Question_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Question_Screen.Designer.cs">
+      <DependentUpon>Question_Screen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\GameRunning\Form\Audience_Screen.resx">
       <DependentUpon>Audience_Screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -668,6 +674,9 @@
     </Content>
     <EmbeddedResource Include="GUI\GameRunning\Form\Result.resx">
       <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Question_Screen.resx">
+      <DependentUpon>Question_Screen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram_IC1.cd" />
     <None Include="Properties\Settings.settings">

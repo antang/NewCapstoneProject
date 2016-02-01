@@ -32,7 +32,7 @@ namespace CapDemo.BL
             }
         }
         //seclect question by id phase
-        public List<Phase> getquestionByIDPhase(Phase Phase)
+        public List<Phase> getquestionByIDQuestion(Phase Phase)
         {
             List<Phase> PhaseList = new List<Phase>();
             string query = "SELECT p.[Phase_ID],p.[Contest_ID],p.[Phase_Name],p.[Phase_Time],p.[Phase_Score],p.[Phase_Minus],p.[Sequence],"
@@ -40,7 +40,7 @@ namespace CapDemo.BL
                         + " FROM [PhaseQuestion] pq"
                         + " INNER JOIN [Phase] p ON p.[Phase_ID] = pq.[Phase_ID]"
                         + " INNER JOIN [Question] q ON q.[Question_ID] = pq.[Question_ID]"
-                        + " WHERE p.[Phase_ID] = '"+Phase.IDPhase+"'";
+                        + " WHERE pq.[Question_ID] = '" + Phase.IDQuestion + "'";
             DataTable dt = DA.SelectDatabase(query);
             int i = 1;
             if (dt != null)

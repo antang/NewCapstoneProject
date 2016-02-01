@@ -47,6 +47,7 @@
             this.pb_Play = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.pb_QuestionSub = new System.Windows.Forms.PictureBox();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -240,6 +242,18 @@
             this.axWindowsMediaPlayer1.TabIndex = 0;
             this.axWindowsMediaPlayer1.Visible = false;
             // 
+            // pb_QuestionSub
+            // 
+            this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
+            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
+            this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_QuestionSub.Location = new System.Drawing.Point(1, 660);
+            this.pb_QuestionSub.Name = "pb_QuestionSub";
+            this.pb_QuestionSub.Size = new System.Drawing.Size(28, 23);
+            this.pb_QuestionSub.TabIndex = 21;
+            this.pb_QuestionSub.TabStop = false;
+            this.pb_QuestionSub.Click += new System.EventHandler(this.pb_QuestionSub_Click);
+            // 
             // Open_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +261,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Techno;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.pb_QuestionSub);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_Maximize);
             this.Controls.Add(this.pb_Minimize);
@@ -272,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,5 +311,6 @@
         private System.Windows.Forms.PictureBox pb_Minimize;
         private System.Windows.Forms.PictureBox pb_Maximize;
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.PictureBox pb_QuestionSub;
     }
 }
