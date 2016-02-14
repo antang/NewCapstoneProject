@@ -4055,6 +4055,202 @@ namespace CapDemo
             }
             
         }
-        
+
+
+
+//////// Extend Scope
+        //Show sub question when team equal
+        int step_1 = 1;
+        private void btn_SubContest_Click(object sender, EventArgs e)
+        {
+            if (step_1 == 1)
+            {
+                ShowTeamsChallenged_1();
+                step_1++;
+            }
+            else if (step_1 == 2)
+            {
+                ShowQuestionByIDPhase_1();
+            }
+        }
+        //show teams are challenged
+        public void ShowTeamsChallenged_1()
+        {
+            for (int i = 0; i < records.Count; i++)
+            {
+                foreach (Team teamCS in flp_Team.Controls)
+                {
+                    if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(i).IDPlayer))
+                    {
+                        teamCS.chk_Challenged.Visible = true;
+                    }
+                }
+            }
+        }
+
+        //Show question by id question
+        public bool ShowQuestionByIDPhase_1()
+        {
+            //declare
+            List<Phase> ListPhase;
+            List<Question> ListQuestion;
+            List<Answer> ListAnswer;
+            int idquestion = 0;
+            int a = 65;
+
+            ListPhase = PhaseQuestionBl.getquestionRunGame_1();
+            try
+            {
+                idquestion = ListPhase.ElementAt(0).IDQuestion;
+                IDQuestion_Sub = idquestion;
+                Phase.IDPhase = ListPhase.ElementAt(0).IDPhase;
+
+                //show question in phase
+                Question.IDQuestion = idquestion;
+                ListQuestion = QuestionBL.GetQuestionByID(Question);
+                ListAnswer = QuestionBL.GetAnswerByQuestionID(Question);
+                //////show question on audience screen
+                if (ListQuestion != null)
+                {
+                    /////display question on audience screen
+                    audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
+                    FixSizeText();
+                    typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
+
+                    /////question is onechoice type
+                    if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                    {
+                        for (int h = 0; h < ListAnswer.Count; h++)
+                        {
+                            ShowAnswer ShowAnswer = new ShowAnswer();
+                            ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                            ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                            ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                            ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                            audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                        }
+                    }
+                    else
+                    {   //question is multichoice type
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                ShowAnswer ShowAnswer = new ShowAnswer();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                            }
+                        }
+                        else
+                        {
+                            //question is short answer type
+                            audience.flp_AnswerQuiz.BackColor = Color.Transparent;
+                            CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
+                        }
+                    }
+                    //update 
+                    Phase.IDContest = iDContest;
+                    Phase.IDQuestion = idquestion;
+                    //Check question have been showed
+                    PhaseQuestionBl.EditQuestionStatus_1(Phase);
+                }
+                //Show answer for multi team
+                TableAnswerMultiTeam_1(ListQuestion, ListAnswer);
+
+                ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
+
+                //show countdown time on game controller screen
+                lbl_Time.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
+                timer1.Start();
+
+                //show time conut down on audience screen
+                audience.lbl_TimeShowQuestion.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
+                audience.progressBarControl1.Max = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) * 900;
+                audience.progressBarControl1.Value = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) * 900;
+
+                time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
+
+                audience.timer1.Start();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        void TableAnswerMultiTeam_1(List<Question> ListQuestion, List<Answer> ListAnswer)
+        {
+            int a = 65;
+            int No = 0;
+            int D = 0;
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                teamCS.chk_Challenged.Visible = false;
+                if (teamCS.chk_Challenged.Checked == true)
+                {
+                    D++;
+                }
+            }
+            int D1 = D - 1;
+            /////show answer one on control screen
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                teamCS.chk_Challenged.Visible = false;
+                if (teamCS.chk_Challenged.Checked == true)
+                {
+                    PlayerAnswer PlayerAnswer = new PlayerAnswer();
+                    PlayerAnswer.pb_Result.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
+                    PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
+                    PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
+                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width / (D) / 2 - PlayerAnswer.Width / 2) + audience.flp_PlayerAnswers.Width / D * No, PlayerAnswer.Location.Y + 5);
+                    audience.flp_PlayerAnswers.Controls.Add(PlayerAnswer);
+                    No++;
+                    D1--;
+                    if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                    {
+                        for (int h = 0; h < ListAnswer.Count; h++)
+                        {
+                            RadioButton radioButton = new RadioButton();
+                            radioButton.ForeColor = Color.White;
+                            radioButton.Text = Convert.ToChar(a + h).ToString();
+                            radioButton.AutoSize = true;
+                            teamCS.flp_Answer.Controls.Add(radioButton);
+                        }
+                    }
+                    else
+                    {
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                CheckBox checkBox = new CheckBox();
+                                checkBox.ForeColor = Color.White;
+                                checkBox.Text = Convert.ToChar(a + h).ToString();
+                                checkBox.AutoSize = true;
+                                teamCS.flp_Answer.Controls.Add(checkBox);
+                            }
+                        }
+                        else
+                        {
+                            TextBox textBox = new TextBox();
+                            textBox.ForeColor = Color.Black;
+                            textBox.AutoSize = false;
+                            textBox.Anchor = AnchorStyles.Top;
+                            textBox.Anchor = AnchorStyles.Left;
+                            textBox.Location = new Point(textBox.Location.X + 0, textBox.Location.Y + 0);
+                            textBox.Size = new System.Drawing.Size(teamCS.flp_Answer.Width - 7, teamCS.flp_Answer.Height - 7);
+                            textBox.Font = new Font("Verdana", 12.0f, FontStyle.Bold);
+                            teamCS.flp_Answer.Controls.Add(textBox);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

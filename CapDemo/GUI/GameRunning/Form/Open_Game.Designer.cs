@@ -48,6 +48,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.pb_QuestionSub = new System.Windows.Forms.PictureBox();
+            this.btn_SubContest = new System.Windows.Forms.Button();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -254,6 +255,17 @@
             this.pb_QuestionSub.TabStop = false;
             this.pb_QuestionSub.Click += new System.EventHandler(this.pb_QuestionSub_Click);
             // 
+            // btn_SubContest
+            // 
+            this.btn_SubContest.Location = new System.Drawing.Point(59, 704);
+            this.btn_SubContest.Name = "btn_SubContest";
+            this.btn_SubContest.Size = new System.Drawing.Size(75, 23);
+            this.btn_SubContest.TabIndex = 22;
+            this.btn_SubContest.Text = "button1";
+            this.btn_SubContest.UseVisualStyleBackColor = true;
+            this.btn_SubContest.Visible = false;
+            this.btn_SubContest.Click += new System.EventHandler(this.btn_SubContest_Click);
+            // 
             // Open_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +273,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Techno;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.btn_SubContest);
             this.Controls.Add(this.pb_QuestionSub);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_Maximize);
@@ -312,5 +325,6 @@
         private System.Windows.Forms.PictureBox pb_Maximize;
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.PictureBox pb_QuestionSub;
+        private System.Windows.Forms.Button btn_SubContest;
     }
 }
