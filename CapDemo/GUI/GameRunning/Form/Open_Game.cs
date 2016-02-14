@@ -97,6 +97,8 @@ namespace CapDemo
         bool SoundWelcome = true;
         //bool ExistPM;
         int IDPhasePM;
+        //id to show question when more text
+        int IDQuestion_Sub;
 
         //Score
         int _BonusPhase;
@@ -678,7 +680,7 @@ namespace CapDemo
                                         }
                                         else
                                         {
-                                            showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                            showAnswer.BackgroundImage = Properties.Resources.Answer_M;
                                         }
                                     }
                                 }
@@ -688,7 +690,7 @@ namespace CapDemo
                         {
                             foreach (ShowAnswer showAnswer in audience.flp_AnswerQuiz.Controls)
                             {
-                                showAnswer.BackgroundImage = Properties.Resources.Answer;
+                                showAnswer.BackgroundImage = Properties.Resources.Answer_M;
                                 foreach (CheckBox multiChoice in TeamCS.flp_Answer.Controls)
                                 {
                                     if (multiChoice.Checked == true)
@@ -823,46 +825,43 @@ namespace CapDemo
             logBL.EditLogbyIDPlayer(Log);
         }
 
-        //int countTime = 0;
+        int countTime = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //if (countTime < 100)
-            //{
-            //    countTime++;
-            //}
-            //else
-            //{
-                //countTime = 0;
-                if (int.Parse(lbl_Time.Text) != 0)
+                if (countTime >=2)
                 {
-                    lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString(); //lowering the value - explained above
-                }
-                if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
-                {
-                    try
+
+                    if (int.Parse(lbl_Time.Text) != 0)
                     {
-                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DongHo.wav";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                    }
-                    catch (Exception)
-                    {
+                        lbl_Time.Text = (int.Parse(lbl_Time.Text) - 1).ToString();
                     }
 
+                    if (int.Parse(lbl_Time.Text) <= 5 && int.Parse(lbl_Time.Text) >= 1)
+                    {
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DongHo.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+                    if (int.Parse(lbl_Time.Text) == 0)
+                    {
+                        timer1.Stop();
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
                 }
-                if (int.Parse(lbl_Time.Text) == 0)
-                {
-                    timer1.Stop();
-                    try
-                    {
-                        axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HetGio.wav";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }  
-            //}
-            
+                countTime++;
         }
 
         //Get last player when there is team go to finish lane
@@ -933,6 +932,7 @@ namespace CapDemo
             {
                 this.Close();
                 audience.Close();
+                questionScreen.Close();
                 axWindowsMediaPlayer1.Ctlcontrols.stop();
                 this.DialogResult = DialogResult.OK;
             }
@@ -1266,6 +1266,7 @@ namespace CapDemo
             CorrectShortAnswer = "";
             PlayerAnswerShortQuestion = "";
             CorrectAnswerChallenge = "";
+            countTime = 0;
 
             if (team == records.Count)
             {
@@ -1385,7 +1386,11 @@ namespace CapDemo
                                 teamAdienceScreen.pb_Heart1.Hide();
                                 teamAdienceScreen.pb_Heart2.Hide();
                                 teamAdienceScreen.pb_Heart3.Hide();
-                                teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                                teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                                //hide all right
+                                teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                                teamAdienceScreen.btn_SupportChoice.Visible = false;
+                                teamAdienceScreen.flp_Heart.Visible = false;
                             }
                         }
                     }
@@ -1398,7 +1403,11 @@ namespace CapDemo
                         teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
                         teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
                         teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
-                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                        teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                        //hide all right
+                        teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                        teamAdienceScreen.btn_SupportChoice.Visible = false;
+                        teamAdienceScreen.flp_Heart.Visible = false;
                     }
                 }
                 else
@@ -1677,6 +1686,7 @@ namespace CapDemo
             try
             {
                 idquestion = ListPhase.ElementAt(0).IDQuestion;
+                IDQuestion_Sub = idquestion;
 
                 //show question in phase
                 Question.IDQuestion = idquestion;
@@ -1720,7 +1730,7 @@ namespace CapDemo
                             ShowAnswer ShowAnswer = new ShowAnswer();
                             ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
                             ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
-                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ":";
+                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                             ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                             ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                             audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -1735,7 +1745,7 @@ namespace CapDemo
                                 ShowAnswer ShowAnswer = new ShowAnswer();
                                 ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
                                 ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
-                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ":";
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                                 ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                 ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
@@ -1765,13 +1775,16 @@ namespace CapDemo
 
                 ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
                 //show countdown time on game controller screen
-                lbl_Time.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                lbl_Time.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
                 timer1.Start();
                 //show time conut down on audience screen
-                audience.lbl_TimeShowQuestion.Text = ListPhase.ElementAt(0).TimePhase.ToString();
+                audience.lbl_TimeShowQuestion.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
                 audience.progressBarControl1.Max = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
                 audience.progressBarControl1.Value = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text)*900;
+                //audience.progressBarControl1.Max = ListPhase.ElementAt(0).TimePhase * 900;
+                //audience.progressBarControl1.Value = ListPhase.ElementAt(0).TimePhase * 900;
                 time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) ;
+                //time = ListPhase.ElementAt(0).TimePhase;
                 audience.timer1.Start();
                 return true;
             }
@@ -2044,6 +2057,12 @@ namespace CapDemo
                                         playerAnswer.lbl_TeamAnswer.Text = oneChoice.Text;
                                     }
                                 }
+                                //show notify to know challenged team
+
+                                if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                {
+                                    playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
+                                }
                             }
                         }
                     }
@@ -2062,6 +2081,12 @@ namespace CapDemo
                                         {
                                             playerAnswer.lbl_TeamAnswer.Text += multiChoice.Text + " ";
                                         }
+                                    }
+                                    //show notify to know challenged team
+
+                                    if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                    {
+                                        playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
                                     }
                                 }
 
@@ -2089,6 +2114,12 @@ namespace CapDemo
                                                 playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                         }
+                                    }
+                                    //show notify to know challenged team
+
+                                    if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                                    {
+                                        playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
                                     }
                                 }
                             }
@@ -2490,7 +2521,12 @@ namespace CapDemo
                     teamAdienceScreen.lbl_TeamScore.BackColor = Color.Transparent;
                     teamAdienceScreen.lbl_TeamName.BackColor = Color.Transparent;
                     teamAdienceScreen.flp_Heart.BackColor = Color.Transparent;
-                    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over;
+                    teamAdienceScreen.BackgroundImage = Properties.Resources.Team_Over_1;
+                    //hide all right
+                    teamAdienceScreen.btn_ChallengeChoice.Visible = false; ;
+                    teamAdienceScreen.btn_SupportChoice.Visible = false;
+                    teamAdienceScreen.flp_Heart.Visible = false;
+
                     if (step == 7 && records.ElementAt(j).IDPlayer == records.ElementAt(team).IDPlayer)
                     {
                         //sound.Stop();
@@ -3989,6 +4025,232 @@ namespace CapDemo
             ListPhase = PhaseQuestionBl.getquestionRunGame(Phase);
             return ListPhase.Count;
         }
-        
+        //Show question when question have more text
+        Question_Screen questionScreen = new Question_Screen();
+        bool show = false;
+        private void pb_QuestionSub_Click(object sender, EventArgs e)
+        {
+            if (show ==false)
+	        {
+                Screen[] screens = Screen.AllScreens;
+                if (screens.Count() > 1)
+                {
+                    Rectangle bounds = screens[1].Bounds;
+                    questionScreen.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+                    questionScreen.StartPosition = FormStartPosition.Manual;
+                    questionScreen.Show();
+                    questionScreen.ShowQuestionSub(IDQuestion_Sub);
+                }
+                else
+                {
+                    questionScreen.Show();
+                    questionScreen.ShowQuestionSub(IDQuestion_Sub);
+                }
+                show = true;
+            }
+            else
+            {
+                questionScreen.Hide();
+                show = false;
+            }
+            
+        }
+
+
+
+//////// Extend Scope
+        //Show sub question when team equal
+        int step_1 = 1;
+        private void btn_SubContest_Click(object sender, EventArgs e)
+        {
+            if (step_1 == 1)
+            {
+                ShowTeamsChallenged_1();
+                step_1++;
+            }
+            else if (step_1 == 2)
+            {
+                ShowQuestionByIDPhase_1();
+            }
+        }
+        //show teams are challenged
+        public void ShowTeamsChallenged_1()
+        {
+            for (int i = 0; i < records.Count; i++)
+            {
+                foreach (Team teamCS in flp_Team.Controls)
+                {
+                    if (Convert.ToInt32(teamCS.lbl_Sequence.Text) == sequenceplayer(records.ElementAt(i).IDPlayer))
+                    {
+                        teamCS.chk_Challenged.Visible = true;
+                    }
+                }
+            }
+        }
+
+        //Show question by id question
+        public bool ShowQuestionByIDPhase_1()
+        {
+            //declare
+            List<Phase> ListPhase;
+            List<Question> ListQuestion;
+            List<Answer> ListAnswer;
+            int idquestion = 0;
+            int a = 65;
+
+            ListPhase = PhaseQuestionBl.getquestionRunGame_1();
+            try
+            {
+                idquestion = ListPhase.ElementAt(0).IDQuestion;
+                IDQuestion_Sub = idquestion;
+                Phase.IDPhase = ListPhase.ElementAt(0).IDPhase;
+
+                //show question in phase
+                Question.IDQuestion = idquestion;
+                ListQuestion = QuestionBL.GetQuestionByID(Question);
+                ListAnswer = QuestionBL.GetAnswerByQuestionID(Question);
+                //////show question on audience screen
+                if (ListQuestion != null)
+                {
+                    /////display question on audience screen
+                    audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
+                    FixSizeText();
+                    typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
+
+                    /////question is onechoice type
+                    if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                    {
+                        for (int h = 0; h < ListAnswer.Count; h++)
+                        {
+                            ShowAnswer ShowAnswer = new ShowAnswer();
+                            ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                            ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                            ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                            ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                            audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                        }
+                    }
+                    else
+                    {   //question is multichoice type
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                ShowAnswer ShowAnswer = new ShowAnswer();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                            }
+                        }
+                        else
+                        {
+                            //question is short answer type
+                            audience.flp_AnswerQuiz.BackColor = Color.Transparent;
+                            CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
+                        }
+                    }
+                    //update 
+                    Phase.IDContest = iDContest;
+                    Phase.IDQuestion = idquestion;
+                    //Check question have been showed
+                    PhaseQuestionBl.EditQuestionStatus_1(Phase);
+                }
+                //Show answer for multi team
+                TableAnswerMultiTeam_1(ListQuestion, ListAnswer);
+
+                ListPhase = PhaseBL.GetPhaseByIDPhase(Phase);
+
+                //show countdown time on game controller screen
+                lbl_Time.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
+                timer1.Start();
+
+                //show time conut down on audience screen
+                audience.lbl_TimeShowQuestion.Text = (ListPhase.ElementAt(0).TimePhase).ToString();
+                audience.progressBarControl1.Max = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) * 900;
+                audience.progressBarControl1.Value = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text) * 900;
+
+                time = Convert.ToInt32(audience.lbl_TimeShowQuestion.Text);
+
+                audience.timer1.Start();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        void TableAnswerMultiTeam_1(List<Question> ListQuestion, List<Answer> ListAnswer)
+        {
+            int a = 65;
+            int No = 0;
+            int D = 0;
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                teamCS.chk_Challenged.Visible = false;
+                if (teamCS.chk_Challenged.Checked == true)
+                {
+                    D++;
+                }
+            }
+            int D1 = D - 1;
+            /////show answer one on control screen
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                teamCS.chk_Challenged.Visible = false;
+                if (teamCS.chk_Challenged.Checked == true)
+                {
+                    PlayerAnswer PlayerAnswer = new PlayerAnswer();
+                    PlayerAnswer.pb_Result.BackColor = Color.FromArgb(colorplayer(Convert.ToInt32(teamCS.lbl_IDPlayer.Text)));
+                    PlayerAnswer.lbl_IDPlayer.Text = teamCS.lbl_IDPlayer.Text;
+                    PlayerAnswer.lbl_TeamName.Text = teamCS.lbl_TeamName.Text;
+                    PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + (audience.flp_PlayerAnswers.Width / (D) / 2 - PlayerAnswer.Width / 2) + audience.flp_PlayerAnswers.Width / D * No, PlayerAnswer.Location.Y + 5);
+                    audience.flp_PlayerAnswers.Controls.Add(PlayerAnswer);
+                    No++;
+                    D1--;
+                    if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
+                    {
+                        for (int h = 0; h < ListAnswer.Count; h++)
+                        {
+                            RadioButton radioButton = new RadioButton();
+                            radioButton.ForeColor = Color.White;
+                            radioButton.Text = Convert.ToChar(a + h).ToString();
+                            radioButton.AutoSize = true;
+                            teamCS.flp_Answer.Controls.Add(radioButton);
+                        }
+                    }
+                    else
+                    {
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                CheckBox checkBox = new CheckBox();
+                                checkBox.ForeColor = Color.White;
+                                checkBox.Text = Convert.ToChar(a + h).ToString();
+                                checkBox.AutoSize = true;
+                                teamCS.flp_Answer.Controls.Add(checkBox);
+                            }
+                        }
+                        else
+                        {
+                            TextBox textBox = new TextBox();
+                            textBox.ForeColor = Color.Black;
+                            textBox.AutoSize = false;
+                            textBox.Anchor = AnchorStyles.Top;
+                            textBox.Anchor = AnchorStyles.Left;
+                            textBox.Location = new Point(textBox.Location.X + 0, textBox.Location.Y + 0);
+                            textBox.Size = new System.Drawing.Size(teamCS.flp_Answer.Width - 7, teamCS.flp_Answer.Height - 7);
+                            textBox.Font = new Font("Verdana", 12.0f, FontStyle.Bold);
+                            teamCS.flp_Answer.Controls.Add(textBox);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

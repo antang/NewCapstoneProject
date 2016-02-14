@@ -460,4 +460,25 @@
   <data name="Rank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Team_Maps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team_Maps.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Answer_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Answer_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Game" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Game.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearth_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearth_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Question_Sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Question_Sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rank_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rank_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Team_Over_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Team_Over_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

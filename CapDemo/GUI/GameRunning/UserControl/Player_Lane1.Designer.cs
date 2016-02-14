@@ -72,6 +72,8 @@
             // 
             this.btn_Team.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btn_Team.BackColor = System.Drawing.Color.Black;
+            this.btn_Team.BackgroundImage = global::CapDemo.Properties.Resources.Team_Maps;
+            this.btn_Team.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Team.Location = new System.Drawing.Point(31, 607);
             this.btn_Team.Name = "btn_Team";
             this.btn_Team.Size = new System.Drawing.Size(40, 45);

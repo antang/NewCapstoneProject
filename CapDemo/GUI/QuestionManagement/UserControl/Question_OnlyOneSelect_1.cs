@@ -370,6 +370,10 @@ namespace CapDemo.GUI.User_Controls
                 {
                     this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
                 }
+            if (cmb_Catalogue.Items.Count > 0)
+            {
+                cmb_Catalogue.SelectedIndex = cmb_Catalogue.Items.Count - 1;
+            }
         }
     }
 }
