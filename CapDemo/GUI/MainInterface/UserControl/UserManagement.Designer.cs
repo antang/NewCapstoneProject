@@ -51,6 +51,10 @@
             // 
             // dgv_UserManagement
             // 
+            this.dgv_UserManagement.AllowUserToAddRows = false;
+            this.dgv_UserManagement.AllowUserToDeleteRows = false;
+            this.dgv_UserManagement.AllowUserToResizeColumns = false;
+            this.dgv_UserManagement.AllowUserToResizeRows = false;
             this.dgv_UserManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,7 +71,10 @@
             this.dgv_UserManagement.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_UserManagement.Location = new System.Drawing.Point(33, 126);
             this.dgv_UserManagement.Name = "dgv_UserManagement";
+            this.dgv_UserManagement.ReadOnly = true;
+            this.dgv_UserManagement.RowHeadersVisible = false;
             this.dgv_UserManagement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_UserManagement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_UserManagement.Size = new System.Drawing.Size(632, 414);
             this.dgv_UserManagement.TabIndex = 11;
             // 
@@ -108,6 +115,7 @@
             this.txt_SearchCatalogue.Name = "txt_SearchCatalogue";
             this.txt_SearchCatalogue.Size = new System.Drawing.Size(272, 26);
             this.txt_SearchCatalogue.TabIndex = 15;
+            this.txt_SearchCatalogue.TextChanged += new System.EventHandler(this.txt_SearchCatalogue_TextChanged);
             // 
             // UserManagement
             // 
