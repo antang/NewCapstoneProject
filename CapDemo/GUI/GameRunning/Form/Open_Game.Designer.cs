@@ -200,7 +200,7 @@
             this.pb_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pb_Setting.BackColor = System.Drawing.Color.Transparent;
             this.pb_Setting.Image = global::CapDemo.Properties.Resources.setting;
-            this.pb_Setting.Location = new System.Drawing.Point(1, 689);
+            this.pb_Setting.Location = new System.Drawing.Point(1, 687);
             this.pb_Setting.Name = "pb_Setting";
             this.pb_Setting.Size = new System.Drawing.Size(52, 42);
             this.pb_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
