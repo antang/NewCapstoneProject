@@ -108,17 +108,24 @@ namespace CapDemo.DO
             get { return first; }
             set { first = value; }
         }
-        int first_I;
 
+        int first_I;
         public int First_I
         {
             get { return first_I; }
             set { first_I = value; }
         }
+
+        int sub;
+        public int Sub
+        {
+            get { return sub; }
+            set { sub = value; }
+        }
         public Record(){
         }
 
-        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM, bool undie, bool done, bool first)
+        public Record(int idPlayer, int idPhase, int idContest, int numPass, int numFail,bool defy, bool support, bool exist, int phaseIndex, int teamScore, int totalPass, int sequencePlayer, bool pM, bool undie, bool done, bool first, int sub)
         {
             this.iDPlayer = idPlayer;
             this.iDPhase = idPhase;
@@ -137,6 +144,7 @@ namespace CapDemo.DO
             //
             this.done = done;
             this.first = first;
+            this.sub = sub;
         }
 
         public int IDPlayer

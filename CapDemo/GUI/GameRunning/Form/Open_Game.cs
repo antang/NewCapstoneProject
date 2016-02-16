@@ -83,8 +83,10 @@ namespace CapDemo
 
         string typequestion = "";
         string CorrectShortAnswer = "";
+        string CorrectShortAnswer_1 = "";
         string PlayerAnswerShortQuestion = "";
         string CorrectAnswerChallenge= "";
+        string CorrectAnswerChallenge_1 = "";
         int step = 1;
         int team = 0;
         bool CheckQuestionPM = false;
@@ -106,6 +108,8 @@ namespace CapDemo
         //Correct answer and Player answer
         int CorrectAnswer;
         int PlayerCheck;
+        int CorrectAnswer_1;
+        int PlayerCheck_1;
         //Note to click play
         string[] guideline = new string[] 
         {"Bấm để tải sơ đồ cuộc thi",
@@ -185,7 +189,7 @@ namespace CapDemo
 
                             if (AmountSteptofail == 0)
                             {
-                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true,false,true);
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, true,false,true,0);
                                 records.Add(r);
                                 //record
                                 Restore.IDContest = iDContest;
@@ -206,12 +210,13 @@ namespace CapDemo
                                 //
                                 Restore.Done_I = 0;
                                 Restore.First_I = 1;
+                                Restore.Sub = 0;
 
                                 RecordBL.AddRecord(Restore);
                             }
                             else
                             {
-                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, false, false, true);
+                                Record r = new Record(idPlayer, ListPhase[0].IDPhase, iDContest, AmountSteptoPass, AmountSteptofail, true, true, true, 0, ListPlayer.ElementAt(i).PlayerScore, 0, i, true, false, false, true,0);
                                 records.Add(r);
 
                                 //record
@@ -233,6 +238,7 @@ namespace CapDemo
                                 //
                                 Restore.Done_I = 0;
                                 Restore.First_I = 1;
+                                Restore.Sub = 0;
 
                                 RecordBL.AddRecord(Restore);
 
@@ -288,7 +294,7 @@ namespace CapDemo
                                     , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
                                     , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
                                     , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
-                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First);
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First, ListRestore.ElementAt(i).Sub);
                                 records.Add(r);
                             }
                             else
@@ -298,7 +304,7 @@ namespace CapDemo
                                     , ListRestore.ElementAt(i).NumFail, ListRestore.ElementAt(i).Defy, ListRestore.ElementAt(i).Support
                                     , ListRestore.ElementAt(i).Exist, ListRestore.ElementAt(i).PhaseIndex, ListRestore.ElementAt(i).TeamScore
                                     , ListRestore.ElementAt(i).TotalPass, ListRestore.ElementAt(i).SequecePlayer
-                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First);
+                                    , ListRestore.ElementAt(i).PM, ListRestore.ElementAt(i).Undie, ListRestore.ElementAt(i).Done, ListRestore.ElementAt(i).First, ListRestore.ElementAt(i).Sub);
                                 records.Add(r);
                             }
 
@@ -1010,14 +1016,11 @@ namespace CapDemo
                     {
                         axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\ChaoMung.wav";
                         axWindowsMediaPlayer1.Ctlcontrols.play();
-                        SoundWelcome = false;
-
-                        
+                        SoundWelcome = false; 
                     }
                     catch (Exception)
                     {
                     }
-                    
                 }
                 audience.ResumeLayout();
                 //this.ResumeLayout();
@@ -1141,6 +1144,21 @@ namespace CapDemo
 
                         records[j] = temp;
                     }
+                    else
+                    {
+                        if (records.ElementAt(i).TeamScore == records.ElementAt(j).TeamScore)
+                        {
+                            if (records.ElementAt(i).Sub < records.ElementAt(j).Sub)
+                            {
+                                temp = records[i];
+
+                                records[i] = records[j];
+
+                                records[j] = temp;
+                            }
+                        }
+                    }
+                    
                 }
             }
             //Declare data
@@ -1153,36 +1171,95 @@ namespace CapDemo
                 teamEndGame.lbl_Name.Text = nameplayer(records.ElementAt(i).IDPlayer);
                 teamEndGame.pb_TeamShirt.BackColor = Color.FromArgb(colorplayer(records.ElementAt(i).IDPlayer));
                 teamEndGame.Size = new System.Drawing.Size(width - 10, teamEndGame.Height);
+                //i==0
                 if (i == 0)
                 {
                     teamEndGame.BackgroundImage = Properties.Resources.First;
                 }
+                //i==1
                 if (i == 1)
                 {
                     if (records.ElementAt(1).TeamScore == records.ElementAt(0).TeamScore)
                     {
-                        teamEndGame.BackgroundImage = Properties.Resources.First;
+                        if (records.ElementAt(1).Sub == records.ElementAt(0).Sub)
+                        {
+                            teamEndGame.BackgroundImage = Properties.Resources.First; 
+                        }
+                        else
+                        {
+                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                        }     
                     }
                     else
                     {
                         teamEndGame.BackgroundImage = Properties.Resources.Second;
                     }
                 }
+                //i==2
                 if (i == 2)
                 {
                     if (records.ElementAt(2).TeamScore == records.ElementAt(0).TeamScore)
                     {
-                        teamEndGame.BackgroundImage = Properties.Resources.First;
-                    }
-                    else
-                    {
-                        if (records.ElementAt(2).TeamScore == records.ElementAt(1).TeamScore)
+                        if (records.ElementAt(2).Sub == records.ElementAt(0).Sub)
                         {
-                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                            teamEndGame.BackgroundImage = Properties.Resources.First;
                         }
                         else
                         {
                             if (records.ElementAt(0).TeamScore == records.ElementAt(1).TeamScore)
+                            {
+                                if (records.ElementAt(0).Sub == records.ElementAt(1).Sub)
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                }
+                                else
+                                {
+                                    if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore && records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                    }
+                                    else
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore && records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                }
+                                else
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                }
+                            }
+                        } 
+                    }
+                    else
+                    {
+                        if (records.ElementAt(0).TeamScore == records.ElementAt(1).TeamScore)
+                        {
+                            if (records.ElementAt(0).Sub == records.ElementAt(1).Sub)
+                            {
+                                teamEndGame.BackgroundImage = Properties.Resources.Second;
+                            }
+                            else
+                            {
+                                if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore && records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                }
+                                else
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                }
+                            } 
+                        }
+                        else
+                        {
+                            if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore && records.ElementAt(1).Sub == records.ElementAt(2).Sub)
                             {
                                 teamEndGame.BackgroundImage = Properties.Resources.Second;
                             }
@@ -1193,33 +1270,121 @@ namespace CapDemo
                         }
                     }
                 }
+                //i==3
                 if (i == 3)
                 {
                     if (records.ElementAt(3).TeamScore == records.ElementAt(0).TeamScore)
                     {
-                        teamEndGame.BackgroundImage = Properties.Resources.First;
-                    }
-                    else
-                    {
-                        if (records.ElementAt(3).TeamScore == records.ElementAt(1).TeamScore)
+                        if (records.ElementAt(3).Sub == records.ElementAt(0).Sub)
                         {
-                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                            teamEndGame.BackgroundImage = Properties.Resources.First;
                         }
                         else
                         {
-                            if (records.ElementAt(1).TeamScore == records.ElementAt(0).TeamScore)
+                            if (records.ElementAt(0).TeamScore == records.ElementAt(1).TeamScore)
                             {
-                                teamEndGame.BackgroundImage = Properties.Resources.Second;
-                            }
-                            else
-                            {
-                                if (records.ElementAt(3).TeamScore == records.ElementAt(2).TeamScore)
+                                if (records.ElementAt(0).Sub == records.ElementAt(1).Sub)
                                 {
-                                    teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                                    {
+                                        if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                        }
+                                        else
+                                        {
+                                            if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                            }
+                                            else
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                    }
                                 }
                                 else
                                 {
-                                    if (records.ElementAt(2).TeamScore == records.ElementAt(1).TeamScore)
+                                    if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                                    {
+                                        if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                        {
+                                            if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                            }
+                                            else
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                            }
+                                            else
+                                            {
+                                                teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                                {
+                                    if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
                                     {
                                         teamEndGame.BackgroundImage = Properties.Resources.Thirst;
                                     }
@@ -1229,13 +1394,130 @@ namespace CapDemo
                                     }
                                 }
                             }
-                            
+                        }
+                    }
+                    else
+                    {
+                        if (records.ElementAt(0).TeamScore == records.ElementAt(1).TeamScore)
+                        {
+                            if (records.ElementAt(0).Sub == records.ElementAt(1).Sub)
+                            {
+                                if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                                {
+                                    if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                    }
+                                    else
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                    }
+                                    else
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                                {
+                                    if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub  )
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                        
+                                    }
+                                    else
+                                    {
+                                        if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                        }
+                                        else
+                                        {
+                                            teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    }
+                                    else
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (records.ElementAt(1).TeamScore == records.ElementAt(2).TeamScore)
+                            {
+                                if (records.ElementAt(1).Sub == records.ElementAt(2).Sub)
+                                {
+                                    if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Second;
+                                    }
+                                    else
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    }
+                                }
+                                else
+                                {
+                                    if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                    }
+                                    else
+                                    {
+                                        teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (records.ElementAt(2).TeamScore == records.ElementAt(3).TeamScore && records.ElementAt(2).Sub == records.ElementAt(3).Sub)
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Thirst;
+                                }
+                                else
+                                {
+                                    teamEndGame.BackgroundImage = Properties.Resources.Fourth;
+                                }
+                            }
                         }
                     }
                     
                 }
                 audience.flp_TeamEndGame.Controls.Add(teamEndGame);
             }
+
         }
         #endregion
 
@@ -1921,6 +2203,16 @@ namespace CapDemo
                     }
                 }
             }
+
+            foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+            {
+                //show notify to know challenged team
+
+                if (Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text) == records.ElementAt(team).IDPlayer)
+                {
+                    playerAnswer.lbl_TeamName.BackColor = Color.LightSeaGreen;
+                }
+            }
         }
         #endregion
 
@@ -2599,6 +2891,7 @@ namespace CapDemo
                 ToolTip1.SetToolTip(this.pb_Play, "Game Over");
 
                 pb_Play.Visible = false;
+                pb_SubContest.Visible = true;
                 lblHint.Visible = false;
                 GameOverAll = true;
                 //pb_EndGame.Visible = true;
@@ -2625,6 +2918,7 @@ namespace CapDemo
                         System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
                         ToolTip1.SetToolTip(this.pb_Play, "Game Over");
                         pb_Play.Visible = false;
+                        pb_SubContest.Visible = true;
                         lblHint.Visible = false;
                         GameOverAll = true;
                         UpdateScreenAfterChallenge();
@@ -4057,22 +4351,9 @@ namespace CapDemo
         }
 
 
-
 //////// Extend Scope
         //Show sub question when team equal
         int step_1 = 1;
-        private void btn_SubContest_Click(object sender, EventArgs e)
-        {
-            if (step_1 == 1)
-            {
-                ShowTeamsChallenged_1();
-                step_1++;
-            }
-            else if (step_1 == 2)
-            {
-                ShowQuestionByIDPhase_1();
-            }
-        }
         //show teams are challenged
         public void ShowTeamsChallenged_1()
         {
@@ -4150,7 +4431,7 @@ namespace CapDemo
                         {
                             //question is short answer type
                             audience.flp_AnswerQuiz.BackColor = Color.Transparent;
-                            CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
+                            CorrectShortAnswer_1 = ListAnswer.ElementAt(0).ContentAnswer;
                         }
                     }
                     //update 
@@ -4250,6 +4531,299 @@ namespace CapDemo
                         }
                     }
                 }
+            }
+        }
+
+        //Enter answer
+        public void EnterAnswerChallenge_1()
+        {
+            foreach (Team teamCS in flp_Team.Controls)
+            {
+                if (teamCS.chk_Challenged.Checked == true)
+                {
+                    if (typequestion == "onechoice")
+                    {
+                        foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                        {
+                            //check team on controller screen and TeamAnswer on audience screen is equal
+                            if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                            {
+                                foreach (RadioButton oneChoice in teamCS.flp_Answer.Controls)
+                                {
+                                    if (oneChoice.Checked == true)
+                                    {
+                                        playerAnswer.lbl_TeamAnswer.Text = oneChoice.Text;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (typequestion == "multichoice")
+                        {
+                            foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                            {
+                                //check team on controller screen and TeamAnswer on audience screen is equal
+                                if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                                {
+                                    foreach (CheckBox multiChoice in teamCS.flp_Answer.Controls)
+                                    {
+                                        if (multiChoice.Checked == true)
+                                        {
+                                            playerAnswer.lbl_TeamAnswer.Text += multiChoice.Text + " ";
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                            {
+                                //check team on controller screen and TeamAnswer on audience screen is equal
+                                if (teamCS.lbl_IDPlayer.Text == playerAnswer.lbl_IDPlayer.Text)
+                                {
+                                    foreach (TextBox shortanswer in teamCS.flp_Answer.Controls)
+                                    {
+                                        playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
+                                        //PlayerAnswerShortQuestion = shortanswer.txt_ShortAnswer.Text;
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        {
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            }
+                                            else
+                                            {
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    teamCS.gb_team.Visible = false;
+                }
+                else
+                {
+                    teamCS.gb_team.Visible = false;
+                }
+            }
+        }
+
+        //Show Correct Answer
+        public void ShowCorrectAnswer_1()
+        {
+            //show correct answer with question type: onechoie or multichoice
+            if (typequestion == "onechoice" || typequestion == "multichoice")
+            {
+                foreach (ShowAnswer answer in audience.flp_AnswerQuiz.Controls)
+                {
+                    if (answer.lbl_Correct.Text.ToLower() == "true")
+                    {
+                        answer.BackgroundImage = Properties.Resources.dung_2;
+                        if (typequestion == "onechoice")
+                        {
+                            CorrectAnswerChallenge_1 = answer.rdb1.Text;
+                        }
+                        else
+                        {
+                            CorrectAnswerChallenge_1 += answer.chk1.Text;
+                        }
+                        CorrectAnswer_1++;
+                    }
+                    if (answer.chk1.Checked == true)
+                    {
+                        if (answer.lbl_Correct.Text.ToLower() == "true")
+                        {
+                            PlayerCheck_1++;
+                        }
+                        else
+                        {
+                            PlayerCheck_1--;
+                        }
+                    }
+                    if (answer.rdb1.Checked == true)
+                    {
+                        if (answer.lbl_Correct.Text.ToLower() == "true")
+                        {
+                            PlayerCheck_1++;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                CorrectAnswerChallenge_1 = CorrectShortAnswer_1;
+            }
+
+            //check player correct or incorrect
+            if (typequestion == "multichoice")
+            {
+                foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                {
+                    if (playerAnswer.lbl_TeamAnswer.Text.Trim().Replace(" ", "").ToLower() == CorrectAnswerChallenge_1.ToLower())
+                    {
+                        playerAnswer.lbl_Check.Text = "true";
+                        playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                        //CheckPlayerCorrect = true;
+                    }
+                    else
+                    {
+                        playerAnswer.lbl_Check.Text = "false";
+                        playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+                    }
+                }
+            }
+            else
+            {
+                if (typequestion == "onechoice")
+                {
+                    foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                    {
+                        if (playerAnswer.lbl_TeamAnswer.Text.ToLower() == CorrectAnswerChallenge_1.ToLower())
+                        {
+                            playerAnswer.lbl_Check.Text = "true";
+                            playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            //CheckPlayerCorrect = true;
+                        }
+                        else
+                        {
+                            playerAnswer.lbl_Check.Text = "false";
+                            playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+                    {
+                        if (playerAnswer.lbl_TeamAnswer.Text.ToLower() == CorrectAnswerChallenge_1.ToLower())
+                        {
+                            playerAnswer.lbl_Check.Text = "true";
+                            playerAnswer.pb_Result.Image = Properties.Resources.Correct_ico;
+                            //CheckPlayerCorrect = true;
+                        }
+                        else
+                        {
+                            playerAnswer.lbl_Check.Text = "false";
+                            playerAnswer.pb_Result.Image = Properties.Resources.X_icon_vien;
+                        }
+                    }
+                }
+            }
+            //Show check correct
+            //foreach (Team teamCS in flp_Team.Controls)
+            //{
+            //    if (teamCS.chk_Challenged.Checked == true)
+            //    {
+            //        teamCS.chk_Correct.Visible = true;
+            //    }
+            //}
+            
+        }
+
+        //Update postion in sub question
+        public void UpdatePlayerChallengeInPM_1()
+        {
+            foreach (PlayerAnswer playerAnswer in audience.flp_PlayerAnswers.Controls)
+            {
+                if (playerAnswer.lbl_Check.Text == "true")
+                {
+                    for (int i = 0; i < records.Count; i++)
+                    {
+                        if (records.ElementAt(i).IDPlayer == Convert.ToInt32(playerAnswer.lbl_IDPlayer.Text))
+                        {
+                            records.ElementAt(i).Sub += 1;
+                            Record Restore = new Record();
+                            //Team Score
+                            Restore.Sub = records.ElementAt(i).Sub;
+                            Restore.IDPlayer = records.ElementAt(i).IDPlayer;
+                            Restore.IDContest = iDContest;
+                            RecordBL.UpdateSub(Restore);
+                        }
+                    }
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+        //click to show sub contest
+        private void pb_SubContest_Click(object sender, EventArgs e)
+        {
+            if (step_1 == 1)
+            {
+                ShowTeamsChallenged_1();
+                audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
+                step_1++;
+            }
+            else if (step_1 == 2)
+            {
+                int sub_team = 0;
+                foreach (Team teamCS in flp_Team.Controls)
+                {
+                    if (teamCS.chk_Challenged.Checked == true)
+                    {
+                        sub_team++;
+                    }
+                }
+
+                if (sub_team >= 2)
+                {
+                    if (ShowQuestionByIDPhase_1() == true)
+                    {
+                        audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
+                        step_1++;
+                        foreach (Team teamCS in flp_Team.Controls)
+                        {
+                            teamCS.chk_Challenged.Visible = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Run Out of Question");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select more 1 team for sub question.");
+                    sub_team = 0;
+                }
+
+            }
+            else if (step_1 == 3)
+            {
+                EnterAnswerChallenge_1();
+                step_1++;
+            }
+            else if (step_1 == 4)
+            {
+                ShowCorrectAnswer_1();
+                step_1++;
+            }
+            else if (step_1 == 5)
+            {
+                UpdatePlayerChallengeInPM_1();
+                audience.flp_PlayerAnswers.Controls.Clear();
+                audience.progressBarControl1.Value = 1;
+                audience.btn_PM.Text = "";
+                typequestion = "";
+                countTime = 0;
+                CorrectShortAnswer_1 = "";
+                CorrectAnswerChallenge_1 = "";
+                CorrectAnswer_1 = 0;
+                PlayerCheck_1 = 0;
+                audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
+                foreach (Team teamCS in flp_Team.Controls)
+                {
+                    teamCS.chk_Challenged.Checked = false;
+                }
+                step_1 = 1;
             }
         }
     }

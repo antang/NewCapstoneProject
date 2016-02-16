@@ -64,7 +64,7 @@ namespace CapDemo.BL
         {
             List<Record> RecordList = new List<Record>();
             string query = "SELECT [Contest_ID],[Player_ID],[Phase_ID],[NumofCorrect],[NumofIncorrect],[Defy],[Support],[Exist],[PhaseIndex],"
-                        + "[PlayerScore],[TotalCorrect],[PlayerSequence],[PM],[Undie],[PlayerTurn],[Turn],[Done],[First]"
+                        + "[PlayerScore],[TotalCorrect],[PlayerSequence],[PM],[Undie],[PlayerTurn],[Turn],[Done],[First],[Sub]"
                         + " FROM [Record]"
                         + " WHERE [Contest_ID] = '" + record.IDContest + "' ORDER BY [PlayerSequence] ASC";
             DataTable dt = DA.SelectDatabase(query);
@@ -93,6 +93,7 @@ namespace CapDemo.BL
                     //
                     Record.Done = (bool)(item["Done"]);
                     Record.First = (bool)(item["First"]);
+                    Record.Sub = Convert.ToInt32(item["Sub"].ToString());
                     
                     RecordList.Add(Record);
                 }
@@ -106,10 +107,10 @@ namespace CapDemo.BL
         {
             string query = "INSERT INTO [Record]"
                 + "([Contest_ID],[Player_ID],[Phase_ID],[NumofCorrect],[NumofIncorrect],[Defy],[Support],[Exist],[PhaseIndex],"
-                + "[PlayerScore],[TotalCorrect],[PlayerSequence],[PM],[Undie],[PlayerTurn],[Turn],[Done],[First])"
+                + "[PlayerScore],[TotalCorrect],[PlayerSequence],[PM],[Undie],[PlayerTurn],[Turn],[Done],[First],[Sub])"
                 + " VALUES ('" + Record.IDContest + "','" + Record.IDPlayer + "', '" + Record.IDPhase + "', '" + Record.NumPass + "',"
                 + "'" + Record.NumFail + "','" + Record.Defy_I + "','" + Record.Support_I + "','" + Record.Exist_I + "', '" + Record.PhaseIndex + "',"
-                + "'" + Record.TeamScore + "', '" + Record.TotalPass + "','" + Record.SequecePlayer + "', '" + Record.PM_I + "', '" + Record.Undie_I + "', '" + Record.PlayerTurn_I + "', '" + Record.Turn + "', '" + Record.Done_I + "', '" + Record.First_I + "')";
+                + "'" + Record.TeamScore + "', '" + Record.TotalPass + "','" + Record.SequecePlayer + "', '" + Record.PM_I + "', '" + Record.Undie_I + "', '" + Record.PlayerTurn_I + "', '" + Record.Turn + "', '" + Record.Done_I + "', '" + Record.First_I + "', '" + Record.Sub + "')";
             if (ExistRecord(Record) == true)
             {
                 return false;
@@ -268,6 +269,14 @@ namespace CapDemo.BL
             string query = "UPDATE [Record]"
                          + " SET [First]= '" + Record.First_I + "'"
                          + " WHERE [Contest_ID] = '" + Record.IDContest + "'";
+            return DA.UpdateDatabase(query);
+        }
+        //Update Sub
+        public bool UpdateSub(Record Record)
+        {
+            string query = "UPDATE [Record]"
+                         + " SET [Sub]='" + Record.Sub + "'"
+                         + " WHERE [Contest_ID] = '" + Record.IDContest + "' AND [Player_ID] = '" + Record.IDPlayer + "'";
             return DA.UpdateDatabase(query);
         }
         //Delete Record
