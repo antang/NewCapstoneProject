@@ -43,11 +43,11 @@
             this.lblServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServer.ForeColor = System.Drawing.Color.White;
-            this.lblServer.Location = new System.Drawing.Point(12, 9);
+            this.lblServer.Location = new System.Drawing.Point(0, 9);
             this.lblServer.Name = "lblServer";
-            this.lblServer.Size = new System.Drawing.Size(55, 20);
+            this.lblServer.Size = new System.Drawing.Size(111, 20);
             this.lblServer.TabIndex = 0;
-            this.lblServer.Text = "Server";
+            this.lblServer.Text = "Tạo Tài Khoản";
             this.lblServer.Click += new System.EventHandler(this.lblServer_Click);
             // 
             // txt_UserName

@@ -244,7 +244,7 @@ namespace CapDemo.BL
         {
             string query = "UPDATE PhaseQuestion"
                          + " SET Status ='" + 0 + "'"
-                         + " WHERE Question_ID = '" + Phase.IDQuestion + "' AND Phase_ID = '" + Phase.IDContest + "' ";
+                         + " WHERE Question_ID = '" + Phase.IDQuestion + "' AND Contest_ID = '" + Phase.IDContest + "' ";
             return DA.UpdateDatabase(query);
         }
         //delete question

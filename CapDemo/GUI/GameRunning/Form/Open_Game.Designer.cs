@@ -48,7 +48,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.pb_QuestionSub = new System.Windows.Forms.PictureBox();
-            this.btn_SubContest = new System.Windows.Forms.Button();
+            this.pb_SubContest = new System.Windows.Forms.PictureBox();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -58,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -248,23 +249,27 @@
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
             this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
             this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_QuestionSub.Location = new System.Drawing.Point(1, 660);
+            this.pb_QuestionSub.Location = new System.Drawing.Point(1, 638);
             this.pb_QuestionSub.Name = "pb_QuestionSub";
-            this.pb_QuestionSub.Size = new System.Drawing.Size(28, 23);
+            this.pb_QuestionSub.Size = new System.Drawing.Size(52, 42);
             this.pb_QuestionSub.TabIndex = 21;
             this.pb_QuestionSub.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_QuestionSub, "Question Screen");
             this.pb_QuestionSub.Click += new System.EventHandler(this.pb_QuestionSub_Click);
             // 
-            // btn_SubContest
+            // pb_SubContest
             // 
-            this.btn_SubContest.Location = new System.Drawing.Point(59, 704);
-            this.btn_SubContest.Name = "btn_SubContest";
-            this.btn_SubContest.Size = new System.Drawing.Size(75, 23);
-            this.btn_SubContest.TabIndex = 22;
-            this.btn_SubContest.Text = "button1";
-            this.btn_SubContest.UseVisualStyleBackColor = true;
-            this.btn_SubContest.Visible = false;
-            this.btn_SubContest.Click += new System.EventHandler(this.btn_SubContest_Click);
+            this.pb_SubContest.BackColor = System.Drawing.Color.Transparent;
+            this.pb_SubContest.BackgroundImage = global::CapDemo.Properties.Resources.Sub;
+            this.pb_SubContest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_SubContest.Location = new System.Drawing.Point(726, 627);
+            this.pb_SubContest.Name = "pb_SubContest";
+            this.pb_SubContest.Size = new System.Drawing.Size(75, 69);
+            this.pb_SubContest.TabIndex = 23;
+            this.pb_SubContest.TabStop = false;
+            this.toolTip1.SetToolTip(this.pb_SubContest, "Sub Question");
+            this.pb_SubContest.Visible = false;
+            this.pb_SubContest.Click += new System.EventHandler(this.pb_SubContest_Click);
             // 
             // Open_Game
             // 
@@ -273,7 +278,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Techno;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.btn_SubContest);
+            this.Controls.Add(this.pb_SubContest);
             this.Controls.Add(this.pb_QuestionSub);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_Maximize);
@@ -301,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,6 +331,6 @@
         private System.Windows.Forms.PictureBox pb_Maximize;
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.PictureBox pb_QuestionSub;
-        private System.Windows.Forms.Button btn_SubContest;
+        private System.Windows.Forms.PictureBox pb_SubContest;
     }
 }
