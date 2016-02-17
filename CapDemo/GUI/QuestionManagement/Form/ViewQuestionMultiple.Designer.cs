@@ -142,7 +142,7 @@
             // txt_Date
             // 
             this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Date.Location = new System.Drawing.Point(126, 450);
+            this.txt_Date.Location = new System.Drawing.Point(123, 347);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 22);
@@ -173,7 +173,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(22, 450);
+            this.label8.Location = new System.Drawing.Point(19, 347);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 58;
@@ -182,62 +182,68 @@
             // txt_TimeAnswer
             // 
             this.txt_TimeAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(165, 412);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(162, 463);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(61, 22);
             this.txt_TimeAnswer.TabIndex = 57;
+            this.txt_TimeAnswer.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(22, 340);
+            this.label6.Location = new System.Drawing.Point(19, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 52;
             this.label6.Text = "Điểm +";
+            this.label6.Visible = false;
             // 
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreTru.Location = new System.Drawing.Point(126, 375);
+            this.txt_ScoreTru.Location = new System.Drawing.Point(123, 426);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 22);
             this.txt_ScoreTru.TabIndex = 56;
+            this.txt_ScoreTru.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 375);
+            this.label7.Location = new System.Drawing.Point(19, 426);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 53;
             this.label7.Text = "Điểm -";
+            this.label7.Visible = false;
             // 
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreCong.Location = new System.Drawing.Point(126, 340);
+            this.txt_ScoreCong.Location = new System.Drawing.Point(123, 391);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 22);
             this.txt_ScoreCong.TabIndex = 55;
+            this.txt_ScoreCong.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(22, 415);
+            this.label9.Location = new System.Drawing.Point(19, 466);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 16);
             this.label9.TabIndex = 54;
             this.label9.Text = "Thời gian trả lời";
+            this.label9.Visible = false;
             // 
             // label5
             // 

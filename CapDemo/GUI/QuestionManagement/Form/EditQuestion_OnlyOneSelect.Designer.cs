@@ -145,7 +145,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(10, 460);
+            this.label8.Location = new System.Drawing.Point(15, 349);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 49;
@@ -155,12 +155,13 @@
             // 
             this.txt_TimeAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TimeAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(111, 424);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(127, 479);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 23);
             this.txt_TimeAnswer.TabIndex = 48;
+            this.txt_TimeAnswer.Visible = false;
             // 
             // label5
             // 
@@ -168,22 +169,24 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(10, 355);
+            this.label5.Location = new System.Drawing.Point(26, 410);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 43;
             this.label5.Text = "Điểm +";
+            this.label5.Visible = false;
             // 
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_ScoreTru.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreTru.Location = new System.Drawing.Point(111, 389);
+            this.txt_ScoreTru.Location = new System.Drawing.Point(127, 444);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreTru.TabIndex = 47;
+            this.txt_ScoreTru.Visible = false;
             // 
             // label6
             // 
@@ -191,22 +194,24 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(10, 390);
+            this.label6.Location = new System.Drawing.Point(26, 445);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 44;
             this.label6.Text = "Điểm -";
+            this.label6.Visible = false;
             // 
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_ScoreCong.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreCong.Location = new System.Drawing.Point(111, 354);
+            this.txt_ScoreCong.Location = new System.Drawing.Point(127, 409);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreCong.TabIndex = 46;
+            this.txt_ScoreCong.Visible = false;
             // 
             // label7
             // 
@@ -214,11 +219,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(10, 425);
+            this.label7.Location = new System.Drawing.Point(26, 480);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 16);
             this.label7.TabIndex = 45;
             this.label7.Text = "Thời gian";
+            this.label7.Visible = false;
             // 
             // lbl_Question
             // 
@@ -248,7 +254,7 @@
             // 
             this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Date.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Date.Location = new System.Drawing.Point(111, 462);
+            this.txt_Date.Location = new System.Drawing.Point(116, 351);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
             this.txt_Date.RightToLeft = System.Windows.Forms.RightToLeft.No;
