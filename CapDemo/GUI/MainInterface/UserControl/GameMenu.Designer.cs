@@ -153,20 +153,20 @@
             this.tsmi_ChangePass,
             this.tsmi_LogOut});
             this.cms_UserSetting.Name = "cms_UserSetting";
-            this.cms_UserSetting.Size = new System.Drawing.Size(169, 48);
+            this.cms_UserSetting.Size = new System.Drawing.Size(147, 48);
             // 
             // tsmi_ChangePass
             // 
             this.tsmi_ChangePass.Name = "tsmi_ChangePass";
-            this.tsmi_ChangePass.Size = new System.Drawing.Size(168, 22);
-            this.tsmi_ChangePass.Text = "Change Password";
+            this.tsmi_ChangePass.Size = new System.Drawing.Size(146, 22);
+            this.tsmi_ChangePass.Text = "Đổi Mật Khẩu";
             this.tsmi_ChangePass.Click += new System.EventHandler(this.tsmi_ChangePass_Click);
             // 
             // tsmi_LogOut
             // 
             this.tsmi_LogOut.Name = "tsmi_LogOut";
-            this.tsmi_LogOut.Size = new System.Drawing.Size(168, 22);
-            this.tsmi_LogOut.Text = "Log Out";
+            this.tsmi_LogOut.Size = new System.Drawing.Size(146, 22);
+            this.tsmi_LogOut.Text = "Đăng Xuất";
             this.tsmi_LogOut.Click += new System.EventHandler(this.tsmi_LogOut_Click);
             // 
             // GameMenu
