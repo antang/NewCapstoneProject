@@ -94,7 +94,6 @@ namespace CapDemo.DA
                 QuestionContent = QuestionContent.Replace("<br>", Environment.NewLine);
                 QuestionContent = QuestionContent.Replace("</br>", "");
                 //QuestionContent = QuestionContent.Replace("'", "''");
-                MessageBox.Show("" + QuestionContent);
                 return QuestionContent;
                 
             }

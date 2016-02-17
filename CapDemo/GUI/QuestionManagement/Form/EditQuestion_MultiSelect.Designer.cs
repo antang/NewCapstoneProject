@@ -79,7 +79,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(7, 466);
+            this.label8.Location = new System.Drawing.Point(9, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 31;
@@ -89,11 +89,12 @@
             // 
             this.txt_TimeAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TimeAnswer.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimeAnswer.Location = new System.Drawing.Point(108, 430);
+            this.txt_TimeAnswer.Location = new System.Drawing.Point(119, 486);
             this.txt_TimeAnswer.Name = "txt_TimeAnswer";
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(100, 23);
             this.txt_TimeAnswer.TabIndex = 30;
+            this.txt_TimeAnswer.Visible = false;
             // 
             // label5
             // 
@@ -101,21 +102,23 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 354);
+            this.label5.Location = new System.Drawing.Point(18, 410);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 25;
             this.label5.Text = "Điểm +";
+            this.label5.Visible = false;
             // 
             // txt_ScoreTru
             // 
             this.txt_ScoreTru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_ScoreTru.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreTru.Location = new System.Drawing.Point(108, 388);
+            this.txt_ScoreTru.Location = new System.Drawing.Point(119, 444);
             this.txt_ScoreTru.Name = "txt_ScoreTru";
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreTru.TabIndex = 29;
+            this.txt_ScoreTru.Visible = false;
             // 
             // label6
             // 
@@ -123,21 +126,23 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(7, 389);
+            this.label6.Location = new System.Drawing.Point(18, 445);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 26;
             this.label6.Text = "Điểm -";
+            this.label6.Visible = false;
             // 
             // txt_ScoreCong
             // 
             this.txt_ScoreCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_ScoreCong.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ScoreCong.Location = new System.Drawing.Point(108, 353);
+            this.txt_ScoreCong.Location = new System.Drawing.Point(119, 409);
             this.txt_ScoreCong.Name = "txt_ScoreCong";
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 23);
             this.txt_ScoreCong.TabIndex = 28;
+            this.txt_ScoreCong.Visible = false;
             // 
             // label7
             // 
@@ -145,11 +150,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(7, 431);
+            this.label7.Location = new System.Drawing.Point(18, 487);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 16);
             this.label7.TabIndex = 27;
             this.label7.Text = "Thời gian";
+            this.label7.Visible = false;
             // 
             // label1
             // 
@@ -242,7 +248,7 @@
             // 
             this.txt_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Date.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Date.Location = new System.Drawing.Point(108, 468);
+            this.txt_Date.Location = new System.Drawing.Point(110, 356);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 23);

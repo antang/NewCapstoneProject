@@ -45,10 +45,10 @@
             this.pb_Minimize = new System.Windows.Forms.PictureBox();
             this.pb_Setting = new System.Windows.Forms.PictureBox();
             this.pb_Play = new System.Windows.Forms.PictureBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.pb_QuestionSub = new System.Windows.Forms.PictureBox();
             this.pb_SubContest = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -56,9 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -144,9 +144,9 @@
             this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank_1;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_EndGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_EndGame.Location = new System.Drawing.Point(821, 627);
+            this.pb_EndGame.Location = new System.Drawing.Point(1, 590);
             this.pb_EndGame.Name = "pb_EndGame";
-            this.pb_EndGame.Size = new System.Drawing.Size(75, 69);
+            this.pb_EndGame.Size = new System.Drawing.Size(52, 42);
             this.pb_EndGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_EndGame.TabIndex = 16;
             this.pb_EndGame.TabStop = false;
@@ -225,25 +225,6 @@
             this.toolTip1.SetToolTip(this.pb_Play, "Play");
             this.pb_Play.Click += new System.EventHandler(this.pb_Play_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "chon.png");
-            this.imageList1.Images.SetKeyName(1, "dung.png");
-            this.imageList1.Images.SetKeyName(2, "dung-2.png");
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(131, 518);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(112, 106);
-            this.axWindowsMediaPlayer1.TabIndex = 0;
-            this.axWindowsMediaPlayer1.Visible = false;
-            // 
             // pb_QuestionSub
             // 
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
@@ -262,7 +243,7 @@
             this.pb_SubContest.BackColor = System.Drawing.Color.Transparent;
             this.pb_SubContest.BackgroundImage = global::CapDemo.Properties.Resources.Sub;
             this.pb_SubContest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_SubContest.Location = new System.Drawing.Point(726, 627);
+            this.pb_SubContest.Location = new System.Drawing.Point(821, 627);
             this.pb_SubContest.Name = "pb_SubContest";
             this.pb_SubContest.Size = new System.Drawing.Size(75, 69);
             this.pb_SubContest.TabIndex = 23;
@@ -270,6 +251,25 @@
             this.toolTip1.SetToolTip(this.pb_SubContest, "Sub Question");
             this.pb_SubContest.Visible = false;
             this.pb_SubContest.Click += new System.EventHandler(this.pb_SubContest_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "chon.png");
+            this.imageList1.Images.SetKeyName(1, "dung.png");
+            this.imageList1.Images.SetKeyName(2, "dung-2.png");
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(131, 518);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(112, 106);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // Open_Game
             // 
@@ -304,9 +304,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_Minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Setting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Play)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }

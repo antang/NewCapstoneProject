@@ -4376,10 +4376,11 @@ namespace CapDemo
             List<Phase> ListPhase;
             List<Question> ListQuestion;
             List<Answer> ListAnswer;
+            Phase.IDContest = iDContest;
             int idquestion = 0;
             int a = 65;
 
-            ListPhase = PhaseQuestionBl.getquestionRunGame_1();
+            ListPhase = PhaseQuestionBl.getquestionRunGame_1(Phase);
             try
             {
                 idquestion = ListPhase.ElementAt(0).IDQuestion;
@@ -4759,6 +4760,28 @@ namespace CapDemo
             if (step_1 == 1)
             {
                 ShowTeamsChallenged_1();
+                foreach (Team teamControllerScreen in flp_Team.Controls)
+                {
+                    teamControllerScreen.flp_Answer.Controls.Clear();
+                    teamControllerScreen.flp_Answer.Visible = true;
+                }
+                audience.flp_PlayerAnswers.Controls.Clear();
+                //Clear panel
+                audience.flp_AnswerQuiz.Controls.Clear();
+                audience.lbl_QuestionContent.Text = "";
+                audience.lbl_Phase.Text = "";
+                audience.lbl_typeQ.Text = "";
+                audience.lbl_Point.Text = "";
+
+                audience.progressBarControl1.Value = 1;
+                audience.btn_PM.Text = "";
+                typequestion = "";
+                countTime = 0;
+                CorrectShortAnswer_1 = "";
+                CorrectAnswerChallenge_1 = "";
+                CorrectAnswer_1 = 0;
+                PlayerCheck_1 = 0;
+
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
                 step_1++;
             }
@@ -4799,25 +4822,23 @@ namespace CapDemo
             else if (step_1 == 3)
             {
                 EnterAnswerChallenge_1();
+                foreach (Team teamControllerScreen in flp_Team.Controls)
+                {
+                    teamControllerScreen.flp_Answer.Visible = false;
+                }
+                audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                 step_1++;
             }
             else if (step_1 == 4)
             {
                 ShowCorrectAnswer_1();
+                audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                 step_1++;
             }
             else if (step_1 == 5)
             {
                 UpdatePlayerChallengeInPM_1();
-                audience.flp_PlayerAnswers.Controls.Clear();
-                audience.progressBarControl1.Value = 1;
-                audience.btn_PM.Text = "";
-                typequestion = "";
-                countTime = 0;
-                CorrectShortAnswer_1 = "";
-                CorrectAnswerChallenge_1 = "";
-                CorrectAnswer_1 = 0;
-                PlayerCheck_1 = 0;
+                
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
                 foreach (Team teamCS in flp_Team.Controls)
                 {

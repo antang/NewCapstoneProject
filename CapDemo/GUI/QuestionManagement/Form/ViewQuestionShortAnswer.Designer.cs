@@ -66,7 +66,7 @@
             // txt_Date
             // 
             this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Date.Location = new System.Drawing.Point(126, 450);
+            this.txt_Date.Location = new System.Drawing.Point(512, 340);
             this.txt_Date.Name = "txt_Date";
             this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(100, 22);
@@ -77,7 +77,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(22, 450);
+            this.label8.Location = new System.Drawing.Point(408, 340);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 79;
@@ -91,6 +91,7 @@
             this.txt_TimeAnswer.ReadOnly = true;
             this.txt_TimeAnswer.Size = new System.Drawing.Size(61, 22);
             this.txt_TimeAnswer.TabIndex = 78;
+            this.txt_TimeAnswer.Visible = false;
             // 
             // label6
             // 
@@ -102,6 +103,7 @@
             this.label6.Size = new System.Drawing.Size(60, 16);
             this.label6.TabIndex = 73;
             this.label6.Text = "Điểm +";
+            this.label6.Visible = false;
             // 
             // txt_ScoreTru
             // 
@@ -111,6 +113,7 @@
             this.txt_ScoreTru.ReadOnly = true;
             this.txt_ScoreTru.Size = new System.Drawing.Size(100, 22);
             this.txt_ScoreTru.TabIndex = 77;
+            this.txt_ScoreTru.Visible = false;
             // 
             // label7
             // 
@@ -122,6 +125,7 @@
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 74;
             this.label7.Text = "Điểm -";
+            this.label7.Visible = false;
             // 
             // txt_ScoreCong
             // 
@@ -131,6 +135,7 @@
             this.txt_ScoreCong.ReadOnly = true;
             this.txt_ScoreCong.Size = new System.Drawing.Size(100, 22);
             this.txt_ScoreCong.TabIndex = 76;
+            this.txt_ScoreCong.Visible = false;
             // 
             // label9
             // 
@@ -142,6 +147,7 @@
             this.label9.Size = new System.Drawing.Size(119, 16);
             this.label9.TabIndex = 75;
             this.label9.Text = "Thời gian trả lời";
+            this.label9.Visible = false;
             // 
             // label5
             // 
