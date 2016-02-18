@@ -44,6 +44,10 @@ namespace CapDemo.GUI.User_Controls
                 {
                     this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
                 }
+            if (cmb_Catalogue.Items.Count > 0)
+            {
+                cmb_Catalogue.SelectedIndex = 0;
+            }
             txt_Date.Text = DateTime.Now.ToString("d");
         }
         int IDCat;
@@ -85,7 +89,7 @@ namespace CapDemo.GUI.User_Controls
                     question.NameQuestion = txt_ContentQuestion.Text.Trim();
                     question.TypeQuestion = "shortanswer";
                     question.IDCatalogue = IDCat;
-                   
+                    question.Date = DateTime.Now;
                     if (questionBl.AddQuestion(question))
                     {
                         answer.ContentAnswer = txt_AnswerContent.Text.Trim();
@@ -153,7 +157,7 @@ namespace CapDemo.GUI.User_Controls
                     question.NameQuestion = txt_ContentQuestion.Text.Trim();
                     question.TypeQuestion = "shortanswer";
                     question.IDCatalogue = IDCat;
-                    
+                    question.Date = DateTime.Now;
                     if (questionBl.AddQuestion(question))
                     {
                         answer.ContentAnswer = txt_AnswerContent.Text.Trim();

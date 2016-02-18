@@ -180,7 +180,7 @@
             this.Name = "ViewQuestionInCatalogue";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Xem câu hỏi có trong chủ đề";
+            this.Text = "Xem câu hỏi trong chủ đề";
             this.Load += new System.EventHandler(this.ViewQuestionInCatalogue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question1)).EndInit();
             this.ResumeLayout(false);

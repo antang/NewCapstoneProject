@@ -165,7 +165,7 @@ namespace CapDemo.GUI.User_Controls
                             question.NameQuestion = txt_ContentQuestion.Text.Trim();
                             question.TypeQuestion = "onechoice";
                             question.IDCatalogue = IDCat;
-                            
+                            question.Date = DateTime.Now;
                             if (questionBl.AddQuestion(question))
                             {
                                 foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)
@@ -305,7 +305,7 @@ namespace CapDemo.GUI.User_Controls
                             question.NameQuestion = txt_ContentQuestion.Text.Trim();
                             question.TypeQuestion = "onechoice";
                             question.IDCatalogue = IDCat;
-                            
+                            question.Date = DateTime.Now;
                             if (questionBl.AddQuestion(question))
                             {
                                 foreach (Answer_OnlyOneSelect item in flp_addAnswer.Controls)

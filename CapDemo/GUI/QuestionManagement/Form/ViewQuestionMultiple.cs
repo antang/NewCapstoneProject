@@ -278,5 +278,16 @@ namespace CapDemo.GUI
         {
             this.Close();
         }
+
+        private void btn_PreviewQuestion_Click(object sender, EventArgs e)
+        {
+            PreviewQuestion Preview = new PreviewQuestion();
+            Preview.QuestionPreview = txt_ContentQuestion.Text;
+            foreach (Answer_MultiSelect multichoice in flp_Answer.Controls)
+            {
+                Preview.AnswerPreview.Add(multichoice.txt_AnswerContent.Text);
+            }
+            Preview.ShowDialog();
+        }
     }
 }

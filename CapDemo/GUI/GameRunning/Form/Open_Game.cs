@@ -2312,15 +2312,23 @@ namespace CapDemo
                                     {
                                         playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
 
-                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 8)
                                         {
-                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 10)
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 18.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                             else
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 13)
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 14.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                else
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                //playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             } 
                                         }
                                     }
@@ -2403,15 +2411,23 @@ namespace CapDemo
                                     {
                                         playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
                                         //PlayerAnswerShortQuestion = shortanswer.txt_ShortAnswer.Text;
-                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 8)
                                         {
-                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 10)
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 18.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                             else
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 13)
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 14.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                else
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                //playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                         }
                                     }
@@ -2482,9 +2498,11 @@ namespace CapDemo
                 CorrectAnswerChallenge = CorrectShortAnswer;
                 //show correct answer with short answer
                 ShowAnswer ShowAnswer = new ShowAnswer();
-                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height - 10);
+                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height/2 - 10);
                 ShowAnswer.lbl_labelAnswer.Visible = false;
                 ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer;
+                ShowAnswer.rtxt_Answer.Font = new Font("Verdana", 24.0f, FontStyle.Bold);
+                ShowAnswer.rtxt_Answer.TextAlign = ContentAlignment.MiddleCenter;
                 ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
 
@@ -4722,9 +4740,11 @@ namespace CapDemo
                 CorrectAnswerChallenge_1 = CorrectShortAnswer_1;
 
                 ShowAnswer ShowAnswer = new ShowAnswer();
-                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height - 10);
+                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height/2 - 10);
                 ShowAnswer.lbl_labelAnswer.Visible = false;
                 ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer_1;
+                ShowAnswer.rtxt_Answer.Font = new Font("Verdana", 24.0f, FontStyle.Bold);
+                ShowAnswer.rtxt_Answer.TextAlign = ContentAlignment.MiddleCenter;
                 ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
             }
