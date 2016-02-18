@@ -929,6 +929,7 @@
     <None Include="Resources\Hearth_M.png" />
     <None Include="Resources\SubQuestion.png" />
     <None Include="Resources\Sub.png" />
+    <None Include="Resources\NewScreenQuestion.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

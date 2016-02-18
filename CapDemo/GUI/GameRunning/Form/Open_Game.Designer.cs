@@ -227,7 +227,7 @@
             // pb_QuestionSub
             // 
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
-            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.RestoreDown;
+            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.NewScreenQuestion;
             this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_QuestionSub.Location = new System.Drawing.Point(1, 638);
             this.pb_QuestionSub.Name = "pb_QuestionSub";
