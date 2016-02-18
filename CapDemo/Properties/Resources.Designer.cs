@@ -767,6 +767,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NewScreenQuestion {
+            get {
+                object obj = ResourceManager.GetObject("NewScreenQuestion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Nut_thoat_horver {
             get {
                 object obj = ResourceManager.GetObject("Nut_thoat_horver", resourceCulture);

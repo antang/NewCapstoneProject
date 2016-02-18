@@ -2480,6 +2480,14 @@ namespace CapDemo
             else
             {
                 CorrectAnswerChallenge = CorrectShortAnswer;
+                //show correct answer with short answer
+                ShowAnswer ShowAnswer = new ShowAnswer();
+                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height - 10);
+                ShowAnswer.lbl_labelAnswer.Visible = false;
+                ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer;
+                ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
+                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+
             }
 
             //check player correct or incorrect
@@ -4374,6 +4382,8 @@ namespace CapDemo
                 {
                     Rectangle bounds = screens[1].Bounds;
                     questionScreen.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
+                    //
+                    questionScreen.Location = new Point(questionScreen.Location.X + 0, questionScreen.Location.Y + 80);
                     questionScreen.StartPosition = FormStartPosition.Manual;
                     questionScreen.Show();
                     questionScreen.ShowQuestionSub(IDQuestion_Sub);
@@ -4633,15 +4643,23 @@ namespace CapDemo
                                     {
                                         playerAnswer.lbl_TeamAnswer.Text = shortanswer.Text;
                                         //PlayerAnswerShortQuestion = shortanswer.txt_ShortAnswer.Text;
-                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 12)
+                                        if (playerAnswer.lbl_TeamAnswer.Text.Count() > 8)
                                         {
-                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 16)
+                                            if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 10)
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 18.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
                                             }
                                             else
                                             {
-                                                playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 10.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                if (playerAnswer.lbl_TeamAnswer.Text.Count() <= 13)
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 14.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                else
+                                                {
+                                                    playerAnswer.lbl_TeamAnswer.Font = new Font(playerAnswer.lbl_TeamAnswer.Font.FontFamily, 12.0f, playerAnswer.lbl_TeamAnswer.Font.Style);
+                                                }
+                                                
                                             }
                                         }
                                     }
@@ -4702,6 +4720,13 @@ namespace CapDemo
             else
             {
                 CorrectAnswerChallenge_1 = CorrectShortAnswer_1;
+
+                ShowAnswer ShowAnswer = new ShowAnswer();
+                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width - 10, audience.flp_AnswerQuiz.Height - 10);
+                ShowAnswer.lbl_labelAnswer.Visible = false;
+                ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer_1;
+                ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
+                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
             }
 
             //check player correct or incorrect
@@ -4818,7 +4843,6 @@ namespace CapDemo
                 audience.lbl_Point.Text = "";
 
                 audience.progressBarControl1.Value = 1;
-                audience.btn_PM.Text = "";
                 typequestion = "";
                 countTime = 0;
                 CorrectShortAnswer_1 = "";
