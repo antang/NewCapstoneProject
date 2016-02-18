@@ -139,7 +139,6 @@
             // 
             // pb_EndGame
             // 
-            this.pb_EndGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
             this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank_1;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -228,7 +227,7 @@
             // pb_QuestionSub
             // 
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
-            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
+            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.RestoreDown;
             this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_QuestionSub.Location = new System.Drawing.Point(1, 638);
             this.pb_QuestionSub.Name = "pb_QuestionSub";
