@@ -106,7 +106,7 @@ namespace CapDemo.GUI
             this.Controls.Add(gm1);
             try
             {
-                axWindowsMediaPlayer1.URL = Directory.GetCurrentDirectory() + "\\Sound\\Van_Lang_Dai_Hoc_Duong.mp3";
+                axWindowsMediaPlayer1.URL = Directory.GetCurrentDirectory() + "\\Sound\\NhacNen.mp3";
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 axWindowsMediaPlayer1.settings.setMode("Loop", true);
             }
@@ -124,6 +124,13 @@ namespace CapDemo.GUI
                 Login login = new Login();
                 login.Show();
                 this.Close();
+                try
+                {
+                    axWindowsMediaPlayer1.Ctlcontrols.stop();
+                }
+                catch (Exception)
+                {
+                }
                 
             }
         }

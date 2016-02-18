@@ -119,6 +119,14 @@ namespace CapDemo
         "Bấm để hiển thị đáp án đúng nhất",
         "Bấm để hiển thị sơ đồ các đội",
         "Bấm để cập nhật điểm cho đội thi đấu"};
+
+        //Note to show Sub Question
+        string[] guideline_1 = new string[] 
+        {"Bấm để chọn các đội tham gia vào câu hỏi phụ",
+        "Bấm để hiển thị câu hỏi",
+        "Bấm để hiển thị đáp án của đội thi đấu",
+        "Bấm để hiển thị đáp án đúng nhất",
+        "Bấm để cập nhật cho đội thi đấu"};
         #endregion      
 
         //Get contest content
@@ -2898,6 +2906,24 @@ namespace CapDemo
                 UpdateScreenAfterChallenge();
                 Contest.EndContest = 1;
                 ContestBL.EditStatusContestbyID(Contest);
+                
+                //back to initial
+                foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
+                {
+                    playerLane.BackColor = Color.Transparent;
+                    playerLane.HighLight(false);
+                }
+                foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
+                {
+                    teamAdienceScreen.HighLight(false);
+                    teamAdienceScreen.HighLightChallenge(false);
+                    teamAdienceScreen.BackColor = Color.Transparent;
+                    teamAdienceScreen.lbl_TeamScore.ForeColor = Color.White;
+                    teamAdienceScreen.lbl_TeamName.ForeColor = Color.White;
+                    teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
+                    teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
+                }
+
 /////////       
                 
             }
@@ -2925,6 +2951,23 @@ namespace CapDemo
                         //update status contest id this contest have run
                         Contest.EndContest = 1;
                         ContestBL.EditStatusContestbyID(Contest);
+
+                        //back to initial
+                        foreach (Player_Lane1 playerLane in audience.pnl_Lane.Controls)
+                        {
+                            playerLane.BackColor = Color.Transparent;
+                            playerLane.HighLight(false);
+                        }
+                        foreach (Team_AudienceScreeen teamAdienceScreen in audience.flp_Team.Controls)
+                        {
+                            teamAdienceScreen.HighLight(false);
+                            teamAdienceScreen.HighLightChallenge(false);
+                            teamAdienceScreen.BackColor = Color.Transparent;
+                            teamAdienceScreen.lbl_TeamScore.ForeColor = Color.White;
+                            teamAdienceScreen.lbl_TeamName.ForeColor = Color.White;
+                            teamAdienceScreen.btn_SupportChoice.BackColor = Color.SkyBlue;
+                            teamAdienceScreen.btn_ChallengeChoice.BackColor = Color.SkyBlue;
+                        }
 /////////
                         
                     }
@@ -4757,6 +4800,7 @@ namespace CapDemo
         //click to show sub contest
         private void pb_SubContest_Click(object sender, EventArgs e)
         {
+            lblHint.Visible = true;
             if (step_1 == 1)
             {
                 ShowTeamsChallenged_1();
@@ -4784,6 +4828,7 @@ namespace CapDemo
 
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;
                 step_1++;
+                lblHint.Text = guideline_1[1].ToString();
             }
             else if (step_1 == 2)
             {
@@ -4802,6 +4847,7 @@ namespace CapDemo
                     {
                         audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                         step_1++;
+                        lblHint.Text = guideline_1[2].ToString();
                         foreach (Team teamCS in flp_Team.Controls)
                         {
                             teamCS.chk_Challenged.Visible = false;
@@ -4828,12 +4874,14 @@ namespace CapDemo
                 }
                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                 step_1++;
+                lblHint.Text = guideline_1[3].ToString();
             }
             else if (step_1 == 4)
             {
                 ShowCorrectAnswer_1();
                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                 step_1++;
+                lblHint.Text = guideline_1[4].ToString();
             }
             else if (step_1 == 5)
             {
@@ -4845,6 +4893,7 @@ namespace CapDemo
                     teamCS.chk_Challenged.Checked = false;
                 }
                 step_1 = 1;
+                lblHint.Text = guideline_1[0].ToString();
             }
         }
     }

@@ -70,7 +70,7 @@ namespace CapDemo.GUI.User_Controls
         private void GameMenu_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
-            lbl_Name.Text = "Name: "+UserName;
+            lbl_Name.Text = "Tên Người Dùng: "+UserName;
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
