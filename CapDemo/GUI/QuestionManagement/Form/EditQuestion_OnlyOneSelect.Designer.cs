@@ -48,6 +48,7 @@
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_PreviewQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_SaveEditQuestion
@@ -60,9 +61,9 @@
             this.btn_SaveEditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveEditQuestion.ImageIndex = 2;
             this.btn_SaveEditQuestion.ImageList = this.imageList1;
-            this.btn_SaveEditQuestion.Location = new System.Drawing.Point(564, 464);
+            this.btn_SaveEditQuestion.Location = new System.Drawing.Point(506, 464);
             this.btn_SaveEditQuestion.Name = "btn_SaveEditQuestion";
-            this.btn_SaveEditQuestion.Size = new System.Drawing.Size(90, 30);
+            this.btn_SaveEditQuestion.Size = new System.Drawing.Size(112, 30);
             this.btn_SaveEditQuestion.TabIndex = 53;
             this.btn_SaveEditQuestion.Text = "Lưu";
             this.btn_SaveEditQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,6 +78,7 @@
             this.imageList1.Images.SetKeyName(0, "add.png");
             this.imageList1.Images.SetKeyName(1, "Cancel.png");
             this.imageList1.Images.SetKeyName(2, "save-512.png");
+            this.imageList1.Images.SetKeyName(3, "Preview1.jpg");
             // 
             // btn_CancelEditQuestion
             // 
@@ -88,9 +90,9 @@
             this.btn_CancelEditQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_CancelEditQuestion.ImageIndex = 1;
             this.btn_CancelEditQuestion.ImageList = this.imageList1;
-            this.btn_CancelEditQuestion.Location = new System.Drawing.Point(669, 464);
+            this.btn_CancelEditQuestion.Location = new System.Drawing.Point(645, 464);
             this.btn_CancelEditQuestion.Name = "btn_CancelEditQuestion";
-            this.btn_CancelEditQuestion.Size = new System.Drawing.Size(90, 30);
+            this.btn_CancelEditQuestion.Size = new System.Drawing.Size(114, 30);
             this.btn_CancelEditQuestion.TabIndex = 54;
             this.btn_CancelEditQuestion.Text = "Hủy";
             this.btn_CancelEditQuestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -275,12 +277,31 @@
             this.flp_addAnswer.Size = new System.Drawing.Size(400, 308);
             this.flp_addAnswer.TabIndex = 56;
             // 
+            // btn_PreviewQuestion
+            // 
+            this.btn_PreviewQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_PreviewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PreviewQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PreviewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_PreviewQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_PreviewQuestion.ImageKey = "Preview1.jpg";
+            this.btn_PreviewQuestion.ImageList = this.imageList1;
+            this.btn_PreviewQuestion.Location = new System.Drawing.Point(358, 464);
+            this.btn_PreviewQuestion.Name = "btn_PreviewQuestion";
+            this.btn_PreviewQuestion.Size = new System.Drawing.Size(121, 30);
+            this.btn_PreviewQuestion.TabIndex = 66;
+            this.btn_PreviewQuestion.Text = "Xem Trước";
+            this.btn_PreviewQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_PreviewQuestion.UseVisualStyleBackColor = false;
+            this.btn_PreviewQuestion.Click += new System.EventHandler(this.btn_PreviewQuestion_Click);
+            // 
             // EditQuestion_OnlyOneSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(768, 515);
+            this.Controls.Add(this.btn_PreviewQuestion);
             this.Controls.Add(this.flp_addAnswer);
             this.Controls.Add(this.txt_Date);
             this.Controls.Add(this.btn_SaveEditQuestion);
@@ -328,5 +349,6 @@
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
+        private System.Windows.Forms.Button btn_PreviewQuestion;
     }
 }

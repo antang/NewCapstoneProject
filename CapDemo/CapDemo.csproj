@@ -423,6 +423,12 @@
     <Compile Include="myLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GUI\QuestionManagement\Form\PreviewQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuestionManagement\Form\PreviewQuestion.Designer.cs">
+      <DependentUpon>PreviewQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="GUI\GameRunning\UserControl\ProgressBarControl.cs">
       <SubType>UserControl</SubType>
@@ -648,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GameRunning\UserControl\ProgressBarControl.resx">
       <DependentUpon>ProgressBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuestionManagement\Form\PreviewQuestion.resx">
+      <DependentUpon>PreviewQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

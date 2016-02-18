@@ -47,6 +47,10 @@ namespace CapDemo.GUI.User_Controls
                 {
                     this.cmb_Catalogue.Items.Add(CatList.ElementAt(i).NameCatalogue);
                 }
+            if (cmb_Catalogue.Items.Count > 0)
+            {
+                cmb_Catalogue.SelectedIndex = 0;
+            }
             txt_Date.Text = DateTime.Now.ToString("d");
             //AUTO ADD 4 ANSWER
             for (int j = 0; j < 4; j++)
@@ -188,6 +192,7 @@ namespace CapDemo.GUI.User_Controls
                            question.NameQuestion = txt_ContentQuestion.Text.Trim();
                            question.TypeQuestion = "multichoice";
                            question.IDCatalogue = IDCat;
+                           question.Date = DateTime.Now;
                            if ( questionBl.AddQuestion(question))
                            {
                                foreach (Answer_MultiSelect item in flp_addAnswer.Controls)
@@ -286,6 +291,7 @@ namespace CapDemo.GUI.User_Controls
                             question.NameQuestion = txt_ContentQuestion.Text.Trim();
                             question.TypeQuestion = "multichoice";
                             question.IDCatalogue = IDCat;
+                            question.Date = DateTime.Now;
                             if (questionBl.AddQuestion(question))
                             {
                                 foreach (Answer_MultiSelect item in flp_addAnswer.Controls)

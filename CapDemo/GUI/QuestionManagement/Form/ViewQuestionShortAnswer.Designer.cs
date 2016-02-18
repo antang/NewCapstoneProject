@@ -339,6 +339,7 @@
             this.Name = "ViewQuestionShortAnswer";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Xem chi tiết câu hỏi";
             this.Load += new System.EventHandler(this.ViewQuestionShortAnswer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

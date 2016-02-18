@@ -61,7 +61,7 @@
             // 
             this.lbl_TeamName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_TeamName.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TeamName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamName.ForeColor = System.Drawing.Color.White;
             this.lbl_TeamName.Location = new System.Drawing.Point(62, 12);
             this.lbl_TeamName.Name = "lbl_TeamName";
@@ -74,7 +74,7 @@
             // 
             this.lbl_TeamAnswer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_TeamAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_TeamAnswer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TeamAnswer.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TeamAnswer.ForeColor = System.Drawing.Color.White;
             this.lbl_TeamAnswer.Location = new System.Drawing.Point(65, 49);
             this.lbl_TeamAnswer.Name = "lbl_TeamAnswer";
@@ -94,11 +94,11 @@
             // 
             // lbl_Score
             // 
-            this.lbl_Score.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Score.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Score.ForeColor = System.Drawing.Color.White;
             this.lbl_Score.Location = new System.Drawing.Point(1, 50);
             this.lbl_Score.Name = "lbl_Score";
-            this.lbl_Score.Size = new System.Drawing.Size(63, 44);
+            this.lbl_Score.Size = new System.Drawing.Size(67, 44);
             this.lbl_Score.TabIndex = 6;
             this.lbl_Score.Text = "+100";
             this.lbl_Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

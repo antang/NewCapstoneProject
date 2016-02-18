@@ -53,6 +53,7 @@
             this.btn_addAnswer = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_PreviewQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -250,6 +251,7 @@
             this.imageList1.Images.SetKeyName(1, "red-edit-icon-glossy-md.png");
             this.imageList1.Images.SetKeyName(2, "add.png");
             this.imageList1.Images.SetKeyName(3, "save-512.png");
+            this.imageList1.Images.SetKeyName(4, "Preview1.jpg");
             // 
             // btn_EditQuestion
             // 
@@ -335,6 +337,24 @@
             this.flp_Answer.Size = new System.Drawing.Size(373, 267);
             this.flp_Answer.TabIndex = 43;
             // 
+            // btn_PreviewQuestion
+            // 
+            this.btn_PreviewQuestion.BackColor = System.Drawing.Color.White;
+            this.btn_PreviewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PreviewQuestion.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PreviewQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_PreviewQuestion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_PreviewQuestion.ImageKey = "Preview1.jpg";
+            this.btn_PreviewQuestion.ImageList = this.imageList1;
+            this.btn_PreviewQuestion.Location = new System.Drawing.Point(421, 451);
+            this.btn_PreviewQuestion.Name = "btn_PreviewQuestion";
+            this.btn_PreviewQuestion.Size = new System.Drawing.Size(115, 30);
+            this.btn_PreviewQuestion.TabIndex = 44;
+            this.btn_PreviewQuestion.Text = "Xem Trước";
+            this.btn_PreviewQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_PreviewQuestion.UseVisualStyleBackColor = false;
+            this.btn_PreviewQuestion.Click += new System.EventHandler(this.btn_PreviewQuestion_Click);
+            // 
             // ViewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +362,7 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 503);
+            this.Controls.Add(this.btn_PreviewQuestion);
             this.Controls.Add(this.flp_Answer);
             this.Controls.Add(this.btn_addAnswer);
             this.Controls.Add(this.txt_Date);
@@ -363,10 +384,11 @@
             this.Controls.Add(this.txt_Catalogue);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewQuestion";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Xem chi tiết câu hỏi";
             this.Load += new System.EventHandler(this.ViewQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -398,5 +420,6 @@
         public System.Windows.Forms.Button btn_addAnswer;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.FlowLayoutPanel flp_Answer;
+        private System.Windows.Forms.Button btn_PreviewQuestion;
     }
 }
