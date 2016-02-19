@@ -939,6 +939,7 @@
     <None Include="Resources\SubQuestion.png" />
     <None Include="Resources\Sub.png" />
     <None Include="Resources\NewScreenQuestion.png" />
+    <None Include="Resources\dung_ShortAnswer.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

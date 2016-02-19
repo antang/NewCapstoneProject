@@ -101,7 +101,7 @@
             this.lbl_Score.Size = new System.Drawing.Size(67, 44);
             this.lbl_Score.TabIndex = 6;
             this.lbl_Score.Text = "+100";
-            this.lbl_Score.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Score.Visible = false;
             // 
             // lbl_TeamAnswer1

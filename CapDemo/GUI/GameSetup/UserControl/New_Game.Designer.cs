@@ -53,6 +53,7 @@
             this.lbl_Name.Size = new System.Drawing.Size(69, 16);
             this.lbl_Name.TabIndex = 2;
             this.lbl_Name.Text = "Vòng thi:";
+            this.lbl_Name.Click += new System.EventHandler(this.lbl_Name_Click);
             this.lbl_Name.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // label3
@@ -66,6 +67,7 @@
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phần Thi:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             this.label3.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_RoundName
@@ -79,6 +81,7 @@
             this.lbl_RoundName.Size = new System.Drawing.Size(142, 23);
             this.lbl_RoundName.TabIndex = 6;
             this.lbl_RoundName.Text = "tên vòng thi";
+            this.lbl_RoundName.Click += new System.EventHandler(this.lbl_RoundName_Click);
             this.lbl_RoundName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_ContestName
@@ -92,6 +95,7 @@
             this.lbl_ContestName.Size = new System.Drawing.Size(144, 23);
             this.lbl_ContestName.TabIndex = 7;
             this.lbl_ContestName.Text = "tên phần thi";
+            this.lbl_ContestName.Click += new System.EventHandler(this.lbl_ContestName_Click);
             this.lbl_ContestName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_IDContest
@@ -115,6 +119,7 @@
             this.label4.Size = new System.Drawing.Size(82, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Trạng thái:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             this.label4.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // lbl_Status
@@ -128,6 +133,7 @@
             this.lbl_Status.Size = new System.Drawing.Size(77, 23);
             this.lbl_Status.TabIndex = 10;
             this.lbl_Status.Text = "status";
+            this.lbl_Status.Click += new System.EventHandler(this.lbl_Status_Click);
             this.lbl_Status.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // contextMenuStrip1
@@ -155,6 +161,7 @@
             this.lbl_CompetitionName.Size = new System.Drawing.Size(99, 33);
             this.lbl_CompetitionName.TabIndex = 5;
             this.lbl_CompetitionName.Text = "tên";
+            this.lbl_CompetitionName.Click += new System.EventHandler(this.lbl_CompetitionName_Click);
             this.lbl_CompetitionName.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // New_Game
