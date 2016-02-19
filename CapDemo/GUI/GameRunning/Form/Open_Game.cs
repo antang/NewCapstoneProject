@@ -4848,6 +4848,16 @@ namespace CapDemo
             lblHint.Visible = true;
             if (step_1 == 1)
             {
+                //sound to player's turn
+                try
+                {
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
+
                 ShowTeamsChallenged_1();
                 foreach (Team teamControllerScreen in flp_Team.Controls)
                 {
@@ -4889,6 +4899,15 @@ namespace CapDemo
                 {
                     if (ShowQuestionByIDPhase_1() == true)
                     {
+                        //sound show question
+                        try
+                        {
+                            axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\HienThiCauHoi.wav";
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                        }
+                        catch (Exception)
+                        {
+                        }
                         audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                         step_1++;
                         lblHint.Text = guideline_1[2].ToString();
@@ -4911,6 +4930,16 @@ namespace CapDemo
             }
             else if (step_1 == 3)
             {
+                //sound enter answer
+                try
+                {
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
+
                 EnterAnswerChallenge_1();
                 foreach (Team teamControllerScreen in flp_Team.Controls)
                 {
@@ -4922,6 +4951,16 @@ namespace CapDemo
             }
             else if (step_1 == 4)
             {
+                //Sound show correct answer
+                try
+                {
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\DapAnDung.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
+
                 ShowCorrectAnswer_1();
                 audience.tbc_ShowGame.SelectedTab = audience.tab_ShowQuestion;
                 step_1++;
@@ -4929,6 +4968,16 @@ namespace CapDemo
             }
             else if (step_1 == 5)
             {
+                //Sound check score
+                try
+                {
+                    axWindowsMediaPlayer1.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\CapNhatDiem.wav";
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                }
+                catch (Exception)
+                {
+                }
+
                 UpdatePlayerChallengeInPM_1();
                 
                 audience.tbc_ShowGame.SelectedTab = audience.tab_Map;

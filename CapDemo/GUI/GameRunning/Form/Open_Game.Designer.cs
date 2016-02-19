@@ -83,7 +83,7 @@
             this.lbl_Time.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Time.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Time.Location = new System.Drawing.Point(934, 569);
+            this.lbl_Time.Location = new System.Drawing.Point(931, 569);
             this.lbl_Time.Name = "lbl_Time";
             this.lbl_Time.Size = new System.Drawing.Size(74, 55);
             this.lbl_Time.TabIndex = 12;
