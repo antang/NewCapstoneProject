@@ -500,6 +500,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dung_ShortAnswer {
+            get {
+                object obj = ResourceManager.GetObject("dung_ShortAnswer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap End_Support {
             get {
                 object obj = ResourceManager.GetObject("End_Support", resourceCulture);

@@ -2503,7 +2503,7 @@ namespace CapDemo
                 ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer;
                 ShowAnswer.rtxt_Answer.Font = new Font("Verdana", 24.0f, FontStyle.Bold);
                 ShowAnswer.rtxt_Answer.TextAlign = ContentAlignment.MiddleCenter;
-                ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
+                ShowAnswer.BackgroundImage = Properties.Resources.dung_ShortAnswer;
                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
 
             }
@@ -4745,7 +4745,7 @@ namespace CapDemo
                 ShowAnswer.rtxt_Answer.Text = CorrectShortAnswer_1;
                 ShowAnswer.rtxt_Answer.Font = new Font("Verdana", 24.0f, FontStyle.Bold);
                 ShowAnswer.rtxt_Answer.TextAlign = ContentAlignment.MiddleCenter;
-                ShowAnswer.BackgroundImage = Properties.Resources.dung_2;
+                ShowAnswer.BackgroundImage = Properties.Resources.dung_ShortAnswer;
                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
             }
 

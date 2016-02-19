@@ -76,7 +76,7 @@ namespace CapDemo.GUI.User_Controls
                         if (ListContest.ElementAt(i).NumberChallenge > 0)
                         {
                             lbl_Status.Text = "Hoàn tất";
-                            lbl_Status.ForeColor = Color.Red;
+                            lbl_Status.ForeColor = Color.LightGreen;
                         }
                         else
                         {
@@ -105,7 +105,7 @@ namespace CapDemo.GUI.User_Controls
 
         private void deleteSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn muôn xóa câu hỏi này không?", "Xóa câu hỏi", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Bạn muốn xóa cuộc thi này không?", "Xóa Thiết Đặt", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Contest Contest = new Contest();
@@ -177,17 +177,136 @@ namespace CapDemo.GUI.User_Controls
 
         private void panel1_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.Cyan;
+            //this.BackColor = Color.Cyan;
         }
 
         private void New_Game_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.Cyan;
+            //this.BackColor = Color.Cyan;
         }
 
         private void New_Game_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.SkyBlue;
+            //this.BackColor = Color.SkyBlue;
+        }
+
+        private void lbl_RoundName_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void lbl_CompetitionName_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void lbl_Status_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void lbl_Name_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
+        }
+
+        private void lbl_ContestName_Click(object sender, EventArgs e)
+        {
+            ContinueSetting continueSetting = new ContinueSetting();
+            continueSetting.ContestID = Convert.ToInt32(lbl_IDContest.Text);
+            continueSetting.Run = run;
+
+            DialogResult result = continueSetting.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                load();
+            }
+            else
+            {
+                load();
+            }
         }
         
     }
