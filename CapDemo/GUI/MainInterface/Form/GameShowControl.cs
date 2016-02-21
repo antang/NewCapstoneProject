@@ -137,7 +137,8 @@ namespace CapDemo.GUI
         //log up event help
         void gm1_onClick_Help(object sender, EventArgs e)
         {
-            this.Controls.Clear();
+            System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\GSC_UserGuide.pdf");
+            //this.Controls.Clear();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
             if (w == 1024 && h == 768)
@@ -184,8 +185,8 @@ namespace CapDemo.GUI
                 }
             }
             //this.st.onExit += Exit_Setting;
-            this.Help.onExit += Help_onExit;
-            this.Controls.Add(Help);
+            //this.Help.onExit += Help_onExit;
+            //this.Controls.Add(Help);
         }
         //exit help Control
         void Help_onExit(object sender, EventArgs e)
