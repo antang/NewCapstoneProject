@@ -49,6 +49,10 @@
             this.pb_SubContest = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.gp_Clock = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_Seeting = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ctMenuStrip_Setting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_EndGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Exit)).BeginInit();
@@ -59,6 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            this.gp_Clock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pb_Seeting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -83,10 +91,11 @@
             this.lbl_Time.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Time.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_Time.Location = new System.Drawing.Point(931, 569);
+            this.lbl_Time.Location = new System.Drawing.Point(68, 16);
             this.lbl_Time.Name = "lbl_Time";
             this.lbl_Time.Size = new System.Drawing.Size(74, 55);
             this.lbl_Time.TabIndex = 12;
+            this.lbl_Time.Text = "30";
             this.lbl_Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.lbl_Time, "Time show Question");
             // 
@@ -94,11 +103,11 @@
             // 
             this.lblHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHint.BackColor = System.Drawing.Color.Transparent;
-            this.lblHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHint.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHint.ForeColor = System.Drawing.Color.SeaShell;
-            this.lblHint.Location = new System.Drawing.Point(696, 704);
+            this.lblHint.Location = new System.Drawing.Point(112, 695);
             this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(287, 20);
+            this.lblHint.Size = new System.Drawing.Size(882, 29);
             this.lblHint.TabIndex = 13;
             this.lblHint.Text = "Hint";
             this.lblHint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -143,13 +152,13 @@
             this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank_1;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_EndGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_EndGame.Location = new System.Drawing.Point(1, 590);
+            this.pb_EndGame.Location = new System.Drawing.Point(7, 16);
             this.pb_EndGame.Name = "pb_EndGame";
             this.pb_EndGame.Size = new System.Drawing.Size(52, 42);
             this.pb_EndGame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_EndGame.TabIndex = 16;
             this.pb_EndGame.TabStop = false;
-            this.toolTip1.SetToolTip(this.pb_EndGame, "Finish");
+            this.toolTip1.SetToolTip(this.pb_EndGame, "Rank");
             this.pb_EndGame.Click += new System.EventHandler(this.pb_EndGame_Click);
             // 
             // pb_Exit
@@ -200,7 +209,7 @@
             this.pb_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pb_Setting.BackColor = System.Drawing.Color.Transparent;
             this.pb_Setting.Image = global::CapDemo.Properties.Resources.setting;
-            this.pb_Setting.Location = new System.Drawing.Point(1, 687);
+            this.pb_Setting.Location = new System.Drawing.Point(6, 113);
             this.pb_Setting.Name = "pb_Setting";
             this.pb_Setting.Size = new System.Drawing.Size(52, 42);
             this.pb_Setting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,7 +225,7 @@
             this.pb_Play.BackgroundImage = global::CapDemo.Properties.Resources.videoplaybutton;
             this.pb_Play.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb_Play.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Play.Location = new System.Drawing.Point(914, 627);
+            this.pb_Play.Location = new System.Drawing.Point(914, 614);
             this.pb_Play.Name = "pb_Play";
             this.pb_Play.Size = new System.Drawing.Size(91, 69);
             this.pb_Play.TabIndex = 14;
@@ -229,7 +238,7 @@
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
             this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.NewScreenQuestion;
             this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_QuestionSub.Location = new System.Drawing.Point(1, 638);
+            this.pb_QuestionSub.Location = new System.Drawing.Point(6, 65);
             this.pb_QuestionSub.Name = "pb_QuestionSub";
             this.pb_QuestionSub.Size = new System.Drawing.Size(52, 42);
             this.pb_QuestionSub.TabIndex = 21;
@@ -242,7 +251,7 @@
             this.pb_SubContest.BackColor = System.Drawing.Color.Transparent;
             this.pb_SubContest.BackgroundImage = global::CapDemo.Properties.Resources.Sub;
             this.pb_SubContest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_SubContest.Location = new System.Drawing.Point(821, 627);
+            this.pb_SubContest.Location = new System.Drawing.Point(821, 614);
             this.pb_SubContest.Name = "pb_SubContest";
             this.pb_SubContest.Size = new System.Drawing.Size(75, 69);
             this.pb_SubContest.TabIndex = 23;
@@ -263,12 +272,57 @@
             // 
             this.axWindowsMediaPlayer1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(131, 518);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(7, 365);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(112, 106);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             this.axWindowsMediaPlayer1.Visible = false;
+            // 
+            // gp_Clock
+            // 
+            this.gp_Clock.BackColor = System.Drawing.Color.Transparent;
+            this.gp_Clock.Controls.Add(this.pictureBox1);
+            this.gp_Clock.Controls.Add(this.lbl_Time);
+            this.gp_Clock.Location = new System.Drawing.Point(852, 531);
+            this.gp_Clock.Name = "gp_Clock";
+            this.gp_Clock.Size = new System.Drawing.Size(153, 79);
+            this.gp_Clock.TabIndex = 24;
+            this.gp_Clock.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::CapDemo.Properties.Resources.Clock;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 50);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pb_Seeting
+            // 
+            this.pb_Seeting.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Seeting.Controls.Add(this.pb_EndGame);
+            this.pb_Seeting.Controls.Add(this.pb_Setting);
+            this.pb_Seeting.Controls.Add(this.pb_QuestionSub);
+            this.pb_Seeting.Location = new System.Drawing.Point(5, 563);
+            this.pb_Seeting.Name = "pb_Seeting";
+            this.pb_Seeting.Size = new System.Drawing.Size(68, 162);
+            this.pb_Seeting.TabIndex = 25;
+            this.pb_Seeting.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(316, 366);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(369, 259);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
             // 
             // Open_Game
             // 
@@ -277,17 +331,16 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = global::CapDemo.Properties.Resources.Techno;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pb_Seeting);
+            this.Controls.Add(this.gp_Clock);
             this.Controls.Add(this.pb_SubContest);
-            this.Controls.Add(this.pb_QuestionSub);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.pb_Maximize);
             this.Controls.Add(this.pb_Minimize);
-            this.Controls.Add(this.pb_Setting);
-            this.Controls.Add(this.pb_EndGame);
             this.Controls.Add(this.pb_Exit);
             this.Controls.Add(this.pb_Play);
             this.Controls.Add(this.lblHint);
-            this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.flp_Team);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -306,6 +359,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_QuestionSub)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_SubContest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            this.gp_Clock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pb_Seeting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,5 +388,9 @@
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.PictureBox pb_QuestionSub;
         private System.Windows.Forms.PictureBox pb_SubContest;
+        private System.Windows.Forms.GroupBox gp_Clock;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox pb_Seeting;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

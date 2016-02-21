@@ -42,6 +42,19 @@ namespace CapDemo
                 showanswer.lbl_labelAnswer.Text = Convert.ToChar(65 + i).ToString() + ".";
                 flp_AnswerQuiz.Controls.Add(showanswer);
             }
+
+            PlayerAnswer PlayerAnswer = new PlayerAnswer();
+            PlayerAnswer.lbl_TeamName.Text = "GSC Team";
+            PlayerAnswer.lbl_TeamAnswer.Text = "A";
+            PlayerAnswer.lbl_Score.Text = "+20";
+            PlayerAnswer.lbl_Score.Visible = true;
+            PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + flp_PlayerAnswers.Width/2 - PlayerAnswer.Width/2,PlayerAnswer.Location.Y+0);
+            flp_PlayerAnswers.Controls.Add(PlayerAnswer);
+        }
+
+        private void pb_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

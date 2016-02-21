@@ -688,6 +688,9 @@
       <DependentUpon>Question_Screen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram_IC1.cd" />
+    <Content Include="GSC_UserGuide.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -940,6 +943,7 @@
     <None Include="Resources\Sub.png" />
     <None Include="Resources\NewScreenQuestion.png" />
     <None Include="Resources\dung_ShortAnswer.png" />
+    <None Include="Resources\Clock.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
