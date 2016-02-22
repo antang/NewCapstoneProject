@@ -707,6 +707,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoTeam {
+            get {
+                object obj = ResourceManager.GetObject("LogoTeam", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MauAo {
             get {
                 object obj = ResourceManager.GetObject("MauAo", resourceCulture);
@@ -907,6 +917,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Question_New {
+            get {
+                object obj = ResourceManager.GetObject("Question_New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Question_Sub {
             get {
                 object obj = ResourceManager.GetObject("Question_Sub", resourceCulture);
@@ -917,19 +937,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Rank {
+        internal static System.Drawing.Bitmap Rank_New {
             get {
-                object obj = ResourceManager.GetObject("Rank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rank_1 {
-            get {
-                object obj = ResourceManager.GetObject("Rank_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Rank_New", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -970,6 +980,16 @@ namespace CapDemo.Properties {
         internal static System.Drawing.Bitmap setting {
             get {
                 object obj = ResourceManager.GetObject("setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Setting_New {
+            get {
+                object obj = ResourceManager.GetObject("Setting_New", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

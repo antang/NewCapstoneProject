@@ -355,9 +355,6 @@
   <data name="QLDL_Setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\QLDL_Setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rank_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rank_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_1600_864" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1600-864.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -439,9 +436,6 @@
   <data name="Button_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Techno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Techno.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -495,5 +489,17 @@
   </data>
   <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoTeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoTeam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Question_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Question_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rank_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rank_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Setting_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

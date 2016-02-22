@@ -149,7 +149,7 @@
             // pb_EndGame
             // 
             this.pb_EndGame.BackColor = System.Drawing.Color.Transparent;
-            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank_1;
+            this.pb_EndGame.BackgroundImage = global::CapDemo.Properties.Resources.Rank_New;
             this.pb_EndGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_EndGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_EndGame.Location = new System.Drawing.Point(7, 16);
@@ -208,7 +208,7 @@
             // 
             this.pb_Setting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pb_Setting.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Setting.Image = global::CapDemo.Properties.Resources.setting;
+            this.pb_Setting.Image = global::CapDemo.Properties.Resources.Setting_New;
             this.pb_Setting.Location = new System.Drawing.Point(6, 113);
             this.pb_Setting.Name = "pb_Setting";
             this.pb_Setting.Size = new System.Drawing.Size(52, 42);
@@ -236,7 +236,7 @@
             // pb_QuestionSub
             // 
             this.pb_QuestionSub.BackColor = System.Drawing.Color.Transparent;
-            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.NewScreenQuestion;
+            this.pb_QuestionSub.BackgroundImage = global::CapDemo.Properties.Resources.Question_New;
             this.pb_QuestionSub.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_QuestionSub.Location = new System.Drawing.Point(6, 65);
             this.pb_QuestionSub.Name = "pb_QuestionSub";
