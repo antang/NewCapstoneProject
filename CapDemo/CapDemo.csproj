@@ -420,6 +420,12 @@
     <Compile Include="GUI\MainInterface\UserControl\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MainInterface\Form\ImportMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainInterface\Form\ImportMusic.Designer.cs">
+      <DependentUpon>ImportMusic.cs</DependentUpon>
+    </Compile>
     <Compile Include="myLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -657,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuestionManagement\Form\PreviewQuestion.resx">
       <DependentUpon>PreviewQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainInterface\Form\ImportMusic.resx">
+      <DependentUpon>ImportMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -944,6 +953,10 @@
     <None Include="Resources\NewScreenQuestion.png" />
     <None Include="Resources\dung_ShortAnswer.png" />
     <None Include="Resources\Clock.png" />
+    <None Include="Resources\LogoTeam.png" />
+    <None Include="Resources\Question_New.png" />
+    <None Include="Resources\Rank_New.png" />
+    <None Include="Resources\Setting_New.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

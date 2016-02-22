@@ -103,6 +103,10 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+            gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
+            gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
+            gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;
+            gm1.onClick_DefaultMusic += gm1_onClick_DefaultMusic;
             this.Controls.Add(gm1);
             try
             {
@@ -114,6 +118,35 @@ namespace CapDemo.GUI
             {
             }
             
+        }
+        //Default music
+        void gm1_onClick_DefaultMusic(object sender, EventArgs e)
+        {
+            ImportMusic.axWindowsMediaPlayer1.Ctlcontrols.stop();
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+        ImportMusic ImportMusic = new ImportMusic();
+        //Import music
+        void gm1_onClick_ImportMusic(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+            ImportMusic.ShowDialog();
+            ImportMusic.listBox1.Items.Clear();
+            DialogResult rs = ImportMusic.DialogResult;
+            if (rs== DialogResult.OK)
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+        }
+        //Turn off music
+        void gm1_onClick_TurnOffMusic(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+        }
+        //Turn on music
+        void gm1_onClick_TurnOnMusic(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         // click log out to show login screen
         void gm1_onClick_LogOut(object sender, EventArgs e)
@@ -422,6 +455,10 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+            gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
+            gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
+            gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;
+            gm1.onClick_DefaultMusic += gm1_onClick_DefaultMusic;
             this.Controls.Add(gm1);
         }
         //Exit start Game
@@ -484,6 +521,10 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+            gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
+            gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
+            gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;
+            gm1.onClick_DefaultMusic += gm1_onClick_DefaultMusic;
             this.Controls.Clear();
             this.Controls.Add(gm1);
         }

@@ -38,6 +38,10 @@ namespace CapDemo.GUI.User_Controls
         public event EventHandler onClick_Start;
         public event EventHandler onClick_Help;
         public event EventHandler onClick_LogOut;
+        public event EventHandler onClick_TurnOnMusic;
+        public event EventHandler onClick_TurnOffMusic;
+        public event EventHandler onClick_ImportMusic;
+        public event EventHandler onClick_DefaultMusic;
         //public GameMenu()
         //{
         //    InitializeComponent();
@@ -212,6 +216,38 @@ namespace CapDemo.GUI.User_Controls
             Point ptLowerLeft = new Point(0, pb_UserSetting.Height);
             ptLowerLeft = pb_UserSetting.PointToScreen(ptLowerLeft);
             cms_UserSetting.Show(ptLowerLeft);
+        }
+        //Turn on music
+        private void tsmi_On_Click(object sender, EventArgs e)
+        {
+            if (onClick_TurnOnMusic != null)
+            {
+                this.onClick_TurnOnMusic(this, e);
+            }
+        }
+        //Turn off music
+        private void tsmi_Off_Click(object sender, EventArgs e)
+        {
+            if (onClick_TurnOffMusic != null)
+            {
+                this.onClick_TurnOffMusic(this, e);
+            }
+        }
+        //Import Music
+        private void tsmi_ImportMusic_Click(object sender, EventArgs e)
+        {
+            if (onClick_TurnOffMusic != null)
+            {
+                this.onClick_ImportMusic(this, e);
+            }
+        }
+        //Default Music
+        private void nhạcMặcĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (onClick_DefaultMusic != null)
+            {
+                this.onClick_DefaultMusic(this, e);
+            }
         }
     }
 }
