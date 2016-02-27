@@ -33,7 +33,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_NameRound = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lbl2 = new System.Windows.Forms.Label();
             this.btn_SaveRound = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -66,11 +65,6 @@
             this.lbl1.Size = new System.Drawing.Size(212, 25);
             this.lbl1.TabIndex = 39;
             this.lbl1.Text = "Tạo Vòng Thi Mới";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // lbl2
             // 
@@ -148,7 +142,6 @@
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.TextBox txt_NameRound;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lbl2;
     }
 }

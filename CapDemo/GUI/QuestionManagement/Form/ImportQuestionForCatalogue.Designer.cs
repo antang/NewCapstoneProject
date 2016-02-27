@@ -110,7 +110,7 @@
             this.rdb_ImportCreateNew.Name = "rdb_ImportCreateNew";
             this.rdb_ImportCreateNew.Size = new System.Drawing.Size(139, 20);
             this.rdb_ImportCreateNew.TabIndex = 2;
-            this.rdb_ImportCreateNew.Text = "Tạo cẩu hỏi mới";
+            this.rdb_ImportCreateNew.Text = "Tạo câu hỏi mới";
             this.rdb_ImportCreateNew.UseVisualStyleBackColor = true;
             this.rdb_ImportCreateNew.CheckedChanged += new System.EventHandler(this.rdb_ImportCreateNew_CheckedChanged);
             // 

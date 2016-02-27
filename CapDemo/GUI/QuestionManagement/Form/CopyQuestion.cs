@@ -139,9 +139,10 @@ namespace CapDemo.GUI
                         }
                     }
                     //Notify
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Sao Chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công.";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Sao Chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công.";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Sao Chép câu hỏi sang chủ đề \"" + cmb_Catalogue.SelectedItem.ToString() + "\" thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

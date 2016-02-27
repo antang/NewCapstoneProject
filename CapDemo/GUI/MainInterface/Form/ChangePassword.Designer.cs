@@ -35,7 +35,6 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.lbl_Pass = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.txt_NewPass = new System.Windows.Forms.TextBox();
             this.lbl_NewPass = new System.Windows.Forms.Label();
             this.txt_ConfirmPass = new System.Windows.Forms.TextBox();
@@ -110,11 +109,6 @@
             this.lbl_Pass.Size = new System.Drawing.Size(74, 16);
             this.lbl_Pass.TabIndex = 45;
             this.lbl_Pass.Text = "Mật khẩu";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // txt_NewPass
             // 
@@ -207,7 +201,6 @@
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label lbl_Pass;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.TextBox txt_NewPass;
         private System.Windows.Forms.Label lbl_NewPass;
         private System.Windows.Forms.TextBox txt_ConfirmPass;

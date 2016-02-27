@@ -50,11 +50,84 @@ namespace CapDemo
             PlayerAnswer.lbl_Score.Visible = true;
             PlayerAnswer.Location = new Point(PlayerAnswer.Location.X + flp_PlayerAnswers.Width/2 - PlayerAnswer.Width/2,PlayerAnswer.Location.Y+0);
             flp_PlayerAnswers.Controls.Add(PlayerAnswer);
+
+            FixSizeText();
         }
 
         private void pb_Close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void FixSizeText()
+        {
+            //question
+            string[] NewLine = lbl_QuestionContent.Text.Split('\n');
+
+            if (lbl_QuestionContent.Text.Count() > 585 || NewLine.Length >= 9)
+            {
+                lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 12.0f, lbl_QuestionContent.Font.Style);
+            }
+            else
+            {
+                if (lbl_QuestionContent.Text.Count() > 280 || NewLine.Length >= 7)
+                {
+                    lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 15.0f, lbl_QuestionContent.Font.Style);
+                }
+                else
+                {
+                    lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 20.0f, lbl_QuestionContent.Font.Style);
+                }
+            }
+
+            //answer
+            int row = 0;
+            int temp = 0;
+            foreach (ShowAnswer ShowAnswer in flp_AnswerQuiz.Controls)
+            {
+                string[] Newline1 = ShowAnswer.rtxt_Answer.Text.Split('\n');
+                temp = Newline1.Length;
+                if (temp >= row)
+                {
+                    row = temp;
+                }
+
+            }
+
+            if (row <= 3)
+            {
+                foreach (ShowAnswer ShowAnswer in flp_AnswerQuiz.Controls)
+                {
+                    ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 14.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                }
+            }
+            else
+            {
+                if (row == 4)
+                {
+                    foreach (ShowAnswer ShowAnswer in flp_AnswerQuiz.Controls)
+                    {
+                        ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 12.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                    }
+                }
+                else
+                {
+                    if (row == 5)
+                    {
+                        foreach (ShowAnswer ShowAnswer in flp_AnswerQuiz.Controls)
+                        {
+                            ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 10.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                        }
+                    }
+                    else
+                    {
+                        foreach (ShowAnswer ShowAnswer in flp_AnswerQuiz.Controls)
+                        {
+                            ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 8.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                        }
+                    }
+                }
+            }
         }
     }
 }

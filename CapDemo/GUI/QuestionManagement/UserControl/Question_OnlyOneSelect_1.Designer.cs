@@ -51,7 +51,6 @@
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.lbl_Catalogue = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -324,11 +323,6 @@
             this.lbl_Catalogue.TabIndex = 47;
             this.lbl_Catalogue.Text = "Chủ đề:";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -453,7 +447,6 @@
         private System.Windows.Forms.Button btn_SaveQuestion;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label lbl_Catalogue;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;

@@ -100,9 +100,9 @@ namespace CapDemo.GUI
                         user.UserName = UserName;
                         userbl.EditUserbyID(user);
 
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Chỉnh Sửa mật khẩu thành công.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Chỉnh Sửa mật khẩu thành công.";
+                        //notifyIcon1.ShowBalloonTip(2000);
                         this.Close();
                     }
                 }

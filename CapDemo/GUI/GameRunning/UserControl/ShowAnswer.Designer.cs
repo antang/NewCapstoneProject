@@ -100,13 +100,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxt_Answer.BackColor = System.Drawing.Color.Transparent;
-            this.rtxt_Answer.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtxt_Answer.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxt_Answer.ForeColor = System.Drawing.Color.White;
-            this.rtxt_Answer.Location = new System.Drawing.Point(84, 22);
+            this.rtxt_Answer.Location = new System.Drawing.Point(84, 9);
             this.rtxt_Answer.Name = "rtxt_Answer";
-            this.rtxt_Answer.Size = new System.Drawing.Size(340, 76);
+            this.rtxt_Answer.Size = new System.Drawing.Size(340, 96);
             this.rtxt_Answer.TabIndex = 8;
-            this.rtxt_Answer.Text = "abc\r\n";
+            this.rtxt_Answer.Text = "abc\r\nabc\r\nabc\r\nabc\r\nabc\r\nabc\r\nabc\r\nabc";
             this.rtxt_Answer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ShowAnswer

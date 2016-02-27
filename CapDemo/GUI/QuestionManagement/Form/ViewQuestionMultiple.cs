@@ -264,9 +264,9 @@ namespace CapDemo.GUI
                             }
                         }
                         //Show notify
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = " Chỉnh sửa câu hỏi thành công";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = " Chỉnh sửa câu hỏi thành công";
+                        //notifyIcon1.ShowBalloonTip(2000);
                         //Close form
                         this.Close();
                     }                  

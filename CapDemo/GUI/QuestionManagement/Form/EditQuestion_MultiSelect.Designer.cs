@@ -46,7 +46,6 @@
             this.btn_CancelEditQuestion = new System.Windows.Forms.Button();
             this.btn_SaveEditQuestion = new System.Windows.Forms.Button();
             this.txt_Date = new System.Windows.Forms.TextBox();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_PreviewQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -256,11 +255,6 @@
             this.txt_Date.Size = new System.Drawing.Size(100, 23);
             this.txt_Date.TabIndex = 37;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // flp_addAnswer
             // 
             this.flp_addAnswer.AutoScroll = true;
@@ -341,7 +335,6 @@
         private System.Windows.Forms.Button btn_CancelEditQuestion;
         private System.Windows.Forms.Button btn_SaveEditQuestion;
         private System.Windows.Forms.TextBox txt_Date;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
         private System.Windows.Forms.Button btn_PreviewQuestion;
     }

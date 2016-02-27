@@ -20,8 +20,8 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
-        SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
+        //SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        //SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         public event EventHandler onExit;
 
         int idcontest;
@@ -35,7 +35,7 @@ namespace CapDemo.GUI.User_Controls
         {
             try
             {
-                sound_Click.Play();
+                //sound_Click.Play();
             }
             catch (Exception)
             {
@@ -102,7 +102,7 @@ namespace CapDemo.GUI.User_Controls
         {
             try
             {
-                sound_Click.Play();
+                //sound_Click.Play();
             }
             catch (Exception)
             {
@@ -116,7 +116,7 @@ namespace CapDemo.GUI.User_Controls
         {
             try
             {
-                sound.PlaySync();
+                //sound.PlaySync();
             }
             catch (Exception)
             {

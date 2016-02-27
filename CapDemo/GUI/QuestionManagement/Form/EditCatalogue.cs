@@ -67,8 +67,8 @@ namespace CapDemo.GUI
                 Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
                 if (CatBL.EditCataloguebyID(Cat) == true)
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề thành công";
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Chỉnh sửa chủ đề thành công";
                     //notifyIcon1.ShowBalloonTip(1000);
                     this.Close();
                 }

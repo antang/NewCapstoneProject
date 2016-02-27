@@ -98,9 +98,10 @@ namespace CapDemo.GUI.User_Controls
                         answer.IDCatalogue = IDCat;
                         questionBl.AddAnswer(answer);
                         //Show notify
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Thêm câu hỏi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //Close form
                         Form FindForm = this.FindForm();
                         FindForm.Close();
@@ -166,9 +167,10 @@ namespace CapDemo.GUI.User_Controls
                         answer.IDCatalogue = IDCat;
                         questionBl.AddAnswer(answer);
                         //Show notify
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Thêm câu hỏi thành công.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Thêm câu hỏi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //Refesh form
                         txt_ContentQuestion.Text = "";
                         txt_AnswerContent.Text = "";

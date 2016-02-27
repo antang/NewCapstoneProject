@@ -57,7 +57,7 @@
             // 
             this.lbl_QuestionContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QuestionContent.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QuestionContent.ForeColor = System.Drawing.Color.White;
             this.lbl_QuestionContent.Location = new System.Drawing.Point(49, 12);
             this.lbl_QuestionContent.Name = "lbl_QuestionContent";

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataManagement));
             this.tbc_DataManagement = new System.Windows.Forms.TabControl();
             this.tbp_CatalogueManagement = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_SearchCatalogue = new System.Windows.Forms.Button();
             this.gb_CatalogueFunction = new System.Windows.Forms.GroupBox();
             this.btn_ViewQuestion = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             this.btn_MoveQuestion = new System.Windows.Forms.Button();
             this.btn_EditQuestion = new System.Windows.Forms.Button();
             this.btn_DeleteQuestion = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tbc_DataManagement.SuspendLayout();
             this.tbp_CatalogueManagement.SuspendLayout();
             this.gb_CatalogueFunction.SuspendLayout();
@@ -84,6 +84,7 @@
             // tbp_CatalogueManagement
             // 
             this.tbp_CatalogueManagement.BackColor = System.Drawing.Color.SteelBlue;
+            this.tbp_CatalogueManagement.Controls.Add(this.label1);
             this.tbp_CatalogueManagement.Controls.Add(this.btn_SearchCatalogue);
             this.tbp_CatalogueManagement.Controls.Add(this.gb_CatalogueFunction);
             this.tbp_CatalogueManagement.Controls.Add(this.txt_SearchCatalogue);
@@ -99,6 +100,19 @@
             this.tbp_CatalogueManagement.TabIndex = 0;
             this.tbp_CatalogueManagement.Text = "Quản lý chủ đề";
             this.tbp_CatalogueManagement.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbp_CatalogueManagement_MouseClick);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(63, 429);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "*unknow là chủ để chứa các câu hỏi đã bị xóa";
             // 
             // btn_SearchCatalogue
             // 
@@ -127,7 +141,7 @@
             this.gb_CatalogueFunction.Controls.Add(this.btn_DeleteCatalogue);
             this.gb_CatalogueFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_CatalogueFunction.ForeColor = System.Drawing.Color.White;
-            this.gb_CatalogueFunction.Location = new System.Drawing.Point(63, 428);
+            this.gb_CatalogueFunction.Location = new System.Drawing.Point(63, 455);
             this.gb_CatalogueFunction.Name = "gb_CatalogueFunction";
             this.gb_CatalogueFunction.Size = new System.Drawing.Size(590, 88);
             this.gb_CatalogueFunction.TabIndex = 13;
@@ -417,7 +431,7 @@
             this.gb_QuestionFunction.Controls.Add(this.btn_DeleteQuestion);
             this.gb_QuestionFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_QuestionFunction.ForeColor = System.Drawing.Color.White;
-            this.gb_QuestionFunction.Location = new System.Drawing.Point(63, 431);
+            this.gb_QuestionFunction.Location = new System.Drawing.Point(63, 436);
             this.gb_QuestionFunction.Name = "gb_QuestionFunction";
             this.gb_QuestionFunction.Size = new System.Drawing.Size(590, 88);
             this.gb_QuestionFunction.TabIndex = 19;
@@ -505,11 +519,6 @@
             this.btn_DeleteQuestion.UseVisualStyleBackColor = false;
             this.btn_DeleteQuestion.Click += new System.EventHandler(this.btn_DeleteQuestion_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // DataManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,6 +569,6 @@
         private System.Windows.Forms.Button btn_MoveQuestion;
         private System.Windows.Forms.Button btn_EditQuestion;
         private System.Windows.Forms.Button btn_DeleteQuestion;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Label label1;
     }
 }

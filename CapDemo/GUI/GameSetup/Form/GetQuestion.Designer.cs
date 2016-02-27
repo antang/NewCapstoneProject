@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgv_Question = new System.Windows.Forms.DataGridView();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -90,11 +89,6 @@
             this.dgv_Question.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Question.Size = new System.Drawing.Size(896, 317);
             this.dgv_Question.TabIndex = 18;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // chk_CheckAll
             // 
@@ -179,7 +173,6 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.DataGridView dgv_Question;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox chk_CheckAll;
     }
 }

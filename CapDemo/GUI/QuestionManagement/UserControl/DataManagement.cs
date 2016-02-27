@@ -117,9 +117,10 @@ namespace CapDemo.GUI.User_Controls
             }
             else
             {
-                notifyIcon1.Icon = SystemIcons.Warning;
-                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để di chuyển.";
-                notifyIcon1.ShowBalloonTip(2000);
+                //notifyIcon1.Icon = SystemIcons.Warning;
+                //notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để di chuyển.";
+                //notifyIcon1.ShowBalloonTip(2000);
+                MessageBox.Show("Vui lòng chọn câu hỏi để di chuyển.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //MOVE QUESTION
@@ -139,9 +140,10 @@ namespace CapDemo.GUI.User_Controls
             }
             else
             {
-                notifyIcon1.Icon = SystemIcons.Warning;
-                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để sao chép.";
-                notifyIcon1.ShowBalloonTip(2000);
+                //notifyIcon1.Icon = SystemIcons.Warning;
+                //notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để sao chép.";
+                //notifyIcon1.ShowBalloonTip(2000);
+                MessageBox.Show("Vui lòng chọn câu hỏi để sao chép.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //EDIT QUESTION INFORMATION
@@ -300,18 +302,20 @@ namespace CapDemo.GUI.User_Controls
                         QuestionBL.DeleteQuestionByID(Question);
                     }
                     //Show notify
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Xóa Câu Hỏi Thành Công";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Xóa Câu Hỏi Thành Công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //Load question table
                     loadQuestion();
                 }
             }
             else
             {
-                notifyIcon1.Icon = SystemIcons.Warning;
-                notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để xóa.";
-                notifyIcon1.ShowBalloonTip(2000);
+                //notifyIcon1.Icon = SystemIcons.Warning;
+                //notifyIcon1.BalloonTipText = "Vui lòng chọn câu hỏi để xóa.";
+                //notifyIcon1.ShowBalloonTip(2000);
+                MessageBox.Show("Vui lòng chọn câu hỏi để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }

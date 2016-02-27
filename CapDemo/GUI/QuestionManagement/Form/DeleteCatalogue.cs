@@ -58,16 +58,18 @@ namespace CapDemo.GUI
                 CatBL.DeleteQuestionbyIDCatalogue(Cat);
                 if (CatBL.DeleteCataloguebyID(Cat)==true)
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề và các câu hỏi thuộc chủ đề này thành công";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Xóa chủ đề và các câu hỏi thuộc chủ đề này thành công";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Xóa chủ đề và các câu hỏi thuộc chủ đề này thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Xóa chủ đề không thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -91,16 +93,18 @@ namespace CapDemo.GUI
                 CatBL.MoveQuestionToUnknow(Cat, IDCatUnknow);
                 if ( CatBL.DeleteCataloguebyID(Cat)==true)
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề thành công. Các câu hỏi trong chủ đề đã xóa sẽ chuyển đến chủ đề \"Unknow\"";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Xóa chủ đề thành công. Các câu hỏi trong chủ đề đã xóa sẽ chuyển đến chủ đề \"Unknow\"";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Xóa chủ đề thành công. Các câu hỏi trong chủ đề đã xóa sẽ chuyển đến chủ đề \"Unknow\".", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Xóa chủ đề không thành công";
+                    //notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Xóa chủ đề không thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

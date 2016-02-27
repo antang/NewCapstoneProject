@@ -4289,21 +4289,71 @@ namespace CapDemo
         //Fix size text in question frame
         public void FixSizeText()
         {
+            //question
             string []NewLine= audience.lbl_QuestionContent.Text.Split('\n');
 
-            if (audience.lbl_QuestionContent.Text.Count() > 585 || NewLine.Length > 9)
+            if (audience.lbl_QuestionContent.Text.Count() > 585 || NewLine.Length >= 9)
             {
-                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 11.0f, audience.lbl_QuestionContent.Font.Style);
+                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 12.0f, audience.lbl_QuestionContent.Font.Style);
             }
             else
             {
-                if (audience.lbl_QuestionContent.Text.Count() > 280 || NewLine.Length>7)
+                if (audience.lbl_QuestionContent.Text.Count() > 280 || NewLine.Length>=7)
                 {
                     audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 15.0f, audience.lbl_QuestionContent.Font.Style);
                 }
                 else
                 {
-                    audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 21.0f, audience.lbl_QuestionContent.Font.Style);
+                    audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 20.0f, audience.lbl_QuestionContent.Font.Style);
+                }
+            }
+
+            //answer
+            int row = 0;
+            int temp=0;
+            foreach (ShowAnswer ShowAnswer in audience.flp_AnswerQuiz.Controls)
+            {
+               string []Newline1= ShowAnswer.rtxt_Answer.Text.Split('\n');
+               temp = Newline1.Length;
+               if (temp>=row)
+               {
+                   row = temp;
+               }
+                
+            }
+
+            if (row <= 3)
+            {
+                foreach (ShowAnswer ShowAnswer in audience.flp_AnswerQuiz.Controls)
+                {
+                    ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 14.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                }
+            }
+            else
+            {
+                if (row == 4)
+                {
+                    foreach (ShowAnswer ShowAnswer in audience.flp_AnswerQuiz.Controls)
+                    {
+                        ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 12.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                    }
+                }
+                else
+                {
+                    if (row ==5)
+                    {
+                        foreach (ShowAnswer ShowAnswer in audience.flp_AnswerQuiz.Controls)
+                        {
+                            ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 10.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                        }
+                    }
+                    else
+                    {
+                        foreach (ShowAnswer ShowAnswer in audience.flp_AnswerQuiz.Controls)
+                        {
+                            ShowAnswer.rtxt_Answer.Font = new Font(ShowAnswer.rtxt_Answer.Font.FontFamily, 8.0f, ShowAnswer.rtxt_Answer.Font.Style);
+                        }
+                    }
                 }
             }
         }

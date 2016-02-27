@@ -50,7 +50,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_ScoreCong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -310,11 +309,6 @@
             this.label7.Text = "Thời gian";
             this.label7.Visible = false;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -417,7 +411,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TextBox txt_Date;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.GroupBox groupBox3;

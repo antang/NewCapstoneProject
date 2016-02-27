@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateQuestionNew));
             this.gb_QuestionType = new System.Windows.Forms.GroupBox();
             this.rad_ShortAnswer = new System.Windows.Forms.RadioButton();
             this.rad_MultiSelect = new System.Windows.Forms.RadioButton();
             this.rad_OnlyOneAnswer = new System.Windows.Forms.RadioButton();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.pnl_LoadQuestion = new System.Windows.Forms.Panel();
             this.gb_QuestionType.SuspendLayout();
             this.SuspendLayout();
@@ -92,11 +90,6 @@
             this.rad_OnlyOneAnswer.UseVisualStyleBackColor = true;
             this.rad_OnlyOneAnswer.CheckedChanged += new System.EventHandler(this.rad_OnlyOneAnswer_CheckedChanged_1);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // pnl_LoadQuestion
             // 
             this.pnl_LoadQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -131,7 +124,6 @@
         private System.Windows.Forms.RadioButton rad_ShortAnswer;
         private System.Windows.Forms.RadioButton rad_MultiSelect;
         private System.Windows.Forms.RadioButton rad_OnlyOneAnswer;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Panel pnl_LoadQuestion;
     }
 }

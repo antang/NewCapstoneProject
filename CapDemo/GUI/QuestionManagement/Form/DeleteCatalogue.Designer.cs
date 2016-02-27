@@ -35,7 +35,6 @@
             this.rad_DelCatQuest = new System.Windows.Forms.RadioButton();
             this.rad_DelCat = new System.Windows.Forms.RadioButton();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // btn_Ok
@@ -109,11 +108,6 @@
             this.btn_Cancel.UseVisualStyleBackColor = false;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // DeleteCatalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +139,5 @@
         private System.Windows.Forms.RadioButton rad_DelCatQuest;
         private System.Windows.Forms.RadioButton rad_DelCat;
         private System.Windows.Forms.Button btn_Cancel;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

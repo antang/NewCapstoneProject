@@ -52,7 +52,6 @@
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.lbl_Catalogue = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lbl_NewCatalogue = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -330,11 +329,6 @@
             this.lbl_Catalogue.TabIndex = 47;
             this.lbl_Catalogue.Text = "Chủ đề:";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // lbl_NewCatalogue
             // 
             this.lbl_NewCatalogue.AutoSize = true;
@@ -401,7 +395,6 @@
         private System.Windows.Forms.Button btn_SaveQuestion;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label lbl_Catalogue;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lbl_NewCatalogue;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_NameQuestion;

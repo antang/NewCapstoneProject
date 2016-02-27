@@ -35,7 +35,6 @@
             this.btn_CancelCatalogue = new System.Windows.Forms.Button();
             this.txt_NameCatalogue = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.lbl2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -104,11 +103,6 @@
             this.lbl1.TabIndex = 34;
             this.lbl1.Text = "Tạo Chủ Đề Mới";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
@@ -154,7 +148,6 @@
         private System.Windows.Forms.Button btn_CancelCatalogue;
         private System.Windows.Forms.TextBox txt_NameCatalogue;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label lbl2;
     }
 }

@@ -981,6 +981,7 @@
     <Content Include="Sound\HienThiCauHoi.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sound\Hover.wav" />
     <Content Include="Sound\NhacNen.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

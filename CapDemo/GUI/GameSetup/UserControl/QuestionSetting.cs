@@ -117,22 +117,23 @@ namespace CapDemo
             dgv_Question.Columns["TimePhase"].Visible = false;
             dgv_Question.Columns["Sequence"].Visible = false;
             dgv_Question.Columns["Status"].Visible = false;
+            dgv_Question.Columns["StatusShow"].Visible = false;
 
             dgv_Question.Columns["IDQuestion"].Visible = false;
 
             dgv_Question.Columns["SequenceQuestion"].HeaderText = "STT";
             dgv_Question.Columns["NameQuestion"].HeaderText = "Tên Câu Hỏi";
             dgv_Question.Columns["TypeQuestion"].HeaderText = "Loại Câu hỏi";
-            dgv_Question.Columns["StatusShow"].HeaderText = "Trạng thái";
+            //dgv_Question.Columns["StatusShow"].HeaderText = "Trạng thái";
 
             dgv_Question.Columns["SequenceQuestion"].ReadOnly = true;
             dgv_Question.Columns["NameQuestion"].ReadOnly = true;
             dgv_Question.Columns["TypeQuestion"].ReadOnly = true;
-            dgv_Question.Columns["StatusShow"].ReadOnly = true;
+            //dgv_Question.Columns["StatusShow"].ReadOnly = true;
 
             dgv_Question.Columns["SequenceQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgv_Question.Columns["TypeQuestion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgv_Question.Columns["StatusShow"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //dgv_Question.Columns["StatusShow"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         //Select listbox to show question
@@ -215,7 +216,7 @@ namespace CapDemo
                         {
                             count++;
                         }
-                        if (count == 0 || count < 20 )
+                        if (count == 0)
                         {
                             check++;
                         }

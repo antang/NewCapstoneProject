@@ -33,22 +33,22 @@
             this.cms_UserSetting = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_ChangePass = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_LogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tsmi_Sound = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_On = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_Off = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_ImportMusic = new System.Windows.Forms.ToolStripMenuItem();
-            this.pb_Logo = new System.Windows.Forms.PictureBox();
+            this.nhạcMặcĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pb_UserSetting = new System.Windows.Forms.PictureBox();
+            this.pb_Logo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_ExitMenu = new System.Windows.Forms.Button();
             this.btn_Help = new System.Windows.Forms.Button();
             this.btn_Setting = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
-            this.nhạcMặcĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cms_UserSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_UserSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,19 +74,19 @@
             this.tsmi_ImportMusic,
             this.nhạcMặcĐịnhToolStripMenuItem});
             this.cms_UserSetting.Name = "cms_UserSetting";
-            this.cms_UserSetting.Size = new System.Drawing.Size(157, 136);
+            this.cms_UserSetting.Size = new System.Drawing.Size(157, 114);
             // 
             // tsmi_ChangePass
             // 
             this.tsmi_ChangePass.Name = "tsmi_ChangePass";
-            this.tsmi_ChangePass.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_ChangePass.Size = new System.Drawing.Size(156, 22);
             this.tsmi_ChangePass.Text = "Đổi Mật Khẩu";
             this.tsmi_ChangePass.Click += new System.EventHandler(this.tsmi_ChangePass_Click);
             // 
             // tsmi_LogOut
             // 
             this.tsmi_LogOut.Name = "tsmi_LogOut";
-            this.tsmi_LogOut.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_LogOut.Size = new System.Drawing.Size(156, 22);
             this.tsmi_LogOut.Text = "Đăng Xuất";
             this.tsmi_LogOut.Click += new System.EventHandler(this.tsmi_LogOut_Click);
             // 
@@ -96,7 +96,7 @@
             this.tsmi_On,
             this.tsmi_Off});
             this.tsmi_Sound.Name = "tsmi_Sound";
-            this.tsmi_Sound.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Sound.Size = new System.Drawing.Size(156, 22);
             this.tsmi_Sound.Text = "Nhạc";
             // 
             // tsmi_On
@@ -116,21 +116,16 @@
             // tsmi_ImportMusic
             // 
             this.tsmi_ImportMusic.Name = "tsmi_ImportMusic";
-            this.tsmi_ImportMusic.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_ImportMusic.Size = new System.Drawing.Size(156, 22);
             this.tsmi_ImportMusic.Text = "Chuyển Nhạc";
             this.tsmi_ImportMusic.Click += new System.EventHandler(this.tsmi_ImportMusic_Click);
             // 
-            // pb_Logo
+            // nhạcMặcĐịnhToolStripMenuItem
             // 
-            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pb_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Logo.BackgroundImage = global::CapDemo.Properties.Resources.LogoTeam;
-            this.pb_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Logo.Location = new System.Drawing.Point(1, 654);
-            this.pb_Logo.Name = "pb_Logo";
-            this.pb_Logo.Size = new System.Drawing.Size(100, 50);
-            this.pb_Logo.TabIndex = 14;
-            this.pb_Logo.TabStop = false;
+            this.nhạcMặcĐịnhToolStripMenuItem.Name = "nhạcMặcĐịnhToolStripMenuItem";
+            this.nhạcMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.nhạcMặcĐịnhToolStripMenuItem.Text = "Nhạc Mặc Định";
+            this.nhạcMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.nhạcMặcĐịnhToolStripMenuItem_Click);
             // 
             // pb_UserSetting
             // 
@@ -145,6 +140,18 @@
             this.pb_UserSetting.TabStop = false;
             this.toolTip1.SetToolTip(this.pb_UserSetting, "Setting");
             this.pb_UserSetting.Click += new System.EventHandler(this.pb_UserSetting_Click);
+            // 
+            // pb_Logo
+            // 
+            this.pb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pb_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.pb_Logo.BackgroundImage = global::CapDemo.Properties.Resources.LogoTeam;
+            this.pb_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pb_Logo.Location = new System.Drawing.Point(1, 654);
+            this.pb_Logo.Name = "pb_Logo";
+            this.pb_Logo.Size = new System.Drawing.Size(100, 50);
+            this.pb_Logo.TabIndex = 14;
+            this.pb_Logo.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -221,13 +228,6 @@
             this.btn_Start.MouseEnter += new System.EventHandler(this.btn_Start_MouseHover);
             this.btn_Start.MouseLeave += new System.EventHandler(this.btn_Start_MouseLeave);
             // 
-            // nhạcMặcĐịnhToolStripMenuItem
-            // 
-            this.nhạcMặcĐịnhToolStripMenuItem.Name = "nhạcMặcĐịnhToolStripMenuItem";
-            this.nhạcMặcĐịnhToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.nhạcMặcĐịnhToolStripMenuItem.Text = "Nhạc Mặc Định";
-            this.nhạcMặcĐịnhToolStripMenuItem.Click += new System.EventHandler(this.nhạcMặcĐịnhToolStripMenuItem_Click);
-            // 
             // GameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +245,8 @@
             this.Size = new System.Drawing.Size(1024, 700);
             this.Load += new System.EventHandler(this.GameMenu_Load);
             this.cms_UserSetting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_UserSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

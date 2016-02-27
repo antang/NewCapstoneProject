@@ -46,7 +46,6 @@
             this.btn_CancelEditQuestion = new System.Windows.Forms.Button();
             this.txt_ContentAnswer = new System.Windows.Forms.TextBox();
             this.txt_Date = new System.Windows.Forms.TextBox();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // imageList1
@@ -245,11 +244,6 @@
             this.txt_Date.Size = new System.Drawing.Size(100, 23);
             this.txt_Date.TabIndex = 56;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // EditQuestion_ShortAnswer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +295,5 @@
         private System.Windows.Forms.TextBox txt_ContentQuestion;
         private System.Windows.Forms.TextBox txt_ContentAnswer;
         private System.Windows.Forms.TextBox txt_Date;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

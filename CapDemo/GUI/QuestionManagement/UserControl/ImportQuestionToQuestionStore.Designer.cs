@@ -43,7 +43,6 @@
             this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuestionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.chk_CheckAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
             this.SuspendLayout();
@@ -219,11 +218,6 @@
             this.Check.Name = "Check";
             this.Check.Width = 38;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // chk_CheckAll
             // 
             this.chk_CheckAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,7 +264,6 @@
         private System.Windows.Forms.RadioButton rad_Copy;
         private System.Windows.Forms.DataGridView dgv_Question;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox chk_CheckAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sequence;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuestionTitle;
