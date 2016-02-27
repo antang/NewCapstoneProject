@@ -37,10 +37,10 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lblVong = new System.Windows.Forms.Label();
             this.btn_Paint = new System.Windows.Forms.Button();
-            this.pnl_ColorCoat = new System.Windows.Forms.Panel();
-            this.btn_Color = new System.Windows.Forms.Button();
             this.txt_Sequence = new System.Windows.Forms.TextBox();
             this.lbl_IDPlayer = new System.Windows.Forms.Label();
+            this.pnl_ColorCoat = new System.Windows.Forms.Panel();
+            this.btn_Color = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Delete
@@ -139,29 +139,6 @@
             this.btn_Paint.UseVisualStyleBackColor = false;
             this.btn_Paint.Visible = false;
             // 
-            // pnl_ColorCoat
-            // 
-            this.pnl_ColorCoat.BackColor = System.Drawing.Color.White;
-            this.pnl_ColorCoat.BackgroundImage = global::CapDemo.Properties.Resources.MauAo;
-            this.pnl_ColorCoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_ColorCoat.Location = new System.Drawing.Point(176, 74);
-            this.pnl_ColorCoat.Name = "pnl_ColorCoat";
-            this.pnl_ColorCoat.Size = new System.Drawing.Size(78, 72);
-            this.pnl_ColorCoat.TabIndex = 0;
-            // 
-            // btn_Color
-            // 
-            this.btn_Color.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Color.BackgroundImage = global::CapDemo.Properties.Resources.paint_pro;
-            this.btn_Color.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Color.Location = new System.Drawing.Point(76, 111);
-            this.btn_Color.Name = "btn_Color";
-            this.btn_Color.Size = new System.Drawing.Size(30, 30);
-            this.btn_Color.TabIndex = 0;
-            this.btn_Color.UseVisualStyleBackColor = false;
-            this.btn_Color.Click += new System.EventHandler(this.btn_Color_Click);
-            // 
             // txt_Sequence
             // 
             this.txt_Sequence.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,6 +160,29 @@
             this.lbl_IDPlayer.TabIndex = 0;
             this.lbl_IDPlayer.Text = "id";
             this.lbl_IDPlayer.Visible = false;
+            // 
+            // pnl_ColorCoat
+            // 
+            this.pnl_ColorCoat.BackColor = System.Drawing.Color.White;
+            this.pnl_ColorCoat.BackgroundImage = global::CapDemo.Properties.Resources.Ao_doi_thi;
+            this.pnl_ColorCoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_ColorCoat.Location = new System.Drawing.Point(176, 74);
+            this.pnl_ColorCoat.Name = "pnl_ColorCoat";
+            this.pnl_ColorCoat.Size = new System.Drawing.Size(78, 72);
+            this.pnl_ColorCoat.TabIndex = 0;
+            // 
+            // btn_Color
+            // 
+            this.btn_Color.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Color.BackgroundImage = global::CapDemo.Properties.Resources.paint_pro;
+            this.btn_Color.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Color.Location = new System.Drawing.Point(76, 111);
+            this.btn_Color.Name = "btn_Color";
+            this.btn_Color.Size = new System.Drawing.Size(30, 30);
+            this.btn_Color.TabIndex = 0;
+            this.btn_Color.UseVisualStyleBackColor = false;
+            this.btn_Color.Click += new System.EventHandler(this.btn_Color_Click);
             // 
             // Add_Team
             // 

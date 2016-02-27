@@ -957,6 +957,9 @@
     <None Include="Resources\Question_New.png" />
     <None Include="Resources\Rank_New.png" />
     <None Include="Resources\Setting_New.png" />
+    <None Include="Resources\LogoInControl.png" />
+    <None Include="Resources\HitYourGoal_GiaoDienKhanGia.jpg" />
+    <None Include="Resources\Ao_doi_thi.png" />
     <Content Include="Sound\CapNhatDiem.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

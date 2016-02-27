@@ -317,10 +317,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(316, 366);
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(349, 365);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(369, 259);
+            this.pictureBox2.Size = new System.Drawing.Size(335, 234);
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 

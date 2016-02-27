@@ -229,9 +229,6 @@
   <data name="End_Support" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\End_Support.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HitYourGoal_GiaoDienKhanGia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HitYourGoal-GiaoDienKhanGia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -501,5 +498,11 @@
   </data>
   <data name="Setting_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Setting_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HitYourGoal_GiaoDienKhanGia1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HitYourGoal_GiaoDienKhanGia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ao_doi_thi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ao_doi_thi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

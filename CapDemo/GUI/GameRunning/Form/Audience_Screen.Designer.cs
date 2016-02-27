@@ -81,7 +81,7 @@
             // tab_Map
             // 
             this.tab_Map.BackColor = System.Drawing.Color.Blue;
-            this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.HitYourGoal_GiaoDienKhanGia;
+            this.tab_Map.BackgroundImage = global::CapDemo.Properties.Resources.HitYourGoal_GiaoDienKhanGia1;
             this.tab_Map.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_Map.Controls.Add(this.flp_Finish);
             this.tab_Map.Controls.Add(this.btn_PM);
