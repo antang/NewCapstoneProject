@@ -316,7 +316,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.W_Shortcut2_L;
+            this.pictureBox2.BackgroundImage = global::CapDemo.Properties.Resources.w2;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(349, 365);
             this.pictureBox2.Name = "pictureBox2";
