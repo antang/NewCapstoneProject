@@ -54,16 +54,15 @@
             // 
             // lbl_Name
             // 
-            this.lbl_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Name.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Name.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Name.ForeColor = System.Drawing.Color.White;
             this.lbl_Name.Location = new System.Drawing.Point(3, 9);
             this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(1018, 20);
+            this.lbl_Name.Size = new System.Drawing.Size(355, 20);
             this.lbl_Name.TabIndex = 9;
             this.lbl_Name.Text = "Ten nguoi dung";
-            this.lbl_Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cms_UserSetting
             // 
@@ -129,11 +128,10 @@
             // 
             // pb_UserSetting
             // 
-            this.pb_UserSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pb_UserSetting.BackColor = System.Drawing.Color.Transparent;
             this.pb_UserSetting.BackgroundImage = global::CapDemo.Properties.Resources.setting;
             this.pb_UserSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_UserSetting.Location = new System.Drawing.Point(987, 30);
+            this.pb_UserSetting.Location = new System.Drawing.Point(6, 32);
             this.pb_UserSetting.Name = "pb_UserSetting";
             this.pb_UserSetting.Size = new System.Drawing.Size(34, 35);
             this.pb_UserSetting.TabIndex = 13;

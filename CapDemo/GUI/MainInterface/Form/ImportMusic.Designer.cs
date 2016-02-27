@@ -52,14 +52,16 @@
             // 
             // btn_Open
             // 
+            this.btn_Open.BackColor = System.Drawing.Color.Blue;
             this.btn_Open.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Open.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Open.ForeColor = System.Drawing.Color.White;
             this.btn_Open.Location = new System.Drawing.Point(3, 202);
             this.btn_Open.Name = "btn_Open";
             this.btn_Open.Size = new System.Drawing.Size(381, 55);
             this.btn_Open.TabIndex = 2;
             this.btn_Open.Text = "Import file music";
-            this.btn_Open.UseVisualStyleBackColor = true;
+            this.btn_Open.UseVisualStyleBackColor = false;
             this.btn_Open.Click += new System.EventHandler(this.btn_Open_Click);
             // 
             // tableLayoutPanel1
@@ -101,6 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(387, 260);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

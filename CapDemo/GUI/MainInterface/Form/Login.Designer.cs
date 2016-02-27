@@ -48,6 +48,7 @@
             this.lblServer.Size = new System.Drawing.Size(111, 20);
             this.lblServer.TabIndex = 0;
             this.lblServer.Text = "Tạo Tài Khoản";
+            this.lblServer.Visible = false;
             this.lblServer.Click += new System.EventHandler(this.lblServer_Click);
             // 
             // txt_UserName
@@ -101,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::CapDemo.Properties.Resources.login_6;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(317, 399);

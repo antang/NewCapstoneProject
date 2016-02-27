@@ -182,22 +182,30 @@ namespace CapDemo
                     NumCheck++;
                 }
             }
-            if (NumCheck == 0)
+            if (cmb_Catalogue.SelectedItem.ToString().Trim()=="")
             {
-                MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn chủ đề để nhập câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (checkDuplicate() == false)
+                if (NumCheck == 0)
                 {
-                    CopyQuestion();
-                    this.Close();
+                    MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Các câu hỏi tô đỏ đã tồn tại trong phần thi.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }  
+                    if (checkDuplicate() == false)
+                    {
+                        CopyQuestion();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Các câu hỏi tô đỏ đã tồn tại trong phần thi.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
+            
             NumCheck = 0;
             
         }

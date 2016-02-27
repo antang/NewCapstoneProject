@@ -106,13 +106,13 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(63, 429);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 15);
+            this.label1.Size = new System.Drawing.Size(372, 16);
             this.label1.TabIndex = 15;
-            this.label1.Text = "*unknow là chủ để chứa các câu hỏi đã bị xóa";
+            this.label1.Text = "*unknow là chủ đề mặc định và chứa các câu hỏi không có chủ đề";
             // 
             // btn_SearchCatalogue
             // 
