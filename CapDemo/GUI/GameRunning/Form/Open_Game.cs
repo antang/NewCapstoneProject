@@ -4294,7 +4294,15 @@ namespace CapDemo
 
             if (audience.lbl_QuestionContent.Text.Count() > 585 || NewLine.Length >= 9)
             {
-                audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 12.0f, audience.lbl_QuestionContent.Font.Style);
+                if (NewLine.Length > 13)
+                {
+                    audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 8.0f, audience.lbl_QuestionContent.Font.Style);
+                }
+                else
+                {
+                    audience.lbl_QuestionContent.Font = new Font(audience.lbl_QuestionContent.Font.FontFamily, 12.0f, audience.lbl_QuestionContent.Font.Style);
+                }
+                
             }
             else
             {

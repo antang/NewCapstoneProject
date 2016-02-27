@@ -88,6 +88,23 @@ namespace CapDemo
                     }
                 }
 
+                string[] NewLine = lbl_Content.Text.Split('\n');
+                if (NewLine.Length <= 20)
+                {
+                    lbl_Content.Font = new Font(lbl_Content.Font.FontFamily, 20.0f, lbl_Content.Font.Style);
+                }
+                else
+                {
+                    if (NewLine.Length <= 36)
+                    {
+                        lbl_Content.Font = new Font(lbl_Content.Font.FontFamily, 12.0f, lbl_Content.Font.Style);
+                    }
+                    else
+                    {
+                        lbl_Content.Font = new Font(lbl_Content.Font.FontFamily, 8.0f, lbl_Content.Font.Style);
+                    }
+                }
+
                 return true;
             }
             catch (Exception)

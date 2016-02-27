@@ -66,7 +66,15 @@ namespace CapDemo
 
             if (lbl_QuestionContent.Text.Count() > 585 || NewLine.Length >= 9)
             {
-                lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 12.0f, lbl_QuestionContent.Font.Style);
+                if (NewLine.Length > 13)
+                {
+                    lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 8.0f, lbl_QuestionContent.Font.Style);
+                }
+                else
+                {
+                    lbl_QuestionContent.Font = new Font(lbl_QuestionContent.Font.FontFamily, 12.0f, lbl_QuestionContent.Font.Style);
+                }
+                
             }
             else
             {
