@@ -34,7 +34,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.btn_EditQuestion = new System.Windows.Forms.Button();
@@ -126,11 +125,6 @@
             this.btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
             // 
             // flp_Answer
             // 
@@ -394,7 +388,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.FlowLayoutPanel flp_Answer;
         private System.Windows.Forms.TextBox txt_Date;
         private System.Windows.Forms.Button btn_EditQuestion;

@@ -103,6 +103,12 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+
+            gm1.onHover_Exit += gm1_onHover_Exit;
+            gm1.onHover_Help += gm1_onHover_Help;
+            gm1.onHover_Setting += gm1_onHover_Setting;
+            gm1.onHover_Start += gm1_onHover_Start;
+
             gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
             gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
             gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;
@@ -119,6 +125,56 @@ namespace CapDemo.GUI
             }
             
         }
+        //hover start
+        void gm1_onHover_Start(object sender, EventArgs e)
+        {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Hover.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        //Hover setting
+        void gm1_onHover_Setting(object sender, EventArgs e)
+        {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Hover.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        //hover help
+        void gm1_onHover_Help(object sender, EventArgs e)
+        {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Hover.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+        }
+        //hover exit
+        void gm1_onHover_Exit(object sender, EventArgs e)
+        {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Hover.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
         //Default music
         void gm1_onClick_DefaultMusic(object sender, EventArgs e)
         {
@@ -170,6 +226,15 @@ namespace CapDemo.GUI
         //log up event help
         void gm1_onClick_Help(object sender, EventArgs e)
         {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+
             System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\GSC_UserGuide.pdf");
             //this.Controls.Clear();
             int h = Screen.PrimaryScreen.Bounds.Height;
@@ -274,6 +339,12 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+
+            gm1.onHover_Exit += gm1_onHover_Exit;
+            gm1.onHover_Help += gm1_onHover_Help;
+            gm1.onHover_Setting += gm1_onHover_Setting;
+            gm1.onHover_Start += gm1_onHover_Start;
+
             this.Controls.Clear();
             this.Controls.Add(gm1);
         }
@@ -282,7 +353,14 @@ namespace CapDemo.GUI
         void btn_Start_onClick(object sender, EventArgs e)
         {
             Start_Game sg = new Start_Game();
-            
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
             //auto fix screen start game
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -352,6 +430,14 @@ namespace CapDemo.GUI
         //Click to show Setting Game GUI
         void btn_Setting_onClick(object sender, EventArgs e)
         {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
             this.Controls.Clear();
             int h = Screen.PrimaryScreen.Bounds.Height;
             int w = Screen.PrimaryScreen.Bounds.Width;
@@ -404,6 +490,14 @@ namespace CapDemo.GUI
         //Exit Setting GUI
         void Exit_Setting(object sender, EventArgs e)
         {
+            try
+            {
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
             this.Controls.Clear();
             GameMenu gm1 = new GameMenu(UserID, UserName,Pass);
             int h = Screen.PrimaryScreen.Bounds.Height;
@@ -455,6 +549,12 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+
+            gm1.onHover_Exit += gm1_onHover_Exit;
+            gm1.onHover_Help += gm1_onHover_Help;
+            gm1.onHover_Setting += gm1_onHover_Setting;
+            gm1.onHover_Start += gm1_onHover_Start;
+
             gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
             gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
             gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;
@@ -466,7 +566,15 @@ namespace CapDemo.GUI
         {
             try
             {
-                this.axWindowsMediaPlayer1.Ctlcontrols.play();
+                //axWindowsMediaPlayer2.URL = (Directory.GetCurrentDirectory()) + "\\Sound\\Click.wav";
+                //axWindowsMediaPlayer2.Ctlcontrols.play();
+            }
+            catch (Exception)
+            {
+            }
+            try
+            {
+                //this.axWindowsMediaPlayer1.Ctlcontrols.play();
             }
             catch (Exception)
             {
@@ -521,6 +629,12 @@ namespace CapDemo.GUI
             gm1.onClick_Start += btn_Start_onClick;
             gm1.onClick_Help += gm1_onClick_Help;
             gm1.onClick_LogOut += gm1_onClick_LogOut;
+
+            gm1.onHover_Exit += gm1_onHover_Exit;
+            gm1.onHover_Help += gm1_onHover_Help;
+            gm1.onHover_Setting += gm1_onHover_Setting;
+            gm1.onHover_Start += gm1_onHover_Start;
+
             gm1.onClick_TurnOnMusic += gm1_onClick_TurnOnMusic;
             gm1.onClick_TurnOffMusic += gm1_onClick_TurnOffMusic;
             gm1.onClick_ImportMusic += gm1_onClick_ImportMusic;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace CapDemo.GUI.User_Controls
 {
@@ -37,7 +38,14 @@ namespace CapDemo.GUI.User_Controls
         public event EventHandler onClick_Setting;
         public event EventHandler onClick_Start;
         public event EventHandler onClick_Help;
+        public event EventHandler onClick_Exit;
         public event EventHandler onClick_LogOut;
+
+        public event EventHandler onHover_Setting;
+        public event EventHandler onHover_Start;
+        public event EventHandler onHover_Help;
+        public event EventHandler onHover_Exit;
+
         public event EventHandler onClick_TurnOnMusic;
         public event EventHandler onClick_TurnOffMusic;
         public event EventHandler onClick_ImportMusic;
@@ -55,18 +63,10 @@ namespace CapDemo.GUI.User_Controls
             this.userID = pUserID;
             this.pass = pPass;
         }
-        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
-        SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
+        //SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        //SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         private void btn_Setting_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
-            
             if (this.onClick_Setting != null)
                 this.onClick_Setting(this, e);
         }
@@ -78,15 +78,7 @@ namespace CapDemo.GUI.User_Controls
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
-            
+        { 
             if (this.onClick_Start != null)
                 this.onClick_Start(this, e);
         }
@@ -95,14 +87,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_Start_MouseHover(object sender, EventArgs e)
         {
             btn_Start.BackgroundImage = CapDemo.Properties.Resources.BD_menu_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
-            
+            if (this.onHover_Start != null)
+                this.onHover_Start(this, e);
         }
 
         private void btn_Start_MouseLeave(object sender, EventArgs e)
@@ -114,13 +100,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_Setting_MouseHover(object sender, EventArgs e)
         {
             btn_Setting.BackgroundImage = CapDemo.Properties.Resources.CD_menu_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onHover_Setting != null)
+                this.onHover_Setting(this, e);
         }
 
         private void btn_Setting_MouseLeave(object sender, EventArgs e)
@@ -132,13 +113,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_Help_MouseHover(object sender, EventArgs e)
         {
             btn_Help.BackgroundImage = CapDemo.Properties.Resources.HD_menu_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onHover_Help != null)
+                this.onHover_Help(this, e);
         }
 
         private void btn_Help_MouseLeave(object sender, EventArgs e)
@@ -150,13 +126,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_ExitMenu_MouseHover(object sender, EventArgs e)
         {
             btn_ExitMenu.BackgroundImage = CapDemo.Properties.Resources.T_menu_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onHover_Exit != null)
+                this.onHover_Exit(this, e);
         }
 
         private void btn_ExitMenu_MouseLeave(object sender, EventArgs e)
@@ -167,13 +138,9 @@ namespace CapDemo.GUI.User_Controls
         //Exit program
         private void btn_ExitMenu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onClick_Exit != null)
+                this.onClick_Exit(this, e);
+
             DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi chương trình không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
@@ -183,18 +150,9 @@ namespace CapDemo.GUI.User_Controls
         }
 
         private void btn_Help_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
-            
+        { 
             if (this.onClick_Help != null)
                 this.onClick_Help(this, e);
-            
         }
         //change password
         private void tsmi_ChangePass_Click(object sender, EventArgs e)

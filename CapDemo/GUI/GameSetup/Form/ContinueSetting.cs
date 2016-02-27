@@ -145,7 +145,7 @@ namespace CapDemo
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng nhập tối thiểu 20 câu hỏi cho mỗi giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Vui lòng nhập câu hỏi cho mỗi giai đoạn.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -168,12 +168,12 @@ namespace CapDemo
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng nhập thông tin cho đội.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Vui lòng nhập thông tin cho đội.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng thêm tối thiểu là 2 đội.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng thêm tối thiểu là 2 đội.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -382,7 +382,7 @@ namespace CapDemo
             }
             else
             {
-                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi " + gs.cmb_Round.SelectedItem.ToString() + " của cuộc thi " + gs.cmb_Competition.SelectedItem.ToString() + ".", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi " + gs.cmb_Round.SelectedItem.ToString() + " của cuộc thi " + gs.cmb_Competition.SelectedItem.ToString() + ".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 //PHASE SETTING
@@ -631,15 +631,21 @@ namespace CapDemo
         {
             if (cs.txt_ChallengeScore.Text.Trim() != "" && cs.txt_NumTeam.Text.Trim() != "" && cs.txt_TimeForSupport.Text.Trim() != "")
             {
-                Contest.IDContest = contestID;
-                Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
-                Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
-                Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
+                if (Convert.ToInt32(cs.txt_NumTeam.Text.Trim()) >= ts.CountTeam())
+                {
+                    MessageBox.Show("Số đội thách đấu phải nhỏ hơn " + ts.CountTeam() + ".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Contest.IDContest = contestID;
+                    Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
+                    Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
+                    Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
 
-                ContestBL.EditContestbyID(Contest);
-                this.Close();
-                this.DialogResult = DialogResult.OK;
-
+                    ContestBL.EditContestbyID(Contest);
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+                }
             }
             else
             {

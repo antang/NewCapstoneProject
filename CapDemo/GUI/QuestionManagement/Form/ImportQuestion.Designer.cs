@@ -49,7 +49,6 @@
             this.txt_FilePath = new System.Windows.Forms.TextBox();
             this.btn_SaveImport = new System.Windows.Forms.Button();
             this.btn_ExitImport = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Question)).BeginInit();
@@ -300,11 +299,6 @@
             this.btn_ExitImport.UseVisualStyleBackColor = false;
             this.btn_ExitImport.Click += new System.EventHandler(this.btn_ExitImport_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // ImportQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +341,6 @@
         private System.Windows.Forms.Button btn_SaveImport;
         private System.Windows.Forms.Button btn_ExitImport;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox chk_CheckAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sequence;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuestionTitle;

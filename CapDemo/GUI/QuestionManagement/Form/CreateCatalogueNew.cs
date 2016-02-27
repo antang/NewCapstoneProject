@@ -32,9 +32,9 @@ namespace CapDemo.GUI
                 Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
                 if (CatBL.AddCatalogue(Cat) == true)
                 {
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";
-                    notifyIcon1.ShowBalloonTip(5000);
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";
+                    //notifyIcon1.ShowBalloonTip(5000);
                     this.Close();
                 }
                 else
@@ -65,9 +65,9 @@ namespace CapDemo.GUI
                     Cat.NameCatalogue = txt_NameCatalogue.Text.Trim();
                     if (CatBL.AddCatalogue(Cat) == true)
                     {
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";
-                        notifyIcon1.ShowBalloonTip(5000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Thêm chủ đề \"" + txt_NameCatalogue.Text.Trim() + "\" thành công";
+                        //notifyIcon1.ShowBalloonTip(5000);
                         this.Close();
                     }
                     else

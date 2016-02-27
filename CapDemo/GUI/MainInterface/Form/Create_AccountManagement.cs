@@ -48,9 +48,9 @@ namespace CapDemo.GUI
                     user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
                     if (UserBL.AddUser(user) == true)
                     {
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                        notifyIcon1.ShowBalloonTip(5000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                        //notifyIcon1.ShowBalloonTip(5000);
                         this.Close();
                     }
                     else
@@ -96,9 +96,9 @@ namespace CapDemo.GUI
                         user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
                         if (UserBL.AddUser(user) == true)
                         {
-                            notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                            notifyIcon1.ShowBalloonTip(5000);
+                            //notifyIcon1.Icon = SystemIcons.Information;
+                            //notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                            //notifyIcon1.ShowBalloonTip(5000);
                             this.Close();
                         }
                         else
@@ -142,9 +142,9 @@ namespace CapDemo.GUI
                         user.PassWord = aes.EncryptText(txt_Password.Text.Trim(), "").ToString();
                         if (UserBL.AddUser(user) == true)
                         {
-                            notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
-                            notifyIcon1.ShowBalloonTip(5000);
+                            //notifyIcon1.Icon = SystemIcons.Information;
+                            //notifyIcon1.BalloonTipText = "Thêm tài khoản thành công.";
+                            //notifyIcon1.ShowBalloonTip(5000);
                             this.Close();
                         }
                         else

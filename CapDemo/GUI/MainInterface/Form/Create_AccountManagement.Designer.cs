@@ -38,7 +38,6 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_OK = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // lbl1
@@ -145,11 +144,6 @@
             this.btn_OK.UseVisualStyleBackColor = false;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // Create_AccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,7 +179,6 @@
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_OK;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ImageList imageList1;
     }
 }

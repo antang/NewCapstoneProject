@@ -46,7 +46,6 @@
             this.flp_addAnswer = new System.Windows.Forms.FlowLayoutPanel();
             this.cmb_Catalogue = new System.Windows.Forms.ComboBox();
             this.lbl_Catalogue = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_NewCatalogue = new System.Windows.Forms.Label();
             this.txt_ContentQuestion = new System.Windows.Forms.TextBox();
@@ -268,11 +267,6 @@
             this.lbl_Catalogue.TabIndex = 42;
             this.lbl_Catalogue.Text = "Chủ đề:";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -449,7 +443,6 @@
         private System.Windows.Forms.FlowLayoutPanel flp_addAnswer;
         public System.Windows.Forms.ComboBox cmb_Catalogue;
         private System.Windows.Forms.Label lbl_Catalogue;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_NewCatalogue;
         private System.Windows.Forms.TextBox txt_ContentQuestion;

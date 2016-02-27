@@ -94,9 +94,9 @@ namespace CapDemo.GUI.User_Controls
                             CheckQuestion();
                             if (WrongQuestion > 0)
                             {
-                                notifyIcon1.Icon = SystemIcons.Information;
-                                notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                notifyIcon1.ShowBalloonTip(3000);
+                                MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                +"Hệ thống không cho phép chọn các câu hỏi đó. "
+                                +"Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
@@ -124,9 +124,10 @@ namespace CapDemo.GUI.User_Controls
                                 CheckQuestion();
                                 if (WrongQuestion > 0)
                                 {
-                                    notifyIcon1.Icon = SystemIcons.Information;
-                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                    notifyIcon1.ShowBalloonTip(3000);
+                                    
+                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                + "Hệ thống không cho phép chọn các câu hỏi đó. "
+                                + "Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             else
@@ -152,9 +153,10 @@ namespace CapDemo.GUI.User_Controls
                                 CheckQuestion();
                                 if (WrongQuestion > 0)
                                 {
-                                    notifyIcon1.Icon = SystemIcons.Information;
-                                    notifyIcon1.BalloonTipText = "Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ. Hệ thống không cho phép chọn các câu hỏi đó.";
-                                    notifyIcon1.ShowBalloonTip(3000);
+                                    
+                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                + "Hệ thống không cho phép chọn các câu hỏi đó. "
+                                + "Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             else
@@ -310,7 +312,7 @@ namespace CapDemo.GUI.User_Controls
             {
                 if (txt_FilePath.Text == "")
                 {
-                    MessageBox.Show("Vui lòng chọn đường dẫn đến tập tin trước khi lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng chọn đường dẫn đến tập tin trước khi lưu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -416,9 +418,8 @@ namespace CapDemo.GUI.User_Controls
                         //CLOSE FORM
                         if (CheckQuestion > 0)
                         {
-                            notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Nhập " + CheckQuestion + " câu hỏi từ file thành công.";
-                            notifyIcon1.ShowBalloonTip(2000);
+                            
+                            MessageBox.Show("Nhập " + CheckQuestion + " câu hỏi từ file thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CheckQuestion = 0;
                             Form FindForm = this.FindForm();
                             FindForm.Close();
@@ -455,9 +456,11 @@ namespace CapDemo.GUI.User_Controls
                     }
                     writer.Dispose();
                     writer.Close();
-                    notifyIcon1.Icon = SystemIcons.Information;
-                    notifyIcon1.BalloonTipText = "Tải tập tin mẫu thành công: " + save.FileName + "";
-                    notifyIcon1.ShowBalloonTip(2000);
+                    MessageBox.Show("Tải tập tin mẫu thành công: " + save.FileName + "", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //notifyIcon1.Icon = SystemIcons.Information;
+                    //notifyIcon1.BalloonTipText = "Tải tập tin mẫu thành công: " + save.FileName + "";
+                    //notifyIcon1.ShowBalloonTip(2000);
                 }
             }
             catch (Exception)

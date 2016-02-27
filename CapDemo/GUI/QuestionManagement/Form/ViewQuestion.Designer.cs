@@ -51,7 +51,6 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.txt_Date = new System.Windows.Forms.TextBox();
             this.btn_addAnswer = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.flp_Answer = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_PreviewQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -322,11 +321,6 @@
             this.btn_addAnswer.Visible = false;
             this.btn_addAnswer.Click += new System.EventHandler(this.btn_addAnswer_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // flp_Answer
             // 
             this.flp_Answer.AutoScroll = true;
@@ -418,7 +412,6 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.TextBox txt_Date;
         public System.Windows.Forms.Button btn_addAnswer;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.FlowLayoutPanel flp_Answer;
         private System.Windows.Forms.Button btn_PreviewQuestion;
     }

@@ -17,23 +17,26 @@ namespace CapDemo.GUI.User_Controls
         {
             InitializeComponent();
         }
-        SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
-        SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
+        //SoundPlayer sound = new SoundPlayer(Properties.Resources.hover);
+        //SoundPlayer sound_Click = new SoundPlayer(Properties.Resources.Click);
         private void Setting_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
             pnl_Setting.Visible = false;
         }
         public event EventHandler onExit;
+        public event EventHandler onQuestion;
+        public event EventHandler onSetup;
+        public event EventHandler onUser;
+
+        public event EventHandler hoverExit;
+        public event EventHandler hoverQuestion;
+        public event EventHandler hoverSetup;
+        public event EventHandler hoverUser;
+
+
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
             
             if (this.onExit != null)
                 this.onExit(this, e);
@@ -42,13 +45,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_DataManagement_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onQuestion != null)
+                this.onQuestion(this, e);
             
             pnl_Setting.Visible = true;
             pnl_Setting.Controls.Clear();
@@ -58,13 +56,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_GameSetting_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onSetup != null)
+                this.onSetup(this, e);
             
             pnl_Setting.Visible = true;
             pnl_Setting.Controls.Clear();
@@ -74,13 +67,8 @@ namespace CapDemo.GUI.User_Controls
 
         private void btn_UserManagement_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sound_Click.Play();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.onUser != null)
+                this.onUser(this, e);
             
             pnl_Setting.Visible = true;
             pnl_Setting.Controls.Clear();
@@ -91,13 +79,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_DataManagement_MouseHover(object sender, EventArgs e)
         {
             btn_DataManagement.BackgroundImage = CapDemo.Properties.Resources.QLDL_Setting_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.hoverQuestion != null)
+                this.hoverQuestion(this, e);
             
         }
         //question management leave
@@ -110,13 +93,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_GameSetting_MouseHover(object sender, EventArgs e)
         {
             btn_GameSetting.BackgroundImage = CapDemo.Properties.Resources.TLG_Setting_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.hoverSetup != null)
+                this.hoverSetup(this, e);
             
         }
         //Game Setting leave
@@ -128,13 +106,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_UserManagement_MouseHover(object sender, EventArgs e)
         {
             btn_UserManagement.BackgroundImage = CapDemo.Properties.Resources.QLTK_Setting_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.hoverUser != null)
+                this.hoverUser(this, e);
             
         }
         //User manangement leave
@@ -146,13 +119,8 @@ namespace CapDemo.GUI.User_Controls
         private void btn_Exit_MouseHover(object sender, EventArgs e)
         {
             btn_Exit.BackgroundImage = CapDemo.Properties.Resources.Thoat_Setting_hover;
-            try
-            {
-                sound.PlaySync();
-            }
-            catch (Exception)
-            {
-            }
+            if (this.hoverExit != null)
+                this.hoverExit(this, e);
             
         }
         //Exit leave

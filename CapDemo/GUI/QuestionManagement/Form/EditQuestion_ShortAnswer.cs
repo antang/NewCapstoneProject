@@ -93,9 +93,9 @@ namespace CapDemo.GUI
                 questionBl.EditAnswerbyID(answer);
 
                 //Show notify
-                notifyIcon1.Icon = SystemIcons.Information;
-                notifyIcon1.BalloonTipText = "Chỉnh sửa câu hỏi thành công";
-                notifyIcon1.ShowBalloonTip(2000);
+                //notifyIcon1.Icon = SystemIcons.Information;
+                //notifyIcon1.BalloonTipText = "Chỉnh sửa câu hỏi thành công";
+                //notifyIcon1.ShowBalloonTip(2000);
                 //Close form
                 Form FindForm = this.FindForm();
                 FindForm.Close();

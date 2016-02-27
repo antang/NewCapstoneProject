@@ -283,13 +283,13 @@
             // 
             this.lbl_QuestionContent.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QuestionContent.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QuestionContent.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_QuestionContent.ForeColor = System.Drawing.Color.White;
             this.lbl_QuestionContent.Location = new System.Drawing.Point(49, 12);
             this.lbl_QuestionContent.Name = "lbl_QuestionContent";
             this.lbl_QuestionContent.Size = new System.Drawing.Size(924, 232);
             this.lbl_QuestionContent.TabIndex = 0;
-            this.lbl_QuestionContent.Text = "abc";
+            this.lbl_QuestionContent.Text = "abc\r\nabc\r\n}\r\nif\r\n{\r\ncon\r\n}\r\n}\r\nP\r\nP\r\nP\r\nP\r\nP";
             this.lbl_QuestionContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_QuestionContent.TextChanged += new System.EventHandler(this.lbl_QuestionContent_TextChanged);
             this.lbl_QuestionContent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbc_ShowGame_MouseDown);

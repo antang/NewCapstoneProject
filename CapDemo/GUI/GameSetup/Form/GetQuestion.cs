@@ -134,6 +134,7 @@ namespace CapDemo
             }
         }
         //check duplicate question
+        int NumCheck = 0;
         public bool checkDuplicate()
         {
             Phase phase = new Phase();
@@ -147,7 +148,6 @@ namespace CapDemo
             {
                 if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
                 {
-                    
                     if (ListPhase != null)
                     {
                         for (int i = 0; i < ListPhase.Count; i++)
@@ -175,15 +175,30 @@ namespace CapDemo
         //save question
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (checkDuplicate() == false)
+            foreach (DataGridViewRow row in dgv_Question.Rows)
             {
-                CopyQuestion();
-                this.Close();
+                if (row.Cells["Check"].Value != null && (bool)row.Cells["Check"].Value == true)
+                {
+                    NumCheck++;
+                }
+            }
+            if (NumCheck == 0)
+            {
+                MessageBox.Show("Vui lòng chọn câu hỏi trước khi lưu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Các câu hỏi được đánh dấu đã tồn tại trong phần thi.","Lỗi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                if (checkDuplicate() == false)
+                {
+                    CopyQuestion();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Các câu hỏi tô đỏ đã tồn tại trong phần thi.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }  
             }
+            NumCheck = 0;
             
         }
 

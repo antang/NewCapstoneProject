@@ -171,9 +171,11 @@ namespace CapDemo.GUI.User_Controls
                     if (countcheck() > 0)
                     {
                         CopyQuestion();
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+
+                        MessageBox.Show("Sao chép câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Form FindForm = this.FindForm();
                         FindForm.Close();
                     }
@@ -190,9 +192,11 @@ namespace CapDemo.GUI.User_Controls
                     if (countcheck() > 0)
                     {
                         MoveQuestion();
-                        notifyIcon1.Icon = SystemIcons.Information;
-                        notifyIcon1.BalloonTipText = "Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
-                        notifyIcon1.ShowBalloonTip(2000);
+                        //notifyIcon1.Icon = SystemIcons.Information;
+                        //notifyIcon1.BalloonTipText = "Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.";
+                        //notifyIcon1.ShowBalloonTip(2000);
+                        MessageBox.Show("Di chuyển câu hỏi từ chủ đề " + cmb_Catalogue.SelectedItem.ToString() + "thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         Form FindForm = this.FindForm();
                         FindForm.Close();
                     }

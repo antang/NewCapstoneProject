@@ -50,7 +50,6 @@
             this.btn_SaveAndCreateNewQuestion = new System.Windows.Forms.Button();
             this.btn_CancelQuestion = new System.Windows.Forms.Button();
             this.btn_SaveQuestion = new System.Windows.Forms.Button();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -317,11 +316,6 @@
             this.btn_SaveQuestion.UseVisualStyleBackColor = false;
             this.btn_SaveQuestion.Click += new System.EventHandler(this.btn_SaveQuestion_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -411,7 +405,6 @@
         private System.Windows.Forms.TextBox txt_ScoreCong;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_Date;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;

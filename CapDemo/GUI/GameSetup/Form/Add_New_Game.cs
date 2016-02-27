@@ -111,13 +111,13 @@ namespace CapDemo.GUI
                     }
                     else
                     {
-                        MessageBox.Show("Các trường thông tin không được phép rỗng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Các trường thông tin không được phép rỗng.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     
                 }
                 else
                 {
-                    MessageBox.Show("Giai đoạn phải tối thiểu là 1 và tối đa là 5.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Giai đoạn phải tối thiểu là 1 và tối đa là 5.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else if (i == 3)
@@ -132,7 +132,7 @@ namespace CapDemo.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập tối thiểu 20 câu hỏi cho mỗi giai đoạn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng nhập câu hỏi cho mỗi giai đoạn.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else if (i == 4)
@@ -161,12 +161,12 @@ namespace CapDemo.GUI
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng nhập thông tin cho đội.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Vui lòng nhập thông tin cho đội.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng thêm tối thiểu là 2 đội.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng thêm tối thiểu là 2 đội.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -223,19 +223,25 @@ namespace CapDemo.GUI
             //Competition_Setting cs = new Competition_Setting();
             if (cs.txt_ChallengeScore.Text.Trim()!="" && cs.txt_NumTeam.Text.Trim()!="" && cs.txt_TimeForSupport.Text.Trim()!="")
             {
-                Contest.IDContest = IdContest;
-                Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
-                Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
-                Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
+                if (Convert.ToInt32(cs.txt_NumTeam.Text.Trim())>=ts.CountTeam())
+                {
+                    MessageBox.Show("Số đội thách đấu phải nhỏ hơn "+ts.CountTeam()+".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Contest.IDContest = IdContest;
+                    Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
+                    Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
+                    Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
 
-                ContestBL.EditContestbyID(Contest);
-                this.Close();
-                this.DialogResult = DialogResult.OK;
-                
+                    ContestBL.EditContestbyID(Contest);
+                    this.Close();
+                    this.DialogResult = DialogResult.OK;
+                }  
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập thông tin cho phần thi.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập thông tin cho phần thi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }     
         }
 //GENERAL SETTING
@@ -299,7 +305,7 @@ namespace CapDemo.GUI
             }
             else
             {
-                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi "+gs.cmb_Round.SelectedItem.ToString()+" của cuộc thi "+gs.cmb_Competition.SelectedItem.ToString()+".", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi "+gs.cmb_Round.SelectedItem.ToString()+" của cuộc thi "+gs.cmb_Competition.SelectedItem.ToString()+".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //Load General setting after click back
@@ -359,7 +365,7 @@ namespace CapDemo.GUI
             }
             else
             {
-                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi " + gs.cmb_Round.SelectedItem.ToString() + " của cuộc thi " + gs.cmb_Competition.SelectedItem.ToString() + ".", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phần thi " + gs.txt_ContestName.Text + " đã tồn tại trong vòng thi " + gs.cmb_Round.SelectedItem.ToString() + " của cuộc thi " + gs.cmb_Competition.SelectedItem.ToString() + ".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
         }
@@ -662,7 +668,7 @@ namespace CapDemo.GUI
                     }
                     else
                     {
-                        MessageBox.Show("cant delete");
+                        MessageBox.Show("Cant delete teamplayer.");
                     }
                     
                 }

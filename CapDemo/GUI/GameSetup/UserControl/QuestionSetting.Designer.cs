@@ -122,12 +122,13 @@
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Enabled = false;
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(655, 22);
+            this.checkBox2.Location = new System.Drawing.Point(559, 28);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(88, 17);
+            this.checkBox2.Size = new System.Drawing.Size(185, 17);
             this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Chưa hiện thị";
+            this.checkBox2.Text = "* Là những câu hỏi chưa được thi";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
             // 
             // QuestionSetting
             // 

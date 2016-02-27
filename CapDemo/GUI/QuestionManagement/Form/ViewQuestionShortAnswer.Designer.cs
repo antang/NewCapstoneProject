@@ -46,7 +46,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Catalogue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
@@ -222,11 +221,6 @@
             this.label2.TabIndex = 66;
             this.label2.Text = "Chủ đề ";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -367,7 +361,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Catalogue;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_ContentAnswer;
     }

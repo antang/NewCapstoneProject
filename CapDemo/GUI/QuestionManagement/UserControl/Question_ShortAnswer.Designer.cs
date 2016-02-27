@@ -50,7 +50,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_ScoreCong = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -306,11 +305,6 @@
             this.label7.Text = "Thời gian";
             this.label7.Visible = false;
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // Question_ShortAnswer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,7 +353,6 @@
         private System.Windows.Forms.TextBox txt_AnswerContent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_Date;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_NameQuestion;
     }
