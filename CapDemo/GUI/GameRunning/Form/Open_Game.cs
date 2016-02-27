@@ -1987,7 +1987,7 @@ namespace CapDemo
                 {
                     /////display question on audience screen
                     audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
-                    FixSizeText();
+                    
                     //audience.lbl_QuestionContent.Size = new System.Drawing.Size(audience.pnl_QuestionFrame.Width * 66 / 100, audience.lbl_QuestionContent.Height);
                     //audience.lbl_QuestionContent.Location = new Point(audience.lbl_QuestionContent.Location.X - audience.lbl_QuestionContent.Location.X + (audience.pnl_QuestionFrame.Width / 2) * 35 / 100, audience.lbl_QuestionContent.Location.Y);
                     audience.lbl_Phase.Text = NameofPhase(id) + "(" + (ListPhase.Count - 1) + ")";
@@ -2048,6 +2048,7 @@ namespace CapDemo
                             CorrectShortAnswer = ListAnswer.ElementAt(0).ContentAnswer;
                         }
                     }
+                    FixSizeText();
                     //update 
                     Phase.IDQuestion = idquestion;
                     //Check question have been showed
@@ -4323,7 +4324,7 @@ namespace CapDemo
             {
                string []Newline1= ShowAnswer.rtxt_Answer.Text.Split('\n');
                temp = Newline1.Length;
-               if (temp>=row)
+               if (temp >= row)
                {
                    row = temp;
                }
@@ -4525,7 +4526,7 @@ namespace CapDemo
                 {
                     /////display question on audience screen
                     audience.lbl_QuestionContent.Text = ListQuestion.ElementAt(0).NameQuestion;
-                    FixSizeText();
+                    
                     typequestion = ListQuestion.ElementAt(0).TypeQuestion.ToLower();
 
                     /////question is onechoice type
@@ -4564,6 +4565,7 @@ namespace CapDemo
                             CorrectShortAnswer_1 = ListAnswer.ElementAt(0).ContentAnswer;
                         }
                     }
+                    FixSizeText();
                     //update 
                     Phase.IDContest = iDContest;
                     Phase.IDQuestion = idquestion;

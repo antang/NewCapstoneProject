@@ -303,6 +303,16 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ao_doi_thi {
+            get {
+                object obj = ResourceManager.GetObject("Ao_doi_thi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ao_lon {
             get {
                 object obj = ResourceManager.GetObject("ao_lon", resourceCulture);
@@ -639,9 +649,9 @@ namespace CapDemo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HitYourGoal_GiaoDienKhanGia {
+        internal static System.Drawing.Bitmap HitYourGoal_GiaoDienKhanGia1 {
             get {
-                object obj = ResourceManager.GetObject("HitYourGoal_GiaoDienKhanGia", resourceCulture);
+                object obj = ResourceManager.GetObject("HitYourGoal_GiaoDienKhanGia1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
