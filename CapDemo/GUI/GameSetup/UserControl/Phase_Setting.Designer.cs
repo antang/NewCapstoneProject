@@ -33,6 +33,7 @@
             this.btn_AddPhase = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.flp_Phase = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_AddPhase
@@ -69,16 +70,30 @@
             this.flp_Phase.Size = new System.Drawing.Size(707, 401);
             this.flp_Phase.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(17, 464);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(548, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "* Chỉ thêm tối đa được 5 giai đoạn. Giai đoạn \"Quản Lý\" Phải có số thứ tự nhỏ hơn" +
+    " 0.";
+            // 
             // Phase_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flp_Phase);
             this.Controls.Add(this.btn_AddPhase);
             this.Name = "Phase_Setting";
             this.Size = new System.Drawing.Size(748, 480);
             this.Load += new System.EventHandler(this.Phase_Setting_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +102,6 @@
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.FlowLayoutPanel flp_Phase;
         public System.Windows.Forms.Button btn_AddPhase;
+        private System.Windows.Forms.Label label1;
     }
 }
