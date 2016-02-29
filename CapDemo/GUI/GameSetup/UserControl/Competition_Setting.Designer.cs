@@ -39,6 +39,8 @@
             this.txt_TimeForSupport = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +111,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_ChallengeScore);
@@ -158,6 +161,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_TimeForSupport);
             this.groupBox1.Controls.Add(this.label1);
@@ -169,6 +173,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thiết lập quyền yêu cầu trợ giúp";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.LightSalmon;
+            this.label7.Location = new System.Drawing.Point(15, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(362, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "* Thiết lập thời gian cho quyền trợ giúp phải lớn hơn 0.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.LightSalmon;
+            this.label8.Location = new System.Drawing.Point(15, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(570, 39);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "* Thiết lập số đội thách đấu ít nhất là 1 và không được nhiều hơn số đội đang tha" +
+    "m gia.\r\n\r\n* Thiết lập điểm thách đấu phải lớn hơn 0.";
             // 
             // Competition_Setting
             // 
@@ -201,6 +228,8 @@
         public System.Windows.Forms.TextBox txt_TimeForSupport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
 
     }
 }

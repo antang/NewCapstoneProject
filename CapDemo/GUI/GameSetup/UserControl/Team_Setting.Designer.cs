@@ -33,6 +33,7 @@
             this.flp_Team = new System.Windows.Forms.FlowLayoutPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_AddTeam = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flp_Team
@@ -69,16 +70,29 @@
             this.btn_AddTeam.UseVisualStyleBackColor = false;
             this.btn_AddTeam.Click += new System.EventHandler(this.btn_AddTeam_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(18, 465);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "* Chỉ thêm tối thiểu là 2 đội và tối đa là 4 đội.";
+            // 
             // Team_Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flp_Team);
             this.Controls.Add(this.btn_AddTeam);
             this.Name = "Team_Setting";
             this.Size = new System.Drawing.Size(748, 480);
             this.Load += new System.EventHandler(this.Team_Setting_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +101,6 @@
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.FlowLayoutPanel flp_Team;
         public System.Windows.Forms.Button btn_AddTeam;
+        private System.Windows.Forms.Label label1;
     }
 }

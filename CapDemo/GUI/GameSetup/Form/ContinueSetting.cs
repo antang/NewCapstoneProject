@@ -631,20 +631,27 @@ namespace CapDemo
         {
             if (cs.txt_ChallengeScore.Text.Trim() != "" && cs.txt_NumTeam.Text.Trim() != "" && cs.txt_TimeForSupport.Text.Trim() != "")
             {
-                if (Convert.ToInt32(cs.txt_NumTeam.Text.Trim()) >= ts.CountTeam())
+                if (Convert.ToInt32(cs.txt_NumTeam.Text.Trim()) >= ts.CountTeam() || Convert.ToInt32(cs.txt_NumTeam.Text.Trim())==0)
                 {
-                    MessageBox.Show("Số đội thách đấu phải nhỏ hơn " + ts.CountTeam() + ".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số đội thách đấu phải lớn hơn 0 và nhỏ hơn " + ts.CountTeam() + ".", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    Contest.IDContest = contestID;
-                    Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
-                    Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
-                    Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
+                    if (Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim()) == 0 || Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim()) == 0)
+                    {
+                        MessageBox.Show("Vui lòng nhập thời gian hổ trợ và điểm thách đấu lớn hơn 0.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        Contest.IDContest = contestID;
+                        Contest.ChallengceScore = Convert.ToInt32(cs.txt_ChallengeScore.Text.Trim());
+                        Contest.NumberChallenge = Convert.ToInt32(cs.txt_NumTeam.Text.Trim());
+                        Contest.TimeSupport = Convert.ToInt32(cs.txt_TimeForSupport.Text.Trim());
 
-                    ContestBL.EditContestbyID(Contest);
-                    this.Close();
-                    this.DialogResult = DialogResult.OK;
+                        ContestBL.EditContestbyID(Contest);
+                        this.Close();
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
             }
             else
