@@ -2015,31 +2015,67 @@ namespace CapDemo
                     /////question is onechoice type
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
                     {
-                        for (int h = 0; h < ListAnswer.Count; h++)
-                        {
-                            ShowAnswer ShowAnswer = new ShowAnswer();
-                            ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                            ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
-                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
-                            ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
-                            ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
-                            audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
-                        }
-                    }
-                    else
-                    {   //question is multichoice type
-                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        //fix
+                        if (ListAnswer.Count== 2)
                         {
                             for (int h = 0; h < ListAnswer.Count; h++)
                             {
                                 ShowAnswer ShowAnswer = new ShowAnswer();
-                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                                ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count)) - 10);
+                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
                                 ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                                 ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                 ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
                             }
+                        }
+                        else
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                ShowAnswer ShowAnswer = new ShowAnswer();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                            }
+                        }
+                        
+                    }
+                    else
+                    {   //question is multichoice type
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            //fix
+                            if (ListAnswer.Count==2)
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    ShowAnswer ShowAnswer = new ShowAnswer();
+                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count)) - 10);
+                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                                }
+                            }
+                            else
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    ShowAnswer ShowAnswer = new ShowAnswer();
+                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                                }
+                            }
+                            
                         }
                         else
                         {
@@ -4532,31 +4568,67 @@ namespace CapDemo
                     /////question is onechoice type
                     if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "onechoice")
                     {
-                        for (int h = 0; h < ListAnswer.Count; h++)
-                        {
-                            ShowAnswer ShowAnswer = new ShowAnswer();
-                            ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                            ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
-                            ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
-                            ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
-                            ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
-                            audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
-                        }
-                    }
-                    else
-                    {   //question is multichoice type
-                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        //fix
+                        if (ListAnswer.Count==2)
                         {
                             for (int h = 0; h < ListAnswer.Count; h++)
                             {
                                 ShowAnswer ShowAnswer = new ShowAnswer();
-                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
-                                ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count)) - 10);
+                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
                                 ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
                                 ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
                                 ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
                                 audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
                             }
+                        }
+                        else
+                        {
+                            for (int h = 0; h < ListAnswer.Count; h++)
+                            {
+                                ShowAnswer ShowAnswer = new ShowAnswer();
+                                ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / 2 - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                ShowAnswer.rdb1.Text = Convert.ToChar(a + h).ToString();
+                                ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                            }
+                        }
+                       
+                    }
+                    else
+                    {   //question is multichoice type
+                        if (ListQuestion.ElementAt(0).TypeQuestion.ToLower() == "multichoice")
+                        {
+                            //fix
+                            if (ListAnswer.Count == 2)
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    ShowAnswer ShowAnswer = new ShowAnswer();
+                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count)) - 10);
+                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                                }
+                            }
+                            else
+                            {
+                                for (int h = 0; h < ListAnswer.Count; h++)
+                                {
+                                    ShowAnswer ShowAnswer = new ShowAnswer();
+                                    ShowAnswer.Size = new System.Drawing.Size(audience.flp_AnswerQuiz.Width / (2) - 10, audience.flp_AnswerQuiz.Height / (int)(Math.Ceiling((double)ListAnswer.Count / 2)) - 10);
+                                    ShowAnswer.chk1.Text = Convert.ToChar(a + h).ToString();
+                                    ShowAnswer.lbl_labelAnswer.Text = Convert.ToChar(a + h).ToString() + ".";
+                                    ShowAnswer.rtxt_Answer.Text = ListAnswer.ElementAt(h).ContentAnswer;
+                                    ShowAnswer.lbl_Correct.Text = ListAnswer.ElementAt(h).IsCorrect.ToString();
+                                    audience.flp_AnswerQuiz.Controls.Add(ShowAnswer);
+                                }
+                            }
+                            
                         }
                         else
                         {

@@ -82,9 +82,13 @@ namespace CapDemo.DA
                     QuestionContent += node["question"].InnerText.ToString() + "---";
                     foreach (XmlNode item in node.SelectNodes("answers/answer"))
                     {
-                        QuestionContent += (item["correct"].InnerText) +"+++";
-                        QuestionContent += (item["text"].InnerText);
-                        QuestionContent += "</" + item.Name + ">";
+                        //Phong Edit
+                        if ((item["text"].InnerText) != "")
+                        {
+                            QuestionContent += (item["correct"].InnerText) + "+++";
+                            QuestionContent += (item["text"].InnerText);
+                            QuestionContent += "</" + item.Name + ">";
+                        }
                     }
                     QuestionContent += "</" + node.Name + ">";
                     i++;
