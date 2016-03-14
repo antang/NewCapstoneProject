@@ -98,6 +98,8 @@ namespace CapDemo.DA
                 QuestionContent = QuestionContent.Replace("<br>", Environment.NewLine);
                 QuestionContent = QuestionContent.Replace("</br>", "");
                 //QuestionContent = QuestionContent.Replace("'", "''");
+                QuestionContent = QuestionContent.Replace("&#x2022;", "\u2022");
+                QuestionContent = QuestionContent.Replace("#x2022;", "\u2022");
                 return QuestionContent;
                 
             }
