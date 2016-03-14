@@ -31,6 +31,7 @@ namespace CapDemo.GUI
         private void btn_Login_Click(object sender, EventArgs e)
         {
             login();
+            //MessageBox.Show("\u2022 abc \n \u2022 def");
         }
         GameShowControl gsc = new GameShowControl();
         private void openComposing(object obj)

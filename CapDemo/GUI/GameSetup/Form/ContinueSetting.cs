@@ -301,6 +301,8 @@ namespace CapDemo
                     {
                         //General Setting
                         gs.cmb_Competition.SelectedItem = ListContest.ElementAt(i).Competition.NameCompetition;
+                        //fix bugs --phong
+                        gs.cmb_Round.SelectedItem = ListContest.ElementAt(i).Round.NameRound;
                         gs.txt_ContestName.Text = ListContest.ElementAt(i).NameContest;
                         gs.txt_Bonus.Text = ListContest.ElementAt(i).Bonus.ToString();
                         gs.txt_NumStepFail.Text = ListContest.ElementAt(i).TimesFalse.ToString();
