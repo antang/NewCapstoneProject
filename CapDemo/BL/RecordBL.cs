@@ -41,7 +41,7 @@ namespace CapDemo.BL
         public List<Record> GetsScoreplayerByIDContest(Record record)
         {
             List<Record> RecordList = new List<Record>();
-            string query = "SELECT [PlayerScore],[Player_ID]"
+            string query = "SELECT [PlayerScore],[Player_ID],[Sub]"
                         + " FROM [Record]"
                         + " WHERE [Contest_ID] = '" + record.IDContest + "'";
             DataTable dt = DA.SelectDatabase(query);
@@ -53,6 +53,7 @@ namespace CapDemo.BL
                     Record Record = new Record();
                     Record.TeamScore = Convert.ToInt32(item["PlayerScore"].ToString());
                     Record.IDPlayer = Convert.ToInt32(item["Player_ID"].ToString());
+                    Record.Sub = Convert.ToInt32(item["Sub"].ToString());
                     RecordList.Add(Record);
                 }
             }
