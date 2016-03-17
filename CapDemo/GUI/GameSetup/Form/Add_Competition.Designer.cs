@@ -36,6 +36,7 @@
             this.txt_NameCompetition = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_SaveCompetition
@@ -47,7 +48,7 @@
             this.btn_SaveCompetition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_SaveCompetition.ImageIndex = 0;
             this.btn_SaveCompetition.ImageList = this.imageList1;
-            this.btn_SaveCompetition.Location = new System.Drawing.Point(168, 133);
+            this.btn_SaveCompetition.Location = new System.Drawing.Point(168, 165);
             this.btn_SaveCompetition.Name = "btn_SaveCompetition";
             this.btn_SaveCompetition.Size = new System.Drawing.Size(90, 30);
             this.btn_SaveCompetition.TabIndex = 43;
@@ -72,7 +73,7 @@
             this.btn_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Cancel.ImageIndex = 1;
             this.btn_Cancel.ImageList = this.imageList1;
-            this.btn_Cancel.Location = new System.Drawing.Point(264, 133);
+            this.btn_Cancel.Location = new System.Drawing.Point(264, 165);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(90, 30);
             this.btn_Cancel.TabIndex = 42;
@@ -99,9 +100,9 @@
             this.lbl1.ForeColor = System.Drawing.Color.White;
             this.lbl1.Location = new System.Drawing.Point(17, 13);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(208, 25);
+            this.lbl1.Size = new System.Drawing.Size(206, 25);
             this.lbl1.TabIndex = 39;
-            this.lbl1.Text = "Tạo Cuộc Thi Mới";
+            this.lbl1.Text = "Tạo Năm Thi Mới";
             // 
             // lbl2
             // 
@@ -111,16 +112,29 @@
             this.lbl2.ForeColor = System.Drawing.Color.White;
             this.lbl2.Location = new System.Drawing.Point(23, 70);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(95, 16);
+            this.lbl2.Size = new System.Drawing.Size(64, 16);
             this.lbl2.TabIndex = 40;
-            this.lbl2.Text = "Tên cuộc thi";
+            this.lbl2.Text = "Năm thi";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSalmon;
+            this.label1.Location = new System.Drawing.Point(25, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Vui lòng điền 4 chữ số. Ví dụ: 2016, 2017,2018.....";
             // 
             // Add_Competition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(371, 176);
+            this.ClientSize = new System.Drawing.Size(371, 206);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_SaveCompetition);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.txt_NameCompetition);
@@ -129,7 +143,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_Competition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm Cuộc Thi";
+            this.Text = "Thêm Năm Thi";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +157,6 @@
         private System.Windows.Forms.TextBox txt_NameCompetition;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label label1;
     }
 }
