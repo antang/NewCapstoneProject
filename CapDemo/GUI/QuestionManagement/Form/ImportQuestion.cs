@@ -88,7 +88,7 @@ namespace CapDemo.GUI
                             CheckQuestion();
                             if (WrongQuestion > 0)
                             {
-                                MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
                                 + "Hệ thống không cho phép chọn các câu hỏi đó. "
                                 + "Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
@@ -118,7 +118,7 @@ namespace CapDemo.GUI
                                 CheckQuestion();
                                 if (WrongQuestion > 0)
                                 {
-                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
                                 + "Hệ thống không cho phép chọn các câu hỏi đó. "
                                 + "Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
@@ -146,7 +146,7 @@ namespace CapDemo.GUI
                                 CheckQuestion();
                                 if (WrongQuestion > 0)
                                 {
-                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + "câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
+                                    MessageBox.Show("Tập tin nhập vào có " + WrongQuestion + " câu hỏi không hợp lệ (câu hỏi bị bôi đỏ). "
                                 + "Hệ thống không cho phép chọn các câu hỏi đó. "
                                 + "Vui lòng kiểm tra lại nội dung, loại câu hỏi và Phải chọn đáp án cho câu hỏi.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
@@ -175,6 +175,7 @@ namespace CapDemo.GUI
         int WrongQuestion = 0;
         public void CheckQuestion()
         {
+            WrongQuestion = 0;
             Question question = new Question();
             Answer answer = new Answer();
             QuestionBL questionBL = new QuestionBL();
