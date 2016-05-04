@@ -3000,7 +3000,8 @@ namespace CapDemo
                 Restore1.IDPlayer = records.ElementAt(team).IDPlayer;
                 Restore1.IDContest = iDContest;
                 List<Record> ListRecord1 = RecordBL.GetDoneGameByIDContest(Restore1);
-                if (GameOver == true || ListRecord1.ElementAt(0).First==false)
+                // || ListRecord1.ElementAt(0).First==false)
+                if (GameOver == true)
                 {
                     if (records.ElementAt(team).SequecePlayer == records.ElementAt(records.Count-1).SequecePlayer)
                     {
@@ -3679,13 +3680,13 @@ namespace CapDemo
                             RecordBL.UpdateDone(Restore);
 
                             //check false all first
-                            for (int i = 0; i < records.Count; i++)
-                            {
-                                records.ElementAt(i).First = false;
-                            }
-                            Restore.First_I = 0;
-                            Restore.IDContest = iDContest;
-                            RecordBL.UpdateFirst(Restore);
+                            //for (int i = 0; i < records.Count; i++)
+                            //{
+                            //    records.ElementAt(i).First = false;
+                            //}
+                            //Restore.First_I = 0;
+                            //Restore.IDContest = iDContest;
+                            //RecordBL.UpdateFirst(Restore);
 
                             //Done = false;
                             GameOver = true;
